@@ -1,0 +1,1895 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Панель управления ClimaFlow CRM</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --font-primary: 'Inter', sans-serif;
+      --font-display: 'Outfit', sans-serif;
+      
+      /* Premium Dark Mode Colors */
+      --bg-dark: #0b0f19;
+      --bg-card: rgba(17, 24, 39, 0.7);
+      --bg-card-hover: rgba(31, 41, 55, 0.8);
+      --border-color: rgba(255, 255, 255, 0.08);
+      
+      --color-primary: #3b82f6; /* Electric Blue */
+      --color-primary-glow: rgba(59, 130, 246, 0.3);
+      --color-accent: #06b6d4; /* Cyan */
+      --color-success: #10b981; /* Emerald Green */
+      --color-warning: #f59e0b; /* Amber */
+      --color-danger: #ef4444; /* Rose Red */
+      
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      --text-glow: #ffffff;
+      
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --shadow-premium: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-primary);
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.15) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(6, 182, 212, 0.15) 0px, transparent 50%);
+    }
+
+    /* Scrollbars */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--bg-dark);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 24px;
+      flex-grow: 1;
+    }
+
+    /* Glassmorphism Header */
+    header {
+      background: rgba(11, 15, 25, 0.8);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-color);
+      padding: 16px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: var(--font-display);
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .logo span {
+      background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .logo-icon {
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .nav-tabs {
+      display: flex;
+      gap: 8px;
+    }
+
+    .tab-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      padding: 8px 16px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      border-radius: var(--radius-sm);
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .tab-btn:hover {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .tab-btn.active {
+      color: #fff;
+      background: var(--color-primary);
+      box-shadow: 0 0 15px var(--color-primary-glow);
+    }
+
+    /* Stats Grid */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-bottom: 24px;
+    }
+
+    .stat-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      box-shadow: var(--shadow-premium);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .stat-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--color-primary);
+    }
+
+    .stat-card.accent::before { background: var(--color-accent); }
+    .stat-card.success::before { background: var(--color-success); }
+    .stat-card.warning::before { background: var(--color-warning); }
+
+    .stat-title {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .stat-value {
+      font-family: var(--font-display);
+      font-size: 28px;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .stat-desc {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 6px;
+    }
+
+    /* Progress to Goal Card */
+    .goal-card {
+      grid-column: span 2;
+    }
+
+    @media (max-width: 900px) {
+      .goal-card {
+        grid-column: span 1;
+      }
+    }
+
+    .progress-bar-container {
+      width: 100%;
+      height: 10px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 5px;
+      margin-top: 12px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--color-primary), var(--color-success));
+      border-radius: 5px;
+      width: 0%;
+      transition: width 1s ease-out;
+    }
+
+    /* Main Grid Layout */
+    .main-grid {
+      display: grid;
+      grid-template-columns: 1fr 350px;
+      gap: 24px;
+    }
+
+    @media (max-width: 1100px) {
+      .main-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .panel {
+      background: var(--bg-card);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      box-shadow: var(--shadow-premium);
+      margin-bottom: 24px;
+    }
+
+    .panel-title {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      padding-bottom: 12px;
+    }
+
+    /* Forms */
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .form-control {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      padding: 10px 14px;
+      color: #fff;
+      font-family: var(--font-primary);
+      font-size: 14px;
+      transition: var(--transition);
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--color-primary);
+      background: rgba(255, 255, 255, 0.08);
+      box-shadow: 0 0 10px rgba(59, 130, 246, 0.15);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 20px;
+      font-family: var(--font-primary);
+      font-size: 14px;
+      font-weight: 600;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: var(--transition);
+      border: none;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: var(--color-primary);
+      color: #fff;
+    }
+    .btn-primary:hover {
+      background: #2563eb;
+      box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-main);
+      border: 1px solid var(--border-color);
+    }
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+    }
+
+    .btn-success {
+      background: var(--color-success);
+      color: #fff;
+    }
+    .btn-success:hover {
+      background: #059669;
+    }
+
+    .btn-danger {
+      background: var(--color-danger);
+      color: #fff;
+    }
+    .btn-danger:hover {
+      background: #dc2626;
+    }
+
+    .btn-whatsapp {
+      background: #25d366;
+      color: #fff;
+    }
+    .btn-whatsapp:hover {
+      background: #128c7e;
+      box-shadow: 0 0 15px rgba(37, 211, 102, 0.3);
+    }
+
+    .btn-sm {
+      padding: 6px 12px;
+      font-size: 12px;
+    }
+
+    /* Import Box */
+    .import-box {
+      background: rgba(59, 130, 246, 0.04);
+      border: 1px dashed rgba(59, 130, 246, 0.3);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      margin-bottom: 20px;
+    }
+
+    /* Tabs Content Visibility */
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    /* Orders Filter Bar */
+    .filter-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+
+    .filter-group {
+      display: flex;
+      gap: 6px;
+    }
+
+    .filter-btn {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      padding: 6px 12px;
+      font-size: 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .filter-btn:hover, .filter-btn.active {
+      background: rgba(255, 255, 255, 0.08);
+      color: #fff;
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .filter-btn.active {
+      background: rgba(59, 130, 246, 0.1);
+      color: var(--color-primary);
+      border-color: var(--color-primary);
+    }
+
+    /* Orders Table/Cards */
+    .orders-container {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .order-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 18px;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .order-card:hover {
+      background: var(--bg-card-hover);
+      border-color: rgba(255, 255, 255, 0.15);
+      transform: translateY(-2px);
+    }
+
+    .order-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .order-title-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .order-id {
+      font-family: var(--font-display);
+      font-weight: 700;
+      color: var(--color-accent);
+      font-size: 15px;
+    }
+
+    .order-date {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .badge {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 4px;
+      letter-spacing: 0.5px;
+    }
+
+    .badge-new { background: rgba(59, 130, 246, 0.15); color: var(--color-primary); }
+    .badge-assigned { background: rgba(245, 158, 11, 0.15); color: var(--color-warning); }
+    .badge-done { background: rgba(16, 185, 129, 0.15); color: var(--color-success); }
+    .badge-cancelled { background: rgba(239, 68, 68, 0.15); color: var(--color-danger); }
+
+    .order-body {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .order-info-block h5 {
+      font-size: 11px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+      letter-spacing: 0.5px;
+    }
+
+    .order-info-block p {
+      font-size: 13.5px;
+      color: #fff;
+    }
+
+    .order-info-block span.tag {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 4px;
+      padding: 2px 6px;
+      font-size: 11px;
+      margin-top: 4px;
+    }
+
+    .order-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      padding-top: 12px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .order-finance {
+      display: flex;
+      gap: 16px;
+      font-size: 13px;
+    }
+
+    .finance-item span {
+      color: var(--text-muted);
+    }
+
+    .finance-item strong {
+      color: #fff;
+    }
+
+    .order-actions {
+      display: flex;
+      gap: 8px;
+    }
+
+    /* Crews Table / Cards */
+    .crews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .crew-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .crew-status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .status-free { background: var(--color-success); box-shadow: 0 0 8px var(--color-success); }
+    .status-busy { background: var(--color-warning); box-shadow: 0 0 8px var(--color-warning); }
+    .status-off { background: var(--text-muted); }
+
+    .crew-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+
+    .crew-name {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 16px;
+    }
+
+    .crew-stats {
+      background: rgba(255, 255, 255, 0.02);
+      border-radius: var(--radius-sm);
+      padding: 12px;
+      margin-bottom: 14px;
+      font-size: 13px;
+    }
+
+    .crew-stat-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 6px;
+    }
+
+    .crew-stat-row:last-child {
+      margin-bottom: 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      padding-top: 6px;
+      margin-top: 6px;
+    }
+
+    /* Modals */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(8px);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      padding: 16px;
+    }
+
+    .modal-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal {
+      background: #111827;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      width: 100%;
+      max-width: 600px;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+      transform: scale(0.95);
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .modal-overlay.active .modal {
+      transform: scale(1);
+    }
+
+    .modal-header {
+      padding: 20px 24px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .modal-title {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .modal-close {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .modal-body {
+      padding: 24px;
+    }
+
+    .modal-footer {
+      padding: 16px 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      display: flex;
+      justify-content: flex-end;
+      gap: 12px;
+    }
+
+    /* Print styling layout (Hidden on screen) */
+    #print-container {
+      display: none;
+    }
+
+    @media print {
+      body * {
+        visibility: hidden;
+      }
+      #print-container, #print-container * {
+        visibility: visible;
+      }
+      #print-container {
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        background: white;
+        color: black;
+      }
+      .modal-overlay {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-content">
+      <a href="#" class="logo">
+        <div class="logo-icon">CF</div>
+        Clima<span>Flow</span> CRM
+      </a>
+      <div class="nav-tabs">
+        <button class="tab-btn active" onclick="switchTab('dashboard')">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="9"></rect><rect x="14" y="3" width="7" height="5"></rect><rect x="14" y="12" width="7" height="9"></rect><rect x="3" y="16" width="7" height="5"></rect></svg>
+          Панель
+        </button>
+        <button class="tab-btn" onclick="switchTab('crews')">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+          Бригады
+        </button>
+        <button class="tab-btn" onclick="switchTab('settings')">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+          Настройки
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    
+    <!-- STATS ROW -->
+    <div class="stats-grid">
+      <div class="stat-card success goal-card">
+        <div>
+          <div class="stat-title">Прогресс к цели (600,000 сом)</div>
+          <div class="stat-value" id="stat-progress-val">0 сом</div>
+        </div>
+        <div>
+          <div class="progress-bar-container">
+            <div class="progress-bar-fill" id="stat-progress-bar"></div>
+          </div>
+          <div class="stat-desc" id="stat-progress-desc">Собрано 0% за 1 месяц до 10 августа</div>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-title">Всего выручка</div>
+        <div class="stat-value" id="stat-revenue">0 сом</div>
+        <div class="stat-desc">Общая сумма завершенных заказов</div>
+      </div>
+
+      <div class="stat-card warning">
+        <div class="stat-title">Доля мастеров</div>
+        <div class="stat-value" id="stat-payouts">0 сом</div>
+        <div class="stat-desc">К выплате бригадам за выезды</div>
+      </div>
+
+      <div class="stat-card accent">
+        <div class="stat-title">Чистая прибыль (Твоя)</div>
+        <div class="stat-value" id="stat-profit">0 сом</div>
+        <div class="stat-desc">Остается после расчета с бригадами</div>
+      </div>
+    </div>
+
+    <!-- TAB: DASHBOARD -->
+    <div id="tab-dashboard" class="tab-content active">
+      <div class="main-grid">
+        
+        <!-- Left Side: Orders -->
+        <div>
+          <div class="panel">
+            <div class="panel-title">
+              Заказы и вызовы
+              <button class="btn btn-primary btn-sm" onclick="openNewOrderModal()">+ Новый заказ</button>
+            </div>
+            
+            <div class="filter-bar">
+              <div class="filter-group" id="status-filters">
+                <button class="filter-btn active" onclick="filterOrders('all')">Все</button>
+                <button class="filter-btn" onclick="filterOrders('new')">Новые</button>
+                <button class="filter-btn" onclick="filterOrders('assigned')">В работе</button>
+                <button class="filter-btn" onclick="filterOrders('done')">Завершены</button>
+                <button class="filter-btn" onclick="filterOrders('cancelled')">Отменены</button>
+              </div>
+              <input type="text" class="form-control" style="width: 200px; padding: 6px 12px; font-size: 13px;" placeholder="Поиск по имени/тел..." id="search-input" oninput="searchOrders()">
+            </div>
+
+            <div class="orders-container" id="orders-list">
+              <!-- Orders injected here -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side: Fast Import -->
+        <div>
+          <div class="panel import-box">
+            <h3 class="form-label" style="color: #fff; font-size: 15px; margin-bottom: 10px;">⚡ Быстрый импорт из WhatsApp</h3>
+            <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 12px; line-height: 1.4;">Скопируйте входящий текст от клиента с лендинга (с квиза или калькулятора), вставьте сюда и нажмите кнопку.</p>
+            <textarea class="form-control" style="height: 120px; font-size: 12px; margin-bottom: 12px;" id="import-textarea" placeholder="Вставьте текст сообщения WhatsApp от клиента..."></textarea>
+            <button class="btn btn-primary" style="width: 100%;" onclick="importFromWhatsapp()">Распознать и импортировать</button>
+          </div>
+
+          <div class="panel">
+            <div class="panel-title" style="font-size: 16px;">Оперативная загрузка</div>
+            <div id="quick-crew-status" style="display: flex; flex-direction: column; gap: 10px;">
+              <!-- Quick crew indicators -->
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- TAB: CREWS -->
+    <div id="tab-crews" class="tab-content">
+      <div class="panel">
+        <div class="panel-title">
+          Бригады и Мастера
+          <button class="btn btn-primary btn-sm" onclick="openNewCrewModal()">+ Добавить бригаду</button>
+        </div>
+        <div class="crews-grid" id="crews-list">
+          <!-- Crews injected here -->
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB: SETTINGS -->
+    <div id="tab-settings" class="tab-content">
+      <div class="panel">
+        <div class="panel-title">Системные настройки и Экспорт</div>
+        
+        <div style="display: flex; flex-direction: column; gap: 20px;">
+          <div>
+            <h4 style="margin-bottom: 8px;">Экспорт данных</h4>
+            <p style="color: var(--text-muted); font-size: 13px; margin-bottom: 12px;">Вы можете выгрузить все ваши заказы и данные о бригадах в CSV-формат для открытия в Excel.</p>
+            <button class="btn btn-secondary" onclick="exportDataToCSV()">Скачать базу в CSV</button>
+          </div>
+
+          <hr style="border-color: rgba(255,255,255,0.05);">
+
+          <div>
+            <h4 style="margin-bottom: 8px;">Реквизиты вашей компании (ИП)</h4>
+            <p style="color: var(--text-muted); font-size: 13px; margin-bottom: 12px;">Эти данные используются для автоматической печати Счетов на оплату и Актов выполненных работ.</p>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+              <div class="form-group">
+                <span class="form-label">Название ИП/Организации</span>
+                <input type="text" class="form-control" id="company-name" value="ИП Сыдыков Нурсултан Бакытбекович">
+              </div>
+              <div class="form-group">
+                <span class="form-label">ИНН</span>
+                <input type="text" class="form-control" id="company-inn" value="20308199301488">
+              </div>
+              <div class="form-group">
+                <span class="form-label">Банк получателя</span>
+                <input type="text" class="form-control" id="company-bank" value="ФИЛИАЛ 'МБАНК АЗИЯ МОЛЛ' ОАО 'МБАНК'">
+              </div>
+              <div class="form-group">
+                <span class="form-label">Расчетный счет</span>
+                <input type="text" class="form-control" id="company-rs" value="1033020010229609">
+              </div>
+            </div>
+            <button class="btn btn-primary" onclick="saveCompanyDetails()">Сохранить реквизиты</button>
+          </div>
+
+          <hr style="border-color: rgba(255,255,255,0.05);">
+
+          <div>
+            <h4 style="margin-bottom: 8px; color: var(--color-danger);">Очистка данных</h4>
+            <p style="color: var(--text-muted); font-size: 13px; margin-bottom: 12px;">Сброс всей базы данных (заказы, бригады). Будет удалено все безвозвратно.</p>
+            <button class="btn btn-danger btn-sm" onclick="clearAllData()">Сбросить базу данных</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- MODAL: NEW / EDIT ORDER -->
+  <div class="modal-overlay" id="order-modal">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 class="modal-title" id="order-modal-title">Новый заказ</h3>
+        <button class="modal-close" onclick="closeOrderModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <input type="hidden" id="order-form-id">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+          <div class="form-group">
+            <label class="form-label">Имя клиента</label>
+            <input type="text" class="form-control" id="order-client-name" placeholder="Иван">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Телефон</label>
+            <input type="text" class="form-control" id="order-client-phone" placeholder="+996 502 985 896">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Адрес / Локация</label>
+          <input type="text" class="form-control" id="order-location" placeholder="Микрорайоны, ул. Токомбаева 23-45">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Вид работ / Описание</label>
+          <input type="text" class="form-control" id="order-desc" placeholder="Ремонт кондиционера, плохо охлаждает">
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+          <div class="form-group">
+            <label class="form-label">Назначить бригаду</label>
+            <select class="form-control" id="order-crew-select">
+              <option value="">Не назначена</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Статус заказа</label>
+            <select class="form-control" id="order-status-select">
+              <option value="new">Новый</option>
+              <option value="assigned">В работе / Выехал</option>
+              <option value="done">Завершен</option>
+              <option value="cancelled">Отменен</option>
+            </select>
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+          <div class="form-group">
+            <label class="form-label">Ожидаемая сумма (сом)</label>
+            <input type="number" class="form-control" id="order-est-price" value="2500">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Фактическая оплата (сом)</label>
+            <input type="number" class="form-control" id="order-act-price" value="0">
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" onclick="closeOrderModal()">Отмена</button>
+        <button class="btn btn-primary" onclick="saveOrder()">Сохранить заказ</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: NEW / EDIT CREW -->
+  <div class="modal-overlay" id="crew-modal">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 class="modal-title" id="crew-modal-title">Добавить бригаду</h3>
+        <button class="modal-close" onclick="closeCrewModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <input type="hidden" id="crew-form-id">
+        <div class="form-group">
+          <label class="form-label">Название бригады / Имя мастера</label>
+          <input type="text" class="form-control" id="crew-name-input" placeholder="Бригада 4 (Руслан и Бек)">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Телефон мастера (для WhatsApp)</label>
+          <input type="text" class="form-control" id="crew-phone-input" placeholder="+996...">
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+          <div class="form-group">
+            <label class="form-label">Процент мастера (%)</label>
+            <input type="number" class="form-control" id="crew-pct-input" value="50">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Статус бригады</label>
+            <select class="form-control" id="crew-status-select">
+              <option value="free">Свободен</option>
+              <option value="busy">В пути / Занят</option>
+              <option value="off">Выходной</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" onclick="closeCrewModal()">Отмена</button>
+        <button class="btn btn-primary" onclick="saveCrew()">Сохранить</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: B2B DOCS GENERATOR (INVOICE / ACT) -->
+  <div class="modal-overlay" id="docs-modal">
+    <div class="modal" style="max-width: 850px;">
+      <div class="modal-header">
+        <h3 class="modal-title">Генерация B2B Документов</h3>
+        <button class="modal-close" onclick="closeDocsModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div style="display: flex; gap: 10px; margin-bottom: 20px;">
+          <button class="btn btn-primary" onclick="generateInvoiceView()">Сформировать Счет</button>
+          <button class="btn btn-primary" onclick="generateActView()">Сформировать Акт</button>
+          <button class="btn btn-success" style="margin-left: auto;" onclick="printDoc()">Печать / Экспорт в PDF</button>
+        </div>
+
+        <div style="background: #fff; padding: 20px; border-radius: var(--radius-sm); border: 1px solid var(--border-color); color: #000; overflow-x: auto;">
+          <!-- Interactive HTML view -->
+          <div id="document-preview-target"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRINT WRAPPER FOR PDF EXPORT -->
+  <div id="print-container"></div>
+
+  <script>
+    // Initial Seed Data if local storage is empty
+    const DEFAULT_CREWS = [
+      { id: "crew-1", name: "Руслан (Дежурный мастер)", phone: "+996502985896", pct: 50, status: "free" },
+      { id: "crew-2", name: "Бригада 2 (Бек и Азат)", phone: "", pct: 50, status: "free" },
+      { id: "crew-3", name: "Бригада 3 (Улан)", phone: "", pct: 50, status: "free" }
+    ];
+
+    const DEFAULT_ORDERS = [
+      { id: "1001", clientName: "ЗАО Акун", clientPhone: "+996011031997", location: "пр. Ден Сяопина 308", desc: "Установка кондиционера (монтаж) и ТО", crewId: "crew-1", status: "done", estPrice: 6612, actPrice: 6612, date: "2026-07-09" }
+    ];
+
+    const DEFAULT_COMPANY = {
+      name: "ИП Сыдыков Нурсултан Бакытбекович",
+      inn: "20308199301488",
+      bank: "ФИЛИАЛ 'МБАНК АЗИЯ МОЛЛ' ОАО 'МБАНК'",
+      rs: "1033020010229609"
+    };
+
+    // Load from LocalStorage
+    let crews = JSON.parse(localStorage.getItem('cf_crews')) || DEFAULT_CREWS;
+    let orders = JSON.parse(localStorage.getItem('cf_orders')) || DEFAULT_ORDERS;
+    let company = JSON.parse(localStorage.getItem('cf_company')) || DEFAULT_COMPANY;
+    
+    let currentFilter = 'all';
+    let searchQuery = '';
+    let selectedOrderForDocs = null;
+    let activeDocType = 'invoice'; // invoice or act
+
+    // Lifecycle
+    window.onload = function() {
+      saveToLocalStorage();
+      renderDashboard();
+      updateCrewSelects();
+    };
+
+    function saveToLocalStorage() {
+      localStorage.setItem('cf_crews', JSON.stringify(crews));
+      localStorage.setItem('cf_orders', JSON.stringify(orders));
+      localStorage.setItem('cf_company', JSON.stringify(company));
+    }
+
+    // Tabs Switcher
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+      
+      document.getElementById(`tab-${tabId}`).classList.add('active');
+      event.currentTarget.classList.add('active');
+
+      if (tabId === 'crews') {
+        renderCrews();
+      } else if (tabId === 'dashboard') {
+        renderDashboard();
+      }
+    }
+
+    // Calculate Dashboard Analytics
+    function renderDashboard() {
+      let revenue = 0;
+      let payouts = 0;
+      let profit = 0;
+      
+      orders.forEach(order => {
+        if (order.status === 'done') {
+          const act = order.actPrice || 0;
+          revenue += act;
+          
+          // calculate master cut
+          const crew = crews.find(c => c.id === order.crewId);
+          const pct = crew ? crew.pct : 50;
+          const crewShare = Math.round(act * (pct / 100));
+          payouts += crewShare;
+        }
+      });
+
+      profit = revenue - payouts;
+
+      // Update domestic labels
+      document.getElementById('stat-revenue').textContent = revenue.toLocaleString() + ' сом';
+      document.getElementById('stat-payouts').textContent = payouts.toLocaleString() + ' сом';
+      document.getElementById('stat-profit').textContent = profit.toLocaleString() + ' сом';
+      
+      // Goal 600k progress
+      const targetGoal = 600000;
+      const progressPercent = Math.min(Math.round((profit / targetGoal) * 100), 100);
+      document.getElementById('stat-progress-val').textContent = profit.toLocaleString() + ' сом / ' + targetGoal.toLocaleString() + ' сом';
+      document.getElementById('stat-progress-bar').style.width = progressPercent + '%';
+      document.getElementById('stat-progress-desc').textContent = `Собрано ${progressPercent}% от цели до 10 августа 2026 г.`;
+
+      // Render Orders
+      renderOrdersList();
+      renderQuickCrewStatus();
+    }
+
+    // Render Orders Container
+    function renderOrdersList() {
+      const list = document.getElementById('orders-list');
+      list.innerHTML = '';
+
+      const filtered = orders.filter(order => {
+        // Status filter
+        if (currentFilter !== 'all' && order.status !== currentFilter) return false;
+        
+        // Search query
+        if (searchQuery) {
+          const q = searchQuery.toLowerCase();
+          return order.clientName.toLowerCase().includes(q) || 
+                 order.clientPhone.includes(q) || 
+                 order.desc.toLowerCase().includes(q) ||
+                 order.location.toLowerCase().includes(q);
+        }
+        return true;
+      });
+
+      // Sort: newest first
+      filtered.sort((a,b) => b.id - a.id);
+
+      if (filtered.length === 0) {
+        list.innerHTML = `<div style="text-align:center; padding:40px; color:var(--text-muted); font-size:14px;">Заказы не найдены.</div>`;
+        return;
+      }
+
+      filtered.forEach(order => {
+        const crewName = crews.find(c => c.id === order.crewId)?.name || 'Не назначена';
+        const crewPct = crews.find(c => c.id === order.crewId)?.pct || 50;
+        const crewShare = order.status === 'done' ? Math.round(order.actPrice * (crewPct/100)) : Math.round(order.estPrice * (crewPct/100));
+        const profitShare = (order.status === 'done' ? order.actPrice : order.estPrice) - crewShare;
+
+        const card = document.createElement('div');
+        card.className = 'order-card';
+        card.innerHTML = `
+          <div class="order-header">
+            <div class="order-title-group">
+              <span class="order-id">#${order.id}</span>
+              <span class="order-date">${order.date}</span>
+              <span class="badge badge-${order.status}">${getStatusName(order.status)}</span>
+            </div>
+            <div style="display:flex; gap:6px;">
+              <button class="btn btn-secondary btn-sm" onclick="editOrder('${order.id}')">Изменить</button>
+              <button class="btn btn-secondary btn-sm" onclick="openDocsModal('${order.id}')">Документы B2B</button>
+            </div>
+          </div>
+          <div class="order-body">
+            <div class="order-info-block">
+              <h5>Клиент</h5>
+              <p><strong>${order.clientName}</strong></p>
+              <p style="font-size:12px; color:var(--text-muted);">${order.clientPhone}</p>
+            </div>
+            <div class="order-info-block">
+              <h5>Локация</h5>
+              <p>${order.location}</p>
+            </div>
+            <div class="order-info-block">
+              <h5>Вид работ / Назначено</h5>
+              <p>${order.desc}</p>
+              <span class="tag">👷 ${crewName}</span>
+            </div>
+          </div>
+          <div class="order-footer">
+            <div class="order-finance">
+              <div class="finance-item">
+                <span>Предварительно:</span> <strong>${order.estPrice.toLocaleString()} сом</strong>
+              </div>
+              ${order.status === 'done' ? `
+                <div class="finance-item">
+                  <span>Оплачено факт:</span> <strong style="color:var(--color-success)">${order.actPrice.toLocaleString()} сом</strong>
+                </div>
+              ` : ''}
+              <div class="finance-item">
+                <span>Твоя чистая прибыль:</span> <strong style="color:var(--color-accent)">${profitShare.toLocaleString()} сом</strong>
+              </div>
+            </div>
+            <div class="order-actions">
+              ${order.status !== 'done' && order.status !== 'cancelled' ? `
+                <button class="btn btn-whatsapp btn-sm" onclick="dispatchToCrew('${order.id}')">Отправить мастеру</button>
+              ` : ''}
+              ${order.status === 'done' ? `
+                <button class="btn btn-whatsapp btn-sm" onclick="sendQualityControl('${order.id}')">Контроль качества</button>
+              ` : ''}
+              ${order.status === 'new' || order.status === 'assigned' ? `
+                <button class="btn btn-success btn-sm" onclick="completeOrderQuick('${order.id}')">Завершить</button>
+              ` : ''}
+            </div>
+          </div>
+        `;
+        list.appendChild(card);
+      });
+    }
+
+    function getStatusName(status) {
+      switch(status) {
+        case 'new': return 'Новый';
+        case 'assigned': return 'В работе';
+        case 'done': return 'Завершен';
+        case 'cancelled': return 'Отменен';
+      }
+    }
+
+    function filterOrders(status) {
+      currentFilter = status;
+      document.querySelectorAll('#status-filters button').forEach((btn, idx) => {
+        const statuses = ['all', 'new', 'assigned', 'done', 'cancelled'];
+        btn.classList.toggle('active', statuses[idx] === status);
+      });
+      renderOrdersList();
+    }
+
+    function searchOrders() {
+      searchQuery = document.getElementById('search-input').value;
+      renderOrdersList();
+    }
+
+    // Quick Crew Status on Right Side
+    function renderQuickCrewStatus() {
+      const container = document.getElementById('quick-crew-status');
+      container.innerHTML = '';
+      
+      crews.forEach(crew => {
+        const activeCount = orders.filter(o => o.crewId === crew.id && (o.status === 'assigned' || o.status === 'new')).length;
+        const row = document.createElement('div');
+        row.style.display = 'flex';
+        row.style.justifyContent = 'space-between';
+        row.style.alignItems = 'center';
+        row.style.fontSize = '13px';
+        row.innerHTML = `
+          <div style="display:flex; align-items:center; gap:8px;">
+            <span class="crew-status-dot status-${crew.status}"></span>
+            <span>${crew.name}</span>
+          </div>
+          <span style="color:var(--text-muted);">${activeCount > 0 ? `В работе: ${activeCount}` : 'Свободен'}</span>
+        `;
+        container.appendChild(row);
+      });
+    }
+
+    // Crews Tab rendering
+    function renderCrews() {
+      const container = document.getElementById('crews-list');
+      container.innerHTML = '';
+
+      crews.forEach(crew => {
+        // Calculate crew stats
+        const completedJobs = orders.filter(o => o.crewId === crew.id && o.status === 'done');
+        const totalEarned = completedJobs.reduce((sum, o) => sum + (o.actPrice || 0), 0);
+        const crewPayout = Math.round(totalEarned * (crew.pct / 100));
+        const profitBrought = totalEarned - crewPayout;
+
+        const card = document.createElement('div');
+        card.className = 'crew-card';
+        card.innerHTML = `
+          <div class="crew-header">
+            <span class="crew-name">${crew.name}</span>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <span class="crew-status-dot status-${crew.status}"></span>
+              <span style="font-size:11px; text-transform:uppercase; color:var(--text-muted);">${crew.status === 'free' ? 'Свободен' : crew.status === 'busy' ? 'Занят' : 'Выходной'}</span>
+            </div>
+          </div>
+          <div style="font-size:13px; color:var(--text-muted); margin-bottom:12px;">Тел: ${crew.phone || 'Не указан'}</div>
+          <div class="crew-stats">
+            <div class="crew-stat-row">
+              <span>Ставка:</span> <strong>${crew.pct}% от заказа</strong>
+            </div>
+            <div class="crew-stat-row">
+              <span>Выполнено заказов:</span> <strong>${completedJobs.length} шт</strong>
+            </div>
+            <div class="crew-stat-row">
+              <span>Заработано мастерами:</span> <strong style="color:var(--color-warning)">${crewPayout.toLocaleString()} сом</strong>
+            </div>
+            <div class="crew-stat-row">
+              <span>Прибыль владельца:</span> <strong style="color:var(--color-success)">${profitBrought.toLocaleString()} сом</strong>
+            </div>
+          </div>
+          <div style="display:flex; gap:8px;">
+            <button class="btn btn-secondary btn-sm" style="flex-grow:1;" onclick="editCrew('${crew.id}')">Изменить</button>
+            <button class="btn btn-danger btn-sm" onclick="deleteCrew('${crew.id}')">Удалить</button>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    // Modal Orders Functions
+    function openNewOrderModal() {
+      document.getElementById('order-modal-title').textContent = 'Новый заказ';
+      document.getElementById('order-form-id').value = '';
+      document.getElementById('order-client-name').value = '';
+      document.getElementById('order-client-phone').value = '';
+      document.getElementById('order-location').value = '';
+      document.getElementById('order-desc').value = '';
+      document.getElementById('order-crew-select').value = '';
+      document.getElementById('order-status-select').value = 'new';
+      document.getElementById('order-est-price').value = '2500';
+      document.getElementById('order-act-price').value = '0';
+      
+      document.getElementById('order-modal').classList.add('active');
+    }
+
+    function editOrder(orderId) {
+      const order = orders.find(o => o.id === orderId);
+      if (!order) return;
+
+      document.getElementById('order-modal-title').textContent = `Изменить заказ #${order.id}`;
+      document.getElementById('order-form-id').value = order.id;
+      document.getElementById('order-client-name').value = order.clientName;
+      document.getElementById('order-client-phone').value = order.clientPhone;
+      document.getElementById('order-location').value = order.location;
+      document.getElementById('order-desc').value = order.desc;
+      document.getElementById('order-crew-select').value = order.crewId || '';
+      document.getElementById('order-status-select').value = order.status;
+      document.getElementById('order-est-price').value = order.estPrice;
+      document.getElementById('order-act-price').value = order.actPrice || 0;
+
+      document.getElementById('order-modal').classList.add('active');
+    }
+
+    function closeOrderModal() {
+      document.getElementById('order-modal').classList.remove('active');
+    }
+
+    function saveOrder() {
+      const idInput = document.getElementById('order-form-id').value;
+      const clientName = document.getElementById('order-client-name').value || 'Клиент с сайта';
+      const clientPhone = document.getElementById('order-client-phone').value || '';
+      const location = document.getElementById('order-location').value || 'Бишкек';
+      const desc = document.getElementById('order-desc').value || 'Техническое обслуживание';
+      const crewId = document.getElementById('order-crew-select').value;
+      const status = document.getElementById('order-status-select').value;
+      const estPrice = parseInt(document.getElementById('order-est-price').value) || 2500;
+      const actPrice = parseInt(document.getElementById('order-act-price').value) || 0;
+
+      if (idInput) {
+        // Edit Mode
+        const order = orders.find(o => o.id === idInput);
+        if (order) {
+          order.clientName = clientName;
+          order.clientPhone = clientPhone;
+          order.location = location;
+          order.desc = desc;
+          order.crewId = crewId;
+          order.status = status;
+          order.estPrice = estPrice;
+          order.actPrice = actPrice || (status === 'done' ? estPrice : 0);
+        }
+      } else {
+        // Create Mode
+        const newId = (orders.length > 0) ? (Math.max(...orders.map(o => parseInt(o.id))) + 1).toString() : "1001";
+        const today = new Date().toISOString().split('T')[0];
+        orders.push({
+          id: newId,
+          clientName,
+          clientPhone,
+          location,
+          desc,
+          crewId,
+          status,
+          estPrice,
+          actPrice: status === 'done' ? estPrice : actPrice,
+          date: today
+        });
+      }
+
+      // Auto update crew status
+      if (crewId) {
+        const crew = crews.find(c => c.id === crewId);
+        if (crew) {
+          crew.status = (status === 'new' || status === 'assigned') ? 'busy' : 'free';
+        }
+      }
+
+      saveToLocalStorage();
+      closeOrderModal();
+      renderDashboard();
+    }
+
+    function completeOrderQuick(orderId) {
+      const order = orders.find(o => o.id === orderId);
+      if (order) {
+        order.status = 'done';
+        order.actPrice = order.estPrice; // Assume paid actual is expected
+        
+        // Free up the crew
+        if (order.crewId) {
+          const crew = crews.find(c => c.id === order.crewId);
+          if (crew) crew.status = 'free';
+        }
+
+        saveToLocalStorage();
+        renderDashboard();
+      }
+    }
+
+    // Modal Crew Functions
+    function openNewCrewModal() {
+      document.getElementById('crew-modal-title').textContent = 'Добавить бригаду';
+      document.getElementById('crew-form-id').value = '';
+      document.getElementById('crew-name-input').value = '';
+      document.getElementById('crew-phone-input').value = '';
+      document.getElementById('crew-pct-input').value = '50';
+      document.getElementById('crew-status-select').value = 'free';
+
+      document.getElementById('crew-modal').classList.add('active');
+    }
+
+    // Edit Crew function
+    function editCrew(crewId) {
+      const crew = crews.find(c => c.id === crewId);
+      if (!crew) return;
+
+      document.getElementById('crew-modal-title').textContent = 'Изменить бригаду';
+      document.getElementById('crew-form-id').value = crew.id;
+      document.getElementById('crew-name-input').value = crew.name;
+      document.getElementById('crew-phone-input').value = crew.phone || '';
+      document.getElementById('crew-pct-input').value = crew.pct;
+      document.getElementById('crew-status-select').value = crew.status;
+
+      document.getElementById('crew-modal').classList.add('active');
+    }
+
+    function closeCrewModal() {
+      document.getElementById('crew-modal').classList.remove('active');
+    }
+
+    function saveCrew() {
+      const idInput = document.getElementById('crew-form-id').value;
+      const name = document.getElementById('crew-name-input').value;
+      const phone = document.getElementById('crew-phone-input').value;
+      const pct = parseInt(document.getElementById('crew-pct-input').value) || 50;
+      const status = document.getElementById('crew-status-select').value;
+
+      if (!name) {
+        alert('Введите название бригады / имя мастера');
+        return;
+      }
+
+      if (idInput) {
+        const crew = crews.find(c => c.id === idInput);
+        if (crew) {
+          crew.name = name;
+          crew.phone = phone;
+          crew.pct = pct;
+          crew.status = status;
+        }
+      } else {
+        const newId = 'crew-' + Date.now();
+        crews.push({ id: newId, name, phone, pct, status });
+      }
+
+      saveToLocalStorage();
+      closeCrewModal();
+      renderCrews();
+      updateCrewSelects();
+      renderQuickCrewStatus();
+    }
+
+    function deleteCrew(crewId) {
+      if (confirm('Вы уверены, что хотите удалить эту бригаду?')) {
+        crews = crews.filter(c => c.id !== crewId);
+        saveToLocalStorage();
+        renderCrews();
+        updateCrewSelects();
+        renderQuickCrewStatus();
+      }
+    }
+
+    function updateCrewSelects() {
+      const select = document.getElementById('order-crew-select');
+      select.innerHTML = '<option value="">Не назначена</option>';
+      crews.forEach(crew => {
+        const opt = document.createElement('option');
+        opt.value = crew.id;
+        opt.textContent = crew.name;
+        select.appendChild(opt);
+      });
+    }
+
+    // WhatsApp Automation Dispatch
+    function dispatchToCrew(orderId) {
+      const order = orders.find(o => o.id === orderId);
+      if (!order) return;
+
+      const crew = crews.find(c => c.id === order.crewId);
+      if (!crew) {
+        alert('Сначала назначьте бригаду на этот заказ!');
+        return;
+      }
+
+      const crewShare = Math.round(order.estPrice * (crew.pct / 100));
+
+      const messageText = `Привет! Назначен новый заказ #${order.id}.
+📍 Адрес: ${order.location}
+📞 Клиент: ${order.clientName} (${order.clientPhone})
+🛠 Работа: ${order.desc}
+💰 Стоимость (ориентир): ${order.estPrice} сом
+👷 Твоя доля (${crew.pct}%): ${crewShare} сом.
+
+Напиши как приедешь на объект и по завершении работ!`;
+
+      const encoded = encodeURIComponent(messageText);
+      const phoneClean = crew.phone ? crew.phone.replace(/[^0-9+]/g, '') : '';
+      
+      if (!phoneClean) {
+        navigator.clipboard.writeText(messageText);
+        alert('Номер телефона мастера не указан. Текст заказа скопирован в буфер обмена!');
+        window.open(`https://wa.me/?text=${encoded}`, '_blank');
+      } else {
+        window.open(`https://wa.me/${phoneClean}?text=${encoded}`, '_blank');
+      }
+    }
+
+    // Quality Control Callout (Anti-theft)
+    function sendQualityControl(orderId) {
+      const order = orders.find(o => o.id === orderId);
+      if (!order) return;
+
+      const crew = crews.find(c => c.id === order.crewId);
+      const crewLabel = crew ? crew.name : 'наш мастер';
+
+      const messageText = `Здравствуйте, ${order.clientName}! Вас приветствует служба контроля качества ClimaFlow. 😊
+Мы рады, что вы выбрали нас! Наш мастер (${crewLabel}) завершил обслуживание вашего кондиционера.
+Всё ли вам понравилось? Корректно ли работает прибор?
+Подскажите, какую итоговую сумму вы оплатили мастеру? Это нужно для подтверждения гарантии по чеку на 12 месяцев. Спасибо!`;
+
+      const encoded = encodeURIComponent(messageText);
+      const phoneClean = order.clientPhone ? order.clientPhone.replace(/[^0-9+]/g, '') : '';
+
+      if (!phoneClean) {
+        navigator.clipboard.writeText(messageText);
+        alert('Номер телефона клиента не указан в правильном формате. Сообщение скопировано в буфер обмена!');
+        window.open(`https://wa.me/?text=${encoded}`, '_blank');
+      } else {
+        window.open(`https://wa.me/${phoneClean}?text=${encoded}`, '_blank');
+      }
+    }
+
+    // Regex Parser for Incoming Leads
+    function importFromWhatsapp() {
+      const text = document.getElementById('import-textarea').value.trim();
+      if (!text) {
+        alert('Вставьте текст сообщения из WhatsApp!');
+        return;
+      }
+
+      let clientName = 'Клиент с сайта';
+      let clientPhone = '';
+      let location = 'Бишкек';
+      let desc = 'Обслуживание кондиционеров';
+      let estPrice = 2500;
+
+      if (text.includes('онлайн-диагностику') || text.includes('результаты диагностики:')) {
+        const issueMatch = text.match(/Какая проблема:\s*\*([^*]+)\*/);
+        const typeMatch = text.match(/Тип прибора:\s*\*([^*]+)\*/);
+        const urgencyMatch = text.match(/Срочность:\s*\*([^*]+)\*/);
+        const locMatch = text.match(/Локация:\s*\*([^*]+)\*/);
+
+        const issue = issueMatch ? issueMatch[1].trim() : 'Проблема не указана';
+        const type = typeMatch ? typeMatch[1].trim() : 'Настенный';
+        const urgency = urgencyMatch ? urgencyMatch[1].trim() : 'Обычная';
+        location = locMatch ? locMatch[1].trim() : 'Бишкек';
+
+        desc = `Диагностика: ${issue} (${type}). Срочность: ${urgency}`;
+        estPrice = 2000;
+      }
+      else if (text.includes('рассчитал стоимость') || text.includes('Предварительная стоимость:')) {
+        const serviceMatch = text.match(/Услуга:\s*\*([^*]+)\*/);
+        const qtyMatch = text.match(/Количество приборов:\s*\*([^*]+)\*/);
+        const priceMatch = text.match(/Предварительная стоимость:\s*\*([^*0-9]+)?([0-9\s]+)\s*сом\*/);
+
+        const service = serviceMatch ? serviceMatch[1].trim() : 'Чистка';
+        const qty = qtyMatch ? qtyMatch[1].trim() : '1 шт.';
+        const price = priceMatch ? parseInt(priceMatch[2].replace(/\s/g, '')) : 2500;
+
+        desc = `Калькулятор: ${service}, объем: ${qty}`;
+        estPrice = price;
+      }
+      else if (text.includes('оставил заявку') || text.includes('номер телефона:')) {
+        const nameMatch = text.match(/Меня зовут\s*\*([^*]+)\*/);
+        const phoneMatch = text.match(/номер телефона:\s*\*([^*]+)\*/);
+
+        clientName = nameMatch ? nameMatch[1].trim() : 'Клиент';
+        clientPhone = phoneMatch ? phoneMatch[1].trim() : '';
+        desc = 'Заявка на звонок / Консультация по ремонту';
+      }
+      else {
+        const nameMatch = text.match(/(?:Имя|Name| зовут)[:\s]+([^\n\r]+)/i);
+        const phoneMatch = text.match(/(?:\+?996|[0-9]{9,15})/);
+        
+        if (nameMatch) clientName = nameMatch[1].trim();
+        if (phoneMatch) clientPhone = phoneMatch[0].trim();
+        desc = text.substring(0, 100) + '...';
+      }
+
+      openNewOrderModal();
+      document.getElementById('order-client-name').value = clientName;
+      document.getElementById('order-client-phone').value = clientPhone;
+      document.getElementById('order-location').value = location;
+      document.getElementById('order-desc').value = desc;
+      document.getElementById('order-est-price').value = estPrice;
+
+      document.getElementById('import-textarea').value = '';
+    }
+
+    // Company Settings
+    function saveCompanyDetails() {
+      company.name = document.getElementById('company-name').value;
+      company.inn = document.getElementById('company-inn').value;
+      company.bank = document.getElementById('company-bank').value;
+      company.rs = document.getElementById('company-rs').value;
+
+      saveToLocalStorage();
+      alert('Реквизиты сохранены!');
+    }
+
+    // B2B Docs Modal Layouts
+    function openDocsModal(orderId) {
+      selectedOrderForDocs = orders.find(o => o.id === orderId);
+      if (!selectedOrderForDocs) return;
+
+      document.getElementById('docs-modal').classList.add('active');
+      generateInvoiceView();
+    }
+
+    function closeDocsModal() {
+      document.getElementById('docs-modal').classList.remove('active');
+    }
+
+    // Generate Invoice HTML
+    function generateInvoiceView() {
+      activeDocType = 'invoice';
+      const order = selectedOrderForDocs;
+      const target = document.getElementById('document-preview-target');
+      
+      const subtotal = Math.round(order.actPrice || order.estPrice);
+      const nds = Math.round(subtotal * 0.12);
+      const total = subtotal + nds;
+
+      target.innerHTML = `
+        <div style="font-family: Arial, sans-serif; font-size: 11px; line-height: 1.4; color: #000; padding: 10px;">
+          <!-- Header info -->
+          <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px; border: 1px solid #000;">
+            <tr>
+              <td colspan="2" style="border: 1px solid #000; padding: 5px; width: 50%;">
+                <div style="font-size: 9px; color: #555;">Получатель</div>
+                <strong>${company.name}</strong>
+              </td>
+              <td style="border: 1px solid #000; padding: 5px; width: 20%;">
+                <div style="font-size: 9px; color: #555;">ИНН</div>
+                ${company.inn}
+              </td>
+              <td style="border: 1px solid #000; padding: 5px; width: 30%;">
+                <div style="font-size: 9px; color: #555;">Р/счет №</div>
+                ${company.rs}
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2" style="border: 1px solid #000; padding: 5px;">
+                <div style="font-size: 9px; color: #555;">Банк получателя</div>
+                ${company.bank}
+              </td>
+              <td style="border: 1px solid #000; padding: 5px;">
+                <div style="font-size: 9px; color: #555;">БИК</div>
+                103030
+              </td>
+              <td style="border: 1px solid #000; padding: 5px;">
+                &nbsp;
+              </td>
+            </tr>
+          </table>
+
+          <div style="font-size: 15px; font-weight: bold; border-bottom: 2px solid #000; padding-bottom: 8px; margin: 15px 0;">
+            Счет на оплату № ${order.id} от ${order.date}
+          </div>
+
+          <table style="width: 100%; margin-bottom: 20px; font-size: 11px;">
+            <tr>
+              <td style="width: 90px; font-weight: bold;">Поставщик:</td>
+              <td>ИП Сыдыков Н. Б., ИНН ${company.inn}, Бишкек</td>
+            </tr>
+            <tr>
+              <td style="font-weight: bold; padding-top: 5px;">Покупатель:</td>
+              <td style="padding-top: 5px;">${order.clientName}, Тел: ${order.clientPhone}, Адрес: ${order.location}</td>
+            </tr>
+          </table>
+
+          <table style="width: 100%; border-collapse: collapse; margin-bottom: 15px;">
+            <thead>
+              <tr style="background-color: #f2f2f2;">
+                <th style="border: 1px solid #000; padding: 6px; text-align: center; width: 5%;">№</th>
+                <th style="border: 1px solid #000; padding: 6px; text-align: left; width: 60%;">Наименование услуг</th>
+                <th style="border: 1px solid #000; padding: 6px; text-align: center; width: 10%;">Кол-во</th>
+                <th style="border: 1px solid #000; padding: 6px; text-align: center; width: 10%;">Ед.</th>
+                <th style="border: 1px solid #000; padding: 6px; text-align: right; width: 15%;">Цена (сом)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="border: 1px solid #000; padding: 6px; text-align: center;">1</td>
+                <td style="border: 1px solid #000; padding: 6px;">${order.desc}</td>
+                <td style="border: 1px solid #000; padding: 6px; text-align: center;">1</td>
+                <td style="border: 1px solid #000; padding: 6px; text-align: center;">услуга</td>
+                <td style="border: 1px solid #000; padding: 6px; text-align: right;">${subtotal.toLocaleString()}</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <table style="width: 40%; margin-left: auto; border-collapse: collapse; margin-bottom: 20px;">
+            <tr>
+              <td style="padding: 3px; text-align: right;">Итого без налогов:</td>
+              <td style="padding: 3px; text-align: right; width: 90px;">${subtotal.toLocaleString()} сом</td>
+            </tr>
+            <tr>
+              <td style="padding: 3px; text-align: right;">НДС 12%:</td>
+              <td style="padding: 3px; text-align: right;">${nds.toLocaleString()} сом</td>
+            </tr>
+            <tr style="font-weight: bold; font-size: 12px;">
+              <td style="padding: 3px; text-align: right;">Всего к оплате:</td>
+              <td style="padding: 3px; text-align: right;">${total.toLocaleString()} сом</td>
+            </tr>
+          </table>
+
+          <div style="font-weight: bold; margin-bottom: 25px; border-bottom: 1px solid #ccc; padding-bottom: 10px;">
+            Всего наименований 1, на сумму ${total.toLocaleString()} сом.
+          </div>
+
+          <table style="width: 100%; margin-top: 30px;">
+            <tr>
+              <td style="width: 15%;">Руководитель</td>
+              <td style="width: 35%; border-bottom: 1px solid #000;">(Сыдыков Н. Б.)</td>
+              <td style="width: 15%; text-align: center;">Бухгалтер</td>
+              <td style="width: 35%; border-bottom: 1px solid #000;">(Сыдыков Н. Б.)</td>
+            </tr>
+          </table>
+        </div>
+      `;
+    }
+
+    // Generate Act HTML
+    function generateActView() {
+      activeDocType = 'act';
+      const order = selectedOrderForDocs;
+      const target = document.getElementById('document-preview-target');
+      
+      const subtotal = Math.round(order.actPrice || order.estPrice);
+      const nds = Math.round(subtotal * 0.12);
+      const total = subtotal + nds;
+
+      target.innerHTML = `
+        <div style="font-family: Arial, sans-serif; font-size: 11px; line-height: 1.4; color: #000; padding: 10px;">
+          <div style="font-size: 15px; font-weight: bold; text-align: center; margin-bottom: 20px;">
+            Акт выполненных работ (оказанных услуг) № ${order.id}<br>от ${order.date} г.
+          </div>
+
+          <table style="width: 100%; margin-bottom: 20px; font-size: 11px; border-collapse: collapse;">
+            <tr>
+              <td style="width: 80px; font-weight: bold; vertical-align: top; padding-bottom: 10px;">Исполнитель:</td>
+              <td style="padding-bottom: 10px;"><strong>${company.name}</strong>, ИНН: ${company.inn}, р/счет ${company.rs} в Банке: ${company.bank}</td>
+            </tr>
+            <tr>
+              <td style="font-weight: bold; vertical-align: top;">Заказчик:</td>
+              <td><strong>${order.clientName}</strong>, Тел: ${order.clientPhone}, Адрес: ${order.location}</td>
+            </tr>
+          </table>
+
+          <table style="width: 100%; border-collapse: collapse; margin-bottom: 15px;">
+            <thead>
+              <tr style="background-color: #f2f2f2;">
+                <th style="border: 1px solid #000; padding: 6px; text-align: center; width: 5%;">№</th>
+                <th style="border: 1px solid #000; padding: 6px; text-align: left; width: 60%;">Наименование выполненных работ, оказанных услуг</th>
+                <th style="border: 1px solid #000; padding: 6px; text-align: center; width: 10%;">Кол-во</th>
+                <th style="border: 1px solid #000; padding: 6px; text-align: center; width: 10%;">Ед.</th>
+                <th style="border: 1px solid #000; padding: 6px; text-align: right; width: 15%;">Всего (сом)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="border: 1px solid #000; padding: 6px; text-align: center;">1</td>
+                <td style="border: 1px solid #000; padding: 6px;">${order.desc}</td>
+                <td style="border: 1px solid #000; padding: 6px; text-align: center;">1</td>
+                <td style="border: 1px solid #000; padding: 6px; text-align: center;">услуга</td>
+                <td style="border: 1px solid #000; padding: 6px; text-align: right;">${subtotal.toLocaleString()}</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <table style="width: 40%; margin-left: auto; border-collapse: collapse; margin-bottom: 20px;">
+            <tr>
+              <td style="padding: 3px; text-align: right;">Итого без налогов:</td>
+              <td style="padding: 3px; text-align: right; width: 90px;">${subtotal.toLocaleString()} сом</td>
+            </tr>
+            <tr>
+              <td style="padding: 3px; text-align: right;">НДС 12%:</td>
+              <td style="padding: 3px; text-align: right;">${nds.toLocaleString()} сом</td>
+            </tr>
+            <tr style="font-weight: bold; font-size: 12px;">
+              <td style="padding: 3px; text-align: right;">Всего с НДС:</td>
+              <td style="padding: 3px; text-align: right;">${total.toLocaleString()} сом</td>
+            </tr>
+          </table>
+
+          <div style="margin-bottom: 25px; line-height: 1.5;">
+            Вышеперечисленные работы (услуги) выполнены полностью и в срок. Заказчик претензий по объему, качеству и срокам оказания услуг не имеет.<br>
+            Итого на сумму: <strong>${total.toLocaleString()} сом</strong>.
+          </div>
+
+          <table style="width: 100%; margin-top: 30px;">
+            <tr>
+              <td style="width: 50%;">
+                <strong>Исполнитель:</strong><br>
+                ${company.name}<br><br>
+                Подпись: ______________________
+              </td>
+              <td style="width: 50%;">
+                <strong>Заказчик:</strong><br>
+                ${order.clientName}<br><br>
+                Подпись: ______________________
+              </td>
+            </tr>
+          </table>
+        </div>
+      `;
+    }
+
+    function printDoc() {
+      const content = document.getElementById('document-preview-target').innerHTML;
+      const printContainer = document.getElementById('print-container');
+      printContainer.innerHTML = content;
+      window.print();
+    }
+
+    // CSV Exporter
+    function exportDataToCSV() {
+      let csvContent = "data:text/csv;charset=utf-8,\uFEFF";
+      csvContent += "ID;Дата;Клиент;Телефон;Адрес;Описание;Бригада;Статус;Сумма предв;Сумма факт\n";
+      
+      orders.forEach(o => {
+        const crewName = crews.find(c => c.id === o.crewId)?.name || 'Не назначена';
+        const row = [
+          o.id,
+          o.date,
+          o.clientName.replace(/;/g, ','),
+          o.clientPhone,
+          o.location.replace(/;/g, ','),
+          o.desc.replace(/;/g, ','),
+          crewName.replace(/;/g, ','),
+          o.status,
+          o.estPrice,
+          o.actPrice
+        ].join(";");
+        csvContent += row + "\n";
+      });
+
+      const encodedUri = encodeURI(csvContent);
+      const link = document.createElement("a");
+      link.setAttribute("href", encodedUri);
+      link.setAttribute("download", `ClimaFlow_Orders_${new Date().toISOString().split('T')[0]}.csv`);
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+
+    function clearAllData() {
+      if (confirm('ВНИМАНИЕ! Вы действительно хотите полностью сбросить базу данных? Это сотрет все ваши заказы и добавленные бригады.')) {
+        localStorage.clear();
+        crews = DEFAULT_CREWS;
+        orders = [];
+        company = DEFAULT_COMPANY;
+        saveToLocalStorage();
+        renderDashboard();
+        renderCrews();
+        updateCrewSelects();
+        alert('База данных успешно очищена!');
+      }
+    }
+  </script>
+</body>
+</html>
