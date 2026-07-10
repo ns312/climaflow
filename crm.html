@@ -1078,11 +1078,11 @@
     }
 
     function verifyLogin() {
-      const login = document.getElementById('auth-login').value;
-      const pass = document.getElementById('auth-password').value;
+      const login = document.getElementById('auth-login').value.trim();
+      const pass = document.getElementById('auth-password').value.trim();
       const errorDiv = document.getElementById('auth-error');
 
-      if (login === 'Nursultan' && pass === 'Qazxswedc939618') {
+      if (login.toLowerCase() === 'nursultan' && pass === 'Qazxswedc939618') {
         localStorage.setItem('cf_logged_in', 'true');
         sessionStorage.setItem('cf_logged_in', 'true');
         document.getElementById('login-overlay').style.display = 'none';
