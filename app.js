@@ -441,4 +441,42 @@ document.addEventListener('DOMContentLoaded', () => {
       slideProblems();
     }
   });
+
+  // ==========================================
+  // 9. Google Ads & Analytics Conversion Tracking
+  // ==========================================
+  function trackEvent(eventName, category) {
+    if (typeof gtag === 'function') {
+      gtag('event', eventName, {
+        'event_category': category,
+        'event_label': window.location.pathname
+      });
+      console.log(`[ClimaFlow Track] Event sent: ${eventName}`);
+    } else {
+      console.log(`[ClimaFlow Track] Event logged: ${eventName} (Google tag not loaded yet)`);
+    }
+  }
+
+  // Отслеживание кликов по всем ссылкам WhatsApp
+  document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
+    link.addEventListener('click', () => {
+      trackEvent('click_whatsapp', 'Lead');
+    });
+  });
+
+  // Отслеживание кликов по всем кнопкам «Позвонить»
+  document.querySelectorAll('a[href^="tel:"]').forEach(link => {
+    link.addEventListener('click', () => {
+      trackEvent('click_phone', 'Lead');
+    });
+  });
+
+  // Отслеживание отправки контактной формы
+  const leadForm = document.getElementById('main-contact-form');
+  if (leadForm) {
+    leadForm.addEventListener('submit', () => {
+      trackEvent('submit_lead_form', 'Form');
+    });
+  }
 });
+
