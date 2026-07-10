@@ -719,6 +719,23 @@
 </head>
 <body>
 
+  <!-- AUTH LOGIN OVERLAY -->
+  <div id="login-overlay" style="position:fixed; top:0; left:0; right:0; bottom:0; background:#0b0f19; z-index:9999; display:flex; align-items:center; justify-content:center; flex-direction:column; background-image: radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.15) 0px, transparent 50%), radial-gradient(at 100% 100%, rgba(6, 182, 212, 0.15) 0px, transparent 50%);">
+    <div style="background:rgba(17, 24, 39, 0.85); backdrop-filter:blur(10px); border:1px solid rgba(255,255,255,0.08); padding:35px; border-radius:16px; width:100%; max-width:400px; box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);">
+      <h3 style="font-family:'Outfit', sans-serif; font-size:24px; font-weight:800; color:#fff; text-align:center; margin-bottom:24px; letter-spacing: -0.5px;">ClimaFlow CRM</h3>
+      <div style="margin-bottom: 16px;">
+        <label style="display:block; font-size:13px; font-weight:600; color:#9ca3af; margin-bottom:6px;">Логин</label>
+        <input type="text" class="form-control" id="auth-login" placeholder="Nursultan">
+      </div>
+      <div style="margin-bottom: 20px;">
+        <label style="display:block; font-size:13px; font-weight:600; color:#9ca3af; margin-bottom:6px;">Пароль</label>
+        <input type="password" class="form-control" id="auth-password" placeholder="••••••••" onkeydown="if(event.key==='Enter') verifyLogin()">
+      </div>
+      <button class="btn btn-primary" style="width:100%; padding:12px;" onclick="verifyLogin()">Войти в систему</button>
+      <div id="auth-error" style="color:#ef4444; font-size:13px; text-align:center; margin-top:12px; display:none;">Неверный логин или пароль!</div>
+    </div>
+  </div>
+
   <header>
     <div class="header-content">
       <a href="#" class="logo">
@@ -738,9 +755,14 @@
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
           Настройки
         </button>
+        <button class="tab-btn" onclick="logout()" style="color:var(--color-danger);">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"></path></svg>
+          Выйти
+        </button>
       </div>
     </div>
   </header>
+
 
   <div class="container">
     
@@ -1046,12 +1068,43 @@
     let selectedOrderForDocs = null;
     let activeDocType = 'invoice'; // invoice or act
 
+    // Auth system
+    function checkAuth() {
+      const isLoggedIn = localStorage.getItem('cf_logged_in') || sessionStorage.getItem('cf_logged_in');
+      if (isLoggedIn === 'true') {
+        const overlay = document.getElementById('login-overlay');
+        if (overlay) overlay.style.display = 'none';
+      }
+    }
+
+    function verifyLogin() {
+      const login = document.getElementById('auth-login').value;
+      const pass = document.getElementById('auth-password').value;
+      const errorDiv = document.getElementById('auth-error');
+
+      if (login === 'Nursultan' && pass === 'Qazxswedc939618') {
+        localStorage.setItem('cf_logged_in', 'true');
+        sessionStorage.setItem('cf_logged_in', 'true');
+        document.getElementById('login-overlay').style.display = 'none';
+      } else {
+        errorDiv.style.display = 'block';
+      }
+    }
+
+    function logout() {
+      localStorage.removeItem('cf_logged_in');
+      sessionStorage.removeItem('cf_logged_in');
+      window.location.reload();
+    }
+
     // Lifecycle
     window.onload = function() {
+      checkAuth();
       saveToLocalStorage();
       renderDashboard();
       updateCrewSelects();
     };
+
 
     function saveToLocalStorage() {
       localStorage.setItem('cf_crews', JSON.stringify(crews));
