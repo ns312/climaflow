@@ -877,6 +877,94 @@ def send_telegram_notification(lead_info, phone_number):
 # =====================================================================
 # Логика Gemini AI
 # =====================================================================
+def get_masters_schedule_summary(now):
+    conn = sqlite3.connect(DB_FILE)
+    cursor = conn.cursor()
+    cursor.execute("SELECT id, name, calendar_id FROM masters")
+    masters = [{"id": r[0], "name": r[1], "calendar_id": r[2]} for r in cursor.fetchall()]
+    conn.close()
+    
+    if not masters:
+        return "Нет доступных мастеров."
+        
+    today_str = now.strftime("%Y-%m-%d")
+    tomorrow = now + datetime.timedelta(days=1)
+    tomorrow_str = tomorrow.strftime("%Y-%m-%d")
+    
+    slots = [
+        {"label": "сегодня с 08:00 до 10:00", "start": f"{today_str}T08:00:00+06:00", "end": f"{today_str}T10:00:00+06:00", "day": "today"},
+        {"label": "сегодня с 10:00 до 12:00", "start": f"{today_str}T10:00:00+06:00", "end": f"{today_str}T12:00:00+06:00", "day": "today"},
+        {"label": "сегодня с 12:00 до 14:00", "start": f"{today_str}T12:00:00+06:00", "end": f"{today_str}T14:00:00+06:00", "day": "today"},
+        {"label": "сегодня с 14:00 до 16:00", "start": f"{today_str}T14:00:00+06:00", "end": f"{today_str}T16:00:00+06:00", "day": "today"},
+        {"label": "сегодня с 16:00 до 18:00", "start": f"{today_str}T16:00:00+06:00", "end": f"{today_str}T18:00:00+06:00", "day": "today"},
+        
+        {"label": "завтра с 08:00 до 10:00", "start": f"{tomorrow_str}T08:00:00+06:00", "end": f"{tomorrow_str}T10:00:00+06:00", "day": "tomorrow"},
+        {"label": "завтра с 10:00 до 12:00", "start": f"{tomorrow_str}T10:00:00+06:00", "end": f"{tomorrow_str}T12:00:00+06:00", "day": "tomorrow"},
+        {"label": "завтра с 12:00 до 14:00", "start": f"{tomorrow_str}T12:00:00+06:00", "end": f"{tomorrow_str}T14:00:00+06:00", "day": "tomorrow"},
+        {"label": "завтра с 14:00 до 16:00", "start": f"{tomorrow_str}T14:00:00+06:00", "end": f"{tomorrow_str}T16:00:00+06:00", "day": "tomorrow"},
+        {"label": "завтра с 16:00 до 18:00", "start": f"{tomorrow_str}T16:00:00+06:00", "end": f"{tomorrow_str}T18:00:00+06:00", "day": "tomorrow"},
+    ]
+    
+    service = get_calendar_service()
+    busy_data = {}
+    if service:
+        try:
+            body = {
+                "timeMin": f"{today_str}T08:00:00+06:00",
+                "timeMax": f"{tomorrow_str}T18:00:00+06:00",
+                "items": [{"id": m["calendar_id"]} for m in masters]
+            }
+            res = service.freebusy().query(body=body).execute()
+            busy_data = res.get("calendars", {})
+        except Exception as e:
+            print(f"[Calendar Summary Error] FreeBusy failed: {e}")
+            service = None
+            
+    summary_lines = []
+    
+    def overlaps(s1, e1, s2, e2):
+        return max(s1, s2) < min(e1, e2)
+        
+    for slot in slots:
+        slot_start = datetime.datetime.fromisoformat(slot["start"])
+        slot_end = datetime.datetime.fromisoformat(slot["end"])
+        
+        if slot["day"] == "today" and slot_start < now + datetime.timedelta(hours=1):
+            continue
+            
+        free_masters = []
+        for m in masters:
+            is_free = True
+            if service:
+                cal_info = busy_data.get(m["calendar_id"], {})
+                busy_slots = cal_info.get("busy", [])
+                for b in busy_slots:
+                    b_start = datetime.datetime.fromisoformat(b["start"])
+                    b_end = datetime.datetime.fromisoformat(b["end"])
+                    if overlaps(slot_start, slot_end, b_start, b_end):
+                        is_free = False
+                        break
+            else:
+                conn = sqlite3.connect(DB_FILE)
+                cursor = conn.cursor()
+                cursor.execute("""
+                    SELECT COUNT(*) FROM orders 
+                    WHERE master_id = ? AND date_time_slot = ? AND status NOT IN ('completed', 'cancelled')
+                """, (m["id"], slot["start"]))
+                if cursor.fetchone()[0] > 0:
+                    is_free = False
+                conn.close()
+                
+            if is_free:
+                free_masters.append(m["name"])
+                
+        if free_masters:
+            summary_lines.append(f"- {slot['label']}: СВОБОДНО (доступные мастера: {', '.join(free_masters)})")
+        else:
+            summary_lines.append(f"- {slot['label']}: ВСЕ ЗАНЯТЫ")
+            
+    return "\n".join(summary_lines)
+
 def get_ai_response(chat_id, user_message):
     history = get_chat_history(chat_id)
     
@@ -912,11 +1000,18 @@ def get_ai_response(chat_id, user_message):
         4: "пятница", 5: "суббота", 6: "воскресенье"
     }
     weekday = days[now.weekday()]
+    
+    # Считываем реальную занятость мастеров из календаря
+    schedule_summary = get_masters_schedule_summary(now)
+    
     time_info = (
         f"\n\nТекущее время сервера (Бишкек): {now.strftime('%H:%M')}, дата: {now.strftime('%d.%m.%Y')} ({weekday}).\n"
+        f"Текущая занятость и свободные слоты мастеров на сегодня и завтра:\n"
+        f"{schedule_summary}\n\n"
         f"КРИТИЧЕСКОЕ ПРАВИЛО ВРЕМЕНИ:\n"
         f"1. Если ты предлагаешь запись на СЕГОДНЯ, всегда предлагай время с запасом минимум в 1-2 часа от текущего времени (например, если сейчас 08:30, ты можешь предлагать время начиная с 10:00, 11:00 или 12:00). Но ни в коем случае не предлагай время, которое наступит менее чем через час.\n"
-        f"2. Если текущее время на сервере уже позже 18:00, НЕ предлагай выезд на сегодня — предлагай строго на завтра."
+        f"2. Если текущее время на сервере уже позже 18:00, НЕ предлагай выезд на сегодня — предлагай строго на завтра.\n"
+        f"3. Если на какой-то слот все мастера заняты (написано 'ВСЕ ЗАНЯТЫ'), ты НЕ имеешь права предлагать этот слот или соглашаться на него! Выбирай только те слоты, где есть свободные мастера. Если на сегодня все слоты заняты ('ВСЕ ЗАНЯТЫ'), предлагай запись строго на завтра!"
     )
     
     dynamic_system_prompt = FULL_SYSTEM_PROMPT + time_info
