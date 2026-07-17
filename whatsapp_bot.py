@@ -378,12 +378,18 @@ def get_master_last_location(master_id, date_str):
             
     return start_addr
 
-def select_best_master(address, start_time_iso, end_time_iso):
+def select_best_master(address, start_time_iso, end_time_iso, details=""):
     """
     Выбирает наиболее подходящего свободного мастера на основе рейтинга, чека и расстояния
     """
     masters = check_masters_availability(start_time_iso, end_time_iso)
     free_masters = [m for m in masters if m["is_free"]]
+    
+    # Бизнес-правило: Колонные и кассетные кондиционеры обслуживает только Ильгиз
+    is_column_or_cassette = any(word in details.lower() for word in ["колонн", "кассет", "column", "cassette"])
+    if is_column_or_cassette:
+        print("[Dispatch] Заказ содержит колонный или кассетный кондиционер. Фильтруем мастеров: только Ильгиз.")
+        free_masters = [m for m in free_masters if m["name"] == "Ильгиз"]
     
     if not free_masters:
         return None
@@ -815,7 +821,7 @@ def send_telegram_notification(lead_info, phone_number):
         print(f"[Dispatch] Обнаружен дубликат заказа для {phone} на слот {start_iso}. Пропуск создания.")
         return dup_row[0]
     
-    master = select_best_master(address, start_iso, end_iso)
+    master = select_best_master(address, start_iso, end_iso, details)
     
     if master:
         m_id = master["id"]
