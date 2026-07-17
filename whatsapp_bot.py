@@ -1119,7 +1119,9 @@ def start_bot():
             print("\nБот остановлен пользователем.")
             break
         except Exception as e:
+            import traceback
             print(f"[Error in loop]: {e}")
+            traceback.print_exc()
             time.sleep(5)
             
         time.sleep(2)
