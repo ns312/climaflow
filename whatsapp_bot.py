@@ -326,6 +326,8 @@ def get_master_last_location(master_id, date_str):
     """
     conn = sqlite3.connect(DB_FILE)
     cursor = conn.cursor()
+    
+    # 1. Сначала ищем последний заказ в SQLite на сегодня
     cursor.execute("""
         SELECT address FROM orders 
         WHERE master_id = ? AND date_time_slot LIKE ? AND status IN ('completed', 'arrived', 'en_route')
@@ -337,13 +339,20 @@ def get_master_last_location(master_id, date_str):
         conn.close()
         return addr
         
+    # 2. Если заказов в БД на сегодня нет, считываем настройки мастера
+    cursor.execute("SELECT start_address, calendar_id FROM masters WHERE id = ?", (master_id,))
+    master_info = cursor.fetchone()
+    conn.close()
+    
+    if not master_info:
+        return "Бишкек, центр"
+        
+    start_addr, cal_id = master_info
+    
+    # 3. Проверяем календарь Google на сегодня
     service = get_calendar_service()
     if service:
         try:
-            cursor.execute("SELECT start_address, calendar_id FROM masters WHERE id = ?", (master_id,))
-            start_addr, cal_id = cursor.fetchone()
-            conn.close()
-            
             time_min = f"{date_str}T00:00:00+06:00"
             time_max = f"{date_str}T23:59:59+06:00"
             
@@ -364,14 +373,9 @@ def get_master_last_location(master_id, date_str):
                     break
             if last_location:
                 return last_location
-            return start_addr
         except Exception as e:
             print(f"[Calendar Error] Failed to get last event location: {e}")
             
-    cursor.execute("SELECT start_address FROM masters WHERE id = ?", (master_id,))
-    row = cursor.fetchone()
-    start_addr = row[0] if row else "Бишкек, центр"
-    conn.close()
     return start_addr
 
 def select_best_master(address, start_time_iso, end_time_iso):
@@ -911,7 +915,7 @@ def get_ai_response(chat_id, user_message):
     time_info = (
         f"\n\nТекущее время сервера (Бишкек): {now.strftime('%H:%M')}, дата: {now.strftime('%d.%m.%Y')} ({weekday}).\n"
         f"КРИТИЧЕСКОЕ ПРАВИЛО ВРЕМЕНИ:\n"
-        f"1. Если ты предлагаешь запись на СЕГОДНЯ, всегда предлагай время с запасом минимум в 2-4 часа от текущего времени (например, если сейчас 15:36, предлагай интервал с 18:00 до 20:00 или позже, но ни в коем случае не 16:00!).\n"
+        f"1. Если ты предлагаешь запись на СЕГОДНЯ, всегда предлагай время с запасом минимум в 1-2 часа от текущего времени (например, если сейчас 08:30, ты можешь предлагать время начиная с 10:00, 11:00 или 12:00). Но ни в коем случае не предлагай время, которое наступит менее чем через час.\n"
         f"2. Если текущее время на сервере уже позже 18:00, НЕ предлагай выезд на сегодня — предлагай строго на завтра."
     )
     
