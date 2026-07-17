@@ -1,0 +1,44 @@
+{
+  "masters": [
+    {
+      "id": "ansar",
+      "name": "Ансар",
+      "calendar_id": "640140ed3ca03666d5cfbdbd96fecb20e7f4aba6d7913837742442cfd0a554e9@group.calendar.google.com",
+      "tg_chat_id": "",
+      "start_address": "Бишкек, бульвар Молодой Гвардии, район Ошского рынка",
+      "commission_percent": 50.0,
+      "rating": 4.7,
+      "average_check": 2500.0
+    },
+    {
+      "id": "ilgiz",
+      "name": "Ильгиз",
+      "calendar_id": "3ca9388cade6d71de65561fd51729b9bcea5f318297b5164d86be72c152a5a47@group.calendar.google.com",
+      "tg_chat_id": "6681503928",
+      "start_address": "Бишкек, улица Ахунбаева, район Медакадемии",
+      "commission_percent": 30.0,
+      "rating": 5.0,
+      "average_check": 3500.0
+    },
+    {
+      "id": "ulan",
+      "name": "Улан",
+      "calendar_id": "4bd5684ee6cd259fd8a2202356409e029cc50e020e14e1efe26327a21ce070c0@group.calendar.google.com",
+      "tg_chat_id": "",
+      "start_address": "Бишкек, жилой массив Ак-Ордо",
+      "commission_percent": 50.0,
+      "rating": 4.0,
+      "average_check": 2200.0
+    },
+    {
+      "id": "mateo",
+      "name": "Матео",
+      "calendar_id": "3908b0a864f14793d9f0ef42650eb61e24b209038630c9834f293184ab9dda58@group.calendar.google.com",
+      "tg_chat_id": "",
+      "start_address": "Бишкек, микрорайон Кок-Жар",
+      "commission_percent": 0.0,
+      "rating": 4.5,
+      "average_check": 2500.0
+    }
+  ]
+}
