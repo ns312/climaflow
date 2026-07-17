@@ -173,7 +173,8 @@ def parse_datetime_with_ai(time_str):
     """
     Преобразует русский текст даты/времени в ISO-формат с помощью Gemini
     """
-    now = datetime.datetime.now()
+    tz_utc6 = datetime.timezone(datetime.timedelta(hours=6))
+    now = datetime.datetime.now(tz_utc6)
     days = {
         0: "понедельник", 1: "вторник", 2: "среда", 3: "четверг",
         4: "пятница", 5: "суббота", 6: "воскресенье"
@@ -727,7 +728,8 @@ def check_upcoming_orders():
     conn = sqlite3.connect(DB_FILE)
     cursor = conn.cursor()
     
-    now = datetime.datetime.now()
+    tz_utc6 = datetime.timezone(datetime.timedelta(hours=6))
+    now = datetime.datetime.now(tz_utc6)
     t_start = (now + datetime.timedelta(minutes=25)).strftime("%Y-%m-%dT%H:%M:00+06:00")
     t_end = (now + datetime.timedelta(minutes=35)).strftime("%Y-%m-%dT%H:%M:00+06:00")
     
@@ -899,7 +901,8 @@ def get_ai_response(chat_id, user_message):
     contents.append({"role": "user", "parts": [{"text": current_text}]})
     
     import datetime
-    now = datetime.datetime.now()
+    tz_utc6 = datetime.timezone(datetime.timedelta(hours=6))
+    now = datetime.datetime.now(tz_utc6)
     days = {
         0: "понедельник", 1: "вторник", 2: "среда", 3: "четверг",
         4: "пятница", 5: "суббота", 6: "воскресенье"
