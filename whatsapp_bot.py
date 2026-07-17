@@ -1003,6 +1003,7 @@ def get_ai_response(chat_id, user_message):
     
     # Считываем реальную занятость мастеров из календаря
     schedule_summary = get_masters_schedule_summary(now)
+    print(f"[DEBUG Schedule Summary]\n{schedule_summary}")
     
     time_info = (
         f"\n\nТекущее время сервера (Бишкек): {now.strftime('%H:%M')}, дата: {now.strftime('%d.%m.%Y')} ({weekday}).\n"
