@@ -858,6 +858,7 @@ def send_telegram_notification(lead_info, phone_number):
                 ]
             }
             send_telegram_msg(m_tg, m_message, reply_markup=markup)
+        return m_name
     else:
         # Свободных мастеров нет
         tg_message = (
@@ -873,6 +874,7 @@ def send_telegram_notification(lead_info, phone_number):
             "Заказ нужно распределить вручную."
         )
         send_telegram_msg(TELEGRAM_CHAT_ID, tg_message)
+        return None
 
 # =====================================================================
 # Логика Gemini AI
@@ -1103,8 +1105,20 @@ def start_bot():
                             lead_match = re.search(r"\[LEAD_DATA:\s*(.*?)\]", ai_response)
                             if lead_match:
                                 lead_info = lead_match.group(1)
-                                send_telegram_notification(lead_info, chat_id)
+                                master_name = send_telegram_notification(lead_info, chat_id)
                                 ai_response = re.sub(r"\[LEAD_DATA:\s*(.*?)\]", "", ai_response).strip()
+                                
+                                is_kyrgyz = any(word in ai_response.lower() for word in ["саламатсызбы", "рахмат", "жакшы", "болот"])
+                                if master_name:
+                                    if is_kyrgyz:
+                                        ai_response += f"\n\nЗаявка кабыл алынды! Сизге дайындалган мастер: {master_name}. Ал сиз менен 1-2 мүнөттүн ичинде байланышат."
+                                    else:
+                                        ai_response += f"\n\nЗаявка успешно принята! Вашим мастером назначен: {master_name}. Он свяжется с вами в течение 1-2 минут для подтверждения."
+                                else:
+                                    if is_kyrgyz:
+                                        ai_response += f"\n\nЗаявка кабыл алынды! Менеджер сиз менен жакынкы убакта байланышат."
+                                    else:
+                                        ai_response += f"\n\nЗаявка принята в обработку! Менеджер свяжется с вами в ближайшее время для подтверждения деталей."
                             
                             # Отправка ответа в WhatsApp
                             send_whatsapp_message(chat_id, ai_response)
