@@ -596,7 +596,20 @@ def handle_telegram_update(update):
             cursor.execute("SELECT name FROM masters WHERE tg_chat_id = ?", (str(chat_id),))
             row = cursor.fetchone()
             if row:
-                send_telegram_msg(chat_id, f"Саламатсызбы, {row[0]}! Вы успешно подключены к боту ClimaFlow. Сюда будут приходить ваши заказы. Отправьте /stats для просмотра отчетов.")
+                instructions = (
+                    f"🤖 **Саламатсызбы, {row[0]}!** Вы успешно подключены к системе ClimaFlow.\n\n"
+                    f"📋 **Полезные команды:**\n"
+                    f"📊 /stats — Проверить вашу статистику (выполненные заказы, общая касса и ваш доход).\n"
+                    f"🔄 /start — Перезапуск и показ этой справки.\n\n"
+                    f"🛠️ **Как работать с заказами:**\n"
+                    f"1. При назначении заказа вам придет уведомление со всеми деталями.\n"
+                    f"2. Нажмите кнопку **[ 🚀 Я выехал ]**, когда отправитесь в путь.\n"
+                    f"3. По прибытии нажмите **[ 📍 Я на месте ]** и пришлите в чат **фото кондиционера ДО начала работ**.\n"
+                    f"4. После завершения работ пришлите **фото кондиционера ПОСЛЕ завершения**.\n"
+                    f"5. Введите итоговую сумму заказа (только цифры, например: `2800`).\n"
+                    f"6. Заказ автоматически закроется, а ваша статистика обновится!"
+                )
+                send_telegram_msg(chat_id, instructions)
             else:
                 send_telegram_msg(chat_id, f"Саламатсызбы! Чтобы привязать ваш аккаунт, отправьте этот ID администратору:\n`{chat_id}`")
             conn.close()
@@ -717,6 +730,21 @@ def start_telegram_polling():
     """
     offset = 0
     url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/getUpdates"
+    
+    # Установка подсказок команд в Telegram меню
+    try:
+        url_commands = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/setMyCommands"
+        payload = {
+            "commands": [
+                {"command": "stats", "description": "📊 Посмотреть мою статистику (доход, касса, заказы)"},
+                {"command": "start", "description": "🔄 Запустить / перезапустить бота"}
+            ]
+        }
+        requests.post(url_commands, json=payload, timeout=10)
+        print("[Telegram Polling] Командное меню успешно установлено в Telegram!")
+    except Exception as e:
+        print(f"[Telegram Polling Commands Setup Error] {e}")
+        
     print("[Telegram Polling] Запуск опроса...")
     while True:
         try:
