@@ -613,7 +613,7 @@ def handle_telegram_update(update):
             m_id, m_name, rating, avg_check, count, comm = master
             cursor.execute("SELECT SUM(final_price) FROM orders WHERE master_id = ? AND status = 'completed'", (m_id,))
             total_sum = cursor.fetchone()[0] or 0.0
-            my_share = total_sum * (comm / 100.0)
+            my_share = total_sum * ((100.0 - comm) / 100.0)
             
             stats_msg = (
                 f"📊 **Ваша статистика (Климат Севера):**\n"
@@ -623,7 +623,7 @@ def handle_telegram_update(update):
                 f"✅ **Выполнено заказов:** {count} шт.\n"
                 f"💵 **Средний чек:** {avg_check:.0f} сом\n"
                 f"💰 **Общая касса:** {total_sum:.0f} сом\n"
-                f"📈 **Ваш доход ({comm:.0f}%):** {my_share:.0f} сом\n"
+                f"📈 **Ваш доход ({100.0 - comm:.0f}%):** {my_share:.0f} сом\n"
                 f"▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬"
             )
             send_telegram_msg(chat_id, stats_msg)
