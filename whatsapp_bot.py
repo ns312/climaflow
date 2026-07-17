@@ -799,6 +799,22 @@ def send_telegram_notification(lead_info, phone_number):
     start_iso, end_iso = parse_datetime_with_ai(datetime_slot)
     print(f"[Dispatch] Распознанный слот: {start_iso} - {end_iso}")
     
+    # Проверяем на дубликаты заказов, созданные за последние 2 минуты для этого клиента
+    conn = sqlite3.connect(DB_FILE)
+    cursor = conn.cursor()
+    cursor.execute("""
+        SELECT masters.name FROM orders 
+        JOIN masters ON orders.master_id = masters.id
+        WHERE orders.client_phone = ? AND orders.date_time_slot = ? 
+        AND orders.created_at >= datetime('now', '-2 minutes')
+        LIMIT 1
+    """, (phone, start_iso))
+    dup_row = cursor.fetchone()
+    conn.close()
+    if dup_row:
+        print(f"[Dispatch] Обнаружен дубликат заказа для {phone} на слот {start_iso}. Пропуск создания.")
+        return dup_row[0]
+    
     master = select_best_master(address, start_iso, end_iso)
     
     if master:
