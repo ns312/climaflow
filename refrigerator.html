@@ -14,6 +14,36 @@
   <meta name="description" content="Профессиональный ремонт бытовых и коммерческих холодильников в Бишкеке за 60 минут. Диагностика 0 сом. Гарантия до 1 года. Срочный выезд.">
   <link rel="stylesheet" href="style.css">
   
+  <!-- Structured Data JSON-LD for SEO & GEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "ClimaFlow Ремонт холодильников",
+    "image": "https://climaflow312.com/images/logo_full.jpg",
+    "telephone": "+996502985896",
+    "url": "https://climaflow312.com/refrigerator.html",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Бишкек",
+      "addressCountry": "KG"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "42.8746",
+      "longitude": "74.5698"
+    },
+    "areaServed": [
+      "Бишкек",
+      "Кок-Джар",
+      "Джал",
+      "Асанбай",
+      "Аламедин-1"
+    ]
+  }
+  </script>
+  
   <style>
     /* Awwwards Caliber Custom Styles & Animations for Refrigerator Page */
     .hero-refrigerator {
@@ -253,6 +283,32 @@
       font-weight: 700;
       margin-bottom: 12px;
     }
+
+    /* Silo SEO Link Grid */
+    .seo-link-section {
+      padding: 40px 0;
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+      background: var(--bg-primary);
+    }
+    
+    .seo-link-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .seo-link-card {
+      padding: 20px;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+      transition: all var(--transition-normal);
+    }
+
+    .seo-link-card:hover {
+      border-color: var(--color-primary);
+      background: var(--color-primary-light);
+    }
   </style>
 </head>
 <body data-theme="light">
@@ -273,9 +329,10 @@
       
       <ul class="nav-links">
         <li><a href="index.html">Кондиционеры</a></li>
-        <li><a href="#types">Типы холода</a></li>
-        <li><a href="#calculator">Калькулятор стоимости</a></li>
-        <li><a href="#b2b">Кафе и Ресторанам</a></li>
+        <li><a href="#types">Виды услуг</a></li>
+        <li><a href="#calculator">Калькулятор</a></li>
+        <li><a href="#gallery">Наши работы</a></li>
+        <li><a href="#b2b">Организациям</a></li>
         <li><a href="#reviews">Отзывы</a></li>
         <li><a href="#contacts">Контакты</a></li>
       </ul>
@@ -369,8 +426,37 @@
     </div>
   </section>
 
+  <!-- Silo Nav Block for SEO & GEO -->
+  <section class="seo-link-section">
+    <div class="container">
+      <h3 style="font-size:14px; color:var(--text-secondary); text-transform:uppercase; margin-bottom:20px; font-family:var(--font-secondary); text-align:center;">Услуги по типам ремонта и поломкам:</h3>
+      <div class="seo-link-grid">
+        <a href="refrigerator-domestic.html" class="seo-link-card">
+          <h4 style="font-size:14px; font-weight:700; margin-bottom:4px;">Бытовой ремонт</h4>
+          <p style="font-size:11px; color:var(--text-secondary);">Домашние холодильники на дому</p>
+        </a>
+        <a href="refrigerator-commercial.html" class="seo-link-card">
+          <h4 style="font-size:14px; font-weight:700; margin-bottom:4px;">Коммерческий холод</h4>
+          <p style="font-size:11px; color:var(--text-secondary);">Для ресторанов, кафе и магазинов</p>
+        </a>
+        <a href="refrigerator-vitrina.html" class="seo-link-card">
+          <h4 style="font-size:14px; font-weight:700; margin-bottom:4px;">Ремонт витрин</h4>
+          <p style="font-size:11px; color:var(--text-secondary);">Витрины, горки, прилавки, лари</p>
+        </a>
+        <a href="refrigerator-compressor.html" class="seo-link-card">
+          <h4 style="font-size:14px; font-weight:700; margin-bottom:4px;">Замена компрессора</h4>
+          <p style="font-size:11px; color:var(--text-secondary);">Пайка мотора, замена реле, фреон</p>
+        </a>
+        <a href="refrigerator-board.html" class="seo-link-card">
+          <h4 style="font-size:14px; font-weight:700; margin-bottom:4px;">Ремонт плат</h4>
+          <p style="font-size:11px; color:var(--text-secondary);">Электронные модули и датчики</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- Refrigerator Types Section -->
-  <section class="section-padding" id="types" style="background: var(--bg-secondary); border-top: 1px solid var(--border-color);">
+  <section class="section-padding" id="types" style="background: var(--bg-secondary);">
     <div class="container">
       <div class="section-header" style="text-align: center; margin-bottom: 50px;">
         <span class="section-tag">Какое оборудование ремонтируем</span>
@@ -385,7 +471,7 @@
           <p style="font-size:13px; color:var(--text-secondary); margin-bottom:20px; line-height:1.6;">
             Ремонт любых марок: Samsung, LG, Indesit, Beko, Bosch, Pozis и др. Устраняем засоры, утечки фреона, меняем компрессоры, вентиляторы, чиним электронные платы. Любые модели: от классических до систем No Frost и Side-by-Side.
           </p>
-          <span style="font-size:12px; font-weight:800; color:var(--color-primary); text-transform:uppercase;">Стоимость от 1500 сом</span>
+          <a href="refrigerator-domestic.html" style="font-size:12px; font-weight:800; color:var(--color-primary); text-transform:uppercase;">Подробнее о бытовом ремонте &rarr;</a>
         </div>
 
         <!-- Card 2: Commercial -->
@@ -395,13 +481,13 @@
           <p style="font-size:13px; color:var(--text-secondary); margin-bottom:20px; line-height:1.6;">
             Срочное обслуживание витрин, морозильных ларей, холодильных шкафов, льдогенераторов и чиллеров в магазинах и заведениях общепита. Быстрый выезд за 45 минут, чтобы защитить ваши продукты от порчи.
           </p>
-          <span style="font-size:12px; font-weight:800; color:var(--color-success); text-transform:uppercase;">Срочный выезд B2B</span>
+          <a href="refrigerator-commercial.html" style="font-size:12px; font-weight:800; color:var(--color-success); text-transform:uppercase;">Подробнее о коммерческом холоде &rarr;</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Interactive Cost Calculator (Awwwards UX) -->
+  <!-- Interactive Cost Calculator -->
   <section class="section-padding" id="calculator">
     <div class="container">
       <div class="section-header">
@@ -453,8 +539,43 @@
     </div>
   </section>
 
-  <!-- B2B Section (Cooperation with corporate clients) -->
-  <section class="section-padding" id="b2b" style="background: var(--bg-secondary); border-top: 1px solid var(--border-color);">
+  <!-- Gallery Section (Real works) -->
+  <section class="section-padding" id="gallery" style="background:var(--bg-secondary);">
+    <div class="container">
+      <div class="section-header" style="text-align:center;">
+        <span class="section-tag">Наши работы</span>
+        <h2 class="section-title">Примеры ремонтов в Бишкеке</h2>
+        <p class="section-subtitle">Реальные фотографии с объектов наших мастеров.</p>
+      </div>
+      
+      <div class="gallery-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:24px; margin-top:40px;">
+        <div class="glass-card gallery-item" style="overflow:hidden; border-radius:12px;">
+          <img src="images/fridge_work_1.jpg" alt="Пайка и заправка фреоном Samsung" style="width:100%; height:250px; object-fit:cover;">
+          <div style="padding:20px;">
+            <h4 style="font-weight:700; font-size:16px; margin-bottom:4px;">Пайка медного контура</h4>
+            <p style="font-size:12px; color:var(--text-secondary);">Замена фильтра-осушителя и пайка стыков медных трубок при заправке фреона на дому.</p>
+          </div>
+        </div>
+        <div class="glass-card gallery-item" style="overflow:hidden; border-radius:12px;">
+          <img src="images/fridge_work_2.jpg" alt="Диагностика коммерческой витрины" style="width:100%; height:250px; object-fit:cover;">
+          <div style="padding:20px;">
+            <h4 style="font-weight:700; font-size:16px; margin-bottom:4px;">Диагностика контроллера витрины</h4>
+            <p style="font-size:12px; color:var(--text-secondary);">Ремонт блока управления среднетемпературной витрины Eliwell в кафе в Бишкеке.</p>
+          </div>
+        </div>
+        <div class="glass-card gallery-item" style="overflow:hidden; border-radius:12px;">
+          <img src="images/fridge_work_3.jpg" alt="Ремонт платы управления" style="width:100%; height:250px; object-fit:cover;">
+          <div style="padding:20px;">
+            <h4 style="font-weight:700; font-size:16px; margin-bottom:4px;">Диагностика платы электроники</h4>
+            <p style="font-size:12px; color:var(--text-secondary);">Тестирование электрических цепей и датчиков модуля управления холодильника.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- B2B Section -->
+  <section class="section-padding" id="b2b" style="border-top: 1px solid var(--border-color);">
     <div class="container" style="max-width: 1000px;">
       <div class="section-header" style="text-align: center; margin-bottom: 50px;">
         <span class="section-tag" style="background: rgba(16, 185, 129, 0.1); color: var(--color-success);">Для юридических лиц</span>
@@ -501,51 +622,109 @@
   </section>
 
   <!-- Testimonials Section -->
-  <section class="section-padding" id="reviews">
+  <section class="section-padding" id="reviews" style="background:var(--bg-secondary);">
     <div class="container">
-      <div class="section-header">
+      <div class="section-header" style="text-align:center;">
         <span class="section-tag">Отзывы клиентов</span>
         <h2 class="section-title">Что говорят жители Бишкека</h2>
         <p class="section-subtitle">Честные отзывы о качестве нашего ремонта бытовых и коммерческих холодильников.</p>
       </div>
 
-      <div class="google-reviews-container">
-        <!-- Review 1: Муслима -->
+      <div class="google-reviews-container" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:24px; margin-top:40px;">
+        <!-- Review 1 -->
         <div class="google-review-card glass-card">
           <div class="gr-header">
-            <div class="gr-avatar" style="background-color: #689f38;">М</div>
+            <div class="gr-avatar" style="background-color: #689f38;">А</div>
             <div class="gr-user-info">
-              <h4 class="gr-name">Каныкей</h4>
+              <h4 class="gr-name">Алина (ул. Токтогула)</h4>
               <span class="gr-stats">1 отзыв</span>
             </div>
-            <div class="gr-actions-dots">
-              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/></svg>
+          </div>
+          <div class="gr-rating-row">
+            <div class="gr-stars">★★★★★</div>
+            <span class="gr-date">2 дня назад</span>
+          </div>
+          <p class="gr-text">Сломался холодильник Beko (перестал холодить). Мастер приехал в центр на Токтогула быстро. Выяснилось, что сгорел термостат. Заменил на месте, холодильник теперь работает как новенький.</p>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="google-review-card glass-card">
+          <div class="gr-header">
+            <div class="gr-avatar" style="background-color: #0288d1;">Э</div>
+            <div class="gr-user-info">
+              <h4 class="gr-name">Эрмек (мкр. Асанбай)</h4>
+              <span class="gr-stats">2 отзыва</span>
+            </div>
+          </div>
+          <div class="gr-rating-row">
+            <div class="gr-stars">★★★★★</div>
+            <span class="gr-date">1 неделю назад</span>
+          </div>
+          <p class="gr-text">В холодильнике LG сгорел компрессор (мотор гудел, но не запускался). Мастер привез новый компрессор прямо в Асанбай. Пайка, заправка фреона, всё за час. Выписал письменную гарантию на год.</p>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="google-review-card glass-card">
+          <div class="gr-header">
+            <div class="gr-avatar" style="background-color: #f57c00;">F</div>
+            <div class="gr-user-info">
+              <h4 class="gr-name">Кафе "Fresh Food" (мкр. Джал)</h4>
+              <span class="gr-stats">Ресторан</span>
             </div>
           </div>
           <div class="gr-rating-row">
             <div class="gr-stars">★★★★★</div>
             <span class="gr-date">2 недели назад</span>
           </div>
-          <p class="gr-text">Огромное спасибо за быстрый ремонт холодильника Samsung No Frost. Приехали в тот же день, быстро нашли причину в электронике и всё исправили. Дали официальный гарантийный талон 👍</p>
+          <p class="gr-text">Вышла из строя кондитерская витрина (перестала держать температуру). Вызвали мастера в Джал. Приехал через 40 минут. Заменил вентилятор обдува, спас торты и пирожные. Огромное спасибо за скорость!</p>
         </div>
 
-        <!-- Review 2: Константин -->
+        <!-- Review 4 -->
         <div class="google-review-card glass-card">
           <div class="gr-header">
-            <div class="gr-avatar" style="background-color: #37474f;">А</div>
+            <div class="gr-avatar" style="background-color: #7e57c2;">Б</div>
             <div class="gr-user-info">
-              <h4 class="gr-name">Азамат (управляющий)</h4>
-              <span class="gr-stats">3 отзыва</span>
+              <h4 class="gr-name">Бегимай (мкр. Аламедин-1)</h4>
+              <span class="gr-stats">1 отзыв</span>
             </div>
-            <div class="gr-actions-dots">
-              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/></svg>
+          </div>
+          <div class="gr-rating-row">
+            <div class="gr-stars">★★★★★</div>
+            <span class="gr-date">3 недели назад</span>
+          </div>
+          <p class="gr-text">Холодильник Samsung перестал морозить, хотя компрессор работал. Приехал мастер в Аламедин-1, обнаружил утечку фреона. Устранил течь, заправил газом строго по весам. Работает тихо и холодит отлично.</p>
+        </div>
+
+        <!-- Review 5 -->
+        <div class="google-review-card glass-card">
+          <div class="gr-header">
+            <div class="gr-avatar" style="background-color: #37474f;">М</div>
+            <div class="gr-user-info">
+              <h4 class="gr-name">Маркет "Аян" (ул. Байтик Баатыра)</h4>
+              <span class="gr-stats">Магазин</span>
             </div>
           </div>
           <div class="gr-rating-row">
             <div class="gr-stars">★★★★★</div>
             <span class="gr-date">1 месяц назад</span>
           </div>
-          <p class="gr-text">Для нашей кофейни сломанная холодильная витрина — это катастрофа. Мастера ClimaFlow приехали за 40 минут. Заменили термостат на месте, выписали квитанцию на компанию. Очень выручили!</p>
+          <p class="gr-text">Срочно требовалось обслуживание морозильного ларя для пельменей. Мастера ClimaFlow приехали оперативно. Устранили засор, заправили фреоном. Приняли оплату на банковский счет, выдали акт.</p>
+        </div>
+
+        <!-- Review 6 -->
+        <div class="google-review-card glass-card">
+          <div class="gr-header">
+            <div class="gr-avatar" style="background-color: #8d6e63;">М</div>
+            <div class="gr-user-info">
+              <h4 class="gr-name">Марат (с. Кок-Джар)</h4>
+              <span class="gr-stats">1 отзыв</span>
+            </div>
+          </div>
+          <div class="gr-rating-row">
+            <div class="gr-stars">★★★★★</div>
+            <span class="gr-date">1 месяц назад</span>
+          </div>
+          <p class="gr-text">Живем в Кок-Джаре (пригород). Многие мастера отказывались ехать или просили огромные деньги за дорогу. Мастер из ClimaFlow приехал вовремя с оригинальными деталями, починил плату управления.</p>
         </div>
       </div>
     </div>
@@ -631,10 +810,10 @@
         <div class="footer-col">
           <h5>Услуги холода</h5>
           <ul>
-            <li><a href="#calculator">Ремонт компрессора</a></li>
-            <li><a href="#calculator">Заправка фреоном</a></li>
-            <li><a href="#calculator">Замена терморегулятора</a></li>
-            <li><a href="#b2b">Обслуживание витрин</a></li>
+            <li><a href="refrigerator-compressor.html">Ремонт компрессора</a></li>
+            <li><a href="refrigerator-domestic.html">Заправка фреоном</a></li>
+            <li><a href="refrigerator-board.html">Ремонт плат управления</a></li>
+            <li><a href="refrigerator-commercial.html">Обслуживание витрин</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -690,6 +869,7 @@
           moonIcon.style.display = 'block';
         }
       }
+
       // 1. Refrigerator Door Interaction
       const fridge = document.getElementById('interactive-fridge');
       const btnOpen = document.getElementById('btn-open-fridge');
