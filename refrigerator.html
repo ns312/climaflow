@@ -309,6 +309,52 @@
       border-color: var(--color-primary);
       background: var(--color-primary-light);
     }
+
+    /* Horizontal Marquee / Swipeable Reviews styling */
+    .reviews-marquee-container {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin-top: 40px;
+      overflow: hidden;
+      width: 100%;
+    }
+
+    .reviews-marquee-row {
+      display: flex;
+      gap: 24px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      white-space: nowrap;
+      padding: 15px 20px;
+      scroll-behavior: auto;
+      -webkit-overflow-scrolling: touch;
+      cursor: grab;
+      user-select: none;
+    }
+
+    .reviews-marquee-row::-webkit-scrollbar {
+      display: none;
+    }
+
+    .reviews-marquee-row {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    .reviews-marquee-row:active {
+      cursor: grabbing;
+    }
+
+    .reviews-marquee-row .google-review-card {
+      flex: 0 0 380px;
+      width: 380px;
+      white-space: normal;
+      display: inline-block;
+      vertical-align: top;
+      margin: 0;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+    }
   </style>
 </head>
 <body data-theme="light">
@@ -748,101 +794,195 @@
         <p class="section-subtitle">Честные отзывы о качестве нашего ремонта бытовых и коммерческих холодильников.</p>
       </div>
 
-      <div class="google-reviews-container" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:24px; margin-top:40px;">
-        <!-- Review 1 -->
-        <div class="google-review-card glass-card">
-          <div class="gr-header">
-            <div class="gr-avatar" style="background-color: #689f38;">А</div>
-            <div class="gr-user-info">
-              <h4 class="gr-name">Алина (ул. Токтогула)</h4>
-              <span class="gr-stats">1 отзыв</span>
+      <div class="reviews-marquee-container">
+        <!-- Row 1: Top (Moving Left) -->
+        <div class="reviews-marquee-row" id="marquee-row-top">
+          <!-- Review 1 -->
+          <div class="google-review-card glass-card">
+            <div class="gr-header">
+              <div class="gr-avatar" style="background-color: #689f38;">А</div>
+              <div class="gr-user-info">
+                <h4 class="gr-name">Алина (ул. Токтогула)</h4>
+                <span class="gr-stats">1 отзыв</span>
+              </div>
             </div>
+            <div class="gr-rating-row">
+              <div class="gr-stars">★★★★★</div>
+              <span class="gr-date">2 дня назад</span>
+            </div>
+            <p class="gr-text">Сломался холодильник Beko (перестал холодить). Мастер приехал в центр на Токтогула быстро. Выяснилось, что сгорел термостат. Заменил на месте, холодильник теперь работает как новенький.</p>
           </div>
-          <div class="gr-rating-row">
-            <div class="gr-stars">★★★★★</div>
-            <span class="gr-date">2 дня назад</span>
+          <!-- Review 2 -->
+          <div class="google-review-card glass-card">
+            <div class="gr-header">
+              <div class="gr-avatar" style="background-color: #0288d1;">Э</div>
+              <div class="gr-user-info">
+                <h4 class="gr-name">Эрмек (мкр. Асанбай)</h4>
+                <span class="gr-stats">2 отзыва</span>
+              </div>
+            </div>
+            <div class="gr-rating-row">
+              <div class="gr-stars">★★★★★</div>
+              <span class="gr-date">1 неделю назад</span>
+            </div>
+            <p class="gr-text">В холодильнике LG сгорел компрессор (мотор гудел, но не запускался). Мастер привез новый компрессор прямо в Асанбай. Пайка, заправка фреона, всё за час. Выписал письменную гарантию на год.</p>
           </div>
-          <p class="gr-text">Сломался холодильник Beko (перестал холодить). Мастер приехал в центр на Токтогула быстро. Выяснилось, что сгорел термостат. Заменил на месте, холодильник теперь работает как новенький.</p>
+          <!-- Review 3 -->
+          <div class="google-review-card glass-card">
+            <div class="gr-header">
+              <div class="gr-avatar" style="background-color: #f57c00;">F</div>
+              <div class="gr-user-info">
+                <h4 class="gr-name">Кафе "Fresh Food" (мкр. Джал)</h4>
+                <span class="gr-stats">Ресторан</span>
+              </div>
+            </div>
+            <div class="gr-rating-row">
+              <div class="gr-stars">★★★★★</div>
+              <span class="gr-date">2 недели назад</span>
+            </div>
+            <p class="gr-text">Вышла из строя кондитерская витрина (перестала держать температуру). Вызвали мастера в Джал. Приехал через 40 минут. Заменил вентилятор обдува, спас торты и пирожные. Огромное спасибо за скорость!</p>
+          </div>
+          <!-- Duplicates for Infinite Loop -->
+          <!-- Review 1 Duplicate -->
+          <div class="google-review-card glass-card">
+            <div class="gr-header">
+              <div class="gr-avatar" style="background-color: #689f38;">А</div>
+              <div class="gr-user-info">
+                <h4 class="gr-name">Алина (ул. Токтогула)</h4>
+                <span class="gr-stats">1 отзыв</span>
+              </div>
+            </div>
+            <div class="gr-rating-row">
+              <div class="gr-stars">★★★★★</div>
+              <span class="gr-date">2 дня назад</span>
+            </div>
+            <p class="gr-text">Сломался холодильник Beko (перестал холодить). Мастер приехал в центр на Токтогула быстро. Выяснилось, что сгорел термостат. Заменил на месте, холодильник теперь работает как новенький.</p>
+          </div>
+          <!-- Review 2 Duplicate -->
+          <div class="google-review-card glass-card">
+            <div class="gr-header">
+              <div class="gr-avatar" style="background-color: #0288d1;">Э</div>
+              <div class="gr-user-info">
+                <h4 class="gr-name">Эрмек (мкр. Асанбай)</h4>
+                <span class="gr-stats">2 отзыва</span>
+              </div>
+            </div>
+            <div class="gr-rating-row">
+              <div class="gr-stars">★★★★★</div>
+              <span class="gr-date">1 неделю назад</span>
+            </div>
+            <p class="gr-text">В холодильнике LG сгорел компрессор (мотор гудел, но не запускался). Мастер привез новый компрессор прямо в Асанбай. Пайка, заправка фреона, всё за час. Выписал письменную гарантию на год.</p>
+          </div>
+          <!-- Review 3 Duplicate -->
+          <div class="google-review-card glass-card">
+            <div class="gr-header">
+              <div class="gr-avatar" style="background-color: #f57c00;">F</div>
+              <div class="gr-user-info">
+                <h4 class="gr-name">Кафе "Fresh Food" (мкр. Джал)</h4>
+                <span class="gr-stats">Ресторан</span>
+              </div>
+            </div>
+            <div class="gr-rating-row">
+              <div class="gr-stars">★★★★★</div>
+              <span class="gr-date">2 недели назад</span>
+            </div>
+            <p class="gr-text">Вышла из строя кондитерская витрина (перестала держать температуру). Вызвали мастера в Джал. Приехал через 40 минут. Заменил вентилятор обдува, спас торты и пирожные. Огромное спасибо за скорость!</p>
+          </div>
         </div>
 
-        <!-- Review 2 -->
-        <div class="google-review-card glass-card">
-          <div class="gr-header">
-            <div class="gr-avatar" style="background-color: #0288d1;">Э</div>
-            <div class="gr-user-info">
-              <h4 class="gr-name">Эрмек (мкр. Асанбай)</h4>
-              <span class="gr-stats">2 отзыва</span>
+        <!-- Row 2: Bottom (Moving Right) -->
+        <div class="reviews-marquee-row" id="marquee-row-bottom">
+          <!-- Review 4 -->
+          <div class="google-review-card glass-card">
+            <div class="gr-header">
+              <div class="gr-avatar" style="background-color: #7e57c2;">Б</div>
+              <div class="gr-user-info">
+                <h4 class="gr-name">Бегимай (мкр. Аламедин-1)</h4>
+                <span class="gr-stats">1 отзыв</span>
+              </div>
             </div>
-          </div>
-          <div class="gr-rating-row">
-            <div class="gr-stars">★★★★★</div>
-            <span class="gr-date">1 неделю назад</span>
-          </div>
-          <p class="gr-text">В холодильнике LG сгорел компрессор (мотор гудел, но не запускался). Мастер привез новый компрессор прямо в Асанбай. Пайка, заправка фреона, всё за час. Выписал письменную гарантию на год.</p>
-        </div>
-
-        <!-- Review 3 -->
-        <div class="google-review-card glass-card">
-          <div class="gr-header">
-            <div class="gr-avatar" style="background-color: #f57c00;">F</div>
-            <div class="gr-user-info">
-              <h4 class="gr-name">Кафе "Fresh Food" (мкр. Джал)</h4>
-              <span class="gr-stats">Ресторан</span>
+            <div class="gr-rating-row">
+              <div class="gr-stars">★★★★★</div>
+              <span class="gr-date">3 недели назад</span>
             </div>
+            <p class="gr-text">Холодильник Samsung перестал морозить, хотя компрессор работал. Приехал мастер в Аламедин-1, обнаружил утечку фреона. Устранил течь, заправил газом строго по весам. Работает тихо и холодит отлично.</p>
           </div>
-          <div class="gr-rating-row">
-            <div class="gr-stars">★★★★★</div>
-            <span class="gr-date">2 недели назад</span>
-          </div>
-          <p class="gr-text">Вышла из строя кондитерская витрина (перестала держать температуру). Вызвали мастера в Джал. Приехал через 40 минут. Заменил вентилятор обдува, спас торты и пирожные. Огромное спасибо за скорость!</p>
-        </div>
-
-        <!-- Review 4 -->
-        <div class="google-review-card glass-card">
-          <div class="gr-header">
-            <div class="gr-avatar" style="background-color: #7e57c2;">Б</div>
-            <div class="gr-user-info">
-              <h4 class="gr-name">Бегимай (мкр. Аламедин-1)</h4>
-              <span class="gr-stats">1 отзыв</span>
+          <!-- Review 5 -->
+          <div class="google-review-card glass-card">
+            <div class="gr-header">
+              <div class="gr-avatar" style="background-color: #37474f;">М</div>
+              <div class="gr-user-info">
+                <h4 class="gr-name">Маркет "Аян" (ул. Байтик Баатыра)</h4>
+                <span class="gr-stats">Магазин</span>
+              </div>
             </div>
-          </div>
-          <div class="gr-rating-row">
-            <div class="gr-stars">★★★★★</div>
-            <span class="gr-date">3 недели назад</span>
-          </div>
-          <p class="gr-text">Холодильник Samsung перестал морозить, хотя компрессор работал. Приехал мастер в Аламедин-1, обнаружил утечку фреона. Устранил течь, заправил газом строго по весам. Работает тихо и холодит отлично.</p>
-        </div>
-
-        <!-- Review 5 -->
-        <div class="google-review-card glass-card">
-          <div class="gr-header">
-            <div class="gr-avatar" style="background-color: #37474f;">М</div>
-            <div class="gr-user-info">
-              <h4 class="gr-name">Маркет "Аян" (ул. Байтик Баатыра)</h4>
-              <span class="gr-stats">Магазин</span>
+            <div class="gr-rating-row">
+              <div class="gr-stars">★★★★★</div>
+              <span class="gr-date">1 месяц назад</span>
             </div>
+            <p class="gr-text">Срочно требовалось обслуживание морозильного ларя для пельменей. Мастера ClimaFlow приехали оперативно. Устранили засор, заправили фреоном. Приняли оплату на банковский счет, выдали акт.</p>
           </div>
-          <div class="gr-rating-row">
-            <div class="gr-stars">★★★★★</div>
-            <span class="gr-date">1 месяц назад</span>
-          </div>
-          <p class="gr-text">Срочно требовалось обслуживание морозильного ларя для пельменей. Мастера ClimaFlow приехали оперативно. Устранили засор, заправили фреоном. Приняли оплату на банковский счет, выдали акт.</p>
-        </div>
-
-        <!-- Review 6 -->
-        <div class="google-review-card glass-card">
-          <div class="gr-header">
-            <div class="gr-avatar" style="background-color: #8d6e63;">М</div>
-            <div class="gr-user-info">
-              <h4 class="gr-name">Марат (с. Кок-Джар)</h4>
-              <span class="gr-stats">1 отзыв</span>
+          <!-- Review 6 -->
+          <div class="google-review-card glass-card">
+            <div class="gr-header">
+              <div class="gr-avatar" style="background-color: #8d6e63;">М</div>
+              <div class="gr-user-info">
+                <h4 class="gr-name">Марат (с. Кок-Джар)</h4>
+                <span class="gr-stats">1 отзыв</span>
+              </div>
             </div>
+            <div class="gr-rating-row">
+              <div class="gr-stars">★★★★★</div>
+              <span class="gr-date">1 месяц назад</span>
+            </div>
+            <p class="gr-text">Живем в Кок-Джаре (пригород). Многие мастера отказывались ехать или просили огромные деньги за дорогу. Мастер из ClimaFlow приехал вовремя с оригинальными деталями, починил плату управления.</p>
           </div>
-          <div class="gr-rating-row">
-            <div class="gr-stars">★★★★★</div>
-            <span class="gr-date">1 месяц назад</span>
+          <!-- Duplicates for Infinite Loop -->
+          <!-- Review 4 Duplicate -->
+          <div class="google-review-card glass-card">
+            <div class="gr-header">
+              <div class="gr-avatar" style="background-color: #7e57c2;">Б</div>
+              <div class="gr-user-info">
+                <h4 class="gr-name">Бегимай (мкр. Аламедин-1)</h4>
+                <span class="gr-stats">1 отзыв</span>
+              </div>
+            </div>
+            <div class="gr-rating-row">
+              <div class="gr-stars">★★★★★</div>
+              <span class="gr-date">3 недели назад</span>
+            </div>
+            <p class="gr-text">Холодильник Samsung перестал морозить, хотя компрессор работал. Приехал мастер в Аламедин-1, обнаружил утечку фреона. Устранил течь, заправил газом строго по весам. Работает тихо и холодит отлично.</p>
           </div>
-          <p class="gr-text">Живем в Кок-Джаре (пригород). Многие мастера отказывались ехать или просили огромные деньги за дорогу. Мастер из ClimaFlow приехал вовремя с оригинальными деталями, починил плату управления.</p>
+          <!-- Review 5 Duplicate -->
+          <div class="google-review-card glass-card">
+            <div class="gr-header">
+              <div class="gr-avatar" style="background-color: #37474f;">М</div>
+              <div class="gr-user-info">
+                <h4 class="gr-name">Маркет "Аян" (ул. Байтик Баатыра)</h4>
+                <span class="gr-stats">Магазин</span>
+              </div>
+            </div>
+            <div class="gr-rating-row">
+              <div class="gr-stars">★★★★★</div>
+              <span class="gr-date">1 месяц назад</span>
+            </div>
+            <p class="gr-text">Срочно требовалось обслуживание морозильного ларя для пельменей. Мастера ClimaFlow приехали оперативно. Устранили засор, заправили фреоном. Приняли оплату на банковский счет, выдали акт.</p>
+          </div>
+          <!-- Review 6 Duplicate -->
+          <div class="google-review-card glass-card">
+            <div class="gr-header">
+              <div class="gr-avatar" style="background-color: #8d6e63;">М</div>
+              <div class="gr-user-info">
+                <h4 class="gr-name">Марат (с. Кок-Джар)</h4>
+                <span class="gr-stats">1 отзыв</span>
+              </div>
+            </div>
+            <div class="gr-rating-row">
+              <div class="gr-stars">★★★★★</div>
+              <span class="gr-date">1 месяц назад</span>
+            </div>
+            <p class="gr-text">Живем в Кок-Джаре (пригород). Многие мастера отказывались ехать или просили огромные деньги за дорогу. Мастер из ClimaFlow приехал вовремя с оригинальными деталями, починил плату управления.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -1126,6 +1266,96 @@
         const msg = `Здравствуйте! Оставил заявку на сайте по холодильникам. Меня зовут ${name}, мой телефон ${phone}. Нужна консультация / вызов мастера.`;
         window.open(`https://wa.me/996502985896?text=${encodeURIComponent(msg)}`, '_blank');
       });
+      // 3. Dual Marquee Reviews Auto-scroll & Drag-scroll
+      const setupMarquee = (rowId, speedMultiplier) => {
+        const row = document.getElementById(rowId);
+        if (!row) return;
+
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+        let animationFrameId;
+        let isInteracting = false;
+        let currentScroll = 0;
+
+        // Auto-scroll loop
+        const scroll = () => {
+          if (!isInteracting) {
+            currentScroll += 0.5 * speedMultiplier;
+            row.scrollLeft = currentScroll;
+            
+            // Loop back seamlessly
+            const halfWidth = row.scrollWidth / 2;
+            if (currentScroll >= halfWidth) {
+              currentScroll = 0;
+              row.scrollLeft = 0;
+            } else if (currentScroll <= 0 && speedMultiplier < 0) {
+              currentScroll = halfWidth;
+              row.scrollLeft = halfWidth;
+            }
+          }
+          animationFrameId = requestAnimationFrame(scroll);
+        };
+
+        // Pause auto-scroll on hover or touch
+        const pause = () => {
+          isInteracting = true;
+        };
+
+        const resume = () => {
+          isInteracting = false;
+          currentScroll = row.scrollLeft;
+        };
+
+        row.addEventListener('mouseenter', pause);
+        row.addEventListener('mouseleave', resume);
+        row.addEventListener('touchstart', pause, { passive: true });
+        row.addEventListener('touchend', resume, { passive: true });
+
+        // Mouse Drag to Scroll handler
+        row.addEventListener('mousedown', (e) => {
+          isDown = true;
+          isInteracting = true;
+          startX = e.pageX - row.offsetLeft;
+          scrollLeft = row.scrollLeft;
+        });
+
+        row.addEventListener('mouseleave', () => {
+          if (isDown) {
+            isDown = false;
+            resume();
+          }
+        });
+
+        row.addEventListener('mouseup', () => {
+          isDown = false;
+          resume();
+        });
+
+        row.addEventListener('mousemove', (e) => {
+          if (!isDown) return;
+          e.preventDefault();
+          const x = e.pageX - row.offsetLeft;
+          const walk = (x - startX) * 1.5; // scroll speed multiplier
+          row.scrollLeft = scrollLeft - walk;
+          currentScroll = row.scrollLeft;
+        });
+
+        // Initialize scroll position
+        if (speedMultiplier < 0) {
+          row.scrollLeft = row.scrollWidth / 4;
+          currentScroll = row.scrollLeft;
+        }
+
+        // Start animation
+        scroll();
+      };
+
+      // Set up rows with opposite directions
+      setTimeout(() => {
+        setupMarquee('marquee-row-top', 1.0);    // scrolls left
+        setupMarquee('marquee-row-bottom', -1.0); // scrolls right
+      }, 500);
     });
   </script>
 </body>
