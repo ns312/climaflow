@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-WNP2GNZ8');</script>
+  <!-- End Google Tag Manager -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Срочный ремонт холодильников в Бишкеке — Сервисный центр ClimaFlow</title>
+  <meta name="description" content="Профессиональный ремонт бытовых и коммерческих холодильников в Бишкеке за 60 минут. Диагностика 0 сом. Гарантия до 1 года. Срочный выезд.">
+  <link rel="stylesheet" href="style.css">
+  
+  <style>
+    /* Awwwards Caliber Custom Styles & Animations for Refrigerator Page */
+    .hero-refrigerator {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 40px;
+      padding: 140px 0 100px 0;
+      min-height: 100vh;
+      background: radial-gradient(circle at 80% 20%, rgba(0, 102, 255, 0.08) 0%, transparent 50%),
+                  radial-gradient(circle at 20% 80%, rgba(0, 210, 255, 0.05) 0%, transparent 50%);
+    }
+
+    @media (max-width: 968px) {
+      .hero-refrigerator {
+        grid-template-columns: 1fr;
+        padding-top: 100px;
+        text-align: center;
+      }
+    }
+
+    /* 3D Refrigerator Interaction Card */
+    .fridge-interactive-container {
+      perspective: 1200px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      height: 480px;
+    }
+
+    .fridge-body {
+      width: 200px;
+      height: 400px;
+      background: linear-gradient(135deg, #1e293b, #0f172a);
+      border-radius: 12px;
+      position: relative;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5),
+                  0 0 40px rgba(0, 102, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      transition: transform var(--transition-slow);
+      transform-style: preserve-3d;
+    }
+
+    /* Fridge Inside Content */
+    .fridge-inside {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      right: 10px;
+      bottom: 10px;
+      background: #0f172a;
+      border-radius: 8px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 20px 10px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .fridge-shelves {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      width: 100%;
+    }
+
+    .fridge-shelf {
+      height: 2px;
+      background: rgba(0, 210, 255, 0.3);
+      width: 100%;
+      position: relative;
+      box-shadow: 0 0 10px rgba(0, 210, 255, 0.5);
+    }
+
+    .fridge-shelf::after {
+      content: '';
+      position: absolute;
+      bottom: 2px;
+      left: 20px;
+      width: 30px;
+      height: 20px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 4px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* Cool blue light glow when open */
+    .fridge-light {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 50% 20%, rgba(0, 210, 255, 0.25) 0%, transparent 70%);
+      opacity: 0;
+      transition: opacity var(--transition-normal);
+      pointer-events: none;
+    }
+
+    .fridge-body.open .fridge-light {
+      opacity: 1;
+    }
+
+    /* Fridge Door (animated 3D swing) */
+    .fridge-door {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #334155, #1e293b);
+      border-radius: 12px;
+      transform-origin: left center;
+      transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: inset -2px 0 10px rgba(0,0,0,0.3);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 30px 15px;
+      z-index: 2;
+    }
+
+    .fridge-door-handle {
+      position: absolute;
+      right: 12px;
+      top: 120px;
+      width: 8px;
+      height: 100px;
+      background: linear-gradient(to right, #94a3b8, #cbd5e1);
+      border-radius: 4px;
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    }
+
+    .fridge-display {
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid rgba(0, 210, 255, 0.3);
+      border-radius: 6px;
+      padding: 8px;
+      text-align: center;
+      color: #00d2ff;
+      font-family: monospace;
+      font-size: 14px;
+      box-shadow: 0 0 10px rgba(0, 210, 255, 0.2);
+    }
+
+    /* Open State */
+    .fridge-body.open .fridge-door {
+      transform: rotateY(-115deg);
+      box-shadow: 15px 15px 30px rgba(0,0,0,0.5);
+    }
+
+    /* Ice Particles animation */
+    .frost-particle {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background: white;
+      border-radius: 50%;
+      pointer-events: none;
+      opacity: 0;
+      box-shadow: 0 0 8px #00d2ff;
+    }
+
+    @keyframes drift {
+      0% {
+        transform: translateY(0) translateX(0) scale(1);
+        opacity: 0.8;
+      }
+      100% {
+        transform: translateY(120px) translateX(-50px) scale(0.5);
+        opacity: 0;
+      }
+    }
+
+    /* Action triggers */
+    .fridge-control-panel {
+      position: absolute;
+      bottom: -60px;
+      display: flex;
+      gap: 12px;
+    }
+
+    /* Competitor Cards */
+    .appliance-type-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .appliance-card {
+      padding: 40px 30px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .appliance-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--color-primary);
+      transition: height var(--transition-normal);
+    }
+
+    .appliance-card:hover::before {
+      height: 100%;
+      background: var(--color-cool);
+    }
+
+    /* Calculator Custom Styles */
+    .calculator-widget {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 768px) {
+      .calculator-widget {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .step-badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: var(--radius-full);
+      background: var(--color-primary-light);
+      color: var(--color-primary);
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+  </style>
+</head>
+<body data-theme="light">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WNP2GNZ8"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- Header -->
+  <header class="glass">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"></path>
+        </svg>
+        Clima<span>Flow</span>
+      </a>
+      
+      <ul class="nav-links">
+        <li><a href="index.html">Кондиционеры</a></li>
+        <li><a href="#types">Типы холода</a></li>
+        <li><a href="#calculator">Калькулятор стоимости</a></li>
+        <li><a href="#b2b">Кафе и Ресторанам</a></li>
+        <li><a href="#reviews">Отзывы</a></li>
+        <li><a href="#contacts">Контакты</a></li>
+      </ul>
+
+      <div class="header-actions">
+        <!-- Theme Toggle -->
+        <button id="theme-toggle" class="btn-icon" aria-label="Смена темы оформления">
+          <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+          </svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <a href="tel:+996502985896" class="btn btn-whatsapp-header" style="background: var(--color-primary); color: white; border-color: var(--color-primary); font-size:13px; padding: 8px 18px;">
+          Позвонить
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-refrigerator">
+    <div class="container hero-refrigerator" style="padding:0;">
+      <div class="hero-text" style="display:flex; flex-direction:column; gap:20px; align-items:flex-start;">
+        <span class="section-tag" style="background: rgba(0, 210, 255, 0.1); color: var(--color-cool); font-weight:700;">Ремонт холодильников в Бишкеке</span>
+        <h1 style="font-size: clamp(32px, 5vw, 56px); font-weight: 800; font-family: var(--font-secondary); line-height:1.15;">
+          Срочный ремонт <br>холодильников за <span class="text-gradient">60 минут</span>
+        </h1>
+        <p style="font-size: 16px; color: var(--text-secondary); max-width: 540px; text-align: left;">
+          Профессиональный ремонт бытовых и коммерческих холодильников в Бишкеке. Оригинальные запчасти, гарантия до 12 месяцев. Диагностика 0 сом. Выезд мастера во все районы города.
+        </p>
+        
+        <div style="display:flex; gap:16px; width:100%; margin-top:10px; flex-wrap:wrap;">
+          <a href="#calculator" class="btn btn-primary">Рассчитать стоимость</a>
+          <a href="https://wa.me/996502985896?text=Здравствуйте!%20Мне%20нужен%20срочный%20ремонт%20холодильника." target="_blank" class="btn btn-secondary" style="display:inline-flex; align-items:center; gap:8px;">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+            Вызвать мастера в WhatsApp
+          </a>
+        </div>
+
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:20px; width:100%; margin-top:20px;">
+          <div style="display:flex; align-items:center; gap:12px;">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="var(--color-success)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <div style="text-align: left;">
+              <h4 style="font-size:14px; font-weight:700;">Диагностика 0 сом</h4>
+              <p style="font-size:12px; color:var(--text-secondary);">Бесплатно при ремонте</p>
+            </div>
+          </div>
+          <div style="display:flex; align-items:center; gap:12px;">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="var(--color-success)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <div style="text-align: left;">
+              <h4 style="font-size:14px; font-weight:700;">Гарантия до 1 года</h4>
+              <p style="font-size:12px; color:var(--text-secondary);">Письменный талон</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Interactive 3D Refrigerator Animation Section (Awwwards) -->
+      <div class="fridge-interactive-container">
+        <div class="fridge-body" id="interactive-fridge">
+          <div class="fridge-inside">
+            <div class="fridge-light"></div>
+            <div class="fridge-shelves">
+              <div class="fridge-shelf"></div>
+              <div class="fridge-shelf"></div>
+              <div class="fridge-shelf"></div>
+            </div>
+            <div style="display:flex; justify-content:space-around; width:100%;">
+              <div style="width:25px; height:30px; background:rgba(0, 210, 255, 0.1); border:1px solid rgba(0, 210, 255, 0.2); border-radius:4px;"></div>
+              <div style="width:40px; height:20px; background:rgba(0, 210, 255, 0.1); border:1px solid rgba(0, 210, 255, 0.2); border-radius:4px;"></div>
+            </div>
+          </div>
+          <div class="fridge-door">
+            <div class="fridge-display" id="fridge-temp-display">
+              -18°C
+            </div>
+            <div class="fridge-door-handle"></div>
+            <div style="font-size:10px; color:var(--text-muted); text-align:center; font-family:var(--font-secondary);">ClimaFlow Cold</div>
+          </div>
+        </div>
+
+        <div class="fridge-control-panel">
+          <button class="btn btn-secondary" id="btn-open-fridge" style="padding: 8px 16px; font-size:13px;">Открыть дверцу</button>
+          <button class="btn btn-secondary" id="btn-freeze-mode" style="padding: 8px 16px; font-size:13px; color:var(--color-cool);">Суперзаморозка</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Refrigerator Types Section -->
+  <section class="section-padding" id="types" style="background: var(--bg-secondary); border-top: 1px solid var(--border-color);">
+    <div class="container">
+      <div class="section-header" style="text-align: center; margin-bottom: 50px;">
+        <span class="section-tag">Какое оборудование ремонтируем</span>
+        <h2 class="section-title">Все виды холодильного оборудования</h2>
+        <p class="section-subtitle">Работаем как с домашними бытовыми холодильниками, так и с коммерческими установками для бизнеса.</p>
+      </div>
+
+      <div class="appliance-type-grid">
+        <!-- Card 1: Domestic -->
+        <div class="glass-card appliance-card">
+          <h3 style="font-size:20px; font-weight:700; margin-bottom:12px; font-family:var(--font-secondary);">Бытовые холодильники</h3>
+          <p style="font-size:13px; color:var(--text-secondary); margin-bottom:20px; line-height:1.6;">
+            Ремонт любых марок: Samsung, LG, Indesit, Beko, Bosch, Pozis и др. Устраняем засоры, утечки фреона, меняем компрессоры, вентиляторы, чиним электронные платы. Любые модели: от классических до систем No Frost и Side-by-Side.
+          </p>
+          <span style="font-size:12px; font-weight:800; color:var(--color-primary); text-transform:uppercase;">Стоимость от 1500 сом</span>
+        </div>
+
+        <!-- Card 2: Commercial -->
+        <div class="glass-card appliance-card" style="border-color: rgba(16, 185, 129, 0.2);">
+          <div style="position:absolute; top:12px; right:12px; background:rgba(16, 185, 129, 0.1); color:var(--color-success); font-size:10px; font-weight:800; padding:4px 8px; border-radius:4px; text-transform:uppercase;">Для бизнеса</div>
+          <h3 style="font-size:20px; font-weight:700; margin-bottom:12px; font-family:var(--font-secondary);">Коммерческий холод</h3>
+          <p style="font-size:13px; color:var(--text-secondary); margin-bottom:20px; line-height:1.6;">
+            Срочное обслуживание витрин, морозильных ларей, холодильных шкафов, льдогенераторов и чиллеров в магазинах и заведениях общепита. Быстрый выезд за 45 минут, чтобы защитить ваши продукты от порчи.
+          </p>
+          <span style="font-size:12px; font-weight:800; color:var(--color-success); text-transform:uppercase;">Срочный выезд B2B</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Cost Calculator (Awwwards UX) -->
+  <section class="section-padding" id="calculator">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Калькулятор ремонта</span>
+        <h2 class="section-title">Рассчитайте стоимость онлайн</h2>
+        <p class="section-subtitle">Выберите тип вашего холодильника и тип неисправности, чтобы получить примерную стоимость ремонта.</p>
+      </div>
+
+      <div class="glass-card calculator-widget" style="padding: 40px; border-radius: var(--radius-md);">
+        <!-- Step Selection Panel -->
+        <div style="display:flex; flex-direction:column; gap:24px;">
+          <!-- Step 1: Type -->
+          <div>
+            <span class="step-badge">Шаг 1</span>
+            <h4 style="font-size:16px; font-weight:700; margin-bottom:12px;">Укажите тип холодильника:</h4>
+            <div style="display:flex; gap:12px; flex-wrap:wrap;">
+              <button class="btn btn-secondary active" id="btn-calc-domestic" data-fridge-type="domestic">Бытовой (домашний)</button>
+              <button class="btn btn-secondary" id="btn-calc-commercial" data-fridge-type="commercial">Коммерческий (витрина/ларь)</button>
+            </div>
+          </div>
+
+          <!-- Step 2: Issue -->
+          <div>
+            <span class="step-badge">Шаг 2</span>
+            <h4 style="font-size:16px; font-weight:700; margin-bottom:12px;">Что случилось с оборудованием?</h4>
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:12px;">
+              <button class="btn btn-secondary active" data-calc-issue="diagnose">Не холодит / Не морозит</button>
+              <button class="btn btn-secondary" data-calc-issue="thermostat">Не выключается / Сильно намораживает</button>
+              <button class="btn btn-secondary" data-calc-issue="compressor">Не включается / Гудит</button>
+              <button class="btn btn-secondary" data-calc-issue="leak">Течет вода / Лед внизу</button>
+              <button class="btn btn-secondary" data-calc-issue="board">Выбивает автомат / Мигают ошибки</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Result Card -->
+        <div class="glass-card" style="padding: 30px; display:flex; flex-direction:column; justify-content:space-between; align-items:center; border-color: rgba(0, 102, 255, 0.2); background:rgba(0, 102, 255, 0.02);">
+          <div style="text-align:center;">
+            <h5 style="font-size:14px; color:var(--text-secondary); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:8px;">Ориентировочная цена</h5>
+            <div style="font-size:48px; font-weight:800; font-family:var(--font-secondary); line-height:1;" id="calc-price-display">
+              0 <span style="font-size:24px; font-weight:600;">сом</span>
+            </div>
+            <p style="font-size:12px; color:var(--text-muted); margin-top:8px;" id="calc-desc-display">Выезд и точная диагностика на месте мастером — 900 сом (бесплатно в случае ремонта).</p>
+          </div>
+
+          <a href="#" id="calc-send-btn" class="btn btn-primary" style="width:100%; margin-top:20px;">Записаться на ремонт</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- B2B Section (Cooperation with corporate clients) -->
+  <section class="section-padding" id="b2b" style="background: var(--bg-secondary); border-top: 1px solid var(--border-color);">
+    <div class="container" style="max-width: 1000px;">
+      <div class="section-header" style="text-align: center; margin-bottom: 50px;">
+        <span class="section-tag" style="background: rgba(16, 185, 129, 0.1); color: var(--color-success);">Для юридических лиц</span>
+        <h2 class="section-title">Обслуживание коммерческого холода в Бишкеке</h2>
+        <p class="section-subtitle">Работаем официально. Выставляем Счета и Акты выполненных работ. Принимаем безналичный расчет.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+        <!-- Card 1: Documents -->
+        <div class="glass-card" style="padding: 30px; border-radius: var(--radius-md); border: 1px solid var(--border-color); display: flex; flex-direction: column; gap: 16px;">
+          <div style="width: 48px; height: 48px; border-radius: 50%; background: rgba(59, 130, 246, 0.1); display: flex; align-items: center; justify-content: center; color: var(--color-primary);">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          </div>
+          <h3 style="font-size: 18px; font-weight: 700; font-family: var(--font-secondary);">Полный пакет документов</h3>
+          <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.6;">Предоставляем официальные Счета на оплату, Договоры и Акты выполненных работ. Оперативно вносим любые правки по запросу вашей бухгалтерии.</p>
+        </div>
+
+        <!-- Card 2: Cashless Payment -->
+        <div class="glass-card" style="padding: 30px; border-radius: var(--radius-md); border: 1px solid var(--border-color); display: flex; flex-direction: column; gap: 16px;">
+          <div style="width: 48px; height: 48px; border-radius: 50%; background: rgba(16, 185, 129, 0.1); display: flex; align-items: center; justify-content: center; color: var(--color-success);">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+          </div>
+          <h3 style="font-size: 18px; font-weight: 700; font-family: var(--font-secondary);">Безналичный расчет</h3>
+          <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.6;">Принимаем оплату переводом на банковский счет по реквизитам. Работаем как с НДС, так и без НДС. Фиксируем цены в договоре без скрытых доплат.</p>
+        </div>
+
+        <!-- Card 3: Speed -->
+        <div class="glass-card" style="padding: 30px; border-radius: var(--radius-md); border: 1px solid var(--border-color); display: flex; flex-direction: column; gap: 16px;">
+          <div style="width: 48px; height: 48px; border-radius: 50%; background: rgba(245, 158, 11, 0.1); display: flex; align-items: center; justify-content: center; color: #f59e0b;">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3 style="font-size: 18px; font-weight: 700; font-family: var(--font-secondary);">Срочный B2B-выезд</h3>
+          <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.6;">Быстро обслуживаем рестораны, магазины, кондитерские и склады в Бишкеке. Проводим ремонт оперативно, чтобы не мешать вашей работе и спасти продукты.</p>
+        </div>
+      </div>
+
+      <div style="margin-top: 40px; text-align: center;">
+        <a href="https://wa.me/996502985896?text=Здравствуйте!%20Хотим%20заключить%20договор%20на%20обслуживание%20холодильников%20для%20компании" target="_blank" class="btn btn-whatsapp" style="display: inline-flex; align-items: center; gap: 8px;">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+          Получить коммерческое предложение
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="section-padding" id="reviews">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Отзывы клиентов</span>
+        <h2 class="section-title">Что говорят жители Бишкека</h2>
+        <p class="section-subtitle">Честные отзывы о качестве нашего ремонта бытовых и коммерческих холодильников.</p>
+      </div>
+
+      <div class="google-reviews-container">
+        <!-- Review 1: Муслима -->
+        <div class="google-review-card glass-card">
+          <div class="gr-header">
+            <div class="gr-avatar" style="background-color: #689f38;">М</div>
+            <div class="gr-user-info">
+              <h4 class="gr-name">Каныкей</h4>
+              <span class="gr-stats">1 отзыв</span>
+            </div>
+            <div class="gr-actions-dots">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/></svg>
+            </div>
+          </div>
+          <div class="gr-rating-row">
+            <div class="gr-stars">★★★★★</div>
+            <span class="gr-date">2 недели назад</span>
+          </div>
+          <p class="gr-text">Огромное спасибо за быстрый ремонт холодильника Samsung No Frost. Приехали в тот же день, быстро нашли причину в электронике и всё исправили. Дали официальный гарантийный талон 👍</p>
+        </div>
+
+        <!-- Review 2: Константин -->
+        <div class="google-review-card glass-card">
+          <div class="gr-header">
+            <div class="gr-avatar" style="background-color: #37474f;">А</div>
+            <div class="gr-user-info">
+              <h4 class="gr-name">Азамат (управляющий)</h4>
+              <span class="gr-stats">3 отзыва</span>
+            </div>
+            <div class="gr-actions-dots">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/></svg>
+            </div>
+          </div>
+          <div class="gr-rating-row">
+            <div class="gr-stars">★★★★★</div>
+            <span class="gr-date">1 месяц назад</span>
+          </div>
+          <p class="gr-text">Для нашей кофейни сломанная холодильная витрина — это катастрофа. Мастера ClimaFlow приехали за 40 минут. Заменили термостат на месте, выписали квитанцию на компанию. Очень выручили!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacts Section -->
+  <section class="section-padding" id="contacts" style="background: var(--bg-secondary);">
+    <div class="container contact-grid">
+      <div class="contact-info">
+        <div>
+          <span class="section-tag">Мы всегда на связи</span>
+          <h2 class="section-title">Свяжитесь с нами напрямую</h2>
+          <p style="color:var(--text-secondary); margin-bottom: 24px;">Получите консультацию инженера или срочно вызовите мастера на объект.</p>
+        </div>
+
+        <!-- Lead Specialist Profile Card -->
+        <div class="glass-card specialist-card" style="display: flex; gap: 16px; align-items: center; padding: 20px; border-radius: var(--radius-md); margin-bottom: 8px; border-color: rgba(16, 185, 129, 0.2);">
+          <div style="width: 80px; height: 80px; border-radius: 50%; background: #0066ff; display:flex; align-items:center; justify-content:center; color:white; font-size:32px; font-weight:800; font-family:var(--font-secondary);">Р</div>
+          <div>
+            <h4 style="font-size: 16px; font-weight: 700; margin-bottom: 4px; font-family: var(--font-secondary);">Руслан, ведущий мастер ClimaFlow</h4>
+            <p style="font-size: 13px; color: var(--text-secondary); margin-bottom: 8px;">Специализация: ремонт электроники и компрессоров</p>
+            <span class="badge-active" style="display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 700; color: var(--color-success); background: rgba(16, 185, 129, 0.1); padding: 4px 10px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px;">
+              <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--color-success); display: block;"></span>
+              На дежурстве (готов к выезду)
+            </span>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <div class="contact-detail">
+            <h4>Номер телефона</h4>
+            <p><a href="tel:+996502985896">+996 (502) 985-896</a></p>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="21 15 16 10 5 21"/><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          </div>
+          <div class="contact-detail">
+            <h4>Написать в чат</h4>
+            <p><a href="https://wa.me/996502985896" target="_blank" style="color: #25d366; font-weight:700;">Открыть диалог в WhatsApp</a></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Lead Capture Block -->
+      <div class="glass-card contact-form">
+        <h3 class="form-title">Заказать вызов мастера</h3>
+        <p class="form-subtitle">Оставьте ваши контакты. Наш мастер перезвонит вам в течение 10 минут.</p>
+        
+        <form id="refrigerator-contact-form">
+          <div class="form-group">
+            <input type="text" id="ref-name" class="form-input" placeholder=" " required>
+            <label for="ref-name">Ваше имя</label>
+          </div>
+          <div class="form-group">
+            <input type="tel" id="ref-phone" class="form-input" placeholder=" " required value="+996 ">
+            <label for="ref-phone">Номер телефона (WhatsApp)</label>
+          </div>
+          <button type="submit" class="btn btn-whatsapp" style="width: 100%; border-radius:8px;">Оформить заявку в WhatsApp</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="logo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"></path>
+            </svg>
+            Clima<span>Flow</span>
+          </a>
+          <p>Профессиональный ремонт и обслуживание бытовых и коммерческих холодильных систем в Бишкеке.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Услуги холода</h5>
+          <ul>
+            <li><a href="#calculator">Ремонт компрессора</a></li>
+            <li><a href="#calculator">Заправка фреоном</a></li>
+            <li><a href="#calculator">Замена терморегулятора</a></li>
+            <li><a href="#b2b">Обслуживание витрин</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Контакты</h5>
+          <ul>
+            <li>+996 (502) 985-896</li>
+            <li>Бишкек, выезд по всему городу</li>
+            <li>С 08:00 до 21:00 без выходных</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 ClimaFlow. Все права защищены. Сервис ремонта холодильников.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Float WhatsApp Button -->
+  <a href="https://wa.me/996502985896?text=Здравствуйте!%20Нужен%20ремонт%20холодильника." target="_blank" class="whatsapp-float-btn" aria-label="Связаться в WhatsApp">
+    <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+    </svg>
+  </a>
+
+  <!-- Web Script to run UI animations and cost calculations -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 0. Light / Dark Theme Switcher
+      const themeToggle = document.getElementById('theme-toggle');
+      const sunIcon = document.querySelector('.sun-icon');
+      const moonIcon = document.querySelector('.moon-icon');
+      const body = document.body;
+
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      body.setAttribute('data-theme', savedTheme);
+      updateThemeIcons(savedTheme);
+
+      themeToggle.addEventListener('click', () => {
+        const currentTheme = body.getAttribute('data-theme');
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        body.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateThemeIcons(newTheme);
+      });
+
+      function updateThemeIcons(theme) {
+        if (theme === 'dark') {
+          sunIcon.style.display = 'block';
+          moonIcon.style.display = 'none';
+        } else {
+          sunIcon.style.display = 'none';
+          moonIcon.style.display = 'block';
+        }
+      }
+      // 1. Refrigerator Door Interaction
+      const fridge = document.getElementById('interactive-fridge');
+      const btnOpen = document.getElementById('btn-open-fridge');
+      const btnFreeze = document.getElementById('btn-freeze-mode');
+      const tempDisplay = document.getElementById('fridge-temp-display');
+      
+      let isOpen = false;
+      let isFreezing = false;
+
+      btnOpen.addEventListener('click', () => {
+        isOpen = !isOpen;
+        if (isOpen) {
+          fridge.classList.add('open');
+          btnOpen.textContent = 'Закрыть дверцу';
+          // Release drift cold particles
+          releaseFrostParticles();
+        } else {
+          fridge.classList.remove('open');
+          btnOpen.textContent = 'Открыть дверцу';
+        }
+      });
+
+      btnFreeze.addEventListener('click', () => {
+        isFreezing = !isFreezing;
+        if (isFreezing) {
+          tempDisplay.textContent = '-24°C';
+          tempDisplay.style.color = '#ffffff';
+          tempDisplay.style.textShadow = '0 0 10px #00d2ff';
+          btnFreeze.textContent = 'Обычный режим';
+          if (isOpen) releaseFrostParticles();
+        } else {
+          tempDisplay.textContent = '-18°C';
+          tempDisplay.style.color = '#00d2ff';
+          tempDisplay.style.textShadow = 'none';
+          btnFreeze.textContent = 'Суперзаморозка';
+        }
+      });
+
+      function releaseFrostParticles() {
+        const container = document.querySelector('.fridge-interactive-container');
+        for (let i = 0; i < 15; i++) {
+          const particle = document.createElement('div');
+          particle.className = 'frost-particle';
+          // Random offset from fridge opening side
+          particle.style.left = 'calc(50% + ' + (Math.random() * 40 - 20) + 'px)';
+          particle.style.top = '120px';
+          particle.style.animation = `drift ${1 + Math.random() * 1.5}s ease-out forwards`;
+          
+          container.appendChild(particle);
+          
+          setTimeout(() => {
+            particle.remove();
+          }, 2500);
+        }
+      }
+
+      // 2. Interactive Calculator Logic
+      const btnCalcDomestic = document.getElementById('btn-calc-domestic');
+      const btnCalcCommercial = document.getElementById('btn-calc-commercial');
+      const calcPrice = document.getElementById('calc-price-display');
+      const calcDesc = document.getElementById('calc-desc-display');
+      const calcSendBtn = document.getElementById('calc-send-btn');
+      
+      const calcIssueBtns = document.querySelectorAll('[data-calc-issue]');
+
+      let currentType = 'domestic';
+      let currentIssue = 'diagnose';
+
+      const basePrices = {
+        diagnose: 900,
+        thermostat: 3500,
+        compressor: 8000,
+        leak: 3000,
+        board: 6000
+      };
+
+      const issueLabels = {
+        diagnose: 'Не холодит / Не морозит',
+        thermostat: 'Не выключается / Сильно намораживает',
+        compressor: 'Не включается / Гудит компрессор',
+        leak: 'Течет вода / Наледь в камере',
+        board: 'Сбои электроники / Ошибки'
+      };
+
+      btnCalcDomestic.addEventListener('click', () => {
+        btnCalcDomestic.classList.add('active');
+        btnCalcCommercial.classList.remove('active');
+        currentType = 'domestic';
+        updatePrice();
+      });
+
+      btnCalcCommercial.addEventListener('click', () => {
+        btnCalcCommercial.classList.add('active');
+        btnCalcDomestic.classList.remove('active');
+        currentType = 'commercial';
+        updatePrice();
+      });
+
+      calcIssueBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          calcIssueBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          currentIssue = btn.dataset.calcIssue;
+          updatePrice();
+        });
+      });
+
+      function updatePrice() {
+        let price = basePrices[currentIssue];
+        let multiplier = currentType === 'commercial' ? 1.4 : 1.0;
+        let finalPrice = Math.round(price * multiplier);
+        
+        calcPrice.innerHTML = finalPrice + ' <span style="font-size:24px; font-weight:600;">сом</span>';
+        
+        if (currentIssue === 'diagnose') {
+          calcDesc.textContent = 'При проведении ремонта диагностика и выезд мастера бесплатные (иначе оплачивается только осмотр — 900 сом).';
+        } else {
+          calcDesc.textContent = `Замена деталей и ремонт при поломке "${issueLabels[currentIssue]}". Точная цена с учетом запчастей согласовывается до начала работ.`;
+        }
+
+        // Update WhatsApp Booking Link
+        const typeText = currentType === 'commercial' ? 'коммерческого' : 'бытового';
+        const msg = `Здравствуйте! Я рассчитал стоимость на сайте. Нужен ремонт ${typeText} холодильника. Проблема: ${issueLabels[currentIssue]}. Хочу вызвать мастера.`;
+        calcSendBtn.href = `https://wa.me/996502985896?text=${encodeURIComponent(msg)}`;
+      }
+
+      // Initial run
+      updatePrice();
+
+      // Form submission hook
+      const refForm = document.getElementById('refrigerator-contact-form');
+      refForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('ref-name').value;
+        const phone = document.getElementById('ref-phone').value;
+        const msg = `Здравствуйте! Оставил заявку на сайте по холодильникам. Меня зовут ${name}, мой телефон ${phone}. Нужна консультация / вызов мастера.`;
+        window.open(`https://wa.me/996502985896?text=${encodeURIComponent(msg)}`, '_blank');
+      });
+    });
+  </script>
+</body>
+</html>
