@@ -750,7 +750,7 @@
             <div style="font-size:48px; font-weight:800; font-family:var(--font-secondary); line-height:1;" id="calc-price-display">
               0 <span style="font-size:24px; font-weight:600;">сом</span>
             </div>
-            <p style="font-size:12px; color:var(--text-muted); margin-top:8px;" id="calc-desc-display">Выезд и точная диагностика на месте мастером — 900 сом (бесплатно в случае ремонта).</p>
+            <p style="font-size:12px; color:var(--text-muted); margin-top:8px;" id="calc-desc-display">Выезд и точная диагностика на месте мастером — 300 сом (бесплатно в случае ремонта).</p>
           </div>
 
           <a href="#" id="calc-send-btn" class="btn btn-primary" style="width:100%; margin-top:20px;">Записаться на ремонт</a>
@@ -1288,11 +1288,11 @@
       let currentIssue = 'diagnose';
 
       const basePrices = {
-        diagnose: 900,
-        thermostat: 3500,
-        compressor: 8000,
-        leak: 3000,
-        board: 6000
+        diagnose: 300,
+        thermostat: 1500,
+        compressor: 4300,
+        leak: 1200,
+        board: 3000
       };
 
       const issueLabels = {
@@ -1334,7 +1334,7 @@
         calcPrice.innerHTML = finalPrice + ' <span style="font-size:24px; font-weight:600;">сом</span>';
         
         if (currentIssue === 'diagnose') {
-          calcDesc.textContent = 'При проведении ремонта диагностика и выезд мастера бесплатные (иначе оплачивается только осмотр — 900 сом).';
+          calcDesc.textContent = 'При проведении ремонта диагностика и выезд мастера бесплатные (иначе оплачивается только осмотр — 300 сом).';
         } else {
           calcDesc.textContent = `Замена деталей и ремонт при поломке "${issueLabels[currentIssue]}". Точная цена с учетом запчастей согласовывается до начала работ.`;
         }
