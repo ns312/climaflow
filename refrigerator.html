@@ -444,7 +444,38 @@
       display: inline-block;
       vertical-align: top;
       margin: 0;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+    }
+
+    /* Hero Overlay Card & Image styling */
+    .hero-overlay-box {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      right: 20px;
+      z-index: 2;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 12px 18px;
+      border-radius: 8px;
+      border: 1px solid rgba(0, 102, 255, 0.2);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+    }
+    
+    body[data-theme="dark"] .hero-overlay-box {
+      background: rgba(30, 41, 59, 0.95);
+      border-color: rgba(255, 255, 255, 0.1);
+      box-shadow: none;
+    }
+    
+    body[data-theme="dark"] .hero-overlay-box h4 {
+      color: #ffffff !important;
+    }
+
+    .fridge-interactive-container:hover .hero-tech-img {
+      transform: scale(1.04);
     }
   </style>
 </head>
@@ -531,33 +562,24 @@
         </div>
       </div>
 
-      <!-- Interactive 3D Refrigerator Animation Section (Awwwards) -->
-      <div class="fridge-interactive-container">
-        <div class="fridge-body" id="interactive-fridge">
-          <div class="fridge-inside">
-            <div class="fridge-light"></div>
-            <div class="fridge-shelves">
-              <div class="fridge-shelf"></div>
-              <div class="fridge-shelf"></div>
-              <div class="fridge-shelf"></div>
-            </div>
-            <div style="display:flex; justify-content:space-around; width:100%;">
-              <div style="width:25px; height:30px; background:rgba(0, 210, 255, 0.1); border:1px solid rgba(0, 210, 255, 0.2); border-radius:4px;"></div>
-              <div style="width:40px; height:20px; background:rgba(0, 210, 255, 0.1); border:1px solid rgba(0, 210, 255, 0.2); border-radius:4px;"></div>
-            </div>
+      <!-- Interactive Refrigerator Hero Image and Snow Canvas -->
+      <div class="fridge-interactive-container" style="position: relative; height: 450px; overflow: hidden; border-radius: var(--radius-md); border: 1px solid var(--border-color); box-shadow: var(--shadow-lg); background: #000; max-width: 500px; width:100%; margin: 0 auto;">
+        <!-- Canvas for Falling Snow -->
+        <canvas id="snow-canvas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 3; pointer-events: none;"></canvas>
+        
+        <!-- Technician Repair Image -->
+        <img src="images/hero_technician.jpg" alt="Срочный ремонт холодильников в Бишкеке — сертифицированный мастер ClimaFlow" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; z-index: 1;" class="hero-tech-img">
+        
+        <!-- Interactive Diagnostics Overlay -->
+        <div class="hero-overlay-box">
+          <div style="text-align:left;">
+            <span class="badge-active" style="display:inline-flex; align-items:center; gap:6px; font-size:10px; color:var(--color-primary); font-weight:700; text-transform:uppercase;">
+              <span style="width:6px; height:6px; border-radius:50%; background:var(--color-primary); display:block; animation: pulse 1.5s infinite;"></span>
+              Мастер готов к выезду
+            </span>
+            <h4 style="font-size:13px; font-weight:700; color:var(--text-primary); margin-top:2px;">Выезд во все районы Бишкека</h4>
           </div>
-          <div class="fridge-door">
-            <div class="fridge-display" id="fridge-temp-display">
-              -18°C
-            </div>
-            <div class="fridge-door-handle"></div>
-            <div style="font-size:10px; color:var(--text-muted); text-align:center; font-family:var(--font-secondary);">ClimaFlow Cold</div>
-          </div>
-        </div>
-
-        <div class="fridge-control-panel">
-          <button class="btn btn-secondary" id="btn-open-fridge" style="padding: 8px 16px; font-size:13px;">Открыть дверцу</button>
-          <button class="btn btn-secondary" id="btn-freeze-mode" style="padding: 8px 16px; font-size:13px; color:var(--color-cool);">Суперзаморозка</button>
+          <button class="btn btn-secondary" id="btn-snow-toggle" style="padding: 6px 12px; font-size:11px; background:var(--color-primary); color:white; border-color:var(--color-primary); margin:0;">Снегопад: Вкл</button>
         </div>
       </div>
     </div>
@@ -1219,59 +1241,86 @@
         }
       }
 
-      // 1. Refrigerator Door Interaction
-      const fridge = document.getElementById('interactive-fridge');
-      const btnOpen = document.getElementById('btn-open-fridge');
-      const btnFreeze = document.getElementById('btn-freeze-mode');
-      const tempDisplay = document.getElementById('fridge-temp-display');
-      
-      let isOpen = false;
-      let isFreezing = false;
-
-      btnOpen.addEventListener('click', () => {
-        isOpen = !isOpen;
-        if (isOpen) {
-          fridge.classList.add('open');
-          btnOpen.textContent = 'Закрыть дверцу';
-          // Release drift cold particles
-          releaseFrostParticles();
-        } else {
-          fridge.classList.remove('open');
-          btnOpen.textContent = 'Открыть дверцу';
+      // 1. Falling Snow Canvas Animation
+      const canvas = document.getElementById("snow-canvas");
+      if (canvas) {
+        const ctx = canvas.getContext("2d");
+        let animationId;
+        let isSnowing = true;
+        
+        const resizeCanvas = () => {
+          canvas.width = canvas.offsetWidth;
+          canvas.height = canvas.offsetHeight;
+        };
+        resizeCanvas();
+        window.addEventListener("resize", resizeCanvas);
+        
+        const flakes = [];
+        const numFlakes = 50;
+        
+        for (let i = 0; i < numFlakes; i++) {
+          flakes.push({
+            x: Math.random() * canvas.offsetWidth,
+            y: Math.random() * canvas.offsetHeight,
+            r: Math.random() * 2 + 1,
+            d: Math.random() * numFlakes
+          });
         }
-      });
-
-      btnFreeze.addEventListener('click', () => {
-        isFreezing = !isFreezing;
-        if (isFreezing) {
-          tempDisplay.textContent = '-24°C';
-          tempDisplay.style.color = '#ffffff';
-          tempDisplay.style.textShadow = '0 0 10px #00d2ff';
-          btnFreeze.textContent = 'Обычный режим';
-          if (isOpen) releaseFrostParticles();
-        } else {
-          tempDisplay.textContent = '-18°C';
-          tempDisplay.style.color = '#00d2ff';
-          tempDisplay.style.textShadow = 'none';
-          btnFreeze.textContent = 'Суперзаморозка';
-        }
-      });
-
-      function releaseFrostParticles() {
-        const container = document.querySelector('.fridge-interactive-container');
-        for (let i = 0; i < 15; i++) {
-          const particle = document.createElement('div');
-          particle.className = 'frost-particle';
-          // Random offset from fridge opening side
-          particle.style.left = 'calc(50% + ' + (Math.random() * 40 - 20) + 'px)';
-          particle.style.top = '120px';
-          particle.style.animation = `drift ${1 + Math.random() * 1.5}s ease-out forwards`;
-          
-          container.appendChild(particle);
-          
-          setTimeout(() => {
-            particle.remove();
-          }, 2500);
+        
+        const drawFlakes = () => {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          ctx.fillStyle = "rgba(255, 255, 255, 0.75)";
+          ctx.beginPath();
+          for (let i = 0; i < numFlakes; i++) {
+            const f = flakes[i];
+            ctx.moveTo(f.x, f.y);
+            ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2, true);
+          }
+          ctx.fill();
+          moveFlakes();
+        };
+        
+        const moveFlakes = () => {
+          for (let i = 0; i < numFlakes; i++) {
+            const f = flakes[i];
+            f.y += Math.cos(f.d) + 1 + f.r / 2;
+            f.x += Math.sin(f.d) * 0.5;
+            
+            if (f.y > canvas.height) {
+              flakes[i] = {
+                x: Math.random() * canvas.width,
+                y: -10,
+                r: f.r,
+                d: f.d
+              };
+            }
+          }
+        };
+        
+        const runAnimation = () => {
+          if (isSnowing) {
+            drawFlakes();
+            animationId = requestAnimationFrame(runAnimation);
+          }
+        };
+        
+        runAnimation();
+        
+        const toggleBtn = document.getElementById("btn-snow-toggle");
+        if (toggleBtn) {
+          toggleBtn.addEventListener("click", () => {
+            isSnowing = !isSnowing;
+            if (isSnowing) {
+              toggleBtn.textContent = "Снегопад: Вкл";
+              toggleBtn.style.background = "var(--color-primary)";
+              runAnimation();
+            } else {
+              toggleBtn.textContent = "Снегопад: Выкл";
+              toggleBtn.style.background = "#94a3b8";
+              cancelAnimationFrame(animationId);
+              ctx.clearRect(0, 0, canvas.width, canvas.height);
+            }
+          });
         }
       }
 
