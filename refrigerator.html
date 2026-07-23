@@ -259,17 +259,108 @@
       background: var(--color-cool);
     }
 
-    /* Calculator Custom Styles */
+    /* Cost Calculator Custom Styling */
     .calculator-widget {
       display: grid;
       grid-template-columns: 1.2fr 0.8fr;
-      gap: 40px;
-      margin-top: 40px;
+      gap: 24px;
+      margin-top: 30px;
+      background: #f1f5f9 !important; /* Non-white background for light theme */
+      border: 1px solid #cbd5e1 !important;
+      padding: 30px !important;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02) !important;
+    }
+    
+    body[data-theme="dark"] .calculator-widget {
+      background: #1e293b !important;
+      border-color: #334155 !important;
+    }
+
+    /* Calculator Buttons visibility */
+    .calculator-widget .btn-secondary {
+      background: #e2e8f0 !important; /* Cool gray background for light theme buttons */
+      color: #0f172a !important;
+      border: 1px solid #cbd5e1 !important;
+      padding: 10px 16px;
+      font-size: 13px;
+      font-weight: 600;
+      transition: all var(--transition-fast);
+      cursor: pointer;
+      text-align: left;
+    }
+    
+    body[data-theme="dark"] .calculator-widget .btn-secondary {
+      background: #334155 !important;
+      color: #f1f5f9 !important;
+      border-color: #475569 !important;
+    }
+
+    .calculator-widget .btn-secondary.active {
+      background: var(--color-primary) !important;
+      color: white !important;
+      border-color: var(--color-primary) !important;
+      box-shadow: 0 4px 12px rgba(0, 102, 255, 0.15);
+    }
+    
+    .calculator-widget .btn-secondary:hover:not(.active) {
+      background: #cbd5e1 !important;
+      border-color: #94a3b8 !important;
+    }
+    
+    body[data-theme="dark"] .calculator-widget .btn-secondary:hover:not(.active) {
+      background: #475569 !important;
+      border-color: #64748b !important;
+    }
+
+    /* Calculator Result Card */
+    .calculator-result-card {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      border: 1px solid rgba(0, 102, 255, 0.2) !important;
+      background: #ffffff !important; /* Contrasting white box on gray background */
+      border-radius: var(--radius-md);
+      box-shadow: 0 10px 25px -5px rgba(0, 102, 255, 0.05);
+    }
+    
+    body[data-theme="dark"] .calculator-result-card {
+      background: #0f172a !important;
+      border-color: rgba(0, 102, 255, 0.3) !important;
+      box-shadow: none;
+    }
+
+    .calculator-issue-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 10px;
     }
 
     @media (max-width: 768px) {
       .calculator-widget {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
+        padding: 20px 16px !important;
+        gap: 20px !important;
+      }
+      .calculator-widget h4 {
+        font-size: 14px !important;
+        margin-bottom: 8px !important;
+      }
+      .calculator-widget .btn-secondary {
+        font-size: 12px !important;
+        padding: 8px 12px !important;
+      }
+      .calculator-issue-grid {
+        grid-template-columns: 1fr !important;
+        gap: 8px !important;
+      }
+      .calculator-result-card {
+        padding: 20px !important;
+        margin-top: 10px;
+      }
+      .calculator-result-card #calc-price-display {
+        font-size: 38px !important;
       }
     }
 
@@ -625,9 +716,9 @@
         <p class="section-subtitle">Выберите тип вашего холодильника и тип неисправности, чтобы получить примерную стоимость ремонта.</p>
       </div>
 
-      <div class="glass-card calculator-widget" style="padding: 40px; border-radius: var(--radius-md);">
+      <div class="glass-card calculator-widget" style="border-radius: var(--radius-md);">
         <!-- Step Selection Panel -->
-        <div style="display:flex; flex-direction:column; gap:24px;">
+        <div style="display:flex; flex-direction:column; gap:20px;">
           <!-- Step 1: Type -->
           <div>
             <span class="step-badge">Шаг 1</span>
@@ -642,7 +733,7 @@
           <div>
             <span class="step-badge">Шаг 2</span>
             <h4 style="font-size:16px; font-weight:700; margin-bottom:12px;">Что случилось с оборудованием?</h4>
-            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:12px;">
+            <div class="calculator-issue-grid">
               <button class="btn btn-secondary active" data-calc-issue="diagnose">Не холодит / Не морозит</button>
               <button class="btn btn-secondary" data-calc-issue="thermostat">Не выключается / Сильно намораживает</button>
               <button class="btn btn-secondary" data-calc-issue="compressor">Не включается / Гудит</button>
@@ -653,7 +744,7 @@
         </div>
 
         <!-- Result Card -->
-        <div class="glass-card" style="padding: 30px; display:flex; flex-direction:column; justify-content:space-between; align-items:center; border-color: rgba(0, 102, 255, 0.2); background:rgba(0, 102, 255, 0.02);">
+        <div class="calculator-result-card">
           <div style="text-align:center;">
             <h5 style="font-size:14px; color:var(--text-secondary); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:8px;">Ориентировочная цена</h5>
             <div style="font-size:48px; font-weight:800; font-family:var(--font-secondary); line-height:1;" id="calc-price-display">
