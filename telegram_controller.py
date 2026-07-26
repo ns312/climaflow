@@ -48,7 +48,7 @@ def run_parser(query):
             ["./venv/bin/python", "places_scraper.py", "google", query],
             capture_output=True,
             text=True,
-            timeout=180
+            timeout=600
         )
         if process.returncode == 0:
             # Делаем экспорт собранных контактов в CSV

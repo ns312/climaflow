@@ -239,7 +239,16 @@ if __name__ == "__main__":
         if not api_key:
             print("Ошибка: Переменная GOOGLE_PLACES_API_KEY не найдена в файле .env!")
             sys.exit(1)
-        fetch_places_google(query, api_key)
+            
+        # Если передано несколько запросов через запятую (например, по районам)
+        if "," in query:
+            sub_queries = [q.strip() for q in query.split(",") if q.strip()]
+            print(f"📊 Найдено {len(sub_queries)} поисковых запросов. Запускаю последовательный сбор...")
+            for idx, sq in enumerate(sub_queries, 1):
+                print(f"\n🔎 [{idx}/{len(sub_queries)}] Парсинг запроса: '{sq}'")
+                fetch_places_google(sq, api_key)
+        else:
+            fetch_places_google(query, api_key)
     elif mode == "export":
         export_to_csv()
     else:
