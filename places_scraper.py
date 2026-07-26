@@ -203,7 +203,7 @@ def export_to_csv(filename="leads_export.csv"):
     conn.close()
     
     with open(filename, "w", newline="", encoding="utf-8-sig") as f:
-        writer = csv.writer(f, delimiter=";")
+        writer = csv.writer(f, delimiter=";", quoting=csv.QUOTE_ALL)
         writer.writerow(["ID", "Название", "Адрес", "Телефон (WhatsApp)", "Сайт", "Категория", "Статус"])
         writer.writerows(rows)
     print(f"✅ База данных успешно экспортирована в файл: {filename}")
