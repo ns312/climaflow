@@ -68,6 +68,10 @@ def fetch_places_google(query, api_key):
             break
             
         data = response.json()
+        api_status = data.get("status")
+        if api_status and api_status not in ["OK", "ZERO_RESULTS"]:
+            print(f"❌ Ошибка Google Places API (Статус: {api_status}): {data.get('error_message', 'Нет описания ошибки')}")
+            break
         results = data.get("results", [])
         
         for place in results:
