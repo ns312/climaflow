@@ -45,14 +45,14 @@ def run_parser(query):
     # Запускаем places_scraper.py в режиме google через subprocess
     try:
         process = subprocess.run(
-            ["python3", "places_scraper.py", "google", query],
+            ["./venv/bin/python", "places_scraper.py", "google", query],
             capture_output=True,
             text=True,
             timeout=180
         )
         if process.returncode == 0:
             # Делаем экспорт собранных контактов в CSV
-            subprocess.run(["python3", "places_scraper.py", "export"], capture_output=True)
+            subprocess.run(["./venv/bin/python", "places_scraper.py", "export"], capture_output=True)
             
             # Отправляем файл
             csv_path = "leads_export.csv"
@@ -123,7 +123,7 @@ def handle_update(update):
             
     elif text.startswith("/export"):
         try:
-            subprocess.run(["python3", "places_scraper.py", "export"], capture_output=True)
+            subprocess.run(["./venv/bin/python", "places_scraper.py", "export"], capture_output=True)
             csv_path = "leads_export.csv"
             if os.path.exists(csv_path):
                 send_document(csv_path, "📊 Текущая база контактов (Excel/CSV)")
