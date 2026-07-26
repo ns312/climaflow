@@ -1,0 +1,1793 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica Dental São Paulo | Implantes Dentales Premium y Rehabilitación</title>
+    <meta name="description" content="Recupere la seguridad de sonreír y masticar con implantes guiados por computadora y carga rápida en São Paulo. Procedimiento humanizado y sin dolor.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- CSS Estilos Customizados (Reference-matched styling in Spanish) -->
+    <style>
+        :root {
+            --color-primary: #555555; /* Dark gray for menus */
+            --color-accent: #00A499; /* Teal / Cyan */
+            --color-text-dark: #333333;
+            --color-text-light: #F8F9FA;
+            --color-bg-light: #F9F9F9;
+            --color-bg-white: #FFFFFF;
+            --color-border: #E8ECEF;
+            --font-serif: 'Playfair Display', Georgia, serif;
+            --font-sans: 'Outfit', sans-serif;
+            --transition: all 0.3s ease;
+            --box-shadow-sm: 0 4px 12px rgba(15, 30, 54, 0.05);
+            --box-shadow-md: 0 12px 30px rgba(15, 30, 54, 0.08);
+        }
+
+        /* Reset y Ajustes Generales */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            color: var(--color-text-dark);
+            background-color: var(--color-bg-light);
+            line-height: 1.7;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-sans);
+            font-weight: 600;
+            color: var(--color-primary);
+            line-height: 1.25;
+        }
+
+        p {
+            font-size: 16px;
+            color: #666666;
+            font-weight: 400;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* 1. Top Thin Bar */
+        .top-bar {
+            background-color: #FFFFFF;
+            color: #555555;
+            font-size: 13px;
+            padding: 10px 0;
+            border-bottom: 1px solid #F0F0F0;
+        }
+
+        .top-bar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-bar-info {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .top-bar-email {
+            font-weight: 500;
+        }
+
+        /* 2. Navbar with Centered Logo (Perfect Match) */
+        header {
+            background-color: #FFFFFF;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+        }
+
+        .navbar-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 100px;
+        }
+
+        .nav-left, .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            flex: 1;
+        }
+
+        .nav-left {
+            justify-content: flex-end;
+            padding-right: 40px;
+        }
+
+        .nav-right {
+            justify-content: flex-start;
+            padding-left: 40px;
+        }
+
+        .nav-item {
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--color-primary);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            cursor: pointer;
+        }
+
+        .nav-item:hover, .nav-item.active {
+            color: var(--color-accent);
+        }
+
+        .nav-item-arrow {
+            font-size: 10px;
+            opacity: 0.7;
+        }
+
+        .nav-logo-block {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            width: 180px;
+            cursor: pointer;
+        }
+
+        .logo-circle {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: 2px solid var(--color-accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 8px;
+            transition: var(--transition);
+        }
+
+        .nav-logo-block:hover .logo-circle {
+            transform: scale(1.08);
+            background-color: rgba(0, 164, 153, 0.03);
+        }
+
+        .logo-title {
+            font-size: 11px;
+            font-weight: 500;
+            color: var(--color-primary);
+            letter-spacing: 0.5px;
+            line-height: 1.2;
+            text-transform: uppercase;
+        }
+
+        .logo-title span {
+            display: block;
+            font-weight: 700;
+            color: var(--color-accent);
+            font-size: 13px;
+        }
+
+        /* 3. Hero Section with Cabinet Image and Parallax Darkening Overlay */
+        .hero {
+            position: relative;
+            height: 80vh;
+            min-height: 550px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            background-image: url('images/cabinet.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 30, 54, 0.45);
+            z-index: 2;
+            transition: background 0.1s ease-out;
+        }
+
+        .hero-container {
+            position: relative;
+            z-index: 3;
+            width: 100%;
+            color: #FFFFFF;
+        }
+
+        .hero-content {
+            max-width: 700px;
+            text-align: left;
+        }
+
+        .hero-content h1 {
+            font-family: var(--font-sans);
+            font-size: 58px;
+            font-weight: 600;
+            color: #FFFFFF;
+            margin-bottom: 16px;
+            line-height: 1.15;
+            letter-spacing: -0.5px;
+        }
+
+        .hero-content p {
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 36px;
+            font-weight: 400;
+            line-height: 1.4;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            background: transparent;
+            border: 2px solid #FFFFFF;
+            color: #FFFFFF;
+            font-weight: 600;
+            font-size: 16px;
+            padding: 16px 36px;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .hero-btn:hover {
+            background-color: var(--color-accent);
+            border-color: var(--color-accent);
+            color: #FFFFFF;
+            transform: translateY(-2px);
+        }
+
+        /* 4. Treatments Carousel Section */
+        .treatments-section {
+            padding: 110px 0;
+            background-color: var(--color-bg-white);
+            text-align: center;
+            position: relative;
+        }
+
+        .treatments-section .section-header {
+            margin-bottom: 60px;
+        }
+
+        .treatments-section .section-header h2 {
+            font-size: 38px;
+            font-family: var(--font-sans);
+            font-weight: 600;
+            color: var(--color-primary);
+            margin-bottom: 12px;
+        }
+
+        .header-line {
+            width: 80px;
+            height: 2px;
+            background-color: var(--color-accent);
+            margin: 15px auto;
+        }
+
+        .treatments-section .section-header p {
+            font-size: 18px;
+            color: #666666;
+            line-height: 1.6;
+        }
+
+        .carousel-outer {
+            position: relative;
+            display: flex;
+            align-items: center;
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 0 10px;
+        }
+
+        .carousel-container {
+            width: 100%;
+            overflow: hidden;
+            border-radius: 12px;
+        }
+
+        .carousel-track {
+            display: flex;
+            gap: 20px;
+            transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+            width: max-content;
+        }
+
+        .treatment-card {
+            position: relative;
+            flex-shrink: 0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+            aspect-ratio: 1 / 1.05;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .treatment-card:hover {
+            transform: scale(1.025);
+            box-shadow: 0 15px 35px rgba(15, 30, 54, 0.12);
+        }
+
+        .treatment-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: var(--transition);
+        }
+
+        .treatment-card:hover .treatment-img {
+            transform: scale(1.08);
+        }
+
+        .treatment-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(15, 30, 54, 0.9) 0%, rgba(15, 30, 54, 0.35) 50%, transparent 100%);
+            z-index: 2;
+        }
+
+        .treatment-title {
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
+            right: 30px;
+            color: #FFFFFF;
+            font-size: 21px;
+            font-weight: 600;
+            text-align: left;
+            z-index: 3;
+            line-height: 1.35;
+            font-family: var(--font-sans);
+        }
+
+        .carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            background-color: var(--color-bg-white);
+            border: 1px solid #EAEAEA;
+            color: var(--color-primary);
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+
+        .carousel-arrow:hover {
+            background-color: var(--color-accent);
+            border-color: var(--color-accent);
+            color: #FFFFFF;
+        }
+
+        .carousel-arrow.prev {
+            left: -24px;
+        }
+
+        .carousel-arrow.next {
+            right: -24px;
+        }
+
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 35px;
+        }
+
+        .carousel-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            border: 2px solid #D5D8DC;
+            background-color: transparent;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .carousel-dot.active {
+            border-color: var(--color-accent);
+            background-color: var(--color-accent);
+        }
+
+        .treatments-cta {
+            margin-top: 50px;
+        }
+
+        .treatments-btn {
+            display: inline-block;
+            background-color: var(--color-accent);
+            color: #FFFFFF;
+            font-weight: 600;
+            font-size: 16px;
+            padding: 16px 40px;
+            border-radius: 4px;
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(0, 164, 153, 0.15);
+        }
+
+        .treatments-btn:hover {
+            background-color: #008f85;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 164, 153, 0.25);
+        }
+
+        /* 5. Interactive Quiz / Lead Capture Section (Spanish) */
+        .quiz-section {
+            padding: 110px 0;
+            background-color: var(--color-bg-white);
+            border-bottom: 1px solid var(--color-border);
+            border-top: 1px solid var(--color-border);
+        }
+
+        .quiz-grid {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .quiz-left {
+            text-align: left;
+        }
+
+        .quiz-left h2 {
+            font-size: 38px;
+            color: var(--color-primary);
+            margin-bottom: 16px;
+            line-height: 1.3;
+        }
+
+        .quiz-left p {
+            font-size: 17px;
+            color: #666666;
+            margin-bottom: 40px;
+        }
+
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .quiz-card {
+            display: flex;
+            align-items: center;
+            padding: 22px 26px;
+            border-radius: 12px;
+            border: 2px solid #EAEAEA;
+            background-color: var(--color-bg-light);
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .quiz-card:hover {
+            border-color: var(--color-accent);
+            background-color: #FFFFFF;
+        }
+
+        .quiz-card.active {
+            border-color: var(--color-accent);
+            background-color: #FFFFFF;
+            box-shadow: 0 8px 25px rgba(0, 164, 153, 0.06);
+        }
+
+        .quiz-card-icon {
+            font-size: 30px;
+            margin-right: 20px;
+            color: var(--color-accent);
+        }
+
+        .quiz-card-text {
+            flex: 1;
+            text-align: left;
+        }
+
+        .quiz-card-text h4 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--color-primary);
+            margin-bottom: 4px;
+        }
+
+        .quiz-card-text p {
+            font-size: 14px;
+            color: #777777;
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        .quiz-radio {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            border: 2px solid #D5D8DC;
+            margin-left: 20px;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .quiz-card.active .quiz-radio {
+            border-color: var(--color-accent);
+            background-color: var(--color-accent);
+        }
+
+        .quiz-card.active .quiz-radio::after {
+            content: '';
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: #FFFFFF;
+        }
+
+        .quiz-right {
+            background-color: var(--color-bg-light);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid #EAEAEA;
+            text-align: left;
+        }
+
+        .quiz-right h3 {
+            font-size: 24px;
+            margin-bottom: 12px;
+            color: var(--color-primary);
+        }
+
+        .quiz-right p {
+            font-size: 15px;
+            color: #666666;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .quiz-btn {
+            display: block;
+            width: 100%;
+            background-color: #25D366; /* WhatsApp Green */
+            color: #FFFFFF;
+            border: none;
+            padding: 18px;
+            font-size: 18px;
+            font-weight: 700;
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 6px 15px rgba(37, 211, 102, 0.2);
+            font-family: var(--font-sans);
+        }
+
+        .quiz-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+            background-color: #20ba59;
+        }
+
+        .quiz-info-list {
+            margin-top: 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            font-size: 13px;
+            color: #777777;
+        }
+
+        .quiz-info-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* 6. Pain Section */
+        .pain-section {
+            background-color: var(--color-bg-white);
+            padding: 100px 0;
+            text-align: center;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .pain-section h2 {
+            font-size: 38px;
+            margin-bottom: 24px;
+            max-width: 850px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.3;
+            color: var(--color-primary);
+        }
+
+        .pain-section p {
+            font-size: 17px;
+            color: #666666;
+            max-width: 800px;
+            margin: 0 auto;
+            font-weight: 400;
+        }
+
+        /* 7. Structure Gallery Section */
+        .structure-gallery-section {
+            padding: 100px 0;
+            background-color: var(--color-bg-light);
+            text-align: center;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .structure-gallery-section .section-header h2 {
+            font-size: 38px;
+            max-width: 800px;
+            margin: 0 auto 50px auto;
+            line-height: 1.35;
+            color: var(--color-primary);
+            font-weight: 600;
+        }
+
+        .gallery-wrapper {
+            position: relative;
+            max-width: 960px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .gallery-slides {
+            width: 100%;
+            aspect-ratio: 16 / 10;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(15, 30, 54, 0.08);
+            background-color: #000;
+            position: relative;
+        }
+
+        .gallery-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.8s ease-in-out;
+            z-index: 1;
+        }
+
+        .gallery-slide.active {
+            opacity: 1;
+            z-index: 2;
+        }
+
+        .gallery-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.95);
+            border: 1px solid #EAEAEA;
+            color: var(--color-primary);
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: var(--transition);
+        }
+
+        .gallery-arrow:hover {
+            background-color: var(--color-accent);
+            border-color: var(--color-accent);
+            color: #FFFFFF;
+        }
+
+        .gallery-arrow.prev {
+            left: -25px;
+        }
+
+        .gallery-arrow.next {
+            right: -25px;
+        }
+
+        /* 8. Cases/Testimonials Section */
+        .cases-section {
+            padding: 110px 0;
+            background-color: var(--color-bg-white);
+            text-align: center;
+            position: relative;
+        }
+
+        .cases-outer {
+            position: relative;
+            display: flex;
+            align-items: center;
+            max-width: 100%;
+            margin: 50px auto 0 auto;
+            padding: 0 10px;
+        }
+
+        .cases-container {
+            width: 100%;
+            overflow: hidden;
+            border-radius: 20px;
+        }
+
+        .cases-track {
+            display: flex;
+            gap: 30px;
+            transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+            width: max-content;
+        }
+
+        .cases-section .case-card {
+            background-color: var(--color-bg-light);
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid #EAEAEA;
+            transition: var(--transition);
+            flex-shrink: 0;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-sizing: border-box;
+            height: 380px;
+        }
+
+        .cases-section .case-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(15, 30, 54, 0.06);
+            border-color: rgba(0, 164, 153, 0.15);
+        }
+
+        .cases-section .case-quote {
+            font-family: var(--font-serif);
+            font-size: 19px;
+            font-style: italic;
+            color: var(--color-primary);
+            line-height: 1.6;
+            margin-bottom: 24px;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 7;
+            -webkit-box-orient: vertical;
+        }
+
+        .cases-section .case-author {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid var(--color-border);
+            padding-top: 20px;
+            margin-top: auto;
+        }
+
+        .cases-section .author-info h4 {
+            font-family: var(--font-sans);
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--color-primary);
+        }
+
+        .cases-section .author-info p {
+            font-size: 13px;
+            color: #999999;
+        }
+
+        .cases-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            background-color: var(--color-bg-white);
+            border: 1px solid #EAEAEA;
+            color: var(--color-primary);
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+
+        .cases-arrow:hover {
+            background-color: var(--color-accent);
+            border-color: var(--color-accent);
+            color: #FFFFFF;
+        }
+
+        .cases-arrow.prev {
+            left: -24px;
+        }
+
+        .cases-arrow.next {
+            right: -24px;
+        }
+
+        .cases-dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 35px;
+        }
+
+        .cases-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            border: 2px solid #D5D8DC;
+            background-color: transparent;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .cases-dot.active {
+            border-color: var(--color-accent);
+            background-color: var(--color-accent);
+        }
+
+        .treatment-tag {
+            background-color: rgba(0, 164, 153, 0.08);
+            color: var(--color-accent);
+            padding: 6px 14px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        /* 9. Doctor/Authority Section */
+        .doctor-section {
+            background-color: var(--color-bg-light);
+            padding: 110px 0;
+            border-top: 1px solid var(--color-border);
+        }
+
+        .doctor-grid {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .doctor-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 24px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
+            display: block;
+        }
+
+        .doctor-info h2 {
+            font-size: 38px;
+            margin-bottom: 24px;
+        }
+
+        .doctor-info p {
+            font-size: 17px;
+            margin-bottom: 20px;
+            color: #666666;
+        }
+
+        .doctor-credentials {
+            border-top: 1px solid var(--color-border);
+            padding-top: 24px;
+            margin-top: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--color-primary);
+        }
+
+        /* 10. FAQ Section */
+        .faq-section {
+            padding: 110px 0;
+            background-color: var(--color-bg-white);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background-color: var(--color-bg-light);
+            margin-bottom: 16px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #EAEAEA;
+            transition: var(--transition);
+        }
+
+        .faq-question {
+            padding: 24px 30px;
+            font-weight: 600;
+            font-size: 18px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+            color: var(--color-primary);
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 24px;
+            color: var(--color-accent);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding: 0 30px;
+            color: #666666;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+            padding-bottom: 24px;
+        }
+
+        /* 11. Final CTA */
+        .final-cta {
+            background-color: var(--color-primary);
+            color: var(--color-text-light);
+            padding: 110px 0;
+            text-align: center;
+        }
+
+        .final-cta h2 {
+            color: var(--color-text-light);
+            font-size: 40px;
+            margin-bottom: 24px;
+        }
+
+        .final-cta p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 19px;
+            margin-bottom: 40px;
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 300;
+        }
+
+        .final-cta-btn {
+            display: inline-block;
+            background-color: var(--color-accent);
+            color: white;
+            font-weight: 600;
+            font-size: 17px;
+            padding: 18px 40px;
+            border-radius: 4px;
+            transition: var(--transition);
+        }
+
+        .final-cta-btn:hover {
+            background-color: #008f85;
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111111;
+            color: rgba(255, 255, 255, 0.4);
+            padding: 60px 0;
+            font-size: 13px;
+            line-height: 1.8;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-content {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .footer-content p {
+            margin-bottom: 16px;
+        }
+
+        /* Responsive Media Queries */
+        @media (max-width: 992px) {
+            .navbar-content {
+                flex-direction: column;
+                height: auto;
+                padding: 20px 0;
+                gap: 20px;
+            }
+
+            .nav-left, .nav-right {
+                padding: 0;
+                justify-content: center;
+                width: 100%;
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+
+            .hero-grid, .doctor-grid, .quiz-grid {
+                grid-template-columns: 1fr;
+                gap: 50px;
+                text-align: center;
+            }
+
+            .tech-grid, .cases-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .gallery-arrow.prev {
+                left: 15px;
+            }
+            .gallery-arrow.next {
+                right: 15px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 38px;
+            }
+
+            .pain-section h2, .section-header h2, .doctor-info h2, .faq-section h2, .final-cta h2, .quiz-left h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. Top Thin Bar (Spanish) -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <div class="top-bar-info">⏰ 9:00h/20:00h de lunes a viernes y sábados 09:00h/13:00h</div>
+            <div class="top-bar-email">📩 geral@clinicadentariasaopaulo.pt</div>
+        </div>
+    </div>
+
+    <!-- 2. Navbar with Centered Logo (Spanish) -->
+    <header>
+        <div class="container navbar-content">
+            <!-- Left Menu -->
+            <ul class="nav-left">
+                <li class="nav-item active"><a href="#inicio">Inicio</a></li>
+                <li class="nav-item"><a href="#sobre">Sobre nosotros</a> <span class="nav-item-arrow">▼</span></li>
+                <li class="nav-item"><a href="#tratamientos">Tratamientos</a> <span class="nav-item-arrow">▼</span></li>
+            </ul>
+
+            <!-- Centered Logo -->
+            <div class="nav-logo-block">
+                <div class="logo-circle">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00A499" stroke-width="2">
+                        <path d="M12 2c-3.5 0-5 2-5 5 0 4-2 6-2 9 0 2 1.5 4 4 4 1.5 0 2.5-1 3-2 .5 1 1.5 2 3 2 2.5 0 4-2 4-4 0-3-2-5-2-9 0-3-1.5-5-5-5z" />
+                    </svg>
+                </div>
+                <div class="logo-title">
+                    Clínica Dental
+                    <span>São Paulo</span>
+                </div>
+            </div>
+
+            <!-- Right Menu -->
+            <ul class="nav-right">
+                <li class="nav-item"><a href="#casos">Casos Clínicos</a> <span class="nav-item-arrow">▼</span></li>
+                <li class="nav-item"><a href="#blog">Blog</a> <span class="nav-item-arrow">▼</span></li>
+                <li class="nav-item"><a href="#contactos">Contactos</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- 3. Hero Section with Cabinet Image and Parallax Darkening (Spanish) -->
+    <section class="hero" id="inicio">
+        <div class="hero-overlay"></div>
+        <div class="container hero-container">
+            <div class="hero-content">
+                <h1>Clínica Dental São Paulo</h1>
+                <p>Su clínica dental con más de 26 años de excelencia y tratamientos innovadores. Especialistas en devolverle la seguridad al sonreír.</p>
+                <a href="#quiz" class="hero-btn">
+                    Marcar Consulta
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Treatments Carousel Section (Spanish) -->
+    <section class="treatments-section" id="tratamentos">
+        <div class="container">
+            <div class="section-header">
+                <h2>Tratamientos</h2>
+                <div class="header-line"></div>
+                <p>Conozca nuestros tratamientos de odontología.<br>La confianza de una clínica con más de 26 años de trayectoria.</p>
+            </div>
+            
+            <div class="carousel-outer">
+                <button class="carousel-arrow prev" aria-label="Anterior">&#10094;</button>
+                
+                <div class="carousel-container">
+                    <div class="carousel-track">
+                        <!-- Card 1: Implantologia -->
+                        <div class="treatment-card">
+                            <img class="treatment-img" src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=600&auto=format&fit=crop&q=80" alt="Implantología">
+                            <div class="treatment-overlay"></div>
+                            <div class="treatment-title">Implantología</div>
+                        </div>
+                        
+                        <!-- Card 2: Dentisteria -->
+                        <div class="treatment-card">
+                            <img class="treatment-img" src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=600&auto=format&fit=crop&q=80" alt="Odontología Estética y Rehabilitación">
+                            <div class="treatment-overlay"></div>
+                            <div class="treatment-title">Odontología Estética y Rehabilitación</div>
+                        </div>
+                        
+                        <!-- Card 3: Ortodontia Invisível -->
+                        <div class="treatment-card">
+                            <img class="treatment-img" src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=600&auto=format&fit=crop&q=80" alt="Ortodoncia Invisible">
+                            <div class="treatment-overlay"></div>
+                            <div class="treatment-title">Ortodoncia Invisible</div>
+                        </div>
+                        
+                        <!-- Card 4: Endodontia -->
+                        <div class="treatment-card">
+                            <img class="treatment-img" src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=600&auto=format&fit=crop&q=80" alt="Endodoncia">
+                            <div class="treatment-overlay"></div>
+                            <div class="treatment-title">Endodoncia</div>
+                        </div>
+                        
+                        <!-- Card 5: Cirurgia Oral -->
+                        <div class="treatment-card">
+                            <img class="treatment-img" src="https://images.unsplash.com/photo-1629909615184-74f495363b67?w=600&auto=format&fit=crop&q=80" alt="Cirugía Oral">
+                            <div class="treatment-overlay"></div>
+                            <div class="treatment-title">Cirugía Oral</div>
+                        </div>
+                        
+                        <!-- Card 6: Harmonização Facial -->
+                        <div class="treatment-card">
+                            <img class="treatment-img" src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=600&auto=format&fit=crop&q=80" alt="Armonización Facial">
+                            <div class="treatment-overlay"></div>
+                            <div class="treatment-title">Armonización Facial</div>
+                        </div>
+                        
+                        <!-- Card 7: Odontopediatria -->
+                        <div class="treatment-card">
+                            <img class="treatment-img" src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=600&auto=format&fit=crop&q=80" alt="Odontopediatría">
+                            <div class="treatment-overlay"></div>
+                            <div class="treatment-title">Odontopediatría</div>
+                        </div>
+                        
+                        <!-- Card 8: Ortodontia Pediátrica -->
+                        <div class="treatment-card">
+                            <img class="treatment-img" src="https://images.unsplash.com/photo-1533228893664-0fc76fe3e39b?w=600&auto=format&fit=crop&q=80" alt="Ortodoncia Pediátrica">
+                            <div class="treatment-overlay"></div>
+                            <div class="treatment-title">Ortodoncia Pediátrica</div>
+                        </div>
+                        
+                        <!-- Card 9: Periodontologia -->
+                        <div class="treatment-card">
+                            <img class="treatment-img" src="https://images.unsplash.com/photo-1504813184591-01557010072d?w=600&auto=format&fit=crop&q=80" alt="Periodoncia">
+                            <div class="treatment-overlay"></div>
+                            <div class="treatment-title">Periodoncia</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="carousel-arrow next" aria-label="Seguinte">&#10095;</button>
+            </div>
+            
+            <div class="carousel-dots"></div>
+            
+            <div class="treatments-cta">
+                <a href="https://wa.me/5511989754251?text=Hola,%20me%20gustaría%20saber%20más%20sobre%20los%20tratamientos." target="_blank" class="treatments-btn">
+                    Ver Todos los Tratamientos
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Interactive Quiz / Lead Capture Section (Spanish - Matches reference exactly) -->
+    <section class="quiz-section" id="quiz">
+        <div class="container quiz-grid">
+            <div class="quiz-left">
+                <h2>¿No sabe qué opción de implante es la adecuada para usted?</h2>
+                <p>En 30 segundos le ayudaremos a determinar el tratamiento óptimo y le daremos asesoramiento profesional.</p>
+                
+                <div class="quiz-options">
+                    <!-- Option 1 -->
+                    <div class="quiz-card active" data-option="Falta 1 diente">
+                        <div class="quiz-card-icon">🦷</div>
+                        <div class="quiz-card-text">
+                            <h4>Falta 1 diente</h4>
+                            <p>Elegiremos el implante óptimo y estimaremos el coste del tratamiento.</p>
+                        </div>
+                        <div class="quiz-radio"></div>
+                    </div>
+                    
+                    <!-- Option 2 -->
+                    <div class="quiz-card" data-option="Faltan varios dientes">
+                        <div class="quiz-card-icon">🪥</div>
+                        <div class="quiz-card-text">
+                            <h4>Faltan varios dientes</h4>
+                            <p>Analizaremos las opciones para recuperar la estética y función dental.</p>
+                        </div>
+                        <div class="quiz-radio"></div>
+                    </div>
+                    
+                    <!-- Option 3 -->
+                    <div class="quiz-card" data-option="Falta la mayoría o todos los dientes">
+                        <div class="quiz-card-icon">😁</div>
+                        <div class="quiz-card-text">
+                            <h4>Falta la mayoría o todos los dientes</h4>
+                            <p>Analizaremos soluciones definitivas All-on-4 o All-on-6 para recuperar su sonrisa.</p>
+                        </div>
+                        <div class="quiz-radio"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="quiz-right">
+                <h3>Obtenga una recomendación personalizada</h3>
+                <p>Seleccione su caso actual a la izquierda y haga clic en el botón de abajo para enviar su solicitud directamente a nuestro WhatsApp de atención y recibir soporte médico.</p>
+                
+                <button class="quiz-btn" id="send-quiz-btn">
+                    Obtener Recomendación en WhatsApp
+                </button>
+                
+                <div class="quiz-info-list">
+                    <div class="quiz-info-item">🔒 Sus datos y privacidad están protegidos</div>
+                    <div class="quiz-info-item">⏱ La consulta tomará menos de 5 minutos</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Pain and Connection Section (Spanish) -->
+    <section class="pain-section" id="sobre">
+        <div class="container">
+            <h2>"Más de un siglo de tradición cuidando de la salud y la belleza de su sonrisa."</h2>
+            <p>Nuestra historia comenzó en 1898 en el Cais do Sodré. A lo largo de generaciones, unimos tradición familiar, rigor científico y tecnología digital avanzada para ofrecer tratamientos odontológicos transparentes, humanos y 100% libres de dolor. En Clínica São Paulo, creemos en un asesoramiento honesto, sin ningún tipo de presión comercial para tomar su decisión.</p>
+        </div>
+    </section>
+
+    <!-- 7. Structure Gallery Section (Spanish) -->
+    <section class="structure-gallery-section" id="estrutura">
+        <div class="container">
+            <div class="section-header">
+                <h2>Conozca la estructura que apoya cada etapa de su tratamiento.</h2>
+            </div>
+            
+            <div class="gallery-wrapper">
+                <button class="gallery-arrow prev" aria-label="Anterior">&#10094;</button>
+                
+                <div class="gallery-slides">
+                    <!-- Slide 1 -->
+                    <div class="gallery-slide active">
+                        <img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=1000&auto=format&fit=crop&q=82" alt="Tratamiento dental moderno en la Clínica São Paulo">
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="gallery-slide">
+                        <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=1000&auto=format&fit=crop&q=82" alt="Diagnóstico digital y análisis tridimensional del sorriso">
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="gallery-slide">
+                        <img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=1000&auto=format&fit=crop&q=82" alt="Planeamento digital 3D e simulação virtual do tratamento">
+                    </div>
+                    <!-- Slide 4 -->
+                    <div class="gallery-slide">
+                        <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=1000&auto=format&fit=crop&q=82" alt="Dr. Roberto Silva, especialista técnico da Clínica São Paulo">
+                    </div>
+                </div>
+                
+                <button class="gallery-arrow next" aria-label="Seguinte">&#10095;</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Cases/Testimonials Section (Spanish) -->
+    <section class="cases-section" id="casos">
+        <div class="container">
+            <div class="section-header">
+                <h2>Casos Clínicos de Éxito</h2>
+                <div class="header-line"></div>
+                <p>Acompañe historias reales de transformación oral y la alegría de volver a sonreír con seguridad.</p>
+            </div>
+            
+            <div class="cases-outer">
+                <button class="cases-arrow prev" aria-label="Anterior">&#10094;</button>
+                
+                <div class="cases-container">
+                    <div class="cases-track">
+                        <!-- Caso 1 -->
+                        <div class="case-card">
+                            <p class="case-quote">"Decidir viajar a la Clínica São Paulo para realizar mi tratamiento dental fue un gran paso. Buscaba un equipo experimentado y sentí que recibía un asesoramiento honesto, transparente y sin presiones comerciales."</p>
+                            <div class="case-author">
+                                <div class="author-info">
+                                    <h4>Karen M.</h4>
+                                    <p>Lisboa / Escocia</p>
+                                </div>
+                                <span class="treatment-tag">Implantes Totales All-on-4</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Caso 2 -->
+                        <div class="case-card">
+                            <p class="case-quote">"Tenía pánico a las agujas y pavor al dentista desde la infancia. Gracias a la sedación consciente asistida por anestesista, no sentí absolutamente nada. Fue un proceso sumamente tranquilo."</p>
+                            <div class="case-author">
+                                <div class="author-info">
+                                    <h4>Mariana S.</h4>
+                                    <p>Sintra, Portugal</p>
+                                </div>
+                                <span class="treatment-tag">Sedación Consciente</span>
+                            </div>
+                        </div>
+
+                        <!-- Caso 3 -->
+                        <div class="case-card">
+                            <p class="case-quote">"Mi prótesis móvil antigua se caía siempre que intentaba comer o hablar. Con la rehabilitación fija All-on-4, hoy puedo comer con total comodidad y sonreír sin ningún miedo a pasar vergüenza."</p>
+                            <div class="case-author">
+                                <div class="author-info">
+                                    <h4>António J.</h4>
+                                    <p>Cascais, Portugal</p>
+                                </div>
+                                <span class="treatment-tag">Prótesis Fija</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Caso 4 -->
+                        <div class="case-card">
+                            <p class="case-quote">"El tratamiento cambió mi forma de comunicarme y trabajar. Sentía mucho dolor al masticar y miedo a que la dentadura se moviera. El implante guiado 3D con carga rápida resolvió todo en 2 días."</p>
+                            <div class="case-author">
+                                <div class="author-info">
+                                    <h4>Carlos R.</h4>
+                                    <p>Porto, Portugal</p>
+                                </div>
+                                <span class="treatment-tag">Rehabilitación Inmediata</span>
+                            </div>
+                        </div>
+
+                        <!-- Caso 5 -->
+                        <div class="case-card">
+                            <p class="case-quote">"Siempre pensé que los implantes de alto nivel eran un lujo inaccesible. Aquí, además de darme un presupuesto transparente, facilitaron la financiación. Pude realizar el tratamiento de mis sueños."</p>
+                            <div class="case-author">
+                                <div class="author-info">
+                                    <h4>Ricardo F.</h4>
+                                    <p>Parque de las Naciones</p>
+                                </div>
+                                <span class="treatment-tag">Facilidad de Pago</span>
+                            </div>
+                        </div>
+
+                        <!-- Caso 6 -->
+                        <div class="case-card">
+                            <p class="case-quote">"Por la pérdida de dientes, mi rostro parecía más envejecido y evitaba las fotos. La rehabilitación en circonio me devolvió la firmeza y rejuveneció mi rostro. Recuperé por completo mi autoestima."</p>
+                            <div class="case-author">
+                                <div class="author-info">
+                                    <h4>Beatriz L.</h4>
+                                    <p>Lisboa, Portugal</p>
+                                </div>
+                                <span class="treatment-tag">Estética en Circonio</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="cases-arrow next" aria-label="Seguinte">&#10095;</button>
+            </div>
+            
+            <div class="cases-dots"></div>
+        </div>
+    </section>
+
+    <!-- 9. Doctor/Authority Section (Spanish) -->
+    <section class="doctor-section">
+        <div class="container doctor-grid">
+            <div class="doctor-image">
+                <img src="images/dentist_doctor.jpg" alt="Consultorio moderno y equipado de la Clínica Dental São Paulo">
+            </div>
+            <div class="doctor-info">
+                <h2>Estructura Clínica y Cuerpo Técnico Especializado</h2>
+                <p>Nuestras unidades cuentan con instalaciones modernas, quirófanos dedicados y equipos de última generación, garantizando tomografías en la propia clínica para su comodidad.</p>
+                <p>El Dr. Roberto Silva (CRO-SP 98765) lidera un equipo multidisciplinario enfocado en estética dental, cirugía maxilofacial e implantología guiada por computadora, garantizando la máxima precisión técnica.</p>
+                <div class="doctor-credentials">
+                    Dr. Roberto Silva | CRO-SP 98765 | Director Técnico Responsable
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. FAQ Section (Spanish) -->
+    <section class="faq-section" id="blog">
+        <div class="container">
+            <div class="section-header">
+                <h2>Preguntas Frecuentes</h2>
+                <p>Respondemos a las dudas más comunes sobre implantes y rehabilitación dental.</p>
+            </div>
+            
+            <div class="faq-container">
+                <!-- FAQ 1 -->
+                <div class="faq-item">
+                    <div class="faq-question">¿El procedimiento de implante dental duele?</div>
+                    <div class="faq-answer">
+                        No. Se realiza bajo anestesia local moderna. Para pacientes ansiosos o con miedo, disponemos de sedación consciente asistida por anestesista para que duerma cómodamente durante el tratamiento.
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="faq-item">
+                    <div class="faq-question">¿Cuánto dura el tratamiento con carga inmediata?</div>
+                    <div class="faq-answer">
+                        La cirugía y colocación de la prótesis fija provisional se realiza en 72 horas para la mayoría de los casos calificados. La cicatrización ósea final suele durar entre 3 y 4 meses.
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="faq-item">
+                    <div class="faq-question">¿Qué exámenes de diagnóstico necesito?</div>
+                    <div class="faq-answer">
+                        Realizamos una tomografía computarizada y escaneo intraoral digital 3D directamente en nuestra clínica para agilizar el plan de tratamiento.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 11. Final CTA (Spanish) -->
+    <section class="final-cta" id="contactos">
+        <div class="container">
+            <h2>¿Listo para recuperar la belleza y estabilidad de su sonrisa?</h2>
+            <p>Hable directamente con nosotros por WhatsApp, resuelva sus dudas y agende su consulta de valoración personalizada con nuestros cirujanos.</p>
+            <a href="https://wa.me/5511989754251?text=Hola,%20me%20gustaría%20agendar%20una%20consulta." target="_blank" class="final-cta-btn">
+                Agendar Consulta Online
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <p>Clínica Dental São Paulo - CRO-SP 98765. Dirección: Av. Paulista, 1000 - Bela Vista, São Paulo - SP. CNPJ: 12.345.678/0001-99.</p>
+            <p>Aviso Legal: Los resultados de los tratamientos clínicos varían para cada paciente y requieren una evaluación diagnóstica presencial obligatoria en el consultorio.</p>
+            <p>&copy; 2026 Clínica Dental São Paulo. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- JS Scripts -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Treatments Carousel Script
+            const track = document.querySelector('.carousel-track');
+            const prevBtn = document.querySelector('.carousel-arrow.prev');
+            const nextBtn = document.querySelector('.carousel-arrow.next');
+            const dotsContainer = document.querySelector('.carousel-dots');
+            const cards = Array.from(document.querySelectorAll('.treatment-card'));
+            
+            let currentIndex = 0;
+            let cardsToShow = 4;
+            let gap = 20;
+
+            function updateDimensions() {
+                const width = window.innerWidth;
+                if (width > 1024) {
+                    cardsToShow = 4;
+                } else if (width > 768) {
+                    cardsToShow = 3;
+                } else if (width > 500) {
+                    cardsToShow = 2;
+                } else {
+                    cardsToShow = 1;
+                }
+                
+                const containerWidth = document.querySelector('.carousel-container').offsetWidth;
+                const cardWidth = (containerWidth - (gap * (cardsToShow - 1))) / cardsToShow;
+                
+                cards.forEach(card => {
+                    card.style.width = cardWidth + "px";
+                });
+                
+                createDots();
+                moveToSlide(currentIndex);
+            }
+
+            function createDots() {
+                dotsContainer.innerHTML = '';
+                const maxDots = cards.length - cardsToShow + 1;
+                if (maxDots <= 1) return;
+                
+                for (let i = 0; i < maxDots; i++) {
+                    const dot = document.createElement('div');
+                    dot.classList.add('carousel-dot');
+                    if (i === currentIndex) dot.classList.add('active');
+                    dot.addEventListener('click', () => {
+                        currentIndex = i;
+                        moveToSlide(i);
+                    });
+                    dotsContainer.appendChild(dot);
+                }
+            }
+
+            function updateDots(index) {
+                const dots = document.querySelectorAll('.carousel-dot');
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle('active', i === index);
+                });
+            }
+
+            function moveToSlide(index) {
+                const cardWidth = cards[0].offsetWidth;
+                const offset = index * (cardWidth + gap);
+                track.style.transform = `translateX(-${offset}px)`;
+                updateDots(index);
+                
+                prevBtn.style.opacity = index === 0 ? '0.3' : '1';
+                prevBtn.style.pointerEvents = index === 0 ? 'none' : 'auto';
+                
+                const maxIndex = cards.length - cardsToShow;
+                nextBtn.style.opacity = index >= maxIndex ? '0.3' : '1';
+                nextBtn.style.pointerEvents = index >= maxIndex ? 'none' : 'auto';
+            }
+
+            nextBtn.addEventListener('click', () => {
+                const maxIndex = cards.length - cardsToShow;
+                if (currentIndex < maxIndex) {
+                    currentIndex++;
+                    moveToSlide(currentIndex);
+                }
+            });
+
+            prevBtn.addEventListener('click', () => {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    moveToSlide(currentIndex);
+                }
+            });
+
+            window.addEventListener('resize', updateDimensions);
+            setTimeout(updateDimensions, 100);
+
+            // Hero scroll darkening effect
+            window.addEventListener('scroll', () => {
+                const hero = document.querySelector('.hero');
+                const overlay = document.querySelector('.hero-overlay');
+                if (hero && overlay) {
+                    const heroHeight = hero.offsetHeight;
+                    const scrollPos = window.scrollY;
+                    const progress = Math.min(scrollPos / heroHeight, 1);
+                    const newOpacity = 0.45 + (progress * 0.5);
+                    overlay.style.background = `rgba(15, 30, 54, ${newOpacity})`;
+                }
+            });
+
+            // Quiz Interactivity
+            const quizCards = document.querySelectorAll('.quiz-card');
+            let selectedQuizOption = "Falta 1 diente";
+            
+            quizCards.forEach(card => {
+                card.addEventListener('click', () => {
+                    quizCards.forEach(c => c.classList.remove('active'));
+                    card.classList.add('active');
+                    selectedQuizOption = card.getAttribute('data-option');
+                });
+            });
+            
+            const sendQuizBtn = document.getElementById('send-quiz-btn');
+            if (sendQuizBtn) {
+                sendQuizBtn.addEventListener('click', () => {
+                    const phone = "5511989754251";
+                    const text = `Hola, me gustaría recibir una recomendación de implante dental. Mi caso actual es: ${selectedQuizOption}.`;
+                    const url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
+                    window.open(url, '_blank');
+                });
+            }
+
+            // FAQ Accordion
+            document.querySelectorAll('.faq-question').forEach(button => {
+                button.addEventListener('click', () => {
+                    const faqItem = button.parentElement;
+                    document.querySelectorAll('.faq-item').forEach(item => {
+                        if (item !== faqItem) {
+                            item.classList.remove('active');
+                            item.querySelector('.faq-answer').style.maxHeight = null;
+                        }
+                    });
+                    faqItem.classList.toggle('active');
+                    const answer = faqItem.querySelector('.faq-answer');
+                    if (faqItem.classList.contains('active')) {
+                        answer.style.maxHeight = answer.scrollHeight + "px";
+                    } else {
+                        answer.style.maxHeight = null;
+                    }
+                });
+            });
+        });
+    </script>
+
+    <!-- Structure Gallery Slideshow Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slides = Array.from(document.querySelectorAll('.gallery-slide'));
+            const prevBtn = document.querySelector('.gallery-arrow.prev');
+            const nextBtn = document.querySelector('.gallery-arrow.next');
+            
+            if (slides.length === 0) return;
+            
+            let slideIndex = 0;
+            
+            function showSlide(index) {
+                slides.forEach(slide => slide.classList.remove('active'));
+                slides[index].classList.add('active');
+            }
+            
+            nextBtn.addEventListener('click', () => {
+                slideIndex = (slideIndex + 1) % slides.length;
+                showSlide(slideIndex);
+            });
+            
+            prevBtn.addEventListener('click', () => {
+                slideIndex = (slideIndex - 1 + slides.length) % slides.length;
+                showSlide(slideIndex);
+            });
+            
+            setInterval(() => {
+                slideIndex = (slideIndex + 1) % slides.length;
+                showSlide(slideIndex);
+            }, 6000);
+        });
+    </script>
+
+    <!-- Cases Carousel Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const track = document.querySelector('.cases-track');
+            const prevBtn = document.querySelector('.cases-arrow.prev');
+            const nextBtn = document.querySelector('.cases-arrow.next');
+            const dotsContainer = document.querySelector('.cases-dots');
+            const cards = Array.from(document.querySelectorAll('.cases-section .case-card'));
+            
+            let currentIndex = 0;
+            let cardsToShow = 2;
+            let gap = 30;
+
+            function updateDimensions() {
+                const width = window.innerWidth;
+                if (width > 992) {
+                    cardsToShow = 2;
+                } else {
+                    cardsToShow = 1;
+                }
+                
+                const containerWidth = document.querySelector('.cases-container').offsetWidth;
+                const cardWidth = (containerWidth - (gap * (cardsToShow - 1))) / cardsToShow;
+                
+                cards.forEach(card => {
+                    card.style.width = cardWidth + "px";
+                });
+                
+                createDots();
+                moveToSlide(currentIndex);
+            }
+
+            function createDots() {
+                dotsContainer.innerHTML = '';
+                const maxDots = cards.length - cardsToShow + 1;
+                if (maxDots <= 1) return;
+                
+                for (let i = 0; i < maxDots; i++) {
+                    const dot = document.createElement('div');
+                    dot.classList.add('cases-dot');
+                    if (i === currentIndex) dot.classList.add('active');
+                    dot.addEventListener('click', () => {
+                        currentIndex = i;
+                        moveToSlide(i);
+                    });
+                    dotsContainer.appendChild(dot);
+                }
+            }
+
+            function updateDots(index) {
+                const dots = document.querySelectorAll('.cases-dot');
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle('active', i === index);
+                });
+            }
+
+            function moveToSlide(index) {
+                if (cards.length === 0) return;
+                const cardWidth = cards[0].offsetWidth;
+                const offset = index * (cardWidth + gap);
+                track.style.transform = `translateX(-${offset}px)`;
+                updateDots(index);
+                
+                prevBtn.style.opacity = index === 0 ? '0.3' : '1';
+                prevBtn.style.pointerEvents = index === 0 ? 'none' : 'auto';
+                
+                const maxIndex = cards.length - cardsToShow;
+                nextBtn.style.opacity = index >= maxIndex ? '0.3' : '1';
+                nextBtn.style.pointerEvents = index >= maxIndex ? 'none' : 'auto';
+            }
+
+            nextBtn.addEventListener('click', () => {
+                const maxIndex = cards.length - cardsToShow;
+                if (currentIndex < maxIndex) {
+                    currentIndex++;
+                    moveToSlide(currentIndex);
+                }
+            });
+
+            prevBtn.addEventListener('click', () => {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    moveToSlide(currentIndex);
+                }
+            });
+
+            window.addEventListener('resize', updateDimensions);
+            setTimeout(updateDimensions, 150);
+        });
+    </script>
+
+</body>
+</html>
