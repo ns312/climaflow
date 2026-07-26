@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Implantes Dentários Premium | Clínicas Odontológicas SP</title>
+    <meta name="description" content="Recupere a segurança de sorrir e mastigar com implantes dentários guiados por computador e carga rápida em São Paulo. Procedimento humanizado e sem dor.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- CSS Estilos Customizados (Vanilla CSS de Alto Padrão) -->
+    <style>
+        :root {
+            --color-primary: #0B2240; /* Navy Profundo */
+            --color-secondary: #C5A880; /* Champagne/Ouro */
+            --color-secondary-dark: #A88F65;
+            --color-text-dark: #2C3E50;
+            --color-text-light: #F8F9FA;
+            --color-bg-light: #FAFAFA;
+            --color-bg-white: #FFFFFF;
+            --color-accent: #E74C3C; /* Vermelho Suave */
+            --font-serif: 'Playfair Display', Georgia, serif;
+            --font-sans: 'Outfit', sans-serif;
+            --transition: all 0.3s ease;
+        }
+
+        /* Reset e Estilos Gerais */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            color: var(--color-text-dark);
+            background-color: var(--color-bg-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: var(--font-serif);
+            font-weight: 700;
+            color: var(--color-primary);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Container Principal */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header / Navbar */
+        header {
+            background-color: var(--color-bg-white);
+            border-bottom: 1px solid rgba(11, 34, 64, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 15px 0;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-serif);
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--color-primary);
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--color-secondary);
+        }
+
+        .header-btn {
+            background-color: var(--color-primary);
+            color: var(--color-text-light);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 500;
+            font-size: 14px;
+            transition: var(--transition);
+        }
+
+        .header-btn:hover {
+            background-color: var(--color-secondary);
+            color: var(--color-primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: var(--color-bg-white);
+            padding: 80px 0;
+            position: relative;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 48px;
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+
+        .hero-text p {
+            font-size: 18px;
+            color: #5D6D7E;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background-color: #25D366; /* Verde WhatsApp */
+            color: white;
+            font-weight: 600;
+            font-size: 18px;
+            padding: 18px 36px;
+            border-radius: 50px;
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.2);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(37, 211, 102, 0.3);
+        }
+
+        .cta-btn-subtext {
+            display: block;
+            font-size: 12px;
+            margin-top: 8px;
+            color: #7F8C8D;
+        }
+
+        .badges {
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .badge-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .badge-icon {
+            color: var(--color-secondary);
+            font-size: 18px;
+        }
+
+        .hero-image {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Seção 2: Dor e Conexão */
+        .pain-section {
+            background-color: var(--color-primary);
+            color: var(--color-text-light);
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .pain-section h2 {
+            color: var(--color-text-light);
+            font-size: 38px;
+            margin-bottom: 20px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.2;
+        }
+
+        .pain-section p {
+            font-size: 18px;
+            color: rgba(248, 249, 250, 0.8);
+            max-width: 750px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+
+        /* Seção 3: Tecnologia e Diferenciais */
+        .tech-section {
+            padding: 100px 0;
+        }
+
+        .tech-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .tech-title h2 {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .tech-card {
+            background-color: var(--color-bg-white);
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            border-bottom: 4px solid var(--color-secondary);
+            transition: var(--transition);
+        }
+
+        .tech-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+        }
+
+        .tech-card h3 {
+            font-size: 22px;
+            margin: 20px 0 15px;
+            font-family: var(--font-sans);
+            font-weight: 600;
+        }
+
+        .tech-card p {
+            color: #7F8C8D;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .card-icon {
+            font-size: 36px;
+            color: var(--color-secondary);
+        }
+
+        /* Seção 4: Autoridade / Dentista */
+        .doctor-section {
+            background-color: var(--color-bg-white);
+            padding: 100px 0;
+        }
+
+        .doctor-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .doctor-image {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+        }
+
+        .doctor-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .doctor-info h2 {
+            font-size: 38px;
+            margin-bottom: 20px;
+        }
+
+        .doctor-info p {
+            font-size: 16px;
+            color: #5D6D7E;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .doctor-details {
+            border-top: 1px solid rgba(0,0,0,0.1);
+            padding-top: 20px;
+            margin-top: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--color-primary);
+        }
+
+        /* Seção 5: Testemunhos / Depoimentos */
+        .testimonials {
+            padding: 100px 0;
+            background-color: var(--color-primary);
+            color: var(--color-text-light);
+        }
+
+        .testimonials h2 {
+            color: var(--color-text-light);
+            text-align: center;
+            font-size: 38px;
+            margin-bottom: 50px;
+        }
+
+        .testimonial-box {
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 40px;
+            border-radius: 15px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .testimonial-text {
+            font-family: var(--font-serif);
+            font-size: 22px;
+            font-style: italic;
+            margin-bottom: 25px;
+            line-height: 1.5;
+            color: rgba(248, 249, 250, 0.95);
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            font-size: 16px;
+            color: var(--color-secondary);
+        }
+
+        /* Seção 6: FAQ Accordion */
+        .faq-section {
+            padding: 100px 0;
+        }
+
+        .faq-section h2 {
+            text-align: center;
+            font-size: 38px;
+            margin-bottom: 60px;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background-color: var(--color-bg-white);
+            margin-bottom: 15px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+            transition: var(--transition);
+        }
+
+        .faq-question {
+            padding: 20px 25px;
+            font-weight: 600;
+            font-size: 18px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+            color: var(--color-primary);
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 24px;
+            color: var(--color-secondary);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding: 0 25px;
+            color: #7F8C8D;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        /* Accordion Active States */
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+            padding-bottom: 20px;
+        }
+
+        /* Seção 7: CTA Final */
+        .final-cta {
+            background-color: var(--color-bg-white);
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .final-cta h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+
+        .final-cta p {
+            font-size: 18px;
+            color: #7F8C8D;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #051020;
+            color: rgba(248, 249, 250, 0.6);
+            padding: 50px 0;
+            font-size: 13px;
+            line-height: 1.8;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .footer-content {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .footer-content p {
+            margin-bottom: 15px;
+        }
+
+        /* Responsividade */
+        @media (max-width: 992px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .doctor-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .tech-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-text h1 {
+                font-size: 36px;
+            }
+
+            .pain-section h2 {
+                font-size: 28px;
+            }
+
+            .tech-title h2, .doctor-info h2, .testimonials h2, .faq-section h2, .final-cta h2 {
+                font-size: 28px;
+            }
+
+            .final-cta h2 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">Oral<span>Premium</span></div>
+            <a href="https://wa.me/5511999999999?text=Olá,%20gostaria%20de%20agendar%20uma%20avaliação%20de%20implantes." target="_blank" class="header-btn">Avaliação Gratuita</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-grid">
+            <div class="hero-text">
+                <h1>Sorria sem medo. Mastigue com prazer. Recupere a sua melhor versão.</h1>
+                <p>Implantes Dentários de Alta Tecnologia em São Paulo. Tratamento humanizado, com planejamento digital 3D e sedação consciente para um procedimento 100% sem dor.</p>
+                
+                <a href="https://wa.me/5511999999999?text=Olá,%20gostaria%20de%20agendar%20uma%20avaliação%20de%20implantes." target="_blank" class="cta-btn">
+                    Agendar Avaliação pelo WhatsApp
+                </a>
+                <span class="cta-btn-subtext">Fale diretamente com nossa especialista em agendamentos.</span>
+
+                <div class="badges">
+                    <div class="badge-item">
+                        <span class="badge-icon">⭐</span>
+                        <span>Mais de 2.000 sorrisos transformados em São Paulo</span>
+                    </div>
+                    <div class="badge-item">
+                        <span class="badge-icon">🛡️</span>
+                        <span>Tecnologia Alemã em Implantes</span>
+                    </div>
+                    <div class="badge-item">
+                        <span class="badge-icon">🦷</span>
+                        <span>Especialistas Membros da Associação Brasileira de Implantodontia</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="images/perfect_smile.jpg" alt="Sorriso perfeito de uma paciente feliz em São Paulo">
+            </div>
+        </div>
+    </section>
+
+    <!-- Pain Section -->
+    <section class="pain-section">
+        <div class="container">
+            <h2>"Você não está apenas perdendo dentes. Está perdendo os melhores momentos da vida."</h2>
+            <p>Sabemos que a perda de um ou mais dentes vai muito além da estética. É a vergonha de sorrir em uma foto de família. É o medo de mastigar determinados alimentos em um almoço de negócios. É a insegurança constante ao falar em público. A boa notícia é que a odontologia evoluiu para devolver sua qualidade de vida sem dor.</p>
+        </div>
+    </section>
+
+    <!-- Tech / Value Cards -->
+    <section class="tech-section">
+        <div class="container">
+            <div class="tech-title">
+                <h2>A Tecnologia a Favor do seu Conforto e Segurança</h2>
+                <p>Procedimentos otimizados com o que há de mais moderno na odontologia mundial.</p>
+            </div>
+            
+            <div class="tech-grid">
+                <!-- Card 1 -->
+                <div class="tech-card">
+                    <div class="card-icon">💻</div>
+                    <h3>Planejamento 3D Guiado</h3>
+                    <p>Realizamos uma tomografia computadorizada para planejar a cirurgia virtualmente antes do início do procedimento. Isso garante cortes mínimos, sem pontos desnecessários e uma cicatrização incrivelmente rápida.</p>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="tech-card">
+                    <div class="card-icon">⚡</div>
+                    <h3>Carga Rápida (72h)</h3>
+                    <p>Para casos qualificados, instalamos o implante e a prótese fixa provisória em até 3 dias. Você entra na clínica sem dentes e sai sorrindo e mastigando com total segurança e firmeza.</p>
+                </div>
+                
+                <!-- Card 3 -->
+                <div class="tech-card">
+                    <div class="card-icon">💤</div>
+                    <h3>Sedação Consciente</h3>
+                    <p>Contamos com anestesia humanizada e sedação para que você durma confortavelmente durante todo o processo. Você não sente nenhuma dor e acorda com o tratamento inteiramente concluído.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Doctor / Authority Section -->
+    <section class="doctor-section">
+        <div class="container doctor-grid">
+            <div class="doctor-image">
+                <img src="images/dentist_doctor.jpg" alt="Dr. Roberto Silva, especialista em implantes odontológicos em São Paulo">
+            </div>
+            <div class="doctor-info">
+                <h2>Quem vai cuidar do seu novo sorriso</h2>
+                <p>O Dr. Roberto Silva (CRO-SP 98765) é referência em reabilitação oral avançada no estado de São Paulo. Com mais de 15 anos de atuação e especializações internacionais em implantodontia e cirurgia guiada 3D, ele lidera uma equipe focada em devolver a segurança e qualidade de vida de seus pacientes de forma humana e sem dor.</p>
+                <p>Nossa estrutura clínica foi desenhada seguindo os mais altos padrões de biossegurança e conforto para oferecer a melhor experiência odontológica da sua vida.</p>
+                <div class="doctor-details">
+                    Dr. Roberto Silva | CRO-SP 98765 | Diretor Clínico Responsável
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>Histórias reais de quem recuperou a alegria de sorrir</h2>
+            <div class="testimonial-box">
+                <p class="testimonial-text">"Eu tinha pavor de dentista e vergonha do meu sorriso. Na clínica, a equipe me tratou com tanto carinho e paciência que eu não senti nenhuma dor durante os implantes. Hoje minha vida é outra, voltei a sorrir!"</p>
+                <p class="testimonial-author">— Maria S., São Paulo.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>Dúvidas Frequentes sobre Implantes</h2>
+            <div class="faq-container">
+                
+                <!-- FAQ 1 -->
+                <div class="faq-item">
+                    <div class="faq-question">O procedimento de implante dentário dói?</div>
+                    <div class="faq-answer">
+                        Não. A cirurgia é realizada sob anestesia local moderna. Para pacientes ansiosos ou com medo, oferecemos a sedação consciente (onde você dorme confortavelmente durante todo o processo), garantindo que você não sinta absolutamente nenhuma dor.
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="faq-item">
+                    <div class="faq-question">Quanto tempo demora o tratamento completo?</div>
+                    <div class="faq-answer">
+                        Depende de cada caso. Com a tecnologia de Carga Rápida, alguns pacientes saem com dentes fixos provisórios em até 72 horas. Para casos tradicionais, o período de osseointegração (fixação do implante no osso) varia de 3 a 6 meses.
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="faq-item">
+                    <div class="faq-question">Como funciona a primeira consulta de avaliação?</div>
+                    <div class="faq-answer">
+                        Faremos um exame visual completo, analisaremos sua saúde geral e solicitaremos exames de imagem (como tomografia) para planejar com precisão cirúrgica virtual tridimensional o seu caso específico.
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="faq-item">
+                    <div class="faq-question">Quais são as formas de pagamento disponíveis?</div>
+                    <div class="faq-answer">
+                        Facilitamos o acesso ao tratamento com parcelamento em cartão de crédito, boletos sob consulta e opções de financiamento odontológico. Apresentamos todos os valores e opções após a avaliação do seu caso clínico.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <h2>Dê o primeiro passo para ter seu sorriso de volta ainda este mês</h2>
+            <p>Clique abaixo para falar com nossa especialista e agendar sua consulta de avaliação personalizada.</p>
+            <a href="https://wa.me/5511999999999?text=Olá,%20gostaria%20de%20agendar%20uma%20avaliação%20de%20implantes." target="_blank" class="cta-btn">
+                Quero Agendar Minha Avaliação pelo WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <p>Clínica Odontológica OralPremium - Responsável Técnico: Dr. Roberto Silva, CRO-SP 98765. Endereço: Av. Paulista, 1000 - Bela Vista, São Paulo - SP. CNPJ: 12.345.678/0001-99.</p>
+            <p>As imagens deste site são meramente ilustrativas e os resultados podem variar de paciente para paciente conforme avaliação clínica individual.</p>
+            <p>&copy; 2026 OralPremium São Paulo. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- JS script para o FAQ Accordion -->
+    <script>
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+                
+                // Fecha outros itens abertos
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    if (item !== faqItem) {
+                        item.classList.remove('active');
+                    }
+                });
+                
+                // Abre/fecha o item clicado
+                faqItem.classList.toggle('active');
+            });
+        });
+    </script>
+
+</body>
+</html>
