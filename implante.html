@@ -202,7 +202,10 @@
             display: flex;
             align-items: center;
             overflow: hidden;
-            background-color: #000;
+            background-image: url('images/cabinet.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
 
         .hero-video {
@@ -856,13 +859,8 @@
         </div>
     </header>
 
-    <!-- 3. Hero Section with Video Background (Clean Cabinet & Teeth Treatment) -->
+    <!-- 3. Hero Section with Cabinet Image and Scroll-linked Darkening Overlay -->
     <section class="hero" id="inicio">
-        <!-- Direct MP4 link of dentist clinic from Mixkit CDN -->
-        <video class="hero-video" autoplay loop muted playsinline>
-            <source src="https://assets.mixkit.co/videos/preview/mixkit-dentist-examining-patients-teeth-41712-large.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
         <div class="hero-overlay"></div>
         <div class="container hero-container">
             <div class="hero-content">
@@ -1201,6 +1199,21 @@
                 if (currentIndex > 0) {
                     currentIndex--;
                     moveToSlide(currentIndex);
+                }
+            });
+
+            
+            // Hero background darkening effect on scroll
+            window.addEventListener('scroll', () => {
+                const hero = document.querySelector('.hero');
+                const overlay = document.querySelector('.hero-overlay');
+                if (hero && overlay) {
+                    const heroHeight = hero.offsetHeight;
+                    const scrollPos = window.scrollY;
+                    // Calculate opacity from 0.45 (initial) up to 0.95 (fully dark) based on scroll
+                    const progress = Math.min(scrollPos / heroHeight, 1);
+                    const newOpacity = 0.45 + (progress * 0.5); // 0.45 to 0.95 range
+                    overlay.style.background = `rgba(15, 30, 54, ${newOpacity})`;
                 }
             });
 
