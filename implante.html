@@ -1346,6 +1346,134 @@
             }
         }
 
+    
+        /* Exit Intent Modal Styling */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(15, 30, 54, 0.7);
+            backdrop-filter: blur(8px);
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+        }
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .exit-modal-card {
+            background: linear-gradient(135deg, #0F1E36 0%, #1D3557 100%);
+            color: #FFFFFF;
+            width: 90%;
+            max-width: 580px;
+            padding: 50px 40px;
+            border-radius: 24px;
+            position: relative;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            transform: scale(0.9);
+            transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+            overflow: hidden;
+        }
+        .modal-overlay.active .exit-modal-card {
+            transform: scale(1);
+        }
+        .exit-modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: transparent;
+            border: none;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 24px;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+        .exit-modal-close:hover {
+            color: #FFFFFF;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        .exit-modal-tooth-bg {
+            position: absolute;
+            right: -50px;
+            bottom: -50px;
+            opacity: 0.05;
+            width: 250px;
+            height: 250px;
+            pointer-events: none;
+        }
+        .exit-modal-icon {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 24px auto;
+            border-radius: 50%;
+            background-color: rgba(0, 164, 153, 0.15);
+            border: 2px solid var(--color-accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .exit-modal-icon svg {
+            stroke: var(--color-accent);
+        }
+        .exit-modal-card h3 {
+            color: #FFFFFF;
+            font-size: 28px;
+            margin-bottom: 16px;
+            font-family: var(--font-sans);
+            font-weight: 600;
+        }
+        .exit-modal-card p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 16px;
+            margin-bottom: 35px;
+            line-height: 1.6;
+        }
+        .exit-modal-btn {
+            display: block;
+            width: 100%;
+            background-color: #25D366;
+            color: #FFFFFF;
+            font-weight: 700;
+            font-size: 18px;
+            padding: 18px;
+            border-radius: 12px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.25);
+            transition: var(--transition);
+            font-family: var(--font-sans);
+            text-align: center;
+        }
+        .exit-modal-btn:hover {
+            background-color: #20ba59;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 25px rgba(37, 211, 102, 0.35);
+        }
+        .exit-modal-footer {
+            margin-top: 20px;
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
     </style>
 </head>
 <body>
@@ -2099,6 +2227,92 @@
                     const text = `Olá, gostaria de receber uma recomendação de implante dentário. O meu caso atual é: ${selectedQuizOption}.`;
                     const url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
                     window.open(url, '_blank');
+                });
+            }
+        });
+    </script>
+
+
+    <!-- Exit Intent Modal Overlay (Portuguese) -->
+    <div class="modal-overlay" id="exit-modal">
+        <div class="exit-modal-card">
+            <button class="exit-modal-close" id="close-modal-btn" aria-label="Fechar">&times;</button>
+            
+            <div class="exit-modal-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#00A499" stroke-width="2">
+                    <path d="M12 2c-3.5 0-5 2-5 5 0 4-2 6-2 9 0 2 1.5 4 4 4 1.5 0 2.5-1 3-2 .5 1 1.5 2 3 2 2.5 0 4-2 4-4 0-3-2-5-2-9 0-3-1.5-5-5-5z" />
+                </svg>
+            </div>
+            
+            <h3>Ainda tem dúvidas sobre implantes?</h3>
+            <p>Não vá embora com dúvidas! Fale diretamente com o nosso cirurgião de plantão agora mesmo no WhatsApp e entenda o tratamento ideal para o seu caso de forma rápida e gratuita.</p>
+            
+            <a href="https://wa.me/5511989754251?text=Olá,%20gostaria%20de%20esclarecer%20algumas%20dúvidas%20sobre%20o%20tratamento." target="_blank" class="exit-modal-btn" id="exit-whatsapp-btn">
+                Falar com Especialista no WhatsApp
+            </a>
+            
+            <div class="exit-modal-footer">
+                <span>💬 Atendimento imediato</span>
+                <span>⚡ CRO-SP 98765</span>
+            </div>
+            
+            <!-- Background decorative tooth icon -->
+            <svg class="exit-modal-tooth-bg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2c-3.5 0-5 2-5 5 0 4-2 6-2 9 0 2 1.5 4 4 4 1.5 0 2.5-1 3-2 .5 1 1.5 2 3 2 2.5 0 4-2 4-4 0-3-2-5-2-9 0-3-1.5-5-5-5z" />
+            </svg>
+        </div>
+    </div>
+
+
+    <!-- Exit Intent Modal Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const exitModal = document.getElementById('exit-modal');
+            const closeModalBtn = document.getElementById('close-modal-btn');
+            const exitWhatsappBtn = document.getElementById('exit-whatsapp-btn');
+            
+            if (!exitModal) return;
+            
+            // Check session storage to show only once per session
+            const modalShown = sessionStorage.getItem('exitModalShown');
+            
+            function showModal() {
+                if (!modalShown) {
+                    exitModal.classList.add('active');
+                    sessionStorage.setItem('exitModalShown', 'true');
+                }
+            }
+            
+            // 1. Desktop Exit Intent (mouse leaving viewport top)
+            document.addEventListener('mouseleave', (e) => {
+                if (e.clientY < 50) {
+                    showModal();
+                }
+            });
+            
+            // 2. Mobile fallback (Trigger after 30 seconds of reading)
+            setTimeout(() => {
+                showModal();
+            }, 30000);
+            
+            // Close click triggers
+            if (closeModalBtn) {
+                closeModalBtn.addEventListener('click', () => {
+                    exitModal.classList.remove('active');
+                });
+            }
+            
+            // Close when clicking outside of the modal card
+            exitModal.addEventListener('click', (e) => {
+                if (e.target === exitModal) {
+                    exitModal.classList.remove('active');
+                }
+            });
+            
+            // Close when WhatsApp link is clicked
+            if (exitWhatsappBtn) {
+                exitWhatsappBtn.addEventListener('click', () => {
+                    exitModal.classList.remove('active');
                 });
             }
         });
