@@ -102,11 +102,12 @@ def fetch_places_google(query, api_key):
         # Проверяем наличие следующей страницы результатов
         token = data.get("next_page_token")
         if token:
+            print("⏳ Найдена следующая страница результатов Google Maps, ожидаем 3 сек для активации токена...")
             params = {
                 "pagetoken": token,
                 "key": api_key
             }
-            time.sleep(2) # Google требует небольшую задержку перед использованием page_token
+            time.sleep(3)
         else:
             next_page_token = False
             
@@ -201,8 +202,8 @@ def export_to_csv(filename="leads_export.csv"):
     rows = cursor.fetchall()
     conn.close()
     
-    with open(filename, "w", newline="", encoding="utf-8") as f:
-        writer = csv.writer(f)
+    with open(filename, "w", newline="", encoding="utf-8-sig") as f:
+        writer = csv.writer(f, delimiter=";")
         writer.writerow(["ID", "Название", "Адрес", "Телефон (WhatsApp)", "Сайт", "Категория", "Статус"])
         writer.writerows(rows)
     print(f"✅ База данных успешно экспортирована в файл: {filename}")
