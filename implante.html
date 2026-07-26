@@ -814,6 +814,150 @@
             box-shadow: 0 8px 20px rgba(0, 164, 153, 0.25);
         }
 
+    
+        /* Cases Testimonials Carousel styling */
+        .cases-section {
+            padding: 110px 0;
+            background-color: var(--color-bg-white);
+            text-align: center;
+            position: relative;
+        }
+
+        .cases-outer {
+            position: relative;
+            display: flex;
+            align-items: center;
+            max-width: 100%;
+            margin: 50px auto 0 auto;
+            padding: 0 10px;
+        }
+
+        .cases-container {
+            width: 100%;
+            overflow: hidden;
+            border-radius: 20px;
+        }
+
+        .cases-track {
+            display: flex;
+            gap: 30px;
+            transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1); /* Slow, smooth premium slide */
+            width: max-content;
+        }
+
+        .cases-section .case-card {
+            background-color: var(--color-bg-light);
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid #EAEAEA;
+            transition: var(--transition);
+            flex-shrink: 0;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-sizing: border-box;
+            height: 380px; /* fixed height for cards alignment */
+        }
+
+        .cases-section .case-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(15, 30, 54, 0.06);
+            border-color: rgba(0, 164, 153, 0.15);
+        }
+
+        .cases-section .case-quote {
+            font-family: var(--font-serif);
+            font-size: 19px;
+            font-style: italic;
+            color: var(--color-primary);
+            line-height: 1.6;
+            margin-bottom: 24px;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 7;
+            -webkit-box-orient: vertical;
+        }
+
+        .cases-section .case-author {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid var(--color-border);
+            padding-top: 20px;
+            margin-top: auto;
+        }
+
+        .cases-section .author-info h4 {
+            font-family: var(--font-sans);
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--color-primary);
+        }
+
+        .cases-section .author-info p {
+            font-size: 13px;
+            color: #999999;
+        }
+
+        /* Cases Navigation Buttons */
+        .cases-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            background-color: var(--color-bg-white);
+            border: 1px solid #EAEAEA;
+            color: var(--color-primary);
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+
+        .cases-arrow:hover {
+            background-color: var(--color-accent);
+            border-color: var(--color-accent);
+            color: #FFFFFF;
+        }
+
+        .cases-arrow.prev {
+            left: -24px;
+        }
+
+        .cases-arrow.next {
+            right: -24px;
+        }
+
+        /* Cases Dots */
+        .cases-dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 35px;
+        }
+
+        .cases-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            border: 2px solid #D5D8DC;
+            background-color: transparent;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .cases-dot.active {
+            border-color: var(--color-accent);
+            background-color: var(--color-accent);
+        }
+
     </style>
 </head>
 <body>
@@ -976,41 +1120,102 @@
 
     
 
-    <!-- 6. Real Cases Section (Inspirado no design de Casos Clínicos) -->
+    
+    <!-- 6. Real Cases Section (Smooth Interactive Testimonials Carousel) -->
     <section class="cases-section" id="casos">
         <div class="container">
             <div class="section-header">
                 <h2>Casos Clínicos de Sucesso</h2>
+                <div class="header-line"></div>
                 <p>Acompanhe histórias reais de transformação oral e a alegria de sorrir de quem confiou em nosso trabalho.</p>
             </div>
             
-            <div class="cases-grid">
-                <!-- Caso 1 -->
-                <div class="case-card">
-                    <p class="case-quote">"Decidir viajar para Portugal para realizar o meu tratamento dentário na Clínica São Paulo foi um grande passo. Procurava uma equipa experiente e senti que estava recebendo um aconselhamento honesto e sem qualquer pressão."</p>
-                    <div class="case-author">
-                        <div class="author-info">
-                            <h4>Karen M.</h4>
-                            <p>Lisboa / Escócia</p>
+            <div class="cases-outer">
+                <button class="cases-arrow prev" aria-label="Anterior">&#10094;</button>
+                
+                <div class="cases-container">
+                    <div class="cases-track">
+                        <!-- Caso 1: Aconselhamento honesto / Viagem (Karen M.) -->
+                        <div class="case-card">
+                            <p class="case-quote">"Decidir viajar para Portugal para realizar o meu tratamento dentário na Clínica São Paulo foi um grande passo. Procurava uma equipa experiente e senti que estava recebendo um aconselhamento honesto, transparente e sem qualquer pressão comercial."</p>
+                            <div class="case-author">
+                                <div class="author-info">
+                                    <h4>Karen M.</h4>
+                                    <p>Lisboa / Escócia</p>
+                                </div>
+                                <span class="treatment-tag">Implantes Totais All-on-4</span>
+                            </div>
                         </div>
-                        <span class="treatment-tag">Implantes Totais All-on-4</span>
+                        
+                        <!-- Caso 2: Pavor de dentista / Dor (Mariana S.) -->
+                        <div class="case-card">
+                            <p class="case-quote">"Tinha pânico de agulhas e pavor de dentista desde a infância, o que me fez adiar o tratamento por anos. Graças à sedação consciente assistida por anestesista, fiz a cirurgia de implantes e não senti absolutamente nada. Foi muito tranquilo."</p>
+                            <div class="case-author">
+                                <div class="author-info">
+                                    <h4>Mariana S.</h4>
+                                    <p>Sintra, Portugal</p>
+                                </div>
+                                <span class="treatment-tag">Sedação Consciente</span>
+                            </div>
+                        </div>
+
+                        <!-- Caso 3: Prótese móvel instável / Dificuldade de mastigar (António J.) -->
+                        <div class="case-card">
+                            <p class="case-quote">"A minha prótese móvel antiga caía sempre que eu tentava comer ou falar em público. Viver com aquela insegurança constante era horrível. Com a reabilitação fixa All-on-4, hoje posso mastigar um bife e sorrir sem qualquer medo de passar vergonha."</p>
+                            <div class="case-author">
+                                <div class="author-info">
+                                    <h4>António J.</h4>
+                                    <p>Cascais, Portugal</p>
+                                </div>
+                                <span class="treatment-tag">Prótese Fixa</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Caso 4: Tratamento rápido em 2 dias (Carlos R.) -->
+                        <div class="case-card">
+                            <p class="case-quote">"O tratamento mudou a forma como eu me comunico e trabalho. Sentia muita dor ao mastigar e medo de que a dentadura se movesse. O implante guiado 3D com carga rápida resolveu tudo em 2 dias."</p>
+                            <div class="case-author">
+                                <div class="author-info">
+                                    <h4>Carlos R.</h4>
+                                    <p>Porto, Portugal</p>
+                                </div>
+                                <span class="treatment-tag">Reabilitação Imediata</span>
+                            </div>
+                        </div>
+
+                        <!-- Caso 5: Medo de custos elevados / Financiamento (Ricardo F.) -->
+                        <div class="case-card">
+                            <p class="case-quote">"Sempre achei que implantes dentários de alto nível fossem um luxo inacessível. Na Clínica São Paulo, além de um orçamento muito claro, eles facilitaram as condições de financiamento e parcelamento. Pude realizar o tratamento dos meus sonhos de forma realista."</p>
+                            <div class="case-author">
+                                <div class="author-info">
+                                    <h4>Ricardo F.</h4>
+                                    <p>Parque das Nações</p>
+                                </div>
+                                <span class="treatment-tag">Facilidade de Pagamento</span>
+                            </div>
+                        </div>
+
+                        <!-- Caso 6: Vergonha do sorriso / Autoestima (Beatriz L.) -->
+                        <div class="case-card">
+                            <p class="case-quote">"Por causa da perda de dentes, o meu rosto parecia mais envelhecido e eu evitava jantares com clientes ou tirar fotos com os meus filhos. A reabilitação em zircónia devolveu-me a firmeza e rejuvenesceu o meu rosto. Recuperei a minha autoestima."</p>
+                            <div class="case-author">
+                                <div class="author-info">
+                                    <h4>Beatriz L.</h4>
+                                    <p>Lisboa, Portugal</p>
+                                </div>
+                                <span class="treatment-tag">Estética em Zircónia</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 
-                <!-- Caso 2 -->
-                <div class="case-card">
-                    <p class="case-quote">"O tratamento mudou a forma como eu me comunico e trabalho. Sentia muita dor ao mastigar e medo de que a dentadura se movesse. O implante guiado 3D com carga rápida resolveu tudo em 2 dias."</p>
-                    <div class="case-author">
-                        <div class="author-info">
-                            <h4>Carlos R.</h4>
-                            <p>Porto, Portugal</p>
-                        </div>
-                        <span class="treatment-tag">Reabilitação Imediata</span>
-                    </div>
-                </div>
+                <button class="cases-arrow next" aria-label="Seguinte">&#10095;</button>
             </div>
+            
+            <div class="cases-dots"></div>
         </div>
     </section>
+
 
     <!-- 7. Doctor and Clinic Structure -->
     <section class="doctor-section">
@@ -1221,6 +1426,101 @@
             
             // Initial setup
             setTimeout(updateDimensions, 100);
+        });
+    </script>
+
+
+    <!-- Cases Carousel Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const track = document.querySelector('.cases-track');
+            const prevBtn = document.querySelector('.cases-arrow.prev');
+            const nextBtn = document.querySelector('.cases-arrow.next');
+            const dotsContainer = document.querySelector('.cases-dots');
+            const cards = Array.from(document.querySelectorAll('.cases-section .case-card'));
+            
+            let currentIndex = 0;
+            let cardsToShow = 2; // 2 cards visible on desktop
+            let gap = 30;
+
+            function updateDimensions() {
+                const width = window.innerWidth;
+                if (width > 992) {
+                    cardsToShow = 2;
+                } else {
+                    cardsToShow = 1; // 1 card visible on mobile/tablets
+                }
+                
+                const containerWidth = document.querySelector('.cases-container').offsetWidth;
+                const cardWidth = (containerWidth - (gap * (cardsToShow - 1))) / cardsToShow;
+                
+                cards.forEach(card => {
+                    card.style.width = cardWidth + "px";
+                });
+                
+                createDots();
+                moveToSlide(currentIndex);
+            }
+
+            function createDots() {
+                dotsContainer.innerHTML = '';
+                const maxDots = cards.length - cardsToShow + 1;
+                if (maxDots <= 1) return;
+                
+                for (let i = 0; i < maxDots; i++) {
+                    const dot = document.createElement('div');
+                    dot.classList.add('cases-dot');
+                    if (i === currentIndex) dot.classList.add('active');
+                    dot.addEventListener('click', () => {
+                        currentIndex = i;
+                        moveToSlide(i);
+                    });
+                    dotsContainer.appendChild(dot);
+                }
+            }
+
+            function updateDots(index) {
+                const dots = document.querySelectorAll('.cases-dot');
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle('active', i === index);
+                });
+            }
+
+            function moveToSlide(index) {
+                if (cards.length === 0) return;
+                const cardWidth = cards[0].offsetWidth;
+                const offset = index * (cardWidth + gap);
+                track.style.transform = `translateX(-${offset}px)`;
+                updateDots(index);
+                
+                // Disable/Fade navigation arrows
+                prevBtn.style.opacity = index === 0 ? '0.3' : '1';
+                prevBtn.style.pointerEvents = index === 0 ? 'none' : 'auto';
+                
+                const maxIndex = cards.length - cardsToShow;
+                nextBtn.style.opacity = index >= maxIndex ? '0.3' : '1';
+                nextBtn.style.pointerEvents = index >= maxIndex ? 'none' : 'auto';
+            }
+
+            nextBtn.addEventListener('click', () => {
+                const maxIndex = cards.length - cardsToShow;
+                if (currentIndex < maxIndex) {
+                    currentIndex++;
+                    moveToSlide(currentIndex);
+                }
+            });
+
+            prevBtn.addEventListener('click', () => {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    moveToSlide(currentIndex);
+                }
+            });
+
+            window.addEventListener('resize', updateDimensions);
+            
+            // Initial setup
+            setTimeout(updateDimensions, 150);
         });
     </script>
 
