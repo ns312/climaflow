@@ -206,9 +206,9 @@ def export_to_csv(filename="leads_export.csv"):
     for row in rows:
         row_list = list(row)
         phone = row_list[3]
-        # Добавляем плюс перед телефоном, чтобы Excel не превращал его в формулу с E+11
+        # Добавляем одинарную кавычку и плюс перед телефоном, чтобы Excel не превращал его в формулу с E+11
         if phone and not str(phone).startswith("+"):
-            row_list[3] = f"+{phone}"
+            row_list[3] = f"'+{phone}"
         formatted_rows.append(row_list)
     
     with open(filename, "w", newline="", encoding="utf-8-sig") as f:
