@@ -1,35 +1,29 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-PT">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clínica São Paulo | Implantes Dentários Premium e Reabilitação Oral</title>
-    <meta name="description" content="Recupere a segurança de sorrir e mastigar com implantes guiados por computador e carga rápida em São Paulo. Procedimento humanizado, sem dor e sob sedação.">
+    <title>Clínica Dentária São Paulo | Cais do Sodré e Parque das Nações</title>
+    <meta name="description" content="A Clínica de São Paulo é uma clínica cheia de história, em funcionamento desde 1898 no Cais do Sodré, agora também no Parque das Nações.">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     
-    <!-- CSS Estilos Customizados (Design Premium de Alta Conversão) -->
+    <!-- CSS Estilos Customizados (Reference-matched styling) -->
     <style>
         :root {
-            --color-primary: #0F1E36; /* Navy Profundo / Nobre */
-            --color-primary-light: #1A2F4C;
-            --color-secondary: #C5A880; /* Ouro Champagne */
-            --color-secondary-dark: #A88F65;
-            --color-accent: #00A499; /* Verde Médico Premium */
-            --color-text-dark: #2C3E50;
+            --color-primary: #555555; /* Cinza Escuro do menu */
+            --color-accent: #00A499; /* Verde Água / Teal */
+            --color-text-dark: #333333;
             --color-text-light: #F8F9FA;
-            --color-bg-light: #F7F9FC;
+            --color-bg-light: #F9F9F9;
             --color-bg-white: #FFFFFF;
             --color-border: #E8ECEF;
             --font-serif: 'Playfair Display', Georgia, serif;
             --font-sans: 'Outfit', sans-serif;
-            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            --box-shadow-sm: 0 4px 12px rgba(15, 30, 54, 0.05);
-            --box-shadow-md: 0 12px 30px rgba(15, 30, 54, 0.08);
-            --box-shadow-lg: 0 20px 50px rgba(15, 30, 54, 0.12);
+            --transition: all 0.3s ease;
         }
 
         /* Reset e Configurações Gerais */
@@ -53,15 +47,15 @@
         }
 
         h1, h2, h3, h4 {
-            font-family: var(--font-serif);
-            font-weight: 700;
+            font-family: var(--font-sans);
+            font-weight: 600;
             color: var(--color-primary);
-            line-height: 1.2;
+            line-height: 1.25;
         }
 
         p {
             font-size: 16px;
-            color: #5D6D7E;
+            color: #666666;
             font-weight: 400;
         }
 
@@ -78,213 +72,237 @@
             padding: 0 24px;
         }
 
-        /* Glassmorphism Header */
-        header {
-            background-color: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(15, 30, 54, 0.05);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            padding: 16px 0;
-            transition: var(--transition);
+        /* 1. Top Thin Bar */
+        .top-bar {
+            background-color: #FFFFFF;
+            color: #555555;
+            font-size: 13px;
+            padding: 10px 0;
+            border-bottom: 1px solid #F0F0F0;
         }
 
-        .header-content {
+        .top-bar-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .logo {
-            font-family: var(--font-serif);
-            font-size: 26px;
-            font-weight: 700;
-            color: var(--color-primary);
-            letter-spacing: 0.5px;
+        .top-bar-info {
             display: flex;
             align-items: center;
             gap: 8px;
         }
 
-        .logo span {
-            color: var(--color-secondary);
+        .top-bar-email {
+            font-weight: 500;
         }
 
-        .header-contacts {
+        /* 2. Navbar with Centered Logo (Perfect Match) */
+        header {
+            background-color: #FFFFFF;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+        }
+
+        .navbar-content {
             display: flex;
             align-items: center;
-            gap: 24px;
+            justify-content: space-between;
+            height: 100px;
         }
 
-        .phone-link {
-            font-size: 14px;
-            font-weight: 600;
+        .nav-left, .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            flex: 1;
+        }
+
+        .nav-left {
+            justify-content: flex-end;
+            padding-right: 40px;
+        }
+
+        .nav-right {
+            justify-content: flex-start;
+            padding-left: 40px;
+        }
+
+        .nav-item {
+            font-size: 15px;
+            font-weight: 500;
             color: var(--color-primary);
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 4px;
+            cursor: pointer;
         }
 
-        .phone-link i {
+        .nav-item:hover, .nav-item.active {
             color: var(--color-accent);
         }
 
-        .header-btn {
-            background-color: var(--color-primary);
-            color: var(--color-text-light);
-            padding: 12px 24px;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 14px;
-            box-shadow: var(--box-shadow-sm);
-            transition: var(--transition);
+        .nav-item-arrow {
+            font-size: 10px;
+            opacity: 0.7;
         }
 
-        .header-btn:hover {
-            background-color: var(--color-secondary);
-            color: var(--color-primary);
-            transform: translateY(-2px);
-            box-shadow: var(--box-shadow-md);
-        }
-
-        /* Hero Section Premium */
-        .hero {
-            background-color: var(--color-bg-white);
-            padding: 90px 0;
-            position: relative;
-            background-image: radial-gradient(circle at 80% 20%, rgba(197, 168, 128, 0.05) 0%, transparent 50%);
-        }
-
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .hero-text h1 {
-            font-size: 52px;
-            line-height: 1.15;
-            margin-bottom: 24px;
-            letter-spacing: -0.5px;
-        }
-
-        .hero-text p {
-            font-size: 19px;
-            color: #5D6D7E;
-            margin-bottom: 36px;
-            font-weight: 300;
-            max-width: 580px;
-        }
-
-        .cta-btn {
-            display: inline-block;
-            background-color: #25D366; /* Verde WhatsApp */
-            color: white;
-            font-weight: 700;
-            font-size: 18px;
-            padding: 20px 40px;
-            border-radius: 50px;
-            box-shadow: 0 10px 24px rgba(37, 211, 102, 0.25);
-            transition: var(--transition);
-            text-align: center;
-        }
-
-        .cta-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 30px rgba(37, 211, 102, 0.35);
-        }
-
-        .cta-subtext {
-            display: block;
-            font-size: 12px;
-            margin-top: 10px;
-            color: #95A5A6;
-            font-weight: 500;
-        }
-
-        .hero-badges {
-            margin-top: 48px;
+        /* Centered Logo block */
+        .nav-logo-block {
             display: flex;
             flex-direction: column;
-            gap: 16px;
-            border-top: 1px solid var(--color-border);
-            padding-top: 30px;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            width: 180px;
+            cursor: pointer;
         }
 
-        .badge-item {
+        .logo-circle {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: 2px solid var(--color-accent);
             display: flex;
             align-items: center;
-            gap: 12px;
-            font-size: 15px;
+            justify-content: center;
+            margin-bottom: 8px;
+            transition: var(--transition);
+        }
+
+        .nav-logo-block:hover .logo-circle {
+            transform: scale(1.08);
+            background-color: rgba(0, 164, 153, 0.03);
+        }
+
+        .logo-title {
+            font-size: 11px;
             font-weight: 500;
-            color: var(--color-primary-light);
+            color: var(--color-primary);
+            letter-spacing: 0.5px;
+            line-height: 1.2;
+            text-transform: uppercase;
         }
 
-        .badge-icon {
-            color: var(--color-secondary);
-            font-size: 20px;
-        }
-
-        .hero-image-wrapper {
-            position: relative;
-        }
-
-        .hero-image {
-            border-radius: 24px;
-            overflow: hidden;
-            box-shadow: var(--box-shadow-lg);
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero-image img {
-            width: 100%;
-            height: auto;
+        .logo-title span {
             display: block;
+            font-weight: 700;
+            color: var(--color-accent);
+            font-size: 13px;
         }
 
-        .hero-image-decor {
+        /* 3. Hero Section with Video Background (Clean Cabinet) */
+        .hero {
+            position: relative;
+            height: 80vh;
+            min-height: 550px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            background-color: #000;
+        }
+
+        .hero-video {
             position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            border: 2px solid var(--color-secondary);
-            top: 20px;
-            left: 20px;
-            border-radius: 24px;
+            object-fit: cover;
             z-index: 1;
         }
 
-        /* Seção Empatia e Conexão */
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 30, 54, 0.45); /* Soft dark overlay for legibility */
+            z-index: 2;
+        }
+
+        .hero-container {
+            position: relative;
+            z-index: 3;
+            width: 100%;
+            color: #FFFFFF;
+        }
+
+        .hero-content {
+            max-width: 700px;
+            text-align: left;
+        }
+
+        .hero-content h1 {
+            font-family: var(--font-sans);
+            font-size: 58px;
+            font-weight: 600;
+            color: #FFFFFF;
+            margin-bottom: 16px;
+            line-height: 1.15;
+            letter-spacing: -0.5px;
+        }
+
+        .hero-content p {
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 36px;
+            font-weight: 400;
+            line-height: 1.4;
+        }
+
+        /* Transparent border CTA button (Perfect Match) */
+        .hero-btn {
+            display: inline-block;
+            background: transparent;
+            border: 2px solid #FFFFFF;
+            color: #FFFFFF;
+            font-weight: 600;
+            font-size: 16px;
+            padding: 16px 36px;
+            transition: var(--transition);
+            cursor: pointer;
+            text-transform: none;
+        }
+
+        .hero-btn:hover {
+            background-color: var(--color-accent);
+            border-color: var(--color-accent);
+            color: #FFFFFF;
+            transform: translateY(-2px);
+        }
+
+        /* 4. Pain and Connection Section */
         .pain-section {
-            background-color: var(--color-primary);
-            color: var(--color-text-light);
+            background-color: var(--color-bg-white);
             padding: 100px 0;
             text-align: center;
-            position: relative;
+            border-bottom: 1px solid var(--color-border);
         }
 
         .pain-section h2 {
-            color: var(--color-text-light);
-            font-size: 40px;
+            font-size: 38px;
             margin-bottom: 24px;
             max-width: 850px;
             margin-left: auto;
             margin-right: auto;
-            line-height: 1.25;
+            line-height: 1.3;
+            color: var(--color-primary);
         }
 
         .pain-section p {
-            font-size: 18px;
-            color: rgba(248, 249, 250, 0.8);
+            font-size: 17px;
+            color: #666666;
             max-width: 800px;
             margin: 0 auto;
-            font-weight: 300;
+            font-weight: 400;
         }
 
-        /* Seção de Tecnologia de Ponta */
+        /* 5. Treatments / Tech Grid (3 columns, 20px radius, lift effect) */
         .tech-section {
             padding: 110px 0;
             background-color: var(--color-bg-light);
@@ -296,7 +314,7 @@
         }
 
         .section-header h2 {
-            font-size: 40px;
+            font-size: 38px;
             margin-bottom: 16px;
         }
 
@@ -315,9 +333,9 @@
         .tech-card {
             background-color: var(--color-bg-white);
             padding: 48px 36px;
-            border-radius: 20px;
-            box-shadow: var(--box-shadow-sm);
-            border: 1px solid rgba(15, 30, 54, 0.02);
+            border-radius: 20px; /* 20px rounded corners */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+            border: 1px solid #EAEAEA; /* thin gray border */
             transition: var(--transition);
             display: flex;
             flex-direction: column;
@@ -325,14 +343,14 @@
         }
 
         .tech-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--box-shadow-lg);
-            border-color: rgba(197, 168, 128, 0.2);
+            transform: translateY(-8px); /* 8px lift */
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08); /* soft shadow */
+            border-color: rgba(0, 164, 153, 0.2);
         }
 
         .tech-card-icon {
-            font-size: 42px;
-            color: var(--color-secondary);
+            font-size: 40px;
+            color: var(--color-accent);
             line-height: 1;
         }
 
@@ -340,71 +358,19 @@
             font-size: 22px;
             font-family: var(--font-sans);
             font-weight: 600;
+            color: var(--color-primary);
         }
 
         .tech-card p {
             font-size: 15px;
-            color: #7F8C8D;
+            color: #777777;
             line-height: 1.65;
         }
 
-        /* Seção Estrutura e Diferenciais (Inspirado na Odontoclinic) */
-        .structure-section {
-            background-color: var(--color-bg-white);
-            padding: 110px 0;
-        }
-
-        .structure-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .structure-content h2 {
-            font-size: 40px;
-            margin-bottom: 24px;
-        }
-
-        .structure-content p {
-            font-size: 17px;
-            margin-bottom: 30px;
-        }
-
-        .features-list {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .feature-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 16px;
-        }
-
-        .feature-check {
-            color: var(--color-accent);
-            font-size: 20px;
-            margin-top: 2px;
-        }
-
-        .feature-text h4 {
-            font-family: var(--font-sans);
-            font-size: 17px;
-            font-weight: 600;
-            margin-bottom: 4px;
-        }
-
-        .feature-text p {
-            font-size: 14px;
-            color: #7F8C8D;
-        }
-
-        /* Casos de Transformação / Depoimentos (Inspirado na Clínica São Paulo PT) */
+        /* 6. Real Cases Section (Testimonials) */
         .cases-section {
             padding: 110px 0;
-            background-color: var(--color-bg-light);
+            background-color: var(--color-bg-white);
         }
 
         .cases-grid {
@@ -415,22 +381,16 @@
         }
 
         .case-card {
-            background-color: var(--color-bg-white);
+            background-color: var(--color-bg-light);
             border-radius: 20px;
-            overflow: hidden;
-            box-shadow: var(--box-shadow-sm);
+            padding: 40px;
+            border: 1px solid #EAEAEA;
             transition: var(--transition);
-            display: flex;
-            flex-direction: column;
         }
 
         .case-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--box-shadow-md);
-        }
-
-        .case-body {
-            padding: 40px;
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
         }
 
         .case-quote {
@@ -456,11 +416,6 @@
             font-weight: 600;
         }
 
-        .author-info p {
-            font-size: 13px;
-            color: #95A5A6;
-        }
-
         .treatment-tag {
             background-color: rgba(0, 164, 153, 0.08);
             color: var(--color-accent);
@@ -470,10 +425,11 @@
             font-weight: 600;
         }
 
-        /* Seção Dentista e Autoridade */
+        /* 7. Doctor and Philosophy */
         .doctor-section {
-            background-color: var(--color-bg-white);
+            background-color: var(--color-bg-light);
             padding: 110px 0;
+            border-top: 1px solid var(--color-border);
         }
 
         .doctor-grid {
@@ -483,37 +439,23 @@
             align-items: center;
         }
 
-        .doctor-image {
-            position: relative;
-        }
-
         .doctor-image img {
             width: 100%;
             height: auto;
             border-radius: 24px;
-            box-shadow: var(--box-shadow-lg);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
             display: block;
         }
 
         .doctor-info h2 {
-            font-size: 40px;
+            font-size: 38px;
             margin-bottom: 24px;
         }
 
         .doctor-info p {
             font-size: 17px;
             margin-bottom: 20px;
-            color: #5D6D7E;
-        }
-
-        .doctor-tag {
-            color: var(--color-secondary-dark);
-            font-size: 14px;
-            font-weight: 600;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            margin-bottom: 12px;
-            display: block;
+            color: #666666;
         }
 
         .doctor-credentials {
@@ -525,10 +467,10 @@
             color: var(--color-primary);
         }
 
-        /* Seção FAQ */
+        /* 8. FAQ Accordion Section */
         .faq-section {
             padding: 110px 0;
-            background-color: var(--color-bg-light);
+            background-color: var(--color-bg-white);
         }
 
         .faq-container {
@@ -537,11 +479,11 @@
         }
 
         .faq-item {
-            background-color: var(--color-bg-white);
+            background-color: var(--color-bg-light);
             margin-bottom: 16px;
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: var(--box-shadow-sm);
+            border: 1px solid #EAEAEA;
             transition: var(--transition);
         }
 
@@ -560,7 +502,7 @@
         .faq-question::after {
             content: '+';
             font-size: 24px;
-            color: var(--color-secondary);
+            color: var(--color-accent);
             transition: transform 0.3s ease;
         }
 
@@ -569,12 +511,11 @@
             overflow: hidden;
             transition: max-height 0.3s ease;
             padding: 0 30px;
-            color: #7F8C8D;
+            color: #666666;
             font-size: 15px;
             line-height: 1.7;
         }
 
-        /* FAQ States */
         .faq-item.active .faq-question::after {
             content: '-';
         }
@@ -584,23 +525,22 @@
             padding-bottom: 24px;
         }
 
-        /* Seção Call To Action Final */
+        /* 9. Call To Action (Standard match) */
         .final-cta {
             background-color: var(--color-primary);
             color: var(--color-text-light);
             padding: 110px 0;
             text-align: center;
-            background-image: radial-gradient(circle at 50% 50%, rgba(197, 168, 128, 0.08) 0%, transparent 70%);
         }
 
         .final-cta h2 {
             color: var(--color-text-light);
-            font-size: 44px;
+            font-size: 40px;
             margin-bottom: 24px;
         }
 
         .final-cta p {
-            color: rgba(248, 249, 250, 0.8);
+            color: rgba(255, 255, 255, 0.8);
             font-size: 19px;
             margin-bottom: 40px;
             max-width: 650px;
@@ -609,14 +549,30 @@
             font-weight: 300;
         }
 
+        .final-cta-btn {
+            display: inline-block;
+            background-color: var(--color-accent);
+            color: white;
+            font-weight: 600;
+            font-size: 17px;
+            padding: 18px 40px;
+            border-radius: 4px;
+            transition: var(--transition);
+        }
+
+        .final-cta-btn:hover {
+            background-color: #008f85;
+            transform: translateY(-2px);
+        }
+
         /* Footer */
         footer {
-            background-color: #081221;
-            color: rgba(248, 249, 250, 0.5);
+            background-color: #111111;
+            color: rgba(255, 255, 255, 0.4);
             padding: 60px 0;
             font-size: 13px;
             line-height: 1.8;
-            border-top: 1px solid rgba(255, 255, 255, 0.03);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .footer-content {
@@ -631,231 +587,193 @@
 
         /* Responsividade */
         @media (max-width: 992px) {
-            .hero-grid, .structure-grid, .doctor-grid {
+            .navbar-content {
+                flex-direction: column;
+                height: auto;
+                padding: 20px 0;
+                gap: 20px;
+            }
+
+            .nav-left, .nav-right {
+                padding: 0;
+                justify-content: center;
+                width: 100%;
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+
+            .hero-grid, .doctor-grid {
                 grid-template-columns: 1fr;
                 gap: 50px;
                 text-align: center;
-            }
-
-            .hero-text p, .doctor-info p, .structure-content p {
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            .hero-image-decor {
-                display: none;
             }
 
             .tech-grid, .cases-grid {
                 grid-template-columns: 1fr;
                 gap: 30px;
             }
-
-            .features-list {
-                align-items: center;
-                text-align: left;
-            }
-
-            .header-contacts {
-                display: none;
-            }
         }
 
         @media (max-width: 768px) {
-            .hero-text h1 {
+            .hero-content h1 {
                 font-size: 38px;
             }
 
-            .pain-section h2, .section-header h2, .structure-content h2, .doctor-info h2, .faq-section h2, .final-cta h2 {
-                font-size: 30px;
-            }
-
-            .final-cta h2 {
-                font-size: 34px;
+            .pain-section h2, .section-header h2, .doctor-info h2, .faq-section h2, .final-cta h2 {
+                font-size: 28px;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header / Navbar -->
+    <!-- 1. Top Thin Bar (Matches Reference Header info) -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <div class="top-bar-info">⏰ 9:00h/20:00h durante a semana e ao sábado 09:00h/13:00h</div>
+            <div class="top-bar-email">📩 geral@clinicadentariasaopaulo.pt</div>
+        </div>
+    </div>
+
+    <!-- 2. Navbar with Centered Logo (Matches Reference Screenshot) -->
     <header>
-        <div class="container header-content">
-            <div class="logo">Clínica<span>SãoPaulo</span></div>
-            <div class="header-contacts">
-                <a href="tel:+5511989754251" class="phone-link">📱 (11) 98975-4251</a>
-                <a href="https://wa.me/5511989754251?text=Olá,%20gostaria%20de%20agendar%20uma%20avaliação%20de%20implantes." target="_blank" class="header-btn">Agendar Avaliação</a>
+        <div class="container navbar-content">
+            <!-- Left Menu -->
+            <ul class="nav-left">
+                <li class="nav-item active"><a href="#inicio">Início</a></li>
+                <li class="nav-item"><a href="#sobre">Sobre nós</a> <span class="nav-item-arrow">▼</span></li>
+                <li class="nav-item"><a href="#tratamentos">Tratamentos</a> <span class="nav-item-arrow">▼</span></li>
+            </ul>
+
+            <!-- Centered Logo (SVG + Text Match) -->
+            <div class="nav-logo-block">
+                <div class="logo-circle">
+                    <!-- Clean SVG tooth line drawing inside circle -->
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00A499" stroke-width="2">
+                        <path d="M12 2c-3.5 0-5 2-5 5 0 4-2 6-2 9 0 2 1.5 4 4 4 1.5 0 2.5-1 3-2 .5 1 1.5 2 3 2 2.5 0 4-2 4-4 0-3-2-5-2-9 0-3-1.5-5-5-5z" />
+                    </svg>
+                </div>
+                <div class="logo-title">
+                    Clínica Dentária
+                    <span>São Paulo</span>
+                </div>
             </div>
+
+            <!-- Right Menu -->
+            <ul class="nav-right">
+                <li class="nav-item"><a href="#casos">Casos Clínicos</a> <span class="nav-item-arrow">▼</span></li>
+                <li class="nav-item"><a href="#blog">Blog</a> <span class="nav-item-arrow">▼</span></li>
+                <li class="nav-item"><a href="#contactos">Contactos</a></li>
+            </ul>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container hero-grid">
-            <div class="hero-text">
-                <h1>Sorria sem medo. Mastigue com segurança. Recupere a sua melhor versão.</h1>
-                <p>Implantes dentários de alta tecnologia em São Paulo. Tratamento humanizado, com planejamento digital 3D e sedação consciente para um procedimento 100% livre de dor.</p>
-                
-                <a href="https://wa.me/5511989754251?text=Olá,%20gostaria%20de%20agendar%20uma%20avaliação%20de%20implantes." target="_blank" class="cta-btn">
-                    Falar com Especialista no WhatsApp
+    <!-- 3. Hero Section with Video Background (Clean Cabinet & Teeth Treatment) -->
+    <section class="hero" id="inicio">
+        <!-- Direct MP4 link of dentist clinic from Mixkit CDN -->
+        <video class="hero-video" autoplay loop muted playsinline>
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-dentist-examining-patients-teeth-41712-large.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="container hero-container">
+            <div class="hero-content">
+                <h1>Clínica Dentária São Paulo</h1>
+                <p>A sua clínica dentária no Cais Sodré e Parque das Nações há mais de 26 anos. Excelência científica e tratamentos inovadores.</p>
+                <a href="https://wa.me/5511989754251?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" class="hero-btn">
+                    Marcar Consulta
                 </a>
-                <span class="cta-subtext">Resposta imediata por nossa equipe de atendimento.</span>
-
-                <div class="hero-badges">
-                    <div class="badge-item">
-                        <span class="badge-icon">⭐</span>
-                        <span>Referência em Reabilitação Oral Premium em São Paulo</span>
-                    </div>
-                    <div class="badge-item">
-                        <span class="badge-icon">🛡️</span>
-                        <span>Materiais de nível internacional (Suíça e Alemanha)</span>
-                    </div>
-                    <div class="badge-item">
-                        <span class="badge-icon">🦷</span>
-                        <span>Dentistas especialistas membros da Sociedade Brasileira de Implantodontia</span>
-                    </div>
-                </div>
-            </div>
-            <div class="hero-image-wrapper">
-                <div class="hero-image">
-                    <img src="images/perfect_smile.jpg" alt="Sorriso saudável e bonito de paciente feliz">
-                </div>
-                <div class="hero-image-decor"></div>
             </div>
         </div>
     </section>
 
-    <!-- Pain Section -->
-    <section class="pain-section">
+    <!-- 4. Pain and Connection Section -->
+    <section class="pain-section" id="sobre">
         <div class="container">
-            <h2>"A perda de um dente não prejudica apenas a estética. Ela afeta os momentos mais importantes da sua vida."</h2>
-            <p>Sabemos que a perda de um ou mais dentes vai muito além do visual. É a vergonha de sorrir em uma foto com a família, a insegurança ao falar em público no trabalho, ou o medo constante de mastigar certos alimentos em um restaurante. Nosso compromisso é devolver a sua segurança e qualidade de vida por meio de uma odontologia moderna, sem dor e transparente.</p>
+            <h2>"Tradição de mais de um século cuidando da saúde e da beleza do seu sorriso."</h2>
+            <p>Nossa história começou em 1898 no Cais do Sodré. Ao longo de gerações, unimos tradição familiar, rigor científico e tecnologia digital de ponta para proporcionar tratamentos odontológicos transparentes, humanos e inteiramente livres de dor. Na Clínica São Paulo, acreditamos em um aconselhamento honesto, sem qualquer pressão para tomar sua decisão.</p>
         </div>
     </section>
 
-    <!-- Tech Section -->
-    <section class="tech-section">
+    <!-- 5. Treatments / Tech Grid (Rounded 20px, Lift effect, thin gray border) -->
+    <section class="tech-section" id="tratamentos">
         <div class="container">
             <div class="section-header">
-                <h2>Tecnologia Digital a Favor da sua Segurança</h2>
-                <p>Procedimentos mais rápidos, precisos e confortáveis utilizando tecnologia alemã e suíça.</p>
+                <h2>Nossos Tratamentos e Tecnologias</h2>
+                <p>Especialidades odontológicas equipadas com os mais altos recursos digitais modernos.</p>
             </div>
             
             <div class="tech-grid">
                 <!-- Card 1 -->
                 <div class="tech-card">
                     <div class="tech-card-icon">💻</div>
-                    <h3>Planejamento 3D Guiado</h3>
-                    <p>Realizamos uma tomografia computadorizada para planejar a cirurgia no computador antes mesmo de iniciar o procedimento. Isso garante cortes mínimos, sem necessidade de pontos e cicatrização muito mais rápida.</p>
+                    <h3>Implantes Guiados 3D</h3>
+                    <p>Cirurgia guiada por computador sem dor e sem pontos. Fazemos todo o planejamento digital com tomografia computadorizada no local para um posicionamento milimétrico e cicatrização rápida.</p>
                 </div>
                 
                 <!-- Card 2 -->
                 <div class="tech-card">
-                    <div class="tech-card-icon">⚡</div>
-                    <h3>Carga Rápida / Dentes em 1 Dia</h3>
-                    <p>Para casos qualificados, realizamos a instalação do implante e da prótese fixa provisória em até 24/72 horas. Você entra na clínica sem dentes e sai sorrindo e mastigando com total estabilidade.</p>
+                    <div class="tech-card-icon">🦷</div>
+                    <h3>Reabilitação Oral & Carga Rápida</h3>
+                    <p>Substituição de próteses antigas e dentes perdidos por dentes fixos provisórios em até 72 horas. Devolvemos sua mastigação segura e estética natural de forma ágil e segura.</p>
                 </div>
                 
                 <!-- Card 3 -->
                 <div class="tech-card">
                     <div class="tech-card-icon">💤</div>
-                    <h3>Anestesia e Sedação Sem Dor</h3>
-                    <p>Oferecemos suporte com sedação consciente realizada por médico anestesista parceiro. Você dorme confortavelmente durante todo o processo e acorda com o tratamento inteiramente concluído.</p>
+                    <h3>Sedação Consciente</h3>
+                    <p>Ideal para pacientes que sofrem de ansiedade ou medo de tratamentos odontológicos. O procedimento é assistido por médico anestesista para garantir máximo conforto e relaxamento.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Structure Section -->
-    <section class="structure-section">
-        <div class="container structure-grid">
-            <div class="structure-content">
-                <h2>Nossa Estrutura e Diferenciais Premium</h2>
-                <p>Projetamos cada detalhe para que você tenha uma experiência odontológica tranquila, segura e honesta — sem pressão comercial e focada na sua saúde.</p>
-                
-                <div class="features-list">
-                    <div class="feature-item">
-                        <span class="feature-check">✔</span>
-                        <div class="feature-text">
-                            <h4>Tomografia e Raio-X Digital no Local</h4>
-                            <p>Você realiza todos os exames de imagem necessários sem precisar sair da nossa clínica.</p>
-                        </div>
-                    </div>
-                    <div class="feature-item">
-                        <span class="feature-check">✔</span>
-                        <div class="feature-text">
-                            <h4>Biossegurança de Nível Hospitalar</h4>
-                            <p>Protocolos rigorosos de esterilização com tecnologia alemã, garantindo risco zero de infecção.</p>
-                        </div>
-                    </div>
-                    <div class="feature-item">
-                        <span class="feature-check">✔</span>
-                        <div class="feature-text">
-                            <h4>Materiais Importados de Longa Duração</h4>
-                            <p>Utilizamos implantes suíços e próteses em zircônia computadorizada de altíssima resistência.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="hero-image-wrapper">
-                <div class="hero-image">
-                    <img src="images/dentist_doctor.jpg" alt="Instalações e consultório moderno da Clínica São Paulo">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Cases Section -->
-    <section class="cases-section">
+    <!-- 6. Real Cases Section (Inspirado no design de Casos Clínicos) -->
+    <section class="cases-section" id="casos">
         <div class="container">
             <div class="section-header">
-                <h2>Histórias Reais de Transformação</h2>
-                <p>Veja como a reabilitação oral e os implantes guiados devolveram a felicidade e a saúde aos nossos pacientes.</p>
+                <h2>Casos Clínicos de Sucesso</h2>
+                <p>Acompanhe histórias reais de transformação oral e a alegria de sorrir de quem confiou em nosso trabalho.</p>
             </div>
             
             <div class="cases-grid">
                 <!-- Caso 1 -->
                 <div class="case-card">
-                    <div class="case-body">
-                        <p class="case-quote">"Eu tinha pavor de dentista e vergonha do meu sorriso. Viajei para São Paulo apenas para fazer o tratamento. A equipe me tratou com tanto carinho e paciência que não senti nenhuma dor. Hoje voltei a sorrir!"</p>
-                        <div class="case-author">
-                            <div class="author-info">
-                                <h4>Karen M.</h4>
-                                <p>São Paulo, SP</p>
-                            </div>
-                            <span class="treatment-tag">Implante Total All-on-4</span>
+                    <p class="case-quote">"Decidir viajar para Portugal para realizar o meu tratamento dentário na Clínica São Paulo foi um grande passo. Procurava uma equipa experiente e senti que estava recebendo um aconselhamento honesto e sem qualquer pressão."</p>
+                    <div class="case-author">
+                        <div class="author-info">
+                            <h4>Karen M.</h4>
+                            <p>Lisboa / Escócia</p>
                         </div>
+                        <span class="treatment-tag">Implantes Totais All-on-4</span>
                     </div>
                 </div>
                 
                 <!-- Caso 2 -->
                 <div class="case-card">
-                    <div class="case-body">
-                        <p class="case-quote">"Não conseguia mastigar uma maçã ou comer um churrasco sem medo. A cirurgia guiada por computador foi incrível, saí com a prótese no dia seguinte e a cicatrização foi muito tranquila."</p>
-                        <div class="case-author">
-                            <div class="author-info">
-                                <h4>Carlos R.</h4>
-                                <p>São Paulo, SP</p>
-                            </div>
-                            <span class="treatment-tag">Carga Imediata</span>
+                    <p class="case-quote">"O tratamento mudou a forma como eu me comunico e trabalho. Sentia muita dor ao mastigar e medo de que a dentadura se movesse. O implante guiado 3D com carga rápida resolveu tudo em 2 dias."</p>
+                    <div class="case-author">
+                        <div class="author-info">
+                            <h4>Carlos R.</h4>
+                            <p>Porto, Portugal</p>
                         </div>
+                        <span class="treatment-tag">Reabilitação Imediata</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Doctor / Authority Section -->
+    <!-- 7. Doctor and Clinic Structure -->
     <section class="doctor-section">
         <div class="container doctor-grid">
             <div class="doctor-image">
-                <img src="images/dentist_doctor.jpg" alt="Dr. Roberto Silva, especialista em implantodontia em São Paulo">
+                <img src="images/dentist_doctor.jpg" alt="Consultório moderno e equipado da Clínica Dentária São Paulo">
             </div>
             <div class="doctor-info">
-                <span class="doctor-tag">Corpo Clínico Responsável</span>
-                <h2>Excelência Científica e Aconselhamento Honesto</h2>
-                <p>O Dr. Roberto Silva (CRO-SP 98765) é especialista em reabilitação oral e implantodontia avançada com mais de 15 anos de experiência e certificações nacionais e internacionais em cirurgia guiada por computador.</p>
-                <p>Nossa filosofia de atendimento é baseada na honestidade e transparência: você recebe um diagnóstico científico claro, sem qualquer tipo de pressão comercial para tomar sua decisão de tratamento.</p>
+                <h2>Estrutura Clínica e Corpo Técnico Especializado</h2>
+                <p>Nossas unidades contam com instalações modernas, salas cirúrgicas dedicadas e equipamentos de última geração, garantindo exames de imagem tomográficos na própria clínica para sua comodidade.</p>
+                <p>O Dr. Roberto Silva (CRO-SP 98765) lidera um time multidisciplinar focado em estética dental, cirurgia maxilofacial e implantodontia guiada por computador, garantindo alta precisão técnica.</p>
                 <div class="doctor-credentials">
                     Dr. Roberto Silva | CRO-SP 98765 | Diretor Técnico Responsável
                 </div>
@@ -863,12 +781,12 @@
         </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section class="faq-section">
+    <!-- 8. FAQ Accordion -->
+    <section class="faq-section" id="blog">
         <div class="container">
             <div class="section-header">
-                <h2>Dúvidas Frequentes</h2>
-                <p>Esclarecemos os principais pontos sobre os implantes e o processo de reabilitação oral.</p>
+                <h2>Perguntas Frequentes</h2>
+                <p>Respondemos as dúvidas mais habituais sobre o processo de tratamentos e implantes dentários.</p>
             </div>
             
             <div class="faq-container">
@@ -876,44 +794,36 @@
                 <div class="faq-item">
                     <div class="faq-question">O procedimento de implante dentário dói?</div>
                     <div class="faq-answer">
-                        Não. A cirurgia é realizada sob anestesia local moderna. Para pacientes ansiosos ou com medo, oferecemos a sedação consciente por médico anestesista (onde você dorme confortavelmente durante todo o processo), garantindo dor zero.
+                        Não. O procedimento cirúrgico é feito sob anestesia local moderna. Para quem tem muito medo ou ansiedade, disponibilizamos o recurso de sedação consciente com o médico anestesista para que você durma durante todo o tratamento.
                     </div>
                 </div>
 
                 <!-- FAQ 2 -->
                 <div class="faq-item">
-                    <div class="faq-question">O que é a Carga Imediata / Dentes em 1 Dia?</div>
+                    <div class="faq-question">Quanto tempo dura o tratamento com Carga Imediata?</div>
                     <div class="faq-answer">
-                        É a técnica onde os implantes e a prótese dentária fixa (geralmente provisória) são instalados no mesmo dia ou em até 72 horas. Isso evita que o paciente precise usar dentaduras móveis durante o período de cicatrização.
+                        A cirurgia e a colocação da prótese provisória fixa ocorrem em até 72 horas na maioria dos casos clínicos qualificados. A cicatrização óssea final (osseointegração) costuma durar entre 3 e 4 meses.
                     </div>
                 </div>
 
                 <!-- FAQ 3 -->
                 <div class="faq-item">
-                    <div class="faq-question">Como funciona a cirurgia guiada por computador?</div>
+                    <div class="faq-question">Quais exames de diagnóstico preciso fazer?</div>
                     <div class="faq-answer">
-                        Fazemos uma tomografia digital e escaneamos a boca do paciente. Em um software 3D, simulamos toda a cirurgia e imprimimos um guia físico. Esse guia serve como gabarito perfeito no dia do procedimento, eliminando grandes cortes no osso e a maioria dos pontos.
-                    </div>
-                </div>
-
-                <!-- FAQ 4 -->
-                <div class="faq-item">
-                    <div class="faq-question">Quais são as formas de pagamento disponíveis?</div>
-                    <div class="faq-answer">
-                        Facilitamos o pagamento com opções de parcelamento em cartão de crédito, boletos bancários sob análise e planos de financiamento odontológico. O orçamento final detalhado é apresentado logo após a primeira consulta de avaliação.
+                        Realizamos uma tomografia computadorizada e escaneamento intraoral digital 3D. Ambos são feitos diretamente no local em nossa clínica para agilizar o planejamento da cirurgia.
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Final CTA -->
-    <section class="final-cta">
+    <!-- 9. Call To Action Final (Teal buttons) -->
+    <section class="final-cta" id="contactos">
         <div class="container">
-            <h2>Volte a sorrir com confiança e mastigar com prazer</h2>
-            <p>Clique abaixo para iniciar uma conversa no WhatsApp, tirar suas dúvidas e agendar sua avaliação digital personalizada.</p>
-            <a href="https://wa.me/5511989754251?text=Olá,%20gostaria%20de%20agendar%20uma%20avaliação%20de%20implantes." target="_blank" class="cta-btn">
-                Quero Agendar Avaliação no WhatsApp
+            <h2>Pronto para recuperar a beleza e estabilidade do seu sorriso?</h2>
+            <p>Fale diretamente connosco via WhatsApp, tire suas dúvidas e agende sua consulta de avaliação personalizada com nossos cirurgiões.</p>
+            <a href="https://wa.me/5511989754251?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" class="final-cta-btn">
+                Agendar Consulta Online
             </a>
         </div>
     </section>
@@ -921,8 +831,8 @@
     <!-- Footer -->
     <footer>
         <div class="container footer-content">
-            <p>Clínica Odontológica São Paulo Premium - CRO-SP 98765. Endereço: Av. Paulista, 1000 - Bela Vista, São Paulo - SP. CNPJ: 12.345.678/0001-99.</p>
-            <p>Aviso Legal: Os resultados dos tratamentos podem variar conforme as condições de saúde bucal individuais de cada paciente. A avaliação clínica presencial é obrigatória.</p>
+            <p>Clínica Dentária São Paulo - CRO-SP 98765. Endereço: Av. Paulista, 1000 - Bela Vista, São Paulo - SP. CNPJ: 12.345.678/0001-99.</p>
+            <p>Aviso Legal: Os resultados dos tratamentos clínicos variam para cada paciente e necessitam de avaliação diagnóstica prévia obrigatória em consultório.</p>
             <p>&copy; 2026 Clínica Dentária São Paulo. Todos os direitos reservados.</p>
         </div>
     </footer>
