@@ -958,6 +958,114 @@
             background-color: var(--color-accent);
         }
 
+    
+        /* Structure Gallery Slideshow Styling */
+        .structure-gallery-section {
+            padding: 100px 0;
+            background-color: var(--color-bg-light);
+            text-align: center;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .structure-gallery-section .section-header h2 {
+            font-size: 38px;
+            max-width: 800px;
+            margin: 0 auto 50px auto;
+            line-height: 1.35;
+            color: var(--color-primary);
+            font-weight: 600;
+            font-family: var(--font-sans);
+        }
+
+        .gallery-wrapper {
+            position: relative;
+            max-width: 960px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .gallery-slides {
+            width: 100%;
+            aspect-ratio: 16 / 10;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(15, 30, 54, 0.08);
+            background-color: #000;
+            position: relative;
+        }
+
+        .gallery-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.8s ease-in-out; /* Slow smooth transition */
+            z-index: 1;
+        }
+
+        .gallery-slide.active {
+            opacity: 1;
+            z-index: 2;
+        }
+
+        .gallery-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Gallery Navigation Arrows */
+        .gallery-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.95);
+            border: 1px solid #EAEAEA;
+            color: var(--color-primary);
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: var(--transition);
+        }
+
+        .gallery-arrow:hover {
+            background-color: var(--color-accent);
+            border-color: var(--color-accent);
+            color: #FFFFFF;
+        }
+
+        .gallery-arrow.prev {
+            left: -25px;
+        }
+
+        .gallery-arrow.next {
+            right: -25px;
+        }
+
+        @media (max-width: 1024px) {
+            .gallery-arrow.prev {
+                left: 15px;
+            }
+            .gallery-arrow.next {
+                right: 15px;
+            }
+            .gallery-slides {
+                border-radius: 12px;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -1121,6 +1229,42 @@
     
 
     
+
+    <!-- 5. Structure Gallery Section (Odontoclinic layout matched with our doctor & clinic photos) -->
+    <section class="structure-gallery-section" id="estrutura">
+        <div class="container">
+            <div class="section-header">
+                <h2>Conheça a estrutura que apoia cada etapa do seu tratamento.</h2>
+            </div>
+            
+            <div class="gallery-wrapper">
+                <button class="gallery-arrow prev" aria-label="Anterior">&#10094;</button>
+                
+                <div class="gallery-slides">
+                    <!-- Slide 1: Clinic Process / Doctor working -->
+                    <div class="gallery-slide active">
+                        <img src="images/structure_1.jpg" alt="Tratamento odontológico na Clínica São Paulo">
+                    </div>
+                    <!-- Slide 2: Modern X-Ray Diagnosis -->
+                    <div class="gallery-slide">
+                        <img src="images/structure_2.jpg" alt="Diagnóstico preciso e análise de raio-X digital">
+                    </div>
+                    <!-- Slide 3: Laboratory / High-tech printer -->
+                    <div class="gallery-slide">
+                        <img src="images/structure_3.jpg" alt="Dr. Roberto Silva e equipamentos modernos do laboratório">
+                    </div>
+                    <!-- Slide 4: Our Doctor / Team -->
+                    <div class="gallery-slide">
+                        <img src="images/structure_4.jpg" alt="Corpo clínico especializado em reabilitação oral">
+                    </div>
+                </div>
+                
+                <button class="gallery-arrow next" aria-label="Seguinte">&#10095;</button>
+            </div>
+        </div>
+    </section>
+
+
     <!-- 6. Real Cases Section (Smooth Interactive Testimonials Carousel) -->
     <section class="cases-section" id="casos">
         <div class="container">
@@ -1521,6 +1665,41 @@
             
             // Initial setup
             setTimeout(updateDimensions, 150);
+        });
+    </script>
+
+
+    <!-- Structure Gallery Slideshow Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slides = Array.from(document.querySelectorAll('.gallery-slide'));
+            const prevBtn = document.querySelector('.gallery-arrow.prev');
+            const nextBtn = document.querySelector('.gallery-arrow.next');
+            
+            if (slides.length === 0) return;
+            
+            let slideIndex = 0;
+            
+            function showSlide(index) {
+                slides.forEach(slide => slide.classList.remove('active'));
+                slides[index].classList.add('active');
+            }
+            
+            nextBtn.addEventListener('click', () => {
+                slideIndex = (slideIndex + 1) % slides.length;
+                showSlide(slideIndex);
+            });
+            
+            prevBtn.addEventListener('click', () => {
+                slideIndex = (slideIndex - 1 + slides.length) % slides.length;
+                showSlide(slideIndex);
+            });
+            
+            // Autoplay every 6 seconds
+            setInterval(() => {
+                slideIndex = (slideIndex + 1) % slides.length;
+                showSlide(slideIndex);
+            }, 6000);
         });
     </script>
 
