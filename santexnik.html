@@ -355,7 +355,7 @@
             max-width: 230px;
         }
 
-        /* 6. SEO TEXT BLOCK (optimized for 'сантехник бишкек') */
+        /* 6. SEO TEXT BLOCK */
         .seo-section {
             padding: 85px 0;
             background-color: var(--color-white);
@@ -422,7 +422,62 @@
             font-size: 16px;
         }
 
-        /* 7. SERVICES SECTION */
+        /* 7. PORTFOLIO SECTION (Наши работы) */
+        .portfolio-section {
+            padding: 90px 0;
+            background-color: #F8FAFC;
+            border-bottom: 1px solid #E2E8F0;
+        }
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .portfolio-item {
+            background-color: var(--color-white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            border: 1px solid #E2E8F0;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+        }
+        .portfolio-img-wrapper {
+            position: relative;
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+            background-color: #E2E8F0;
+        }
+        .portfolio-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .portfolio-item:hover .portfolio-img {
+            transform: scale(1.05);
+        }
+        .portfolio-info {
+            padding: 20px;
+        }
+        .portfolio-info h4 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #1E3A8A;
+            margin-bottom: 5px;
+        }
+        .portfolio-info p {
+            font-size: 13px;
+            color: var(--color-text-light);
+        }
+
+        /* 8. SERVICES SECTION */
         .services-section {
             padding: 90px 0;
             background-color: var(--color-white);
@@ -524,7 +579,7 @@
             background-color: var(--color-green);
         }
 
-        /* 8. FREE DIAGNOSTICS PROMO */
+        /* 9. PROMO BANNER */
         .promo-banner {
             background-color: #1E3A8A;
             color: var(--color-white);
@@ -544,7 +599,7 @@
             color: rgba(255,255,255,0.85);
         }
 
-        /* 9. FOOTER */
+        /* 10. FOOTER */
         footer {
             background-color: #0F172A;
             color: var(--color-white);
@@ -612,7 +667,7 @@
             font-size: 12px;
         }
 
-        /* 10. STICKY CALL-TO-ACTION BAR (Bottom) */
+        /* 11. STICKY CALL-TO-ACTION BAR */
         .sticky-bar {
             position: fixed;
             bottom: 0;
@@ -675,7 +730,7 @@
         /* Dispatcher Widget */
         .dispatcher-widget {
             position: fixed;
-            bottom: 85px; /* placed above sticky bar */
+            bottom: 85px;
             right: 30px;
             background-color: var(--color-white);
             border-radius: 50px;
@@ -728,7 +783,58 @@
             font-weight: 600;
         }
 
-        /* Modal Overlay */
+        /* Image Lightbox (Modal) */
+        .lightbox-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(15, 30, 54, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 20000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        .lightbox-modal.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .lightbox-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 85%;
+        }
+        .lightbox-img {
+            max-width: 100%;
+            max-height: 80vh;
+            border-radius: 12px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            border: 2px solid rgba(255,255,255,0.1);
+        }
+        .lightbox-close {
+            position: absolute;
+            top: -50px;
+            right: 0;
+            background: transparent;
+            border: none;
+            color: var(--color-white);
+            font-size: 36px;
+            cursor: pointer;
+        }
+        .lightbox-caption {
+            color: var(--color-white);
+            text-align: center;
+            margin-top: 15px;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        /* Exit Intent Modal Overlay */
         .modal-overlay {
             position: fixed;
             top: 0;
@@ -868,13 +974,16 @@
                 grid-template-columns: repeat(2, 1fr);
                 gap: 30px;
             }
+            .portfolio-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
             .services-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
             .footer-grid {
                 grid-template-columns: 1fr 1fr;
             }
-            .sticky-bar { display: none; } /* hide on desktop/tablet since widget is there */
+            .sticky-bar { display: none; }
             body { padding-bottom: 0; }
         }
 
@@ -894,6 +1003,9 @@
             .trust-strip-grid {
                 grid-template-columns: 1fr;
             }
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
             .services-grid {
                 grid-template-columns: 1fr;
             }
@@ -906,7 +1018,7 @@
                 gap: 15px;
                 text-align: center;
             }
-            .sticky-bar { display: block; } /* Show on mobile for fast dialing */
+            .sticky-bar { display: block; }
             body { padding-bottom: 60px; }
         }
     </style>
@@ -918,6 +1030,7 @@
         <div class="container top-line-container">
             <ul class="top-nav">
                 <li><a href="#about">О нас</a></li>
+                <li><a href="#portfolio">Наши работы</a></li>
                 <li><a href="#services">Цены на работы</a></li>
                 <li><a href="#contacts">Контакты</a></li>
             </ul>
@@ -999,10 +1112,9 @@
         </div>
     </section>
 
-    <!-- 5. DYNAMIC TRUST STRIP (Why Us) -->
+    <!-- 5. DYNAMIC TRUST STRIP -->
     <section class="trust-strip">
         <div class="container trust-strip-grid">
-            <!-- Card 1 -->
             <div class="trust-strip-card">
                 <div class="trust-strip-icon">
                     <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
@@ -1011,7 +1123,6 @@
                 <p>Вы платите только после того, как лично проверите работу и убедитесь в надежности результата.</p>
             </div>
             
-            <!-- Card 2 -->
             <div class="trust-strip-card">
                 <div class="trust-strip-icon">
                     <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
@@ -1020,7 +1131,6 @@
                 <p>Если проблема вернется — устраним ее абсолютно бесплатно. Все условия четко фиксируем.</p>
             </div>
 
-            <!-- Card 3 -->
             <div class="trust-strip-card">
                 <div class="trust-strip-icon">
                     <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
@@ -1029,7 +1139,6 @@
                 <p>Все сантехники в нашей команде имеют опыт от 5 лет и являются местными сертифицированными специалистами.</p>
             </div>
 
-            <!-- Card 4 -->
             <div class="trust-strip-card">
                 <div class="trust-strip-icon">
                     <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
@@ -1040,7 +1149,7 @@
         </div>
     </section>
 
-    <!-- 6. SEO OPTIMIZED TEXT BLOCK -->
+    <!-- 6. SEO TEXT BLOCK -->
     <section class="seo-section" id="about">
         <div class="container seo-layout">
             <h2>Профессиональные услуги сантехника в Бишкеке от компании «Сантехник Центр»</h2>
@@ -1062,7 +1171,74 @@
         </div>
     </section>
 
-    <!-- 7. SERVICES SECTION -->
+    <!-- 7. PORTFOLIO SECTION (Наши выполненные работы) -->
+    <section class="portfolio-section" id="portfolio">
+        <div class="container">
+            <div class="section-header">
+                <h2>Наши выполненные работы</h2>
+                <p>Фотографии реальных объектов, сданных нашими мастерами в Бишкеке. Нажмите на фото, чтобы увеличить.</p>
+            </div>
+
+            <div class="portfolio-grid">
+                <!-- Item 1 -->
+                <div class="portfolio-item" onclick="openLightbox('images/work1_boiler.jpg', 'Сложная разводка котельной и установка бойлера')">
+                    <div class="portfolio-img-wrapper">
+                        <img src="images/work1_boiler.jpg" alt="Разводка котельной" class="portfolio-img" loading="lazy">
+                    </div>
+                    <div class="portfolio-info">
+                        <h4>Разводка котельной</h4>
+                        <p>Монтаж бойлера, расширительных баков и системы отопления.</p>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="portfolio-item" onclick="openLightbox('images/work2_bathroom.jpg', 'Комплексный ремонт ванной комнаты под ключ')">
+                    <div class="portfolio-img-wrapper">
+                        <img src="images/work2_bathroom.jpg" alt="Ванная под ключ" class="portfolio-img" loading="lazy">
+                    </div>
+                    <div class="portfolio-info">
+                        <h4>Ванная под ключ</h4>
+                        <p>Установка смесителей, раковин и ванны с подсветкой зеркал.</p>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="portfolio-item" onclick="openLightbox('images/work3_toilet.jpg', 'Скрытый монтаж инсталляции унитаза и фильтров')">
+                    <div class="portfolio-img-wrapper">
+                        <img src="images/work3_toilet.jpg" alt="Монтаж инсталляции" class="portfolio-img" loading="lazy">
+                    </div>
+                    <div class="portfolio-info">
+                        <h4>Монтаж инсталляции</h4>
+                        <p>Скрытая установка инсталляции TECE и накопительного бойлера.</p>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="portfolio-item" onclick="openLightbox('images/work4_collector.jpg', 'Коллекторный узел разводки труб')">
+                    <div class="portfolio-img-wrapper">
+                        <img src="images/work4_collector.jpg" alt="Коллекторный узел" class="portfolio-img" loading="lazy">
+                    </div>
+                    <div class="portfolio-info">
+                        <h4>Коллекторный узел</h4>
+                        <p>Аккуратный монтаж гребенки, фильтров очистки и датчиков.</p>
+                    </div>
+                </div>
+
+                <!-- Item 5 -->
+                <div class="portfolio-item" onclick="openLightbox('images/work5_heating.jpg', 'Монтаж водяного теплого пола')">
+                    <div class="portfolio-img-wrapper">
+                        <img src="images/work5_heating.jpg" alt="Теплый пол" class="portfolio-img" loading="lazy">
+                    </div>
+                    <div class="portfolio-info">
+                        <h4>Укладка теплого пола</h4>
+                        <p>Проектирование и укладка металлопластиковых труб змейкой.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. SERVICES SECTION -->
     <section class="services-section" id="services">
         <div class="container">
             <div class="section-header">
@@ -1164,7 +1340,7 @@
         </div>
     </section>
 
-    <!-- 8. PROMO BANNER -->
+    <!-- 9. PROMO BANNER -->
     <section class="promo-banner">
         <div class="container promo-container">
             <h2>Диагностика и выезд — 0 сом</h2>
@@ -1173,7 +1349,7 @@
         </div>
     </section>
 
-    <!-- 9. FOOTER -->
+    <!-- 10. FOOTER -->
     <footer>
         <div class="container footer-grid">
             <div class="footer-brand">
@@ -1200,7 +1376,7 @@
         </div>
     </footer>
 
-    <!-- 10. STICKY CALL-TO-ACTION BAR (Bottom for mobile conversion) -->
+    <!-- 11. STICKY CALL-TO-ACTION BAR -->
     <div class="sticky-bar">
         <div class="container sticky-container">
             <div class="sticky-text">
@@ -1227,6 +1403,15 @@
             <span class="dispatcher-title">Дежурный оператор</span>
         </div>
     </a>
+
+    <!-- Lightbox Modal (For enlarging portfolio photos) -->
+    <div class="lightbox-modal" id="lightbox-modal">
+        <div class="lightbox-content">
+            <button class="lightbox-close" id="lightbox-close-btn">&times;</button>
+            <img src="" alt="" class="lightbox-img" id="lightbox-img">
+            <div class="lightbox-caption" id="lightbox-caption"></div>
+        </div>
+    </div>
 
     <!-- Exit Intent Modal Overlay -->
     <div class="modal-overlay" id="exit-modal">
@@ -1284,6 +1469,32 @@
                 }
             });
         });
+
+        // Lightbox Functions
+        const lightboxModal = document.getElementById('lightbox-modal');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxCaption = document.getElementById('lightbox-caption');
+        const lightboxCloseBtn = document.getElementById('lightbox-close-btn');
+
+        function openLightbox(imgSrc, captionText) {
+            lightboxImg.src = imgSrc;
+            lightboxCaption.textContent = captionText;
+            lightboxModal.classList.add('active');
+        }
+
+        if (lightboxCloseBtn) {
+            lightboxCloseBtn.addEventListener('click', () => {
+                lightboxModal.classList.remove('active');
+            });
+        }
+
+        if (lightboxModal) {
+            lightboxModal.addEventListener('click', (e) => {
+                if (e.target === lightboxModal) {
+                    lightboxModal.classList.remove('active');
+                }
+            });
+        }
     </script>
 </body>
 </html>
