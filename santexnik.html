@@ -1,0 +1,1555 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Срочный выезд сантехника в Бишкеке | Услуги сантехника 24/7</title>
+    <meta name="description" content="Срочные услуги сантехника в Бишкеке. Устранение засоров, протечек, монтаж труб и установка сантехники. Выезд за 45 минут. Диагностика 0 сом при ремонте!">
+    
+    <!-- Google Fonts: Outfit & Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --color-primary: #0F1E36;
+            --color-secondary: #1D3557;
+            --color-accent: #00A499;
+            --color-accent-hover: #00877E;
+            --color-light: #F7FAFC;
+            --color-text-dark: #2D3748;
+            --color-text-light: #718096;
+            --color-white: #FFFFFF;
+            --font-sans: 'Montserrat', sans-serif;
+            --font-outfit: 'Outfit', sans-serif;
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            --border-radius: 16px;
+            --box-shadow: 0 10px 30px rgba(15, 30, 54, 0.08);
+            --box-shadow-hover: 0 20px 40px rgba(15, 30, 54, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            color: var(--color-text-dark);
+            background-color: var(--color-white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Section styles */
+        .section-padding {
+            padding: 100px 0;
+        }
+        .text-center { text-align: center; }
+        .badge {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: rgba(0, 164, 153, 0.1);
+            color: var(--color-accent);
+            font-weight: 700;
+            font-size: 14px;
+            border-radius: 50px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+        .section-title {
+            font-family: var(--font-sans);
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--color-primary);
+            margin-bottom: 15px;
+        }
+        .section-subtitle {
+            font-size: 16px;
+            color: var(--color-text-light);
+            max-width: 600px;
+            margin: 0 auto 60px auto;
+        }
+
+        /* Top Notification Bar */
+        .top-bar {
+            background-color: var(--color-primary);
+            color: var(--color-white);
+            font-size: 13px;
+            font-weight: 600;
+            padding: 10px 0;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Navigation Header */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.03);
+            transition: var(--transition);
+        }
+        header.scrolled {
+            padding: 10px 0;
+        }
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: var(--font-outfit);
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--color-primary);
+            text-decoration: none;
+        }
+        .logo span {
+            color: var(--color-accent);
+        }
+        .header-contacts {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+        .header-phone {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+        .phone-num {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--color-primary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        .phone-num:hover {
+            color: var(--color-accent);
+        }
+        .phone-label {
+            font-size: 11px;
+            color: var(--color-accent);
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        .header-cta-btn {
+            background-color: var(--color-accent);
+            color: var(--color-white);
+            font-weight: 700;
+            padding: 12px 24px;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(0, 164, 153, 0.2);
+        }
+        .header-cta-btn:hover {
+            background-color: var(--color-accent-hover);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0F1E36 0%, #1D3557 100%);
+            color: var(--color-white);
+            padding: 120px 0 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(0, 164, 153, 0.15) 0%, rgba(0,0,0,0) 70%);
+            top: -100px;
+            right: -100px;
+            z-index: 1;
+        }
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+        .hero-content h1 {
+            font-size: 46px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        .hero-content p {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 35px;
+            line-height: 1.6;
+        }
+        .hero-bullets {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            margin-bottom: 45px;
+        }
+        .hero-bullet-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 16px;
+            font-weight: 600;
+        }
+        .hero-bullet-icon {
+            width: 28px;
+            height: 28px;
+            background-color: rgba(0, 164, 153, 0.2);
+            border: 1px solid var(--color-accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .hero-bullet-icon svg {
+            stroke: var(--color-accent);
+        }
+        .hero-btns {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .hero-main-btn {
+            background-color: #25D366;
+            color: var(--color-white);
+            font-size: 18px;
+            font-weight: 700;
+            padding: 20px 40px;
+            border-radius: 12px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+            transition: var(--transition);
+        }
+        .hero-main-btn:hover {
+            background-color: #20ba59;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4);
+        }
+        .hero-sub-btn {
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            color: var(--color-white);
+            font-size: 16px;
+            font-weight: 700;
+            padding: 20px 30px;
+            border-radius: 12px;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        .hero-sub-btn:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        /* Stats Strip */
+        .stats-strip {
+            background-color: var(--color-light);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            padding: 40px 0;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        .stat-card {
+            text-align: center;
+            border-right: 1px solid rgba(0,0,0,0.08);
+        }
+        .stat-card:last-child {
+            border-right: none;
+        }
+        .stat-num {
+            font-family: var(--font-outfit);
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--color-accent);
+            line-height: 1;
+            margin-bottom: 5px;
+        }
+        .stat-text {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--color-primary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        .service-card {
+            background-color: var(--color-white);
+            border-radius: var(--border-radius);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            padding: 40px 30px;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--box-shadow-hover);
+            border-color: rgba(0, 164, 153, 0.2);
+        }
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(0, 164, 153, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            transition: var(--transition);
+        }
+        .service-card:hover .service-icon {
+            background-color: var(--color-accent);
+        }
+        .service-card:hover .service-icon svg {
+            stroke: var(--color-white);
+        }
+        .service-icon svg {
+            stroke: var(--color-accent);
+            transition: var(--transition);
+        }
+        .service-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: 12px;
+        }
+        .service-card p {
+            font-size: 14px;
+            color: var(--color-text-light);
+            margin-bottom: 25px;
+            flex-grow: 1;
+        }
+        .service-price-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-top: 1px solid rgba(0, 0, 0, 0.06);
+            padding-top: 20px;
+            margin-top: auto;
+        }
+        .service-price {
+            font-family: var(--font-outfit);
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--color-accent);
+        }
+        .service-btn {
+            background-color: var(--color-primary);
+            color: var(--color-white);
+            font-size: 13px;
+            font-weight: 700;
+            padding: 10px 18px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        .service-card:hover .service-btn {
+            background-color: var(--color-accent);
+            box-shadow: 0 4px 15px rgba(0, 164, 153, 0.2);
+        }
+
+        /* Interactive Quiz Section */
+        .quiz-section {
+            background: linear-gradient(135deg, #F7FAFC 0%, #EDF2F7 100%);
+        }
+        .quiz-container {
+            max-width: 800px;
+            background-color: var(--color-white);
+            border-radius: 24px;
+            box-shadow: 0 20px 50px rgba(15, 30, 54, 0.08);
+            border: 1px solid rgba(0,0,0,0.03);
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        .quiz-header {
+            background-color: var(--color-primary);
+            color: var(--color-white);
+            padding: 30px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .quiz-header-title h3 {
+            font-size: 20px;
+            font-weight: 700;
+        }
+        .quiz-header-title p {
+            font-size: 12px;
+            color: rgba(255,255,255,0.7);
+        }
+        .quiz-progress {
+            font-family: var(--font-outfit);
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--color-accent);
+        }
+        .quiz-body {
+            padding: 50px 40px;
+        }
+        .quiz-step {
+            display: none;
+        }
+        .quiz-step.active {
+            display: block;
+        }
+        .quiz-question {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .quiz-options {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        .quiz-option-card {
+            border: 2px solid rgba(0,0,0,0.06);
+            border-radius: 16px;
+            padding: 25px;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 700;
+            color: var(--color-primary);
+            font-size: 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+        .quiz-option-card:hover {
+            border-color: var(--color-accent);
+            background-color: rgba(0, 164, 153, 0.02);
+        }
+        .quiz-option-card.selected {
+            border-color: var(--color-accent);
+            background-color: rgba(0, 164, 153, 0.05);
+            box-shadow: 0 8px 20px rgba(0, 164, 153, 0.08);
+        }
+        .quiz-option-card svg {
+            width: 40px;
+            height: 40px;
+            stroke: var(--color-text-light);
+            transition: var(--transition);
+        }
+        .quiz-option-card.selected svg, .quiz-option-card:hover svg {
+            stroke: var(--color-accent);
+        }
+        .quiz-footer {
+            padding: 30px 40px;
+            border-top: 1px solid rgba(0, 0, 0, 0.06);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .quiz-nav-btn {
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 15px;
+            cursor: pointer;
+            border: none;
+            transition: var(--transition);
+        }
+        .quiz-btn-prev {
+            background-color: transparent;
+            color: var(--color-text-light);
+            border: 1px solid rgba(0,0,0,0.1);
+        }
+        .quiz-btn-prev:hover {
+            background-color: rgba(0,0,0,0.03);
+            color: var(--color-primary);
+        }
+        .quiz-btn-next {
+            background-color: var(--color-primary);
+            color: var(--color-white);
+        }
+        .quiz-btn-next:hover {
+            background-color: var(--color-secondary);
+        }
+        .quiz-submit-btn {
+            background-color: #25D366;
+            color: var(--color-white);
+            font-size: 16px;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 6px 15px rgba(37, 211, 102, 0.25);
+        }
+        .quiz-submit-btn:hover {
+            background-color: #20ba59;
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.35);
+        }
+
+        /* Why Us Section */
+        .why-us-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+        .why-card {
+            text-align: center;
+            padding: 30px 20px;
+        }
+        .why-icon {
+            width: 70px;
+            height: 70px;
+            background-color: rgba(0, 164, 153, 0.08);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px auto;
+        }
+        .why-icon svg {
+            stroke: var(--color-accent);
+            width: 32px;
+            height: 32px;
+        }
+        .why-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: 12px;
+        }
+        .why-card p {
+            font-size: 14px;
+            color: var(--color-text-light);
+        }
+
+        /* FAQ Section */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .faq-item {
+            background-color: var(--color-white);
+            border-radius: 12px;
+            border: 1px solid rgba(0,0,0,0.04);
+            box-shadow: var(--box-shadow);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+        .faq-header {
+            padding: 24px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            user-select: none;
+        }
+        .faq-question {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--color-primary);
+        }
+        .faq-icon {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+        .faq-icon svg {
+            stroke: var(--color-primary);
+        }
+        .faq-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        .faq-content {
+            padding: 0 30px 24px 30px;
+            font-size: 14px;
+            color: var(--color-text-light);
+            line-height: 1.6;
+            border-top: 1px solid rgba(0, 0, 0, 0.03);
+            padding-top: 20px;
+        }
+        .faq-item.active .faq-body {
+            max-height: 300px;
+        }
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--color-primary);
+            color: var(--color-white);
+            padding: 80px 0 40px 0;
+            border-top: 4px solid var(--color-accent);
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+        .footer-brand h2 {
+            font-family: var(--font-outfit);
+            font-size: 26px;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+        .footer-brand h2 span {
+            color: var(--color-accent);
+        }
+        .footer-brand p {
+            font-size: 14px;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 30px;
+            max-width: 320px;
+        }
+        .footer-links h3, .footer-contacts h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        .footer-links h3::after, .footer-contacts h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 30px;
+            height: 2px;
+            background-color: var(--color-accent);
+        }
+        .footer-links ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .footer-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 14px;
+            transition: var(--transition);
+        }
+        .footer-links a:hover {
+            color: var(--color-accent);
+            padding-left: 5px;
+        }
+        .footer-contact-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .footer-contact-item {
+            display: flex;
+            gap: 15px;
+            font-size: 14px;
+            color: rgba(255,255,255,0.8);
+        }
+        .footer-contact-item svg {
+            stroke: var(--color-accent);
+            flex-shrink: 0;
+        }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.08);
+            padding-top: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 13px;
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* Exit Intent Modal Styling */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(15, 30, 54, 0.7);
+            backdrop-filter: blur(8px);
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+        }
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .exit-modal-card {
+            background: linear-gradient(135deg, #0F1E36 0%, #1D3557 100%);
+            color: #FFFFFF;
+            width: 90%;
+            max-width: 580px;
+            padding: 50px 40px;
+            border-radius: 24px;
+            position: relative;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            transform: scale(0.9);
+            transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+            overflow: hidden;
+        }
+        .modal-overlay.active .exit-modal-card {
+            transform: scale(1);
+        }
+        .exit-modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: transparent;
+            border: none;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 24px;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+        .exit-modal-close:hover {
+            color: #FFFFFF;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        .exit-modal-icon {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 24px auto;
+            border-radius: 50%;
+            background-color: rgba(0, 164, 153, 0.15);
+            border: 2px solid var(--color-accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .exit-modal-icon svg {
+            stroke: var(--color-accent);
+        }
+        .exit-modal-card h3 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+        .exit-modal-card p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 16px;
+            margin-bottom: 35px;
+            line-height: 1.6;
+        }
+        .exit-modal-btn {
+            display: block;
+            width: 100%;
+            background-color: #25D366;
+            color: #FFFFFF;
+            font-weight: 700;
+            font-size: 18px;
+            padding: 18px;
+            border-radius: 12px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.25);
+            transition: var(--transition);
+            text-align: center;
+            text-decoration: none;
+        }
+        .exit-modal-btn:hover {
+            background-color: #20ba59;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 25px rgba(37, 211, 102, 0.35);
+        }
+        .exit-modal-footer {
+            margin-top: 20px;
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+            .hero-bullets {
+                align-items: center;
+            }
+            .hero-btns {
+                justify-content: center;
+            }
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .why-us-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section-title { font-size: 28px; }
+            .hero-content h1 { font-size: 32px; }
+            .header-cta-btn { display: none; }
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .stat-card {
+                border-right: none;
+                border-bottom: 1px solid rgba(0,0,0,0.08);
+                padding-bottom: 20px;
+            }
+            .stat-card:last-child {
+                border-bottom: none;
+                padding-bottom: 0;
+            }
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            .quiz-options {
+                grid-template-columns: 1fr;
+            }
+            .why-us-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        📞 Выезд сантехника по всему Бишкеку за 30-45 минут
+    </div>
+
+    <!-- Header Navigation -->
+    <header id="main-header">
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00A499" stroke-width="2.5">
+                    <path d="M12 2c-3.5 0-5 2-5 5 0 4-2 6-2 9 0 2 1.5 4 4 4 1.5 0 2.5-1 3-2 .5 1 1.5 2 3 2 2.5 0 4-2 4-4 0-3-2-5-2-9 0-3-1.5-5-5-5z" />
+                </svg>
+                Clima<span>Flow</span>
+            </a>
+            
+            <div class="header-contacts">
+                <div class="header-phone">
+                    <a href="tel:+996501589796" class="phone-num">+996 (501) 589-796</a>
+                    <span class="phone-label">Работаем круглосуточно 24/7</span>
+                </div>
+                <a href="https://wa.me/996501589796?text=Здравствуйте!%20Мне%20нужен%20срочный%20выезд%20сантехника." target="_blank" class="header-cta-btn">Вызвать мастера</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <span class="badge">Экспресс-услуги</span>
+                <h1>Срочный выезд сантехника в Бишкеке</h1>
+                <p>Профессиональное устранение засоров, утечек и монтаж сантехники. Приедем от 30 минут со своим инструментом. Стоимость выезда и диагностики — 0 сом при проведении ремонта.</p>
+                
+                <div class="hero-bullets">
+                    <div class="hero-bullet-item">
+                        <div class="hero-bullet-icon">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                        </div>
+                        <span>Приезжаем с профессиональным инструментом за 30-45 минут</span>
+                    </div>
+                    <div class="hero-bullet-item">
+                        <div class="hero-bullet-icon">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                        </div>
+                        <span>Цену озвучиваем строго ДО начала работ по прайсу</span>
+                    </div>
+                    <div class="hero-bullet-item">
+                        <div class="hero-bullet-icon">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                        </div>
+                        <span>Убираем за собой весь строительный мусор</span>
+                    </div>
+                </div>
+
+                <div class="hero-btns">
+                    <a href="https://wa.me/996501589796?text=Здравствуйте!%20Мне%20нужен%20срочный%20выезд%20сантехника." target="_blank" class="hero-main-btn">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.965C16.528 2.016 14.062 1.01 11.993 1.01c-5.452 0-9.873 4.38-9.877 9.811-.001 1.668.459 3.294 1.33 4.747L2.404 20.94l4.243-1.786z"/>
+                        </svg>
+                        Написать в WhatsApp
+                    </a>
+                    <a href="#quiz-calc" class="hero-sub-btn">Рассчитать цену</a>
+                </div>
+            </div>
+            
+            <div class="hero-image">
+                <!-- SVG Illustration of pipe repair -->
+                <svg viewBox="0 0 500 400" width="100%" height="auto" fill="none">
+                    <defs>
+                        <linearGradient id="tealGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#00A499" />
+                            <stop offset="100%" stop-color="#006b64" />
+                        </linearGradient>
+                    </defs>
+                    <rect x="50" y="50" width="400" height="300" rx="20" fill="#1A304F" stroke="rgba(255,255,255,0.05)" stroke-width="2"/>
+                    <circle cx="250" cy="200" r="100" fill="url(#tealGrad)" opacity="0.1"/>
+                    
+                    <!-- Decorative piping -->
+                    <path d="M100 150h300v40H100z" fill="rgba(255,255,255,0.05)"/>
+                    <path d="M220 100v200h60V100z" fill="rgba(255,255,255,0.03)"/>
+                    
+                    <!-- Valves & Gauge -->
+                    <circle cx="250" cy="200" r="50" fill="#1A304F" stroke="#00A499" stroke-width="4"/>
+                    <path d="M250 160v40M250 200l30 20" stroke="#00A499" stroke-width="4" stroke-linecap="round"/>
+                    <circle cx="250" cy="200" r="8" fill="#00A499"/>
+                    
+                    <!-- Text elements -->
+                    <text x="250" y="320" font-family="'Outfit', sans-serif" font-weight="bold" font-size="28" fill="#00A499" text-anchor="middle">24/7 SERVICE</text>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Strip -->
+    <section class="stats-strip">
+        <div class="container stats-grid">
+            <div class="stat-card">
+                <div class="stat-num">45 мин</div>
+                <div class="stat-text">Среднее время прибытия</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-num">0 сом</div>
+                <div class="stat-text">Диагностика при ремонте</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-num">1 год</div>
+                <div class="stat-text">Официальная гарантия</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services section-padding" id="services">
+        <div class="container">
+            <div class="text-center">
+                <span class="badge">Что мы делаем</span>
+                <h2 class="section-title">Наши услуги и фиксированные цены</h2>
+                <p class="section-subtitle">Работаем без скрытых накруток. Цену за работу вы будете знать заранее по официальному прайсу.</p>
+            </div>
+
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/>
+                            <circle cx="12" cy="12" r="3"/>
+                        </svg>
+                    </div>
+                    <h3>Устранение утечек</h3>
+                    <p>Найдем скрытую или явную течь в радиаторе, трубах водопровода, канализации или теплом полу. Локализуем и перепаяем трубы быстро.</p>
+                    <div class="service-price-row">
+                        <span class="service-price">от 800 сом</span>
+                        <a href="https://wa.me/996501589796?text=Здравствуйте!%20Мне%20нужно%20устранить%20утечку%20воды." target="_blank" class="service-btn">Заказать</a>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="4" y1="21" x2="4" y2="14"/>
+                            <line x1="4" y1="10" x2="4" y2="3"/>
+                            <line x1="12" y1="21" x2="12" y2="12"/>
+                            <line x1="12" y1="8" x2="12" y2="3"/>
+                            <line x1="20" y1="21" x2="20" y2="16"/>
+                            <line x1="20" y1="12" x2="20" y2="3"/>
+                            <line x1="1" y1="14" x2="7" y2="14"/>
+                            <line x1="9" y1="8" x2="15" y2="8"/>
+                            <line x1="17" y1="16" x2="23" y2="16"/>
+                        </svg>
+                    </div>
+                    <h3>Прочистка засоров</h3>
+                    <p>Прочистим сифоны, унитазы, раковины и трубы канализации. Используем механические тросы и гидродинамическое оборудование.</p>
+                    <div class="service-price-row">
+                        <span class="service-price">от 1 200 сом</span>
+                        <a href="https://wa.me/996501589796?text=Здравствуйте!%20Мне%20нужна%20прочистка%20засора." target="_blank" class="service-btn">Заказать</a>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        </svg>
+                    </div>
+                    <h3>Установка сантехники</h3>
+                    <p>Аккуратный демонтаж старой и установка новой сантехники: унитазы, инсталляции, смесители, мойки, ванны и душевые кабины.</p>
+                    <div class="service-price-row">
+                        <span class="service-price">от 1 000 сом</span>
+                        <a href="https://wa.me/996501589796?text=Здравствуйте!%20Мне%20нужна%20установка%20сантехники." target="_blank" class="service-btn">Заказать</a>
+                    </div>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="8" rx="2" ry="2"/>
+                            <rect x="2" y="14" width="20" height="8" rx="2" ry="2"/>
+                            <line x1="6" y1="6" x2="6.01" y2="6"/>
+                            <line x1="6" y1="18" x2="6.01" y2="18"/>
+                        </svg>
+                    </div>
+                    <h3>Монтаж отопления и труб</h3>
+                    <p>Проектирование и разводка водопроводных труб и канализации. Установка и замена радиаторов отопления в квартирах и домах.</p>
+                    <div class="service-price-row">
+                        <span class="service-price">от 2 000 сом</span>
+                        <a href="https://wa.me/996501589796?text=Здравствуйте!%20Мне%20нужен%20монтаж%20труб%20или%20отопления." target="_blank" class="service-btn">Заказать</a>
+                    </div>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                        </svg>
+                    </div>
+                    <h3>Установка бойлеров</h3>
+                    <p>Быстрое подключение электрических водонагревателей к водопроводной сети. Безопасный монтаж креплений на стену.</p>
+                    <div class="service-price-row">
+                        <span class="service-price">от 1 200 сом</span>
+                        <a href="https://wa.me/996501589796?text=Здравствуйте!%20Мне%20нужна%20установка%20бойлера." target="_blank" class="service-btn">Заказать</a>
+                    </div>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                        </svg>
+                    </div>
+                    <h3>Аварийный выезд 24/7</h3>
+                    <p>Круглосуточный срочный выезд для ликвидации аварий, прорыва труб, перекрытия стояков. Прибудем максимально оперативно.</p>
+                    <div class="service-price-row">
+                        <span class="service-price">от 1 500 сом</span>
+                        <a href="https://wa.me/996501589796?text=Здравствуйте!%20Мне%20нужен%20аварийный%20выезд%20сантехника." target="_blank" class="service-btn">Заказать</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Calculator (Quiz) Section -->
+    <section class="quiz-section section-padding" id="quiz-calc">
+        <div class="container">
+            <div class="text-center">
+                <span class="badge">Расчет стоимости</span>
+                <h2 class="section-title">Калькулятор стоимости работ</h2>
+                <p class="section-subtitle">Пройдите тест за 30 секунд и получите точный предварительный расчет стоимости услуг и замер давления фреона бесплатно.</p>
+            </div>
+
+            <div class="quiz-container">
+                <div class="quiz-header">
+                    <div class="quiz-header-title">
+                        <h3>Экспресс-расчет</h3>
+                        <p>Ответьте на 3 простых вопроса</p>
+                    </div>
+                    <div class="quiz-progress" id="quiz-steps-label">Шаг 1 из 3</div>
+                </div>
+
+                <div class="quiz-body">
+                    <!-- Step 1 -->
+                    <div class="quiz-step active" data-step="1">
+                        <div class="quiz-question">Что именно вам требуется сделать?</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option-card" data-val="Устранить утечку (протечку)">
+                                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+                                Устранить утечку
+                            </div>
+                            <div class="quiz-option-card" data-val="Прочистить засор канализации">
+                                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 11H5m14 0a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-6a2 2 0 0 1 2-2m14 0V9a7 7 0 0 0-14 0v2"/></svg>
+                                Прочистить засор
+                            </div>
+                            <div class="quiz-option-card" data-val="Установить или заменить сантехнику">
+                                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                                Установить сантехнику
+                            </div>
+                            <div class="quiz-option-card" data-val="Монтаж водопроводных труб или отопления">
+                                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-2-2h-3.18a6 6 0 0 0-3.64-3.64L12 2M3 16V8a2 2 0 0 1 2-2h3.18a6 6 0 0 1 3.64-3.64L12 2"/></svg>
+                                Трубы / Отопление
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="quiz-step" data-step="2">
+                        <div class="quiz-question">Где необходимо провести работы?</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option-card" data-val="В квартире">
+                                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 21h18M3 10h18M5 6h14a2 2 0 0 1 2 2v13H3V8a2 2 0 0 1 2-2z"/></svg>
+                                В квартире
+                            </div>
+                            <div class="quiz-option-card" data-val="В частном доме (коттедже)">
+                                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+                                В частном доме
+                            </div>
+                            <div class="quiz-option-card" data-val="В офисе / коммерческом помещении">
+                                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 21V5a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v16m14 0h2M5 21H3m12-7H9m6-4H9"/></svg>
+                                В офисе / кафе
+                            </div>
+                            <div class="quiz-option-card" data-val="Другое помещение">
+                                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                                Другое помещение
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="quiz-step" data-step="3">
+                        <div class="quiz-question">Насколько срочно вам требуется мастер?</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option-card" data-val="Срочно прямо сейчас">
+                                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                Срочно прямо сейчас
+                            </div>
+                            <div class="quiz-option-card" data-val="Сегодня в удобное время">
+                                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                                Сегодня в удобное время
+                            </div>
+                            <div class="quiz-option-card" data-val="Планирую на ближайшие дни">
+                                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/></svg>
+                                Планирую на днях
+                            </div>
+                            <div class="quiz-option-card" data-val="Просто проконсультироваться">
+                                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                                Просто консультация
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quiz-footer">
+                    <button class="quiz-nav-btn quiz-btn-prev" id="quiz-prev-btn" style="visibility: hidden;">Назад</button>
+                    <button class="quiz-nav-btn quiz-btn-next" id="quiz-next-btn" disabled>Далее</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us Section -->
+    <section class="why-us section-padding">
+        <div class="container">
+            <div class="text-center">
+                <span class="badge">Почему мы</span>
+                <h2 class="section-title">Сервис, которому доверяют в Бишкеке</h2>
+                <p class="section-subtitle">Мы дорожим своей репутацией и делаем так, чтобы вам не пришлось искать другого мастера.</p>
+            </div>
+
+            <div class="why-us-grid">
+                <!-- Why 1 -->
+                <div class="why-card">
+                    <div class="why-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    </div>
+                    <h3>Фиксированный прайс</h3>
+                    <p>Мастер оценивает объем работ по прайсу до начала монтажа. Никаких «неожиданных» доплат.</p>
+                </div>
+
+                <!-- Why 2 -->
+                <div class="why-card">
+                    <div class="why-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                    </div>
+                    <h3>Выезд от 30 минут</h3>
+                    <p>Наши мастера дежурят во всех районах Бишкека, что позволяет реагировать на вызовы мгновенно.</p>
+                </div>
+
+                <!-- Why 3 -->
+                <div class="why-card">
+                    <div class="why-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <h3>Официальная гарантия</h3>
+                    <p>Выписываем гарантийный талон на все работы и установленные трубы/фитинги до 1 года.</p>
+                </div>
+
+                <!-- Why 4 -->
+                <div class="why-card">
+                    <div class="why-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    </div>
+                    <h3>Чистота и опрятность</h3>
+                    <p>Мастера работают в бахилах. После ремонта мы полностью убираем за собой весь строительный мусор.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq section-padding">
+        <div class="container">
+            <div class="text-center">
+                <span class="badge">Частые вопросы</span>
+                <h2 class="section-title">Отвечаем на ваши вопросы</h2>
+                <p class="section-subtitle">Если у вас остались вопросы, вы можете задать их нам напрямую в WhatsApp.</p>
+            </div>
+
+            <div class="faq-container">
+                <!-- FAQ 1 -->
+                <div class="faq-item">
+                    <div class="faq-header">
+                        <div class="faq-question">Выезд и диагностика действительно бесплатные?</div>
+                        <div class="faq-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        </div>
+                    </div>
+                    <div class="faq-body">
+                        <div class="faq-content">
+                            Да. Если наш мастер приступает к устранению неисправности (ремонту или монтажу), то выезд и диагностика для вас составляют 0 сом. Если вы вызываете мастера только для консультации или осмотра без выполнения ремонта, стоимость выезда составляет 300 сом.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="faq-item">
+                    <div class="faq-header">
+                        <div class="faq-question">Можете ли вы сами купить необходимые трубы и детали?</div>
+                        <div class="faq-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        </div>
+                    </div>
+                    <div class="faq-body">
+                        <div class="faq-content">
+                            Конечно. Наш мастер может сам съездить на строительный рынок (Комфорт, Баткен или Таатан), выбрать качественные трубы, фитинги, сифоны и привезти их вам. Покупка осуществляется строго по чекам, стоимость услуги закупа — 300 сом.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="faq-item">
+                    <div class="faq-header">
+                        <div class="faq-question">Как быстро вы приезжаете на аварийный вызов (прорыв трубы)?</div>
+                        <div class="faq-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        </div>
+                    </div>
+                    <div class="faq-body">
+                        <div class="faq-content">
+                            В случае аварии мы отправляем ближайшего свободного мастера в вашем районе. Среднее время прибытия по Бишкеку составляет от 30 до 45 минут в зависимости от загруженности дорог.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <h2>Clima<span>Flow</span></h2>
+                <p>Профессиональные услуги сантехника в Бишкеке круглосуточно. Оперативный выезд, честные цены и официальная гарантия качества.</p>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Услуги</h3>
+                <ul>
+                    <li><a href="#services">Устранение утечек</a></li>
+                    <li><a href="#services">Прочистка засоров</a></li>
+                    <li><a href="#services">Установка сантехники</a></li>
+                    <li><a href="#services">Монтаж отопления</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contacts">
+                <h3>Контакты</h3>
+                <div class="footer-contact-list">
+                    <div class="footer-contact-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        <span>+996 (501) 589-796</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <span>г. Бишкек, Кыргызстан</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <span>&copy; 2026 ClimaFlow. Все права защищены.</span>
+            <span>Разработано для быстрого и качественного обслуживания</span>
+        </div>
+    </footer>
+
+    <!-- Exit Intent Modal Overlay (Russian) -->
+    <div class="modal-overlay" id="exit-modal">
+        <div class="exit-modal-card">
+            <button class="exit-modal-close" id="close-modal-btn" aria-label="Закрыть">&times;</button>
+            
+            <div class="exit-modal-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#00A499" stroke-width="2">
+                    <path d="M12 2c-3.5 0-5 2-5 5 0 4-2 6-2 9 0 2 1.5 4 4 4 1.5 0 2.5-1 3-2 .5 1 1.5 2 3 2 2.5 0 4-2 4-4 0-3-2-5-2-9 0-3-1.5-5-5-5z" />
+                </svg>
+            </div>
+            
+            <h3>Нужен срочный расчет цены?</h3>
+            <p>Не уходите без ответа! Напишите нашему дежурному сантехнику прямо сейчас в WhatsApp. Мы ответим за 1 минуту и сориентируем по стоимости работ бесплатно.</p>
+            
+            <a href="https://wa.me/996501589796?text=Здравствуйте!%20Мне%20нужна%20консультация%20сантехника%20по%20поводу..." target="_blank" class="exit-modal-btn" id="exit-whatsapp-btn">
+                Начать чат в WhatsApp
+            </a>
+            
+            <div class="exit-modal-footer">
+                <span>💬 Отвечаем за 1 минуту</span>
+                <span>⚡ Выезд сегодня</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripting for interactivity -->
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('main-header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // FAQ Accordion
+        const faqHeaders = document.querySelectorAll('.faq-header');
+        faqHeaders.forEach(header => {
+            header.addEventListener('click', () => {
+                const item = header.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+
+        // Quiz Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const steps = document.querySelectorAll('.quiz-step');
+            const prevBtn = document.getElementById('quiz-prev-btn');
+            const nextBtn = document.getElementById('quiz-next-btn');
+            const progressLabel = document.getElementById('quiz-steps-label');
+            
+            let currentStep = 1;
+            const answers = {};
+
+            function updateQuizUI() {
+                steps.forEach(step => {
+                    step.classList.remove('active');
+                    if (parseInt(step.dataset.step) === currentStep) {
+                        step.classList.add('active');
+                    }
+                });
+
+                // Update Progress Label
+                progressLabel.textContent = `Шаг ${currentStep} из 3`;
+
+                // Update Buttons
+                if (currentStep === 1) {
+                    prevBtn.style.visibility = 'hidden';
+                } else {
+                    prevBtn.style.visibility = 'visible';
+                }
+
+                if (currentStep === 3) {
+                    nextBtn.textContent = 'Рассчитать стоимость в WhatsApp';
+                    nextBtn.classList.add('quiz-submit-btn');
+                } else {
+                    nextBtn.textContent = 'Далее';
+                    nextBtn.classList.remove('quiz-submit-btn');
+                }
+
+                // Enable/Disable Next button based on selection
+                const currentStepEl = document.querySelector(`.quiz-step[data-step="${currentStep}"]`);
+                const hasSelected = currentStepEl.querySelector('.quiz-option-card.selected') !== null;
+                nextBtn.disabled = !hasSelected;
+            }
+
+            // Click Option Cards
+            const optionCards = document.querySelectorAll('.quiz-option-card');
+            optionCards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const stepEl = card.closest('.quiz-step');
+                    
+                    // Unselect other options in this step
+                    stepEl.querySelectorAll('.quiz-option-card').forEach(c => c.classList.remove('selected'));
+                    
+                    // Select this option
+                    card.classList.add('selected');
+                    
+                    // Save answer
+                    const stepNum = stepEl.dataset.step;
+                    answers[stepNum] = card.dataset.val;
+                    
+                    // Enable next button
+                    nextBtn.disabled = false;
+                });
+            });
+
+            // Next / Submit Button Click
+            nextBtn.addEventListener('click', () => {
+                if (currentStep < 3) {
+                    currentStep++;
+                    updateQuizUI();
+                } else {
+                    // Final submit - Redirect to WhatsApp
+                    const problem = answers['1'] || 'Нужен сантехник';
+                    const location = answers['2'] || 'Бишкек';
+                    const urgency = answers['3'] || 'Срочно';
+                    
+                    const text = `Здравствуйте! Мне нужен расчет цены по сантехнике.\n\nПроблема: ${problem}\nПомещение: ${location}\nСрочность: ${urgency}`;
+                    const encodedText = encodeURIComponent(text);
+                    const waUrl = `https://wa.me/996501589796?text=${encodedText}`;
+                    
+                    window.open(waUrl, '_blank');
+                }
+            });
+
+            // Prev Button Click
+            prevBtn.addEventListener('click', () => {
+                if (currentStep > 1) {
+                    currentStep--;
+                    updateQuizUI();
+                }
+            });
+
+            // Initialize Quiz
+            updateQuizUI();
+        });
+
+        // Exit Intent Modal Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const exitModal = document.getElementById('exit-modal');
+            const closeModalBtn = document.getElementById('close-modal-btn');
+            const exitWhatsappBtn = document.getElementById('exit-whatsapp-btn');
+            
+            if (!exitModal) return;
+            
+            // Check if modal was already shown in this session
+            const modalShown = sessionStorage.getItem('exitModalShown');
+            
+            function showModal() {
+                if (!modalShown) {
+                    exitModal.classList.add('active');
+                    sessionStorage.setItem('exitModalShown', 'true');
+                }
+            }
+            
+            // 1. Desktop Exit Intent (mouse leaving viewport at the top)
+            document.addEventListener('mouseleave', (e) => {
+                if (e.clientY < 50) {
+                    showModal();
+                }
+            });
+            
+            // 2. Mobile Exit Intent fallback (Trigger after 30 seconds of browsing)
+            setTimeout(() => {
+                showModal();
+            }, 30000);
+            
+            // Close modal events
+            if (closeModalBtn) {
+                closeModalBtn.addEventListener('click', () => {
+                    exitModal.classList.remove('active');
+                });
+            }
+            
+            // Close modal when clicking outside the card
+            exitModal.addEventListener('click', (e) => {
+                if (e.target === exitModal) {
+                    exitModal.classList.remove('active');
+                }
+            });
+            
+            // Close modal on WhatsApp button click
+            if (exitWhatsappBtn) {
+                exitWhatsappBtn.addEventListener('click', () => {
+                    exitModal.classList.remove('active');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
