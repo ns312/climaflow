@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Вызвать сантехника в Бишкеке | Сантехник Центр Бишкек</title>
-    <meta name="description" content="Срочные услуги сантехника в Бишкеке от 800 сом. Круглосуточный выезд от 30 минут. Профессиональные мастера, официальная гарантия. Звоните!">
+    
+    <!-- SEO Optimization -->
+    <title>Вызов сантехника в Бишкеке на дом | Услуги сантехника 24/7</title>
+    <meta name="description" content="Услуги профессионального сантехника в Бишкеке. Быстрый вызов сантехника на дом круглосуточно во все районы Бишкека. Устранение засоров, утечек, монтаж труб. Цены от 800 сом, диагностика 0 сом!">
+    <meta name="keywords" content="сантехник бишкек, вызов сантехника бишкек, услуги сантехника бишкек, ремонт сантехники бишкек, прочистка засоров бишкек, сантехник на дом бишкек">
     
     <!-- Google Fonts: Montserrat & Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,7 +37,8 @@
             font-family: 'Inter', sans-serif;
             color: var(--color-text-dark);
             background-color: var(--color-white);
-            line-height: 1.5;
+            line-height: 1.6;
+            padding-bottom: 70px; /* space for sticky footer */
         }
 
         .container {
@@ -306,7 +310,119 @@
             filter: drop-shadow(0 15px 30px rgba(0,0,0,0.3));
         }
 
-        /* 5. SERVICES GRID */
+        /* 5. DYNAMIC TRUST STRIP (4 Icons) */
+        .trust-strip {
+            background-color: #F8FAFC;
+            border-bottom: 1px solid #E2E8F0;
+            padding: 50px 0;
+        }
+        .trust-strip-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        .trust-strip-card {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .trust-strip-icon {
+            width: 70px;
+            height: 70px;
+            background-color: #EFF6FF;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 18px;
+            border: 2px solid #DBEAFE;
+        }
+        .trust-strip-icon svg {
+            stroke: #1E3A8A;
+            width: 32px;
+            height: 32px;
+        }
+        .trust-strip-card h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #1E3A8A;
+            margin-bottom: 8px;
+        }
+        .trust-strip-card p {
+            font-size: 13px;
+            color: var(--color-text-light);
+            max-width: 230px;
+        }
+
+        /* 6. SEO TEXT BLOCK (optimized for 'сантехник бишкек') */
+        .seo-section {
+            padding: 85px 0;
+            background-color: var(--color-white);
+            border-bottom: 1px solid #E2E8F0;
+        }
+        .seo-layout {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .seo-layout h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 26px;
+            font-weight: 800;
+            color: #1E3A8A;
+            position: relative;
+            padding-left: 20px;
+        }
+        .seo-layout h2::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 4px;
+            width: 5px;
+            height: 75%;
+            background-color: var(--color-blue-brand);
+            border-radius: 20px;
+        }
+        .seo-text {
+            font-size: 15px;
+            color: #4A5568;
+            line-height: 1.7;
+        }
+        .seo-text p {
+            margin-bottom: 20px;
+        }
+        .seo-list-header {
+            font-weight: 700;
+            color: #1E3A8A;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        .seo-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding-left: 10px;
+        }
+        .seo-list li {
+            position: relative;
+            padding-left: 25px;
+            font-size: 15px;
+            color: #4A5568;
+        }
+        .seo-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--color-green);
+            font-weight: 900;
+            font-size: 16px;
+        }
+
+        /* 7. SERVICES SECTION */
         .services-section {
             padding: 90px 0;
             background-color: var(--color-white);
@@ -408,7 +524,7 @@
             background-color: var(--color-green);
         }
 
-        /* 6. FREE DIAGNOSTICS PROMO */
+        /* 8. FREE DIAGNOSTICS PROMO */
         .promo-banner {
             background-color: #1E3A8A;
             color: var(--color-white);
@@ -428,50 +544,7 @@
             color: rgba(255,255,255,0.85);
         }
 
-        /* 7. REVIEWS & TRUST BLOCK */
-        .trust-section {
-            padding: 80px 0;
-            background-color: #F8FAFC;
-        }
-        .trust-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 30px;
-            text-align: center;
-        }
-        .trust-card {
-            background-color: var(--color-white);
-            border-radius: 8px;
-            padding: 30px 20px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
-            border: 1px solid #E2E8F0;
-        }
-        .trust-icon {
-            width: 60px;
-            height: 60px;
-            background-color: #EFF6FF;
-            color: #1E3A8A;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px auto;
-        }
-        .trust-icon svg {
-            stroke: #1E3A8A;
-        }
-        .trust-card h3 {
-            font-size: 16px;
-            font-weight: 700;
-            margin-bottom: 10px;
-            color: #1E3A8A;
-        }
-        .trust-card p {
-            font-size: 13px;
-            color: var(--color-text-light);
-        }
-
-        /* 8. FOOTER */
+        /* 9. FOOTER */
         footer {
             background-color: #0F172A;
             color: var(--color-white);
@@ -539,10 +612,70 @@
             font-size: 12px;
         }
 
+        /* 10. STICKY CALL-TO-ACTION BAR (Bottom) */
+        .sticky-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #1E3A8A;
+            color: var(--color-white);
+            padding: 12px 0;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
+            z-index: 999;
+            border-top: 2px solid var(--color-green);
+        }
+        .sticky-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .sticky-text {
+            font-size: 15px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .sticky-text span {
+            color: var(--color-green);
+        }
+        .sticky-phone-block {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .sticky-phone {
+            color: var(--color-white);
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .sticky-phone svg {
+            stroke: var(--color-green);
+        }
+        .sticky-btn {
+            background-color: var(--color-green);
+            color: var(--color-white);
+            font-size: 12px;
+            font-weight: 800;
+            padding: 8px 18px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        .sticky-btn:hover {
+            background-color: var(--color-green-hover);
+        }
+
         /* Dispatcher Widget */
         .dispatcher-widget {
             position: fixed;
-            bottom: 30px;
+            bottom: 85px; /* placed above sticky bar */
             right: 30px;
             background-color: var(--color-white);
             border-radius: 50px;
@@ -595,7 +728,7 @@
             font-weight: 600;
         }
 
-        /* Interactive Quiz Modal Overlay */
+        /* Modal Overlay */
         .modal-overlay {
             position: fixed;
             top: 0;
@@ -731,12 +864,18 @@
             .hero-plumber-wrapper {
                 display: none;
             }
+            .trust-strip-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
             .services-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
-            .trust-grid {
-                grid-template-columns: repeat(2, 1fr);
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
             }
+            .sticky-bar { display: none; } /* hide on desktop/tablet since widget is there */
+            body { padding-bottom: 0; }
         }
 
         @media (max-width: 768px) {
@@ -752,20 +891,23 @@
             }
             .hero-info h1 { font-size: 32px; }
             .hero-price { font-size: 40px; }
-            .services-grid {
+            .trust-strip-grid {
                 grid-template-columns: 1fr;
             }
-            .trust-grid {
+            .services-grid {
                 grid-template-columns: 1fr;
             }
             .footer-grid {
                 grid-template-columns: 1fr;
+                gap: 40px;
             }
             .footer-bottom {
                 flex-direction: column;
                 gap: 15px;
                 text-align: center;
             }
+            .sticky-bar { display: block; } /* Show on mobile for fast dialing */
+            body { padding-bottom: 60px; }
         }
     </style>
 </head>
@@ -857,11 +999,74 @@
         </div>
     </section>
 
-    <!-- 5. SERVICES SECTION -->
+    <!-- 5. DYNAMIC TRUST STRIP (Why Us) -->
+    <section class="trust-strip">
+        <div class="container trust-strip-grid">
+            <!-- Card 1 -->
+            <div class="trust-strip-card">
+                <div class="trust-strip-icon">
+                    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                </div>
+                <h3>Никакой предоплаты</h3>
+                <p>Вы платите только после того, как лично проверите работу и убедитесь в надежности результата.</p>
+            </div>
+            
+            <!-- Card 2 -->
+            <div class="trust-strip-card">
+                <div class="trust-strip-icon">
+                    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                </div>
+                <h3>Гарантия на результат</h3>
+                <p>Если проблема вернется — устраним ее абсолютно бесплатно. Все условия четко фиксируем.</p>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="trust-strip-card">
+                <div class="trust-strip-icon">
+                    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+                </div>
+                <h3>Проверенные мастера</h3>
+                <p>Все сантехники в нашей команде имеют опыт от 5 лет и являются местными сертифицированными специалистами.</p>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="trust-strip-card">
+                <div class="trust-strip-icon">
+                    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                </div>
+                <h3>Официальный договор</h3>
+                <p>Предоставляем официальный договор и подробный акт выполненных работ на все виды услуг.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. SEO OPTIMIZED TEXT BLOCK -->
+    <section class="seo-section" id="about">
+        <div class="container seo-layout">
+            <h2>Профессиональные услуги сантехника в Бишкеке от компании «Сантехник Центр»</h2>
+            
+            <div class="seo-text">
+                <p>Компания <strong>«Сантехник Центр Бишкек»</strong> специализируется на предоставлении профессиональных и оперативных услуг сантехников во всех районах города Бишкек и его ближайших пригородах. Мы понимаем, что любые проблемы с сантехническими приборами — будь то засор канализации, протечка водопроводной трубы, поломка смесителя или необходимость установки нового унитаза — требуют немедленного вмешательства. Именно поэтому наш сервис работает круглосуточно, гарантируя быстрый выезд мастера в течение часа с момента вашего обращения.</p>
+                
+                <p>Если вам требуется надежный <strong>сантехник в Бишкеке</strong>, наша компания рада предложить квалифицированную помощь. Наши мастера выезжают со своим профессиональным диагностическим и ремонтным оборудованием, что позволяет оперативно выявить и локализовать неисправность любого уровня сложности. Мы дорожим своей репутацией и предлагаем прозрачные условия сотрудничества — стоимость услуг рассчитывается строго по фиксированному прайсу до начала монтажа.</p>
+                
+                <div class="seo-list-header">Почему для вызова сантехника на дом в Бишкеке выбирают именно нас:</div>
+                <ul class="seo-list">
+                    <li><strong>Квалифицированные сантехники:</strong> В нашей команде работают только сертифицированные местные мастера со стажем не менее 5 лет. Мы не работаем со «случайными» подрядчиками.</li>
+                    <li><strong>Надежные материалы:</strong> При ремонте труб и установке оборудования мы используем только качественные комплектующие от проверенных производителей (Valtec, Rehau, Bugatti, Loctite).</li>
+                    <li><strong>Диагностика 0 сом:</strong> Вы платите только за выполненный ремонт. Первичный осмотр и выезд мастера при проведении работ бесплатны.</li>
+                    <li><strong>Максимальная аккуратность:</strong> Наши специалисты работают в бахилах, защищают окружающую мебель от брызг и полностью убирают рабочий мусор после завершения монтажа.</li>
+                    <li><strong>Доступная и честная стоимость:</strong> Мы предлагаем конкурентные тарифы на рынке Бишкека, предоставляем скидки постоянным клиентам и пенсионерам.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. SERVICES SECTION -->
     <section class="services-section" id="services">
         <div class="container">
             <div class="section-header">
-                <h2>Наши услуги и цены</h2>
+                <h2>Популярные услуги сантехника</h2>
                 <p>Фиксированный прайс на все сантехнические работы. Называем точную цену по прайсу до начала работы.</p>
             </div>
 
@@ -959,7 +1164,7 @@
         </div>
     </section>
 
-    <!-- 6. PROMO BANNER -->
+    <!-- 8. PROMO BANNER -->
     <section class="promo-banner">
         <div class="container promo-container">
             <h2>Диагностика и выезд — 0 сом</h2>
@@ -968,48 +1173,7 @@
         </div>
     </section>
 
-    <!-- 7. TRUST SECTION -->
-    <section class="trust-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Почему жители Бишкека выбирают нас</h2>
-                <p>Мы работаем честно и на совесть, поэтому нас рекомендуют друзьям и соседям.</p>
-            </div>
-
-            <div class="trust-grid">
-                <div class="trust-card">
-                    <div class="trust-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                    </div>
-                    <h3>Быстрый выезд</h3>
-                    <p>Мастер приезжает за 30-45 минут со всеми необходимыми инструментами.</p>
-                </div>
-                <div class="trust-card">
-                    <div class="trust-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                    </div>
-                    <h3>Гарантия до 1 года</h3>
-                    <p>Каждый ремонт сопровождается письменной гарантией на работу и материалы.</p>
-                </div>
-                <div class="trust-card">
-                    <div class="trust-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                    </div>
-                    <h3>Чистота и порядок</h3>
-                    <p>Мастер работает аккуратно, в бахилах, и всегда убирает за собой мусор.</p>
-                </div>
-                <div class="trust-card">
-                    <div class="trust-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg>
-                    </div>
-                    <h3>Покупка материалов</h3>
-                    <p>Мастер может сам съездить в магазин за трубами/сифонами и предоставить вам чеки.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 8. FOOTER -->
+    <!-- 9. FOOTER -->
     <footer>
         <div class="container footer-grid">
             <div class="footer-brand">
@@ -1035,6 +1199,22 @@
             <span>Аварийные работы круглосуточно 24/7.</span>
         </div>
     </footer>
+
+    <!-- 10. STICKY CALL-TO-ACTION BAR (Bottom for mobile conversion) -->
+    <div class="sticky-bar">
+        <div class="container sticky-container">
+            <div class="sticky-text">
+                <span>•</span> Нужен сантехник? Приедем от 30 минут!
+            </div>
+            <div class="sticky-phone-block">
+                <a href="tel:+996501589796" class="sticky-phone">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    <span>+996 501 589-796</span>
+                </a>
+                <a href="https://wa.me/996501589796?text=Здравствуйте!%20Мне%20нужен%20срочный%20выезд%20сантехника." target="_blank" class="sticky-btn">Вызвать мастера</a>
+            </div>
+        </div>
+    </div>
 
     <!-- Dispatcher Floating Widget -->
     <a href="https://wa.me/996501589796?text=Здравствуйте!%20Нужен%20сантехник%20срочно." target="_blank" class="dispatcher-widget">
@@ -1068,14 +1248,6 @@
     </div>
 
     <script>
-        // FAQ items click toggler
-        const faqHeaders = document.querySelectorAll('.faq-header');
-        faqHeaders.forEach(header => {
-            header.addEventListener('click', () => {
-                header.parentElement.classList.toggle('active');
-            });
-        });
-
         // Exit Intent Modal Logic
         document.addEventListener('DOMContentLoaded', () => {
             const exitModal = document.getElementById('exit-modal');
@@ -1092,14 +1264,12 @@
                 }
             }
             
-            // Mouse leave triggers modal
             document.addEventListener('mouseleave', (e) => {
                 if (e.clientY < 50) {
                     showModal();
                 }
             });
             
-            // Mobile fallback trigger (30 sec)
             setTimeout(showModal, 30000);
             
             if (closeModalBtn) {
