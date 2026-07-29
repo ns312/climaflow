@@ -1116,32 +1116,38 @@
     }
     .cutter-tile {
       position: absolute;
-      width: 110px;
+      width: 118px;
       height: 80px;
-      background: #ffffff;
-      border: 2px solid var(--border-color);
+      background-image: url('images/portfolio9.jpg');
+      background-size: 236px 80px;
+      border: 1px solid var(--border-color);
       z-index: 2;
       transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
     .cutter-tile.left-half {
-      left: 20px;
+      left: 21px;
+      background-position: left center;
       border-radius: 4px 0 0 4px;
       transform-origin: left center;
+      border-right: none;
     }
     .cutter-tile.right-half {
-      right: 20px;
+      right: 21px;
+      background-position: right center;
       border-radius: 0 4px 4px 0;
       transform-origin: right center;
+      border-left: none;
     }
     .cutter-score-line {
       position: absolute;
       top: 50%;
-      left: 130px;
-      width: 20px;
-      height: 2px;
-      background: var(--border-color);
+      left: 139px;
+      width: 2px;
+      height: 80px; /* full height score line */
+      background: rgba(29, 78, 216, 0); /* invisible initially */
       transform: translateY(-50%);
       z-index: 3;
+      transition: background 0.3s ease;
     }
     .cutter-carriage {
       position: absolute;
