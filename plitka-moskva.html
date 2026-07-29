@@ -1071,7 +1071,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: #ffffff;
+      background: radial-gradient(circle, #ffffff 60%, #f8fafc 100%);
       z-index: 99999;
       display: flex;
       align-items: center;
@@ -1091,85 +1091,92 @@
       gap: 30px;
     }
     
-    /* Tile Cutter Animation */
+    /* Tile Cutter Animation (Premium Sigma/Rubi Style Bed) */
     .tile-cutter-box {
       position: relative;
       width: 280px;
-      height: 160px; /* increased to fit square tile */
-      background: #f1f5f9;
-      border: 1px solid var(--border-color);
-      border-radius: 8px;
+      height: 160px;
+      background: #1e293b; /* Dark metallic bed */
+      border: 1px solid #334155;
+      border-radius: 12px;
       overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
+      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.15);
     }
+    /* Steel rods/rails */
     .cutter-rail {
       position: absolute;
       top: 50%;
       left: 10px;
       right: 10px;
-      height: 4px;
-      background: #cbd5e1;
+      height: 8px; /* thick steel rod */
+      background: linear-gradient(180deg, #f1f5f9 0%, #cbd5e1 50%, #64748b 100%);
       transform: translateY(-50%);
-      z-index: 1;
+      z-index: 4; /* rails are above the tile! */
+      box-shadow: inset 0 1px 3px rgba(0,0,0,0.2), 0 2px 4px rgba(0,0,0,0.1);
+      border-radius: 4px;
     }
     .cutter-tile {
       position: absolute;
-      width: 60px;
-      height: 120px;
-      top: 20px;
+      width: 120px;
+      height: 60px; /* half of 120px */
+      left: 80px;
       background-image: url('images/spanish_tile.jpg');
       background-size: 120px 120px;
-      border: 1px solid var(--border-color);
+      border: 1px solid rgba(255,255,255,0.15);
       z-index: 2;
       transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
-    .cutter-tile.left-half {
-      left: 80px;
-      background-position: left center;
-      border-radius: 4px 0 0 4px;
-      transform-origin: left center;
-      border-right: none;
+    .cutter-tile.top-half {
+      top: 20px;
+      background-position: center top;
+      border-radius: 4px 4px 0 0;
+      transform-origin: center top;
+      border-bottom: none;
     }
-    .cutter-tile.right-half {
-      right: 80px;
-      background-position: right center;
-      border-radius: 0 4px 4px 0;
-      transform-origin: right center;
-      border-left: none;
+    .cutter-tile.bottom-half {
+      top: 80px;
+      background-position: center bottom;
+      border-radius: 0 0 4px 4px;
+      transform-origin: center bottom;
+      border-top: none;
     }
+    /* Horizontal score line matching the cut direction */
     .cutter-score-line {
       position: absolute;
-      top: 20px;
-      left: 139px;
-      width: 2px;
-      height: 120px; /* full height score line for square tile */
-      background: rgba(29, 78, 216, 0); /* invisible initially */
+      top: 79px; /* exactly at the joint */
+      left: 80px;
+      width: 0; /* starts at 0 width and grows horizontally */
+      height: 2px;
+      background: #3b82f6; /* glowing laser/cut line */
+      box-shadow: 0 0 8px #3b82f6;
       z-index: 3;
-      transition: background 0.3s ease;
     }
     .cutter-carriage {
       position: absolute;
       left: 15px;
       top: 50%;
-      width: 24px;
-      height: 24px;
-      background: var(--text-dark);
-      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, #334155 0%, #0f172a 100%);
+      border: 1px solid #475569;
+      border-radius: 8px;
       transform: translate(0, -50%);
-      z-index: 5;
+      z-index: 5; /* above rails and tile */
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
       transition: left 2s cubic-bezier(0.4, 0, 0.2, 1);
     }
     .cutter-wheel {
       width: 8px;
       height: 8px;
-      background: var(--accent-blue);
+      background: #60a5fa;
       border-radius: 50%;
+      box-shadow: 0 0 8px #3b82f6;
     }
     
     /* Preloader ruler coordinate theme */
@@ -1293,8 +1300,8 @@
       <!-- Animated Tile Cutter -->
       <div class="tile-cutter-box">
         <div class="cutter-rail"></div>
-        <div class="cutter-tile left-half" id="tile-left"></div>
-        <div class="cutter-tile right-half" id="tile-right"></div>
+        <div class="cutter-tile top-half" id="tile-top"></div>
+        <div class="cutter-tile bottom-half" id="tile-bottom"></div>
         <div class="cutter-score-line" id="score-line"></div>
         <div class="cutter-carriage" id="carriage">
           <div class="cutter-wheel"></div>
@@ -1309,7 +1316,7 @@
         <span class="ruler-tick">|</span>
         <span class="ruler-tick">|</span>
       </div>
-      <div class="preloader-loading-text">ИДЕТ НАСТРОЙКА ШВА: <span id="preloader-percent">0</span>%</div>
+      <div class="preloader-loading-text">КАЛИБРОВКА РЕЗА: <span id="preloader-percent">0</span>%</div>
     </div>
   </div>
 
@@ -2047,8 +2054,8 @@
       const preloader = document.getElementById('preloader');
       const percentEl = document.getElementById('preloader-percent');
       const carriage = document.getElementById('carriage');
-      const tileLeft = document.getElementById('tile-left');
-      const tileRight = document.getElementById('tile-right');
+      const tileTop = document.getElementById('tile-top');
+      const tileBottom = document.getElementById('tile-bottom');
       const scoreLine = document.getElementById('score-line');
       
       let percent = 0;
@@ -2066,10 +2073,16 @@
           percentEl.innerText = percent;
         }
 
-        // When cutting is halfway done
-        if (percent === 50) {
+        // Horizontal laser/scratch line draws behind the carriage
+        // Tile starts at carriage x=80 (approx percent=30) and ends at x=200 (approx percent=80)
+        if (percent >= 30 && percent <= 80) {
+          const tileProgress = (percent - 30) / 50; // 0 to 1
           if (scoreLine) {
-            scoreLine.style.background = 'var(--accent-blue)';
+            scoreLine.style.width = `${tileProgress * 120}px`;
+          }
+        } else if (percent > 80) {
+          if (scoreLine) {
+            scoreLine.style.width = '120px';
           }
         }
 
@@ -2077,9 +2090,9 @@
         if (percent >= 100) {
           clearInterval(interval);
           
-          // Snap/split the tile animation!
-          if (tileLeft) tileLeft.style.transform = 'translateX(-8px) rotate(-3deg)';
-          if (tileRight) tileRight.style.transform = 'translateX(8px) rotate(3deg)';
+          // Snap/split the tile animation horizontally!
+          if (tileTop) tileTop.style.transform = 'translateY(-8px) rotate(-3deg)';
+          if (tileBottom) tileBottom.style.transform = 'translateY(8px) rotate(3deg)';
           if (carriage) {
             carriage.style.transform = 'translate(0, -50%) scale(1.1)';
             carriage.style.backgroundColor = 'var(--accent-blue)';
