@@ -2520,7 +2520,20 @@
         'event_label': window.location.pathname
       });
 
-      // 2. Direct gtag event if available
+      // 2. Direct Yandex Metrica Goal Trigger (for any active counter on the page)
+      if (typeof ym === 'function') {
+        try {
+          const counters = Ya.Metrika2.counters();
+          counters.forEach(c => {
+            ym(c.id, 'reachGoal', eventName);
+            console.log(`[Yandex Metrica] Goal reached: ${eventName} for counter ${c.id}`);
+          });
+        } catch(e) {
+          console.log(`[Yandex Metrica] ym is present but failed to trigger reachGoal: ${e}`);
+        }
+      }
+
+      // 3. Direct gtag event if available
       if (typeof gtag === 'function') {
         gtag('event', eventName, {
           'event_category': category,
@@ -2528,7 +2541,7 @@
         });
         console.log(`[ClimaFlow Track] Event sent to gtag: ${eventName}`);
       } else {
-        console.log(`[ClimaFlow Track] Event pushed to dataLayer: ${eventName}`);
+        console.log(`[ClimaFlow Track] Event tracked locally: ${eventName}`);
       }
     }
 
