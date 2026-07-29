@@ -1356,41 +1356,80 @@
       });
     });
 
-    // 6. Smooth Auto-Scroll for Portfolio Gallery (Карусель плавно едет вверх)
+    // 6. Step-by-Step Auto-Scroll for Portfolio Gallery (Прокрутка к следующему фото каждые 2.5 секунды)
     const galleryContainer = document.querySelector('.split-layout:nth-of-type(3) .split-right');
     if (galleryContainer) {
-      let scrollSpeed = 0.6; // Скорость прокрутки (px за кадр)
+      const images = galleryContainer.querySelectorAll('img');
+      const totalImages = images.length;
+      let currentIndex = 0;
       let isInteracting = false;
       let scrollTimeout;
+      let autoScrollInterval;
 
-      function performAutoScroll() {
-        if (!isInteracting) {
-          galleryContainer.scrollTop += scrollSpeed;
-          // Если докрутили до самого низа, сбрасываем в ноль
-          if (galleryContainer.scrollTop >= (galleryContainer.scrollHeight - galleryContainer.clientHeight - 2)) {
-            galleryContainer.scrollTop = 0;
+      function startAutoSlide() {
+        autoScrollInterval = setInterval(() => {
+          if (!isInteracting && totalImages > 0) {
+            currentIndex = (currentIndex + 1) % totalImages;
+            const targetImage = images[currentIndex];
+            // Вычисляем позицию скролла для центрирования картинки в контейнере
+            const targetScrollTop = targetImage.offsetTop - galleryContainer.offsetTop;
+            
+            galleryContainer.scrollTo({
+              top: targetScrollTop,
+              behavior: 'smooth'
+            });
           }
-        }
-        requestAnimationFrame(performAutoScroll);
+        }, 2500); // Слайд каждые 2.5 секунды
       }
 
-      // Пауза при наведении мышкой или касании пальцем на мобильном
-      galleryContainer.addEventListener('mouseenter', () => isInteracting = true);
-      galleryContainer.addEventListener('mouseleave', () => isInteracting = false);
-      galleryContainer.addEventListener('touchstart', () => isInteracting = true);
-      galleryContainer.addEventListener('touchend', () => isInteracting = false);
+      function stopAutoSlide() {
+        clearInterval(autoScrollInterval);
+      }
 
-      // Если пользователь скроллит вручную — отключаем автоскролл на 3 секунды
-      galleryContainer.addEventListener('scroll', () => {
+      // Пауза при наведении мышкой или касании на мобильном
+      galleryContainer.addEventListener('mouseenter', () => {
         isInteracting = true;
+        stopAutoSlide();
+      });
+      
+      galleryContainer.addEventListener('mouseleave', () => {
+        isInteracting = false;
+        startAutoSlide();
+      });
+      
+      galleryContainer.addEventListener('touchstart', () => {
+        isInteracting = true;
+        stopAutoSlide();
+      });
+      
+      galleryContainer.addEventListener('touchend', () => {
+        isInteracting = false;
+        startAutoSlide();
+      });
+
+      // При ручном скролле пользователя останавливаем автоскролл и синхронизируем индекс
+      galleryContainer.addEventListener('scroll', () => {
+        const scrollTop = galleryContainer.scrollTop;
+        let minDiff = Infinity;
+        images.forEach((img, idx) => {
+          const diff = Math.abs((img.offsetTop - galleryContainer.offsetTop) - scrollTop);
+          if (diff < minDiff) {
+            minDiff = diff;
+            currentIndex = idx;
+          }
+        });
+
+        isInteracting = true;
+        stopAutoSlide();
         clearTimeout(scrollTimeout);
         scrollTimeout = setTimeout(() => {
           isInteracting = false;
-        }, 3000);
+          startAutoSlide();
+        }, 3000); // Возобновляем автоскролл через 3 секунды бездействия
       });
 
-      // Запускаем плавную прокрутку
-      performAutoScroll();
+      // Запуск слайдера
+      startAutoSlide();
     }
   </script>
 
