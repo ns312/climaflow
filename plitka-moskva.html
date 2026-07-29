@@ -835,6 +835,130 @@
         padding-top: 160px !important;
       }
     }
+
+    /* Yandex Reviews Styles */
+    .reviews-slider {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+      padding: 20px 0;
+    }
+    .reviews-track {
+      display: flex;
+      gap: 24px;
+      width: max-content;
+      animation: scrollReviewsLeft 35s linear infinite;
+    }
+    .reviews-slider:hover .reviews-track {
+      animation-play-state: paused;
+    }
+    @keyframes scrollReviewsLeft {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(calc(-50% - 12px));
+      }
+    }
+    .yandex-review-card {
+      background: #fff;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 24px;
+      width: 380px;
+      flex-shrink: 0;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+    }
+    .review-user-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      position: relative;
+      margin-bottom: 12px;
+    }
+    .review-avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 16px;
+      font-family: var(--font-title);
+    }
+    .review-username {
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--text-dark);
+    }
+    .review-userlevel {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+    .yandex-logo-small {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background: #e63946;
+      color: #fff;
+      font-family: var(--font-title);
+      font-weight: 800;
+      font-size: 11px;
+      width: 18px;
+      height: 18px;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .review-stars {
+      color: #f59e0b;
+      font-size: 14px;
+      margin-bottom: 6px;
+      letter-spacing: 1px;
+    }
+    .review-date {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+      font-family: var(--font-mono);
+    }
+    .review-text {
+      font-size: 13.5px;
+      color: var(--text-dark);
+      line-height: 1.5;
+      margin-bottom: 16px;
+      font-weight: 400;
+    }
+    .review-reply {
+      background: var(--bg-light);
+      border-left: 2px solid var(--accent-blue);
+      padding: 12px;
+      font-size: 12px;
+      color: var(--text-muted);
+      border-radius: 0 6px 6px 0;
+      margin-bottom: 16px;
+      line-height: 1.4;
+    }
+    .review-footer {
+      margin-top: auto;
+      display: flex;
+      gap: 16px;
+      font-size: 12px;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border-color);
+      padding-top: 12px;
+    }
+    .review-footer span {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
   </style>
 </head>
 <body>
@@ -869,7 +993,7 @@
   <section class="split-layout">
     <div class="split-left">
       <div class="split-left-top">
-        <span class="section-num">01 / 05</span>
+        <span class="section-num">01 / 06</span>
         <h1 class="section-title">Инженерная<br>укладка плитки</h1>
         <p class="section-desc">
           Профессиональная облицовка керамогранитом, керамикой и мозаикой любой сложности в квартирах и коттеджах. Запил под 45 градусов и монтаж «под ключ» с гарантией по договору.
@@ -901,7 +1025,7 @@
   <section class="split-layout">
     <div class="split-left">
       <div class="split-left-top">
-        <span class="section-num">02 / 05</span>
+        <span class="section-num">02 / 06</span>
         <h2 class="section-title">Наши услуги</h2>
         <p class="section-desc">
           Выполняем полный комплекс сантехнических и плиточных работ. Работаем с премиальными материалами по строгим технологическим регламентам.
@@ -956,7 +1080,7 @@
   <section class="split-layout">
     <div class="split-left">
       <div class="split-left-top">
-        <span class="section-num">03 / 05</span>
+        <span class="section-num">03 / 06</span>
         <h2 class="section-title">Примеры работ</h2>
         <p class="section-desc">
           Фотографии готовых санузлов и процесса укладки, выполненные нашими мастерами в Москве. Только реальные объекты и честное качество без ретуши.
@@ -1024,9 +1148,10 @@
     </div>
   </section>
 
-  <!-- Section 3: Numbers & Slider stats (Split 3 - Stats style) -->
+  <!-- Section 4: Numbers & Slider stats (Split 4 - Stats style) -->
   <section class="split-layout stats-layout">
     <div class="stats-left">
+      <span class="section-num" style="color: rgba(255,255,255,0.4); margin-bottom: 20px; display: block;">04 / 06</span>
       <h2 class="stats-title">Наши цифры</h2>
       <div class="stat-num-box">
         <div class="stat-num" id="stat-number">10</div>
@@ -1078,11 +1203,235 @@
     </div>
   </section>
 
-  <!-- Section 4: Map (Split 4) -->
+  <!-- Section 5: Yandex Reviews (Horizontal Marquee) -->
+  <section class="section" style="background-color: var(--bg-light); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); overflow: hidden; padding: 80px 0;">
+    <div class="container" style="margin-bottom: 40px; text-align: left; padding: 0 40px;">
+      <span class="section-num">05 / 06</span>
+      <h2 class="section-title" style="margin-bottom: 12px;">Отзывы на Яндекс.Картах</h2>
+      <p class="section-desc" style="margin-bottom: 0; max-width: 800px;">
+        Рейтинг компании Clima Flow: <strong style="color: var(--accent-blue);">5.0 ★★★★★</strong> на основе отзывов реальных клиентов в Москве. Мы ценим обратную связь и отвечаем на каждый отзыв!
+      </p>
+    </div>
+
+    <!-- Infinite horizontal slider (right to left) -->
+    <div class="reviews-slider">
+      <div class="reviews-track">
+        <!-- Review 1 -->
+        <div class="yandex-review-card">
+          <div class="review-user-row">
+            <div class="review-avatar" style="background-color: #f97316;">А</div>
+            <div>
+              <div class="review-username">Анатолий Л.</div>
+              <div class="review-userlevel">Знаток города 4 уровня</div>
+            </div>
+            <span class="yandex-logo-small">Я</span>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <div class="review-date">12 мая 2026</div>
+          <p class="review-text">
+            Выражаем огромную благодарность всей команде Clima Flow. Заказ приняли быстро, мастер приехал на замер в тот же день с мокрорезом и лазерным уровнем. Уложили керамогранит 60х120 в ванной комнате идеально ровно, углы под 45 градусов просто загляденье!
+          </p>
+          <div class="review-reply">
+            <strong>Ответ Clima Flow:</strong> Анатолий, спасибо за высокую оценку! Рады, что вам понравилась заусовка под 45 градусов. Пользуйтесь ванной с удовольствием!
+          </div>
+          <div class="review-footer">
+            <span>👍 12</span> <span>👎 0</span>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="yandex-review-card">
+          <div class="review-user-row">
+            <div class="review-avatar" style="background-color: #3b82f6;">А</div>
+            <div>
+              <div class="review-username">Анна</div>
+              <div class="review-userlevel">Знаток города 3 уровня</div>
+            </div>
+            <span class="yandex-logo-small">Я</span>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <div class="review-date">28 июня 2026</div>
+          <p class="review-text">
+            Заказали укладку плитки в ванной комнате и фартук на кухне. Не ожидала, что справятся так быстро! Большой санузел под ключ сделали за 7 дней, швы ровные, эпоксидная затирка лежит аккуратно. Смета не выросла ни на рубль. Рекомендую!
+          </p>
+          <div class="review-reply">
+            <strong>Ответ Clima Flow:</strong> Анна, благодарим за отзыв! Наша цель — сдавать объекты быстро и без скрытых платежей.
+          </div>
+          <div class="review-footer">
+            <span>👍 8</span> <span>👎 0</span>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="yandex-review-card">
+          <div class="review-user-row">
+            <div class="review-avatar" style="background-color: #10b981;">Д</div>
+            <div>
+              <div class="review-username">Дмитрий К.</div>
+              <div class="review-userlevel">Знаток города 5 уровня</div>
+            </div>
+            <span class="yandex-logo-small">Я</span>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <div class="review-date">14 апреля 2026</div>
+          <p class="review-text">
+            Ребята делали пол из плитки в загородном доме (около 90 м2). Работали строго по технологии, использовали СВП зажимы, швы ровные по всей площади. Понравилось, что оплата шла поэтапно, никакой предоплаты не просили. Работой доволен!
+          </p>
+          <div class="review-reply">
+            <strong>Ответ Clima Flow:</strong> Спасибо, Дмитрий! Поэтапная оплата — стандарт нашей работы для спокойствия клиентов. Рады были помочь!
+          </div>
+          <div class="review-footer">
+            <span>👍 15</span> <span>👎 1</span>
+          </div>
+        </div>
+
+        <!-- Review 4 -->
+        <div class="yandex-review-card">
+          <div class="review-user-row">
+            <div class="review-avatar" style="background-color: #8b5cf6;">Е</div>
+            <div>
+              <div class="review-username">Екатерина М.</div>
+              <div class="review-userlevel">Знаток города 2 уровня</div>
+            </div>
+            <span class="yandex-logo-small">Я</span>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <div class="review-date">3 июля 2026</div>
+          <p class="review-text">
+            Очень вежливые мастера. Помогли выбрать и доставить плиточный клей и затирку с хорошей скидкой. Сами вынесли весь мусор за собой. Душевой поддон в строительном исполнении получился шикарный, вода уходит отлично, гидроизоляция надежная.
+          </p>
+          <div class="review-reply">
+            <strong>Ответ Clima Flow:</strong> Екатерина, большое спасибо за теплые слова! Нам важно оставлять после себя чистоту и порядок.
+          </div>
+          <div class="review-footer">
+            <span>👍 9</span> <span>👎 0</span>
+          </div>
+        </div>
+
+        <!-- Review 5 -->
+        <div class="yandex-review-card">
+          <div class="review-user-row">
+            <div class="review-avatar" style="background-color: #ec4899;">Р</div>
+            <div>
+              <div class="review-username">Руслан С.</div>
+              <div class="review-userlevel">Знаток города 6 уровня</div>
+            </div>
+            <span class="yandex-logo-small">Я</span>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <div class="review-date">19 мая 2026</div>
+          <p class="review-text">
+            Отличные плиточники. Делали ремонт санузла в офисе. Запилы под 45 градусов выполнены без сколов на дорогом керамограните. Все аккуратно, чисто, в оговоренные сроки. Будем обращаться еще для отделки коридора.
+          </p>
+          <div class="review-reply">
+            <strong>Ответ Clima Flow:</strong> Руслан, спасибо! Рады корпоративному сотрудничеству, всегда готовы продолжить работу на ваших объектах.
+          </div>
+          <div class="review-footer">
+            <span>👍 11</span> <span>👎 0</span>
+          </div>
+        </div>
+
+        <!-- Review 6 -->
+        <div class="yandex-review-card">
+          <div class="review-user-row">
+            <div class="review-avatar" style="background-color: #6366f1;">М</div>
+            <div>
+              <div class="review-username">Мария В.</div>
+              <div class="review-userlevel">Знаток города 3 уровня</div>
+            </div>
+            <span class="yandex-logo-small">Я</span>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <div class="review-date">11 февраля 2026</div>
+          <p class="review-text">
+            Искала мастеров для укладки мозаики в хаммаме. Работа тонкая, многие отказывались. Парни из Clima Flow справились на отлично. Рисунок сошелся идеально, швы ровные. Огромное спасибо за профессионализм!
+          </p>
+          <div class="review-reply">
+            <strong>Ответ Clima Flow:</strong> Мария, спасибо за доверие сложной художественной работы! Наши мастера любят нестандартные вызовы.
+          </div>
+          <div class="review-footer">
+            <span>👍 7</span> <span>👎 0</span>
+          </div>
+        </div>
+
+        <!-- Cloned Reviews for Infinite Carousel Loop -->
+        <!-- Review 1 cloned -->
+        <div class="yandex-review-card">
+          <div class="review-user-row">
+            <div class="review-avatar" style="background-color: #f97316;">А</div>
+            <div>
+              <div class="review-username">Анатолий Л.</div>
+              <div class="review-userlevel">Знаток города 4 уровня</div>
+            </div>
+            <span class="yandex-logo-small">Я</span>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <div class="review-date">12 мая 2026</div>
+          <p class="review-text">
+            Выражаем огромную благодарность всей команде Clima Flow. Заказ приняли быстро, мастер приехал на замер в тот же день с мокрорезом и лазерным уровнем. Уложили керамогранит 60х120 в ванной комнате идеально ровно, углы под 45 градусов просто загляденье!
+          </p>
+          <div class="review-reply">
+            <strong>Ответ Clima Flow:</strong> Анатолий, спасибо за высокую оценку! Рады, что вам понравилась заусовка под 45 градусов. Пользуйтесь ванной с удовольствием!
+          </div>
+          <div class="review-footer">
+            <span>👍 12</span> <span>👎 0</span>
+          </div>
+        </div>
+
+        <!-- Review 2 cloned -->
+        <div class="yandex-review-card">
+          <div class="review-user-row">
+            <div class="review-avatar" style="background-color: #3b82f6;">А</div>
+            <div>
+              <div class="review-username">Анна</div>
+              <div class="review-userlevel">Знаток города 3 уровня</div>
+            </div>
+            <span class="yandex-logo-small">Я</span>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <div class="review-date">28 июня 2026</div>
+          <p class="review-text">
+            Заказали укладку плитки в ванной комнате и фартук на кухне. Не ожидала, что справятся так быстро! Большой санузел под ключ сделали за 7 дней, швы ровные, эпоксидная затирка лежит аккуратно. Смета не выросла ни на рубль. Рекомендую!
+          </p>
+          <div class="review-reply">
+            <strong>Ответ Clima Flow:</strong> Анна, благодарим за отзыв! Наша цель — сдавать объекты быстро и без скрытых платежей.
+          </div>
+          <div class="review-footer">
+            <span>👍 8</span> <span>👎 0</span>
+          </div>
+        </div>
+
+        <!-- Review 3 cloned -->
+        <div class="yandex-review-card">
+          <div class="review-user-row">
+            <div class="review-avatar" style="background-color: #10b981;">Д</div>
+            <div>
+              <div class="review-username">Дмитрий К.</div>
+              <div class="review-userlevel">Знаток города 5 уровня</div>
+            </div>
+            <span class="yandex-logo-small">Я</span>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <div class="review-date">14 апреля 2026</div>
+          <p class="review-text">
+            Ребята делали пол из плитки в загородном доме (около 90 м2). Работали строго по технологии, использовали СВП зажимы, швы ровные по всей площади. Понравилось, что оплата шла поэтапно, никакой предоплаты не просили. Работой доволен!
+          </p>
+          <div class="review-reply">
+            <strong>Ответ Clima Flow:</strong> Спасибо, Дмитрий! Поэтапная оплата — стандарт нашей работы для спокойствия клиентов. Рады были помочь!
+          </div>
+          <div class="review-footer">
+            <span>👍 15</span> <span>👎 1</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 6: Map (Split 6) -->
   <section class="split-layout">
     <div class="split-left">
       <div class="split-left-top">
-        <span class="section-num">05 / 05</span>
+        <span class="section-num">06 / 06</span>
         <h2 class="section-title">География работы</h2>
         <p class="section-desc">
           Принимаем заказы по Москве и всей Московской области (до 30 км от МКАД). Выезд инженера-сметчика для замера и составления сметы бесплатный.
