@@ -745,6 +745,51 @@
       transform: translateY(-2px) scale(1.01);
       box-shadow: 0 10px 20px rgba(29, 78, 216, 0.1);
     }
+
+    /* Floating gallery swipe/scroll badge */
+    .gallery-badge {
+      position: absolute;
+      bottom: 24px;
+      right: 24px;
+      background: rgba(255, 255, 255, 0.95);
+      border: 1px solid var(--border-color);
+      padding: 8px 16px;
+      border-radius: 30px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--accent-blue);
+      pointer-events: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 8px 20px rgba(29, 78, 216, 0.1);
+      z-index: 100;
+      animation: floatBadge 2s ease-in-out infinite;
+    }
+
+    .swipe-icon {
+      font-size: 14px;
+      animation: bounceIcon 1.5s ease-in-out infinite;
+    }
+
+    @keyframes floatBadge {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+
+    @keyframes bounceIcon {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-3px); }
+    }
+
+    /* Specific adjustment for mobile gallery height */
+    @media (max-width: 992px) {
+      .split-right {
+        height: 500px !important; /* give enough height for vertical slider */
+      }
+    }
   </style>
 </head>
 <body>
@@ -913,17 +958,24 @@
       </div>
     </div>
     
-    <!-- Vertical Scrollable Gallery -->
-    <div class="split-right" style="display: flex; flex-direction: column; overflow-y: auto; max-height: 100vh; gap: 20px; padding: 40px 20px; background: var(--bg-light); border-left: 1px solid var(--border-color);">
-      <img class="split-image" src="images/portfolio1.jpg" alt="Светлая душевая кабина под дерево" style="height: auto; border: 1px solid var(--border-color); border-radius: 4px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
-      <img class="split-image" src="images/portfolio2.jpg" alt="Мраморный санузел с золотым душем" style="height: auto; border: 1px solid var(--border-color); border-radius: 4px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
-      <img class="split-image" src="images/portfolio3.jpg" alt="Крупноформатный керамогранит в санузле" style="height: auto; border: 1px solid var(--border-color); border-radius: 4px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
-      <img class="split-image" src="images/portfolio4.jpg" alt="Процесс укладки плитки с СВП зажимами" style="height: auto; border: 1px solid var(--border-color); border-radius: 4px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
-      <img class="split-image" src="images/portfolio5.jpg" alt="Темный душевой уголок со скрытым сливом" style="height: auto; border: 1px solid var(--border-color); border-radius: 4px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
-      <img class="split-image" src="images/portfolio6.jpg" alt="Мраморный душ с нишами" style="height: auto; border: 1px solid var(--border-color); border-radius: 4px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
-      <img class="split-image" src="images/portfolio7.jpg" alt="Белая ванная комната с раковиной" style="height: auto; border: 1px solid var(--border-color); border-radius: 4px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
-      <img class="split-image" src="images/portfolio8.jpg" alt="Большой пол под плитку в доме" style="height: auto; border: 1px solid var(--border-color); border-radius: 4px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
-      <img class="split-image" src="images/portfolio9.jpg" alt="Фартук кухни белый мрамор" style="height: auto; border: 1px solid var(--border-color); border-radius: 4px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+    <!-- Vertical Scrollable Gallery wrapper with floating swipe badge -->
+    <div class="split-right" style="position: relative; background: var(--bg-light); border-left: 1px solid var(--border-color); height: 100vh; overflow: hidden; width: 100%;">
+      <div class="gallery-scroll-container" style="display: flex; flex-direction: column; overflow-y: auto; height: 100%; gap: 20px; padding: 40px 20px; width: 100%;">
+        <img class="split-image" src="images/portfolio1.jpg" alt="Светлая душевая кабина под дерево" style="height: auto; border: 1px solid var(--border-color); border-radius: 4px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+        <img class="split-image" src="images/portfolio2.jpg" alt="Мраморный санузел с золотым душем" style="height: auto; border: 1px solid var(--border-color); border-radius: 4px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+        <img class="split-image" src="images/portfolio3.jpg" alt="Крупноформатный керамогранит в санузле" style="height: auto; border: 1px solid var(--border-color); border-radius: 4px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+        <img class="split-image" src="images/portfolio4.jpg" alt="Процесс укладки плитки с СВП зажимами" style="height: auto; border: 1px solid var(--border-color); border-radius: 4px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+        <img class="split-image" src="images/portfolio5.jpg" alt="Темный душевой уголок со скрытым сливом" style="height: auto; border: 1px solid var(--border-color); border-radius: 4px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+        <img class="split-image" src="images/portfolio6.jpg" alt="Мраморный душ с нишами" style="height: auto; border: 1px solid var(--border-color); border-radius: 4px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+        <img class="split-image" src="images/portfolio7.jpg" alt="Белая ванная комната с раковиной" style="height: auto; border: 1px solid var(--border-color); border-radius: 4px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+        <img class="split-image" src="images/portfolio8.jpg" alt="Большой пол под плитку в доме" style="height: auto; border: 1px solid var(--border-color); border-radius: 4px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+        <img class="split-image" src="images/portfolio9.jpg" alt="Фартук кухни белый мрамор" style="height: auto; border: 1px solid var(--border-color); border-radius: 4px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+      </div>
+      
+      <!-- Swipe/Scroll Indicator -->
+      <div class="gallery-badge">
+        <span class="swipe-icon">↕</span> Листайте / Свайп
+      </div>
     </div>
   </section>
 
@@ -1357,7 +1409,7 @@
     });
 
     // 6. Step-by-Step Auto-Scroll for Portfolio Gallery (Прокрутка к следующему фото каждые 2.5 секунды)
-    const galleryContainer = document.querySelector('.split-layout:nth-of-type(3) .split-right');
+    const galleryContainer = document.querySelector('.gallery-scroll-container');
     if (galleryContainer) {
       const images = galleryContainer.querySelectorAll('img');
       const totalImages = images.length;
@@ -1371,8 +1423,11 @@
           if (!isInteracting && totalImages > 0) {
             currentIndex = (currentIndex + 1) % totalImages;
             const targetImage = images[currentIndex];
-            // Вычисляем позицию скролла для центрирования картинки в контейнере
-            const targetScrollTop = targetImage.offsetTop - galleryContainer.offsetTop;
+            
+            // 100% надежное вычисление scroll-позиции через clientRect
+            const containerRect = galleryContainer.getBoundingClientRect();
+            const imageRect = targetImage.getBoundingClientRect();
+            const targetScrollTop = galleryContainer.scrollTop + (imageRect.top - containerRect.top);
             
             galleryContainer.scrollTo({
               top: targetScrollTop,
@@ -1410,9 +1465,12 @@
       // При ручном скролле пользователя останавливаем автоскролл и синхронизируем индекс
       galleryContainer.addEventListener('scroll', () => {
         const scrollTop = galleryContainer.scrollTop;
+        const containerRect = galleryContainer.getBoundingClientRect();
         let minDiff = Infinity;
+        
         images.forEach((img, idx) => {
-          const diff = Math.abs((img.offsetTop - galleryContainer.offsetTop) - scrollTop);
+          const imageRect = img.getBoundingClientRect();
+          const diff = Math.abs(imageRect.top - containerRect.top);
           if (diff < minDiff) {
             minDiff = diff;
             currentIndex = idx;
