@@ -433,6 +433,7 @@
     }
 
     /* Quiz Area in Modal */
+    /* Quiz Area in Modal (Premium Split Fenix Style) */
     .modal {
       display: none;
       position: fixed;
@@ -440,44 +441,147 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(255, 255, 255, 0.98);
+      background: rgba(15, 23, 42, 0.6);
       z-index: 10000;
       align-items: center;
       justify-content: center;
       padding: 20px;
-      backdrop-filter: blur(15px);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
     }
 
     .modal.active {
       display: flex;
     }
 
-    .modal-close {
-      position: absolute;
-      top: 30px;
-      right: 40px;
-      color: var(--text-dark);
-      font-family: var(--font-mono);
-      font-size: 24px;
-      cursor: pointer;
-      transition: var(--transition);
+    .modal-content-wrapper {
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      width: 100%;
+      max-width: 960px;
+      display: flex;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      position: relative;
       border: 1px solid var(--border-color);
-      padding: 6px 16px;
+      animation: modalFadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    .modal-close:hover {
-      background-color: var(--text-dark);
+    @keyframes modalFadeIn {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .modal-left-photo {
+      width: 42%;
+      background-image: url('images/portfolio1.jpg');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    .modal-left-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(180deg, rgba(15, 23, 42, 0.2) 0%, rgba(15, 23, 42, 0.85) 100%);
+      padding: 40px 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .modal-left-gift-badge {
+      background: var(--accent-blue);
       color: #fff;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 6px 12px;
+      border-radius: 4px;
+      letter-spacing: 1px;
+      align-self: flex-start;
+      box-shadow: 0 4px 10px rgba(29, 78, 216, 0.3);
+    }
+
+    .modal-left-gift-title {
+      font-family: var(--font-title);
+      color: #fff;
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      text-align: left;
+    }
+
+    .modal-left-gift-list {
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 13.5px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      text-align: left;
+    }
+
+    .modal-left-gift-list li {
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .modal-left-gift-list li::before {
+      content: "✓";
+      color: #10b981;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .modal-right-quiz {
+      width: 58%;
+      padding: 40px;
+      position: relative;
+      background: #fff;
+    }
+
+    .modal-close-new {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 24px;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: var(--transition);
+      z-index: 10;
+      font-family: var(--font-mono);
+    }
+
+    .modal-close-new:hover {
+      color: var(--text-dark);
     }
 
     .quiz-box {
-      background: #fff;
-      border: 1px solid var(--border-color);
-      padding: 50px;
-      max-width: 750px;
+      background: transparent;
+      border: none;
+      padding: 0;
+      max-width: 100%;
       width: 100%;
       position: relative;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.05);
+      box-shadow: none;
+    }
+
+    @media (max-width: 768px) {
+      .modal-left-photo {
+        display: none;
+      }
+      .modal-right-quiz {
+        width: 100% !important;
+        padding: 30px 20px !important;
+      }
     }
 
     .quiz-progress {
@@ -1615,135 +1719,152 @@
   </section>
 
   <!-- Modal window with Quiz -->
+  <!-- Modal window with Quiz (Premium Split Layout) -->
   <div class="modal" id="quiz-modal">
-    <div class="modal-close" onclick="closeModal()">Закрыть ×</div>
-    
-    <div class="quiz-box">
-      <div class="quiz-progress">
-        <div class="quiz-progress-bar" id="progress-bar"></div>
-      </div>
+    <div class="modal-content-wrapper">
+      <!-- Close Button -->
+      <div class="modal-close-new" onclick="closeModal()">Закрыть ×</div>
 
-      <!-- Step 1 -->
-      <div class="quiz-step active" id="step-1">
-        <h3 class="quiz-question">Какой объем работ по плитке требуется выполнить?</h3>
-        <div class="quiz-options">
-          <div class="quiz-option" onclick="selectOption(1, 'Санузел / ванная комната под ключ')">
-            <span class="radio-circle"></span>
-            <span>Санузел под ключ</span>
+      <!-- Left Column: Photo & Gifts info -->
+      <div class="modal-left-photo">
+        <div class="modal-left-overlay">
+          <span class="modal-left-gift-badge">Подарок при расчете</span>
+          <div>
+            <h4 class="modal-left-gift-title">3D-раскладка и СВП зажимы в подарок</h4>
+            <ul class="modal-left-gift-list">
+              <li>3D дизайн-проект раскладки</li>
+              <li>СВП клипсы на весь объем</li>
+              <li>Смета за 5 минут в WhatsApp</li>
+              <li>Выезд инженера бесплатно</li>
+            </ul>
           </div>
-          <div class="quiz-option" onclick="selectOption(1, 'Укладка плитки на пол')">
-            <span class="radio-circle"></span>
-            <span>Укладка плитки на пол</span>
-          </div>
-          <div class="quiz-option" onclick="selectOption(1, 'Облицовка стен плиткой')">
-            <span class="radio-circle"></span>
-            <span>Облицовка стен</span>
-          </div>
-          <div class="quiz-option" onclick="selectOption(1, 'Кухонный фартук')">
-            <span class="radio-circle"></span>
-            <span>Кухонный фартук</span>
-          </div>
-        </div>
-        <div class="quiz-footer">
-          <span style="font-family:var(--font-mono); font-size:12px;">Шаг 1 из 4</span>
-          <button class="btn btn-accent" onclick="nextStep(2)">Далее</button>
         </div>
       </div>
 
-      <!-- Step 2 -->
-      <div class="quiz-step" id="step-2">
-        <h3 class="quiz-question">Примерная площадь поверхности под укладку?</h3>
-        <div class="quiz-options">
-          <div class="quiz-option" onclick="selectOption(2, 'Малая площадь (до 5 м²)')">
-            <span class="radio-circle"></span>
-            <span>До 5 м²</span>
-          </div>
-          <div class="quiz-option" onclick="selectOption(2, 'Средняя площадь (5 - 15 м²)')">
-            <span class="radio-circle"></span>
-            <span>5 - 15 м²</span>
-          </div>
-          <div class="quiz-option" onclick="selectOption(2, 'Крупная площадь (15 - 40 м²)')">
-            <span class="radio-circle"></span>
-            <span>15 - 40 м²</span>
-          </div>
-          <div class="quiz-option" onclick="selectOption(2, 'Большой объем (более 40 м²)')">
-            <span class="radio-circle"></span>
-            <span>Более 40 м²</span>
-          </div>
-        </div>
-        <div class="quiz-footer">
-          <button class="btn btn-outline" onclick="prevStep(1)">Назад</button>
-          <span style="font-family:var(--font-mono); font-size:12px;">Шаг 2 из 4</span>
-          <button class="btn btn-accent" onclick="nextStep(3)">Далее</button>
-        </div>
-      </div>
-
-      <!-- Step 3 -->
-      <div class="quiz-step" id="step-3">
-        <h3 class="quiz-question">С каким материалом будем работать?</h3>
-        <div class="quiz-options">
-          <div class="quiz-option" onclick="selectOption(3, 'Керамогранит (60x60, 120x60)')">
-            <span class="radio-circle"></span>
-            <span>Керамогранит</span>
-          </div>
-          <div class="quiz-option" onclick="selectOption(3, 'Обычная керамическая плитка')">
-            <span class="radio-circle"></span>
-            <span>Керамическая плитка</span>
-          </div>
-          <div class="quiz-option" onclick="selectOption(3, 'Крупноформатные плиты')">
-            <span class="radio-circle"></span>
-            <span>Крупноформатные плиты</span>
-          </div>
-          <div class="quiz-option" onclick="selectOption(3, 'Художественная мозаика')">
-            <span class="radio-circle"></span>
-            <span>Мозаика</span>
-          </div>
-        </div>
-        <div class="quiz-footer">
-          <button class="btn btn-outline" onclick="prevStep(2)">Назад</button>
-          <span style="font-family:var(--font-mono); font-size:12px;">Шаг 3 из 4</span>
-          <button class="btn btn-accent" onclick="nextStep(4)">Далее</button>
-        </div>
-      </div>
-
-      <!-- Step 4 -->
-      <div class="quiz-step" id="step-4">
-        <h3 class="quiz-question">Требуется ли демонтаж старого покрытия?</h3>
-        <div class="quiz-options">
-          <div class="quiz-option" onclick="selectOption(4, 'Да, демонтаж необходим')">
-            <span class="radio-circle"></span>
-            <span>Да, демонтаж нужен</span>
-          </div>
-          <div class="quiz-option" onclick="selectOption(4, 'Нет, стены/пол готовы к укладке')">
-            <span class="radio-circle"></span>
-            <span>Нет, поверхности готовы</span>
-          </div>
-        </div>
-        <div class="quiz-footer">
-          <button class="btn btn-outline" onclick="prevStep(3)">Назад</button>
-          <span style="font-family:var(--font-mono); font-size:12px;">Шаг 4 из 4</span>
-          <button class="btn btn-accent" onclick="showResults()">Получить расчет</button>
-        </div>
-      </div>
-
-      <!-- Result Screen -->
-      <div class="quiz-step" id="step-result">
-        <div class="result-screen">
-          <div class="result-title">Расчет сметы готов!</div>
-          <p class="result-subtitle">Выберите мессенджер для моментального получения сметы:</p>
-          
-          <div class="gift-badge">
-            <span>+ Подарок: Бесплатный 3D-макет раскладки плитки</span>
+      <!-- Right Column: Interactive Quiz -->
+      <div class="modal-right-quiz">
+        <div class="quiz-box">
+          <div class="quiz-progress" style="margin-bottom: 25px;">
+            <div class="quiz-progress-bar" id="progress-bar"></div>
           </div>
 
-          <div class="messenger-selection">
-            <a href="https://wa.me/79990000000?text=Здравствуйте!" target="_blank" class="btn btn-whatsapp" id="whatsapp-result-btn">
-              Смета в WhatsApp
-            </a>
-            <a href="https://t.me/your_telegram_bot" target="_blank" class="btn btn-telegram" id="telegram-result-btn">
-              Смета в Telegram
-            </a>
+          <!-- Step 1 -->
+          <div class="quiz-step active" id="step-1">
+            <h3 class="quiz-question">Какой объем работ по плитке требуется выполнить?</h3>
+            <div class="quiz-options">
+              <div class="quiz-option" onclick="selectOption(1, 'Санузел / ванная комната под ключ')">
+                <span class="radio-circle"></span>
+                <span>Санузел под ключ</span>
+              </div>
+              <div class="quiz-option" onclick="selectOption(1, 'Укладка плитки на пол')">
+                <span class="radio-circle"></span>
+                <span>Укладка плитки на пол</span>
+              </div>
+              <div class="quiz-option" onclick="selectOption(1, 'Облицовка стен плиткой')">
+                <span class="radio-circle"></span>
+                <span>Облицовка стен</span>
+              </div>
+              <div class="quiz-option" onclick="selectOption(1, 'Кухонный фартук')">
+                <span class="radio-circle"></span>
+                <span>Кухонный фартук</span>
+              </div>
+            </div>
+            <div class="quiz-footer">
+              <span style="font-family:var(--font-mono); font-size:12px;">Шаг 1 из 4</span>
+              <button class="btn btn-accent" onclick="nextStep(2)">Далее</button>
+            </div>
           </div>
+
+          <!-- Step 2 -->
+          <div class="quiz-step" id="step-2">
+            <h3 class="quiz-question">Примерная площадь поверхности под укладку?</h3>
+            <div class="quiz-options">
+              <div class="quiz-option" onclick="selectOption(2, 'Малая площадь (до 5 м²)')">
+                <span class="radio-circle"></span>
+                <span>До 5 м²</span>
+              </div>
+              <div class="quiz-option" onclick="selectOption(2, 'Средняя площадь (5 - 15 м²)')">
+                <span class="radio-circle"></span>
+                <span>5 - 15 м²</span>
+              </div>
+              <div class="quiz-option" onclick="selectOption(2, 'Крупная площадь (15 - 40 м²)')">
+                <span class="radio-circle"></span>
+                <span>15 - 40 м²</span>
+              </div>
+              <div class="quiz-option" onclick="selectOption(2, 'Большой объем (более 40 м²)')">
+                <span class="radio-circle"></span>
+                <span>Более 40 м²</span>
+              </div>
+            </div>
+            <div class="quiz-footer">
+              <button class="btn btn-outline" onclick="prevStep(1)">Назад</button>
+              <span style="font-family:var(--font-mono); font-size:12px;">Шаг 2 из 4</span>
+              <button class="btn btn-accent" onclick="nextStep(3)">Далее</button>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="quiz-step" id="step-3">
+            <h3 class="quiz-question">С каким материалом будем работать?</h3>
+            <div class="quiz-options">
+              <div class="quiz-option" onclick="selectOption(3, 'Керамогранит (60x60, 120x60)')">
+                <span class="radio-circle"></span>
+                <span>Керамогранит</span>
+              </div>
+              <div class="quiz-option" onclick="selectOption(3, 'Обычная керамическая плитка')">
+                <span class="radio-circle"></span>
+                <span>Керамическая плитка</span>
+              </div>
+              <div class="quiz-option" onclick="selectOption(3, 'Крупноформатные плиты')">
+                <span class="radio-circle"></span>
+                <span>Крупноформатные плиты</span>
+              </div>
+              <div class="quiz-option" onclick="selectOption(3, 'Художественная мозаика')">
+                <span class="radio-circle"></span>
+                <span>Мозаика</span>
+              </div>
+            </div>
+            <div class="quiz-footer">
+              <button class="btn btn-outline" onclick="prevStep(2)">Назад</button>
+              <span style="font-family:var(--font-mono); font-size:12px;">Шаг 3 из 4</span>
+              <button class="btn btn-accent" onclick="nextStep(4)">Далее</button>
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="quiz-step" id="step-4">
+            <h3 class="quiz-question">Требуется ли демонтаж старого покрытия?</h3>
+            <div class="quiz-options">
+              <div class="quiz-option" onclick="selectOption(4, 'Да, демонтаж необходим')">
+                <span class="radio-circle"></span>
+                <span>Да, демонтаж нужен</span>
+              </div>
+              <div class="quiz-option" onclick="selectOption(4, 'Нет, стены/пол готовы к укладке')">
+                <span class="radio-circle"></span>
+                <span>Нет, поверхности готовы</span>
+              </div>
+            </div>
+            <div class="quiz-footer">
+              <button class="btn btn-outline" onclick="prevStep(3)">Назад</button>
+              <span style="font-family:var(--font-mono); font-size:12px;">Шаг 4 из 4</span>
+              <button class="btn btn-accent" onclick="showResults()">Получить расчет</button>
+            </div>
+          </div>
+
+          <!-- Result Screen -->
+          <div class="quiz-step" id="step-result">
+            <div class="result-screen" style="text-align: center;">
+              <div class="result-title" style="font-family: var(--font-title); font-size: 24px; font-weight: 700; color: var(--text-dark); margin-bottom: 12px;">Смета готова!</div>
+              <p class="result-subtitle" style="font-size: 13.5px; color: var(--text-muted); line-height: 1.5; margin-bottom: 24px;">Выберите мессенджер для моментального получения сметы, 3D-раскладки и купона на бесплатные СВП-зажимы:</p>
+              
+              <div class="messenger-selection" style="display: flex; flex-direction: column; gap: 12px; max-width: 320px; margin: 0 auto;">
+                <a href="https://wa.me/79990000000?text=Здравствуйте!" target="_blank" class="btn btn-accent" id="whatsapp-result-btn" style="background-color: #25d366; border-color: #25d366; display: flex; align-items: center; justify-content: center; gap: 8px; text-transform: none; font-size: 14px; font-family: var(--font-mono);">
+                  Смета в WhatsApp
+                </a>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
