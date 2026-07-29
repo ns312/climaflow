@@ -3,34 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Укладка плитки и ремонт санузлов под ключ в Москве | Clima Flow Ремонт</title>
-  <meta name="description" content="Профессиональная укладка плитки, керамогранита и мозаики в Москве. Ремонт ванных комнат под ключ с договором и гарантией 3 года. Оплата по этапам, выезд на замер бесплатно!">
+  <title>Укладка плитки и ремонт санузлов в Москве | Clima Flow</title>
+  <meta name="description" content="Инженерная укладка плитки и комплексный ремонт санузлов в Москве. Договор, гарантия 3 года. Поэтапная оплата без предоплаты. Выезд замерщика 0 руб.">
   
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=PT+Mono&family=Manrope:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   
   <style>
     :root {
-      --bg-dark: #090b0e;
-      --bg-card: rgba(18, 22, 28, 0.7);
-      --bg-card-hover: rgba(26, 32, 40, 0.85);
-      --border-color: rgba(255, 255, 255, 0.06);
-      --border-glow: rgba(16, 185, 129, 0.2);
-      --text-main: #f3f4f6;
-      --text-muted: #9ca3af;
+      --bg-white: #ffffff;
+      --bg-light: #f8fafc;
+      --border-color: #e2e8f0;
+      --text-dark: #0f172a;
+      --text-muted: #64748b;
       
-      /* Gradients matching the ooofedstroy.ru style */
-      --gradient-accent: linear-gradient(135deg, #10b981 0%, #059669 100%); /* Emerald */
-      --gradient-btn: linear-gradient(135deg, #2563eb 0%, #f97316 100%); /* Blue to Orange */
-      --gradient-card: linear-gradient(145deg, rgba(17, 24, 39, 0.9) 0%, rgba(10, 15, 26, 0.95) 100%);
-      --gradient-tilted: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%); /* Deep Blue */
+      /* Blue theme accent */
+      --accent-blue: #1d4ed8; 
+      --accent-hover: #1e40af;
+      --accent-light: #eff6ff;
+      --accent-border: #bfdbfe;
       
-      --accent: #10b981;
-      --font-title: 'Outfit', sans-serif;
+      --font-mono: 'PT Mono', monospace;
       --font-body: 'Manrope', sans-serif;
-      --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+      --font-title: 'Space Grotesk', sans-serif;
+      --transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
     }
 
     * {
@@ -41,55 +39,66 @@
     }
 
     body {
-      background-color: var(--bg-dark);
-      color: var(--text-main);
+      background-color: var(--bg-white);
+      color: var(--text-dark);
       font-family: var(--font-body);
-      line-height: 1.6;
+      line-height: 1.5;
       overflow-x: hidden;
     }
 
-    .container {
+    /* Custom Cursor Tiling Grid/Ruler (Линейка) */
+    .tiling-ruler-h, .tiling-ruler-v {
+      position: fixed;
+      background-color: rgba(29, 78, 216, 0.15);
+      pointer-events: none;
+      z-index: 9999;
+      display: none;
+    }
+
+    .tiling-ruler-h {
+      height: 1px;
+      left: 0;
+      right: 0;
+    }
+
+    .tiling-ruler-v {
+      width: 1px;
+      top: 0;
+      bottom: 0;
+    }
+
+    .ruler-coords {
+      position: fixed;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--accent-blue);
+      background: rgba(255, 255, 255, 0.95);
+      border: 1px solid var(--accent-border);
+      padding: 4px 8px;
+      border-radius: 4px;
+      pointer-events: none;
+      z-index: 10000;
+      display: none;
+      box-shadow: 0 4px 10px rgba(29, 78, 216, 0.1);
+    }
+
+    .container-fluid {
       width: 100%;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    /* Ambient Glows */
-    .ambient-glow-1 {
-      position: absolute;
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(16, 185, 129, 0.08) 0%, rgba(9, 11, 14, 0) 70%);
-      top: -200px;
-      right: -100px;
-      z-index: -1;
-      pointer-events: none;
-    }
-
-    .ambient-glow-2 {
-      position: absolute;
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(37, 99, 235, 0.06) 0%, rgba(9, 11, 14, 0) 70%);
-      bottom: 20%;
-      left: -200px;
-      z-index: -1;
-      pointer-events: none;
+      padding: 0;
     }
 
     /* Header */
     header {
-      background: rgba(9, 11, 14, 0.85);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--border-color);
       position: fixed;
       top: 0;
       left: 0;
       right: 0;
       z-index: 1000;
-      height: 85px;
+      height: 80px;
       display: flex;
       align-items: center;
     }
@@ -99,6 +108,7 @@
       justify-content: space-between;
       align-items: center;
       width: 100%;
+      padding: 0 40px;
     }
 
     .logo {
@@ -109,39 +119,38 @@
     }
 
     .logo-icon {
-      width: 44px;
-      height: 44px;
-      background: var(--gradient-accent);
-      border-radius: 10px;
+      width: 40px;
+      height: 40px;
+      background: var(--accent-blue);
+      border-radius: 6px;
       display: flex;
       align-items: center;
       justify-content: center;
       font-weight: 800;
-      color: #000;
-      font-size: 22px;
+      color: #fff;
+      font-size: 18px;
       font-family: var(--font-title);
-      box-shadow: 0 4px 15px rgba(16, 185, 129, 0.2);
     }
 
     .logo-title {
       font-family: var(--font-title);
-      font-size: 22px;
-      font-weight: 800;
-      color: var(--text-main);
-      letter-spacing: 0.5px;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text-dark);
+      letter-spacing: -0.5px;
     }
 
     .logo-subtitle {
-      font-size: 10px;
-      color: var(--accent);
+      font-family: var(--font-mono);
+      font-size: 9px;
+      color: var(--accent-blue);
       text-transform: uppercase;
-      font-weight: 700;
-      letter-spacing: 1.5px;
+      letter-spacing: 1px;
       display: block;
       margin-top: -2px;
     }
 
-    .header-contacts {
+    .header-nav {
       display: flex;
       align-items: center;
       gap: 30px;
@@ -152,587 +161,334 @@
     }
 
     .phone-link {
-      color: var(--text-main);
+      color: var(--text-dark);
       text-decoration: none;
       font-weight: 700;
-      font-family: var(--font-title);
-      font-size: 18px;
+      font-family: var(--font-mono);
+      font-size: 16px;
       transition: var(--transition);
-      display: flex;
-      align-items: center;
-      gap: 8px;
     }
 
     .phone-link:hover {
-      color: var(--accent);
+      color: var(--accent-blue);
     }
 
     .phone-desc {
-      font-size: 11px;
+      font-family: var(--font-mono);
+      font-size: 9px;
       color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
       display: block;
       margin-top: 2px;
     }
 
-    /* Buttons */
+    /* Buttons (matching lkstr.ru style - clean, border/block look) */
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       padding: 14px 28px;
-      border-radius: 30px;
       font-weight: 600;
       text-decoration: none;
       transition: var(--transition);
       cursor: pointer;
-      gap: 10px;
-      font-size: 15px;
-      font-family: var(--font-title);
+      font-family: var(--font-mono);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
-    .btn-gradient {
-      background: var(--gradient-btn);
+    .btn-accent {
+      background-color: var(--accent-blue);
       color: #fff;
-      border: none;
-      box-shadow: 0 4px 20px rgba(37, 99, 235, 0.25);
+      border: 1px solid var(--accent-blue);
     }
 
-    .btn-gradient:hover {
-      transform: translateY(-3px) scale(1.02);
-      box-shadow: 0 8px 25px rgba(249, 115, 22, 0.35);
+    .btn-accent:hover {
+      background-color: var(--accent-hover);
+      border-color: var(--accent-hover);
+      box-shadow: 0 4px 15px rgba(29, 78, 216, 0.2);
     }
 
-    .btn-secondary {
-      background: rgba(255, 255, 255, 0.03);
-      color: var(--text-main);
-      border: 1px solid var(--border-color);
+    .btn-outline {
+      background: transparent;
+      color: var(--text-dark);
+      border: 1px solid var(--text-dark);
     }
 
-    .btn-secondary:hover {
-      border-color: var(--accent);
-      background: rgba(16, 185, 129, 0.05);
-      transform: translateY(-2px);
+    .btn-outline:hover {
+      background-color: var(--text-dark);
+      color: #fff;
     }
 
     .btn-whatsapp {
       background-color: #25d366;
       color: #fff;
-      border: none;
-      border-radius: 30px;
+      border: 1px solid #25d366;
     }
 
     .btn-whatsapp:hover {
       background-color: #20ba5a;
-      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
-      transform: translateY(-2px);
+      border-color: #20ba5a;
     }
 
     .btn-telegram {
       background-color: #0088cc;
       color: #fff;
-      border: none;
-      border-radius: 30px;
+      border: 1px solid #0088cc;
     }
 
     .btn-telegram:hover {
       background-color: #0077b5;
-      box-shadow: 0 6px 20px rgba(0, 136, 204, 0.3);
-      transform: translateY(-2px);
+      border-color: #0077b5;
     }
 
-    /* Hero Section */
-    .hero {
-      padding: 180px 0 100px 0;
-      position: relative;
-      background: radial-gradient(ellipse at bottom, rgba(16, 185, 129, 0.03) 0%, rgba(9, 11, 14, 0) 70%),
-                  url('https://images.unsplash.com/photo-1552321554-5fecd8c78568?q=80&w=1600&auto=format&fit=crop') center center / cover no-repeat;
-    }
-
-    /* Dark Overlay for Hero Background */
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(180deg, rgba(9, 11, 14, 0.9) 0%, rgba(9, 11, 14, 0.7) 40%, rgba(9, 11, 14, 0.95) 100%);
-      z-index: 1;
-    }
-
-    .hero .container {
-      position: relative;
-      z-index: 2;
+    /* Split Section Layout (like lkstr.ru) */
+    .split-layout {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 50px;
-      align-items: center;
+      grid-template-columns: 1fr 1fr;
+      min-height: 100vh;
+      border-bottom: 1px solid var(--border-color);
     }
 
-    .hero-content {
-      text-align: left;
-    }
-
-    .city-badge {
-      background: rgba(16, 185, 129, 0.1);
-      border: 1px solid rgba(16, 185, 129, 0.2);
-      color: var(--accent);
-      padding: 6px 18px;
-      border-radius: 100px;
-      font-size: 13px;
-      font-weight: 700;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 30px;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-    }
-
-    .hero-title {
-      font-family: var(--font-title);
-      font-size: 54px;
-      font-weight: 800;
-      line-height: 1.15;
-      margin-bottom: 24px;
-      letter-spacing: -1px;
-    }
-
-    .hero-title span {
-      background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .hero-subtitle {
-      font-size: 18px;
-      color: var(--text-muted);
-      margin-bottom: 40px;
-      max-width: 600px;
-      line-height: 1.6;
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 16px;
-    }
-
-    /* Glassmorphic Cards (ooofedstroy right-side card) */
-    .glass-card-right {
-      background: rgba(15, 20, 28, 0.45);
-      border: 1px solid var(--border-color);
-      border-radius: 20px;
-      padding: 40px;
-      backdrop-filter: blur(15px);
-      -webkit-backdrop-filter: blur(15px);
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-      position: relative;
-      overflow: hidden;
-      transition: var(--transition);
-    }
-
-    .glass-card-right:hover {
-      border-color: var(--border-glow);
-      box-shadow: 0 30px 60px rgba(16, 185, 129, 0.1);
-    }
-
-    .glass-card-right::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 4px;
-      background: var(--gradient-accent);
-    }
-
-    .glass-card-title {
-      font-family: var(--font-title);
-      font-size: 24px;
-      font-weight: 800;
-      margin-bottom: 24px;
-      line-height: 1.3;
-    }
-
-    .glass-bullet-list {
+    .split-left {
+      background-color: var(--bg-white);
+      padding: 140px 60px 80px 60px;
       display: flex;
       flex-direction: column;
-      gap: 18px;
+      justify-content: space-between;
+      border-right: 1px solid var(--border-color);
     }
 
-    .glass-bullet {
-      display: flex;
-      gap: 16px;
-      align-items: flex-start;
-    }
-
-    .glass-bullet-icon {
-      width: 24px;
-      height: 24px;
-      background: rgba(16, 185, 129, 0.1);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--accent);
-      flex-shrink: 0;
-      font-size: 12px;
-      font-weight: bold;
-    }
-
-    .glass-bullet-text h4 {
-      font-size: 15px;
-      font-weight: 700;
-      margin-bottom: 4px;
-    }
-
-    .glass-bullet-text p {
-      font-size: 13px;
-      color: var(--text-muted);
-    }
-
-    /* Bottom Floating Cards (ooofedstroy home bottoms) */
-    .hero-bottom-cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      margin-top: 60px;
-    }
-
-    .floating-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: 16px;
-      padding: 30px;
-      display: flex;
-      gap: 20px;
-      align-items: center;
-      transition: var(--transition);
-      cursor: pointer;
-    }
-
-    .floating-card:hover {
-      background: var(--bg-card-hover);
-      border-color: var(--border-glow);
-      transform: translateY(-6px);
-      box-shadow: 0 15px 35px rgba(0,0,0,0.3);
-    }
-
-    .floating-card-icon {
-      width: 50px;
-      height: 50px;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid var(--border-color);
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--accent);
-      flex-shrink: 0;
-      transition: var(--transition);
-    }
-
-    .floating-card:hover .floating-card-icon {
-      background: var(--gradient-accent);
-      color: #000;
-      border-color: transparent;
-      transform: scale(1.1);
-    }
-
-    .floating-card-text h3 {
-      font-family: var(--font-title);
-      font-size: 18px;
-      font-weight: 700;
-      margin-bottom: 4px;
-    }
-
-    .floating-card-text p {
-      font-size: 13px;
-      color: var(--text-muted);
-    }
-
-    /* Section Header */
-    .section {
-      padding: 100px 0;
-      border-top: 1px solid var(--border-color);
+    .split-right {
       position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: stretch;
     }
 
-    .section-header {
-      text-align: center;
-      margin-bottom: 60px;
+    .split-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: var(--transition);
     }
 
-    .section-subtitle {
-      color: var(--accent);
-      font-size: 12px;
-      text-transform: uppercase;
-      font-weight: 800;
-      letter-spacing: 2px;
-      margin-bottom: 12px;
+    .split-left-top {
+      max-width: 500px;
+    }
+
+    .section-num {
+      font-family: var(--font-mono);
+      font-size: 14px;
+      color: var(--accent-blue);
+      margin-bottom: 24px;
       display: block;
     }
 
     .section-title {
       font-family: var(--font-title);
-      font-size: 42px;
-      font-weight: 800;
-      letter-spacing: -1px;
-    }
-
-    /* Section 2: Detailed calculation (ooofedstroy style) */
-    .split-section {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: center;
-    }
-
-    .split-content {
-      text-align: left;
-    }
-
-    .split-title {
-      font-family: var(--font-title);
-      font-size: 38px;
-      font-weight: 800;
-      line-height: 1.25;
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 1.1;
+      text-transform: uppercase;
+      letter-spacing: -1.5px;
       margin-bottom: 30px;
+      color: var(--text-dark);
     }
 
-    .split-bullets {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
+    .section-desc {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.6;
       margin-bottom: 40px;
     }
 
-    .split-bullet {
+    /* Parameters & Specs separated by thin lines (lkstr.ru style) */
+    .specs-list {
+      margin-top: auto;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .spec-item {
       display: flex;
-      gap: 16px;
-      align-items: center;
-    }
-
-    .split-bullet-circle {
-      width: 12px;
-      height: 12px;
-      background: var(--accent);
-      border-radius: 50%;
-      flex-shrink: 0;
-      box-shadow: 0 0 10px var(--accent);
-    }
-
-    .split-bullet-text {
-      font-size: 15px;
-      font-weight: 600;
-      color: var(--text-main);
-    }
-
-    .split-image-wrapper {
-      position: relative;
-      border-radius: 20px;
-      overflow: hidden;
-      border: 1px solid var(--border-color);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-    }
-
-    .split-image {
-      width: 100%;
-      height: 480px;
-      object-fit: cover;
-      transition: var(--transition);
-      display: block;
-    }
-
-    .split-image-wrapper:hover .split-image {
-      transform: scale(1.05);
-    }
-
-    /* Section 3: Tilted banner / Special offer */
-    .tilted-banner-container {
-      padding: 50px 0;
-      overflow: hidden;
-    }
-
-    .tilted-banner {
-      background: var(--gradient-tilted);
-      border: 1px solid rgba(37, 99, 235, 0.2);
-      border-radius: 24px;
-      padding: 60px;
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 50px;
-      align-items: center;
-      position: relative;
-      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
-    }
-
-    .tilted-banner-left {
-      text-align: left;
-    }
-
-    .tilted-banner-subtitle {
-      color: #38bdf8; /* sky blue */
+      justify-content: space-between;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border-color);
       font-size: 13px;
+    }
+
+    .spec-label {
+      font-family: var(--font-mono);
+      color: var(--text-muted);
       text-transform: uppercase;
+    }
+
+    .spec-value {
+      font-family: var(--font-mono);
       font-weight: 700;
-      letter-spacing: 1.5px;
-      margin-bottom: 12px;
-      display: block;
+      color: var(--text-dark);
     }
 
-    .tilted-banner-title {
+    /* Accordion Block (Гармошка) */
+    .accordion-container {
+      margin-top: 30px;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .accordion-item {
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .accordion-header {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 20px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-align: left;
+      cursor: pointer;
       font-family: var(--font-title);
-      font-size: 36px;
-      font-weight: 800;
-      line-height: 1.25;
-      margin-bottom: 20px;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text-dark);
+      text-transform: uppercase;
+      letter-spacing: -0.5px;
+      transition: var(--transition);
     }
 
-    .tilted-banner-desc {
-      font-size: 15px;
-      color: #93c5fd; /* light blue */
+    .accordion-header:hover {
+      color: var(--accent-blue);
+    }
+
+    .accordion-icon {
+      font-family: var(--font-mono);
+      font-size: 16px;
+      color: var(--accent-blue);
+      transition: var(--transition);
+    }
+
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    .accordion-content-inner {
+      padding: 0 0 24px 0;
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Stats Grid (lkstr.ru section 3) */
+    .stats-layout {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .stats-left {
+      background: var(--bg-light);
+      padding: 100px 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-right: 1px solid var(--border-color);
+      text-align: center;
+    }
+
+    .stats-title {
+      font-family: var(--font-title);
+      font-size: 28px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--text-muted);
+      margin-bottom: 40px;
+    }
+
+    .stat-num-box {
       margin-bottom: 30px;
     }
 
-    /* Tilted Card Effect */
-    .tilted-card-wrapper {
-      perspective: 1000px;
-      display: flex;
-      justify-content: center;
-    }
-
-    .tilted-card {
-      background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 20px;
-      padding: 35px;
-      transform: rotateY(-10deg) rotateX(10deg);
-      box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.5);
-      transition: var(--transition);
-      text-align: left;
-      position: relative;
-    }
-
-    .tilted-card:hover {
-      transform: rotateY(0deg) rotateX(0deg) translateY(-5px);
-      box-shadow: 0 25px 50px rgba(16, 185, 129, 0.2);
-      border-color: var(--accent);
-    }
-
-    .tilted-card-title {
+    .stat-num {
       font-family: var(--font-title);
-      font-size: 20px;
+      font-size: 96px;
       font-weight: 800;
-      margin-bottom: 16px;
-      color: #fff;
+      color: var(--accent-blue);
+      line-height: 1;
     }
 
-    .tilted-card-list {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
+    .stat-label {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      text-transform: uppercase;
+      color: var(--text-dark);
+      letter-spacing: 1.5px;
+      margin-top: 10px;
     }
 
-    .tilted-card-item {
-      display: flex;
-      gap: 10px;
-      font-size: 13px;
-      color: #bfdbfe;
-    }
-
-    .tilted-card-check {
-      color: var(--accent);
-      font-weight: bold;
-    }
-
-    /* Section 4: Project Grid (ooofedstroy Grid style) */
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      margin-top: 40px;
-    }
-
-    .portfolio-item {
-      position: relative;
-      border-radius: 16px;
-      overflow: hidden;
-      height: 300px;
-      border: 1px solid var(--border-color);
-      cursor: pointer;
-    }
-
-    .portfolio-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: var(--transition);
-    }
-
-    .portfolio-overlay {
-      position: absolute;
+    /* Quiz Area in Modal */
+    .modal {
+      display: none;
+      position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(180deg, rgba(9, 11, 14, 0.2) 0%, rgba(9, 11, 14, 0.9) 100%);
-      opacity: 0.9;
+      background: rgba(255, 255, 255, 0.98);
+      z-index: 10000;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      backdrop-filter: blur(15px);
+    }
+
+    .modal.active {
       display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: 24px;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 30px;
+      right: 40px;
+      color: var(--text-dark);
+      font-family: var(--font-mono);
+      font-size: 24px;
+      cursor: pointer;
       transition: var(--transition);
+      border: 1px solid var(--border-color);
+      padding: 6px 16px;
     }
 
-    .portfolio-item:hover .portfolio-img {
-      transform: scale(1.08);
-    }
-
-    .portfolio-item:hover .portfolio-overlay {
-      background: linear-gradient(180deg, rgba(16, 185, 129, 0.1) 0%, rgba(9, 11, 14, 0.95) 100%);
-    }
-
-    .portfolio-cat {
-      color: var(--accent);
-      font-size: 11px;
-      text-transform: uppercase;
-      font-weight: 700;
-      letter-spacing: 1px;
-      margin-bottom: 6px;
-    }
-
-    .portfolio-title {
-      font-family: var(--font-title);
-      font-size: 18px;
-      font-weight: 700;
+    .modal-close:hover {
+      background-color: var(--text-dark);
       color: #fff;
     }
 
-    /* Quiz Area */
     .quiz-box {
-      background: var(--bg-card);
+      background: #fff;
       border: 1px solid var(--border-color);
-      border-radius: 20px;
-      padding: 40px;
-      max-width: 800px;
-      margin: 0 auto;
+      padding: 50px;
+      max-width: 750px;
+      width: 100%;
       position: relative;
-      box-shadow: 0 30px 60px rgba(0,0,0,0.4);
-      backdrop-filter: blur(12px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.05);
     }
 
     .quiz-progress {
-      height: 4px;
-      background: rgba(255,255,255,0.05);
-      border-radius: 2px;
-      margin-bottom: 30px;
-      overflow: hidden;
+      height: 2px;
+      background: var(--border-color);
+      margin-bottom: 40px;
     }
 
     .quiz-progress-bar {
       height: 100%;
-      background: var(--gradient-accent);
+      background: var(--accent-blue);
       width: 25%;
       transition: var(--transition);
     }
@@ -743,75 +499,44 @@
 
     .quiz-step.active {
       display: block;
-      animation: fadeIn 0.4s ease;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
     }
 
     .quiz-question {
       font-family: var(--font-title);
-      font-size: 22px;
+      font-size: 24px;
       font-weight: 700;
-      margin-bottom: 24px;
+      margin-bottom: 30px;
+      text-transform: uppercase;
+      letter-spacing: -0.5px;
     }
 
     .quiz-options {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 16px;
-      margin-bottom: 30px;
+      margin-bottom: 40px;
     }
 
     .quiz-option {
-      background: rgba(255,255,255,0.01);
       border: 1px solid var(--border-color);
       padding: 20px;
-      border-radius: 12px;
       cursor: pointer;
       transition: var(--transition);
       display: flex;
       align-items: center;
       gap: 12px;
+      font-size: 14px;
       font-weight: 600;
     }
 
     .quiz-option:hover {
-      border-color: var(--border-glow);
-      background: rgba(16, 185, 129, 0.02);
+      border-color: var(--text-dark);
+      background-color: var(--bg-light);
     }
 
     .quiz-option.selected {
-      border-color: var(--accent);
-      background: rgba(16, 185, 129, 0.08);
-      box-shadow: 0 0 15px rgba(16, 185, 129, 0.1);
-    }
-
-    .radio-circle {
-      width: 20px;
-      height: 20px;
-      border: 2px solid var(--text-muted);
-      border-radius: 50%;
-      display: inline-block;
-      position: relative;
-      flex-shrink: 0;
-    }
-
-    .quiz-option.selected .radio-circle {
-      border-color: var(--accent);
-    }
-
-    .quiz-option.selected .radio-circle::after {
-      content: '';
-      width: 10px;
-      height: 10px;
-      background: var(--accent);
-      border-radius: 50%;
-      position: absolute;
-      top: 3px;
-      left: 3px;
+      border-color: var(--accent-blue);
+      background-color: var(--accent-light);
     }
 
     .quiz-footer {
@@ -819,20 +544,20 @@
       justify-content: space-between;
       align-items: center;
       border-top: 1px solid var(--border-color);
-      padding-top: 24px;
+      padding-top: 30px;
     }
 
-    /* Result Screen */
     .result-screen {
       text-align: center;
     }
 
     .result-title {
       font-family: var(--font-title);
-      font-size: 26px;
-      font-weight: 800;
-      color: var(--accent);
-      margin-bottom: 12px;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--accent-blue);
+      margin-bottom: 16px;
+      text-transform: uppercase;
     }
 
     .result-subtitle {
@@ -842,616 +567,459 @@
     }
 
     .gift-badge {
-      background: rgba(249, 115, 22, 0.1);
-      border: 1px solid rgba(249, 115, 22, 0.2);
-      color: #f97316;
+      background: var(--accent-light);
+      border: 1px solid var(--accent-border);
+      color: var(--accent-blue);
       padding: 10px 20px;
-      border-radius: 8px;
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      margin-bottom: 24px;
-      font-size: 14px;
-      font-weight: 600;
+      margin-bottom: 30px;
+      font-size: 13px;
+      font-family: var(--font-mono);
+      text-transform: uppercase;
     }
 
     .messenger-selection {
       display: flex;
       flex-direction: column;
       gap: 12px;
-      max-width: 400px;
+      max-width: 350px;
       margin: 0 auto;
     }
 
-    /* Modal Quiz Container */
-    .modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(9, 11, 14, 0.9);
-      z-index: 10000;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      backdrop-filter: blur(10px);
+    /* Calculator Block (lkstr.ru section 4 calculator style) */
+    .calc-box {
+      border: 1px solid var(--border-color);
+      padding: 40px;
+      background: var(--bg-light);
     }
 
-    .modal.active {
+    .calc-title {
+      font-family: var(--font-title);
+      font-size: 22px;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 12px;
+    }
+
+    .calc-row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .calc-group {
       display: flex;
+      flex-direction: column;
     }
 
-    .modal-close {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      color: #fff;
-      font-size: 30px;
-      cursor: pointer;
+    .calc-label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .calc-select, .calc-input {
+      width: 100%;
+      border: 1px solid var(--border-color);
+      background: #fff;
+      padding: 12px 16px;
+      font-family: var(--font-mono);
+      font-size: 13px;
+      outline: none;
       transition: var(--transition);
     }
 
-    .modal-close:hover {
-      color: var(--accent);
+    .calc-select:focus, .calc-input:focus {
+      border-color: var(--accent-blue);
     }
 
-    /* Price Table */
-    .price-table {
-      width: 100%;
-      border-collapse: collapse;
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: 16px;
-      overflow: hidden;
-      margin-top: 20px;
-    }
-
-    .price-table th {
-      background: rgba(255,255,255,0.02);
-      padding: 20px 24px;
-      text-align: left;
-      font-family: var(--font-title);
-      font-size: 16px;
-      font-weight: 600;
-      border-bottom: 1px solid var(--border-color);
-    }
-
-    .price-table td {
-      padding: 18px 24px;
-      border-bottom: 1px solid var(--border-color);
-      font-size: 15px;
-    }
-
-    .price-table tr:last-child td {
-      border-bottom: none;
-    }
-
-    .price-val {
-      font-family: var(--font-title);
-      font-weight: 700;
-      color: var(--accent);
-      text-align: right;
-    }
-
-    /* Dark Map wrapper */
-    .map-wrapper {
-      border-radius: 24px;
-      overflow: hidden;
-      border: 1px solid var(--border-color);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-      position: relative;
-      height: 450px;
-      background: #090b0e;
-    }
-
-    /* CSS filter to turn standard map to Dark Mode */
-    .map-dark {
-      filter: invert(90%) hue-rotate(180deg) contrast(120%);
+    /* Yandex Map */
+    .map-container {
       width: 100%;
       height: 100%;
-      border: none;
+      background: #e5e7eb;
     }
 
     /* Footer */
     footer {
-      background: #050608;
-      padding: 50px 0;
-      border-top: 1px solid var(--border-color);
+      background: #090a0d;
+      color: #7f8c8d;
+      padding: 60px 40px;
       font-size: 13px;
-      color: var(--text-muted);
+      border-top: 1px solid #1a1c22;
     }
 
     .footer-wrapper {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
-    /* Responsive adjustments */
+    /* Responsive */
     @media (max-width: 992px) {
-      .hero .container {
+      .split-layout {
         grid-template-columns: 1fr;
-        text-align: center;
+        min-height: auto;
       }
-      .hero-content {
-        text-align: center;
+      .split-left {
+        padding: 120px 30px 60px 30px;
       }
-      .hero-actions {
-        justify-content: center;
-      }
-      .hero-bottom-cards {
-        grid-template-columns: 1fr;
-      }
-      .split-section {
-        grid-template-columns: 1fr;
-      }
-      .tilted-banner {
-        grid-template-columns: 1fr;
-        padding: 30px;
-      }
-      .tilted-card-wrapper {
-        order: -1;
-      }
-      .portfolio-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 600px) {
-      header {
-        height: 75px;
-      }
-      .hero {
-        padding-top: 120px;
-      }
-      .hero-title {
-        font-size: 32px;
-      }
-      .hero-actions {
-        flex-direction: column;
-      }
-      .phone-desc {
-        display: none;
+      .split-right {
+        height: 400px;
       }
       .quiz-options {
         grid-template-columns: 1fr;
       }
-      .quiz-box {
-        padding: 24px 16px;
-      }
       .footer-wrapper {
         flex-direction: column;
-        gap: 20px;
+        gap: 30px;
         text-align: center;
       }
     }
   </style>
-  
-  <!-- YANDEX METRICA COUNTER -->
-  <!-- Сюда вставляется код Метрики -->
 </head>
 <body>
 
-  <div class="ambient-glow-1"></div>
-  <div class="ambient-glow-2"></div>
+  <!-- Custom Cursor Coordinates Ruler -->
+  <div class="tiling-ruler-h" id="ruler-h"></div>
+  <div class="tiling-ruler-v" id="ruler-v"></div>
+  <div class="ruler-coords" id="ruler-coords"></div>
 
   <!-- Header -->
   <header>
-    <div class="container header-wrapper">
+    <div class="header-wrapper">
       <a href="#" class="logo">
         <div class="logo-icon">CF</div>
-        <div class="logo-text">
+        <div>
           <span class="logo-title">Clima Flow</span>
           <span class="logo-subtitle">Плиточные работы</span>
         </div>
       </a>
       
-      <div class="header-contacts">
+      <div class="header-nav">
         <div class="phone-block">
-          <a href="tel:+79990000000" id="header_phone_link" class="phone-link">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            +7 (999) 000-00-00
-          </a>
-          <span class="phone-desc">Работаем по всей Москве и МО</span>
+          <a href="tel:+79990000000" id="header_phone_link" class="phone-link">+7 (999) 000-00-00</a>
+          <span class="phone-desc">Москва и Московская область</span>
         </div>
-        <button onclick="openModal()" class="btn btn-gradient" style="display: @media only screen and (max-width: 600px) { display: none; }">Рассчитать стоимость</button>
+        <button onclick="openModal()" class="btn btn-outline">Калькулятор</button>
       </div>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="container">
-      <div class="hero-content">
-        <div class="city-badge">
-          <span style="display:inline-block; width:8px; height:8px; background:var(--accent); border-radius:50%; box-shadow: 0 0 8px var(--accent);"></span>
-          Москва и Московская область
+  <!-- Section 1: Hero (Split 1) -->
+  <section class="split-layout">
+    <div class="split-left">
+      <div class="split-left-top">
+        <span class="section-num">01 / 04</span>
+        <h1 class="section-title">Инженерная<br>укладка плитки</h1>
+        <p class="section-desc">
+          Профессиональная облицовка керамогранитом, керамикой и мозаикой любой сложности в квартирах и коттеджах. Запил под 45 градусов и монтаж «под ключ» с гарантией по договору.
+        </p>
+        <button onclick="openModal()" class="btn btn-accent">Рассчитать стоимость</button>
+      </div>
+      
+      <div class="specs-list">
+        <div class="spec-item">
+          <span class="spec-label">Оплата за результат</span>
+          <span class="spec-value">Поэтапно, без предоплаты</span>
         </div>
-        <h1 class="hero-title">Профессиональная <span>укладка плитки</span> и ремонт санузлов под ключ</h1>
-        <p class="hero-subtitle">
-          Оплата строго по факту выполненных этапов (поэтапно, без предоплаты). Договор и официальная гарантия 3 года. Выезд на замер сегодня — 0 рублей!
+        <div class="spec-item">
+          <span class="spec-label">Инструмент мастера</span>
+          <span class="spec-value">Водяной плиткорез-мокрорез</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Юридический договор</span>
+          <span class="spec-value">Гарантия 3 года</span>
+        </div>
+      </div>
+    </div>
+    <div class="split-right">
+      <img class="split-image" src="https://images.unsplash.com/photo-1552321554-5fecd8c78568?q=80&w=1000&auto=format&fit=crop" alt="Укладка плитки в санузле">
+    </div>
+  </section>
+
+  <!-- Section 2: Services with Accordion (Split 2) -->
+  <section class="split-layout">
+    <div class="split-left">
+      <div class="split-left-top">
+        <span class="section-num">02 / 04</span>
+        <h2 class="section-title">Наши услуги</h2>
+        <p class="section-desc">
+          Выполняем полный комплекс сантехнических и плиточных работ. Работаем с премиальными материалами по строгим технологическим регламентам.
         </p>
         
-        <div class="hero-actions">
-          <button onclick="openModal()" class="btn btn-gradient">Быстрый расчет сметы</button>
-          <a href="#prices" class="btn btn-secondary">Посмотреть цены</a>
-        </div>
-      </div>
-
-      <!-- Glassmorphic Card (Right column) -->
-      <div class="glass-card-right">
-        <h3 class="glass-card-title">Комплексный монтаж «под ключ»:</h3>
-        <div class="glass-bullet-list">
-          <div class="glass-bullet">
-            <div class="glass-bullet-icon">1</div>
-            <div class="glass-bullet-text">
-              <h4>Укладка плитки любой сложности</h4>
-              <p>Работаем с керамогранитом, керамикой, мозаикой и натуральным камнем.</p>
+        <!-- Accordion Block (Гармошка) -->
+        <div class="accordion-container">
+          <div class="accordion-item">
+            <button class="accordion-header" onclick="toggleAccordion(this)">
+              <span>Укладка керамогранита</span>
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="accordion-content">
+              <div class="accordion-content-inner">
+                Работаем с любыми форматами (60х60, 120х60, крупноформатные плиты). Идеальная калибровка швов с использованием СВП, качественные клеевые составы высокой эластичности.
+              </div>
             </div>
           </div>
           
-          <div class="glass-bullet">
-            <div class="glass-bullet-icon">2</div>
-            <div class="glass-bullet-text">
-              <h4>Проектирование и геометрия</h4>
-              <p>Проверяем ровность стен, выравниваем плоскость и делаем идеальную раскладку.</p>
+          <div class="accordion-item">
+            <button class="accordion-header" onclick="toggleAccordion(this)">
+              <span>Запилы под 45 градусов</span>
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="accordion-content">
+              <div class="accordion-content-inner">
+                Заусовка плитки на профессиональных водяных станках-мокрорезах. Идеально ровный внешний угол без сколов и зазубрин, заполняемый эпоксидной затиркой.
+              </div>
             </div>
           </div>
           
-          <div class="glass-bullet">
-            <div class="glass-bullet-icon">3</div>
-            <div class="glass-bullet-text">
-              <h4>Собственные мокрорезы</h4>
-              <p>Чистый срез под 45 градусов без сколов. Профессиональные станки.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Bottom Floating Cards -->
-    <div class="container">
-      <div class="hero-bottom-cards">
-        <div class="floating-card" onclick="openModal()">
-          <div class="floating-card-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-          </div>
-          <div class="floating-card-text">
-            <h3>Без предоплаты</h3>
-            <p>Вы оплачиваете работу только после приемки каждого этапа.</p>
-          </div>
-        </div>
-        
-        <div class="floating-card" onclick="openModal()">
-          <div class="floating-card-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-          </div>
-          <div class="floating-card-text">
-            <h3>Договор и Гарантия</h3>
-            <p>Гарантия 3 года. Фиксируем смету до начала работ.</p>
-          </div>
-        </div>
-        
-        <div class="floating-card" onclick="openModal()">
-          <div class="floating-card-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-          </div>
-          <div class="floating-card-text">
-            <h3>Идеальный рез 45°</h3>
-            <p>Чистая заусовка краев плитки на водяном плиткорезе.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Section 2: Detailed calculation / Split design -->
-  <section class="section">
-    <div class="container split-section">
-      <div class="split-content">
-        <h2 class="split-title">Подробный расчет стоимости работ</h2>
-        <div class="split-bullets">
-          <div class="split-bullet">
-            <div class="split-bullet-circle"></div>
-            <div class="split-bullet-text">Учитываем все пожелания и требования заказчика</div>
-          </div>
-          <div class="split-bullet">
-            <div class="split-bullet-circle"></div>
-            <div class="split-bullet-text">Подсказываем, как лучше сэкономить без потери качества</div>
-          </div>
-          <div class="split-bullet">
-            <div class="split-bullet-circle"></div>
-            <div class="split-bullet-text">Ответим на вопросы и дадим полную консультацию</div>
-          </div>
-          <div class="split-bullet">
-            <div class="split-bullet-circle"></div>
-            <div class="split-bullet-text">Рассчитаем стоимость с учётом всех деталей и ТЗ</div>
-          </div>
-        </div>
-        <button onclick="openModal()" class="btn btn-gradient">Рассчитать стоимость</button>
-      </div>
-      
-      <div class="split-image-wrapper">
-        <img class="split-image" src="https://images.unsplash.com/photo-1581094288338-2314dddb7ecc?q=80&w=800&auto=format&fit=crop" alt="Профессиональный плиточник за работой">
-      </div>
-    </div>
-  </section>
-
-  <!-- Section 3: Tilted Banner / Special offer -->
-  <section class="section tilted-banner-container">
-    <div class="container">
-      <div class="tilted-banner">
-        <div class="tilted-banner-left">
-          <span class="tilted-banner-subtitle">Специальное предложение</span>
-          <h2 class="tilted-banner-title">Скидка 10% на укладку плитки при ремонте под ключ</h2>
-          <p class="tilted-banner-desc">
-            Закажите комплексный ремонт ванной комнаты или санузла под ключ, и мы сделаем скидку 10% на все плиточные работы, а также подарим бесплатную 3D-визуализацию!
-          </p>
-          <button onclick="openModal()" class="btn btn-secondary">Заказать расчет</button>
-        </div>
-        
-        <div class="tilted-card-wrapper">
-          <div class="tilted-card">
-            <h3 class="tilted-card-title">Строительство «Под Ключ»</h3>
-            <div class="tilted-card-list">
-              <div class="tilted-card-item">
-                <span class="tilted-card-check">✔</span>
-                <span>Для частных и коммерческих объектов</span>
-              </div>
-              <div class="tilted-card-item">
-                <span class="tilted-card-check">✔</span>
-                <span>Все типы подсистем и выравнивания</span>
-              </div>
-              <div class="tilted-card-item">
-                <span class="tilted-card-check">✔</span>
-                <span>Внешняя и внутренняя отделка</span>
-              </div>
-              <div class="tilted-card-item">
-                <span class="tilted-card-check">✔</span>
-                <span>Сдача объекта строго в срок по договору</span>
+          <div class="accordion-item">
+            <button class="accordion-header" onclick="toggleAccordion(this)">
+              <span>Душевые поддоны под ключ</span>
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="accordion-content">
+              <div class="accordion-content-inner">
+                Изготовление поддонов из кирпича с формированием правильного уклона (контруклона) к трапу. Двухслойная обмазочная гидроизоляция и облицовка мозаикой или керамогранитом.
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <div class="split-right">
+      <img class="split-image" src="https://images.unsplash.com/photo-1581094288338-2314dddb7ecc?q=80&w=1000&auto=format&fit=crop" alt="Процесс укладки керамогранита мастером">
+    </div>
   </section>
 
-  <!-- Section 4: Projects Portfolio (ooofedstroy Grid style) -->
-  <section id="portfolio" class="section">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-subtitle">Наши объекты</span>
-        <h2 class="section-title">Примеры выполненных работ</h2>
+  <!-- Section 3: Numbers & Slider stats (Split 3 - Stats style) -->
+  <section class="split-layout stats-layout">
+    <div class="stats-left">
+      <h2 class="stats-title">Наши цифры</h2>
+      <div class="stat-num-box">
+        <div class="stat-num" id="stat-number">10</div>
+        <div class="stat-label" id="stat-text">Лет опыта работы</div>
       </div>
-      
-      <div class="portfolio-grid">
-        <div class="portfolio-item" onclick="openModal()">
-          <img class="portfolio-img" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=600&auto=format&fit=crop" alt="Укладка керамогранита">
-          <div class="portfolio-overlay">
-            <span class="portfolio-cat">Частным заказчикам</span>
-            <h4 class="portfolio-title">Ванная комната в ЖК «Маяк» ➔</h4>
+      <div style="display: flex; gap: 10px; margin-top: 20px;">
+        <button onclick="changeStat(-1)" class="btn btn-outline" style="padding: 10px 16px;"><</button>
+        <button onclick="changeStat(1)" class="btn btn-outline" style="padding: 10px 16px;">></button>
+      </div>
+    </div>
+    
+    <!-- Calculator / Estimator Form on the right (lkstr.ru style) -->
+    <div class="split-left" style="border-right: none;">
+      <div class="calc-box">
+        <h3 class="calc-title">Калькулятор доставки сметы</h3>
+        <form onsubmit="event.preventDefault(); openModal();">
+          <div class="calc-row">
+            <div class="calc-group">
+              <span class="calc-label">Тип объекта</span>
+              <select class="calc-select" id="calc-type">
+                <option>Санузел под ключ</option>
+                <option>Фартук на кухню</option>
+                <option>Укладка пола</option>
+              </select>
+            </div>
+            <div class="calc-group">
+              <span class="calc-label">Тип плитки</span>
+              <select class="calc-select" id="calc-tile">
+                <option>Керамогранит (60х60 / 120х60)</option>
+                <option>Обычная керамика</option>
+                <option>Крупный формат</option>
+              </select>
+            </div>
           </div>
-        </div>
-        
-        <div class="portfolio-item" onclick="openModal()">
-          <img class="portfolio-img" src="https://images.unsplash.com/photo-1552321554-5fecd8c78568?q=80&w=600&auto=format&fit=crop" alt="Ремонт санузла">
-          <div class="portfolio-overlay">
-            <span class="portfolio-cat">Частным заказчикам</span>
-            <h4 class="portfolio-title">Крупный формат 120х60 в санузле ➔</h4>
+          
+          <div class="calc-row">
+            <div class="calc-group">
+              <span class="calc-label">Площадь (м²)</span>
+              <input type="number" class="calc-input" id="calc-area" placeholder="Например: 15" required>
+            </div>
+            <div class="calc-group">
+              <span class="calc-label">Запилы под 45° (пог.м)</span>
+              <input type="number" class="calc-input" id="calc-miter" placeholder="Например: 8">
+            </div>
           </div>
-        </div>
-        
-        <div class="portfolio-item" onclick="openModal()">
-          <img class="portfolio-img" src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=600&auto=format&fit=crop" alt="Облицовка стен">
-          <div class="portfolio-overlay">
-            <span class="portfolio-cat">Коммерческие объекты</span>
-            <h4 class="portfolio-title">Облицовка пола в ресторане ➔</h4>
-          </div>
-        </div>
+          <button type="submit" class="btn btn-accent" style="width: 100%; margin-top: 15px;">Рассчитать стоимость</button>
+        </form>
       </div>
     </div>
   </section>
 
-  <!-- Prices Section -->
-  <section id="prices" class="section">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-subtitle">Честные расценки</span>
-        <h2 class="section-title">Цены на плиточные работы в Москве</h2>
-      </div>
-
-      <table class="price-table">
-        <thead>
-          <tr>
-            <th>Вид отделочных / плиточных работ</th>
-            <th style="text-align: right;">Стоимость работ</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Укладка стандартной керамической плитки (до 40х40)</td>
-            <td class="price-val">от 1 800 руб/м²</td>
-          </tr>
-          <tr>
-            <td>Укладка стандартного керамогранита (60х60)</td>
-            <td class="price-val">от 2 200 руб/м²</td>
-          </tr>
-          <tr>
-            <td>Укладка крупноформатного керамогранита (120х60)</td>
-            <td class="price-val">от 2 800 руб/м²</td>
-          </tr>
-          <tr>
-            <td>Укладка мозаики и художественного панно</td>
-            <td class="price-val">от 4 000 руб/м²</td>
-          </tr>
-          <tr>
-            <td>Запил наружных углов плитки под 45° (чистый угол)</td>
-            <td class="price-val">от 2 000 руб/пог.м</td>
-          </tr>
-          <tr>
-            <td>Сверление круглых отверстий в керамограните под коммуникации</td>
-            <td class="price-val">от 500 руб/шт</td>
-          </tr>
-          <tr>
-            <td>Затирка плиточных швов эпоксидной двухкомпонентной смесью</td>
-            <td class="price-val">от 800 руб/м²</td>
-          </tr>
-          <tr>
-            <td>Комплексный ремонт санузла / ванной комнаты под ключ</td>
-            <td class="price-val">от 90 000 руб</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <!-- Section 5: Map & Coverage (ooofedstroy dark map design style) -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-subtitle">Где мы работаем</span>
-        <h2 class="section-title">Зона обслуживания в Москве и МО</h2>
+  <!-- Section 4: Map (Split 4) -->
+  <section class="split-layout">
+    <div class="split-left">
+      <div class="split-left-top">
+        <span class="section-num">04 / 04</span>
+        <h2 class="section-title">География работы</h2>
+        <p class="section-desc">
+          Принимаем заказы по Москве и всей Московской области (до 30 км от МКАД). Выезд инженера-сметчика для замера и составления сметы бесплатный.
+        </p>
       </div>
       
-      <div class="map-wrapper">
-        <!-- Iframe with dark filter applied via CSS -->
-        <iframe class="map-dark" src="https://yandex.ru/map-widget/v1/?ll=37.6173%2C55.7558&z=10&l=map" allowfullscreen="true"></iframe>
+      <div class="specs-list">
+        <div class="spec-item">
+          <span class="spec-label">Москва</span>
+          <span class="spec-value">Выезд бесплатный</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Московская область</span>
+          <span class="spec-value">До 30 км от МКАД</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Время реагирования</span>
+          <span class="spec-value">Замер в день звонка</span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Yandex Map in the right column -->
+    <div class="split-right">
+      <div class="map-container">
+        <!-- Light map to match the white theme -->
+        <iframe src="https://yandex.ru/map-widget/v1/?ll=37.6173%2C55.7558&z=10&l=map" width="100%" height="100%" style="border:none;" allowfullscreen="true"></iframe>
       </div>
     </div>
   </section>
 
   <!-- Modal window with Quiz -->
   <div class="modal" id="quiz-modal">
-    <div class="modal-close" onclick="closeModal()">×</div>
+    <div class="modal-close" onclick="closeModal()">Закрыть ×</div>
     
     <div class="quiz-box">
       <div class="quiz-progress">
         <div class="quiz-progress-bar" id="progress-bar"></div>
       </div>
 
-      <!-- Step 1: Type of work -->
+      <!-- Step 1 -->
       <div class="quiz-step active" id="step-1">
-        <h3 class="quiz-question">1. Какой объем работ по плитке требуется выполнить?</h3>
+        <h3 class="quiz-question">Какой объем работ по плитке требуется выполнить?</h3>
         <div class="quiz-options">
           <div class="quiz-option" onclick="selectOption(1, 'Санузел / ванная комната под ключ')">
             <span class="radio-circle"></span>
-            <span>Санузел / ванная под ключ</span>
+            <span>Санузел под ключ</span>
           </div>
-          <div class="quiz-option" onclick="selectOption(1, 'Укладка плитки на пол (квартира / дом)')">
+          <div class="quiz-option" onclick="selectOption(1, 'Укладка плитки на пол')">
             <span class="radio-circle"></span>
             <span>Укладка плитки на пол</span>
           </div>
-          <div class="quiz-option" onclick="selectOption(1, 'Облицовка плиткой стен в помещении')">
+          <div class="quiz-option" onclick="selectOption(1, 'Облицовка стен плиткой')">
             <span class="radio-circle"></span>
-            <span>Облицовка стен плиткой</span>
+            <span>Облицовка стен</span>
           </div>
           <div class="quiz-option" onclick="selectOption(1, 'Кухонный фартук')">
             <span class="radio-circle"></span>
-            <span>Фартук на кухню</span>
+            <span>Кухонный фартук</span>
           </div>
         </div>
         <div class="quiz-footer">
-          <span style="color:var(--text-muted)">Шаг 1 из 4</span>
-          <button class="btn btn-gradient" onclick="nextStep(2)">Далее</button>
+          <span style="font-family:var(--font-mono); font-size:12px;">Шаг 1 из 4</span>
+          <button class="btn btn-accent" onclick="nextStep(2)">Далее</button>
         </div>
       </div>
 
-      <!-- Step 2: Area size -->
+      <!-- Step 2 -->
       <div class="quiz-step" id="step-2">
-        <h3 class="quiz-question">2. Примерная площадь поверхности под укладку?</h3>
+        <h3 class="quiz-question">Примерная площадь поверхности под укладку?</h3>
         <div class="quiz-options">
           <div class="quiz-option" onclick="selectOption(2, 'Малая площадь (до 5 м²)')">
             <span class="radio-circle"></span>
-            <span>Малая площадь (до 5 м²)</span>
+            <span>До 5 м²</span>
           </div>
           <div class="quiz-option" onclick="selectOption(2, 'Средняя площадь (5 - 15 м²)')">
             <span class="radio-circle"></span>
-            <span>Средняя площадь (5 - 15 м²)</span>
+            <span>5 - 15 м²</span>
           </div>
           <div class="quiz-option" onclick="selectOption(2, 'Крупная площадь (15 - 40 м²)')">
             <span class="radio-circle"></span>
-            <span>Крупная площадь (15 - 40 м²)</span>
+            <span>15 - 40 м²</span>
           </div>
           <div class="quiz-option" onclick="selectOption(2, 'Большой объем (более 40 м²)')">
             <span class="radio-circle"></span>
-            <span>Большой объем (более 40 м²)</span>
+            <span>Более 40 м²</span>
           </div>
         </div>
         <div class="quiz-footer">
-          <button class="btn btn-secondary" onclick="prevStep(1)">Назад</button>
-          <span style="color:var(--text-muted)">Шаг 2 из 4</span>
-          <button class="btn btn-gradient" onclick="nextStep(3)">Далее</button>
+          <button class="btn btn-outline" onclick="prevStep(1)">Назад</button>
+          <span style="font-family:var(--font-mono); font-size:12px;">Шаг 2 из 4</span>
+          <button class="btn btn-accent" onclick="nextStep(3)">Далее</button>
         </div>
       </div>
 
-      <!-- Step 3: Tile type -->
+      <!-- Step 3 -->
       <div class="quiz-step" id="step-3">
-        <h3 class="quiz-question">3. С каким материалом будем работать?</h3>
+        <h3 class="quiz-question">С каким материалом будем работать?</h3>
         <div class="quiz-options">
-          <div class="quiz-option" onclick="selectOption(3, 'Стандартный керамогранит (60x60, 40x40)')">
+          <div class="quiz-option" onclick="selectOption(3, 'Керамогранит (60x60, 120x60)')">
             <span class="radio-circle"></span>
-            <span>Керамогранит (60x60 / 120x60)</span>
+            <span>Керамогранит</span>
           </div>
           <div class="quiz-option" onclick="selectOption(3, 'Обычная керамическая плитка')">
             <span class="radio-circle"></span>
-            <span>Обычная керамическая плитка</span>
+            <span>Керамическая плитка</span>
           </div>
-          <div class="quiz-option" onclick="selectOption(3, 'Крупноформатные плиты (более 120 см)')">
+          <div class="quiz-option" onclick="selectOption(3, 'Крупноформатные плиты')">
             <span class="radio-circle"></span>
             <span>Крупноформатные плиты</span>
           </div>
           <div class="quiz-option" onclick="selectOption(3, 'Художественная мозаика')">
             <span class="radio-circle"></span>
-            <span>Художественная мозаика</span>
+            <span>Мозаика</span>
           </div>
         </div>
         <div class="quiz-footer">
-          <button class="btn btn-secondary" onclick="prevStep(2)">Назад</button>
-          <span style="color:var(--text-muted)">Шаг 3 из 4</span>
-          <button class="btn btn-gradient" onclick="nextStep(4)">Далее</button>
+          <button class="btn btn-outline" onclick="prevStep(2)">Назад</button>
+          <span style="font-family:var(--font-mono); font-size:12px;">Шаг 3 из 4</span>
+          <button class="btn btn-accent" onclick="nextStep(4)">Далее</button>
         </div>
       </div>
 
-      <!-- Step 4: Demolition -->
+      <!-- Step 4 -->
       <div class="quiz-step" id="step-4">
-        <h3 class="quiz-question">4. Требуется ли демонтаж старой плитки / подготовка?</h3>
+        <h3 class="quiz-question">Требуется ли демонтаж старого покрытия?</h3>
         <div class="quiz-options">
-          <div class="quiz-option" onclick="selectOption(4, 'Да, демонтаж старого покрытия необходим')">
+          <div class="quiz-option" onclick="selectOption(4, 'Да, демонтаж необходим')">
             <span class="radio-circle"></span>
-            <span>Да, нужен полный демонтаж</span>
+            <span>Да, демонтаж нужен</span>
           </div>
-          <div class="quiz-option" onclick="selectOption(4, 'Нет, стены/пол чистые, готовы к укладке')">
+          <div class="quiz-option" onclick="selectOption(4, 'Нет, стены/пол готовы к укладке')">
             <span class="radio-circle"></span>
-            <span>Нет, поверхности чистые/готовые</span>
+            <span>Нет, поверхности готовы</span>
           </div>
         </div>
         <div class="quiz-footer">
-          <button class="btn btn-secondary" onclick="prevStep(3)">Назад</button>
-          <span style="color:var(--text-muted)">Шаг 4 из 4</span>
-          <button class="btn btn-gradient" onclick="showResults()">Получить расчет</button>
+          <button class="btn btn-outline" onclick="prevStep(3)">Назад</button>
+          <span style="font-family:var(--font-mono); font-size:12px;">Шаг 4 из 4</span>
+          <button class="btn btn-accent" onclick="showResults()">Получить расчет</button>
         </div>
       </div>
 
       <!-- Result Screen -->
       <div class="quiz-step" id="step-result">
         <div class="result-screen">
-          <div class="result-title">🎉 Расчет готов!</div>
-          <p class="result-subtitle">Выберите удобный мессенджер для моментального получения детальной сметы и подарка:</p>
+          <div class="result-title">Расчет сметы готов!</div>
+          <p class="result-subtitle">Выберите мессенджер для моментального получения сметы:</p>
           
           <div class="gift-badge">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 12V22H4V12"/><path d="M2 7H22V12H2V7Z"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7Z"/><path d="M12 7H16.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7Z"/></svg>
-            <span>+ Подарок: Бесплатная 3D-раскладка плитки</span>
+            <span>+ Подарок: Бесплатный 3D-макет раскладки плитки</span>
           </div>
 
           <div class="messenger-selection">
-            <a href="https://wa.me/79990000000?text=Здравствуйте!%20Я%20прошел%20опрос.%20Хочу%20получить%20смету%20по%20плитке%20и%20подарок." target="_blank" class="btn btn-whatsapp" id="whatsapp-result-btn">
-              Получить смету в WhatsApp
+            <a href="https://wa.me/79990000000?text=Здравствуйте!" target="_blank" class="btn btn-whatsapp" id="whatsapp-result-btn">
+              Смета в WhatsApp
             </a>
             <a href="https://t.me/your_telegram_bot" target="_blank" class="btn btn-telegram" id="telegram-result-btn">
-              Получить смету в Telegram
+              Смета в Telegram
             </a>
           </div>
         </div>
@@ -1461,20 +1029,100 @@
 
   <!-- Footer -->
   <footer>
-    <div class="container footer-wrapper">
+    <div class="footer-wrapper">
       <div>
-        <p>&copy; 2026 Clima Flow Ремонт. Все права защищены.</p>
-        <p style="margin-top: 6px; font-size: 11px; color: rgba(255,255,255,0.15);">Услуги предоставляет ИП Султанов Н.В., ОГРНИП 322774600123456</p>
+        <p>&copy; 2026 Clima Flow. Все права защищены.</p>
+        <p style="margin-top: 6px; font-size: 11px; color: #555;">ИП Султанов Н.В., ОГРНИП 322774600123456</p>
       </div>
       <div style="text-align: right;">
         <p>Адрес офиса: г. Москва, ул. Ленинский проспект, д. 45</p>
-        <p style="margin-top: 6px;">Электронная почта: info@climaflow312.com</p>
+        <p style="margin-top: 6px;">Почта: info@climaflow312.com</p>
       </div>
     </div>
   </footer>
 
-  <!-- Quiz & Modal Logic -->
+  <!-- Script Logic -->
   <script>
+    // 1. Accordion Toggle Logic (Гармошка)
+    function toggleAccordion(header) {
+      const content = header.nextElementSibling;
+      const icon = header.querySelector('.accordion-icon');
+      
+      // Close all other accordions first
+      const allContents = document.querySelectorAll('.accordion-content');
+      const allIcons = document.querySelectorAll('.accordion-icon');
+      
+      allContents.forEach((c, idx) => {
+        if (c !== content) {
+          c.style.maxHeight = null;
+          allIcons[idx].innerText = '+';
+        }
+      });
+
+      if (content.style.maxHeight) {
+        content.style.maxHeight = null;
+        icon.innerText = '+';
+      } else {
+        content.style.maxHeight = content.scrollHeight + "px";
+        icon.innerText = '−';
+      }
+    }
+
+    // 2. Custom Tiling Ruler/Cursor Logic (Координатная линейка)
+    const rulerH = document.getElementById('ruler-h');
+    const rulerV = document.getElementById('ruler-v');
+    const rulerCoords = document.getElementById('ruler-coords');
+
+    document.addEventListener('mousemove', function(e) {
+      const x = e.clientX;
+      const y = e.clientY;
+      
+      // Display lines and tooltip
+      rulerH.style.display = 'block';
+      rulerV.style.display = 'block';
+      rulerCoords.style.display = 'block';
+      
+      // Update position
+      rulerH.style.top = y + 'px';
+      rulerV.style.left = x + 'px';
+      
+      rulerCoords.style.left = (x + 15) + 'px';
+      rulerCoords.style.top = (y + 15) + 'px';
+      
+      // Format coordinates as realistic tile measurements (e.g. standard 600x600 tiles grid)
+      // Showing coordinate value in millimeters
+      const tileWidth = 600; // mm
+      const tileHeight = 600; // mm
+      
+      const mmX = Math.round(x * 2.5); // scaled for realism
+      const mmY = Math.round(y * 2.5);
+      
+      rulerCoords.innerHTML = `ПЛИТКА: 600x600 мм<br>ШОВ X: ${mmX} мм<br>ШОВ Y: ${mmY} мм<br>РЕЗ: 45°`;
+    });
+
+    document.addEventListener('mouseleave', function() {
+      rulerH.style.display = 'none';
+      rulerV.style.display = 'none';
+      rulerCoords.style.display = 'none';
+    });
+
+    // 3. Stats slider (Цифры в числах)
+    const stats = [
+      { num: '10', text: 'Лет опыта работы наших бригад' },
+      { num: '340+', text: 'Успешно сданных санузлов под ключ' },
+      { num: '0', text: 'Предоплаты. Оплата только за результат' }
+    ];
+    let currentStatIdx = 0;
+
+    function changeStat(dir) {
+      currentStatIdx = (currentStatIdx + dir + stats.length) % stats.length;
+      
+      // update text
+      document.getElementById('stat-number').innerText = stats[currentStatIdx].num;
+      document.getElementById('stat-text').innerText = stats[currentStatIdx].text;
+    }
+
+    // 4. Quiz Logic & Modal
     const quizAnswers = {
       step1: '',
       step2: '',
@@ -1483,6 +1131,12 @@
     };
 
     function openModal() {
+      // Prefill fields from local calculator if filled
+      const areaVal = document.getElementById('calc-area').value;
+      if (areaVal) {
+        quizAnswers.step2 = `Площадь: ${areaVal} м²`;
+      }
+      
       document.getElementById('quiz-modal').classList.add('active');
     }
 
@@ -1542,20 +1196,16 @@
       document.getElementById('step-result').classList.add('active');
       document.getElementById('progress-bar').style.width = `100%`;
 
-      // Update WhatsApp link text with the quiz answers!
-      const waText = `Здравствуйте! Я прошел опрос на укладку плитки:\n` +
+      const waText = `Здравствуйте! Я прошел опрос на укладку плитки в Москве:\n` +
                      `1. Объем: ${quizAnswers.step1}\n` +
                      `2. Площадь: ${quizAnswers.step2}\n` +
                      `3. Плитка: ${quizAnswers.step3}\n` +
                      `4. Демонтаж: ${quizAnswers.step4}\n` +
-                     `Хочу получить точный расчет цены и макет в подарок.`;
+                     `Хочу получить расчет цены и 3D макет раскладки в подарок.`;
       
       const encodedText = encodeURIComponent(waText);
-      
-      // Update link
-      const waBtn = document.getElementById('whatsapp-result-btn');
-      const currentPhone = "79990000000"; // Placeholder, can be dynamically swapped
-      waBtn.href = `https://wa.me/${currentPhone}?text=${encodedText}`;
+      const currentPhone = "79990000000"; // Placeholder
+      document.getElementById('whatsapp-result-btn').href = `https://wa.me/${currentPhone}?text=${encodedText}`;
     }
   </script>
 
