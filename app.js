@@ -460,6 +460,15 @@ document.addEventListener('DOMContentLoaded', () => {
         'event_category': category,
         'event_label': window.location.pathname
       });
+
+      // Special trigger for Google Ads WhatsApp conversion
+      if (eventName === 'click_whatsapp') {
+        gtag('event', 'conversion', {
+          'send_to': 'AW-18179314654/fYWbCP7z09gcEN6nydxd'
+        });
+        console.log(`[ClimaFlow Ads] Direct WhatsApp conversion triggered: AW-18179314654/fYWbCP7z09gcEN6nydxd`);
+      }
+
       console.log(`[ClimaFlow Track] Event sent to gtag: ${eventName}`);
     } else {
       console.log(`[ClimaFlow Track] Event pushed to dataLayer: ${eventName}`);
