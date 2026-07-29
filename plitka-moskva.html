@@ -790,6 +790,51 @@
         height: 500px !important; /* give enough height for vertical slider */
       }
     }
+
+    /* Mobile Header Layout (Phone under Logo and Button) */
+    @media (max-width: 600px) {
+      header {
+        height: auto !important;
+        padding: 12px 0;
+      }
+      .header-wrapper {
+        display: grid;
+        grid-template-areas: 
+          "logo btn"
+          "phone phone";
+        grid-template-columns: 1fr auto;
+        gap: 10px;
+        padding: 0 20px;
+      }
+      .logo {
+        grid-area: logo;
+        align-self: center;
+      }
+      .header-nav {
+        display: contents;
+      }
+      .phone-block {
+        grid-area: phone;
+        text-align: center;
+        border-top: 1px solid var(--border-color);
+        padding-top: 8px;
+        width: 100%;
+      }
+      .phone-link {
+        font-size: 15px;
+        display: inline-block;
+      }
+      .header-nav button {
+        grid-area: btn;
+        padding: 10px 18px;
+        font-size: 11px;
+        align-self: center;
+      }
+      /* Prevent header overlap on first section */
+      .split-layout:first-of-type .split-left {
+        padding-top: 160px !important;
+      }
+    }
   </style>
 </head>
 <body>
