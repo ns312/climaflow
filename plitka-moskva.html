@@ -1290,6 +1290,49 @@
       color: rgba(255, 255, 255, 0.85);
       line-height: 1.4;
     }
+
+    /* Partners Block Styles */
+    .partners-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 20px;
+      margin-top: 40px;
+    }
+    .partner-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 15px 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      filter: grayscale(100%);
+      opacity: 0.5;
+    }
+    .partner-card:hover {
+      filter: grayscale(0%);
+      opacity: 1;
+      transform: translateY(-4px);
+      border-color: var(--text-dark);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.05);
+    }
+    .partner-svg {
+      width: 100%;
+      height: auto;
+      max-height: 45px;
+    }
+    @media (max-width: 992px) {
+      .partners-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    @media (max-width: 576px) {
+      .partners-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -1350,7 +1393,7 @@
   <section class="split-layout">
     <div class="split-left">
       <div class="split-left-top">
-        <span class="section-num">01 / 07</span>
+        <span class="section-num">01 / 08</span>
         <h1 class="section-title">Инженерная<br>укладка плитки</h1>
         <p class="section-desc">
           Профессиональная облицовка керамогранитом, керамикой и мозаикой любой сложности в квартирах и коттеджах. Запил под 45 градусов и монтаж «под ключ» с гарантией по договору.
@@ -1382,7 +1425,7 @@
   <section class="split-layout">
     <div class="split-left">
       <div class="split-left-top">
-        <span class="section-num">02 / 07</span>
+        <span class="section-num">02 / 08</span>
         <h2 class="section-title">Наши услуги</h2>
         <p class="section-desc">
           Выполняем полный комплекс сантехнических и плиточных работ. Работаем с премиальными материалами по строгим технологическим регламентам.
@@ -1436,7 +1479,7 @@
   <!-- Section 3: Seasonal Promotions (Split 3 - Promotions Grid) -->
   <section class="section" style="background-color: #ffffff; border-top: 1px solid var(--border-color); padding: 80px 0; overflow: hidden;">
     <div class="container" style="margin-bottom: 40px; text-align: left; padding: 0 40px;">
-      <span class="section-num">03 / 07</span>
+      <span class="section-num">03 / 08</span>
       <h2 class="section-title" style="margin-bottom: 12px;">Сезонные акции</h2>
       <p class="section-desc" style="margin-bottom: 0; max-width: 800px;">
         Специальные предложения и подарки для клиентов Clima Flow в Москве. Сделайте ремонт санузла выгодным и безопасным.
@@ -1498,7 +1541,7 @@
   <section class="split-layout">
     <div class="split-left">
       <div class="split-left-top">
-        <span class="section-num">04 / 07</span>
+        <span class="section-num">04 / 08</span>
         <h2 class="section-title">Примеры работ</h2>
         <p class="section-desc">
           Фотографии готовых санузлов и процесса укладки, выполненные нашими мастерами в Москве. Только реальные объекты и честное качество без ретуши.
@@ -1569,7 +1612,7 @@
   <!-- Section 5: Numbers & Slider stats (Split 5 - Stats style) -->
   <section class="split-layout stats-layout">
     <div class="stats-left">
-      <span class="section-num" style="color: rgba(255,255,255,0.4); margin-bottom: 20px; display: block;">05 / 07</span>
+      <span class="section-num" style="color: rgba(255,255,255,0.4); margin-bottom: 20px; display: block;">05 / 08</span>
       <h2 class="stats-title">Наши цифры</h2>
       <div class="stat-num-box">
         <div class="stat-num" id="stat-number">10</div>
@@ -1624,7 +1667,7 @@
   <!-- Section 6: Yandex Reviews (Horizontal Marquee) -->
   <section class="section" style="background-color: var(--bg-light); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); overflow: hidden; padding: 80px 0;">
     <div class="container" style="margin-bottom: 40px; text-align: left; padding: 0 40px;">
-      <span class="section-num">06 / 07</span>
+      <span class="section-num">06 / 08</span>
       <h2 class="section-title" style="margin-bottom: 12px;">Отзывы на Яндекс.Картах</h2>
       <p class="section-desc" style="margin-bottom: 0; max-width: 800px;">
         Рейтинг компании Clima Flow: <strong style="color: var(--accent-blue);">5.0 ★★★★★</strong> на основе отзывов реальных клиентов в Москве. Мы ценим обратную связь и отвечаем на каждый отзыв!
@@ -1837,19 +1880,107 @@
           <div class="review-reply">
             <strong>Ответ Clima Flow:</strong> Спасибо, Дмитрий! Поэтапная оплата — стандарт нашей работы для спокойствия клиентов. Рады были помочь!
           </div>
-          <div class="review-footer">
-            <span>👍 15</span> <span>👎 1</span>
-          </div>
+    </div>
+  </section>
+
+  <!-- Section 7: Partners & Suppliers (07 / 08) -->
+  <section class="section" style="background-color: #ffffff; border-top: 1px solid var(--border-color); padding: 80px 0; overflow: hidden;">
+    <div class="container" style="margin-bottom: 40px; text-align: left; padding: 0 40px;">
+      <span class="section-num">07 / 08</span>
+      <h2 class="section-title" style="margin-bottom: 12px;">Партнеры и поставщики</h2>
+      <p class="section-desc" style="margin-bottom: 0; max-width: 800px;">
+        Мы работаем только с качественными материалами ведущих брендов. Это гарантирует надежность и долговечность ремонта.
+      </p>
+
+      <div class="partners-grid">
+        <!-- LITOKOL -->
+        <div class="partner-card">
+          <svg viewBox="0 0 160 50" fill="none" class="partner-svg">
+            <rect x="5" y="5" width="150" height="40" rx="4" fill="#ef4444" fill-opacity="0.06" stroke="#ef4444" stroke-width="1"/>
+            <text x="50%" y="58%" dominant-baseline="middle" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="900" font-size="14" fill="#ef4444" letter-spacing="1">LITOKOL</text>
+          </svg>
+        </div>
+
+        <!-- KNAUF -->
+        <div class="partner-card">
+          <svg viewBox="0 0 160 50" fill="none" class="partner-svg">
+            <rect x="5" y="5" width="150" height="40" rx="4" fill="#2563eb" fill-opacity="0.06" stroke="#2563eb" stroke-width="1"/>
+            <text x="50%" y="58%" dominant-baseline="middle" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="900" font-size="14" fill="#2563eb" letter-spacing="1.5">KNAUF</text>
+          </svg>
+        </div>
+
+        <!-- REHAU -->
+        <div class="partner-card">
+          <svg viewBox="0 0 160 50" fill="none" class="partner-svg">
+            <rect x="5" y="5" width="150" height="40" rx="4" fill="#ea580c" fill-opacity="0.06" stroke="#ea580c" stroke-width="1"/>
+            <text x="50%" y="58%" dominant-baseline="middle" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="900" font-size="14" fill="#ea580c" letter-spacing="1">REHAU</text>
+          </svg>
+        </div>
+
+        <!-- GEBERIT -->
+        <div class="partner-card">
+          <svg viewBox="0 0 160 50" fill="none" class="partner-svg">
+            <rect x="5" y="5" width="150" height="40" rx="4" fill="#0284c7" fill-opacity="0.06" stroke="#0284c7" stroke-width="1"/>
+            <text x="50%" y="58%" dominant-baseline="middle" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="900" font-size="14" fill="#0284c7" letter-spacing="1">GEBERIT</text>
+          </svg>
+        </div>
+
+        <!-- CERESIT -->
+        <div class="partner-card">
+          <svg viewBox="0 0 160 50" fill="none" class="partner-svg">
+            <rect x="5" y="5" width="150" height="40" rx="4" fill="#dc2626" fill-opacity="0.06" stroke="#dc2626" stroke-width="1"/>
+            <text x="50%" y="58%" dominant-baseline="middle" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="900" font-size="14" fill="#dc2626" letter-spacing="1">CERESIT</text>
+          </svg>
+        </div>
+
+        <!-- GROHE -->
+        <div class="partner-card">
+          <svg viewBox="0 0 160 50" fill="none" class="partner-svg">
+            <rect x="5" y="5" width="150" height="40" rx="4" fill="#0f172a" fill-opacity="0.06" stroke="#0f172a" stroke-width="1"/>
+            <text x="50%" y="58%" dominant-baseline="middle" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="900" font-size="14" fill="#0f172a" letter-spacing="1">GROHE</text>
+          </svg>
+        </div>
+
+        <!-- BOSCH -->
+        <div class="partner-card">
+          <svg viewBox="0 0 160 50" fill="none" class="partner-svg">
+            <rect x="5" y="5" width="150" height="40" rx="4" fill="#e11d48" fill-opacity="0.06" stroke="#e11d48" stroke-width="1"/>
+            <text x="50%" y="58%" dominant-baseline="middle" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="900" font-size="14" fill="#e11d48" letter-spacing="1.5">BOSCH</text>
+          </svg>
+        </div>
+
+        <!-- UNIS -->
+        <div class="partner-card">
+          <svg viewBox="0 0 160 50" fill="none" class="partner-svg">
+            <rect x="5" y="5" width="150" height="40" rx="4" fill="#ca8a04" fill-opacity="0.06" stroke="#ca8a04" stroke-width="1"/>
+            <text x="50%" y="58%" dominant-baseline="middle" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="900" font-size="14" fill="#ca8a04" letter-spacing="1.5">UNIS</text>
+          </svg>
+        </div>
+
+        <!-- МОСПЛИТКА -->
+        <div class="partner-card">
+          <svg viewBox="0 0 160 50" fill="none" class="partner-svg">
+            <rect x="5" y="5" width="150" height="40" rx="4" fill="#475569" fill-opacity="0.06" stroke="#475569" stroke-width="1"/>
+            <text x="50%" y="58%" dominant-baseline="middle" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="800" font-size="12" fill="#475569" letter-spacing="1.5">МОСПЛИТКА</text>
+          </svg>
+        </div>
+
+        <!-- РОСГОССТРАХ -->
+        <div class="partner-card">
+          <svg viewBox="0 0 160 50" fill="none" class="partner-svg">
+            <rect x="5" y="5" width="150" height="40" rx="4" fill="#b91c1c" fill-opacity="0.06" stroke="#b91c1c" stroke-width="1"/>
+            <text x="50%" y="58%" dominant-baseline="middle" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="800" font-size="10.5" fill="#b91c1c" letter-spacing="1">РОСГОССТРАХ</text>
+          </svg>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Section 7: Map (Split 7) -->
+  <!-- Section 8: Map (Split 8) -->
   <section class="split-layout">
     <div class="split-left">
       <div class="split-left-top">
-        <span class="section-num">07 / 07</span>
+        <span class="section-num">08 / 08</span>
         <h2 class="section-title">География работы</h2>
         <p class="section-desc">
           Принимаем заказы по Москве и всей Московской области (до 30 км от МКАД). Выезд инженера-сметчика для замера и составления сметы бесплатный.
