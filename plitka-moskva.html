@@ -1064,6 +1064,130 @@
       gap: 4px;
     }
 
+    /* Preloader Styles */
+    .preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #ffffff;
+      z-index: 99999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.5s ease, visibility 0.5s ease;
+    }
+    .preloader.fade-out {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+    .preloader-content {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+    }
+    
+    /* Tile Cutter Animation */
+    .tile-cutter-box {
+      position: relative;
+      width: 280px;
+      height: 120px;
+      background: #f1f5f9;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .cutter-rail {
+      position: absolute;
+      top: 50%;
+      left: 10px;
+      right: 10px;
+      height: 4px;
+      background: #cbd5e1;
+      transform: translateY(-50%);
+      z-index: 1;
+    }
+    .cutter-tile {
+      position: absolute;
+      width: 110px;
+      height: 80px;
+      background: #ffffff;
+      border: 2px solid var(--border-color);
+      z-index: 2;
+      transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    .cutter-tile.left-half {
+      left: 20px;
+      border-radius: 4px 0 0 4px;
+      transform-origin: left center;
+    }
+    .cutter-tile.right-half {
+      right: 20px;
+      border-radius: 0 4px 4px 0;
+      transform-origin: right center;
+    }
+    .cutter-score-line {
+      position: absolute;
+      top: 50%;
+      left: 130px;
+      width: 20px;
+      height: 2px;
+      background: var(--border-color);
+      transform: translateY(-50%);
+      z-index: 3;
+    }
+    .cutter-carriage {
+      position: absolute;
+      left: 15px;
+      top: 50%;
+      width: 24px;
+      height: 24px;
+      background: var(--text-dark);
+      border-radius: 50%;
+      transform: translate(0, -50%);
+      z-index: 5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      transition: left 2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .cutter-wheel {
+      width: 8px;
+      height: 8px;
+      background: var(--accent-blue);
+      border-radius: 50%;
+    }
+    
+    /* Preloader ruler coordinate theme */
+    .preloader-ruler {
+      display: flex;
+      justify-content: space-between;
+      width: 200px;
+      color: var(--border-color);
+      font-family: var(--font-mono);
+      font-size: 8px;
+      letter-spacing: 2px;
+    }
+    .preloader-loading-text {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--text-dark);
+    }
+    #preloader-percent {
+      color: var(--accent-blue);
+      font-weight: 700;
+    }
+
     /* Promotion Cards Styles */
     .promo-grid {
       display: grid;
@@ -1156,6 +1280,32 @@
   </style>
 </head>
 <body>
+
+  <!-- Site Preloader (Прелоадер резка плитки) -->
+  <div class="preloader" id="preloader">
+    <div class="preloader-content">
+      <!-- Animated Tile Cutter -->
+      <div class="tile-cutter-box">
+        <div class="cutter-rail"></div>
+        <div class="cutter-tile left-half" id="tile-left"></div>
+        <div class="cutter-tile right-half" id="tile-right"></div>
+        <div class="cutter-score-line" id="score-line"></div>
+        <div class="cutter-carriage" id="carriage">
+          <div class="cutter-wheel"></div>
+        </div>
+      </div>
+      
+      <!-- Coordinate Ruler / Loading Text -->
+      <div class="preloader-ruler">
+        <span class="ruler-tick">|</span>
+        <span class="ruler-tick">|</span>
+        <span class="ruler-tick">|</span>
+        <span class="ruler-tick">|</span>
+        <span class="ruler-tick">|</span>
+      </div>
+      <div class="preloader-loading-text">ИДЕТ НАСТРОЙКА ШВА: <span id="preloader-percent">0</span>%</div>
+    </div>
+  </div>
 
   <!-- Custom Cursor Coordinates Ruler -->
   <div class="tiling-ruler-h" id="ruler-h"></div>
@@ -1886,6 +2036,58 @@
 
   <!-- Script Logic -->
   <script>
+    // 0. Preloader Logic (Резка плитки)
+    document.addEventListener("DOMContentLoaded", () => {
+      const preloader = document.getElementById('preloader');
+      const percentEl = document.getElementById('preloader-percent');
+      const carriage = document.getElementById('carriage');
+      const tileLeft = document.getElementById('tile-left');
+      const tileRight = document.getElementById('tile-right');
+      const scoreLine = document.getElementById('score-line');
+      
+      let percent = 0;
+      
+      // Start moving the cutting wheel/carriage
+      setTimeout(() => {
+        if (carriage) {
+          carriage.style.left = '240px'; // move to the right end
+        }
+      }, 200);
+
+      const interval = setInterval(() => {
+        percent += 2;
+        if (percentEl) {
+          percentEl.innerText = percent;
+        }
+
+        // When cutting is halfway done
+        if (percent === 50) {
+          if (scoreLine) {
+            scoreLine.style.background = 'var(--accent-blue)';
+          }
+        }
+
+        // When cut is complete (100%)
+        if (percent >= 100) {
+          clearInterval(interval);
+          
+          // Snap/split the tile animation!
+          if (tileLeft) tileLeft.style.transform = 'translateX(-8px) rotate(-3deg)';
+          if (tileRight) tileRight.style.transform = 'translateX(8px) rotate(3deg)';
+          if (carriage) {
+            carriage.style.transform = 'translate(0, -50%) scale(1.1)';
+            carriage.style.backgroundColor = 'var(--accent-blue)';
+          }
+
+          // Fade out the preloader screen after a short delay
+          setTimeout(() => {
+            if (preloader) {
+              preloader.classList.add('fade-out');
+            }
+          }, 800);
+        }
+      }, 35); // 100% in ~3.5 seconds
+    });
     // 1. Accordion Toggle Logic (Гармошка)
     function toggleAccordion(header) {
       const content = header.nextElementSibling;
