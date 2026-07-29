@@ -446,14 +446,23 @@ document.addEventListener('DOMContentLoaded', () => {
   // 9. Google Ads & Analytics Conversion Tracking
   // ==========================================
   function trackEvent(eventName, category) {
+    // 1. Push to Google Tag Manager dataLayer
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      'event': eventName,
+      'event_category': category,
+      'event_label': window.location.pathname
+    });
+
+    // 2. Direct gtag event if available
     if (typeof gtag === 'function') {
       gtag('event', eventName, {
         'event_category': category,
         'event_label': window.location.pathname
       });
-      console.log(`[ClimaFlow Track] Event sent: ${eventName}`);
+      console.log(`[ClimaFlow Track] Event sent to gtag: ${eventName}`);
     } else {
-      console.log(`[ClimaFlow Track] Event logged: ${eventName} (Google tag not loaded yet)`);
+      console.log(`[ClimaFlow Track] Event pushed to dataLayer: ${eventName}`);
     }
   }
 
