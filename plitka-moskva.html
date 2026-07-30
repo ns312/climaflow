@@ -1381,7 +1381,7 @@
       
       <div class="header-nav">
         <div class="phone-block">
-          <a href="tel:+79990000000" id="header_phone_link" class="phone-link">+7 (999) 000-00-00</a>
+          <a href="tel:+79777670334" id="header_phone_link" class="phone-link">+7 (977) 767-03-34</a>
           <span class="phone-desc">Москва и Московская область</span>
         </div>
         <button onclick="openModal()" class="btn btn-outline">Калькулятор</button>
@@ -2152,8 +2152,11 @@
               <p class="result-subtitle" style="font-size: 13.5px; color: var(--text-muted); line-height: 1.5; margin-bottom: 24px;">Выберите мессенджер для моментального получения сметы, 3D-раскладки и купона на бесплатные СВП-зажимы:</p>
               
               <div class="messenger-selection" style="display: flex; flex-direction: column; gap: 12px; max-width: 320px; margin: 0 auto;">
-                <a href="https://wa.me/79990000000?text=Здравствуйте!" target="_blank" class="btn btn-accent" id="whatsapp-result-btn" style="background-color: #25d366; border-color: #25d366; display: flex; align-items: center; justify-content: center; gap: 8px; text-transform: none; font-size: 14px; font-family: var(--font-mono);">
+                <a href="https://wa.me/79777670334?text=Здравствуйте!" target="_blank" class="btn btn-accent" id="whatsapp-result-btn" style="background-color: #25d366; border-color: #25d366; display: flex; align-items: center; justify-content: center; gap: 8px; text-transform: none; font-size: 14px; font-family: var(--font-mono);">
                   Смета в WhatsApp
+                </a>
+                <a href="https://t.me/+79777670334" target="_blank" class="btn btn-telegram" id="telegram-result-btn" style="display: flex; align-items: center; justify-content: center; gap: 8px; text-transform: none; font-size: 14px; font-family: var(--font-mono);">
+                  Смета в Telegram
                 </a>
               </div>
             </div>
@@ -2399,7 +2402,7 @@
                      `Хочу получить расчет цены и 3D макет раскладки в подарок.`;
       
       const encodedText = encodeURIComponent(waText);
-      const currentPhone = "79990000000"; // Placeholder
+      const currentPhone = "79777670334";
       document.getElementById('whatsapp-result-btn').href = `https://wa.me/${currentPhone}?text=${encodedText}`;
     }
 
@@ -2549,6 +2552,13 @@
     document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
       link.addEventListener('click', () => {
         trackEvent('click_whatsapp', 'Lead');
+      });
+    });
+
+    // Отслеживание кликов по всем ссылкам Telegram
+    document.querySelectorAll('a[href*="t.me"]').forEach(link => {
+      link.addEventListener('click', () => {
+        trackEvent('click_telegram', 'Lead');
       });
     });
 
