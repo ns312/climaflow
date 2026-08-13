@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кристина | Фотограф в Бишкеке</title>
+    <meta name="description" content="Услуги индивидуальной, контентной и семейной фотосессии в Бишкеке. Живые кадры, помощь в позировании, готовые фото за 7 дней. Запишитесь онлайн.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <!-- NAV BAR (Tilda Style) -->
+    <header class="header">
+        <div class="container nav-container">
+            <nav class="nav">
+                <a href="#about" class="nav-link">Для кого</a>
+                <a href="#portfolio" class="nav-link">Портфолио</a>
+                <a href="#about" class="nav-link">Подход</a>
+                <a href="#pricing" class="nav-link">Формат съемки</a>
+                <a href="#pricing" class="nav-link">Цены</a>
+                <a href="#booking" class="nav-link">Записаться</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION (Tilda Style) -->
+    <section class="hero">
+        <div class="container hero-container">
+            <div class="hero-top">
+                <span class="instagram-handle">@kristina.photo</span>
+                <h1>Привет, я — <span>Кристина,</span><br>твой фотограф в Бишкеке</h1>
+                <span class="hero-subtext">Я помогу:</span>
+            </div>
+            
+            <div class="hero-main">
+                <!-- Left Pointers -->
+                <div class="hero-pointers left-pointers">
+                    <div class="pointer-item">
+                        <p>дойти до идеального кадра</p>
+                        <span class="arrow">➔</span>
+                    </div>
+                    <div class="pointer-item">
+                        <p>раскрыться во время съемки</p>
+                        <span class="arrow">➔</span>
+                    </div>
+                    <div class="pointer-item">
+                        <p>подберем образ и студию</p>
+                        <span class="arrow">➔</span>
+                    </div>
+                </div>
+
+                <!-- Center Image -->
+                <div class="hero-image-container">
+                    <img src="assets/girl.jpg" alt="Кристина Фотосессии в Бишкеке" class="hero-img">
+                </div>
+
+                <!-- Right Pointers -->
+                <div class="hero-pointers right-pointers">
+                    <div class="pointer-item">
+                        <span class="arrow">➔</span>
+                        <p>готовый контент за 7 дней</p>
+                    </div>
+                    <div class="pointer-item">
+                        <span class="arrow">➔</span>
+                        <p>25-35 фото в детальной ретуши</p>
+                    </div>
+                    <div class="pointer-item">
+                        <span class="arrow">➔</span>
+                        <p>помощь в позировании от А до Я</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Button -->
+            <div class="hero-bottom">
+                <a href="#booking" class="btn btn-tilda">Записаться на съемку</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO SECTION -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <div class="section-title">
+                <h2>Портфолио</h2>
+                <p>Примеры моих последних индивидуальных, контентных и семейных фотосессий</p>
+            </div>
+
+            <!-- Filters -->
+            <div class="portfolio-filters">
+                <button class="filter-btn active" data-filter="all">Все работы</button>
+                <button class="filter-btn" data-filter="content">Контент & Эксперты</button>
+                <button class="filter-btn" data-filter="family">Семейные истории</button>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="portfolio-grid">
+                <div class="portfolio-item" data-category="content">
+                    <img src="assets/content_1.jpg" alt="Индивидуальная фотосессия для эксперта">
+                    <div class="portfolio-overlay">
+                        <h3>Контент-съемка</h3>
+                        <p>Для персонального бренда и блога</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="content">
+                    <img src="assets/content_2.jpg" alt="Деловой портрет Бишкек">
+                    <div class="portfolio-overlay">
+                        <h3>Деловой стиль</h3>
+                        <p>Имиджевый портрет в интерьере</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="family">
+                    <img src="assets/family_1.jpg" alt="Семейная фотосессия на природе">
+                    <div class="portfolio-overlay">
+                        <h3>Семейная съемка</h3>
+                        <p>Прогулка в золотой час</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="family">
+                    <img src="assets/family_2.jpg" alt="Семейная домашняя фотосессия">
+                    <div class="portfolio-overlay">
+                        <h3>Домашний lifestyle</h3>
+                        <p>Теплые искренние моменты дома</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES SECTION -->
+    <section id="about" class="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Как проходит съемка?</h2>
+                <p>Комфорт во время процесса и предсказуемо высокий результат</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">✨</div>
+                    <h3>Помощь в позировании</h3>
+                    <p>Вам не нужно быть профессиональной моделью. Я подскажу каждое движение, ракурс и взгляд, чтобы вы чувствовали себя естественно.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Сроки — всего 7 дней</h3>
+                    <p>Вам не придется ждать снимки месяцами. Отдаю весь отснятый материал в цветокоррекции и лучшие кадры в ретуши ровно за 1 неделю.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📦</div>
+                    <h3>Организация под ключ</h3>
+                    <p>Помогу с выбором локации/фотостудии, посоветую проверенного визажиста и стилиста по одежде для идеального кадра.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING SECTION -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <div class="section-title">
+                <h2>Пакеты услуг</h2>
+                <p>Выберите подходящий формат фотосессии в Бишкеке</p>
+            </div>
+            <div class="pricing-grid">
+                <!-- Package 1 -->
+                <div class="price-card">
+                    <h3>Контент / Эксперт</h3>
+                    <div class="price">4 500 <span>сом</span></div>
+                    <ul class="price-features">
+                        <li>1 час съемки в студии или на улице</li>
+                        <li>Консультация по стилю и мудборду</li>
+                        <li>До 50 фото в цветокоррекции</li>
+                        <li>15 кадров в детальной ретуши</li>
+                        <li>Готовые фото за 7 дней</li>
+                    </ul>
+                    <a href="#booking" class="btn btn-outline btn-block select-pack" data-package="Контент / Эксперт">Выбрать пакет</a>
+                </div>
+                <!-- Package 2 (Popular) -->
+                <div class="price-card popular">
+                    <span class="card-badge">Популярный</span>
+                    <h3>Семейный Lifestyle</h3>
+                    <div class="price">6 000 <span>сом</span></div>
+                    <ul class="price-features">
+                        <li>1.5 часа съемки (домашняя или уличная)</li>
+                        <li>До 80 фото в цветокоррекции</li>
+                        <li>25 кадров в детальной ретуши</li>
+                        <li>Помощь в подборе образов для всей семьи</li>
+                        <li>Готовые фото за 7 дней</li>
+                    </ul>
+                    <a href="#booking" class="btn btn-tilda btn-block select-pack" data-package="Семейный Lifestyle">Выбрать пакет</a>
+                </div>
+                <!-- Package 3 -->
+                <div class="price-card">
+                    <h3>Всё включено (Под ключ)</h3>
+                    <div class="price">12 000 <span>сом</span></div>
+                    <ul class="price-features">
+                        <li>2 часа съемки (контент или семейная)</li>
+                        <li>Аренда лучшей фотостудии Бишкека (1 час)</li>
+                        <li>Макияж и укладка от топ-визажиста</li>
+                        <li>До 120 фото в цветокоррекции</li>
+                        <li>35 кадров в детальной ретуши</li>
+                        <li>Готовые фото за 7 дней</li>
+                    </ul>
+                    <a href="#booking" class="btn btn-outline btn-block select-pack" data-package="Всё включено (Под ключ)">Выбрать пакет</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BOOKING FORM -->
+    <section id="booking" class="booking">
+        <div class="container">
+            <div class="booking-wrapper">
+                <div class="booking-info">
+                    <h2>Давайте спланируем вашу съемку</h2>
+                    <p>Заполните форму, и я свяжусь с вами в WhatsApp для обсуждения концепции, выбора студии и бронирования даты.</p>
+                    <div class="contact-details">
+                        <p><strong>Телефон / WhatsApp:</strong> +996 502 98 58 96</p>
+                        <p><strong>Telegram:</strong> @marketolog_312</p>
+                    </div>
+                </div>
+                <div class="booking-form-wrapper">
+                    <form id="leadForm" class="booking-form">
+                        <div class="form-group">
+                            <label for="name">Ваше имя</label>
+                            <input type="text" id="name" required placeholder="Иван">
+                        </div>
+                        <div class="form-group">
+                            <label for="package">Желаемый пакет</label>
+                            <select id="package" required>
+                                <option value="" disabled selected>Выберите вариант</option>
+                                <option value="Контент / Эксперт">Контент / Эксперт (4 500 сом)</option>
+                                <option value="Семейный Lifestyle">Семейный Lifestyle (6 000 сом)</option>
+                                <option value="Всё включено (Под ключ)">Всё включено (12 000 сом)</option>
+                                <option value="Другое / Консультация">Другое / Нужна консультация</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Пожелания к съемке (необязательно)</label>
+                            <textarea id="message" rows="3" placeholder="Например: съемка в студии, контент для блога стилиста..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-tilda btn-block">Записаться через WhatsApp</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Кристина | Фотограф в Бишкеке. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>
