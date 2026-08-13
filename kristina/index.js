@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
        📩 WHATSAPP FORM REDIRECT LOGIC
        ========================================== */
     const leadForm = document.getElementById('leadForm');
-    const whatsappNumber = '996502985896'; // Твой номер WhatsApp
+    const whatsappNumber = '996502500874'; // Твой номер WhatsApp
 
     if (leadForm) {
         leadForm.addEventListener('submit', (e) => {
