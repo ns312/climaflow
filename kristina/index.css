@@ -175,6 +175,20 @@ p {
     margin: 0 auto 40px auto;
 }
 
+.brand-logo-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.brand-logo {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 2px solid var(--border);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
 .instagram-handle {
     font-family: var(--font-script);
     font-size: 2rem;
