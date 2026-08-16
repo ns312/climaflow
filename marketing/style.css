@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Space+Mono:wght@400;700&family=Caveat:wght@700&display=swap');
 
 :root {
-    --bg-main: #F5EFE6; /* Warm elegant light beige */
-    --text-dark: #1E1E1E; /* Very dark grey for text */
-    --text-muted: #6B7280; /* Muted grey */
-    --primary: #10B981; /* Emerald Green */
-    --accent-blue: #2563EB; /* Vibrant Royal Blue */
-    --border-color: rgba(30, 30, 30, 0.12); /* Subtle borders */
-    --accent-red: #DC2626;
+    --bg-main: #1a1a1a; /* Dark cyberpunk charcoal */
+    --text-dark: #bababa; /* Light grey text */
+    --text-muted: #71737d; /* Darker grey text */
+    --primary: #00ff1a; /* Neon Green */
+    --accent-blue: #9fe4f3; /* Neon light blue/cyan */
+    --border-color: rgba(186, 186, 186, 0.2); /* Subtle light borders */
+    --accent-red: #ff001a; /* Neon Red */
     
     --font-serif: 'Cormorant Garamond', serif;
     --font-mono: 'Space Mono', monospace;
@@ -32,6 +32,156 @@ body {
     overflow-x: hidden;
 }
 
+/* Enable custom cursor styling on desktop viewports */
+@media (min-width: 992px) {
+    body, a, button, input, textarea, select {
+        cursor: none !important;
+    }
+}
+
+/* Custom Cursor Elements */
+.custom-cursor {
+    width: 6px;
+    height: 6px;
+    background-color: var(--accent-blue);
+    border-radius: 50%;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 99999;
+    mix-blend-mode: difference;
+    transition: width 0.15s ease, height 0.15s ease;
+}
+
+.custom-cursor-ring {
+    width: 32px;
+    height: 32px;
+    border: 1px solid rgba(159, 228, 243, 0.4);
+    border-radius: 50%;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 99998;
+    mix-blend-mode: difference;
+    transition: width 0.2s ease, height 0.2s ease, border-color 0.2s ease;
+}
+
+/* Hover states for custom cursor */
+.custom-cursor.hovering {
+    width: 12px;
+    height: 12px;
+    background-color: var(--accent-red);
+}
+
+.custom-cursor-ring.hovering {
+    width: 48px;
+    height: 48px;
+    border-color: rgba(255, 0, 26, 0.6);
+}
+
+/* CRT Screen Effect Overlays */
+.noise-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0.04;
+    pointer-events: none;
+    z-index: 9999;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+.scanlines {
+    height: 100vh;
+    left: 0;
+    opacity: 0.15;
+    overflow: hidden;
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: 9997;
+}
+
+.scanlines:before {
+    animation: scanline 8s linear infinite;
+    background: rgba(0, 0, 0, 0.7);
+    background-size: 100% 0.6vw;
+    height: clamp(2px, 0.1vw, 3px);
+    opacity: 0.8;
+    transform: translate3d(0, -10vh, 0);
+    width: 100%;
+    will-change: transform;
+    content: "";
+    position: absolute;
+}
+
+.scanlines:after {
+    animation: scanlines 1s steps(60) infinite;
+    background: linear-gradient(180deg, transparent 50%, rgba(0, 0, 0, 0.25) 51%);
+    background-size: 100% 0.4vw;
+    inset: 0;
+    content: "";
+    position: absolute;
+}
+
+.gloom {
+    overflow: hidden;
+    z-index: 9996;
+    height: 100vh;
+    left: 0;
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+}
+
+.gloom:before {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    content: "";
+    opacity: 0.15;
+    height: 100%;
+    width: 100%;
+    display: block;
+}
+
+.vignette {
+    height: 100vh;
+    overflow: hidden;
+    width: 100vw;
+    z-index: 9998;
+    left: 0;
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+}
+
+.vignette:before {
+    background: radial-gradient(circle, transparent 55%, rgba(0, 0, 0, 0.65) 100%);
+    content: "";
+    height: 100%;
+    opacity: 0.85;
+    width: 100%;
+    display: block;
+}
+
+@keyframes scanline {
+    0% { transform: translate3d(0, 110vh, 0); }
+    100% { transform: translate3d(0, -200vh, 0); }
+}
+
+@keyframes scanlines {
+    0% { background-position: 0 50%; }
+}
+
+@media (max-width: 768px) {
+    .scanlines, .gloom, .noise-overlay {
+        opacity: 0.08;
+    }
+}
+
 .container {
     width: 100%;
     max-width: 1200px;
@@ -46,7 +196,7 @@ header {
     border-bottom: 1px solid var(--border-color);
     position: sticky;
     top: 0;
-    background-color: rgba(245, 239, 230, 0.9);
+    background-color: rgba(26, 26, 26, 0.85);
     backdrop-filter: blur(12px);
     z-index: 100;
 }
@@ -348,15 +498,25 @@ header {
 
 .section-title h2 {
     font-family: var(--font-serif);
-    font-size: 48px;
-    color: var(--text-dark);
+    font-size: 42px;
+    color: #FFF;
     margin-bottom: 16px;
     text-transform: uppercase;
+    letter-spacing: -1px;
+}
+
+.section-technical-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    color: var(--accent-blue);
+    letter-spacing: 2px;
+    margin-bottom: 16px;
 }
 
 .section-title p {
     font-family: var(--font-mono);
-    font-size: 14px;
+    font-size: 13px;
     color: var(--text-muted);
     max-width: 600px;
     margin: 0 auto;
@@ -370,16 +530,25 @@ header {
 
 .comparison-card {
     border: 1.5px solid var(--border-color);
-    border-radius: 20px;
+    border-radius: 16px;
     padding: 48px;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: #222;
+}
+
+.comparison-card.negative {
+    border-top: 3px solid var(--accent-red);
+}
+
+.comparison-card.positive {
+    border-top: 3px solid var(--accent-blue);
 }
 
 .comparison-card h3 {
     font-family: var(--font-serif);
-    font-size: 28px;
+    font-size: 26px;
     margin-bottom: 32px;
     text-transform: uppercase;
+    color: #FFF;
 }
 
 .comparison-card.negative h3 {
@@ -431,19 +600,20 @@ header {
 
 .calc-box {
     border: 1.5px solid var(--border-color);
-    border-radius: 24px;
+    border-radius: 16px;
     padding: 60px;
     display: grid;
     grid-template-columns: 1.2fr 1fr;
     gap: 60px;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: #222;
 }
 
 .calc-inputs h3 {
     font-family: var(--font-serif);
-    font-size: 36px;
+    font-size: 32px;
     margin-bottom: 16px;
     text-transform: uppercase;
+    color: #FFF;
 }
 
 .calc-inputs p {
@@ -459,7 +629,7 @@ header {
 
 .form-group label {
     display: block;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 700;
     color: var(--text-dark);
     text-transform: uppercase;
@@ -469,7 +639,7 @@ header {
 
 .form-group input[type="range"] {
     width: 100%;
-    accent-color: var(--text-dark);
+    accent-color: var(--accent-blue);
     cursor: pointer;
     background: var(--border-color);
     height: 4px;
@@ -488,7 +658,7 @@ header {
 
 .calc-results {
     border: 1.5px solid var(--border-color);
-    border-radius: 20px;
+    border-radius: 16px;
     padding: 40px;
     text-align: center;
     background-color: var(--bg-main);
@@ -507,10 +677,11 @@ header {
 
 .calc-price {
     font-family: var(--font-serif);
-    font-size: 54px;
+    font-size: 58px;
     font-weight: 700;
     color: var(--accent-blue);
     margin-bottom: 16px;
+    text-shadow: 0 0 15px rgba(159, 228, 243, 0.3);
 }
 
 .calc-sub-results {
@@ -550,23 +721,23 @@ header {
 
 .price-card {
     border: 1.5px solid var(--border-color);
-    border-radius: 24px;
+    border-radius: 16px;
     padding: 60px 48px;
     display: flex;
     flex-direction: column;
     position: relative;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: #222;
     transition: all 0.3s ease;
 }
 
 .price-card:hover {
     transform: translateY(-4px);
-    border-color: var(--text-dark);
+    border-color: #FFF;
 }
 
 .price-card.popular {
     border: 2px solid var(--accent-blue);
-    box-shadow: 0 12px 40px rgba(37, 99, 235, 0.06);
+    box-shadow: 0 12px 40px rgba(159, 228, 243, 0.1);
 }
 
 .popular-badge {
@@ -575,7 +746,7 @@ header {
     left: 50%;
     transform: translateX(-50%);
     background-color: var(--accent-blue);
-    color: #fff;
+    color: #1a1a1a;
     padding: 6px 20px;
     border-radius: 99px;
     font-size: 10px;
@@ -586,9 +757,10 @@ header {
 
 .price-card h3 {
     font-family: var(--font-serif);
-    font-size: 32px;
+    font-size: 30px;
     margin-bottom: 12px;
     text-transform: uppercase;
+    color: #FFF;
 }
 
 .price-desc {
@@ -599,10 +771,11 @@ header {
 
 .price-amount {
     font-family: var(--font-serif);
-    font-size: 54px;
+    font-size: 58px;
     font-weight: 700;
     margin-bottom: 40px;
     color: var(--accent-blue);
+    text-shadow: 0 0 15px rgba(159, 228, 243, 0.25);
 }
 
 .price-amount span {
@@ -1425,11 +1598,11 @@ footer p {
 }
 
 .contract-clause-card {
-    background-color: #FFF;
-    border: 1px solid #D6CECE;
+    background-color: #121212;
+    border: 1px solid var(--accent-blue);
     border-radius: 4px;
     padding: 24px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
     position: relative;
     transform: rotate(1deg);
 }
@@ -1459,19 +1632,19 @@ footer p {
     font-family: var(--font-mono);
     font-size: 10px;
     line-height: 1.5;
-    color: #444;
+    color: var(--text-dark);
     margin-top: 8px;
     margin-bottom: 16px;
-    background-color: #FAF8F6;
+    background-color: #1a1a1a;
     padding: 10px;
-    border-left: 2px solid var(--text-dark);
+    border-left: 2px solid var(--accent-blue);
 }
 
 .contract-stamp {
     font-family: 'Caveat', cursive;
     font-size: 18px;
-    color: #1E3B88;
-    border: 2px dashed #1E3B88;
+    color: var(--accent-red);
+    border: 2px dashed var(--accent-red);
     padding: 4px 10px;
     display: inline-block;
     border-radius: 4px;
@@ -1519,4 +1692,42 @@ footer p {
         font-size: 18px;
     }
 }
+
+/* Scrolling Marquee Ticker Styles */
+.marqueeText {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    border-top: 1.5px solid var(--border-color);
+    border-bottom: 1.5px solid var(--border-color);
+    margin: 40px 0;
+    padding: 24px 0;
+    background-color: #121212;
+}
+
+.marqueeText__track {
+    display: inline-flex;
+    animation: marquee 25s linear infinite;
+    gap: 32px;
+}
+
+.marqueeText__title {
+    font-family: var(--font-serif);
+    font-size: 32px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--text-dark);
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+@keyframes marquee {
+    0% { transform: translate3d(0, 0, 0); }
+    100% { transform: translate3d(-50%, 0, 0); }
+}
+
 

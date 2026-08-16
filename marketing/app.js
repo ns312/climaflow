@@ -308,5 +308,73 @@ document.addEventListener('DOMContentLoaded', () => {
             window.location.href = waUrl;
         });
     }
+
+    // 7. Custom Cursor Logic (Awwwards Grade)
+    if (window.innerWidth > 991) {
+        const cursor = document.createElement('div');
+        cursor.className = 'custom-cursor';
+        const cursorRing = document.createElement('div');
+        cursorRing.className = 'custom-cursor-ring';
+        document.body.appendChild(cursor);
+        document.body.appendChild(cursorRing);
+
+        let mouseX = -100;
+        let mouseY = -100;
+        let ringX = -100;
+        let ringY = -100;
+
+        window.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            cursor.style.left = mouseX + 'px';
+            cursor.style.top = mouseY + 'px';
+        });
+
+        // Smooth lag effect for the outer ring using requestAnimationFrame
+        function animateRing() {
+            const distX = mouseX - ringX;
+            const distY = mouseY - ringY;
+            
+            ringX += distX * 0.15;
+            ringY += distY * 0.15;
+            
+            cursorRing.style.left = ringX + 'px';
+            cursorRing.style.top = ringY + 'px';
+            
+            requestAnimationFrame(animateRing);
+        }
+        animateRing();
+
+        // Expand on hover
+        function attachCursorListeners() {
+            const hoverTargets = document.querySelectorAll('a, button, input, select, textarea, [role="button"]');
+            hoverTargets.forEach(target => {
+                // Remove existing to prevent duplicates
+                target.removeEventListener('mouseenter', onMouseEnter);
+                target.removeEventListener('mouseleave', onMouseLeave);
+                
+                target.addEventListener('mouseenter', onMouseEnter);
+                target.addEventListener('mouseleave', onMouseLeave);
+            });
+        }
+        
+        function onMouseEnter() {
+            cursor.classList.add('hovering');
+            cursorRing.classList.add('hovering');
+        }
+        
+        function onMouseLeave() {
+            cursor.classList.remove('hovering');
+            cursorRing.classList.remove('hovering');
+        }
+        
+        attachCursorListeners();
+        
+        // Re-attach listeners when DOM updates (e.g. quiz step transition)
+        const observer = new MutationObserver(() => {
+            attachCursorListeners();
+        });
+        observer.observe(document.body, { childList: true, subtree: true });
+    }
 });
 
