@@ -208,6 +208,15 @@ header {
     align-items: center;
 }
 
+.header-main-row {
+    display: flex;
+    align-items: center;
+}
+
+.mobile-menu-toggle {
+    display: none;
+}
+
 .logo {
     font-family: var(--font-serif);
     font-size: 20px; /* Unbounded is very wide, so 20px is perfect size for header! */
@@ -2068,6 +2077,70 @@ footer p {
         padding: 12px 20px !important;
     }
 }
+
+/* Mobile Dropdown Navigation Override (below 768px) */
+@media (max-width: 768px) {
+    header {
+        padding: 16px 0;
+    }
+    
+    .header-container {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 12px !important;
+    }
+    
+    .header-main-row {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 10px !important;
+        width: 100% !important;
+    }
+    
+    .mobile-menu-toggle {
+        display: block !important;
+        font-family: var(--font-tech);
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: var(--accent-blue);
+        background: transparent;
+        border: 1.5px solid var(--accent-blue);
+        padding: 8px 24px;
+        border-radius: 99px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        letter-spacing: 1px;
+        margin-top: 4px;
+    }
+    
+    .mobile-menu-toggle:hover {
+        background-color: rgba(159, 228, 243, 0.15);
+    }
+    
+    .nav-menu {
+        display: none !important; /* Hide by default */
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 12px !important;
+        width: 100% !important;
+        margin-top: 12px !important;
+        padding-top: 16px !important;
+        border-top: 1px solid var(--border-color) !important;
+    }
+    
+    .nav-menu.active {
+        display: flex !important; /* Expand to show links */
+    }
+    
+    .nav-btn {
+        width: 100% !important;
+        text-align: center !important;
+        padding: 12px 0 !important;
+        border-radius: 8px !important;
+    }
+}
+
 
 
 

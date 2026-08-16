@@ -397,5 +397,40 @@ document.addEventListener('DOMContentLoaded', () => {
     revealElements.forEach(el => {
         revealObserver.observe(el);
     });
+
+    // 9. Mobile Menu Toggle Logic
+    const menuToggle = document.getElementById('mobile-menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    
+    if (menuToggle && navMenu) {
+        menuToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            navMenu.classList.toggle('active');
+            
+            // Toggle arrow direction in text
+            if (navMenu.classList.contains('active')) {
+                menuToggle.textContent = 'МЕНЮ ▴';
+            } else {
+                menuToggle.textContent = 'МЕНЮ ▾';
+            }
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!navMenu.contains(e.target) && e.target !== menuToggle) {
+                navMenu.classList.remove('active');
+                menuToggle.textContent = 'МЕНЮ ▾';
+            }
+        });
+        
+        // Close menu when clicking a link
+        const navLinks = navMenu.querySelectorAll('.nav-btn');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                menuToggle.textContent = 'МЕНЮ ▾';
+            });
+        });
+    }
 });
 
