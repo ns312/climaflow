@@ -197,6 +197,14 @@ p {
     display: block;
 }
 
+.hero-description {
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 15px auto 0 auto;
+    line-height: 1.5;
+}
+
 .hero-subtext {
     display: inline-block;
     padding: 4px 16px;
