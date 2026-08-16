@@ -656,23 +656,29 @@ header {
     background-color: var(--bg-main);
 }
 
-.cases-letters-bg .left-letter,
-.cases-letters-bg .right-letter {
+.cases-letters-bg .bg-cases-word {
     font-family: var(--font-serif);
-    font-size: 38vw;
+    font-size: 25vw;
     font-weight: 700;
     color: #FFF;
-    opacity: 0.9;
+    text-transform: uppercase;
+    letter-spacing: 2vw;
     line-height: 1;
     user-select: none;
-}
-
-.cases-letters-bg .left-letter {
-    margin-left: 20px;
-}
-
-.cases-letters-bg .right-letter {
-    margin-right: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 1;
+    opacity: 0.95;
+    text-shadow: 
+        1px 1px 0px rgba(255,255,255,0.9),
+        2px 2px 0px rgba(255,255,255,0.7),
+        3px 3px 0px rgba(255,255,255,0.5),
+        4px 4px 0px rgba(0,0,0,0.06),
+        5px 5px 0px rgba(0,0,0,0.09),
+        6px 6px 15px rgba(0,0,0,0.15);
 }
 
 .side-label-left {
@@ -825,9 +831,16 @@ header {
 
 /* Responsive adjustments for Case Scroll Block */
 @media (max-width: 991px) {
-    .cases-letters-bg .left-letter,
-    .cases-letters-bg .right-letter {
-        font-size: 35vw;
+    .cases-letters-bg .bg-cases-word {
+        font-size: 22vw;
+        letter-spacing: 1.5vw;
+    }
+}
+
+@media (max-width: 576px) {
+    .cases-letters-bg .bg-cases-word {
+        font-size: 18vw;
+        letter-spacing: 1vw;
     }
 }
 
