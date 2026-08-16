@@ -167,14 +167,44 @@ header {
     z-index: 5;
 }
 
-.badge {
+/* Technical Corner Text Blocks */
+.technical-corner {
+    position: absolute;
     font-family: var(--font-mono);
-    font-size: 11px;
+    font-size: 8px;
+    line-height: 1.25;
     text-transform: uppercase;
-    color: var(--text-muted);
-    letter-spacing: 1.5px;
+    color: var(--text-dark);
+    z-index: 3;
+    pointer-events: none;
+}
+
+.technical-corner.bottom-left {
+    bottom: 32px;
+    left: 32px;
+}
+
+.technical-corner.bottom-right {
+    bottom: 32px;
+    right: 32px;
+    text-align: right;
+}
+
+.hero-top-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    color: var(--text-dark);
     margin-bottom: 24px;
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.hero-top-label .flower-icon {
+    color: var(--accent-blue);
+    font-size: 12px;
 }
 
 .brand-title-wrapper {
@@ -185,11 +215,11 @@ header {
 
 .brand-title {
     font-family: var(--font-serif);
-    font-size: 80px;
+    font-size: 110px;
     font-weight: 700;
-    letter-spacing: -2px;
+    letter-spacing: -3px;
     color: var(--text-dark);
-    line-height: 1.0;
+    line-height: 0.9;
     text-transform: uppercase;
 }
 
@@ -207,34 +237,42 @@ header {
     letter-spacing: normal;
 }
 
-.hero h2 {
-    font-family: var(--font-serif);
-    font-size: 32px;
-    font-weight: 600;
-    color: var(--text-dark);
-    margin-bottom: 24px;
-    line-height: 1.2;
-}
-
-.hero h2 span {
-    color: var(--accent-blue);
-}
-
-.hero-p {
+.hero-bio-text {
     font-family: var(--font-mono);
-    font-size: 14px;
-    color: var(--text-muted);
-    max-width: 600px;
-    margin: 0 auto 40px auto;
-    text-align: justify;
-    text-justify: inter-word;
+    font-size: 10px;
+    line-height: 1.45;
+    color: var(--text-dark);
+    max-width: 675px;
+    margin: 0 auto 32px auto;
+    text-align: center;
+    letter-spacing: 0.1px;
+}
+
+.partner-logos {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin: 40px 0 24px 0;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    padding: 16px 0;
+    flex-wrap: wrap;
+}
+
+.partner-logos span {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--text-dark);
+    opacity: 0.8;
+    letter-spacing: 1px;
 }
 
 .hero-actions {
     display: flex;
     justify-content: center;
     gap: 16px;
-    margin-bottom: 48px;
+    margin-bottom: 32px;
 }
 
 /* Custom buttons */
@@ -922,12 +960,19 @@ footer p {
     .float-element {
         display: none; /* Hide 3D graphics on tablet & mobile to avoid clutter */
     }
+    .technical-corner {
+        display: none; /* Hide corner texts on tablet & mobile */
+    }
     .brand-title {
-        font-size: 60px;
+        font-size: 72px;
     }
     .script-overlay {
         font-size: 36px;
         top: -20px;
+    }
+    .partner-logos {
+        gap: 16px;
+        margin: 32px 0 16px 0;
     }
     .comparison-grid {
         grid-template-columns: 1fr;
@@ -943,10 +988,6 @@ footer p {
         max-width: 500px;
         gap: 32px;
     }
-    .cases-grid {
-        grid-template-columns: 1fr;
-        gap: 32px;
-    }
 }
 
 @media (max-width: 576px) {
@@ -954,15 +995,16 @@ footer p {
         font-size: 22px;
     }
     .brand-title {
-        font-size: 42px;
+        font-size: 48px;
     }
     .script-overlay {
         font-size: 28px;
         top: -16px;
         right: 10px;
     }
-    .hero h2 {
-        font-size: 24px;
+    .hero-bio-text {
+        font-size: 9px;
+        line-height: 1.4;
     }
     .hero-actions {
         flex-direction: column;

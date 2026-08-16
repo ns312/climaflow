@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         const rotate = centerOffset * 0.04;    // rotation angle
                         
                         // Apply layout-specific transformations
-                        if (item.id === 'case-climaflow') {
+                        if (item.id === 'case-proforce') {
                             // Left overlap
                             overlapImg.style.transform = `translate3d(calc(-60px + ${translateY * -0.2}px), calc(-50px + ${translateY}px), 0) rotate(${-15 + rotate}deg)`;
                         } else {
