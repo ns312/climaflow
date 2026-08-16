@@ -376,5 +376,26 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         observer.observe(document.body, { childList: true, subtree: true });
     }
+
+    // 8. Scroll Reveal Animations (Nothin style)
+    const revealOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -40px 0px"
+    };
+
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+                // Unobserve after revealing to prevent repeating animation on re-entry (matching Nothin's smooth load-in!)
+                observer.unobserve(entry.target);
+            }
+        });
+    }, revealOptions);
+
+    const revealElements = document.querySelectorAll('.reveal-up, .reveal-img');
+    revealElements.forEach(el => {
+        revealObserver.observe(el);
+    });
 });
 

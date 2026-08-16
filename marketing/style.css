@@ -614,9 +614,22 @@ header {
     border-radius: 16px;
     padding: 60px;
     display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 60px;
+    grid-template-columns: 1.2fr 0.8fr 1fr;
+    gap: 40px;
     background-color: #222;
+    align-items: center;
+}
+
+.calc-graphic {
+    height: 380px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.calc-graphic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .calc-inputs h3 {
@@ -1740,5 +1753,86 @@ footer p {
     0% { transform: translate3d(0, 0, 0); }
     100% { transform: translate3d(-50%, 0, 0); }
 }
+
+/* Scroll Reveal & Nothin-style Image Animations */
+.reveal-up {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1.0s cubic-bezier(0.16, 1, 0.3, 1), transform 1.0s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, opacity;
+}
+
+.reveal-up.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-img-wrap {
+    overflow: hidden;
+    position: relative;
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+}
+
+.reveal-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transform: scale(1.15);
+    transition: opacity 1.2s ease-out, transform 1.6s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, opacity;
+}
+
+.reveal-img.revealed {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* FAQ Layout Grid & Side Graphic */
+.faq-layout-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 60px;
+    align-items: flex-start;
+    margin-top: 40px;
+}
+
+.faq-accordion-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.faq-graphic-side {
+    position: sticky;
+    top: 120px;
+    height: 480px;
+}
+
+/* Responsive Overrides for Calculator & FAQ Grid */
+@media (max-width: 991px) {
+    .calc-box {
+        grid-template-columns: 1fr !important;
+        padding: 40px !important;
+        gap: 32px !important;
+    }
+    .calc-graphic {
+        height: 260px;
+        order: 2;
+    }
+    .calc-results {
+        order: 3;
+    }
+    .faq-layout-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .faq-graphic-side {
+        height: 320px;
+        position: static;
+    }
+}
+
 
 
