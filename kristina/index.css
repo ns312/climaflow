@@ -30,6 +30,7 @@ body {
     font-family: var(--font-body);
     line-height: 1.6;
     overflow-x: hidden;
+    margin-top: 44px; /* Offset for sticky promo bar */
 }
 
 .container {
@@ -132,7 +133,7 @@ p {
     border-bottom: 1px solid var(--border);
     padding: 15px 0;
     position: sticky;
-    top: 0;
+    top: 44px; /* Offset for sticky promo bar */
     z-index: 100;
 }
 
@@ -755,18 +756,41 @@ p {
    🚨 CONVERSION OPTIMIZATIONS (PROMO & FLOATING WA)
    ========================================== */
 
-/* Promo Bar Style */
+/* Sticky & Pulsing Promo Bar Style */
 .promo-bar {
     background-color: var(--accent);
     color: #ffffff;
     text-align: center;
-    padding: 10px 15px;
+    padding: 12px 15px;
     font-size: 0.9rem;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 0.05em;
-    position: relative;
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: fixed; /* Sticky at the top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999; /* Above everything */
+    box-shadow: 0 4px 15px rgba(227, 62, 43, 0.4);
+    text-decoration: none;
+    animation: promo_pulse 1.8s infinite alternate ease-in-out;
+    transition: var(--transition);
+}
+.promo-bar:hover {
+    background-color: var(--accent-hover);
+}
+@keyframes promo_pulse {
+    0% {
+        box-shadow: 0 4px 10px rgba(227, 62, 43, 0.3);
+        transform: scale(1);
+    }
+    100% {
+        box-shadow: 0 6px 20px rgba(227, 62, 43, 0.6);
+        background-color: #e63e28;
+    }
 }
 
 /* Floating WhatsApp Button */
