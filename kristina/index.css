@@ -777,7 +777,8 @@ p {
     top: 0;
     left: 0;
     width: 100%;
-    height: 44px;
+    min-height: 44px;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -786,6 +787,20 @@ p {
     text-decoration: none;
     animation: promo_pulse 1.8s infinite alternate ease-in-out;
     transition: var(--transition);
+}
+
+@media (max-width: 480px) {
+    .promo-bar {
+        font-size: 0.78rem;
+        padding: 8px 10px;
+        min-height: 48px;
+    }
+    body {
+        margin-top: 48px;
+    }
+    .header {
+        top: 48px;
+    }
 }
 .promo-bar:hover {
     background-color: var(--accent-hover);
