@@ -146,4 +146,167 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // 5. Interactive Google Ads Search Mockup Logic
+    const mockupTabBtns = document.querySelectorAll('.mockup-tab-btn');
+    const searchInputDisplay = document.getElementById('mockup-search-input');
+    const adUrl = document.getElementById('mockup-ad-url');
+    const adTitle = document.getElementById('mockup-ad-title');
+    const adDesc = document.getElementById('mockup-ad-desc');
+    const adSitelinksContainer = document.querySelector('.ad-sitelinks');
+    
+    const mockupData = {
+        "пошив одежды оптом бишкек": {
+            url: "bazikostyle.com",
+            title: "Швейное Производство Оптом в Бишкеке | Фабрика BAZIKO",
+            desc: "Швейная фабрика полного цикла. Шьем одежду оптом для маркетплейсов Wildberries и Ozon. Высокое качество, автоматизация, доставка по СНГ. Звоните!",
+            sitelinks: ["Договор с гарантией", "Образец за 3 дня", "Цены от фабрики"]
+        },
+        "спортивные костюмы оптом фабрика": {
+            url: "proforce-gcc.com/factory",
+            title: "Пошив Спортивной Одежды Оптом от Производителя | PROFORCE",
+            desc: "Оптовый пошив спортивных костюмов, худи и брюк на заказ от фабрики PROFORCE. Выгодные цены, премиум ткани, доставка по СНГ. Узнайте прайс!",
+            sitelinks: ["Спортивные костюмы", "Худи & Брюки", "Выгодные цены"]
+        },
+        "ремонт кондиционеров бишкек": {
+            url: "climaflow312.com",
+            title: "Ремонт и Установка Кондиционеров в Бишкеке | Climaflow",
+            desc: "Профессиональный ремонт и установка кондиционеров. Выезд мастера за 30 минут по Бишкеку. Гарантия 1 год. Работаем 24/7. Жмите!",
+            sitelinks: ["Выезд за 30 мин", "Гарантия 1 год", "Цены от 1200 сом"]
+        }
+    };
+    
+    let typingInterval = null;
+    
+    function typeText(targetText, callback) {
+        if (typingInterval) clearInterval(typingInterval);
+        
+        let currentText = "";
+        let index = 0;
+        searchInputDisplay.textContent = "";
+        
+        typingInterval = setInterval(() => {
+            if (index < targetText.length) {
+                currentText += targetText[index];
+                searchInputDisplay.textContent = currentText;
+                index++;
+            } else {
+                clearInterval(typingInterval);
+                if (callback) callback();
+            }
+        }, 60);
+    }
+    
+    function updateMockupResult(keyword) {
+        const data = mockupData[keyword];
+        if (data) {
+            adUrl.textContent = data.url;
+            adTitle.textContent = data.title;
+            adDesc.textContent = data.desc;
+            
+            // Re-render sitelinks
+            adSitelinksContainer.innerHTML = "";
+            data.sitelinks.forEach(linkText => {
+                const span = document.createElement('span');
+                span.className = "sitelink";
+                span.textContent = linkText;
+                adSitelinksContainer.appendChild(span);
+            });
+        }
+    }
+    
+    if (mockupTabBtns.length > 0 && searchInputDisplay) {
+        mockupTabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                mockupTabBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                const keyword = btn.getAttribute('data-keyword');
+                typeText(keyword, () => {
+                    updateMockupResult(keyword);
+                });
+            });
+        });
+    }
+
+    // 6. Interactive Lead Quiz Logic
+    const quizSteps = document.querySelectorAll('.quiz-step');
+    const optionBtns = document.querySelectorAll('.quiz-option-btn');
+    const progressFill = document.getElementById('quiz-progress');
+    const quizSubmitBtn = document.getElementById('quiz-submit-btn');
+    
+    const quizAnswers = {
+        step1: "",
+        step2: "",
+        step3: "",
+        step4: ""
+    };
+    
+    let currentStep = 1;
+    const totalSteps = 4;
+    
+    function showStep(stepNum) {
+        quizSteps.forEach(step => step.classList.remove('active'));
+        
+        if (stepNum === 'final') {
+            const finalStepEl = document.getElementById('step-final');
+            if (finalStepEl) finalStepEl.classList.add('active');
+            if (progressFill) {
+                progressFill.style.width = "100%";
+                progressFill.textContent = "100%";
+            }
+        } else {
+            const currentStepEl = document.getElementById(`step-${stepNum}`);
+            if (currentStepEl) currentStepEl.classList.add('active');
+            if (progressFill) {
+                const percent = Math.round(((stepNum - 1) / totalSteps) * 100) || 25;
+                progressFill.style.width = `${percent}%`;
+                progressFill.textContent = `${percent}%`;
+            }
+        }
+    }
+    
+    if (optionBtns.length > 0) {
+        optionBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const parentStep = btn.closest('.quiz-step');
+                const answer = btn.getAttribute('data-answer');
+                
+                if (parentStep && answer) {
+                    const stepIdStr = parentStep.id; // e.g. "step-1"
+                    const stepIndex = parseInt(stepIdStr.split('-')[1]);
+                    
+                    quizAnswers[`step${stepIndex}`] = answer;
+                    
+                    if (stepIndex < totalSteps) {
+                        currentStep = stepIndex + 1;
+                        showStep(currentStep);
+                    } else {
+                        showStep('final');
+                    }
+                }
+            });
+        });
+    }
+    
+    if (quizSubmitBtn) {
+        quizSubmitBtn.addEventListener('click', () => {
+            const textPayload = `Привет! Я прошел B2B тест на расчет медиаплана Google на вашем сайте Clima Marketing.%0A%0A1. Ниша: ${encodeURIComponent(quizAnswers.step1)}%0A2. Нужная частота продаж: ${encodeURIComponent(quizAnswers.step2)}%0A3. Предыдущий опыт Google Ads: ${encodeURIComponent(quizAnswers.step3)}%0A4. Бюджет на тест: ${encodeURIComponent(quizAnswers.step4)}%0A%0AХочу получить готовый расчет, прогноз кликов и бесплатный аудит 3 конкурентов.`;
+            
+            const waUrl = `https://wa.me/996502985896?text=${textPayload}`;
+            
+            // Trigger Meta Lead pixel event tracking
+            if (typeof fbq !== 'undefined') {
+                fbq('track', 'Lead', {
+                    content_name: 'B2B Quiz Submit',
+                    value: 0.00,
+                    currency: 'USD'
+                });
+            }
+            
+            // Redirect
+            window.location.href = waUrl;
+        });
+    }
 });
+
