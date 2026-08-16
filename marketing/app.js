@@ -105,12 +105,45 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 } else {
                     entry.target.classList.remove('active');
+                    // Reset transform of non-active items
+                    const overlapImg = entry.target.querySelector('.case-overlap-img');
+                    if (overlapImg) {
+                        overlapImg.style.transform = '';
+                    }
                 }
             });
         }, observerOptions);
         
         caseItems.forEach(item => {
             caseObserver.observe(item);
+        });
+
+        // Parallax scroll effect for overlapping 3D graphics
+        window.addEventListener('scroll', () => {
+            caseItems.forEach(item => {
+                if (item.classList.contains('active')) {
+                    const rect = item.getBoundingClientRect();
+                    const overlapImg = item.querySelector('.case-overlap-img');
+                    
+                    if (overlapImg) {
+                        // Calculate offset from the middle of the screen
+                        const centerOffset = (rect.top + rect.height / 2) - (window.innerHeight / 2);
+                        
+                        // Parallax factors
+                        const translateY = centerOffset * 0.18; // vertical shift
+                        const rotate = centerOffset * 0.04;    // rotation angle
+                        
+                        // Apply layout-specific transformations
+                        if (item.id === 'case-climaflow') {
+                            // Left overlap
+                            overlapImg.style.transform = `translate3d(calc(-60px + ${translateY * -0.2}px), calc(-50px + ${translateY}px), 0) rotate(${-15 + rotate}deg)`;
+                        } else {
+                            // Right overlap
+                            overlapImg.style.transform = `translate3d(calc(60px + ${translateY * 0.2}px), calc(-50px + ${translateY}px), 0) rotate(${15 + rotate}deg)`;
+                        }
+                    }
+                }
+            });
         });
     }
 });

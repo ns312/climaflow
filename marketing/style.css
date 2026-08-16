@@ -621,10 +621,10 @@ header {
 .cases-letters-bg .left-letter,
 .cases-letters-bg .right-letter {
     font-family: var(--font-serif);
-    font-size: 32vw;
+    font-size: 38vw;
     font-weight: 700;
     color: #FFF;
-    opacity: 0.8;
+    opacity: 0.9;
     line-height: 1;
     user-select: none;
 }
@@ -635,6 +635,30 @@ header {
 
 .cases-letters-bg .right-letter {
     margin-right: 20px;
+}
+
+.side-label-left {
+    position: absolute;
+    left: 24px;
+    top: 50%;
+    transform: translateY(-50%) rotate(-90deg);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.7);
+    letter-spacing: 2px;
+}
+
+.side-label-right {
+    position: absolute;
+    right: 24px;
+    top: 50%;
+    transform: translateY(-50%) rotate(90deg);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.7);
+    letter-spacing: 2px;
 }
 
 .cases-scroll-list {
@@ -651,24 +675,25 @@ header {
 }
 
 .case-scroll-card {
-    background-color: var(--bg-main);
-    border: 1.5px solid var(--border-color);
-    border-radius: 24px;
-    padding: 40px;
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    padding: 0;
     width: 100%;
-    max-width: 900px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 48px;
+    max-width: 520px;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.05);
+    box-shadow: none;
+    text-align: center;
 }
 
 .case-scroll-img-wrapper {
     position: relative;
     width: 100%;
-    height: 300px;
+    height: 480px; /* Vertical poster height */
     border-radius: 16px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.15);
 }
 
 .case-main-img {
@@ -676,78 +701,112 @@ header {
     height: 100%;
     object-fit: cover;
     border-radius: 16px;
-    border: 1.5px solid var(--border-color);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .case-overlap-img {
     position: absolute;
-    width: 180px;
-    height: 180px;
+    width: 220px;
+    height: 220px;
     z-index: 10;
     pointer-events: none;
     opacity: 0;
-    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: opacity 0.6s ease;
 }
 
-/* Specific positions for overlapping 3D charts on card */
+/* Specific start positions for parallax calculation */
 .case-scroll-item:nth-child(1) .case-overlap-img {
-    bottom: -40px;
-    right: -50px;
-    transform: translate(30px, 30px) rotate(15deg);
+    bottom: -50px;
+    right: -60px;
 }
 
 .case-scroll-item:nth-child(2) .case-overlap-img {
-    bottom: -40px;
-    left: -50px;
-    transform: translate(-30px, 30px) rotate(-15deg);
+    bottom: -50px;
+    left: -60px;
 }
 
 .case-scroll-item:nth-child(3) .case-overlap-img {
-    bottom: -40px;
-    right: -50px;
-    transform: translate(30px, 30px) rotate(15deg);
+    bottom: -50px;
+    right: -60px;
 }
 
-/* Active animations when item comes to viewport center */
+/* Active animation state (fade in) */
 .case-scroll-item.active .case-overlap-img {
-    transform: translate(0, 0) rotate(0deg) !important;
     opacity: 1;
 }
 
-.case-scroll-info h3 {
+.case-scroll-info {
+    margin-top: 32px;
+    width: 100%;
+}
+
+.case-brand-name {
     font-family: var(--font-serif);
-    font-size: 28px;
-    margin-bottom: 16px;
+    font-size: 58px;
+    font-weight: 700;
+    color: #FFF;
     text-transform: uppercase;
+    letter-spacing: -2px;
+    line-height: 1;
+    margin-bottom: 20px;
 }
 
 .case-scroll-info p {
     font-family: var(--font-mono);
-    font-size: 13px;
-    color: var(--text-muted);
-    margin-bottom: 32px;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 440px;
+    margin: 0 auto 32px auto;
+    line-height: 1.5;
 }
 
 .case-scroll-metrics {
     display: flex;
-    gap: 24px;
-    border-top: 1.5px solid var(--border-color);
+    justify-content: center;
+    gap: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
     padding-top: 24px;
+    max-width: 440px;
+    margin: 0 auto;
 }
 
 .case-scroll-metrics .metric-item span {
     display: block;
     font-size: 9px;
-    color: var(--text-muted);
+    color: rgba(255, 255, 255, 0.6);
     text-transform: uppercase;
     margin-bottom: 6px;
 }
 
 .case-scroll-metrics .metric-item strong {
-    font-size: 18px;
+    font-size: 20px;
     font-family: var(--font-serif);
     font-weight: 700;
-    color: var(--accent-blue);
+    color: #FFF;
+}
+
+/* Responsive adjustments for Case Scroll Block */
+@media (max-width: 991px) {
+    .cases-letters-bg .left-letter,
+    .cases-letters-bg .right-letter {
+        font-size: 35vw;
+    }
+}
+
+@media (max-width: 768px) {
+    .case-scroll-card {
+        max-width: 380px;
+    }
+    .case-scroll-img-wrapper {
+        height: 380px;
+    }
+    .case-brand-name {
+        font-size: 40px;
+    }
+    .case-overlap-img {
+        width: 140px;
+        height: 140px;
+    }
 }
 
 /* FAQ Section */
