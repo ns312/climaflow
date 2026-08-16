@@ -105,4 +105,46 @@ document.addEventListener('DOMContentLoaded', () => {
             slides[currentSlide].classList.add('active');
         }, 3000); // Change image every 3 seconds
     }
+
+    /* ==========================================
+       📊 META PIXEL EVENT TRACKING LOGIC
+       ========================================== */
+    // Helper function to track Lead event
+    function trackLead() {
+        if (typeof fbq === 'function') {
+            fbq('track', 'Lead');
+            console.log('Meta Pixel: Lead tracked!');
+        }
+    }
+
+    // 1. Track Lead on Form Submission
+    if (leadForm) {
+        leadForm.addEventListener('submit', () => {
+            trackLead();
+        });
+    }
+
+    // 2. Track Lead on any WhatsApp direct link click
+    const waLinks = document.querySelectorAll('a[href*="wa.me"]');
+    waLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            trackLead();
+        });
+    });
+
+    // 3. Track Lead on Top Promo Bar click
+    const promoBar = document.querySelector('.promo-bar');
+    if (promoBar) {
+        promoBar.addEventListener('click', () => {
+            trackLead();
+        });
+    }
+
+    // 4. Time On Site 30s Custom Event
+    setTimeout(() => {
+        if (typeof fbq === 'function') {
+            fbq('trackCustom', 'TimeOnSite30s');
+            console.log('Meta Pixel: TimeOnSite30s tracked!');
+        }
+    }, 30000); // 30 seconds
 });
