@@ -1818,8 +1818,7 @@ footer p {
         gap: 32px !important;
     }
     .calc-graphic {
-        height: 260px;
-        order: 2;
+        display: none !important;
     }
     .calc-results {
         order: 3;
