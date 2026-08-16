@@ -596,67 +596,146 @@ header {
     font-weight: 700;
 }
 
-/* Portfolio Cases */
-.cases {
-    padding: 100px 0;
+/* Portfolio Cases (Scroll-linked Neoclassical/B2B Style) */
+.cases-scroll-section {
+    position: relative;
+    height: 350vh; /* 3 case studies, each getting 100vh height + initial entry */
     border-bottom: 1px solid var(--border-color);
 }
 
-.cases-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 48px;
-}
-
-.case-card {
-    border: 1.5px solid var(--border-color);
-    border-radius: 20px;
+.cases-letters-bg {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    pointer-events: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
     overflow: hidden;
-    background-color: rgba(255, 255, 255, 0.2);
-    transition: all 0.3s ease;
+    transition: background-color 0.8s ease;
+    background-color: var(--bg-main);
 }
 
-.case-card:hover {
-    transform: translateY(-4px);
-    border-color: var(--text-dark);
+.cases-letters-bg .left-letter,
+.cases-letters-bg .right-letter {
+    font-family: var(--font-serif);
+    font-size: 32vw;
+    font-weight: 700;
+    color: #FFF;
+    opacity: 0.8;
+    line-height: 1;
+    user-select: none;
 }
 
-.case-img {
-    height: 280px;
-    border-bottom: 1px solid var(--border-color);
+.cases-letters-bg .left-letter {
+    margin-left: 20px;
+}
+
+.cases-letters-bg .right-letter {
+    margin-right: 20px;
+}
+
+.cases-scroll-list {
+    margin-top: -100vh; /* Pull up to overlay the sticky background container */
+    position: relative;
+    z-index: 5;
+}
+
+.case-scroll-item {
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
-    background-size: cover;
-    background-position: center;
 }
 
-.case-info {
+.case-scroll-card {
+    background-color: var(--bg-main);
+    border: 1.5px solid var(--border-color);
+    border-radius: 24px;
     padding: 40px;
+    width: 100%;
+    max-width: 900px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.05);
 }
 
-.case-info h3 {
+.case-scroll-img-wrapper {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    border-radius: 16px;
+}
+
+.case-main-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 16px;
+    border: 1.5px solid var(--border-color);
+}
+
+.case-overlap-img {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    z-index: 10;
+    pointer-events: none;
+    opacity: 0;
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Specific positions for overlapping 3D charts on card */
+.case-scroll-item:nth-child(1) .case-overlap-img {
+    bottom: -40px;
+    right: -50px;
+    transform: translate(30px, 30px) rotate(15deg);
+}
+
+.case-scroll-item:nth-child(2) .case-overlap-img {
+    bottom: -40px;
+    left: -50px;
+    transform: translate(-30px, 30px) rotate(-15deg);
+}
+
+.case-scroll-item:nth-child(3) .case-overlap-img {
+    bottom: -40px;
+    right: -50px;
+    transform: translate(30px, 30px) rotate(15deg);
+}
+
+/* Active animations when item comes to viewport center */
+.case-scroll-item.active .case-overlap-img {
+    transform: translate(0, 0) rotate(0deg) !important;
+    opacity: 1;
+}
+
+.case-scroll-info h3 {
     font-family: var(--font-serif);
-    font-size: 26px;
+    font-size: 28px;
     margin-bottom: 16px;
     text-transform: uppercase;
 }
 
-.case-desc {
+.case-scroll-info p {
+    font-family: var(--font-mono);
     font-size: 13px;
     color: var(--text-muted);
     margin-bottom: 32px;
 }
 
-.case-metrics {
+.case-scroll-metrics {
     display: flex;
-    gap: 32px;
+    gap: 24px;
     border-top: 1.5px solid var(--border-color);
     padding-top: 24px;
 }
 
-.metric-item span {
+.case-scroll-metrics .metric-item span {
     display: block;
     font-size: 9px;
     color: var(--text-muted);
@@ -664,7 +743,7 @@ header {
     margin-bottom: 6px;
 }
 
-.metric-item strong {
+.case-scroll-metrics .metric-item strong {
     font-size: 18px;
     font-family: var(--font-serif);
     font-weight: 700;

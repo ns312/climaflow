@@ -82,4 +82,35 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     });
+
+    // 4. Scroll-linked Case Studies Animation Logic
+    const caseItems = document.querySelectorAll('.case-scroll-item');
+    const casesBg = document.getElementById('cases-bg');
+    
+    if (caseItems.length > 0 && casesBg) {
+        const observerOptions = {
+            root: null,
+            rootMargin: '-25% 0px -25% 0px', // Trigger when card reaches the middle 50% of the screen
+            threshold: 0.15
+        };
+        
+        const caseObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    
+                    const targetBg = entry.target.getAttribute('data-bg');
+                    if (targetBg) {
+                        casesBg.style.backgroundColor = targetBg;
+                    }
+                } else {
+                    entry.target.classList.remove('active');
+                }
+            });
+        }, observerOptions);
+        
+        caseItems.forEach(item => {
+            caseObserver.observe(item);
+        });
+    }
 });
