@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Space+Mono:wght@400;700&family=Caveat:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;700;800&family=Space+Mono:wght@400;700&family=Caveat:wght@700&display=swap');
 
 :root {
     --bg-main: #1a1a1a; /* Dark cyberpunk charcoal */
@@ -9,8 +9,9 @@
     --border-color: rgba(186, 186, 186, 0.2); /* Subtle light borders */
     --accent-red: #ff001a; /* Neon Red */
     
-    --font-serif: 'Cormorant Garamond', serif;
-    --font-mono: 'Space Mono', monospace;
+    --font-serif: 'Unbounded', sans-serif; /* Volumetric geometric font for titles */
+    --font-mono: 'Plus Jakarta Sans', sans-serif; /* Clean modern sans-serif for body */
+    --font-tech: 'Space Mono', monospace; /* Monospace for technical labels */
 }
 
 * {
@@ -209,11 +210,21 @@ header {
 
 .logo {
     font-family: var(--font-serif);
-    font-size: 28px;
-    font-weight: 700;
+    font-size: 20px; /* Unbounded is very wide, so 20px is perfect size for header! */
+    font-weight: 800;
     letter-spacing: -0.5px;
-    color: var(--text-dark);
+    color: #FFF;
     text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-icon {
+    width: 28px;
+    height: 28px;
+    display: inline-block;
+    filter: drop-shadow(0 0 8px rgba(159, 228, 243, 0.45));
 }
 
 .logo span {
@@ -320,7 +331,7 @@ header {
 /* Technical Corner Text Blocks */
 .technical-corner {
     position: absolute;
-    font-family: var(--font-mono);
+    font-family: var(--font-tech);
     font-size: 8px;
     line-height: 1.25;
     text-transform: uppercase;
@@ -341,7 +352,7 @@ header {
 }
 
 .hero-top-label {
-    font-family: var(--font-mono);
+    font-family: var(--font-tech);
     font-size: 10px;
     text-transform: uppercase;
     color: var(--text-dark);
@@ -427,8 +438,8 @@ header {
 
 /* Custom buttons */
 .btn {
-    font-family: var(--font-mono);
-    font-size: 12px;
+    font-family: var(--font-tech);
+    font-size: 11px;
     font-weight: 700;
     text-transform: uppercase;
     padding: 14px 28px;
@@ -506,7 +517,7 @@ header {
 }
 
 .section-technical-label {
-    font-family: var(--font-mono);
+    font-family: var(--font-tech);
     font-size: 10px;
     text-transform: uppercase;
     color: var(--accent-blue);
@@ -859,7 +870,7 @@ header {
     left: 24px;
     top: 50%;
     transform: translateY(-50%) rotate(-90deg);
-    font-family: var(--font-mono);
+    font-family: var(--font-tech);
     font-size: 10px;
     text-transform: uppercase;
     color: rgba(255, 255, 255, 0.7);
@@ -871,7 +882,7 @@ header {
     right: 24px;
     top: 50%;
     transform: translateY(-50%) rotate(90deg);
-    font-family: var(--font-mono);
+    font-family: var(--font-tech);
     font-size: 10px;
     text-transform: uppercase;
     color: rgba(255, 255, 255, 0.7);
