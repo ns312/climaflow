@@ -2076,6 +2076,14 @@ footer p {
         font-size: 10px !important;
         padding: 12px 20px !important;
     }
+    
+    /* Calculator price font reduction */
+    .calc-price {
+        font-size: 32px !important;
+        line-height: 1.15 !important;
+        margin-bottom: 12px !important;
+        letter-spacing: -0.5px !important;
+    }
 }
 
 /* Mobile Dropdown Navigation Override (below 768px) */
