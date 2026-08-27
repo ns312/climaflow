@@ -1,0 +1,1874 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[ПРОТОТИП] Astra Brand — Контрактный пошив Plus Size в Бишкеке</title>
+    <meta name="description" content="Контрактное производство и пошив женской одежды больших размеров (Plus Size) оптом в Бишкеке. Профессиональные лекала для женщин 35+.">
+    
+    <!-- Styles -->
+    <style>
+        /* WIREFRAME STYLE PROTOTYPE (MONOCHROME - BLACK & WHITE) */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+        :root {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f9f9f9;
+            --border-color: #000000;
+            --border-light: #e0e0e0;
+            --color-text-primary: #000000;
+            --color-text-secondary: #666666;
+            --font-family: 'Inter', sans-serif;
+            --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--color-text-primary);
+            font-family: var(--font-family);
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 80px 0;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            color: var(--color-text-secondary);
+            margin-bottom: 20px;
+            font-size: 15px;
+        }
+
+        /* Wireframe Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 28px;
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            text-decoration: none;
+            border: 2px solid var(--border-color);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-primary {
+            background-color: var(--border-color);
+            color: #ffffff;
+        }
+
+        .btn-primary:hover {
+            background-color: #333333;
+            border-color: #333333;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--color-text-primary);
+        }
+
+        .btn-secondary:hover {
+            background-color: #f0f0f0;
+        }
+
+        /* Header & Navigation */
+        header {
+            border-bottom: 2px solid var(--border-color);
+            background-color: #ffffff;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+            position: relative;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 800;
+            text-decoration: none;
+            color: #000000;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--color-text-primary);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 2px;
+            background-color: #000000;
+            transition: var(--transition);
+        }
+
+        /* Hero Section */
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 40px;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        /* B2B Offers Grid */
+        .offers-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .offer-card {
+            border: 2px solid var(--border-color);
+            padding: 30px;
+            background-color: var(--bg-primary);
+        }
+
+        .offer-card h3 {
+            font-size: 17px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        /* B2B Comparison Table */
+        .compare-table-wrapper {
+            overflow-x: auto;
+            margin-top: 30px;
+            border: 1px solid var(--border-color);
+        }
+
+        .compare-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 14px;
+            min-width: 600px;
+        }
+
+        .compare-table th, .compare-table td {
+            padding: 16px;
+            border: 1px solid var(--border-color);
+        }
+
+        .compare-table th {
+            background-color: var(--bg-secondary);
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .compare-table td.highlight {
+            background-color: rgba(0, 0, 0, 0.03);
+            font-weight: 600;
+        }
+
+        /* Workflow Step list */
+        .workflow-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .workflow-card {
+            border: 1px solid var(--border-color);
+            padding: 24px;
+            position: relative;
+            background-color: var(--bg-primary);
+        }
+
+        .workflow-card .step-number {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--color-text-secondary);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 2px;
+        }
+
+        /* Interactive Gallery (Tabs) */
+        .gallery-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid var(--border-light);
+            padding-bottom: 10px;
+            overflow-x: auto;
+        }
+
+        .tab-btn {
+            padding: 10px 20px;
+            border: 1px solid var(--border-light);
+            background: transparent;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 13px;
+            text-transform: uppercase;
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+
+        .tab-btn.active {
+            border: 2px solid var(--border-color);
+            background-color: var(--bg-secondary);
+        }
+
+        .gallery-content {
+            display: none;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .gallery-content.active {
+            display: grid;
+        }
+
+        .gallery-item {
+            border: 1px solid var(--border-light);
+            padding: 15px;
+            background-color: var(--bg-secondary);
+        }
+
+        .gallery-item-placeholder {
+            height: 200px;
+            border: 1px dashed var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: var(--color-text-secondary);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        /* Fabric Finder Grid */
+        .fabric-finder-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .fabric-card {
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            text-align: center;
+            background-color: var(--bg-primary);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .fabric-card:hover {
+            background-color: var(--bg-secondary);
+        }
+
+        .fabric-card.active {
+            background-color: var(--border-color);
+            color: #ffffff;
+        }
+
+        .fabric-card.active p {
+            color: #e0e0e0;
+        }
+
+        /* Interactive B2B Calculator */
+        .calc-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 40px;
+        }
+
+        .calc-inputs {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group label {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .select-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        .select-card {
+            border: 1px solid var(--border-color);
+            padding: 12px;
+            text-align: center;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 13px;
+        }
+
+        .select-card.active {
+            background-color: var(--border-color);
+            color: #ffffff;
+        }
+
+        .calc-slider {
+            width: 100%;
+            margin: 10px 0;
+            cursor: pointer;
+        }
+
+        .calc-results {
+            border: 2px solid var(--border-color);
+            padding: 30px;
+            background-color: var(--bg-secondary);
+        }
+
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            font-size: 14px;
+        }
+
+        .price-row.total {
+            border-top: 1px solid var(--border-color);
+            padding-top: 15px;
+            font-weight: 700;
+            font-size: 20px;
+        }
+
+        /* Interactive Brief Quiz */
+        .quiz-box {
+            border: 3px solid var(--border-color);
+            padding: 40px;
+            background-color: var(--bg-primary);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .quiz-progress {
+            height: 4px;
+            background-color: var(--border-light);
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .quiz-progress-bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 25%;
+            background-color: var(--border-color);
+            transition: var(--transition);
+        }
+
+        .quiz-step {
+            display: none;
+        }
+
+        .quiz-step.active {
+            display: block;
+        }
+
+        .quiz-options {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .quiz-option {
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .quiz-option.active {
+            background-color: var(--border-color);
+            color: #ffffff;
+        }
+
+        .quiz-nav {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Drag & Drop File Zone */
+        .drag-drop-zone {
+            border: 2px dashed var(--border-color);
+            padding: 30px;
+            text-align: center;
+            background-color: var(--bg-secondary);
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+
+        .drag-drop-zone:hover {
+            background-color: #f0f0f0;
+        }
+
+        /* Guarantees Box */
+        .guarantees-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .guarantee-card {
+            border: 2px solid var(--border-color);
+            padding: 30px;
+            background-color: var(--bg-secondary);
+        }
+
+        .guarantee-card h4 {
+            font-size: 15px;
+            font-weight: 700;
+            border-bottom: 1px dashed var(--border-color);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        /* Trust & Location Grid */
+        .trust-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 40px;
+        }
+
+        .trust-checklist {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .trust-checklist li {
+            padding-left: 30px;
+            position: relative;
+            font-size: 14px;
+        }
+
+        .trust-checklist li::before {
+            content: '[✓]';
+            position: absolute;
+            left: 0;
+            font-weight: 700;
+        }
+
+        .map-placeholder {
+            border: 2px solid var(--border-color);
+            height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--bg-secondary);
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        /* Video Container (Наше Производство) */
+        .video-wrapper {
+            max-width: 800px;
+            margin: 30px auto 0 auto;
+            border: 3px solid var(--border-color);
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Case Studies Carousel */
+        .cases-carousel-container {
+            max-width: 800px;
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+            border: 3px solid var(--border-color);
+            background-color: var(--bg-primary);
+        }
+
+        .cases-carousel-track {
+            display: flex;
+            transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+            width: 100%;
+        }
+
+        .case-slide {
+            width: 100%;
+            flex-shrink: 0;
+            padding: 40px;
+        }
+
+        .carousel-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 40px 40px 40px;
+            background-color: var(--bg-primary);
+        }
+
+        .carousel-dots {
+            display: flex;
+            gap: 8px;
+        }
+
+        .carousel-dot, .review-dot {
+            width: 8px;
+            height: 8px;
+            border: 1px solid var(--border-color);
+            background-color: transparent;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+
+        .carousel-dot.active, .review-dot.active {
+            background-color: var(--border-color);
+        }
+
+        .carousel-arrow {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .carousel-arrow:hover {
+            background-color: var(--bg-secondary);
+        }
+
+        /* Reviews Carousel Styles */
+        .reviews-carousel-container {
+            max-width: 800px;
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+            border: 3px solid var(--border-color);
+            background-color: var(--bg-secondary);
+        }
+
+        .reviews-carousel-track {
+            display: flex;
+            transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+            width: 100%;
+        }
+
+        .review-slide {
+            width: 100%;
+            flex-shrink: 0;
+            padding: 40px;
+        }
+
+        .review-meta {
+            margin-top: 20px;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            border-top: 1px dashed var(--border-color);
+            padding-top: 15px;
+        }
+
+        /* FAQ (Accordion) */
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .faq-item {
+            border: 1px solid var(--border-color);
+        }
+
+        .faq-trigger {
+            width: 100%;
+            padding: 20px;
+            text-align: left;
+            background: transparent;
+            border: none;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-trigger::after {
+            content: '+';
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .faq-item.active .faq-trigger::after {
+            content: '-';
+        }
+
+        .faq-panel {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+            background-color: var(--bg-secondary);
+        }
+
+        .faq-content {
+            padding: 20px;
+            border-top: 1px solid var(--border-light);
+            font-size: 14px;
+            color: var(--color-text-secondary);
+        }
+
+        /* Lead Magnet Banner */
+        .lead-magnet-box {
+            border: 2px solid var(--border-color);
+            padding: 30px;
+            background-color: var(--bg-secondary);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .lead-magnet-text {
+            flex: 1.2;
+        }
+
+        .lead-magnet-form {
+            flex: 0.8;
+            display: flex;
+            gap: 10px;
+        }
+
+        /* Sample Form Box */
+        .sample-form-box {
+            border: 3px solid var(--border-color);
+            padding: 40px;
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: var(--bg-secondary);
+            text-align: center;
+        }
+
+        .sample-form-box form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .sample-input {
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            font-size: 14px;
+            outline: none;
+            font-family: inherit;
+        }
+
+        /* Footer styling */
+        footer {
+            background-color: var(--bg-secondary);
+            border-top: 2px solid var(--border-color);
+            padding: 60px 0 30px 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--border-light);
+            padding-top: 20px;
+            text-align: center;
+            font-size: 12px;
+            color: var(--color-text-secondary);
+        }
+
+        /* RESPONSIVE LAYOUTS & MOBILE ADAPTATION */
+        @media (max-width: 768px) {
+            .hero-grid, .calc-grid, .footer-grid, .offers-grid, .gallery-content, .workflow-grid, .guarantees-grid, .fabric-finder-grid, .quiz-options, .trust-grid, .lead-magnet-box {
+                grid-template-columns: 1fr;
+            }
+            .section {
+                padding: 50px 0;
+            }
+            .hero-content h1 {
+                font-size: 32px;
+            }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: -20px;
+                width: calc(100% + 40px);
+                background-color: var(--bg-primary);
+                border-bottom: 2px solid var(--border-color);
+                padding: 20px;
+                gap: 15px;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .hamburger {
+                display: flex;
+            }
+            .hamburger.active span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+            .hamburger.active span:nth-child(2) {
+                opacity: 0;
+            }
+            .hamburger.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(5px, -5px);
+            }
+            .lead-magnet-box {
+                flex-direction: column;
+                text-align: center;
+            }
+            .lead-magnet-form {
+                width: 100%;
+                flex-direction: column;
+            }
+            .quiz-box, .sample-form-box {
+                padding: 20px;
+            }
+            .case-slide, .review-slide {
+                padding: 20px;
+            }
+            .carousel-controls {
+                padding: 0 20px 20px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">ASTRA BRAND</a>
+            <ul class="nav-links">
+                <li><a href="#offers">Условия</a></li>
+                <li><a href="#compare">Сравнение</a></li>
+                <li><a href="#workflow">Схема работы</a></li>
+                <li><a href="#gallery">Цехи</a></li>
+                <li><a href="#fabrics">Ткани</a></li>
+                <li><a href="#calculator">Калькулятор</a></li>
+                <li><a href="#quiz">Бриф-Квиз</a></li>
+                <li><a href="#guarantees">Гарантии</a></li>
+                <li><a href="#cases">Кейсы</a></li>
+            </ul>
+            <a href="https://wa.me/996708599366" class="btn btn-secondary" style="padding: 8px 18px; font-size: 12px;" target="_blank">Связаться</a>
+            <div class="hamburger" id="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="section">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <h1>Контрактный пошив Plus Size одежды для брендов РФ и СНГ под ключ</h1>
+                <p>Швейная фабрика в Бишкеке с узкой специализацией: идеальные лекала Plus Size на женскую фигуру 35+. Отшиваем партии для Wildberries, Ozon и оффлайн-сетей с маркировкой Честный Знак.</p>
+                <div class="hero-btns">
+                    <a href="#quiz" class="btn btn-primary">Рассчитать бриф</a>
+                    <a href="#sample-request" class="btn btn-secondary">Заказать образец</a>
+                </div>
+            </div>
+            <div style="border: 2px solid #000; padding: 25px; background-color: #f9f9f9; text-align: center;">
+                <h4 style="margin-bottom: 12px;">[Спецификация фабрики]</h4>
+                <p style="font-size: 13px; color: #666; line-height: 1.6; text-align: left; margin-bottom: 0;">
+                    • Мощность: до 50 000 ед/мес<br>
+                    • Разработка лекал: САПР (Грация / Gerber)<br>
+                    • Доставка: Карго (Москва за 5-7 дней)<br>
+                    • Минимальный заказ: от 300 ед. на модель<br>
+                    • Размеры: от 48 до 74+
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Strong B2B Offers Section -->
+    <section class="section" id="offers">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 40px;">Ключевые офферы и условия работы</h2>
+            <div class="offers-grid">
+                <!-- Offer 1 -->
+                <div class="offer-card">
+                    <h3>Для селлеров WB и Ozon</h3>
+                    <p>Полноценный аутсорсинг: пошив + глажка + маркировка штрихкодами и кодами Честный Знак + упаковка в ЗИП-пакеты. Отгружаем напрямую транспортным компаниям.</p>
+                    <span style="font-size: 12px; font-weight: 700; text-transform: uppercase;">Тестовая партия: от 300 шт.</span>
+                </div>
+                <!-- Offer 2 -->
+                <div class="offer-card">
+                    <h3>Идеальные Plus-Size лекала</h3>
+                    <p>Наше конструкторское бюро специализируется на лекалах 48-70+ размеров для аудитории 35+. Гарантируем идеальную посадку (скрываем проблемные зоны рук, живота и бедер).</p>
+                    <span style="font-size: 12px; font-weight: 700; text-transform: uppercase;">Разработка по фото: за 3 дня</span>
+                </div>
+                <!-- Offer 3 -->
+                <div class="offer-card">
+                    <h3>Ценовой арбитраж</h3>
+                    <p>Экономия до 40% на себестоимости по сравнению со швейными фабриками в России благодаря оптимизации затрат в Бишкеке при полном европейском уровне контроля качества.</p>
+                    <span style="font-size: 12px; font-weight: 700; text-transform: uppercase;">3 этапа проверки качества (ОТК)</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- B2B COMPARISON TABLE -->
+    <section class="section" id="compare">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 20px;">Сравнение условий: Пошив в РФ vs Astra Brand (Бишкек)</h2>
+            <p style="text-align: center; max-width: 600px; margin: 0 auto 30px auto;">Таблица наглядно демонстрирует экономические преимущества размещения заказов на нашем производстве.</p>
+            
+            <div class="compare-table-wrapper">
+                <table class="compare-table">
+                    <thead>
+                        <tr>
+                            <th>Критерии сравнения</th>
+                            <th>Пошив на фабриках в РФ</th>
+                            <th style="border: 2px solid #000; background-color: #f0f0f0;">Astra Brand (Бишкек)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><b>Себестоимость пошива платья</b></td>
+                            <td>От 900 до 1500 рублей</td>
+                            <td class="highlight" style="border-left: 2px solid #000; border-right: 2px solid #000;">От 550 до 850 рублей (-40%)</td>
+                        </tr>
+                        <tr>
+                            <td><b>Доступность тканей и фурнитуры</b></td>
+                            <td>Сложная логистика, высокие наценки импортеров</td>
+                            <td class="highlight" style="border-left: 2px solid #000; border-right: 2px solid #000;">Прямой закуп на рынке «Мадина» (по ценам фабрик Китая и Турции)</td>
+                        </tr>
+                        <tr>
+                            <td><b>Порог минимальной партии</b></td>
+                            <td>От 500-1000 шт. на размерный ряд</td>
+                            <td class="highlight" style="border-left: 2px solid #000; border-right: 2px solid #000;">От 300 шт. на модель (свободный набор размеров)</td>
+                        </tr>
+                        <tr>
+                            <td><b>Таможня и сертификаты</b></td>
+                            <td>Не требуется растаможка</td>
+                            <td class="highlight" style="border-left: 2px solid #000; border-right: 2px solid #000;">Без пошлин (ЕАЭС). Предоставляем декларации соответствия</td>
+                        </tr>
+                        <tr>
+                            <td><b>Маркировка Честный Знак</b></td>
+                            <td>Делается силами заказчика</td>
+                            <td class="highlight" style="border-left: 2px solid #000; border-right: 2px solid #000; border-bottom: 2px solid #000;">Полная оклейка кодами DataMatrix на фабрике перед отправкой</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- STEP-BY-STEP WORKFLOW SECTION -->
+    <section class="section" id="workflow">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 40px;">Схема сотрудничества шаг за шагом</h2>
+            <div class="workflow-grid">
+                <!-- Step 1 -->
+                <div class="workflow-card">
+                    <span class="step-number">01</span>
+                    <h3 style="font-size: 16px; margin-top: 20px;">Заявка и расчет</h3>
+                    <p style="font-size: 13px;">Вы присылаете фото, эскиз или образец изделия. Мы рассчитываем предварительную смету пошива за 1 рабочий день.</p>
+                </div>
+                <!-- Step 2 -->
+                <div class="workflow-card">
+                    <span class="step-number">02</span>
+                    <h3 style="font-size: 16px; margin-top: 20px;">Пошив образца</h3>
+                    <p style="font-size: 13px;">Наш конструктор разрабатывает лекала САПР, и мы отшиваем пилотный образец для примерки и утверждения посадки.</p>
+                </div>
+                <!-- Step 3 -->
+                <div class="workflow-card">
+                    <span class="step-number">03</span>
+                    <h3 style="font-size: 16px; margin-top: 20px;">Договор и залог</h3>
+                    <p style="font-size: 13px;">Утверждаем образец, подписываем договор и спецификацию. Вы вносите 50% предоплаты для закупки материалов.</p>
+                </div>
+                <!-- Step 4 -->
+                <div class="workflow-card">
+                    <span class="step-number">04</span>
+                    <h3 style="font-size: 16px; margin-top: 20px;">Массовый пошив</h3>
+                    <p style="font-size: 13px;">Запускаем партию в производство. Средний срок пошива тиража в 1000 единиц составляет от 7 до 10 рабочих дней.</p>
+                </div>
+                <!-- Step 5 -->
+                <div class="workflow-card">
+                    <span class="step-number">05</span>
+                    <h3 style="font-size: 16px; margin-top: 20px;">ОТК и Упаковка</h3>
+                    <p style="font-size: 13px;">Каждая вещь проходит финальную проверку ОТК, утюжку, отпаривание, маркировку штрихкодами и упаковку в ЗИП-пакеты.</p>
+                </div>
+                <!-- Step 6 -->
+                <div class="workflow-card">
+                    <span class="step-number">06</span>
+                    <h3 style="font-size: 16px; margin-top: 20px;">Доставка Cargo</h3>
+                    <p style="font-size: 13px;">Мы отгружаем готовую партию проверенной карго-компании. Вы получаете товар на складе в Москве через 5-7 дней.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Production Gallery Section -->
+    <section class="section" id="gallery">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 40px;">Производственные мощности (Цехи фабрики)</h2>
+            
+            <div class="gallery-tabs">
+                <button class="tab-btn active" data-tab="design-dept">Конструкторский цех</button>
+                <button class="tab-btn" data-tab="cut-dept">Раскройный цех</button>
+                <button class="tab-btn" data-tab="sewing-dept">Швейный цех</button>
+                <button class="tab-btn" data-tab="qc-dept">Упаковка и ОТК</button>
+            </div>
+
+            <!-- Design Department -->
+            <div class="gallery-content active" id="design-dept">
+                <div class="gallery-item">
+                    <div class="gallery-item-placeholder">Рабочее место конструктора САПР</div>
+                    <h4>1. Проектирование в САПР</h4>
+                    <p>Построение электронных лекал, точная градация по размерам без искажений пропорций больших размеров.</p>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-placeholder">Печать раскладок лекал</div>
+                    <h4>2. Широкоформатный плоттер</h4>
+                    <p>Печать готовых раскладок для раскройного цеха, что минимизирует остатки и расход ткани на 8-12%.</p>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-placeholder">Образцы готовых изделий</div>
+                    <h4>3. Пробный пошив</h4>
+                    <p>Пошив первого образца изделия для примерки на профессиональной Plus Size модели перед утверждением серии.</p>
+                </div>
+            </div>
+
+            <!-- Cutting Department -->
+            <div class="gallery-content" id="cut-dept">
+                <div class="gallery-item">
+                    <div class="gallery-item-placeholder">Настилочные столы (10 метров)</div>
+                    <h4>1. Настил ткани</h4>
+                    <p>Подготовка многослойных настилов трикотажа, вискозы и штапеля с контролем натяжения нити.</p>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-placeholder">Дисковые и ленточные ножи</div>
+                    <h4>2. Точный крой деталей</h4>
+                    <p>Раскрой сложных лекал Plus Size дисковыми ножами с точностью до 1 мм.</p>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-placeholder">Маркировка кроя</div>
+                    <h4>3. Нумерация деталей кроя</h4>
+                    <p>Исключает разнотон деталей в готовом изделии при сборке швеями.</p>
+                </div>
+            </div>
+
+            <!-- Sewing Department -->
+            <div class="gallery-content" id="sewing-dept">
+                <div class="gallery-item">
+                    <div class="gallery-item-placeholder">Швейные машины Jack & Juki</div>
+                    <h4>1. Прямострочные машины</h4>
+                    <p>Современный парк автоматических машин с автообрезкой нити, повышающий скорость сборки на 25%.</p>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-placeholder">4-х и 5-ти ниточные оверлоки</div>
+                    <h4>2. Обметочные машины</h4>
+                    <p>Идеальная обработка внутренних срезов изделия, предотвращающая осыпание швов при стирке.</p>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-placeholder">Специальное оборудование</div>
+                    <h4>3. Петельные машины и закрепочники</h4>
+                    <p>Выполнение надежных технологических швов, петель и пуговиц по ГОСТ стандартам.</p>
+                </div>
+            </div>
+
+            <!-- QC & Packaging -->
+            <div class="gallery-content" id="qc-dept">
+                <div class="gallery-item">
+                    <div class="gallery-item-placeholder">Столы ОТК и манекены</div>
+                    <h4>1. Проверка геометрии и швов</h4>
+                    <p>Проверка соответствия деталей лекалам, поиск пропусков стежков и кривых строчек.</p>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-placeholder">Парогенераторы Silter</div>
+                    <h4>2. Влажно-тепловая обработка</h4>
+                    <p>Профессиональная утюжка и отпаривание перед упаковкой, придающие изделию товарный вид.</p>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-placeholder">Упаковка и маркировка штрихкодами</div>
+                    <h4>3. Упаковка WB/Честный Знак</h4>
+                    <p>Маркировка кодами DataMatrix, индивидуальная упаковка в плотные полиэтиленовые ЗИП-пакеты.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FABRIC FINDER SECTION -->
+    <section class="section" id="fabrics">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 20px;">Интерактивная карта используемых тканей</h2>
+            <p style="text-align: center; max-width: 600px; margin: 0 auto 40px auto;">Мы закупаем ткани напрямую с крупнейшего оптового рынка Азии в Бишкеке «Мадина». Ниже представлены основные ткани, с которыми мы работаем.</p>
+            <div class="fabric-finder-grid">
+                <!-- Fabric 1 -->
+                <div class="fabric-card active">
+                    <h3 style="font-size: 15px;">Хлопок / Вискоза</h3>
+                    <p style="font-size: 12px; margin-bottom: 0;">Идеально для летних Plus Size платьев и блуз. Дышащий материал.</p>
+                </div>
+                <!-- Fabric 2 -->
+                <div class="fabric-card">
+                    <h3 style="font-size: 15px;">Штапель</h3>
+                    <p style="font-size: 12px; margin-bottom: 0;">Мягкая, летящая ткань. Подходит под свободные блузы и сарафаны 35+.</p>
+                </div>
+                <!-- Fabric 3 -->
+                <div class="fabric-card">
+                    <h3 style="font-size: 15px;">Премиум-Трикотаж</h3>
+                    <p style="font-size: 12px; margin-bottom: 0;">Плотное полотно (двунитка, футер). Держит форму, скрывает складки.</p>
+                </div>
+                <!-- Fabric 4 -->
+                <div class="fabric-card">
+                    <h3 style="font-size: 15px;">Лен / Смесовые</h3>
+                    <p style="font-size: 12px; margin-bottom: 0;">Используется для стильных жакетов, легких брючных костюмов.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- B2B Calculator Section -->
+    <section class="section" id="calculator">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 40px;">B2B Калькулятор оптового пошива</h2>
+            <div class="calc-grid">
+                <div class="calc-inputs">
+                    <div class="form-group">
+                        <label>Выберите тип изделия</label>
+                        <div class="select-grid">
+                            <div class="select-card active" data-type="dress">Платье А-силуэта / Сарафан</div>
+                            <div class="select-card" data-type="suit">Брючный костюм / Жакет</div>
+                            <div class="select-card" data-type="blouse">Блузка / Брюки / Юбка</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Сырье и закупка ткани</label>
+                        <div class="select-grid" style="grid-template-columns: 1fr 1fr;">
+                            <div class="select-card active" data-fabric="our">Под ключ (Ткань фабрики)</div>
+                            <div class="select-card" data-fabric="customer">Давальческое сырье (Ваша ткань)</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Объем партии: <span id="quantity-val" style="font-weight: 700;">300</span> шт.</label>
+                        <input type="range" id="quantity-slider" class="calc-slider" min="300" max="5000" step="100" value="300">
+                        <div style="display: flex; justify-content: space-between; font-size: 11px; color: #666;">
+                            <span>Минимум: 300 шт</span>
+                            <span>Средний: 2000 шт</span>
+                            <span>Крупный: 5000+ шт</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="calc-results">
+                    <h3 style="font-size: 16px; margin-bottom: 20px; border-bottom: 1px solid #000; padding-bottom: 10px;">Итоговая калькуляция</h3>
+                    <div class="price-row">
+                        <span>Стоимость пошива за ед. (с учетом тиража):</span>
+                        <span id="unit-price" style="font-weight: 600;">$14.5</span>
+                    </div>
+                    <div class="price-row">
+                        <span>Стоимость материала фабрики за ед.:</span>
+                        <span id="fabric-price" style="font-weight: 600;">$6.0</span>
+                    </div>
+                    <div class="price-row total">
+                        <span>Ориентировочный общий бюджет:</span>
+                        <span id="total-price">$6,150</span>
+                    </div>
+                    <p style="font-size: 12px; margin: 20px 0; line-height: 1.4; color: #666;">
+                        *В расчете учитывается прогрессивная скидка на партию: 5% при заказе от 500 шт, 10% от 1000 шт, 15% от 3000 шт.
+                    </p>
+                    <a href="https://wa.me/996708599366" class="btn btn-primary" style="width: 100%;">Отправить расчет менеджеру в WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE B2B QUIZ-BRIEF -->
+    <section class="section" id="quiz">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 20px;">Интерактивный бриф на экспресс-расчет</h2>
+            <p style="text-align: center; max-width: 600px; margin: 0 auto 40px auto;">Ответьте на 4 простых вопроса, чтобы наш технолог подготовил детальную спецификацию пошива.</p>
+            
+            <div class="quiz-box">
+                <div class="quiz-progress">
+                    <div class="quiz-progress-bar" id="quiz-progress-bar"></div>
+                </div>
+                
+                <form id="quiz-form" onsubmit="return false;">
+                    <!-- Step 1: Garment Type -->
+                    <div class="quiz-step active">
+                        <h3 style="font-size: 16px; margin-bottom: 20px;">Шаг 1: Какое изделие вы планируете шить?</h3>
+                        <div class="quiz-options">
+                            <div class="quiz-option active">Платья / Сарафаны</div>
+                            <div class="quiz-option">Брючные костюмы / Жакеты</div>
+                            <div class="quiz-option">Блузы / Рубашки</div>
+                            <div class="quiz-option">Спортивный трикотаж / Худи</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 2: Patterns availability -->
+                    <div class="quiz-step">
+                        <h3 style="font-size: 16px; margin-bottom: 20px;">Шаг 2: Есть ли у вас готовые лекала?</h3>
+                        <div class="quiz-options">
+                            <div class="quiz-option active">Да, есть лекала в САПР (.plt/.dxf)</div>
+                            <div class="quiz-option">Есть бумажные лекала / эталонный образец</div>
+                            <div class="quiz-option">Нет лекал, нужно разработать по фотографии</div>
+                            <div class="quiz-option">Нужна доработка ваших базовых лекал</div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Technical File Dropzone -->
+                    <div class="quiz-step">
+                        <h3 style="font-size: 16px; margin-bottom: 20px;">Шаг 3: Загрузка технического задания / эскиза</h3>
+                        <p style="font-size: 13px;">Если у вас есть фото модели или техническое описание, перетащите его в зону ниже или кликните для выбора файла.</p>
+                        <div class="drag-drop-zone" id="dropzone">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="1.5" style="margin-bottom: 10px;">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/>
+                            </svg>
+                            <p style="font-size: 13px; font-weight: 600; margin-bottom: 0;">Перетащите файл эскиза/ТЗ сюда (.PDF, .PLT, .PNG, .JPG)</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Contact details -->
+                    <div class="quiz-step">
+                        <h3 style="font-size: 16px; margin-bottom: 20px;">Шаг 4: Контакты для отправки сметы</h3>
+                        <p style="font-size: 13px; margin-bottom: 20px;">Укажите номер телефона, к которому привязан WhatsApp, чтобы мы отправили подробный расчет.</p>
+                        <div style="display: flex; flex-direction: column; gap: 15px;">
+                            <input type="text" class="sample-input" placeholder="Ваше имя / Название бренда" required>
+                            <input type="tel" class="sample-input" placeholder="Ваш телефон для WhatsApp" required>
+                        </div>
+                    </div>
+
+                    <div class="quiz-nav">
+                        <button type="button" class="btn btn-secondary" id="quiz-prev">Назад</button>
+                        <button type="button" class="btn btn-primary" id="quiz-next">Далее</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- B2B GUARANTEES SECTION -->
+    <section class="section" id="guarantees">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 40px;">Гарантии безопасности сделки и минимизации рисков</h2>
+            <div class="guarantees-grid">
+                <!-- Guarantee 1 -->
+                <div class="guarantee-card">
+                    <h4>1. Юридическая чистота</h4>
+                    <p style="font-size: 13px; margin-bottom: 0;">Заключаем официальный договор поставки. Возможна оплата по безналичному расчету на расчетный счет компании с предоставлением всех закрывающих документов.</p>
+                </div>
+                <!-- Guarantee 2 -->
+                <div class="guarantee-card">
+                    <h4>2. Финансовые компенсации</h4>
+                    <p style="font-size: 13px; margin-bottom: 0;">В договоре жестко фиксируются сроки сдачи партии. За каждый день просрочки фабрика несет финансовую ответственность в виде пени.</p>
+                </div>
+                <!-- Guarantee 3 -->
+                <div class="guarantee-card">
+                    <h4>3. Компенсация брака</h4>
+                    <p style="font-size: 13px; margin-bottom: 0;">При обнаружении скрытого брака (более 1% от объема партии) мы бесплатно заменим изделия в следующей поставке или вернем их полную стоимость.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRUST BLOCK & FACTORY MAP -->
+    <section class="section" id="trust-visit">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 40px;">Виртуальный визит на фабрику</h2>
+            <div class="trust-grid">
+                <div>
+                    <h3 style="font-size: 16px; margin-bottom: 20px;">Удаленный контроль без поездки в Бишкек</h3>
+                    <p>Мы понимаем ваши опасения при работе со швейными цехами в другой стране, поэтому внедрили систему полной прозрачности:</p>
+                    <ul class="trust-checklist">
+                        <li>Еженедельный видеоотчет процесса раскроя и пошива вашей партии.</li>
+                        <li>Видеозвонок технолога из швейного цеха в реальном времени по первому требованию.</li>
+                        <li>Предоставление физических образцов ткани перед запуском массового кроя на согласование.</li>
+                        <li>Официальный визит: мы всегда рады встретить вас в аэропорту Манас, разместить в гостинице и показать фабрику лично.</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="map-placeholder">
+                        <div style="text-align: center; padding: 20px;">
+                            📍 Карта расположения фабрики<br>
+                            <span style="font-size: 12px; font-weight: normal; color: #666; text-transform: none; display: block; margin-top: 10px;">Кыргызстан, г. Бишкек, Промышленная зона (ул. Льва Толстого)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CASE STUDIES SECTION -->
+    <section class="section" id="cases">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 40px;">Реальные кейсы наших B2B-партнеров</h2>
+            
+            <div class="cases-carousel-container">
+                <div class="cases-carousel-track">
+                    <!-- Case Slide 1 -->
+                    <div class="case-slide">
+                        <h3 style="font-size: 18px; border-bottom: 2px solid #000; padding-bottom: 10px; margin-bottom: 15px;">Кейс 1: Запуск бренда Plus-Size платьев «Шарм & Стиль» (Екатеринбург)</h3>
+                        <p style="font-size: 14px; color: #333; font-weight: 600; margin-bottom: 8px;">Задача:</p>
+                        <p style="font-size: 13px; margin-bottom: 15px;">Селлер Wildberries обратился с задачей с нуля разработать и отшить осеннюю коллекцию женских платьев больших размеров (52–66) по фотографиям из каталога Pinterest. Главная сложность: добиться безупречной посадки, которая скрывала бы недостатки фигуры в области живота и бедер.</p>
+                        <p style="font-size: 14px; color: #333; font-weight: 600; margin-bottom: 8px;">Наше решение:</p>
+                        <p style="font-size: 13px; margin-bottom: 15px;">Конструкторы САПР разработали точные лекала с правильными припусками. Мы закупили качественный штапель и трикотаж на рынке «Мадина» напрямую у импортера. Отшили опытную партию в 1 200 единиц, промаркировали Честным Знаком и подготовили под склад Коледино.</p>
+                        <div class="case-metric">
+                            <span style="font-size: 11px; display: block; color: #666; font-weight: bold; text-transform: uppercase; margin-bottom: 5px;">Результаты сотрудничества:</span>
+                            • Процент выкупа платьев на ПВЗ вырос с 32% (у старого поставщика) до 49%.<br>
+                            • Срок производства всей партии: 9 рабочих дней.<br>
+                            • Себестоимость готового изделия в закупке: $7.8 за штуку.
+                        </div>
+                    </div>
+
+                    <!-- Case Slide 2 -->
+                    <div class="case-slide">
+                        <h3 style="font-size: 18px; border-bottom: 2px solid #000; padding-bottom: 10px; margin-bottom: 15px;">Кейс 2: Аутсорсинг производства для сети шоурумов «Миледи» (Москва, 5 филиалов)</h3>
+                        <p style="font-size: 14px; color: #333; font-weight: 600; margin-bottom: 8px;">Задача:</p>
+                        <p style="font-size: 13px; margin-bottom: 15px;">Снизить себестоимость пошива брючных костюмов больших размеров (50-72), не потеряв при этом плотность ткани и ровность внутренних обметочных швов, которые так важны для состоятельных клиенток шоурумов.</p>
+                        <p style="font-size: 14px; color: #333; font-weight: 600; margin-bottom: 8px;">Наше решение:</p>
+                        <p style="font-size: 13px; margin-bottom: 15px;">Перенесли пошив из Краснодара в Бишкек к нам. Мы использовали давальческие лекала клиента, закупили плотное трикотажное полотно «Алекси» и организовали сквозной контроль качества на швейном потоке силами бригадиров-технологов.</p>
+                        <div class="case-metric">
+                            <span style="font-size: 11px; display: block; color: #666; font-weight: bold; text-transform: uppercase; margin-bottom: 5px;">Результаты сотрудничества:</span>
+                            • Себестоимость костюма в закупке упала с 1 450 руб до 910 руб (включая доставку карго в РФ).<br>
+                            • Рост маржинальности сети шоурумов составил +18%.<br>
+                            • Уровень брака: всего 2 штуки на партию в 3 000 единиц (0.06%).
+                        </div>
+                    </div>
+
+                    <!-- Case Slide 3 -->
+                    <div class="case-slide">
+                        <h3 style="font-size: 18px; border-bottom: 2px solid #000; padding-bottom: 10px; margin-bottom: 15px;">Кейс 3: Срочный выпуск коллекции льняных блуз «Свободный силуэт» (Алматы)</h3>
+                        <p style="font-size: 14px; color: #333; font-weight: 600; margin-bottom: 8px;">Задача:</p>
+                        <p style="font-size: 13px; margin-bottom: 15px;">Срочно изготовить коллекцию летних льняных блуз свободного кроя для бренда в Казахстане. Общий тираж 2 000 шт. Требуемый срок сдачи — не более 7 дней, иначе бренд упускал летний пиковый сезон.</p>
+                        <p style="font-size: 14px; color: #333; font-weight: 600; margin-bottom: 8px;">Наше решение:</p>
+                        <p style="font-size: 13px; margin-bottom: 15px;">Фабрика перевела швейный цех в двухсменный режим работы. Ткань (смесовый лен) была закуплена и доставлена на склады фабрики за 12 часов. Раскрой выполняли параллельно на двух столах настила.</p>
+                        <div class="case-metric">
+                            <span style="font-size: 11px; display: block; color: #666; font-weight: bold; text-transform: uppercase; margin-bottom: 5px;">Результаты сотрудничества:</span>
+                            • Партия в 2 000 блуз полностью готова и промаркирована за 6 рабочих дней.<br>
+                            • Доставка в Алматы выполнена наземным транспортом на следующий день.<br>
+                            • Продано 100% коллекции без остатков и упущенной прибыли.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carousel Controls and Dots -->
+                <div class="carousel-controls">
+                    <button type="button" class="carousel-arrow" id="case-prev">&larr;</button>
+                    <div class="carousel-dots">
+                        <div class="carousel-dot active" data-slide="0"></div>
+                        <div class="carousel-dot" data-slide="1"></div>
+                        <div class="carousel-dot" data-slide="2"></div>
+                    </div>
+                    <button type="button" class="carousel-arrow" id="case-next">&rarr;</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OUR PRODUCTION (VIDEO WALKTHROUGH) -->
+    <section class="section" id="production-video">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 20px;">Наше производство</h2>
+            <p style="text-align: center; max-width: 600px; margin: 0 auto 30px auto;">Посмотрите короткую видео-экскурсию по нашим цехам: раскройный стол, швейные потоки Jack/Juki и отдел контроля качества ОТК.</p>
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/Sce4E18oPVE" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section (Accordion) -->
+    <section class="section" id="faq">
+        <div class="container" style="max-width: 800px;">
+            <h2 style="text-align: center; margin-bottom: 40px;">Вопросы и ответы (FAQ для B2B)</h2>
+            <div class="faq-list">
+                <!-- Item 1 -->
+                <div class="faq-item">
+                    <button class="faq-trigger">Каков минимальный объем заказа на пошив одной модели?</button>
+                    <div class="faq-panel">
+                        <div class="faq-content">
+                            Минимальный тираж составляет 300 единиц на одну модель. Вы можете распределить этот тираж по размерам (например, по 50 шт на размеры от 50 до 60) и цветам (до 2-3 различных расцветок при наличии ткани у поставщика).
+                        </div>
+                    </div>
+                </div>
+                <!-- Item 2 -->
+                <div class="faq-item">
+                    <button class="faq-trigger">Разрабатываете ли вы лекала по фотографии или эскизу?</button>
+                    <div class="faq-panel">
+                        <div class="faq-content">
+                            Да, у нас работает штатное конструкторское бюро. Мы строим лекала любой сложности в САПР по фотографии, эскизу или готовому физическому образцу. Срок разработки и пошива первого тестового образца — 3-5 рабочих дней.
+                        </div>
+                    </div>
+                </div>
+                <!-- Item 3 -->
+                <div class="faq-item">
+                    <button class="faq-trigger">Работаете ли вы с маркировкой Честный Знак и маркетплейсами?</button>
+                    <div class="faq-panel">
+                        <div class="faq-content">
+                            Да, мы полностью адаптированы под требования РФ. Мы маркируем готовые изделия кодами DataMatrix (Честный Знак), упаковываем по правилам Wildberries и Ozon (монокороба, паллеты, зип-пакеты), наклеиваем штрихкоды и готовим товар к немедленной приемке на складах маркетплейсов.
+                        </div>
+                    </div>
+                </div>
+                <!-- Item 4 -->
+                <div class="faq-item">
+                    <button class="faq-trigger">Как происходит оплата и доставка в РФ и страны СНГ?</button>
+                    <div class="faq-panel">
+                        <div class="faq-content">
+                            Оплата производится поэтапно: 50% предоплата перед закупкой ткани и раскроем, 50% — после пошива и проверки готовой партии сотрудниками ОТК (предоставляем видеоотчет перед упаковкой). Доставка осуществляется регулярным Карго через рынки Дордой/Мадина. Срок доставки до Москвы: 5-7 дней, стоимость — от $0.5 до $1.2 за килограмм в зависимости от объема.
+                        </div>
+                    </div>
+                </div>
+                <!-- Item 5 -->
+                <div class="faq-item">
+                    <button class="faq-trigger">Как вы контролируете брак на производстве?</button>
+                    <div class="faq-panel">
+                        <div class="faq-content">
+                            У нас действует строгий трехэтапный контроль качества: 1) Входной контроль ткани на дефекты перед раскроем; 2) Промежуточный контроль швов на потоке швеями-бригадирами; 3) Финальная проверка ОТК каждого готового изделия на соответствие размерной сетке, отсутствие торчащих ниток и дефектов фурнитуры перед упаковкой в пакет. Процент брака на выходе составляет менее 0.5%.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="section" id="reviews">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 40px;">Отзывы наших B2B-партнеров</h2>
+            
+            <div class="reviews-carousel-container">
+                <div class="reviews-carousel-track">
+                    <!-- Review Slide 1 -->
+                    <div class="review-slide">
+                        <p>"Заказываем на фабрике Astra Brand пошив Plus Size коллекции платьев и сарафанов для нашего магазина на Wildberries. Для нас критически важна была посадка на женщин 40-50 лет с нестандартными фигурами. Конструкторы фабрики сделали шикарные лекала, которые отлично продаются, возвратов из-за размера стало на 30% меньше. По Честному Знаку и маркировке работают идеально, ни разу не было проблем на приемке."</p>
+                        <div class="review-meta">Елена В., Селлер Wildberries (Оборот 15 млн руб/мес)</div>
+                    </div>
+                    <!-- Review Slide 2 -->
+                    <div class="review-slide">
+                        <p>"Сотрудничаем с Astra Brand в формате давальческого сырья. Отправляем ткань и фурнитуру из Иваново, они отшивают костюмы. Качество швов, обметки оверлоком и влажно-тепловой обработки (ВТО) на высоте. Цены в Бишкеке позволяют нам держать конкурентоспособную розничную цену в нашей сети бутиков в Санкт-Петербурге и получать хорошую чистую прибыль."</p>
+                        <div class="review-meta">Михаил К., владелец сети магазинов «Moda Plus» (СПб)</div>
+                    </div>
+                    <!-- Review Slide 3 -->
+                    <div class="review-slide">
+                        <p>"Разработали лекала Plus Size брюк по эскизу за 3 дня. Первый образец сел идеально, запустили тираж 500 шт. Очень оперативно реагируют в WhatsApp, высылают фото и видео с производства на каждом этапе. Вся партия была отшита ровно за неделю, без брака."</p>
+                        <div class="review-meta">Динара Т., основатель бренда дизайнерской одежды «Altyn» (Алматы)</div>
+                    </div>
+                    <!-- Review Slide 4 -->
+                    <div class="review-slide">
+                        <p>"Шьем у них блузки и юбки больших размеров. Порадовал 3-этапный контроль ОТК — за 3 большие поставки не получили ни одного возврата по браку от клиентов. Доставка Cargo до Москвы заняла всего 6 дней. Документы для Честного Знака предоставили сразу."</p>
+                        <div class="review-meta">Ольга С., ведущий менеджер ООО «Стиль-Опт» (Москва)</div>
+                    </div>
+                    <!-- Review Slide 5 -->
+                    <div class="review-slide">
+                        <p>"Работаем с Astra Brand уже 2 года по контракту. Всегда соблюдают сроки. Финансовые пени за просрочку жестко прописаны в договоре, но за все время сотрудничества применять их не пришлось. Фабрика надежная, швеи опытные, рекомендуем."</p>
+                        <div class="review-meta">Замир Б., оптовый байер женской одежды (Новосибирск)</div>
+                    </div>
+                </div>
+
+                <!-- Carousel Controls and Dots for Reviews -->
+                <div class="carousel-controls">
+                    <button type="button" class="carousel-arrow" id="review-prev">&larr;</button>
+                    <div class="carousel-dots">
+                        <div class="review-dot active" data-review="0"></div>
+                        <div class="review-dot" data-review="1"></div>
+                        <div class="review-dot" data-review="2"></div>
+                        <div class="review-dot" data-review="3"></div>
+                        <div class="review-dot" data-review="4"></div>
+                    </div>
+                    <button type="button" class="carousel-arrow" id="review-next">&rarr;</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LEAD MAGNET (DOWNLOAD PDF CATALOG) -->
+    <section class="section">
+        <div class="container">
+            <div class="lead-magnet-box">
+                <div class="lead-magnet-text">
+                    <h3 style="font-size: 18px; margin-bottom: 8px;">Скачать каталог базовых моделей и прайс-лист в PDF</h3>
+                    <p style="font-size: 13px; margin-bottom: 0; color: #666;">Получите файл с нашими популярными моделями Plus Size, расценками на пошив и условиями доставки до склада в Москве.</p>
+                </div>
+                <div class="lead-magnet-form">
+                    <input type="tel" class="sample-input" id="lead-whatsapp" placeholder="Ваш WhatsApp" style="flex: 1;" required>
+                    <button type="button" class="btn btn-primary" onclick="alert('Ссылка на PDF каталог отправлена в ваш WhatsApp!');">Скачать PDF</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REQUEST SAMPLE LEAD BOX -->
+    <section class="section" id="sample-request">
+        <div class="container">
+            <div class="sample-form-box">
+                <h2>Заказать тестовый образец</h2>
+                <p>Пришлите фотографию или эскиз любого изделия Plus Size. Мы разработаем лекала и отошьем тестовый образец всего за $30. При заказе партии стоимость образца возвращается!</p>
+                <form action="#" onsubmit="alert('Заявка отправлена! Менеджер свяжется с вами в WhatsApp.'); return false;">
+                    <input type="text" class="sample-input" placeholder="Ваше имя" required>
+                    <input type="tel" class="sample-input" placeholder="Ваш номер телефона (WhatsApp)" required>
+                    <input type="text" class="sample-input" placeholder="Какое изделие нужно отшить (например, летнее платье)" required>
+                    <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Получить образец за $30</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container footer-grid">
+            <div>
+                <h3>ASTRA BRAND</h3>
+                <p>Ваш надежный партнер по разработке лекал и пошиву Plus Size одежды в Кыргызстане.</p>
+                <p style="margin-top: 15px; font-size: 13px;">Адрес фабрики: Кыргызская Республика, г. Бишкек, ул. Льва Толстого</p>
+            </div>
+            <div>
+                <h4>Контакты бронирования пошива</h4>
+                <p style="margin-bottom: 10px;">📞 Телефон: +996 708 599 366 (WhatsApp)</p>
+                <p style="margin-bottom: 20px;">✉️ Email: info@astrabrand.kg</p>
+                <a href="https://wa.me/996708599366" class="btn btn-primary" target="_blank">Написать в WhatsApp</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Astra Brand. Черно-белый интерактивный прототип структуры и контента.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // FAQ Accordion
+            const faqItems = document.querySelectorAll(".faq-item");
+            faqItems.forEach(item => {
+                const trigger = item.querySelector(".faq-trigger");
+                const panel = item.querySelector(".faq-panel");
+                
+                trigger.addEventListener("click", () => {
+                    const isActive = item.classList.contains("active");
+                    
+                    faqItems.forEach(i => {
+                        i.classList.remove("active");
+                        i.querySelector(".faq-panel").style.maxHeight = null;
+                    });
+                    
+                    if (!isActive) {
+                        item.classList.add("active");
+                        panel.style.maxHeight = panel.scrollHeight + "px";
+                    }
+                });
+            });
+
+            // Tabs for Gallery
+            const tabBtns = document.querySelectorAll(".tab-btn");
+            const tabContents = document.querySelectorAll(".gallery-content");
+            
+            tabBtns.forEach(btn => {
+                btn.addEventListener("click", () => {
+                    const targetTab = btn.dataset.tab;
+                    
+                    tabBtns.forEach(b => b.classList.remove("active"));
+                    btn.classList.add("active");
+                    
+                    tabContents.forEach(content => {
+                        if (content.id === targetTab) {
+                            content.classList.add("active");
+                        } else {
+                            content.classList.remove("active");
+                        }
+                    });
+                });
+            });
+
+            // B2B Pricing Calculator
+            const selectCards = document.querySelectorAll("#calculator .select-card");
+            const fabricCards = document.querySelectorAll("#calculator .select-card[data-fabric]");
+            const quantitySlider = document.getElementById("quantity-slider");
+            const quantityVal = document.getElementById("quantity-val");
+            
+            const unitPriceEl = document.getElementById("unit-price");
+            const fabricPriceEl = document.getElementById("fabric-price");
+            const totalPriceEl = document.getElementById("total-price");
+            
+            let selectedType = "dress"; 
+            let selectedFabric = "our"; 
+            let quantity = 300; 
+            
+            const basePrices = {
+                dress: 14.5,
+                suit: 22.0,
+                blouse: 9.0
+            };
+            
+            const fabricAdditions = {
+                our: { dress: 6.0, suit: 10.0, blouse: 3.5 },
+                customer: { dress: 0.0, suit: 0.0, blouse: 0.0 }
+            };
+            
+            function calculateCost() {
+                let basePrice = basePrices[selectedType];
+                
+                let discount = 1.0;
+                if (quantity >= 500 && quantity < 1000) {
+                    discount = 0.95; 
+                } else if (quantity >= 1000 && quantity < 3000) {
+                    discount = 0.90; 
+                } else if (quantity >= 3000) {
+                    discount = 0.85; 
+                }
+                
+                const unitProdPrice = basePrice * discount;
+                const fabricCost = fabricAdditions[selectedFabric][selectedType];
+                const finalUnitPrice = unitProdPrice + fabricCost;
+                const totalPrice = finalUnitPrice * quantity;
+                
+                unitPriceEl.textContent = `$${unitProdPrice.toFixed(1)}`;
+                fabricPriceEl.textContent = selectedFabric === "our" ? `$${fabricCost.toFixed(1)}` : "$0.0";
+                totalPriceEl.textContent = `$${Math.round(totalPrice).toLocaleString()}`;
+            }
+            
+            selectCards.forEach(card => {
+                if (card.dataset.type) {
+                    card.addEventListener("click", () => {
+                        selectCards.forEach(c => { if(c.dataset.type) c.classList.remove("active"); });
+                        card.classList.add("active");
+                        selectedType = card.dataset.type;
+                        calculateCost();
+                    });
+                }
+            });
+            
+            fabricCards.forEach(card => {
+                card.addEventListener("click", () => {
+                    fabricCards.forEach(c => c.classList.remove("active"));
+                    card.classList.add("active");
+                    selectedFabric = card.dataset.fabric;
+                    calculateCost();
+                });
+            });
+            
+            if (quantitySlider) {
+                quantitySlider.addEventListener("input", (e) => {
+                    quantity = parseInt(e.target.value);
+                    quantityVal.textContent = quantity;
+                    calculateCost();
+                });
+            }
+            
+            calculateCost();
+
+            // Mobile Menu Hamburger Toggle
+            const hamburger = document.getElementById("hamburger-menu");
+            const navLinks = document.querySelector(".nav-links");
+            
+            if (hamburger && navLinks) {
+                hamburger.addEventListener("click", () => {
+                    hamburger.classList.toggle("active");
+                    navLinks.classList.toggle("active");
+                });
+                
+                // Close menu on clicking links
+                navLinks.querySelectorAll("a").forEach(link => {
+                    link.addEventListener("click", () => {
+                        hamburger.classList.remove("active");
+                        navLinks.classList.remove("active");
+                    });
+                });
+            }
+
+            // Brief Quiz Toggling
+            const quizSteps = document.querySelectorAll(".quiz-step");
+            const prevBtn = document.getElementById("quiz-prev");
+            const nextBtn = document.getElementById("quiz-next");
+            const progressBar = document.getElementById("quiz-progress-bar");
+            
+            let currentQuizStep = 0;
+            const totalQuizSteps = quizSteps.length;
+            
+            function updateQuizUI() {
+                quizSteps.forEach((step, index) => {
+                    if (index === currentQuizStep) {
+                        step.classList.add("active");
+                    } else {
+                        step.classList.remove("active");
+                    }
+                });
+                
+                const progressPercentage = ((currentQuizStep + 1) / totalQuizSteps) * 100;
+                progressBar.style.width = `${progressPercentage}%`;
+                
+                if (currentQuizStep === 0) {
+                    prevBtn.style.visibility = "hidden";
+                } else {
+                    prevBtn.style.visibility = "visible";
+                }
+                
+                if (currentQuizStep === totalQuizSteps - 1) {
+                    nextBtn.textContent = "Получить смету";
+                } else {
+                    nextBtn.textContent = "Далее";
+                }
+            }
+            
+            const optionCards = document.querySelectorAll(".quiz-option");
+            optionCards.forEach(card => {
+                card.addEventListener("click", () => {
+                    const siblings = card.parentElement.querySelectorAll(".quiz-option");
+                    siblings.forEach(s => s.classList.remove("active"));
+                    card.classList.add("active");
+                });
+            });
+            
+            if (nextBtn && prevBtn) {
+                nextBtn.addEventListener("click", () => {
+                    if (currentQuizStep < totalQuizSteps - 1) {
+                        currentQuizStep++;
+                        updateQuizUI();
+                    } else {
+                        alert("Спасибо за заполнение брифа! Смета подготовлена и отправлена вам на указанный WhatsApp.");
+                        currentQuizStep = 0; 
+                        updateQuizUI();
+                    }
+                });
+                
+                prevBtn.addEventListener("click", () => {
+                    if (currentQuizStep > 0) {
+                        currentQuizStep--;
+                        updateQuizUI();
+                    }
+                });
+                
+                updateQuizUI();
+            }
+
+            // Drag & Drop File Zone Feedback
+            const dropzone = document.getElementById("dropzone");
+            if (dropzone) {
+                dropzone.addEventListener("dragover", (e) => {
+                    e.preventDefault();
+                    dropzone.style.backgroundColor = "#e8e8e8";
+                    dropzone.style.borderStyle = "solid";
+                });
+                
+                ["dragleave", "drop"].forEach(event => {
+                    dropzone.addEventListener(event, (e) => {
+                        e.preventDefault();
+                        dropzone.style.backgroundColor = "";
+                        dropzone.style.borderStyle = "dashed";
+                        if (event === "drop") {
+                            const files = e.dataTransfer.files;
+                            if (files.length > 0) {
+                                dropzone.querySelector("p").textContent = `Файл "${files[0].name}" успешно подготовлен к загрузке`;
+                            }
+                        }
+                    });
+                });
+                
+                dropzone.addEventListener("click", () => {
+                    const input = document.createElement("input");
+                    input.type = "file";
+                    input.accept = ".pdf,.plt,.dxf,.png,.jpg,.jpeg";
+                    input.onchange = (e) => {
+                        const files = e.target.files;
+                        if (files.length > 0) {
+                            dropzone.querySelector("p").textContent = `Файл "${files[0].name}" успешно подготовлен к загрузке`;
+                        }
+                    };
+                    input.click();
+                });
+            }
+
+            // Fabric selector card interaction
+            const fabricMapCards = document.querySelectorAll(".fabric-card");
+            fabricMapCards.forEach(card => {
+                card.addEventListener("click", () => {
+                    fabricMapCards.forEach(c => c.classList.remove("active"));
+                    card.classList.add("active");
+                });
+            });
+
+            // Case Studies Carousel Slider
+            const track = document.querySelector(".cases-carousel-track");
+            const slides = document.querySelectorAll(".case-slide");
+            const dots = document.querySelectorAll(".carousel-dot");
+            const arrowPrev = document.getElementById("case-prev");
+            const arrowNext = document.getElementById("case-next");
+            
+            let currentSlide = 0;
+            const totalSlides = slides.length;
+            
+            function updateCarousel() {
+                if (!track) return;
+                track.style.transform = `translateX(-${currentSlide * 100}%)`;
+                
+                dots.forEach((dot, index) => {
+                    if (index === currentSlide) {
+                        dot.classList.add("active");
+                    } else {
+                        dot.classList.remove("active");
+                    }
+                });
+            }
+            
+            if (arrowNext && arrowPrev) {
+                arrowNext.addEventListener("click", () => {
+                    currentSlide = (currentSlide + 1) % totalSlides;
+                    updateCarousel();
+                });
+                
+                arrowPrev.addEventListener("click", () => {
+                    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+                    updateCarousel();
+                });
+                
+                dots.forEach(dot => {
+                    dot.addEventListener("click", () => {
+                        currentSlide = parseInt(dot.dataset.slide);
+                        updateCarousel();
+                    });
+                });
+                
+                updateCarousel();
+            }
+
+            // Reviews Carousel Slider
+            const reviewTrack = document.querySelector(".reviews-carousel-track");
+            const reviewSlides = document.querySelectorAll(".review-slide");
+            const reviewDots = document.querySelectorAll(".review-dot");
+            const reviewPrev = document.getElementById("review-prev");
+            const reviewNext = document.getElementById("review-next");
+            
+            let currentReviewSlide = 0;
+            const totalReviewSlides = reviewSlides.length;
+            
+            function updateReviewCarousel() {
+                if (!reviewTrack) return;
+                reviewTrack.style.transform = `translateX(-${currentReviewSlide * 100}%)`;
+                
+                reviewDots.forEach((dot, index) => {
+                    if (index === currentReviewSlide) {
+                        dot.classList.add("active");
+                    } else {
+                        dot.classList.remove("active");
+                    }
+                });
+            }
+            
+            if (reviewNext && reviewPrev) {
+                reviewNext.addEventListener("click", () => {
+                    currentReviewSlide = (currentReviewSlide + 1) % totalReviewSlides;
+                    updateReviewCarousel();
+                });
+                
+                reviewPrev.addEventListener("click", () => {
+                    currentReviewSlide = (currentReviewSlide - 1 + totalReviewSlides) % totalReviewSlides;
+                    updateReviewCarousel();
+                });
+                
+                reviewDots.forEach(dot => {
+                    dot.addEventListener("click", () => {
+                        currentReviewSlide = parseInt(dot.dataset.review);
+                        updateReviewCarousel();
+                    });
+                });
+                
+                updateReviewCarousel();
+            }
+        });
+    </script>
+</body>
+</html>
