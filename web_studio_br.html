@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criação de Sites Profissionais em São Paulo | Agência Digital SP</title>
+    <meta name="description" content="Desenvolvimento de Sites e Landing Pages de alta conversão em SP. Entrega em 7 dias, parcelamento em 6x sem juros e integração com WhatsApp IA.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #090d16;
+            --bg-card: rgba(18, 26, 43, 0.75);
+            --border-glow: rgba(0, 240, 255, 0.25);
+            --primary-neon: #00f0ff;
+            --purple-accent: #7000ff;
+            --green-whatsapp: #25d366;
+            --text-main: #f0f4f8;
+            --text-muted: #94a3b8;
+            --font-heading: 'Outfit', sans-serif;
+            --font-body: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: var(--font-body);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Ambient Glow Backgrounds */
+        .glow-sphere-1 {
+            position: absolute;
+            top: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 240, 255, 0.15) 0%, rgba(112, 0, 255, 0.08) 50%, transparent 70%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .glow-sphere-2 {
+            position: absolute;
+            top: 800px;
+            right: -150px;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(112, 0, 255, 0.18) 0%, transparent 70%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            backdrop-filter: blur(16px);
+            background: rgba(9, 13, 22, 0.85);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            z-index: 100;
+            padding: 18px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 24px;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary-neon), var(--purple-accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.5px;
+        }
+
+        .badge-sp {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(0, 240, 255, 0.3);
+            color: var(--primary-neon);
+            font-size: 12px;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 20px;
+            margin-left: 10px;
+        }
+
+        .btn-whatsapp-nav {
+            background: #25d366;
+            color: #000;
+            font-weight: 700;
+            padding: 10px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-whatsapp-nav:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 25px rgba(37, 211, 102, 0.5);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            z-index: 1;
+            padding: 80px 5% 60px;
+            text-align: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0, 240, 255, 0.1);
+            border: 1px solid rgba(0, 240, 255, 0.3);
+            color: var(--primary-neon);
+            font-size: 14px;
+            font-weight: 600;
+            padding: 8px 18px;
+            border-radius: 30px;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 {
+            font-family: var(--font-heading);
+            font-size: 54px;
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(135deg, #ffffff 0%, var(--primary-neon) 50%, var(--purple-accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: var(--text-muted);
+            max-width: 780px;
+            margin: 0 auto 36px;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn-hero-primary {
+            background: linear-gradient(135deg, var(--primary-neon), var(--purple-accent));
+            color: #fff;
+            font-size: 18px;
+            font-weight: 700;
+            padding: 16px 36px;
+            border-radius: 40px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 240, 255, 0.3);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-hero-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 240, 255, 0.5);
+        }
+
+        .payment-badge {
+            margin-top: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            color: #cbd5e1;
+            font-size: 14px;
+        }
+
+        .payment-badge span {
+            color: #22c55e;
+            font-weight: 700;
+        }
+
+        /* Features Cards Grid */
+        .features-section {
+            padding: 60px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: var(--font-heading);
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 40px;
+        }
+
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 32px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .card:hover {
+            border-color: var(--primary-neon);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 240, 255, 0.15);
+        }
+
+        .card-icon {
+            font-size: 36px;
+            margin-bottom: 16px;
+            display: inline-block;
+        }
+
+        .card h3 {
+            font-family: var(--font-heading);
+            font-size: 22px;
+            margin-bottom: 12px;
+            color: #fff;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 15px;
+        }
+
+        /* Interactive Price Calculator */
+        .calculator-section {
+            padding: 60px 5%;
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .calc-box {
+            background: linear-gradient(145deg, rgba(18, 26, 43, 0.9), rgba(11, 17, 30, 0.95));
+            border: 1px solid rgba(0, 240, 255, 0.3);
+            border-radius: 28px;
+            padding: 40px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        .calc-option {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 14px;
+            padding: 16px 20px;
+            margin-bottom: 14px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .calc-option:hover, .calc-option.active {
+            border-color: var(--primary-neon);
+            background: rgba(0, 240, 255, 0.08);
+        }
+
+        .calc-price-display {
+            margin-top: 30px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 24px;
+        }
+
+        .calc-total {
+            font-family: var(--font-heading);
+            font-size: 42px;
+            font-weight: 800;
+            color: var(--primary-neon);
+        }
+
+        .calc-installment {
+            font-size: 16px;
+            color: #22c55e;
+            font-weight: 600;
+            margin-top: 4px;
+        }
+
+        /* Floating WhatsApp Action */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25d366;
+            color: #fff;
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.5);
+            z-index: 1000;
+            text-decoration: none;
+            font-size: 32px;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 35px rgba(37, 211, 102, 0.7);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 36px; }
+            .hero p { font-size: 16px; }
+            .calc-box { padding: 24px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="glow-sphere-1"></div>
+    <div class="glow-sphere-2"></div>
+
+    <header>
+        <div class="logo">
+            AGÊNCIA WEB <span class="badge-sp">SÃO PAULO 🇧🇷</span>
+        </div>
+        <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Quero%20um%20or%C3%A7amento%20para%20cria%C3%A7%C3%A3o%20de%20site" class="btn-whatsapp-nav" target="_blank">
+            💬 WhatsApp SP
+        </a>
+    </header>
+
+    <section class="hero">
+        <div class="hero-tag">
+            ⚡️ ENTREGA RÁPIDA EM 7 DIAS • SÃO PAULO
+        </div>
+        <h1>Criação de Sites de Alta Conversão com <span>IA no WhatsApp</span></h1>
+        <p>Desenvolvemos seu site profissional ou Landing Page com design internacional moderno, otimização para celular e robô de vendas no WhatsApp integrado!</p>
+
+        <div class="hero-cta-group">
+            <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20sem%20compromisso" class="btn-hero-primary" target="_blank">
+                💬 Solicitar Orçamento no WhatsApp
+            </a>
+        </div>
+
+        <div class="payment-badge">
+            💳 Parcelamos em até <span>6x SEM JUROS</span> no cartão • ⚡️ Desconto de 10% no <span>Pix</span>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <h2 class="section-title">Por que Nossos Sites Vendem Mais?</h2>
+        <div class="grid-cards">
+            <div class="card">
+                <div class="card-icon">⚡️</div>
+                <h3>Pronto em 7 Dias</h3>
+                <p>Processo ágil sem reuniões demoradas. Desenvolvemos sua estrutura de vendas completa em uma semana.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">📱</div>
+                <h3>Mobile-First Perfeito</h3>
+                <p>Sites 100% otimizados para smartphones, garantindo carregamento ultrarrápido em 4G e 5G.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🤖</div>
+                <h3>Integração IA no WhatsApp</h3>
+                <p>Seu site conectado a um robô inteligente no WhatsApp que atende seus clientes 24h por dia automaticamente.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🎯</div>
+                <h3>SEO Básico Grátis</h3>
+                <p>Seu negócio configurado no Google para ser encontrado por clientes em São Paulo e região.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Price Calculator -->
+    <section class="calculator-section">
+        <h2 class="section-title">Calculadora de Orçamento Instantâneo</h2>
+        <div class="calc-box">
+            <p style="color: var(--text-muted); margin-bottom: 20px;">Selecione o tipo de projeto que sua empresa precisa:</p>
+            
+            <div class="calc-option active" onclick="selectType(this, 2500, 'Landing Page de Alta Conversão')">
+                <div>
+                    <strong>Landing Page de Alta Conversão</strong>
+                    <div style="font-size: 13px; color: var(--text-muted);">Ideal para campanhas no Google e anúncios no Instagram</div>
+                </div>
+                <div style="font-weight: 700; color: var(--primary-neon);">R$ 2.500</div>
+            </div>
+
+            <div class="calc-option" onclick="selectType(this, 4800, 'Site Institucional Completo')">
+                <div>
+                    <strong>Site Institucional Completo</strong>
+                    <div style="font-size: 13px; color: var(--text-muted);">Até 5 páginas para empresas, clínicas e serviços</div>
+                </div>
+                <div style="font-weight: 700; color: var(--primary-neon);">R$ 4.800</div>
+            </div>
+
+            <div class="calc-option" onclick="selectType(this, 8500, 'Loja Virtual / E-commerce')">
+                <div>
+                    <strong>Loja Virtual / E-commerce</strong>
+                    <div style="font-size: 13px; color: var(--text-muted);">Loja online completa integrada com pagamentos Pix e cartão</div>
+                </div>
+                <div style="font-weight: 700; color: var(--primary-neon);">R$ 8.500</div>
+            </div>
+
+            <div class="calc-price-display">
+                <div style="font-size: 14px; color: var(--text-muted);">Investimento Total:</div>
+                <div class="calc-total" id="totalPrice">R$ 2.500</div>
+                <div class="calc-installment" id="installmentPrice">ou 6x de R$ 416,66 sem juros no cartão</div>
+                
+                <a href="#" id="calcCta" class="btn-hero-primary" style="margin-top: 24px; width: 100%; justify-content: center;" onclick="sendWhatsAppCalc(event)">
+                    💬 Fechar Projeto no WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp Floating Icon -->
+    <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20um%20or%C3%A7amento" class="whatsapp-float" target="_blank" title="Falar no WhatsApp">
+        💬
+    </a>
+
+    <script>
+        let currentPrice = 2500;
+        let currentProjectName = 'Landing Page de Alta Conversão';
+
+        function selectType(element, price, name) {
+            document.querySelectorAll('.calc-option').forEach(el => el.classList.remove('active'));
+            element.classList.add('active');
+            currentPrice = price;
+            currentProjectName = name;
+            
+            document.getElementById('totalPrice').innerText = 'R$ ' + price.toLocaleString('pt-BR');
+            let inst = (price / 6).toFixed(2).replace('.', ',');
+            document.getElementById('installmentPrice').innerText = 'ou 6x de R$ ' + inst + ' sem juros no cartão';
+        }
+
+        function sendWhatsAppCalc(e) {
+            e.preventDefault();
+            let msg = `Olá! Fiz uma simulação no site para *${currentProjectName}* (Valor: R$ ${currentPrice.toLocaleString('pt-BR')}). Gostaria de fechar o projeto!`;
+            let url = `https://wa.me/5511999999999?text=${encodeURIComponent(msg)}`;
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+</html>
