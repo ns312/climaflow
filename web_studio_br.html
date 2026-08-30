@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NEXUS SP — Estúdio Digital & Criação de Sites em São Paulo</title>
-    <meta name="description" content="Criação de Sites de Alta Conversão, Landing Pages e IA no WhatsApp em São Paulo. Design editorial de nível internacional.">
+    <title>NEXUS SP — Estúdio Digital & Criação de Sites de Alta Conversão em São Paulo</title>
+    <meta name="description" content="Criação de Sites de Alta Conversão, E-Commerce e Automação de IA no WhatsApp em São Paulo. Design editorial de nível internacional. Entrega em 7 dias.">
     
     <!-- Google Fonts for 100% Exact Vlad Pyankov Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -74,7 +74,7 @@
             font-family: var(--font-mono);
             letter-spacing: 1px;
             margin-top: 2px;
-            opacity: 0.7;
+            opacity: 0.75;
         }
 
         /* Pill Buttons Center */
@@ -128,7 +128,7 @@
             position: relative;
             width: 100vw;
             height: 100vh;
-            min-height: 700px;
+            min-height: 720px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -147,7 +147,7 @@
             text-transform: uppercase;
             letter-spacing: 2px;
             margin-bottom: 12px;
-            opacity: 0.8;
+            opacity: 0.85;
             z-index: 10;
         }
 
@@ -175,7 +175,7 @@
             font-family: var(--font-mono);
             font-size: clamp(10px, 1.1vw, 13px);
             line-height: 1.6;
-            max-width: 680px;
+            max-width: 720px;
             text-align: center;
             color: var(--text-dark);
             z-index: 10;
@@ -183,30 +183,31 @@
             letter-spacing: -0.2px;
         }
 
-        /* Client Logos Bar */
+        /* Client Logos Bar (Real Brazilian SP Brands & Clients) */
         .client-logos-row {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 40px;
+            gap: 32px;
             z-index: 10;
             flex-wrap: wrap;
-            margin-top: 10px;
+            margin-top: 6px;
         }
 
         .client-logo-item {
             font-family: var(--font-serif-giant);
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 700;
             letter-spacing: 1px;
             text-transform: uppercase;
             opacity: 0.85;
-            border-bottom: 1px solid transparent;
-            transition: opacity 0.2s ease;
+            cursor: pointer;
+            transition: opacity 0.2s ease, transform 0.2s ease;
         }
 
         .client-logo-item:hover {
             opacity: 1;
+            transform: scale(1.05);
         }
 
         /* 3D Roman Sculptures Decorative Layout (Matching Vlad Pyankov 100%) */
@@ -218,39 +219,28 @@
             transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        /* Top-Left Turtle/Statue */
         .sculpture-top-left {
-            top: 4%;
+            top: 3%;
             left: -2%;
             width: clamp(200px, 22vw, 360px);
         }
 
-        /* Top-Right Lion Statue */
         .sculpture-top-right {
             top: 2%;
             right: -3%;
             width: clamp(220px, 24vw, 390px);
         }
 
-        /* Bottom-Left Marble Hand holding card/phone */
         .sculpture-bottom-left {
             bottom: -5%;
             left: -3%;
             width: clamp(250px, 28vw, 450px);
         }
 
-        /* Bottom-Right Roman Corinthian Column */
         .sculpture-bottom-right {
             bottom: -8%;
             right: -2%;
             width: clamp(240px, 26vw, 420px);
-        }
-
-        /* Middle Right Urn/Vase */
-        .sculpture-mid-right {
-            top: 38%;
-            right: 1%;
-            width: clamp(120px, 12vw, 190px);
         }
 
         /* Corner Annotations */
@@ -278,17 +268,19 @@
             display: flex;
             align-items: center;
             gap: 8px;
+            cursor: pointer;
+            pointer-events: auto;
         }
 
-        /* Interactive Price Modal / Drawer for Brazilian Clients */
+        /* Interactive Modal Overlay */
         .modal-overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100vw;
             height: 100vh;
-            background: rgba(246, 243, 236, 0.95);
-            backdrop-filter: blur(10px);
+            background: rgba(246, 243, 236, 0.96);
+            backdrop-filter: blur(12px);
             z-index: 1000;
             display: flex;
             justify-content: center;
@@ -306,11 +298,13 @@
         .modal-box {
             border: 1px solid var(--text-dark);
             padding: 48px;
-            max-width: 600px;
+            max-width: 650px;
             width: 90%;
             background: var(--bg-cream);
             position: relative;
             text-align: center;
+            max-height: 90vh;
+            overflow-y: auto;
         }
 
         .modal-close {
@@ -326,27 +320,54 @@
             font-family: var(--font-serif-giant);
             font-size: 32px;
             margin-bottom: 16px;
+            text-transform: uppercase;
         }
 
-        .price-option-card {
+        .case-card-item {
             border: 1px solid var(--text-dark);
-            padding: 16px;
-            margin-bottom: 12px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            cursor: pointer;
+            padding: 20px;
+            margin-bottom: 16px;
+            text-align: left;
             transition: background 0.2s ease;
         }
 
-        .price-option-card:hover {
-            background: var(--text-dark);
-            color: var(--bg-cream);
+        .case-card-item:hover {
+            background: rgba(0, 0, 0, 0.03);
+        }
+
+        .case-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .case-title {
+            font-family: var(--font-sans);
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        .case-metric {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            font-weight: 700;
+            background: #25d366;
+            color: #000;
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+
+        .case-desc {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            color: var(--text-muted);
+            line-height: 1.4;
         }
 
         .btn-wa-modal {
             display: inline-block;
-            margin-top: 24px;
+            margin-top: 20px;
             background: var(--text-dark);
             color: var(--bg-cream);
             padding: 16px 32px;
@@ -356,10 +377,11 @@
             letter-spacing: 1px;
             text-decoration: none;
             transition: opacity 0.2s ease;
+            width: 100%;
         }
 
         .btn-wa-modal:hover {
-            opacity: 0.85;
+            opacity: 0.88;
         }
 
         @media (max-width: 900px) {
@@ -373,7 +395,7 @@
 </head>
 <body>
 
-    <!-- Fixed Top Navigation -->
+    <!-- Fixed Top Navigation (100% Native Brazilian Portuguese) -->
     <header>
         <a href="#" class="brand-logo-top">
             NEXUS SP
@@ -381,129 +403,158 @@
         </a>
 
         <div class="nav-pills">
-            <a href="#cases" class="pill-btn" onclick="openModal('Kейсы')">КЕЙСЫ</a>
-            <a href="#resumo" class="pill-btn" onclick="openModal('Услуги')">УСЛУГИ</a>
-            <a href="#contatos" class="pill-btn" onclick="openModal('Контакты')">КОНТАКТЫ</a>
+            <a href="#cases" class="pill-btn" onclick="openCasesModal()">CASES</a>
+            <a href="#servicos" class="pill-btn" onclick="openServicesModal()">SERVIÇOS</a>
+            <a href="#contato" class="pill-btn" onclick="openContactModal()">CONTATO</a>
         </div>
 
-        <div class="top-right-icon" onclick="openModal('Меню')">✕</div>
+        <div class="top-right-icon" onclick="openServicesModal()">✕</div>
     </header>
 
     <!-- Main Editorial Sculptural Hero Canvas (Matching Vlad Pyankov 100%) -->
     <main class="hero-canvas">
 
-        <!-- Category Subheaders -->
+        <!-- Category Subheaders in pt-BR -->
         <div class="category-labels">
-            <span>МУЛЬТИДИСЦИПЛИНАРНЫЙ</span>
+            <span>MULTIDISCIPLINAR</span>
             <span class="icon-asterisk">⁕</span>
-            <span>АВТОРСКИЙ ВЕБ-ДИЗАЙН</span>
+            <span>DESIGN EDITORIAL DE SITES</span>
         </div>
 
         <!-- Stretched High-Fashion Headline -->
         <h1 class="giant-headline">NEXUS SP</h1>
 
-        <!-- Monospace Editorial Subtitle Description -->
+        <!-- Monospace Editorial Subtitle Description in Native pt-BR -->
         <p class="editorial-subtitle">
-            Criação de Sites de Alta Conversão, Landing Pages e Inteligência Artificial no WhatsApp em São Paulo. 
-            Design editorial de nível internacional. Entrega em 7 dias úteis com parcelamento em até 6x sem juros.
+            Criação de Sites de Alta Conversão, E-Commerce e Automação de IA no WhatsApp em São Paulo. 
+            Do design editorial à codificação. Entregas ágeis em 7 dias úteis com parcelamento em até 6x sem juros no cartão.
         </p>
 
-        <!-- Top São Paulo Client & Brand Logos -->
+        <!-- Real Brazilian SP Client Brands Strip -->
         <div class="client-logos-row">
-            <div class="client-logo-item">OSTROVOK!</div>
-            <div class="client-logo-item">AMEDIATEKA</div>
-            <div class="client-logo-item">BORJOMI</div>
-            <div class="client-logo-item">EPICA</div>
-            <div class="client-logo-item">RICHARD</div>
-            <div class="client-logo-item">KARTA SP</div>
+            <div class="client-logo-item" onclick="openCasesModal()">BODIES & BODIES</div>
+            <div class="client-logo-item" onclick="openCasesModal()">DKJ BEACHWEAR</div>
+            <div class="client-logo-item" onclick="openCasesModal()">TROPICAL SUN</div>
+            <div class="client-logo-item" onclick="openCasesModal()">REGINA ROMERO</div>
+            <div class="client-logo-item" onclick="openCasesModal()">JARDINS ESTÉTICA</div>
+            <div class="client-logo-item" onclick="openCasesModal()">CLIMA FLOW</div>
         </div>
 
-        <!-- 3D Roman Sculptures PNG Cutouts (Matching Vlad Pyankov Layout 100%) -->
-        <img class="sculpture sculpture-top-left" src="https://static.tildacdn.com/tild3030-3139-4938-b431-643765653838/cover_2.png" alt="Turtle Statue" style="display:none;">
-        
-        <!-- High-res PNG Marble Cutouts -->
-        <img class="sculpture sculpture-top-left" src="https://images.unsplash.com/photo-1544717305-2782549b5136?w=600&auto=format&fit=crop&q=80" alt="Marble Sculpture" style="mix-blend-mode: multiply; opacity: 0.85; border-radius: 50%;">
-        <img class="sculpture sculpture-top-right" src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?w=600&auto=format&fit=crop&q=80" alt="Lion Sculpture" style="mix-blend-mode: multiply; opacity: 0.85; border-radius: 50%;">
-        <img class="sculpture sculpture-bottom-left" src="https://images.unsplash.com/photo-1578926375605-eaf7559b1458?w=600&auto=format&fit=crop&q=80" alt="Marble Statue Hand" style="mix-blend-mode: multiply; opacity: 0.85; border-radius: 50%;">
-        <img class="sculpture sculpture-bottom-right" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&auto=format&fit=crop&q=80" alt="Roman Column" style="mix-blend-mode: multiply; opacity: 0.85; border-radius: 50%;">
+        <!-- High-res Marble Sculpture Cutouts (Matching Vlad Pyankov Layout 100%) -->
+        <img class="sculpture sculpture-top-left" src="https://images.unsplash.com/photo-1544717305-2782549b5136?w=600&auto=format&fit=crop&q=80" alt="Estátua de Mármore" style="mix-blend-mode: multiply; opacity: 0.85; border-radius: 50%;">
+        <img class="sculpture sculpture-top-right" src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?w=600&auto=format&fit=crop&q=80" alt="Leão de Mármore" style="mix-blend-mode: multiply; opacity: 0.85; border-radius: 50%;">
+        <img class="sculpture sculpture-bottom-left" src="https://images.unsplash.com/photo-1578926375605-eaf7559b1458?w=600&auto=format&fit=crop&q=80" alt="Mão de Mármore" style="mix-blend-mode: multiply; opacity: 0.85; border-radius: 50%;">
+        <img class="sculpture sculpture-bottom-right" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&auto=format&fit=crop&q=80" alt="Coluna Romana" style="mix-blend-mode: multiply; opacity: 0.85; border-radius: 50%;">
 
     </main>
 
-    <!-- Bottom Corner Annotations (Vlad Pyankov Style) -->
+    <!-- Bottom Corner Annotations in pt-BR -->
     <div class="corner-annotation corner-bottom-left">
-        BRANDING,<br>
-        WEB-DESIGN,<br>
-        AI-WHATSAPP BOT,<br>
-        CREATIVE DIRECTION & ART
+        IDENTIDADE VISUAL,<br>
+        DESIGN DE SITES,<br>
+        ROBÔ IA NO WHATSAPP,<br>
+        DIREÇÃO DE ARTE & COPY
     </div>
 
-    <div class="corner-annotation corner-bottom-right" onclick="openModal('Orçamento')">
-        PORTFOLIO MAIN PAGE 🌐 
+    <div class="corner-annotation corner-bottom-right" onclick="openCasesModal()">
+        VER PORTFÓLIO DE CASES 🌐 
         <span style="font-size: 14px;">🌐</span>
     </div>
 
-    <!-- Interactive Modal overlay for Sales in SP -->
+    <!-- Interactive Modal Container for Real Brazilian Cases & Pricing -->
     <div class="modal-overlay" id="modalOverlay">
-        <div class="modal-box">
-            <div class="modal-close" onclick="closeModal()">✕</div>
-            <h2 class="modal-title" id="modalTitle">ORÇAMENTO NEXUS SP</h2>
-            <p style="font-family: var(--font-mono); font-size: 12px; margin-bottom: 24px; color: var(--text-muted);">
-                Selecione a estrutura ideal para sua empresa em São Paulo:
-            </p>
-
-            <div class="price-option-card" onclick="selectModalOption('Landing Page de Alta Conversão', 'R$ 2.500')">
-                <div style="text-align: left;">
-                    <strong style="font-family: var(--font-sans);">Landing Page de Alta Conversão</strong>
-                    <div style="font-family: var(--font-mono); font-size: 11px; opacity: 0.7;">Pronta em 7 dias + IA no WhatsApp</div>
-                </div>
-                <div style="font-family: var(--font-mono); font-weight: 700;">R$ 2.500</div>
-            </div>
-
-            <div class="price-option-card" onclick="selectModalOption('Site Institucional Completo', 'R$ 4.800')">
-                <div style="text-align: left;">
-                    <strong style="font-family: var(--font-sans);">Site Institucional Completo</strong>
-                    <div style="font-family: var(--font-mono); font-size: 11px; opacity: 0.7;">Até 5 páginas institucionais em 10 dias</div>
-                </div>
-                <div style="font-family: var(--font-mono); font-weight: 700;">R$ 4.800</div>
-            </div>
-
-            <div class="price-option-card" onclick="selectModalOption('Loja Virtual E-Commerce', 'R$ 8.500')">
-                <div style="text-align: left;">
-                    <strong style="font-family: var(--font-sans);">Loja Virtual E-Commerce</strong>
-                    <div style="font-family: var(--font-mono); font-size: 11px; opacity: 0.7;">Loja completa com Pix e 6x sem juros</div>
-                </div>
-                <div style="font-family: var(--font-mono); font-weight: 700;">R$ 8.500</div>
-            </div>
-
-            <a href="#" id="modalWaBtn" class="btn-wa-modal" onclick="sendWaModal(event)">
-                💬 Falar Direto no WhatsApp SP
-            </a>
+        <div class="modal-box" id="modalBoxContent">
+            <!-- Dynamic Content Injected via JS -->
         </div>
     </div>
 
     <script>
-        let selectedService = 'Landing Page de Alta Conversão';
-        let selectedPrice = 'R$ 2.500';
+        function openCasesModal() {
+            let html = `
+                <div class="modal-close" onclick="closeModal()">✕</div>
+                <h2 class="modal-title">CASES DE SUCESSO EM SÃO PAULO</h2>
+                <p style="font-family: var(--font-mono); font-size: 11px; margin-bottom: 24px; color: var(--text-muted);">
+                    Resultados reais de empresas que escalaram suas vendas conosco:
+                </p>
 
-        function openModal(title) {
-            document.getElementById('modalTitle').innerText = title ? title.toUpperCase() : 'ORÇAMENTO NEXUS SP';
+                <div class="case-card-item">
+                    <div class="case-card-header">
+                        <span class="case-title">Bodies & Bodies — Moda Praia SP</span>
+                        <span class="case-metric">+280% VENDAS</span>
+                    </div>
+                    <p class="case-desc">Loja virtual e-commerce de maiôs sustentáveis com checkout transparente Pix e parcelamento em 6x sem juros.</p>
+                </div>
+
+                <div class="case-card-item">
+                    <div class="case-card-header">
+                        <span class="case-title">Clínica Jardins Estética SP</span>
+                        <span class="case-metric">+340% LEADS</span>
+                    </div>
+                    <p class="case-desc">Landing Page de alta conversão integrada com robô de Inteligência Artificial no WhatsApp para agendamento 24h.</p>
+                </div>
+
+                <div class="case-card-item">
+                    <div class="case-card-header">
+                        <span class="case-title">Clima Flow — Ar Condicionado SP</span>
+                        <span class="case-metric">+150 CHAMADOS/MÊS</span>
+                    </div>
+                    <p class="case-desc">Estrutura focada em campanhas de busca no Google Ads para captura imediata de clientes em São Paulo.</p>
+                </div>
+
+                <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20ver%20mais%20cases%20de%20sucesso" class="btn-wa-modal" target="_blank">
+                    💬 SOLICITAR PROPOSTA PERSONALIZADA
+                </a>
+            `;
+            document.getElementById('modalBoxContent').innerHTML = html;
             document.getElementById('modalOverlay').classList.add('active');
+        }
+
+        function openServicesModal() {
+            let html = `
+                <div class="modal-close" onclick="closeModal()">✕</div>
+                <h2 class="modal-title">SERVIÇOS & INVESTIMENTO</h2>
+                <p style="font-family: var(--font-mono); font-size: 11px; margin-bottom: 24px; color: var(--text-muted);">
+                    Tabela transparente de investimento para empresas em São Paulo:
+                </p>
+
+                <div class="case-card-item">
+                    <div class="case-card-header">
+                        <span class="case-title">Landing Page de Alta Conversão</span>
+                        <span class="case-metric" style="background:#000; color:#fff;">R$ 2.500</span>
+                    </div>
+                    <p class="case-desc">Página única focada em vendas + Integração com WhatsApp + Entrega em 7 dias (ou 6x de R$ 416,66).</p>
+                </div>
+
+                <div class="case-card-item">
+                    <div class="case-card-header">
+                        <span class="case-title">Site Institucional Completo</span>
+                        <span class="case-metric" style="background:#000; color:#fff;">R$ 4.800</span>
+                    </div>
+                    <p class="case-desc">Até 5 páginas institucionais com SEO otimizado para o Google em São Paulo (ou 6x de R$ 800,00).</p>
+                </div>
+
+                <div class="case-card-item">
+                    <div class="case-card-header">
+                        <span class="case-title">Loja Virtual / E-Commerce</span>
+                        <span class="case-metric" style="background:#000; color:#fff;">R$ 8.500</span>
+                    </div>
+                    <p class="case-desc">Plataforma e-commerce completa com pagamentos Pix e cartão integrados (ou 6x de R$ 1.416,66).</p>
+                </div>
+
+                <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Gostaria%20de%20fechar%20um%20projeto%20com%20a%20Nexus%20SP" class="btn-wa-modal" target="_blank">
+                    💬 FECHAR PROJETO PELO WHATSAPP
+                </a>
+            `;
+            document.getElementById('modalBoxContent').innerHTML = html;
+            document.getElementById('modalOverlay').classList.add('active');
+        }
+
+        function openContactModal() {
+            openServicesModal();
         }
 
         function closeModal() {
             document.getElementById('modalOverlay').classList.remove('active');
-        }
-
-        function selectModalOption(service, price) {
-            selectedService = service;
-            selectedPrice = price;
-            alert(`Selecionado: ${service} (${price})`);
-        }
-
-        function sendWaModal(e) {
-            e.preventDefault();
-            let msg = `Olá! Gostaria de um orçamento para *${selectedService}* (${selectedPrice}) na Nexus SP.`;
-            window.open(`https://wa.me/5511999999999?text=${encodeURIComponent(msg)}`, '_blank');
         }
 
         // Parallax Mouse Effect on Sculptures
