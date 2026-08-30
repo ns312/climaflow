@@ -26,7 +26,10 @@
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            user-select: none;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
@@ -44,16 +47,14 @@
             top: 0;
             left: 0;
             width: 100%;
-            padding: 24px 32px;
+            padding: 20px 32px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             z-index: 100;
-            pointer-events: none;
-        }
-
-        header * {
-            pointer-events: auto;
+            background: rgba(246, 243, 236, 0.88);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
         }
 
         .brand-logo-top {
@@ -108,22 +109,30 @@
 
         .top-right-icon {
             font-family: var(--font-mono);
-            font-size: 18px;
-            cursor: pointer;
-            width: 32px;
-            height: 32px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            transition: transform 0.3s ease;
+            font-size: 14px;
+            font-weight: 700;
+            text-decoration: none;
+            color: var(--text-dark);
+            border: 1px solid var(--text-dark);
+            padding: 6px 16px;
+            border-radius: 30px;
+            transition: all 0.2s ease;
         }
 
         .top-right-icon:hover {
-            transform: rotate(90deg);
+            background: #25d366;
+            border-color: #25d366;
+            color: #000;
         }
 
-        /* Main Editorial Hero Canvas */
+        /* Section Layouts */
+        section {
+            padding: 100px 6%;
+            position: relative;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        }
+
+        /* SECTION 1: HERO CANVAS */
         .hero-canvas {
             position: relative;
             width: 100vw;
@@ -135,9 +144,9 @@
             align-items: center;
             padding: 0 4%;
             overflow: hidden;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         }
 
-        /* Category Subheaders */
         .category-labels {
             display: flex;
             align-items: center;
@@ -151,11 +160,6 @@
             z-index: 10;
         }
 
-        .category-labels .icon-asterisk {
-            font-size: 14px;
-        }
-
-        /* Giant High-Fashion Serif Headline */
         .giant-headline {
             font-family: var(--font-serif-giant);
             font-size: clamp(64px, 11vw, 160px);
@@ -167,10 +171,9 @@
             color: var(--text-dark);
             z-index: 10;
             margin-bottom: 24px;
-            transform: scaleY(1.15); /* Vlad Pyankov stretched typography effect */
+            transform: scaleY(1.15);
         }
 
-        /* Monospace Editorial Subtitle Description */
         .editorial-subtitle {
             font-family: var(--font-mono);
             font-size: clamp(10px, 1.1vw, 13px);
@@ -180,10 +183,8 @@
             color: var(--text-dark);
             z-index: 10;
             margin-bottom: 36px;
-            letter-spacing: -0.2px;
         }
 
-        /* Client Logos Bar (Real Brazilian SP Brands & Clients) */
         .client-logos-row {
             display: flex;
             align-items: center;
@@ -191,7 +192,6 @@
             gap: 32px;
             z-index: 10;
             flex-wrap: wrap;
-            margin-top: 6px;
         }
 
         .client-logo-item {
@@ -201,16 +201,14 @@
             letter-spacing: 1px;
             text-transform: uppercase;
             opacity: 0.85;
-            cursor: pointer;
-            transition: opacity 0.2s ease, transform 0.2s ease;
+            transition: opacity 0.2s ease;
         }
 
         .client-logo-item:hover {
             opacity: 1;
-            transform: scale(1.05);
         }
 
-        /* 3D Roman Sculptures Decorative Layout (Matching Vlad Pyankov 100%) */
+        /* 3D Sculptures */
         .sculpture {
             position: absolute;
             pointer-events: none;
@@ -219,183 +217,250 @@
             transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .sculpture-top-left {
-            top: 3%;
-            left: -2%;
-            width: clamp(200px, 22vw, 360px);
-        }
+        .sculpture-top-left { top: 3%; left: -2%; width: clamp(200px, 22vw, 360px); }
+        .sculpture-top-right { top: 2%; right: -3%; width: clamp(220px, 24vw, 390px); }
+        .sculpture-bottom-left { bottom: -5%; left: -3%; width: clamp(250px, 28vw, 450px); }
+        .sculpture-bottom-right { bottom: -8%; right: -2%; width: clamp(240px, 26vw, 420px); }
 
-        .sculpture-top-right {
-            top: 2%;
-            right: -3%;
-            width: clamp(220px, 24vw, 390px);
-        }
-
-        .sculpture-bottom-left {
-            bottom: -5%;
-            left: -3%;
-            width: clamp(250px, 28vw, 450px);
-        }
-
-        .sculpture-bottom-right {
-            bottom: -8%;
-            right: -2%;
-            width: clamp(240px, 26vw, 420px);
-        }
-
-        /* Corner Annotations */
-        .corner-annotation {
-            position: fixed;
-            font-family: var(--font-mono);
-            font-size: 9px;
-            line-height: 1.3;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            color: var(--text-dark);
-            z-index: 50;
-            pointer-events: none;
-        }
-
-        .corner-bottom-left {
-            bottom: 24px;
-            left: 32px;
-        }
-
-        .corner-bottom-right {
-            bottom: 24px;
-            right: 32px;
-            text-align: right;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            cursor: pointer;
-            pointer-events: auto;
-        }
-
-        /* Interactive Modal Overlay */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background: rgba(246, 243, 236, 0.96);
-            backdrop-filter: blur(12px);
-            z-index: 1000;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            opacity: 0;
-            pointer-events: none;
-            transition: all 0.4s ease;
-        }
-
-        .modal-overlay.active {
-            opacity: 1;
-            pointer-events: auto;
-        }
-
-        .modal-box {
-            border: 1px solid var(--text-dark);
-            padding: 48px;
-            max-width: 650px;
-            width: 90%;
-            background: var(--bg-cream);
-            position: relative;
+        /* SECTION 2: CASES SHOWCASE */
+        .section-header {
             text-align: center;
-            max-height: 90vh;
-            overflow-y: auto;
+            margin-bottom: 60px;
         }
 
-        .modal-close {
-            position: absolute;
-            top: 20px;
-            right: 20px;
+        .section-tag {
             font-family: var(--font-mono);
-            font-size: 20px;
-            cursor: pointer;
-        }
-
-        .modal-title {
-            font-family: var(--font-serif-giant);
-            font-size: 32px;
-            margin-bottom: 16px;
+            font-size: 11px;
             text-transform: uppercase;
-        }
-
-        .case-card-item {
-            border: 1px solid var(--text-dark);
-            padding: 20px;
-            margin-bottom: 16px;
-            text-align: left;
-            transition: background 0.2s ease;
-        }
-
-        .case-card-item:hover {
-            background: rgba(0, 0, 0, 0.03);
-        }
-
-        .case-card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            letter-spacing: 2px;
+            color: var(--text-muted);
             margin-bottom: 8px;
+            display: block;
         }
 
-        .case-title {
-            font-family: var(--font-sans);
-            font-weight: 700;
-            font-size: 18px;
+        .section-title {
+            font-family: var(--font-serif-giant);
+            font-size: clamp(32px, 5vw, 56px);
+            text-transform: uppercase;
+            font-weight: 400;
         }
 
-        .case-metric {
+        .cases-editorial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 40px;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .case-card-editorial {
+            border: 1px solid var(--text-dark);
+            background: #fff;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .case-card-editorial:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .case-img-holder {
+            height: 260px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            border-bottom: 1px solid var(--text-dark);
+        }
+
+        .case-badge-result {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: #25d366;
+            color: #000;
             font-family: var(--font-mono);
             font-size: 12px;
             font-weight: 700;
-            background: #25d366;
-            color: #000;
-            padding: 4px 8px;
-            border-radius: 4px;
+            padding: 6px 12px;
+            border: 1px solid #000;
         }
 
-        .case-desc {
+        .case-info-holder {
+            padding: 28px;
+        }
+
+        .case-info-holder h3 {
+            font-family: var(--font-serif-giant);
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .case-info-holder p {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            color: var(--text-muted);
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .btn-case-action {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            border-bottom: 1px solid var(--text-dark);
+            padding-bottom: 2px;
+        }
+
+        /* SECTION 3: THE 7-DAY PROCESS */
+        .process-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .process-step {
+            border: 1px solid var(--text-dark);
+            padding: 32px 24px;
+            background: rgba(255, 255, 255, 0.5);
+            position: relative;
+        }
+
+        .step-num {
+            font-family: var(--font-serif-giant);
+            font-size: 48px;
+            opacity: 0.2;
+            position: absolute;
+            top: 16px;
+            right: 20px;
+        }
+
+        .process-step h4 {
+            font-family: var(--font-serif-giant);
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .process-step p {
             font-family: var(--font-mono);
             font-size: 11px;
             color: var(--text-muted);
-            line-height: 1.4;
+            line-height: 1.5;
         }
 
-        .btn-wa-modal {
-            display: inline-block;
-            margin-top: 20px;
+        /* SECTION 4: PRICING & OFFER */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .price-card {
+            border: 1px solid var(--text-dark);
+            padding: 40px 32px;
+            background: #fff;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .price-card.featured {
             background: var(--text-dark);
             color: var(--bg-cream);
-            padding: 16px 32px;
+        }
+
+        .price-card.featured .price-amount, .price-card.featured p {
+            color: var(--bg-cream);
+        }
+
+        .price-title {
+            font-family: var(--font-serif-giant);
+            font-size: 26px;
+            margin-bottom: 12px;
+        }
+
+        .price-amount {
+            font-family: var(--font-serif-giant);
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 6px;
+        }
+
+        .price-inst {
             font-family: var(--font-mono);
             font-size: 12px;
+            color: #25d366;
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+
+        .btn-price-wa {
+            display: block;
+            padding: 16px 24px;
+            border: 1px solid var(--text-dark);
+            background: var(--text-dark);
+            color: var(--bg-cream);
+            font-family: var(--font-mono);
+            font-size: 11px;
             text-transform: uppercase;
             letter-spacing: 1px;
             text-decoration: none;
+            font-weight: 700;
+            margin-top: 24px;
             transition: opacity 0.2s ease;
-            width: 100%;
         }
 
-        .btn-wa-modal:hover {
-            opacity: 0.88;
+        .price-card.featured .btn-price-wa {
+            background: var(--bg-cream);
+            color: var(--text-dark);
+            border-color: var(--bg-cream);
+        }
+
+        /* SECTION 5: FOOTER & CONTACT */
+        footer {
+            padding: 80px 6% 40px;
+            text-align: center;
+            background: #111111;
+            color: #ffffff;
+        }
+
+        .footer-logo {
+            font-family: var(--font-serif-giant);
+            font-size: 42px;
+            margin-bottom: 16px;
+        }
+
+        .footer-sub {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            opacity: 0.7;
+            max-width: 500px;
+            margin: 0 auto 32px;
         }
 
         @media (max-width: 900px) {
             .giant-headline { font-size: 52px; transform: none; }
             .sculpture-top-left, .sculpture-top-right { width: 140px; }
             .sculpture-bottom-left, .sculpture-bottom-right { width: 180px; }
-            .corner-annotation { display: none; }
             .nav-pills { display: none; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Fixed Top Navigation (100% Native Brazilian Portuguese) -->
+    <!-- Fixed Top Navigation Bar -->
     <header>
         <a href="#" class="brand-logo-top">
             NEXUS SP
@@ -403,160 +468,192 @@
         </a>
 
         <div class="nav-pills">
-            <a href="#cases" class="pill-btn" onclick="openCasesModal()">CASES</a>
-            <a href="#servicos" class="pill-btn" onclick="openServicesModal()">SERVIÇOS</a>
-            <a href="#contato" class="pill-btn" onclick="openContactModal()">CONTATO</a>
+            <a href="#cases" class="pill-btn">CASES</a>
+            <a href="#processo" class="pill-btn">PROCESSO</a>
+            <a href="#servicos" class="pill-btn">VALORES</a>
+            <a href="#contato" class="pill-btn">CONTATO</a>
         </div>
 
-        <div class="top-right-icon" onclick="openServicesModal()">✕</div>
+        <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Quero%20um%20or%C3%A7amento%20na%20Nexus%20SP" class="top-right-icon" target="_blank">
+            💬 WHATSAPP
+        </a>
     </header>
 
-    <!-- Main Editorial Sculptural Hero Canvas (Matching Vlad Pyankov 100%) -->
-    <main class="hero-canvas">
-
-        <!-- Category Subheaders in pt-BR -->
+    <!-- SECTION 1: HERO CANVAS (MATCHING VLAD PYANKOV 100%) -->
+    <section class="hero-canvas" id="hero">
         <div class="category-labels">
             <span>MULTIDISCIPLINAR</span>
             <span class="icon-asterisk">⁕</span>
             <span>DESIGN EDITORIAL DE SITES</span>
         </div>
 
-        <!-- Stretched High-Fashion Headline -->
         <h1 class="giant-headline">NEXUS SP</h1>
 
-        <!-- Monospace Editorial Subtitle Description in Native pt-BR -->
         <p class="editorial-subtitle">
             Criação de Sites de Alta Conversão, E-Commerce e Automação de IA no WhatsApp em São Paulo. 
             Do design editorial à codificação. Entregas ágeis em 7 dias úteis com parcelamento em até 6x sem juros no cartão.
         </p>
 
-        <!-- Real Brazilian SP Client Brands Strip -->
         <div class="client-logos-row">
-            <div class="client-logo-item" onclick="openCasesModal()">BODIES & BODIES</div>
-            <div class="client-logo-item" onclick="openCasesModal()">DKJ BEACHWEAR</div>
-            <div class="client-logo-item" onclick="openCasesModal()">TROPICAL SUN</div>
-            <div class="client-logo-item" onclick="openCasesModal()">REGINA ROMERO</div>
-            <div class="client-logo-item" onclick="openCasesModal()">JARDINS ESTÉTICA</div>
-            <div class="client-logo-item" onclick="openCasesModal()">CLIMA FLOW</div>
+            <div class="client-logo-item">BODIES & BODIES</div>
+            <div class="client-logo-item">DKJ BEACHWEAR</div>
+            <div class="client-logo-item">TROPICAL SUN</div>
+            <div class="client-logo-item">REGINA ROMERO</div>
+            <div class="client-logo-item">JARDINS ESTÉTICA</div>
+            <div class="client-logo-item">CLIMA FLOW</div>
         </div>
 
-        <!-- High-res Marble Sculpture Cutouts (Matching Vlad Pyankov Layout 100%) -->
+        <!-- 3D Roman Sculptures -->
         <img class="sculpture sculpture-top-left" src="https://images.unsplash.com/photo-1544717305-2782549b5136?w=600&auto=format&fit=crop&q=80" alt="Estátua de Mármore" style="mix-blend-mode: multiply; opacity: 0.85; border-radius: 50%;">
         <img class="sculpture sculpture-top-right" src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?w=600&auto=format&fit=crop&q=80" alt="Leão de Mármore" style="mix-blend-mode: multiply; opacity: 0.85; border-radius: 50%;">
         <img class="sculpture sculpture-bottom-left" src="https://images.unsplash.com/photo-1578926375605-eaf7559b1458?w=600&auto=format&fit=crop&q=80" alt="Mão de Mármore" style="mix-blend-mode: multiply; opacity: 0.85; border-radius: 50%;">
         <img class="sculpture sculpture-bottom-right" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&auto=format&fit=crop&q=80" alt="Coluna Romana" style="mix-blend-mode: multiply; opacity: 0.85; border-radius: 50%;">
+    </section>
 
-    </main>
-
-    <!-- Bottom Corner Annotations in pt-BR -->
-    <div class="corner-annotation corner-bottom-left">
-        IDENTIDADE VISUAL,<br>
-        DESIGN DE SITES,<br>
-        ROBÔ IA NO WHATSAPP,<br>
-        DIREÇÃO DE ARTE & COPY
-    </div>
-
-    <div class="corner-annotation corner-bottom-right" onclick="openCasesModal()">
-        VER PORTFÓLIO DE CASES 🌐 
-        <span style="font-size: 14px;">🌐</span>
-    </div>
-
-    <!-- Interactive Modal Container for Real Brazilian Cases & Pricing -->
-    <div class="modal-overlay" id="modalOverlay">
-        <div class="modal-box" id="modalBoxContent">
-            <!-- Dynamic Content Injected via JS -->
+    <!-- SECTION 2: CASES & PORTFOLIO SHOWCASE -->
+    <section id="cases">
+        <div class="section-header">
+            <span class="section-tag">PORTFÓLIO DE SUCESSO</span>
+            <h2 class="section-title">CASES EM SÃO PAULO</h2>
         </div>
-    </div>
+
+        <div class="cases-editorial-grid">
+            <div class="case-card-editorial">
+                <div class="case-img-holder" style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&auto=format&fit=crop&q=80');">
+                    <div class="case-badge-result">+280% VENDAS</div>
+                </div>
+                <div class="case-info-holder">
+                    <h3>Bodies & Bodies — Moda Praia SP</h3>
+                    <p>E-commerce de maiôs e biquínis sustentáveis com checkout transparente Pix e parcelamento em 6x sem juros.</p>
+                    <a href="https://wa.me/5511999999999?text=Quero%20um%20site%20estilo%20Bodies%20%26%20Bodies" class="btn-case-action" target="_blank">VER PROJETO NO WHATSAPP ➔</a>
+                </div>
+            </div>
+
+            <div class="case-card-editorial">
+                <div class="case-img-holder" style="background-image: url('https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800&auto=format&fit=crop&q=80');">
+                    <div class="case-badge-result">+340% AGENDAMENTOS</div>
+                </div>
+                <div class="case-info-holder">
+                    <h3>Clínica Jardins Estética SP</h3>
+                    <p>Landing Page de alta conversão para tratamentos corporais integrada com robô IA no WhatsApp para atendimento 24h.</p>
+                    <a href="https://wa.me/5511999999999?text=Quero%20um%20site%20estilo%20Clinica%20Jardins" class="btn-case-action" target="_blank">VER PROJETO NO WHATSAPP ➔</a>
+                </div>
+            </div>
+
+            <div class="case-card-editorial">
+                <div class="case-img-holder" style="background-image: url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&auto=format&fit=crop&q=80');">
+                    <div class="case-badge-result">+150 CHAMADOS/MÊS</div>
+                </div>
+                <div class="case-info-holder">
+                    <h3>Clima Flow — Ar Condicionado SP</h3>
+                    <p>Estrutura focada em campanhas de busca no Google Ads para captura imediata de clientes em São Paulo.</p>
+                    <a href="https://wa.me/5511999999999?text=Quero%20um%20site%20estilo%20Clima%20Flow" class="btn-case-action" target="_blank">VER PROJETO NO WHATSAPP ➔</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: THE 7-DAY METHODOLOGY -->
+    <section id="processo">
+        <div class="section-header">
+            <span class="section-tag">METODOLOGIA ÁGIL</span>
+            <h2 class="section-title">ENTREGA EM 7 DIAS ÚTEIS</h2>
+        </div>
+
+        <div class="process-row">
+            <div class="process-step">
+                <div class="step-num">01</div>
+                <h4>DIA 1-2: BRIEFING</h4>
+                <p>Mapeamento da sua empresa, concorrentes em São Paulo e definição da oferta irresistível para o público alvo.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-num">02</div>
+                <h4>DIA 3-4: DESIGN</h4>
+                <p>Criação do layout editorial de nível internacional focado em conversão e usabilidade perfeita no celular.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-num">03</div>
+                <h4>DIA 5-6: CONEXÃO IA</h4>
+                <p>Programação do código, otimização de velocidade e integração do robô de Inteligência Artificial no WhatsApp.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-num">04</div>
+                <h4>DIA 7: LANÇAMENTO</h4>
+                <p>Testes finais, homologação e publicação do site pronto para receber anúncios no Google e Instagram!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: INVESTIMENT & PRICING -->
+    <section id="servicos">
+        <div class="section-header">
+            <span class="section-tag">TRANSPARÊNCIA TOTAL</span>
+            <h2 class="section-title">TABELA DE INVESTIMENTO</h2>
+        </div>
+
+        <div class="pricing-grid">
+            <div class="price-card">
+                <div>
+                    <h3 class="price-title">Landing Page</h3>
+                    <div class="price-amount">R$ 2.500</div>
+                    <div class="price-inst">ou 6x de R$ 416,66 sem juros</div>
+                    <p style="font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); line-height: 1.6; margin-top: 16px;">
+                        • Página única de alta conversão<br>
+                        • Design Mobile-First Otimizado<br>
+                        • Botão de WhatsApp Flutuante<br>
+                        • Entrega em 7 dias úteis
+                    </p>
+                </div>
+                <a href="https://wa.me/5511999999999?text=Quero%20fechar%20uma%20Landing%20Page" class="btn-price-wa" target="_blank">FECHAR PROJETO ➔</a>
+            </div>
+
+            <div class="price-card featured">
+                <div>
+                    <h3 class="price-title">Site Institucional + IA</h3>
+                    <div class="price-amount">R$ 4.800</div>
+                    <div class="price-inst" style="color: #25d366;">ou 6x de R$ 800,00 sem juros</div>
+                    <p style="font-family: var(--font-mono); font-size: 11px; line-height: 1.6; margin-top: 16px;">
+                        • Até 5 páginas institucionais<br>
+                        • Robô IA de Atendimento no WhatsApp<br>
+                        • SEO Básico Otimizado no Google<br>
+                        • Entrega em 10 dias úteis
+                    </p>
+                </div>
+                <a href="https://wa.me/5511999999999?text=Quero%20fechar%20um%20Site%20Institucional" class="btn-price-wa" target="_blank">FECHAR PROJETO ➔</a>
+            </div>
+
+            <div class="price-card">
+                <div>
+                    <h3 class="price-title">Loja Virtual E-Commerce</h3>
+                    <div class="price-amount">R$ 8.500</div>
+                    <div class="price-inst">ou 6x de R$ 1.416,66 sem juros</div>
+                    <p style="font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); line-height: 1.6; margin-top: 16px;">
+                        • E-Commerce completo com catálogo<br>
+                        • Checkout Pix e Cartão (6x sem juros)<br>
+                        • Cálculo automático de frete Correios<br>
+                        • Entrega em 14 dias úteis
+                    </p>
+                </div>
+                <a href="https://wa.me/5511999999999?text=Quero%20fechar%20uma%20Loja%20Virtual" class="btn-price-wa" target="_blank">FECHAR PROJETO ➔</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: FOOTER & DIRECT CONTACT -->
+    <footer id="contato">
+        <div class="footer-logo">NEXUS SP</div>
+        <p class="footer-sub">
+            Estúdio Digital de Alta Conversão em São Paulo. Transformamos marcas em referências de mercado com design internacional e Inteligência Artificial.
+        </p>
+        <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Gostaria%20de%20iniciar%20um%20projeto%20com%20a%20Nexus%20SP" class="btn-price-wa" style="display: inline-block; background: #25d366; color: #000; border-color: #25d366;" target="_blank">
+            💬 INICIAR PROJETO NO WHATSAPP
+        </a>
+        <div style="font-family: var(--font-mono); font-size: 10px; opacity: 0.5; margin-top: 40px;">
+            © 2026 NEXUS SP ESTÚDIO DIGITAL — SÃO PAULO, BRASIL. TODOS OS DIREITOS RESERVADOS.
+        </div>
+    </footer>
 
     <script>
-        function openCasesModal() {
-            let html = `
-                <div class="modal-close" onclick="closeModal()">✕</div>
-                <h2 class="modal-title">CASES DE SUCESSO EM SÃO PAULO</h2>
-                <p style="font-family: var(--font-mono); font-size: 11px; margin-bottom: 24px; color: var(--text-muted);">
-                    Resultados reais de empresas que escalaram suas vendas conosco:
-                </p>
-
-                <div class="case-card-item">
-                    <div class="case-card-header">
-                        <span class="case-title">Bodies & Bodies — Moda Praia SP</span>
-                        <span class="case-metric">+280% VENDAS</span>
-                    </div>
-                    <p class="case-desc">Loja virtual e-commerce de maiôs sustentáveis com checkout transparente Pix e parcelamento em 6x sem juros.</p>
-                </div>
-
-                <div class="case-card-item">
-                    <div class="case-card-header">
-                        <span class="case-title">Clínica Jardins Estética SP</span>
-                        <span class="case-metric">+340% LEADS</span>
-                    </div>
-                    <p class="case-desc">Landing Page de alta conversão integrada com robô de Inteligência Artificial no WhatsApp para agendamento 24h.</p>
-                </div>
-
-                <div class="case-card-item">
-                    <div class="case-card-header">
-                        <span class="case-title">Clima Flow — Ar Condicionado SP</span>
-                        <span class="case-metric">+150 CHAMADOS/MÊS</span>
-                    </div>
-                    <p class="case-desc">Estrutura focada em campanhas de busca no Google Ads para captura imediata de clientes em São Paulo.</p>
-                </div>
-
-                <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20ver%20mais%20cases%20de%20sucesso" class="btn-wa-modal" target="_blank">
-                    💬 SOLICITAR PROPOSTA PERSONALIZADA
-                </a>
-            `;
-            document.getElementById('modalBoxContent').innerHTML = html;
-            document.getElementById('modalOverlay').classList.add('active');
-        }
-
-        function openServicesModal() {
-            let html = `
-                <div class="modal-close" onclick="closeModal()">✕</div>
-                <h2 class="modal-title">SERVIÇOS & INVESTIMENTO</h2>
-                <p style="font-family: var(--font-mono); font-size: 11px; margin-bottom: 24px; color: var(--text-muted);">
-                    Tabela transparente de investimento para empresas em São Paulo:
-                </p>
-
-                <div class="case-card-item">
-                    <div class="case-card-header">
-                        <span class="case-title">Landing Page de Alta Conversão</span>
-                        <span class="case-metric" style="background:#000; color:#fff;">R$ 2.500</span>
-                    </div>
-                    <p class="case-desc">Página única focada em vendas + Integração com WhatsApp + Entrega em 7 dias (ou 6x de R$ 416,66).</p>
-                </div>
-
-                <div class="case-card-item">
-                    <div class="case-card-header">
-                        <span class="case-title">Site Institucional Completo</span>
-                        <span class="case-metric" style="background:#000; color:#fff;">R$ 4.800</span>
-                    </div>
-                    <p class="case-desc">Até 5 páginas institucionais com SEO otimizado para o Google em São Paulo (ou 6x de R$ 800,00).</p>
-                </div>
-
-                <div class="case-card-item">
-                    <div class="case-card-header">
-                        <span class="case-title">Loja Virtual / E-Commerce</span>
-                        <span class="case-metric" style="background:#000; color:#fff;">R$ 8.500</span>
-                    </div>
-                    <p class="case-desc">Plataforma e-commerce completa com pagamentos Pix e cartão integrados (ou 6x de R$ 1.416,66).</p>
-                </div>
-
-                <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Gostaria%20de%20fechar%20um%20projeto%20com%20a%20Nexus%20SP" class="btn-wa-modal" target="_blank">
-                    💬 FECHAR PROJETO PELO WHATSAPP
-                </a>
-            `;
-            document.getElementById('modalBoxContent').innerHTML = html;
-            document.getElementById('modalOverlay').classList.add('active');
-        }
-
-        function openContactModal() {
-            openServicesModal();
-        }
-
-        function closeModal() {
-            document.getElementById('modalOverlay').classList.remove('active');
-        }
-
         // Parallax Mouse Effect on Sculptures
         document.addEventListener('mousemove', (e) => {
             const moveX = (e.clientX - window.innerWidth / 2) * 0.015;
