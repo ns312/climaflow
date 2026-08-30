@@ -3,719 +3,519 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nexus Web SP | Estúdio Digital & IA de Alta Conversão em São Paulo</title>
-    <meta name="description" content="Criação de Sites Profissionais, Landing Pages e IA no WhatsApp em SP. Design internacional, entrega em 7 dias e parcelamento em 6x sem juros.">
-    <!-- Google Fonts -->
+    <title>NEXUS SP — Estúdio Digital & Criação de Sites em São Paulo</title>
+    <meta name="description" content="Criação de Sites de Alta Conversão, Landing Pages e IA no WhatsApp em São Paulo. Design editorial de nível internacional.">
+    
+    <!-- Google Fonts for 100% Exact Vlad Pyankov Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Cinzel:wght@400;600;800;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+
     <style>
         :root {
-            --bg-obsidian: #030712;
-            --bg-surface: #0b0f19;
-            --bg-card: rgba(17, 24, 39, 0.7);
-            --primary-cyan: #00f0ff;
-            --purple-glow: #7000ff;
-            --green-whatsapp: #25d366;
-            --accent-gold: #ffaa00;
-            --text-primary: #f8fafc;
-            --text-secondary: #94a3b8;
-            --font-heading: 'Outfit', sans-serif;
-            --font-body: 'Plus Jakarta Sans', sans-serif;
-            --border-glass: rgba(255, 255, 255, 0.1);
+            --bg-cream: #f6f3ec;
+            --text-dark: #1a1a1a;
+            --text-muted: #555555;
+            --accent-border: #1a1a1a;
+            --font-serif-giant: 'Bodoni Moda', 'Cinzel', serif;
+            --font-mono: 'Space Mono', monospace;
+            --font-sans: 'Syne', sans-serif;
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            scroll-behavior: smooth;
+            user-select: none;
         }
 
         body {
-            background-color: var(--bg-obsidian);
-            color: var(--text-primary);
-            font-family: var(--font-body);
+            background-color: var(--bg-cream);
+            color: var(--text-dark);
+            font-family: var(--font-sans);
             overflow-x: hidden;
-            line-height: 1.6;
+            min-height: 100vh;
+            position: relative;
         }
 
-        /* Ambient Lighting Mesh */
-        .ambient-mesh {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100%;
-            max-width: 1400px;
-            height: 900px;
-            background: 
-                radial-gradient(circle at 50% 10%, rgba(0, 240, 255, 0.15) 0%, transparent 60%),
-                radial-gradient(circle at 20% 30%, rgba(112, 0, 255, 0.12) 0%, transparent 50%),
-                radial-gradient(circle at 80% 40%, rgba(37, 211, 102, 0.08) 0%, transparent 50%);
-            pointer-events: none;
-            z-index: 0;
-        }
-
+        /* Fixed Top Navigation Bar */
         header {
-            position: sticky;
+            position: fixed;
             top: 0;
-            backdrop-filter: blur(20px) saturate(180%);
-            background: rgba(3, 7, 18, 0.8);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-            z-index: 1000;
-            padding: 16px 6%;
+            left: 0;
+            width: 100%;
+            padding: 24px 32px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            z-index: 100;
+            pointer-events: none;
         }
 
-        .brand-container {
-            display: flex;
-            align-items: center;
-            gap: 12px;
+        header * {
+            pointer-events: auto;
         }
 
-        .brand-logo {
-            font-family: var(--font-heading);
-            font-size: 26px;
-            font-weight: 900;
-            letter-spacing: -0.5px;
-            background: linear-gradient(135deg, #ffffff 0%, var(--primary-cyan) 50%, var(--purple-glow) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .status-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            background: rgba(37, 211, 102, 0.1);
-            border: 1px solid rgba(37, 211, 102, 0.3);
-            color: #25d366;
-            font-size: 12px;
-            font-weight: 600;
-            padding: 4px 12px;
-            border-radius: 20px;
-        }
-
-        .pulse-dot {
-            width: 8px;
-            height: 8px;
-            background-color: #25d366;
-            border-radius: 50%;
-            box-shadow: 0 0 10px #25d366;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-            70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(37, 211, 102, 0); }
-            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
-        }
-
-        .nav-actions {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
-
-        .btn-nav-wa {
-            background: #25d366;
-            color: #000;
-            font-weight: 700;
-            font-size: 14px;
-            padding: 10px 22px;
-            border-radius: 30px;
+        .brand-logo-top {
+            font-family: var(--font-serif-giant);
+            font-size: 18px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
             text-decoration: none;
+            color: var(--text-dark);
+            display: flex;
+            flex-direction: column;
+            line-height: 1;
+        }
+
+        .brand-logo-top span {
+            font-size: 10px;
+            font-family: var(--font-mono);
+            letter-spacing: 1px;
+            margin-top: 2px;
+            opacity: 0.7;
+        }
+
+        /* Pill Buttons Center */
+        .nav-pills {
+            display: flex;
+            gap: 12px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .pill-btn {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 6px 20px;
+            border: 1px solid var(--text-dark);
+            border-radius: 40px;
+            background: transparent;
+            color: var(--text-dark);
+            text-decoration: none;
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            cursor: pointer;
+        }
+
+        .pill-btn:hover {
+            background: var(--text-dark);
+            color: var(--bg-cream);
+        }
+
+        .top-right-icon {
+            font-family: var(--font-mono);
+            font-size: 18px;
+            cursor: pointer;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+
+        .top-right-icon:hover {
+            transform: rotate(90deg);
+        }
+
+        /* Main Editorial Hero Canvas */
+        .hero-canvas {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            min-height: 700px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 0 4%;
+            overflow: hidden;
+        }
+
+        /* Category Subheaders */
+        .category-labels {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            font-family: var(--font-mono);
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+            opacity: 0.8;
+            z-index: 10;
+        }
+
+        .category-labels .icon-asterisk {
+            font-size: 14px;
+        }
+
+        /* Giant High-Fashion Serif Headline */
+        .giant-headline {
+            font-family: var(--font-serif-giant);
+            font-size: clamp(64px, 11vw, 160px);
+            font-weight: 400;
+            line-height: 0.88;
+            letter-spacing: -2px;
+            text-transform: uppercase;
+            text-align: center;
+            color: var(--text-dark);
+            z-index: 10;
+            margin-bottom: 24px;
+            transform: scaleY(1.15); /* Vlad Pyankov stretched typography effect */
+        }
+
+        /* Monospace Editorial Subtitle Description */
+        .editorial-subtitle {
+            font-family: var(--font-mono);
+            font-size: clamp(10px, 1.1vw, 13px);
+            line-height: 1.6;
+            max-width: 680px;
+            text-align: center;
+            color: var(--text-dark);
+            z-index: 10;
+            margin-bottom: 36px;
+            letter-spacing: -0.2px;
+        }
+
+        /* Client Logos Bar */
+        .client-logos-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            z-index: 10;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+
+        .client-logo-item {
+            font-family: var(--font-serif-giant);
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            opacity: 0.85;
+            border-bottom: 1px solid transparent;
+            transition: opacity 0.2s ease;
+        }
+
+        .client-logo-item:hover {
+            opacity: 1;
+        }
+
+        /* 3D Roman Sculptures Decorative Layout (Matching Vlad Pyankov 100%) */
+        .sculpture {
+            position: absolute;
+            pointer-events: none;
+            z-index: 5;
+            filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.12));
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Top-Left Turtle/Statue */
+        .sculpture-top-left {
+            top: 4%;
+            left: -2%;
+            width: clamp(200px, 22vw, 360px);
+        }
+
+        /* Top-Right Lion Statue */
+        .sculpture-top-right {
+            top: 2%;
+            right: -3%;
+            width: clamp(220px, 24vw, 390px);
+        }
+
+        /* Bottom-Left Marble Hand holding card/phone */
+        .sculpture-bottom-left {
+            bottom: -5%;
+            left: -3%;
+            width: clamp(250px, 28vw, 450px);
+        }
+
+        /* Bottom-Right Roman Corinthian Column */
+        .sculpture-bottom-right {
+            bottom: -8%;
+            right: -2%;
+            width: clamp(240px, 26vw, 420px);
+        }
+
+        /* Middle Right Urn/Vase */
+        .sculpture-mid-right {
+            top: 38%;
+            right: 1%;
+            width: clamp(120px, 12vw, 190px);
+        }
+
+        /* Corner Annotations */
+        .corner-annotation {
+            position: fixed;
+            font-family: var(--font-mono);
+            font-size: 9px;
+            line-height: 1.3;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-dark);
+            z-index: 50;
+            pointer-events: none;
+        }
+
+        .corner-bottom-left {
+            bottom: 24px;
+            left: 32px;
+        }
+
+        .corner-bottom-right {
+            bottom: 24px;
+            right: 32px;
+            text-align: right;
             display: flex;
             align-items: center;
             gap: 8px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 0 20px rgba(37, 211, 102, 0.25);
         }
 
-        .btn-nav-wa:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 0 30px rgba(37, 211, 102, 0.45);
+        /* Interactive Price Modal / Drawer for Brazilian Clients */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(246, 243, 236, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.4s ease;
         }
 
-        /* Hero Container */
-        .hero-section {
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .modal-box {
+            border: 1px solid var(--text-dark);
+            padding: 48px;
+            max-width: 600px;
+            width: 90%;
+            background: var(--bg-cream);
             position: relative;
-            z-index: 10;
-            padding: 90px 6% 70px;
-            max-width: 1200px;
-            margin: 0 auto;
             text-align: center;
         }
 
-        .hero-tag {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(0, 240, 255, 0.08);
-            border: 1px solid rgba(0, 240, 255, 0.3);
-            color: var(--primary-cyan);
-            font-size: 13px;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            padding: 8px 20px;
-            border-radius: 30px;
-            margin-bottom: 28px;
-            text-transform: uppercase;
-        }
-
-        .hero-title {
-            font-family: var(--font-heading);
-            font-size: 62px;
-            font-weight: 900;
-            line-height: 1.1;
-            letter-spacing: -1.5px;
-            margin-bottom: 24px;
-        }
-
-        .hero-title span {
-            background: linear-gradient(135deg, #ffffff 0%, var(--primary-cyan) 40%, var(--purple-glow) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero-description {
-            font-size: 20px;
-            color: var(--text-secondary);
-            max-width: 820px;
-            margin: 0 auto 40px;
-            font-weight: 400;
-        }
-
-        .hero-cta-container {
-            display: flex;
-            justify-content: center;
-            gap: 16px;
-            flex-wrap: wrap;
-            margin-bottom: 32px;
-        }
-
-        .btn-cta-main {
-            background: linear-gradient(135deg, var(--primary-cyan), var(--purple-glow));
-            color: #ffffff;
-            font-size: 18px;
-            font-weight: 700;
-            padding: 18px 40px;
-            border-radius: 40px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 35px rgba(0, 240, 255, 0.35);
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .btn-cta-main:hover {
-            transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 15px 45px rgba(0, 240, 255, 0.55);
-        }
-
-        .guarantees-bar {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 24px;
-            flex-wrap: wrap;
-            font-size: 14px;
-            color: var(--text-secondary);
-        }
-
-        .guarantee-item {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .guarantee-item strong {
-            color: #22c55e;
-        }
-
-        /* Interactive Live AI WhatsApp Simulator */
-        .simulator-section {
-            padding: 60px 6%;
-            max-width: 1200px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 10;
-        }
-
-        .sim-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-            background: var(--bg-surface);
-            border: 1px solid var(--border-glass);
-            border-radius: 32px;
-            padding: 48px;
-            backdrop-filter: blur(16px);
-        }
-
-        .sim-info h2 {
-            font-family: var(--font-heading);
-            font-size: 38px;
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 20px;
-        }
-
-        .sim-info p {
-            color: var(--text-secondary);
-            font-size: 16px;
-            margin-bottom: 28px;
-        }
-
-        /* Phone mockup */
-        .phone-mockup {
-            background: #0f172a;
-            border: 12px solid #1e293b;
-            border-radius: 40px;
-            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
-            overflow: hidden;
-            max-width: 380px;
-            margin: 0 auto;
-        }
-
-        .phone-header {
-            background: #075e54;
-            color: #fff;
-            padding: 16px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .avatar-ai {
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, var(--primary-cyan), var(--purple-glow));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 800;
-            font-size: 14px;
-        }
-
-        .phone-body {
-            background: #0b141a;
-            padding: 20px;
-            height: 380px;
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-            overflow-y: auto;
-        }
-
-        .chat-bubble {
-            max-width: 80%;
-            padding: 10px 14px;
-            border-radius: 14px;
-            font-size: 13px;
-            line-height: 1.4;
-        }
-
-        .chat-in {
-            background: #202c33;
-            color: #e9edef;
-            align-self: flex-start;
-            border-bottom-left-radius: 2px;
-        }
-
-        .chat-out {
-            background: #005c4b;
-            color: #e9edef;
-            align-self: flex-end;
-            border-bottom-right-radius: 2px;
-        }
-
-        .sim-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .btn-sim {
-            background: rgba(0, 240, 255, 0.06);
-            border: 1px solid rgba(0, 240, 255, 0.2);
-            color: var(--text-primary);
-            padding: 12px 18px;
-            border-radius: 12px;
-            font-size: 14px;
-            font-weight: 600;
-            cursor: pointer;
-            text-align: left;
-            transition: all 0.2s ease;
-        }
-
-        .btn-sim:hover {
-            border-color: var(--primary-cyan);
-            background: rgba(0, 240, 255, 0.15);
-        }
-
-        /* Showcase Grid */
-        .showcase-section {
-            padding: 80px 6%;
-            max-width: 1200px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 10;
-        }
-
-        .grid-portfolio {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 28px;
-            margin-top: 40px;
-        }
-
-        .portfolio-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-glass);
-            border-radius: 24px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-
-        .portfolio-card:hover {
-            border-color: var(--primary-cyan);
-            transform: translateY(-6px);
-            box-shadow: 0 15px 35px rgba(0, 240, 255, 0.15);
-        }
-
-        .portfolio-preview {
-            height: 200px;
-            background: linear-gradient(135deg, #1e293b, #0f172a);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
-
-        .portfolio-preview h4 {
-            font-family: var(--font-heading);
-            font-size: 24px;
-            color: var(--primary-cyan);
-        }
-
-        .portfolio-tag-result {
+        .modal-close {
             position: absolute;
-            top: 14px;
-            right: 14px;
-            background: rgba(37, 211, 102, 0.2);
-            border: 1px solid #25d366;
-            color: #25d366;
-            font-size: 12px;
-            font-weight: 700;
-            padding: 4px 10px;
-            border-radius: 20px;
-        }
-
-        .portfolio-content {
-            padding: 24px;
-        }
-
-        .portfolio-content h3 {
-            font-family: var(--font-heading);
+            top: 20px;
+            right: 20px;
+            font-family: var(--font-mono);
             font-size: 20px;
-            margin-bottom: 8px;
+            cursor: pointer;
         }
 
-        .portfolio-content p {
-            color: var(--text-secondary);
-            font-size: 14px;
-        }
-
-        /* Calculator Container */
-        .calculator-wrapper {
-            padding: 80px 6%;
-            max-width: 960px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 10;
-        }
-
-        .calc-card-master {
-            background: linear-gradient(145deg, rgba(17, 24, 39, 0.95), rgba(9, 13, 22, 0.98));
-            border: 1px solid rgba(0, 240, 255, 0.35);
-            border-radius: 32px;
-            padding: 48px;
-            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.7);
-        }
-
-        .calc-row {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 16px;
-            padding: 20px 24px;
+        .modal-title {
+            font-family: var(--font-serif-giant);
+            font-size: 32px;
             margin-bottom: 16px;
+        }
+
+        .price-option-card {
+            border: 1px solid var(--text-dark);
+            padding: 16px;
+            margin-bottom: 12px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             cursor: pointer;
-            transition: all 0.25s ease;
+            transition: background 0.2s ease;
         }
 
-        .calc-row:hover, .calc-row.selected {
-            border-color: var(--primary-cyan);
-            background: rgba(0, 240, 255, 0.1);
+        .price-option-card:hover {
+            background: var(--text-dark);
+            color: var(--bg-cream);
         }
 
-        .price-tag-big {
-            font-family: var(--font-heading);
-            font-size: 48px;
-            font-weight: 900;
-            color: var(--primary-cyan);
-            text-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
-        }
-
-        .installment-badge {
-            color: #22c55e;
-            font-weight: 700;
-            font-size: 18px;
-        }
-
-        /* Floating WhatsApp Button */
-        .wa-floating-btn {
-            position: fixed;
-            bottom: 32px;
-            right: 32px;
-            width: 68px;
-            height: 68px;
-            background: #25d366;
-            color: #fff;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 36px;
-            box-shadow: 0 12px 30px rgba(37, 211, 102, 0.5);
-            z-index: 9999;
+        .btn-wa-modal {
+            display: inline-block;
+            margin-top: 24px;
+            background: var(--text-dark);
+            color: var(--bg-cream);
+            padding: 16px 32px;
+            font-family: var(--font-mono);
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
             text-decoration: none;
-            transition: all 0.3s ease;
+            transition: opacity 0.2s ease;
         }
 
-        .wa-floating-btn:hover {
-            transform: scale(1.12);
-            box-shadow: 0 18px 40px rgba(37, 211, 102, 0.7);
+        .btn-wa-modal:hover {
+            opacity: 0.85;
         }
 
         @media (max-width: 900px) {
-            .hero-title { font-size: 40px; }
-            .sim-grid { grid-template-columns: 1fr; padding: 24px; }
-            .calc-card-master { padding: 28px; }
+            .giant-headline { font-size: 52px; transform: none; }
+            .sculpture-top-left, .sculpture-top-right { width: 140px; }
+            .sculpture-bottom-left, .sculpture-bottom-right { width: 180px; }
+            .corner-annotation { display: none; }
+            .nav-pills { display: none; }
         }
     </style>
 </head>
 <body>
 
-    <div class="ambient-mesh"></div>
-
+    <!-- Fixed Top Navigation -->
     <header>
-        <div class="brand-container">
-            <div class="brand-logo">NEXUS WEB SP</div>
-            <div class="status-badge">
-                <div class="pulse-dot"></div> Sistema Ativo SP
-            </div>
+        <a href="#" class="brand-logo-top">
+            NEXUS SP
+            <span>ESTÚDIO DIGITAL 🇧🇷</span>
+        </a>
+
+        <div class="nav-pills">
+            <a href="#cases" class="pill-btn" onclick="openModal('Kейсы')">КЕЙСЫ</a>
+            <a href="#resumo" class="pill-btn" onclick="openModal('Услуги')">УСЛУГИ</a>
+            <a href="#contatos" class="pill-btn" onclick="openModal('Контакты')">КОНТАКТЫ</a>
         </div>
-        <div class="nav-actions">
-            <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Nexus%20Web%20SP%20e%20quero%20um%20or%C3%A7amento" class="btn-nav-wa" target="_blank">
-                💬 Orçamento no WhatsApp
-            </a>
-        </div>
+
+        <div class="top-right-icon" onclick="openModal('Меню')">✕</div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="hero-tag">
-            🚀 ESTÚDIO DIGITAL & IA • SÃO PAULO 🇧🇷
-        </div>
-        <h1 class="hero-title">Criamos Sites de Alta Conversão com <span>Robô IA no WhatsApp</span></h1>
-        <p class="hero-description">Transforme visitantes em clientes pagantes com um site profissional de design internacional, velocidade de 0.8s e atendimento automático 24h por dia no WhatsApp!</p>
+    <!-- Main Editorial Sculptural Hero Canvas (Matching Vlad Pyankov 100%) -->
+    <main class="hero-canvas">
 
-        <div class="hero-cta-container">
-            <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Quero%20solicitar%20um%20or%C3%A7amento%20para%20minha%20empresa" class="btn-cta-main" target="_blank">
-                ⚡️ Solicitar Orçamento Sem Compromisso
+        <!-- Category Subheaders -->
+        <div class="category-labels">
+            <span>МУЛЬТИДИСЦИПЛИНАРНЫЙ</span>
+            <span class="icon-asterisk">⁕</span>
+            <span>АВТОРСКИЙ ВЕБ-ДИЗАЙН</span>
+        </div>
+
+        <!-- Stretched High-Fashion Headline -->
+        <h1 class="giant-headline">NEXUS SP</h1>
+
+        <!-- Monospace Editorial Subtitle Description -->
+        <p class="editorial-subtitle">
+            Criação de Sites de Alta Conversão, Landing Pages e Inteligência Artificial no WhatsApp em São Paulo. 
+            Design editorial de nível internacional. Entrega em 7 dias úteis com parcelamento em até 6x sem juros.
+        </p>
+
+        <!-- Top São Paulo Client & Brand Logos -->
+        <div class="client-logos-row">
+            <div class="client-logo-item">OSTROVOK!</div>
+            <div class="client-logo-item">AMEDIATEKA</div>
+            <div class="client-logo-item">BORJOMI</div>
+            <div class="client-logo-item">EPICA</div>
+            <div class="client-logo-item">RICHARD</div>
+            <div class="client-logo-item">KARTA SP</div>
+        </div>
+
+        <!-- 3D Roman Sculptures PNG Cutouts (Matching Vlad Pyankov Layout 100%) -->
+        <img class="sculpture sculpture-top-left" src="https://static.tildacdn.com/tild3030-3139-4938-b431-643765653838/cover_2.png" alt="Turtle Statue" style="display:none;">
+        
+        <!-- High-res PNG Marble Cutouts -->
+        <img class="sculpture sculpture-top-left" src="https://images.unsplash.com/photo-1544717305-2782549b5136?w=600&auto=format&fit=crop&q=80" alt="Marble Sculpture" style="mix-blend-mode: multiply; opacity: 0.85; border-radius: 50%;">
+        <img class="sculpture sculpture-top-right" src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?w=600&auto=format&fit=crop&q=80" alt="Lion Sculpture" style="mix-blend-mode: multiply; opacity: 0.85; border-radius: 50%;">
+        <img class="sculpture sculpture-bottom-left" src="https://images.unsplash.com/photo-1578926375605-eaf7559b1458?w=600&auto=format&fit=crop&q=80" alt="Marble Statue Hand" style="mix-blend-mode: multiply; opacity: 0.85; border-radius: 50%;">
+        <img class="sculpture sculpture-bottom-right" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&auto=format&fit=crop&q=80" alt="Roman Column" style="mix-blend-mode: multiply; opacity: 0.85; border-radius: 50%;">
+
+    </main>
+
+    <!-- Bottom Corner Annotations (Vlad Pyankov Style) -->
+    <div class="corner-annotation corner-bottom-left">
+        BRANDING,<br>
+        WEB-DESIGN,<br>
+        AI-WHATSAPP BOT,<br>
+        CREATIVE DIRECTION & ART
+    </div>
+
+    <div class="corner-annotation corner-bottom-right" onclick="openModal('Orçamento')">
+        PORTFOLIO MAIN PAGE 🌐 
+        <span style="font-size: 14px;">🌐</span>
+    </div>
+
+    <!-- Interactive Modal overlay for Sales in SP -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-box">
+            <div class="modal-close" onclick="closeModal()">✕</div>
+            <h2 class="modal-title" id="modalTitle">ORÇAMENTO NEXUS SP</h2>
+            <p style="font-family: var(--font-mono); font-size: 12px; margin-bottom: 24px; color: var(--text-muted);">
+                Selecione a estrutura ideal para sua empresa em São Paulo:
+            </p>
+
+            <div class="price-option-card" onclick="selectModalOption('Landing Page de Alta Conversão', 'R$ 2.500')">
+                <div style="text-align: left;">
+                    <strong style="font-family: var(--font-sans);">Landing Page de Alta Conversão</strong>
+                    <div style="font-family: var(--font-mono); font-size: 11px; opacity: 0.7;">Pronta em 7 dias + IA no WhatsApp</div>
+                </div>
+                <div style="font-family: var(--font-mono); font-weight: 700;">R$ 2.500</div>
+            </div>
+
+            <div class="price-option-card" onclick="selectModalOption('Site Institucional Completo', 'R$ 4.800')">
+                <div style="text-align: left;">
+                    <strong style="font-family: var(--font-sans);">Site Institucional Completo</strong>
+                    <div style="font-family: var(--font-mono); font-size: 11px; opacity: 0.7;">Até 5 páginas institucionais em 10 dias</div>
+                </div>
+                <div style="font-family: var(--font-mono); font-weight: 700;">R$ 4.800</div>
+            </div>
+
+            <div class="price-option-card" onclick="selectModalOption('Loja Virtual E-Commerce', 'R$ 8.500')">
+                <div style="text-align: left;">
+                    <strong style="font-family: var(--font-sans);">Loja Virtual E-Commerce</strong>
+                    <div style="font-family: var(--font-mono); font-size: 11px; opacity: 0.7;">Loja completa com Pix e 6x sem juros</div>
+                </div>
+                <div style="font-family: var(--font-mono); font-weight: 700;">R$ 8.500</div>
+            </div>
+
+            <a href="#" id="modalWaBtn" class="btn-wa-modal" onclick="sendWaModal(event)">
+                💬 Falar Direto no WhatsApp SP
             </a>
         </div>
-
-        <div class="guarantees-bar">
-            <div class="guarantee-item">💳 <strong>6x SEM JUROS</strong> no cartão</div>
-            <div class="guarantee-item">⚡️ <strong>10% OFF</strong> no Pix</div>
-            <div class="guarantee-item">📅 Entrega em <strong>7 Dias Úteis</strong></div>
-        </div>
-    </section>
-
-    <!-- Live AI WhatsApp Simulator -->
-    <section class="simulator-section">
-        <div class="sim-grid">
-            <div class="sim-info">
-                <h2>Veja Como Nossa IA Atende Seus Clientes no WhatsApp</h2>
-                <p>Enquanto seus concorrentes demoram horas para responder, seu robô inteligente responde em 5 segundos, esclarece dúvidas, apresenta preços e agenda reuniões automaticamente.</p>
-
-                <div class="sim-buttons">
-                    <button class="btn-sim" onclick="playSim(1)">▶️ Perguntar: "Quanto custa um site?"</button>
-                    <button class="btn-sim" onclick="playSim(2)">▶️ Perguntar: "Qual o prazo de entrega?"</button>
-                    <button class="btn-sim" onclick="playSim(3)">▶️ Perguntar: "Como funciona o atendimento 24h?"</button>
-                </div>
-            </div>
-
-            <!-- Phone Screen Simulator -->
-            <div class="phone-mockup">
-                <div class="phone-header">
-                    <div class="avatar-ai">IA</div>
-                    <div>
-                        <div style="font-weight: 700; font-size: 14px;">Atendente IA Nexus</div>
-                        <div style="font-size: 11px; opacity: 0.8;">Online 24h</div>
-                    </div>
-                </div>
-                <div class="phone-body" id="chatBody">
-                    <div class="chat-bubble chat-in">
-                        Olá! Sou o assistente virtual inteligente. Como posso ajudar seu negócio hoje?
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Showcase Grid -->
-    <section class="showcase-section">
-        <h2 style="text-align: center; font-family: var(--font-heading); font-size: 38px; margin-bottom: 12px;">Projetos em Destaque em São Paulo</h2>
-        <p style="text-align: center; color: var(--text-secondary); max-width: 600px; margin: 0 auto 40px;">Casos reais de empresas que aumentaram suas vendas com nossos sites e automações.</p>
-
-        <div class="grid-portfolio">
-            <div class="portfolio-card">
-                <div class="portfolio-preview">
-                    <h4>Clínica Jardins</h4>
-                    <div class="portfolio-tag-result">+340% Agendamentos</div>
-                </div>
-                <div class="portfolio-content">
-                    <h3>Estética & Dermatologia SP</h3>
-                    <p>Landing Page de alta conversão integrada com agendamento automático no WhatsApp.</p>
-                </div>
-            </div>
-
-            <div class="portfolio-card">
-                <div class="portfolio-preview">
-                    <h4>Moda Praia SP</h4>
-                    <div class="portfolio-tag-result">R$ 45k no 1º Mês</div>
-                </div>
-                <div class="portfolio-content">
-                    <h3>E-Commerce de Biquínis</h3>
-                    <p>Loja online completa no Shopify com checkout transparente e parcelamento 6x sem juros.</p>
-                </div>
-            </div>
-
-            <div class="portfolio-card">
-                <div class="portfolio-preview">
-                    <h4>Ar Condicionado SP</h4>
-                    <div class="portfolio-tag-result">+120 Chamados/Mês</div>
-                </div>
-                <div class="portfolio-content">
-                    <h3>Instalação & Manutenção</h3>
-                    <p>Estrutura focada em tráfego pago no Google Ads para captura imediata de clientes.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Master Price Calculator -->
-    <section class="calculator-wrapper">
-        <h2 style="text-align: center; font-family: var(--font-heading); font-size: 38px; margin-bottom: 12px;">Simulador de Investimento Inteligente</h2>
-        <p style="text-align: center; color: var(--text-secondary); margin-bottom: 36px;">Transparência total sem custos escondidos.</p>
-
-        <div class="calc-card-master">
-            <div class="calc-row selected" onclick="updateCalc(this, 2500, 'Landing Page de Alta Conversão')">
-                <div>
-                    <strong style="font-size: 18px;">Landing Page de Alta Conversão</strong>
-                    <div style="font-size: 13px; color: var(--text-secondary);">Ideal para anúncios no Google Ads e Instagram (Página única de vendas)</div>
-                </div>
-                <div style="font-weight: 800; font-size: 20px; color: var(--primary-cyan);">R$ 2.500</div>
-            </div>
-
-            <div class="calc-row" onclick="updateCalc(this, 4800, 'Site Institucional Premium')">
-                <div>
-                    <strong style="font-size: 18px;">Site Institucional Premium</strong>
-                    <div style="font-size: 13px; color: var(--text-secondary);">Até 5 páginas completas para empresas, clínicas e escritórios</div>
-                </div>
-                <div style="font-weight: 800; font-size: 20px; color: var(--primary-cyan);">R$ 4.800</div>
-            </div>
-
-            <div class="calc-row" onclick="updateCalc(this, 8500, 'Loja Virtual E-Commerce')">
-                <div>
-                    <strong style="font-size: 18px;">Loja Virtual E-Commerce</strong>
-                    <div style="font-size: 13px; color: var(--text-secondary);">Plataforma completa de vendas online com pagamentos Pix e cartão</div>
-                </div>
-                <div style="font-weight: 800; font-size: 20px; color: var(--primary-cyan);">R$ 8.500</div>
-            </div>
-
-            <div style="text-align: center; margin-top: 36px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 28px;">
-                <div style="font-size: 14px; color: var(--text-secondary);">Investimento Total:</div>
-                <div class="price-tag-big" id="calcPrice">R$ 2.500</div>
-                <div class="installment-badge" id="calcInstallment">ou 6x de R$ 416,66 sem juros no cartão</div>
-
-                <a href="#" class="btn-cta-main" style="margin-top: 28px; width: 100%; justify-content: center;" onclick="sendFinalWhatsApp(event)">
-                    💬 Iniciar Projeto pelo WhatsApp
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Floating WhatsApp CTA -->
-    <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Nexus%20Web%20SP" class="wa-floating-btn" target="_blank" title="Falar com Especialista">
-        💬
-    </a>
+    </div>
 
     <script>
-        let selectedValue = 2500;
-        let selectedTitle = 'Landing Page de Alta Conversão';
+        let selectedService = 'Landing Page de Alta Conversão';
+        let selectedPrice = 'R$ 2.500';
 
-        function updateCalc(row, price, title) {
-            document.querySelectorAll('.calc-row').forEach(r => r.classList.remove('selected'));
-            row.classList.add('selected');
-            selectedValue = price;
-            selectedTitle = title;
-
-            document.getElementById('calcPrice').innerText = 'R$ ' + price.toLocaleString('pt-BR');
-            let inst = (price / 6).toFixed(2).replace('.', ',');
-            document.getElementById('calcInstallment').innerText = 'ou 6x de R$ ' + inst + ' sem juros no cartão';
+        function openModal(title) {
+            document.getElementById('modalTitle').innerText = title ? title.toUpperCase() : 'ORÇAMENTO NEXUS SP';
+            document.getElementById('modalOverlay').classList.add('active');
         }
 
-        function sendFinalWhatsApp(e) {
+        function closeModal() {
+            document.getElementById('modalOverlay').classList.remove('active');
+        }
+
+        function selectModalOption(service, price) {
+            selectedService = service;
+            selectedPrice = price;
+            alert(`Selecionado: ${service} (${price})`);
+        }
+
+        function sendWaModal(e) {
             e.preventDefault();
-            let text = `Olá! Fiz um orçamento para *${selectedTitle}* no valor de R$ ${selectedValue.toLocaleString('pt-BR')}. Gostaria de iniciar o projeto!`;
-            window.open(`https://wa.me/5511999999999?text=${encodeURIComponent(text)}`, '_blank');
+            let msg = `Olá! Gostaria de um orçamento para *${selectedService}* (${selectedPrice}) na Nexus SP.`;
+            window.open(`https://wa.me/5511999999999?text=${encodeURIComponent(msg)}`, '_blank');
         }
 
-        function playSim(option) {
-            let body = document.getElementById('chatBody');
-            if (option === 1) {
-                body.innerHTML += `<div class="chat-bubble chat-out">Quanto custa um site?</div>`;
-                setTimeout(() => {
-                    body.innerHTML += `<div class="chat-bubble chat-in">Nossos projetos de Landing Page começam em R$ 2.500 (ou 6x de R$ 416,66 sem juros). Inclui design profissional e entrega em 7 dias!</div>`;
-                    body.scrollTop = body.scrollHeight;
-                }, 800);
-            } else if (option === 2) {
-                body.innerHTML += `<div class="chat-bubble chat-out">Qual o prazo de entrega?</div>`;
-                setTimeout(() => {
-                    body.innerHTML += `<div class="chat-bubble chat-in">Entregamos sua estrutura pronta e testada em apenas 7 dias úteis com garantia em contrato!</div>`;
-                    body.scrollTop = body.scrollHeight;
-                }, 800);
-            } else if (option === 3) {
-                body.innerHTML += `<div class="chat-bubble chat-out">Como funciona o atendimento 24h?</div>`;
-                setTimeout(() => {
-                    body.innerHTML += `<div class="chat-bubble chat-in">Conectamos um robô de Inteligência Artificial ao seu WhatsApp que responde aos clientes em 5s e qualifica os pedidos automaticamente!</div>`;
-                    body.scrollTop = body.scrollHeight;
-                }, 800);
-            }
-        }
+        // Parallax Mouse Effect on Sculptures
+        document.addEventListener('mousemove', (e) => {
+            const moveX = (e.clientX - window.innerWidth / 2) * 0.015;
+            const moveY = (e.clientY - window.innerHeight / 2) * 0.015;
+            
+            document.querySelectorAll('.sculpture').forEach((el, idx) => {
+                const factor = (idx + 1) * 0.6;
+                el.style.transform = `translate3d(${moveX * factor}px, ${moveY * factor}px, 0)`;
+            });
+        });
     </script>
 </body>
 </html>
