@@ -12,7 +12,7 @@
 
   <style>
     /* ==========================================================================
-       1. GLOBAL DESIGN SYSTEM (EDITORIAL B&W / LUXURY HYBRID)
+       1. GLOBAL DESIGN SYSTEM (EDITORIAL B&W LUXURY HYBRID - RUBLE VERSION)
        ========================================================================== */
     :root {
       --bg-cream: #F8F6F0;
@@ -76,13 +76,13 @@
       cursor: pointer !important;
     }
 
-    /* Typography & Utilities */
+    /* Typography & Editorial Spacing */
     .serif { font-family: var(--font-serif); }
     .mono { font-family: var(--font-mono); }
     
     .stretched-title {
       font-family: var(--font-serif);
-      font-size: clamp(3rem, 7vw, 6.5rem);
+      font-size: clamp(3.2rem, 7.5vw, 7rem);
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: -0.02em;
@@ -93,11 +93,11 @@
 
     .tag-pill {
       display: inline-block;
-      padding: 6px 16px;
+      padding: 8px 20px;
       border: 1px solid var(--text-main);
       border-radius: 40px;
       font-family: var(--font-mono);
-      font-size: 0.75rem;
+      font-size: 0.78rem;
       text-transform: uppercase;
       letter-spacing: 1px;
       background: transparent;
@@ -113,7 +113,7 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 16px 36px;
+      padding: 18px 40px;
       background-color: var(--text-main);
       color: var(--bg-cream);
       border: 1px solid var(--text-main);
@@ -130,29 +130,8 @@
       color: var(--text-main);
     }
 
-    .btn-outline {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 16px 36px;
-      background-color: transparent;
-      color: var(--text-main);
-      border: 1px solid var(--text-main);
-      font-family: var(--font-mono);
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
-
-    .btn-outline:hover {
-      background-color: var(--text-main);
-      color: var(--bg-cream);
-    }
-
     .section-padding {
-      padding: 100px 5vw;
+      padding: 120px 8vw;
     }
 
     .grid-container {
@@ -164,6 +143,34 @@
       border-bottom: 1px solid var(--border-thin);
     }
 
+    /* Editorial Quote Callout Box */
+    .editorial-quote-box {
+      background: var(--bg-card);
+      border-left: 4px solid var(--text-main);
+      padding: 40px;
+      margin: 40px 0;
+      border-top: 1px solid var(--border-thin);
+      border-right: 1px solid var(--border-thin);
+      border-bottom: 1px solid var(--border-thin);
+    }
+
+    .quote-text {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      font-style: italic;
+      line-height: 1.6;
+      color: #1A1A1A;
+      margin-bottom: 16px;
+    }
+
+    .quote-author {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--text-muted);
+    }
+
     /* ==========================================================================
        2. HEADER & NAVIGATION
        ========================================================================== */
@@ -172,19 +179,19 @@
       top: 0;
       left: 0;
       width: 100%;
-      padding: 24px 5vw;
+      padding: 24px 8vw;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: rgba(248, 246, 240, 0.9);
-      backdrop-filter: blur(10px);
+      background: rgba(248, 246, 240, 0.92);
+      backdrop-filter: blur(12px);
       z-index: 1000;
       border-bottom: 1px solid var(--border-thin);
     }
 
     .logo {
       font-family: var(--font-serif);
-      font-size: 1.6rem;
+      font-size: 1.7rem;
       font-weight: 800;
       letter-spacing: -0.5px;
       text-decoration: none;
@@ -193,7 +200,7 @@
 
     .nav-links {
       display: flex;
-      gap: 30px;
+      gap: 32px;
       list-style: none;
     }
 
@@ -249,9 +256,9 @@
        3. HERO CANVAS SECTION
        ========================================================================== */
     .hero {
-      padding-top: 180px;
-      padding-bottom: 100px;
-      min-height: 90vh;
+      padding-top: 200px;
+      padding-bottom: 120px;
+      min-height: 95vh;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -273,29 +280,30 @@
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1.1fr 0.9fr;
       gap: 60px;
       align-items: start;
       margin-top: 40px;
     }
 
     .hero-description {
-      font-size: 1.25rem;
+      font-size: 1.3rem;
       font-weight: 300;
-      color: #333;
-      max-width: 580px;
+      color: #222;
+      max-width: 620px;
+      line-height: 1.7;
     }
 
     .hero-form-card {
       background: var(--bg-card);
-      padding: 40px;
+      padding: 44px;
       border: 1px solid var(--text-main);
-      box-shadow: 12px 12px 0px var(--text-main);
+      box-shadow: 14px 14px 0px var(--text-main);
     }
 
     .form-title {
       font-family: var(--font-serif);
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       margin-bottom: 10px;
     }
 
@@ -319,7 +327,7 @@
 
     .input-control {
       width: 100%;
-      padding: 14px 18px;
+      padding: 16px 20px;
       border: 1px solid var(--border-thin);
       font-family: var(--font-sans);
       font-size: 1rem;
@@ -333,7 +341,7 @@
     }
 
     /* ==========================================================================
-       4. BEFORE / AFTER INTERACTIVE FIT SLIDER
+       4. BEFORE / AFTER INTERACTIVE FIT SLIDER & INTERVIEW QUOTE
        ========================================================================== */
     .slider-section {
       background: var(--bg-card);
@@ -355,15 +363,15 @@
 
     .section-title {
       font-family: var(--font-serif);
-      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-size: clamp(2.2rem, 4.5vw, 3.8rem);
       line-height: 1.1;
     }
 
     .fit-container {
       position: relative;
       width: 100%;
-      max-width: 900px;
-      height: 550px;
+      max-width: 950px;
+      height: 580px;
       margin: 0 auto;
       overflow: hidden;
       border: 1px solid var(--text-main);
@@ -380,7 +388,6 @@
       background-position: center;
     }
 
-    /* Simulated B&W High-Fashion Illustrations */
     .fit-before {
       background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1000&auto=format&fit=crop');
       filter: grayscale(100%) contrast(120%);
@@ -401,7 +408,7 @@
     .fit-label {
       position: absolute;
       bottom: 24px;
-      padding: 8px 16px;
+      padding: 8px 18px;
       font-family: var(--font-mono);
       font-size: 0.8rem;
       text-transform: uppercase;
@@ -429,8 +436,8 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 44px;
-      height: 44px;
+      width: 46px;
+      height: 46px;
       border-radius: 50%;
       background: var(--text-main);
       color: var(--bg-cream);
@@ -443,7 +450,29 @@
     }
 
     /* ==========================================================================
-       5. REASON-WHY ADVERTISING & PROCESS SECTION
+       5. ASTRA BRAND FEATURE 1: NO FORCED SIZE SETS & CHESTNY ZNAK
+       ========================================================================== */
+    .feature-grid-2col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      margin-top: 60px;
+    }
+
+    .feature-card-large {
+      padding: 50px;
+      border: 1px solid var(--border-thin);
+      background: var(--bg-card);
+    }
+
+    .feature-card-title {
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+    }
+
+    /* ==========================================================================
+       6. REASON-WHY ADVERTISING & PROCESS SECTION
        ========================================================================== */
     .reason-grid {
       display: grid;
@@ -453,7 +482,7 @@
     }
 
     .reason-card {
-      padding: 40px;
+      padding: 44px;
       border: 1px solid var(--border-thin);
       background: var(--bg-cream);
       transition: transform 0.3s, border-color 0.3s;
@@ -484,7 +513,7 @@
     }
 
     /* ==========================================================================
-       6. INTERACTIVE BATCH CALCULATOR & FABRIC SELECTOR
+       7. INTERACTIVE BATCH CALCULATOR (RUBLES) & FABRIC SELECTOR
        ========================================================================== */
     .calc-wrapper {
       display: grid;
@@ -537,7 +566,7 @@
     .calc-results {
       background: var(--bg-dark);
       color: var(--text-light);
-      padding: 40px;
+      padding: 44px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -601,7 +630,35 @@
     }
 
     /* ==========================================================================
-       7. 1-MINUTE PRODUCTION PROCESS VIDEO MOCKUP
+       8. DEEP COMPARISON MATRIX (5 ALTERNATIVES)
+       ========================================================================== */
+    .matrix-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 40px;
+      font-size: 0.95rem;
+    }
+
+    .matrix-table th, .matrix-table td {
+      padding: 18px 20px;
+      border: 1px solid var(--border-thin);
+      text-align: left;
+    }
+
+    .matrix-table th {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      background: var(--bg-card);
+    }
+
+    .matrix-table tr.highlight-row {
+      background: rgba(0,0,0,0.03);
+      font-weight: 600;
+    }
+
+    /* ==========================================================================
+       9. 1-MINUTE PRODUCTION PROCESS VIDEO MOCKUP
        ========================================================================== */
     .video-mockup-card {
       background: var(--bg-dark);
@@ -640,7 +697,7 @@
     }
 
     /* ==========================================================================
-       8. INFINITE B&W WHATSAPP REVIEW CAROUSEL
+       10. INFINITE B&W WHATSAPP REVIEW CAROUSEL
        ========================================================================== */
     .carousel-section {
       background: var(--bg-dark);
@@ -651,7 +708,7 @@
     .ticker-wrapper {
       display: flex;
       width: 200%;
-      animation: ticker 35s linear infinite;
+      animation: ticker 38s linear infinite;
     }
 
     .ticker-wrapper:hover {
@@ -664,11 +721,11 @@
     }
 
     .chat-card {
-      width: 420px;
+      width: 440px;
       margin-right: 30px;
       background: #181818;
       border: 1px solid var(--border-dark);
-      padding: 24px;
+      padding: 26px;
       flex-shrink: 0;
     }
 
@@ -715,7 +772,37 @@
     }
 
     /* ==========================================================================
-       9. TRUST HUB & FOOTER
+       11. MAP & LOGISTICS TRANSIT HUB
+       ========================================================================== */
+    .map-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+      margin-top: 40px;
+    }
+
+    .map-frame {
+      width: 100%;
+      height: 450px;
+      border: 1px solid var(--text-main);
+      filter: grayscale(100%) contrast(120%);
+    }
+
+    .transit-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .transit-table th, .transit-table td {
+      padding: 16px;
+      border-bottom: 1px solid var(--border-thin);
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+    }
+
+    /* ==========================================================================
+       12. TRUST HUB & FOOTER
        ========================================================================== */
     .technologist-wrapper {
       display: grid;
@@ -726,7 +813,7 @@
 
     .larisa-photo {
       width: 100%;
-      height: 600px;
+      height: 620px;
       background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1000&auto=format&fit=crop');
       background-size: cover;
       background-position: center;
@@ -737,7 +824,7 @@
     footer {
       background: var(--bg-dark);
       color: var(--bg-cream);
-      padding: 80px 5vw 40px;
+      padding: 100px 8vw 50px;
       border-top: 1px solid var(--border-dark);
     }
 
@@ -770,18 +857,16 @@
       transform: scale(1.1);
     }
 
-    /* ==========================================================================
-       10. RESPONSIVE MEDIA QUERIES (MOBILE OPTIMIZATION)
-       ========================================================================== */
+    /* Mobile Responsive */
     @media (max-width: 992px) {
-      .hero-grid, .reason-grid, .calc-wrapper, .technologist-wrapper, .footer-grid {
+      .hero-grid, .reason-grid, .calc-wrapper, .technologist-wrapper, .footer-grid, .feature-grid-2col, .map-grid {
         grid-template-columns: 1fr;
         gap: 40px;
       }
       .nav-links { display: none; }
       .calc-wrapper { padding: 30px; }
       .video-timeline { grid-template-columns: repeat(2, 1fr); }
-      .fit-container { height: 400px; }
+      .fit-container { height: 420px; }
     }
   </style>
 </head>
@@ -796,14 +881,15 @@
     <ul class="nav-links">
       <li><a href="#about">Ателье-Фабрика</a></li>
       <li><a href="#fit">Посадка Plus Size</a></li>
-      <li><a href="#calc">Калькулятор</a></li>
-      <li><a href="#process">Производство</a></li>
+      <li><a href="#calc">Калькулятор ₽</a></li>
+      <li><a href="#matrix">Сравнение</a></li>
+      <li><a href="#map">Карта и Логистика</a></li>
       <li><a href="#reviews">Отзывы</a></li>
     </ul>
     <div class="header-actions">
       <div class="scarcity-badge">
         <span class="pulse-dot"></span>
-        <span>Слотов: 2из5</span>
+        <span>Слотов: 2 из 5</span>
       </div>
       <a href="https://wa.me/996555123456" target="_blank" class="btn-black">WhatsApp</a>
     </div>
@@ -812,8 +898,8 @@
   <!-- Hero Section -->
   <section class="hero section-padding grid-container hairline-bottom">
     <div class="hero-meta">
-      <span>Кыргызстан, г. Бишкек</span>
-      <span>Опыт технолога: 30+ лет</span>
+      <span>г. Бишкек • Кыргызстан</span>
+      <span>Стаж Ларисы: 30+ лет</span>
       <span>Сайз Плюс 50–64+</span>
     </div>
 
@@ -825,18 +911,19 @@
     <div class="hero-grid">
       <div>
         <p class="hero-description">
-          Пошив женской одежды <strong>Plus Size (50–64+)</strong> от <strong>$12 USD под ключ</strong> с точностью элитного Ателье и гарантией брака менее 3% по договору.
+          Пошив женской одежды <strong>Plus Size (50–64+)</strong> под ключ <strong>от 1 150 ₽ за комплект</strong> с точностью элитного Ателье и гарантией брака менее 3% по договору.
         </p>
         <div style="margin-top: 30px; display: flex; gap: 15px; flex-wrap: wrap;">
           <span class="tag-pill">Анатомические лекала</span>
           <span class="tag-pill">Закупка на Мадине</span>
           <span class="tag-pill">ОТК &lt;3% брака</span>
+          <span class="tag-pill">Честный ЗНАК</span>
         </div>
       </div>
 
       <div class="hero-form-card">
         <h3 class="form-title">Рассчитать партию за 15 сек</h3>
-        <p class="form-subtitle">Зафиксируйте оптовую цену от $12/шт и получите расчет в WhatsApp.</p>
+        <p class="form-subtitle">Зафиксируйте оптовую цену от 1 150 ₽/шт и получите расчет в WhatsApp.</p>
         
         <form onsubmit="event.preventDefault(); alert('Расчет отправлен в WhatsApp!');">
           <div class="input-group">
@@ -853,7 +940,7 @@
     </div>
   </section>
 
-  <!-- Interactive Before/After Fit Slider -->
+  <!-- Interactive Before/After Fit Slider & Direct Interview Quote -->
   <section id="fit" class="slider-section section-padding hairline-bottom">
     <div class="grid-container">
       <div class="section-header">
@@ -870,6 +957,40 @@
         <div class="fit-handle" id="fitHandle">
           <div class="fit-handle-circle">&lt;&gt;</div>
         </div>
+      </div>
+
+      <!-- Real Interview Quote Callout -->
+      <div class="editorial-quote-box">
+        <p class="quote-text">
+          «Худенькая девушка оденет что угодно, и на ней это будет смотреться нормально. А пышная женщина не простит плохую посадку! Если грудь перетянута или висит складка на животе — она сразу сделает возврат. Я пропускаю каждую модель через себя, чтобы одежда Plus Size идеально моделировала и стройнила фигуру»
+        </p>
+        <div class="quote-author">—— ЛАРИСА, Основатель и главный технолог Lorika Group (из 50-мин интервью)</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Astra Brand Feature 1 & 2: No Forced Size Sets & Direct Honest Sign Labeling -->
+  <section id="about" class="section-padding grid-container hairline-bottom">
+    <div class="section-header">
+      <p class="section-tag">Преимущества Для Умных Селлеров</p>
+      <h2 class="section-title">Выкупы без рядов и Сертификация в цеху</h2>
+    </div>
+
+    <div class="feature-grid-2col">
+      <div class="feature-card-large">
+        <span class="tag-pill" style="margin-bottom: 20px;">Гибкий поштучный набор</span>
+        <h3 class="feature-card-title">Отшив только тех размеров, которые продаются у вас!</h3>
+        <p style="color: #444; font-size: 1.05rem; line-height: 1.7;">
+          Обычные цеха заставляют выкупать жесткие размерные линейки, в итоге крайние размеры (48 или 68) висят мертвым грузом. Если ваша аналитика на Wildberries показывает, что 70% продаж дают размеры 52 и 54 — мы отшьем 70% партии именно в них!
+        </p>
+      </div>
+
+      <div class="feature-card-large">
+        <span class="tag-pill" style="margin-bottom: 20px;">Честный ЗНАК & Баркоды</span>
+        <h3 class="feature-card-title">Экономия до 150 000 ₽ на услугах 3PL-фулфилментов!</h3>
+        <p style="color: #444; font-size: 1.05rem; line-height: 1.7;">
+          Наши мастера печатают и наклеивают индивидуальные штрихкоды, DataMatrix коды «Честный ЗНАК» и декларации соответствия ЕАЭС прямо в цеху в Бишкеке. Ваш груз отправляется сразу на склады Коледино, Электросталь или Алматы!
+        </p>
       </div>
     </div>
   </section>
@@ -890,23 +1011,23 @@
 
       <div class="reason-card">
         <div class="reason-num">02</div>
-        <div class="reason-title">Инженерные лекала $100</div>
+        <h3 class="reason-title">Инженерные лекала 9 500 ₽</h3>
         <p class="reason-desc">Лариса с 30-летним стажем лично разрабатывает конструктив выкроек. Мы не бесплатный цех-экспериментатор — наши лекала окупаются сотнями тысяч рублей выручки селлера.</p>
       </div>
 
       <div class="reason-card">
         <div class="reason-num">03</div>
         <h3 class="reason-title">Прямой закуп на Мадине</h3>
-        <p class="reason-desc">Лариса лично выезжает на закупку тканей. Мы выбираем плотный турецкий шифон и шелк первых оптовых поставок, экономя вам до $1,500 на партию.</p>
+        <p class="reason-desc">Лариса лично выезжает на закупку тканей. Мы выбираем плотный турецкий шифон и шелк первых оптовых поставок, экономя вам до 150 000 рублей на партии без потери роскошного вида.</p>
       </div>
     </div>
   </section>
 
-  <!-- Interactive Calculator & Fabric Selector -->
+  <!-- Interactive Batch Calculator (Rubles) & Fabric Selector -->
   <section id="calc" class="section-padding grid-container hairline-bottom">
     <div class="section-header">
-      <p class="section-tag">Интерактивная Экономика</p>
-      <h2 class="section-title">Калькулятор инвестиций и маржинальности</h2>
+      <p class="section-tag">Интерактивная Экономика в Рублях</p>
+      <h2 class="section-title">Калькулятор инвестиций и маржинальности (₽)</h2>
     </div>
 
     <div class="calc-wrapper">
@@ -947,19 +1068,19 @@
           <h3 class="serif" style="font-size: 1.8rem; margin-bottom: 20px;">Прогноз Юнит-Экономики</h3>
           <div class="res-row">
             <span>Себестоимость единицы:</span>
-            <span class="res-val" id="unitCost">$12.35 USD</span>
+            <span class="res-val" id="unitCost">1 140 ₽</span>
           </div>
           <div class="res-row">
             <span>Общие инвестиции в пошив:</span>
-            <span class="res-val" id="totalCost">$3,705 USD</span>
+            <span class="res-val" id="totalCost">342 000 ₽</span>
           </div>
           <div class="res-row">
             <span>Прогнозируемая выручка WB/Kaspi:</span>
-            <span class="res-val" id="totalRevenue">$13,500 USD</span>
+            <span class="res-val" id="totalRevenue">1 200 000 ₽</span>
           </div>
           <div class="res-row" style="border-bottom: none; margin-top: 20px;">
             <span>Ваша Чистая Прибыль:</span>
-            <span class="res-val highlight" id="netProfit">$9,795 USD</span>
+            <span class="res-val highlight" id="netProfit">858 000 ₽</span>
           </div>
         </div>
 
@@ -967,6 +1088,71 @@
           💬 ЗАФИКСИРОВАТЬ ЭТУ ЦЕНУ В WHATSAPP
         </a>
       </div>
+    </div>
+  </section>
+
+  <!-- Deep Comparison Matrix Section (5 Alternatives) -->
+  <section id="matrix" class="section-padding grid-container hairline-bottom">
+    <div class="section-header">
+      <p class="section-tag">Сравнительный Анализ Рынка</p>
+      <h2 class="section-title">Сравнение 5 вариантов пошива для селлеров</h2>
+    </div>
+
+    <div style="overflow-x: auto;">
+      <table class="matrix-table">
+        <thead>
+          <tr>
+            <th>Параметр</th>
+            <th>Надомные цеха (Бишкек)</th>
+            <th>Фабрики Москвы / РФ</th>
+            <th>Турция (Стамбул)</th>
+            <th>Китай (Гуанчжоу)</th>
+            <th style="background: var(--text-main); color: var(--bg-cream);">Lorika Group</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Себестоимость изделия</strong></td>
+            <td>800 – 1 000 ₽</td>
+            <td>2 500 – 4 000 ₽</td>
+            <td>2 200 – 3 500 ₽</td>
+            <td>1 500 – 2 500 ₽</td>
+            <td class="highlight-row"><strong>1 150 – 1 400 ₽</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Процент брака</strong></td>
+            <td>❌ 15% – 20%</td>
+            <td>⚠️ 5% – 10%</td>
+            <td>⚠️ 5% – 8%</td>
+            <td>⚠️ 8% – 12%</td>
+            <td class="highlight-row">✅ <strong>Меньше 3%</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Выкройки Plus Size (50-64)</strong></td>
+            <td>❌ Растянутый ГОСТ</td>
+            <td>⚠️ Стандартная утяжка</td>
+            <td>✅ Хороший крой</td>
+            <td>❌ Азиатские маломерки</td>
+            <td class="highlight-row">✅ <strong>Анатомические (30 лет стажа)</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Сроки отшива партии</strong></td>
+            <td>❌ 30 – 60 дней</td>
+            <td>⚠️ 20 – 30 дней</td>
+            <td>❌ 25 – 40 дней</td>
+            <td>❌ 45 – 60 дней</td>
+            <td class="highlight-row">⚡️ <strong>7 – 10 дней</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Честный ЗНАК & Маркировка</strong></td>
+            <td>❌ Отсутствует</td>
+            <td>✅ Включено</td>
+            <td>❌ За доп. плату</td>
+            <td>❌ Отсутствует</td>
+            <td class="highlight-row">✅ <strong>Прямо в цеху в Бишкеке</strong></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </section>
 
@@ -1063,7 +1249,7 @@
           <span class="chat-client">Арман (Селлер Kaspi.kz)</span>
           <span class="chat-tag">г. Астана</span>
         </div>
-        <div class="chat-msg msg-client">Лариса эже, рахмет! Сэкономили нам $1,200 на подборе ткани. Качество лучше чем в Турции!</div>
+        <div class="chat-msg msg-client">Лариса эже, рахмет! Сэкономили нам 120 000 рублей на подборе ткани. Качество лучше чем в Турции!</div>
         <div class="chat-msg msg-admin">Арман, мы всегда за оптимизацию бюджета селлера!</div>
       </div>
 
@@ -1075,6 +1261,55 @@
         </div>
         <div class="chat-msg msg-client">У прошлых цехов было 18% брака. У вас из 400 единиц брак 2 штуки (0.5%)! Вы лучшие!</div>
         <div class="chat-msg msg-admin">Ильдар, у нас постоянный цех без текучки, поэтому брак исключен!</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Yandex Map & Logistics Transit Hub -->
+  <section id="map" class="section-padding grid-container hairline-bottom">
+    <div class="section-header">
+      <p class="section-tag">География & Доставка</p>
+      <h2 class="section-title">Фабрика в Бишкеке и экспресс-карго в СНГ</h2>
+    </div>
+
+    <div class="map-grid">
+      <div>
+        <iframe class="map-frame" src="https://yandex.ru/map-widget/v1/?ll=74.603701%2C42.874621&z=12" frameborder="0" allowfullscreen="true"></iframe>
+      </div>
+
+      <div>
+        <h3 class="serif" style="font-size: 1.8rem; margin-bottom: 20px;">Сроки Карго-Доставки из Бишкека</h3>
+        <table class="transit-table">
+          <thead>
+            <tr>
+              <th>Направление / Город</th>
+              <th>Сроки доставки</th>
+              <th>Тип отправки</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Москва / Подмосковье (WB)</strong></td>
+              <td>5 – 7 дней</td>
+              <td>Прямая авто-фура</td>
+            </tr>
+            <tr>
+              <td><strong>Алматы / Астана (Kaspi)</strong></td>
+              <td>1 – 2 дня</td>
+              <td>Экспресс-карго</td>
+            </tr>
+            <tr>
+              <td><strong>Казань / Поволжье (WB/Ozon)</strong></td>
+              <td>5 дней</td>
+              <td>Прямой рейс</td>
+            </tr>
+            <tr>
+              <td><strong>Новосибирск / Сибирь</strong></td>
+              <td>4 дня</td>
+              <td>Авто-терминал</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </section>
@@ -1120,7 +1355,8 @@
           <h4 class="mono" style="color: #FFF; margin-bottom: 20px; font-size: 0.85rem;">НАВИГАЦИЯ</h4>
           <p><a href="#about" style="color: #AAA; text-decoration: none;">Ателье-Фабрика</a></p>
           <p><a href="#fit" style="color: #AAA; text-decoration: none;">Посадка Plus Size</a></p>
-          <p><a href="#calc" style="color: #AAA; text-decoration: none;">Калькулятор ROI</a></p>
+          <p><a href="#calc" style="color: #AAA; text-decoration: none;">Калькулятор ₽</a></p>
+          <p><a href="#map" style="color: #AAA; text-decoration: none;">Карта и Логистика</a></p>
         </div>
 
         <div>
@@ -1180,7 +1416,7 @@
     window.addEventListener('touchend', () => { isDragging = false; });
     window.addEventListener('touchmove', (e) => { if (isDragging) moveSlider(e.touches[0].clientX); });
 
-    // 3. Dynamic Calculator
+    // 3. Dynamic Calculator in Rubles (₽)
     function updateCalc() {
       const qty = parseInt(document.getElementById('qtyRange').value);
       document.getElementById('qtyVal').innerText = qty + ' шт';
@@ -1193,17 +1429,17 @@
       else if (qty >= 300) { discount = 0.05; document.getElementById('pill300').classList.add('active'); }
       else { document.getElementById('pill100').classList.add('active'); }
 
-      const baseCost = 13.00;
+      const baseCost = 1200; // Rubles
       const unitCost = baseCost * (1 - discount);
       const totalCost = qty * unitCost;
-      const retailPrice = 45.00;
+      const retailPrice = 4000; // Rubles
       const totalRevenue = qty * retailPrice;
       const netProfit = totalRevenue - totalCost;
 
-      document.getElementById('unitCost').innerText = '$' + unitCost.toFixed(2) + ' USD';
-      document.getElementById('totalCost').innerText = '$' + totalCost.toLocaleString('en-US', {maximumFractionDigits: 0}) + ' USD';
-      document.getElementById('totalRevenue').innerText = '$' + totalRevenue.toLocaleString('en-US', {maximumFractionDigits: 0}) + ' USD';
-      document.getElementById('netProfit').innerText = '$' + netProfit.toLocaleString('en-US', {maximumFractionDigits: 0}) + ' USD';
+      document.getElementById('unitCost').innerText = Math.round(unitCost).toLocaleString('ru-RU') + ' ₽';
+      document.getElementById('totalCost').innerText = Math.round(totalCost).toLocaleString('ru-RU') + ' ₽';
+      document.getElementById('totalRevenue').innerText = Math.round(totalRevenue).toLocaleString('ru-RU') + ' ₽';
+      document.getElementById('netProfit').innerText = Math.round(netProfit).toLocaleString('ru-RU') + ' ₽';
     }
 
     // 4. Fabric Selector Tabs
