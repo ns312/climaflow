@@ -169,56 +169,7 @@
       border-bottom: 1px solid var(--border-thin);
     }
 
-    /* Scarcity Banner Box */
-    .scarcity-banner-box {
-      background: var(--bg-card);
-      border: 1px solid var(--text-main);
-      padding: 22px 28px;
-      margin-top: 36px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .scarcity-banner-box::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 4px;
-      height: 100%;
-      background: #E63946;
-    }
-
-    .scarcity-text {
-      font-family: var(--font-mono);
-      font-size: 0.82rem;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    .scarcity-badge-animated {
-      font-family: var(--font-mono);
-      font-size: 0.8rem;
-      font-weight: 700;
-      background: var(--text-main);
-      color: var(--bg-cream);
-      padding: 6px 14px;
-      border-radius: 2px;
-      position: relative;
-      animation: subtleGlow 3s ease-in-out infinite;
-    }
-
-    @keyframes subtleGlow {
-      0% { box-shadow: 0 0 0 0 rgba(17, 17, 17, 0.4); }
-      50% { box-shadow: 0 0 12px 3px rgba(17, 17, 17, 0.25); }
-      100% { box-shadow: 0 0 0 0 rgba(17, 17, 17, 0.4); }
-    }
-
-    /* Editorial Process Box */
+    /* Process Highlight Box (Exact Client Words) */
     .process-highlight-box {
       background: var(--bg-card);
       border-left: 4px solid var(--text-main);
@@ -423,7 +374,7 @@
         <span class="section-tag" style="color: #25D366; font-weight: 700;">★ ASTRA BRAND • ШВЕЙНОЕ ПРОИЗВОДСТВО</span>
         <h1 class="hero-offer-title">Пошив Женской Одежды (50–60 Размеров) с Доставкой за 7–12 Дней</h1>
         <p class="hero-offer-desc">
-          Контрактное швейное производство в Бишкеке. Отшив партий под ключ в рублях (₽), разбор лекал на цифровом САПР за 5 дней и гарантированный двухэтапный контроль ОТК.
+          Контрактное швейное производство в Бишкеке. Отшив партий под ключ в рублях (₽), разбор лекал на цифровом САПР за 5 дней и двухэтапный контроль качества.
         </p>
 
         <div style="display: flex; gap: 14px; flex-wrap: wrap;">
@@ -441,6 +392,11 @@
           <p class="process-text">
             <strong>«Каждое изделие проходит межоперационный процесс проверки изделия и проходит итоговую проверку ОТК. ВТО — влажно-тепловая обработка изделия.»</strong>
           </p>
+
+          <p class="process-text" style="margin-top: 16px; font-size: 0.95rem; color: #444;">
+            🤝 <strong>Условия по срокам:</strong> Сроки отшива партии зависят от сложности модели и поставки ткани. При задержке поставок ткани сроки регулируются по обоюдному согласованию сторон.
+          </p>
+
           <div style="margin-top: 20px; display: flex; gap: 10px; flex-wrap: wrap;">
             <span class="tag-pill">Размеры: с 50 по 60</span>
             <span class="tag-pill">Доставка: 7–12 дней</span>
