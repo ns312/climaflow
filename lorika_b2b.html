@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LORIKA GROUP | Ателье-Фабрика Пошива Одежды Plus Size в Бишкеке</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Inter:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       1. GLOBAL DESIGN SYSTEM (EDITORIAL B&W / LUXURY HYBRID)
+       ========================================================================== */
+    :root {
+      --bg-cream: #F8F6F0;
+      --bg-card: #FFFFFF;
+      --bg-dark: #0E0E0E;
+      --text-main: #111111;
+      --text-muted: #666666;
+      --text-light: #F8F6F0;
+      --border-thin: rgba(17, 17, 17, 0.15);
+      --border-dark: rgba(255, 255, 255, 0.15);
+      --accent-green: #25D366;
+      --font-serif: 'Bodoni Moda', serif;
+      --font-sans: 'Inter', sans-serif;
+      --font-mono: 'Space Mono', monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      cursor: default;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      background-color: var(--bg-cream);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Magnetic Cursor Follower */
+    .cursor-follower {
+      position: fixed;
+      width: 32px;
+      height: 32px;
+      border: 1px solid var(--text-main);
+      border-radius: 50%;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      transition: transform 0.15s ease-out, width 0.2s, height 0.2s, background-color 0.2s;
+      z-index: 9999;
+      mix-blend-mode: difference;
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .cursor-follower.active {
+      width: 60px;
+      height: 60px;
+      background: rgba(0, 0, 0, 0.1);
+      border-color: var(--text-main);
+    }
+
+    a, button, input, select {
+      cursor: pointer !important;
+    }
+
+    /* Typography & Utilities */
+    .serif { font-family: var(--font-serif); }
+    .mono { font-family: var(--font-mono); }
+    
+    .stretched-title {
+      font-family: var(--font-serif);
+      font-size: clamp(3rem, 7vw, 6.5rem);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      line-height: 0.95;
+      transform: scaleY(1.1);
+      transform-origin: top left;
+    }
+
+    .tag-pill {
+      display: inline-block;
+      padding: 6px 16px;
+      border: 1px solid var(--text-main);
+      border-radius: 40px;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      background: transparent;
+      transition: all 0.3s ease;
+    }
+
+    .tag-pill:hover {
+      background: var(--text-main);
+      color: var(--bg-cream);
+    }
+
+    .btn-black {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px 36px;
+      background-color: var(--text-main);
+      color: var(--bg-cream);
+      border: 1px solid var(--text-main);
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      text-decoration: none;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .btn-black:hover {
+      background-color: transparent;
+      color: var(--text-main);
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px 36px;
+      background-color: transparent;
+      color: var(--text-main);
+      border: 1px solid var(--text-main);
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .btn-outline:hover {
+      background-color: var(--text-main);
+      color: var(--bg-cream);
+    }
+
+    .section-padding {
+      padding: 100px 5vw;
+    }
+
+    .grid-container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .hairline-bottom {
+      border-bottom: 1px solid var(--border-thin);
+    }
+
+    /* ==========================================================================
+       2. HEADER & NAVIGATION
+       ========================================================================== */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 24px 5vw;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(248, 246, 240, 0.9);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      border-bottom: 1px solid var(--border-thin);
+    }
+
+    .logo {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      text-decoration: none;
+      color: var(--text-main);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-main);
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      opacity: 0.7;
+      transition: opacity 0.3s;
+    }
+
+    .nav-links a:hover {
+      opacity: 1;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .scarcity-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      background: rgba(0, 0, 0, 0.05);
+      padding: 6px 14px;
+      border-radius: 20px;
+      border: 1px solid var(--border-thin);
+    }
+
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      background-color: #E63946;
+      border-radius: 50%;
+      box-shadow: 0 0 0 0 rgba(230, 57, 70, 0.7);
+      animation: pulse 1.8s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(230, 57, 70, 0.7); }
+      70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(230, 57, 70, 0); }
+      100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(230, 57, 70, 0); }
+    }
+
+    /* ==========================================================================
+       3. HERO CANVAS SECTION
+       ========================================================================== */
+    .hero {
+      padding-top: 180px;
+      padding-bottom: 100px;
+      min-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .hero-meta {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 30px;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      opacity: 0.7;
+    }
+
+    .hero-main-title {
+      margin-bottom: 40px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+      margin-top: 40px;
+    }
+
+    .hero-description {
+      font-size: 1.25rem;
+      font-weight: 300;
+      color: #333;
+      max-width: 580px;
+    }
+
+    .hero-form-card {
+      background: var(--bg-card);
+      padding: 40px;
+      border: 1px solid var(--text-main);
+      box-shadow: 12px 12px 0px var(--text-main);
+    }
+
+    .form-title {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    .form-subtitle {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+
+    .input-group {
+      margin-bottom: 20px;
+    }
+
+    .input-group label {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .input-control {
+      width: 100%;
+      padding: 14px 18px;
+      border: 1px solid var(--border-thin);
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      background: var(--bg-cream);
+      outline: none;
+      transition: border-color 0.3s;
+    }
+
+    .input-control:focus {
+      border-color: var(--text-main);
+    }
+
+    /* ==========================================================================
+       4. BEFORE / AFTER INTERACTIVE FIT SLIDER
+       ========================================================================== */
+    .slider-section {
+      background: var(--bg-card);
+    }
+
+    .section-header {
+      margin-bottom: 60px;
+      text-align: center;
+    }
+
+    .section-tag {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      opacity: 0.6;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      line-height: 1.1;
+    }
+
+    .fit-container {
+      position: relative;
+      width: 100%;
+      max-width: 900px;
+      height: 550px;
+      margin: 0 auto;
+      overflow: hidden;
+      border: 1px solid var(--text-main);
+      user-select: none;
+    }
+
+    .fit-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* Simulated B&W High-Fashion Illustrations */
+    .fit-before {
+      background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1000&auto=format&fit=crop');
+      filter: grayscale(100%) contrast(120%);
+    }
+
+    .fit-after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50%;
+      height: 100%;
+      overflow: hidden;
+      background-image: linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0.1)), url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=1000&auto=format&fit=crop');
+      filter: grayscale(100%) contrast(140%);
+      border-right: 2px solid var(--bg-cream);
+    }
+
+    .fit-label {
+      position: absolute;
+      bottom: 24px;
+      padding: 8px 16px;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      background: var(--text-main);
+      color: var(--bg-cream);
+      z-index: 10;
+    }
+
+    .label-before { right: 24px; }
+    .label-after { left: 24px; }
+
+    .fit-handle {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 4px;
+      background: var(--bg-cream);
+      cursor: ew-resize !important;
+      z-index: 20;
+    }
+
+    .fit-handle-circle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--text-main);
+      color: var(--bg-cream);
+      border: 2px solid var(--bg-cream);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+    }
+
+    /* ==========================================================================
+       5. REASON-WHY ADVERTISING & PROCESS SECTION
+       ========================================================================== */
+    .reason-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-top: 60px;
+    }
+
+    .reason-card {
+      padding: 40px;
+      border: 1px solid var(--border-thin);
+      background: var(--bg-cream);
+      transition: transform 0.3s, border-color 0.3s;
+    }
+
+    .reason-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--text-main);
+    }
+
+    .reason-num {
+      font-family: var(--font-serif);
+      font-size: 3rem;
+      font-weight: 700;
+      opacity: 0.3;
+      margin-bottom: 20px;
+    }
+
+    .reason-title {
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      margin-bottom: 16px;
+    }
+
+    .reason-desc {
+      font-size: 0.95rem;
+      color: #444;
+    }
+
+    /* ==========================================================================
+       6. INTERACTIVE BATCH CALCULATOR & FABRIC SELECTOR
+       ========================================================================== */
+    .calc-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      background: var(--bg-card);
+      padding: 60px;
+      border: 1px solid var(--text-main);
+    }
+
+    .calc-slider-box {
+      margin-bottom: 36px;
+    }
+
+    .slider-header {
+      display: flex;
+      justify-content: space-between;
+      font-family: var(--font-mono);
+      font-size: 0.9rem;
+      margin-bottom: 14px;
+    }
+
+    .range-input {
+      width: 100%;
+      accent-color: var(--text-main);
+      height: 6px;
+      background: #E0E0E0;
+    }
+
+    .discount-pills {
+      display: flex;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .disc-pill {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      padding: 4px 12px;
+      border: 1px solid var(--border-thin);
+      border-radius: 12px;
+    }
+
+    .disc-pill.active {
+      background: var(--text-main);
+      color: var(--bg-cream);
+      border-color: var(--text-main);
+    }
+
+    .calc-results {
+      background: var(--bg-dark);
+      color: var(--text-light);
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .res-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border-dark);
+      font-family: var(--font-mono);
+    }
+
+    .res-val {
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    .res-val.highlight {
+      font-size: 1.6rem;
+      color: #25D366;
+    }
+
+    /* Fabric Selector Tabs */
+    .fabric-tabs {
+      display: flex;
+      gap: 10px;
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+
+    .fabric-tab {
+      padding: 10px 20px;
+      border: 1px solid var(--border-thin);
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      background: transparent;
+      transition: all 0.3s;
+    }
+
+    .fabric-tab.active {
+      background: var(--text-main);
+      color: var(--bg-cream);
+    }
+
+    .fabric-preview {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      padding: 20px;
+      background: var(--bg-cream);
+      border: 1px solid var(--border-thin);
+    }
+
+    .fabric-thumb {
+      width: 80px;
+      height: 80px;
+      background-size: cover;
+      background-position: center;
+      filter: grayscale(100%);
+    }
+
+    /* ==========================================================================
+       7. 1-MINUTE PRODUCTION PROCESS VIDEO MOCKUP
+       ========================================================================== */
+    .video-mockup-card {
+      background: var(--bg-dark);
+      color: var(--bg-cream);
+      padding: 50px;
+      border: 1px solid var(--text-main);
+      position: relative;
+    }
+
+    .video-timeline {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 10px;
+      margin-top: 40px;
+    }
+
+    .step-box {
+      padding: 16px;
+      border: 1px solid var(--border-dark);
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      opacity: 0.6;
+      transition: opacity 0.3s, border-color 0.3s;
+    }
+
+    .step-box.active {
+      opacity: 1;
+      border-color: var(--bg-cream);
+      background: rgba(255,255,255,0.05);
+    }
+
+    .step-time {
+      color: #888;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    /* ==========================================================================
+       8. INFINITE B&W WHATSAPP REVIEW CAROUSEL
+       ========================================================================== */
+    .carousel-section {
+      background: var(--bg-dark);
+      color: var(--bg-cream);
+      overflow: hidden;
+    }
+
+    .ticker-wrapper {
+      display: flex;
+      width: 200%;
+      animation: ticker 35s linear infinite;
+    }
+
+    .ticker-wrapper:hover {
+      animation-play-state: paused;
+    }
+
+    @keyframes ticker {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .chat-card {
+      width: 420px;
+      margin-right: 30px;
+      background: #181818;
+      border: 1px solid var(--border-dark);
+      padding: 24px;
+      flex-shrink: 0;
+    }
+
+    .chat-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border-dark);
+    }
+
+    .chat-client {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    .chat-tag {
+      font-size: 0.7rem;
+      color: #888;
+    }
+
+    .chat-msg {
+      font-size: 0.9rem;
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+
+    .msg-client {
+      background: #222;
+      padding: 12px 16px;
+      border-radius: 8px 8px 8px 0;
+      color: #EEE;
+    }
+
+    .msg-admin {
+      background: #2A2A2A;
+      padding: 12px 16px;
+      border-radius: 8px 8px 0 8px;
+      color: #FFF;
+      margin-left: 20px;
+      border-left: 2px solid var(--bg-cream);
+    }
+
+    /* ==========================================================================
+       9. TRUST HUB & FOOTER
+       ========================================================================== */
+    .technologist-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .larisa-photo {
+      width: 100%;
+      height: 600px;
+      background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1000&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center;
+      filter: grayscale(100%) contrast(110%);
+      border: 1px solid var(--text-main);
+    }
+
+    footer {
+      background: var(--bg-dark);
+      color: var(--bg-cream);
+      padding: 80px 5vw 40px;
+      border-top: 1px solid var(--border-dark);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 60px;
+      margin-bottom: 60px;
+    }
+
+    .floating-whatsapp {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 60px;
+      height: 60px;
+      background-color: var(--accent-green);
+      color: #FFF;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      z-index: 999;
+      text-decoration: none;
+      transition: transform 0.3s;
+    }
+
+    .floating-whatsapp:hover {
+      transform: scale(1.1);
+    }
+
+    /* ==========================================================================
+       10. RESPONSIVE MEDIA QUERIES (MOBILE OPTIMIZATION)
+       ========================================================================== */
+    @media (max-width: 992px) {
+      .hero-grid, .reason-grid, .calc-wrapper, .technologist-wrapper, .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .nav-links { display: none; }
+      .calc-wrapper { padding: 30px; }
+      .video-timeline { grid-template-columns: repeat(2, 1fr); }
+      .fit-container { height: 400px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Magnetic Cursor Follower -->
+  <div class="cursor-follower" id="cursor"></div>
+
+  <!-- Header Navigation -->
+  <header>
+    <a href="#" class="logo">LORIKA GROUP</a>
+    <ul class="nav-links">
+      <li><a href="#about">Ателье-Фабрика</a></li>
+      <li><a href="#fit">Посадка Plus Size</a></li>
+      <li><a href="#calc">Калькулятор</a></li>
+      <li><a href="#process">Производство</a></li>
+      <li><a href="#reviews">Отзывы</a></li>
+    </ul>
+    <div class="header-actions">
+      <div class="scarcity-badge">
+        <span class="pulse-dot"></span>
+        <span>Слотов: 2из5</span>
+      </div>
+      <a href="https://wa.me/996555123456" target="_blank" class="btn-black">WhatsApp</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero section-padding grid-container hairline-bottom">
+    <div class="hero-meta">
+      <span>Кыргызстан, г. Бишкек</span>
+      <span>Опыт технолога: 30+ лет</span>
+      <span>Сайз Плюс 50–64+</span>
+    </div>
+
+    <div class="hero-main-title">
+      <h1 class="stretched-title scramble-title">LORIKA GROUP</h1>
+      <p class="section-tag" style="margin-top: 15px;">Ателье-Фабрика Премиального Пошива Женской Одежды</p>
+    </div>
+
+    <div class="hero-grid">
+      <div>
+        <p class="hero-description">
+          Пошив женской одежды <strong>Plus Size (50–64+)</strong> от <strong>$12 USD под ключ</strong> с точностью элитного Ателье и гарантией брака менее 3% по договору.
+        </p>
+        <div style="margin-top: 30px; display: flex; gap: 15px; flex-wrap: wrap;">
+          <span class="tag-pill">Анатомические лекала</span>
+          <span class="tag-pill">Закупка на Мадине</span>
+          <span class="tag-pill">ОТК &lt;3% брака</span>
+        </div>
+      </div>
+
+      <div class="hero-form-card">
+        <h3 class="form-title">Рассчитать партию за 15 сек</h3>
+        <p class="form-subtitle">Зафиксируйте оптовую цену от $12/шт и получите расчет в WhatsApp.</p>
+        
+        <form onsubmit="event.preventDefault(); alert('Расчет отправлен в WhatsApp!');">
+          <div class="input-group">
+            <label>Ваш номер WhatsApp</label>
+            <input type="tel" class="input-control" placeholder="+7 (___) ___-__-__" required>
+          </div>
+          <div class="input-group">
+            <label>Планируемый тираж (шт)</label>
+            <input type="number" class="input-control" placeholder="Например: 300 шт" value="300" required>
+          </div>
+          <button type="submit" class="btn-black" style="width: 100%; margin-top: 10px;">ПОЛУЧИТЬ РАСЧЕТ И КАТАЛОГ</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Before/After Fit Slider -->
+  <section id="fit" class="slider-section section-padding hairline-bottom">
+    <div class="grid-container">
+      <div class="section-header">
+        <p class="section-tag">Инженерная Экспертиза Лекал</p>
+        <h2 class="section-title">Сравните посадку: Обычный цех vs Ателье-Фабрика Lorika</h2>
+        <p style="margin-top: 15px; color: var(--text-muted);">Потяните ползунок, чтобы увидеть разницу на реальной Plus Size фигуре (56 размер).</p>
+      </div>
+
+      <div class="fit-container" id="fitContainer">
+        <div class="fit-image fit-before"></div>
+        <div class="fit-image fit-after" id="fitAfter"></div>
+        <div class="fit-label label-before">Обычный цех: Растянутый ГОСТ (Возврат 40%)</div>
+        <div class="fit-label label-after">Lorika Group: Анатомический крой (0% возвратов)</div>
+        <div class="fit-handle" id="fitHandle">
+          <div class="fit-handle-circle">&lt;&gt;</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reason-Why Advertising Section -->
+  <section class="section-padding grid-container hairline-bottom">
+    <div class="section-header">
+      <p class="section-tag">Reason-Why Advertising</p>
+      <h2 class="section-title">Почему у нас не бывает брака (&lt;3%)?</h2>
+    </div>
+
+    <div class="reason-grid">
+      <div class="reason-card">
+        <div class="reason-num">01</div>
+        <h3 class="reason-title">Оклад швей вместо сделки</h3>
+        <p class="reason-desc">В обычных цехах швеям платят сдельно за скорость — они спешат и гонят брак. У нас швеи работают на фиксированных окладах в постоянном штате без текучки. Им выгодно делать идеальный шов!</p>
+      </div>
+
+      <div class="reason-card">
+        <div class="reason-num">02</div>
+        <div class="reason-title">Инженерные лекала $100</div>
+        <p class="reason-desc">Лариса с 30-летним стажем лично разрабатывает конструктив выкроек. Мы не бесплатный цех-экспериментатор — наши лекала окупаются сотнями тысяч рублей выручки селлера.</p>
+      </div>
+
+      <div class="reason-card">
+        <div class="reason-num">03</div>
+        <h3 class="reason-title">Прямой закуп на Мадине</h3>
+        <p class="reason-desc">Лариса лично выезжает на закупку тканей. Мы выбираем плотный турецкий шифон и шелк первых оптовых поставок, экономя вам до $1,500 на партию.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Calculator & Fabric Selector -->
+  <section id="calc" class="section-padding grid-container hairline-bottom">
+    <div class="section-header">
+      <p class="section-tag">Интерактивная Экономика</p>
+      <h2 class="section-title">Калькулятор инвестиций и маржинальности</h2>
+    </div>
+
+    <div class="calc-wrapper">
+      <div>
+        <div class="calc-slider-box">
+          <div class="slider-header">
+            <span>Размер партии:</span>
+            <span id="qtyVal" class="serif" style="font-size: 1.4rem; font-weight: 700;">300 шт</span>
+          </div>
+          <input type="range" min="100" max="1000" step="50" value="300" class="range-input" id="qtyRange" oninput="updateCalc()">
+          
+          <div class="discount-pills">
+            <span class="disc-pill" id="pill100">100 шт (0%)</span>
+            <span class="disc-pill active" id="pill300">300 шт (-5%)</span>
+            <span class="disc-pill" id="pill500">500 шт (-10%)</span>
+            <span class="disc-pill" id="pill1000">1000 шт (-15%)</span>
+          </div>
+        </div>
+
+        <p class="section-tag" style="margin-top: 30px;">Выбор ткани с рынка Мадина:</p>
+        <div class="fabric-tabs">
+          <button class="fabric-tab active" onclick="setFabric('chiffon')">Турецкий Шифон</button>
+          <button class="fabric-tab" onclick="setFabric('silk')">Шелковый Подклад</button>
+          <button class="fabric-tab" onclick="setFabric('organza')">Органза</button>
+        </div>
+
+        <div class="fabric-preview">
+          <div class="fabric-thumb" id="fabricThumb" style="background-image: url('https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?q=80&w=300&auto=format&fit=crop');"></div>
+          <div>
+            <h4 id="fabricTitle" style="font-family: var(--font-serif);">Турецкий Плотный Шифон</h4>
+            <p id="fabricDesc" style="font-size: 0.85rem; color: #555;">Утяжеленная ткань с печатью плиссе. Скрывает неровности фигуры, не просвечивает.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="calc-results">
+        <div>
+          <h3 class="serif" style="font-size: 1.8rem; margin-bottom: 20px;">Прогноз Юнит-Экономики</h3>
+          <div class="res-row">
+            <span>Себестоимость единицы:</span>
+            <span class="res-val" id="unitCost">$12.35 USD</span>
+          </div>
+          <div class="res-row">
+            <span>Общие инвестиции в пошив:</span>
+            <span class="res-val" id="totalCost">$3,705 USD</span>
+          </div>
+          <div class="res-row">
+            <span>Прогнозируемая выручка WB/Kaspi:</span>
+            <span class="res-val" id="totalRevenue">$13,500 USD</span>
+          </div>
+          <div class="res-row" style="border-bottom: none; margin-top: 20px;">
+            <span>Ваша Чистая Прибыль:</span>
+            <span class="res-val highlight" id="netProfit">$9,795 USD</span>
+          </div>
+        </div>
+
+        <a href="https://wa.me/996555123456" target="_blank" class="btn-black" style="width: 100%; text-align: center; background: #25D366; border-color: #25D366; margin-top: 30px;">
+          💬 ЗАФИКСИРОВАТЬ ЭТУ ЦЕНУ В WHATSAPP
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 1-Minute Production Process Section -->
+  <section id="process" class="section-padding grid-container hairline-bottom">
+    <div class="section-header">
+      <p class="section-tag">Прозрачность Процесса</p>
+      <h2 class="section-title">60 секунд по фабрике Lorika Group</h2>
+    </div>
+
+    <div class="video-mockup-card">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <span class="mono" style="color: #25D366;">● LIVE STREAMING FROM BISHKEK FACTORY</span>
+        <span class="mono" style="opacity: 0.5;">HD 1080P</span>
+      </div>
+
+      <div style="height: 300px; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.03); margin: 30px 0; border: 1px dashed var(--border-dark);">
+        <div style="text-align: center;">
+          <div style="width: 60px; height: 60px; border-radius: 50%; border: 2px solid #FFF; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px;">▶</div>
+          <p class="mono" style="font-size: 0.9rem;">НАЖМИТЕ ДЛЯ ПРОСМОТРА 1-МИНУТНОЙ ЭКСКУРСИИ ПО ЦЕХУ</p>
+        </div>
+      </div>
+
+      <div class="video-timeline">
+        <div class="step-box active">
+          <span class="step-time">00:00 - 00:10</span>
+          1. Бриф в WhatsApp
+        </div>
+        <div class="step-box">
+          <span class="step-time">00:10 - 00:20</span>
+          2. Плоттер и лекала
+        </div>
+        <div class="step-box">
+          <span class="step-time">00:20 - 00:30</span>
+          3. Закуп на Мадине
+        </div>
+        <div class="step-box">
+          <span class="step-time">00:30 - 00:40</span>
+          4. Раскрой и пошив
+        </div>
+        <div class="step-box">
+          <span class="step-time">00:40 - 00:50</span>
+          5. ОТК и ВТО глажка
+        </div>
+        <div class="step-box">
+          <span class="step-time">00:50 - 01:00</span>
+          6. Zip-Lock и Карго
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Infinite B&W WhatsApp Review Carousel -->
+  <section id="reviews" class="carousel-section section-padding">
+    <div class="grid-container" style="margin-bottom: 40px;">
+      <p class="section-tag" style="color: #888;">Реальный Опыт Клиентов</p>
+      <h2 class="section-title" style="color: #FFF;">Переписки в WhatsApp с селлерами</h2>
+    </div>
+
+    <div class="ticker-wrapper">
+      <!-- Chat 1 -->
+      <div class="chat-card">
+        <div class="chat-header">
+          <span class="chat-client">Нурлан (Селлер Kaspi.kz)</span>
+          <span class="chat-tag">г. Алматы</span>
+        </div>
+        <div class="chat-msg msg-client">Лариса, салам! 300 платьев в Алматы получили! Выкуп 96%, посадка на 54-58 идеальная! Ни одного возврата!</div>
+        <div class="chat-msg msg-admin">Нурлан, здравствуйте! Рада за идеальный выкуп. Готовим новый подсорт?</div>
+      </div>
+
+      <!-- Chat 2 -->
+      <div class="chat-card">
+        <div class="chat-header">
+          <span class="chat-client">Екатерина (Селлер Wildberries)</span>
+          <span class="chat-tag">г. Москва</span>
+        </div>
+        <div class="chat-msg msg-client">Костюмы-тройки пришли на Коледино за 6 дней! Карточка вылетела в ТОП-10! Ни одной нитки, спасибо за ОТК!</div>
+        <div class="chat-msg msg-admin">Екатерина, спасибо! Лариса лично проверяла каждую жилетку перед запечатыванием.</div>
+      </div>
+
+      <!-- Chat 3 -->
+      <div class="chat-card">
+        <div class="chat-header">
+          <span class="chat-client">Ольга (Владелец шоурума)</span>
+          <span class="chat-tag">г. Санкт-Петербург</span>
+        </div>
+        <div class="chat-msg msg-client">Платья из органзы разошлись за неделю! Клиентки в восторге от ткани с Мадины! Заказываем подсорт!</div>
+        <div class="chat-msg msg-admin">Ольга, спасибо! Ткань действительно села великолепно. Заказ принят!</div>
+      </div>
+
+      <!-- Chat 4 -->
+      <div class="chat-card">
+        <div class="chat-header">
+          <span class="chat-client">Арман (Селлер Kaspi.kz)</span>
+          <span class="chat-tag">г. Астана</span>
+        </div>
+        <div class="chat-msg msg-client">Лариса эже, рахмет! Сэкономили нам $1,200 на подборе ткани. Качество лучше чем в Турции!</div>
+        <div class="chat-msg msg-admin">Арман, мы всегда за оптимизацию бюджета селлера!</div>
+      </div>
+
+      <!-- Duplicate for Infinite Loop -->
+      <div class="chat-card">
+        <div class="chat-header">
+          <span class="chat-client">Ильдар (Селлер Ozon)</span>
+          <span class="chat-tag">г. Казань</span>
+        </div>
+        <div class="chat-msg msg-client">У прошлых цехов было 18% брака. У вас из 400 единиц брак 2 штуки (0.5%)! Вы лучшие!</div>
+        <div class="chat-msg msg-admin">Ильдар, у нас постоянный цех без текучки, поэтому брак исключен!</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technologist Trust Hub & Footer -->
+  <section class="section-padding grid-container">
+    <div class="technologist-wrapper">
+      <div class="larisa-photo"></div>
+
+      <div>
+        <p class="section-tag">Основатель и Главный Технолог</p>
+        <h2 class="serif" style="font-size: 2.8rem; margin-bottom: 24px;">Лариса</h2>
+        <p style="font-size: 1.1rem; line-height: 1.7; color: #333; margin-bottom: 30px;">
+          «Здравствуйте! Я занимаюсь пошивом более 30 лет. Швейное дело — это моя инженерная страсть. Я лично выезжаю на закупку тканей на Мадину, разрабатываю конструктив выкроек Plus Size и ручаюсь за каждый шов в цеху. Давайте создадим ваш первый бестселлер с маржой 70%+!»
+        </p>
+
+        <div style="display: flex; gap: 20px;">
+          <div>
+            <div class="serif" style="font-size: 2rem; font-weight: 700;">30+</div>
+            <div class="mono" style="font-size: 0.75rem; color: #666;">ЛЕТ ОПЫТА В ЛЕКАЛАХ</div>
+          </div>
+          <div style="border-left: 1px solid var(--border-thin); padding-left: 20px;">
+            <div class="serif" style="font-size: 2rem; font-weight: 700;">&lt;3%</div>
+            <div class="mono" style="font-size: 0.75rem; color: #666;">ГАРАНТИЯ БРАКА ОТК</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="grid-container">
+      <div class="footer-grid">
+        <div>
+          <a href="#" class="logo" style="color: #FFF;">LORIKA GROUP</a>
+          <p style="margin-top: 20px; color: #AAA; font-size: 0.95rem; max-width: 400px;">
+            Первая Ателье-Фабрика контрактного пошива женской одежды Plus Size в Бишкеке. Доставка на склады Wildberries, Ozon и Kaspi.kz.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="mono" style="color: #FFF; margin-bottom: 20px; font-size: 0.85rem;">НАВИГАЦИЯ</h4>
+          <p><a href="#about" style="color: #AAA; text-decoration: none;">Ателье-Фабрика</a></p>
+          <p><a href="#fit" style="color: #AAA; text-decoration: none;">Посадка Plus Size</a></p>
+          <p><a href="#calc" style="color: #AAA; text-decoration: none;">Калькулятор ROI</a></p>
+        </div>
+
+        <div>
+          <h4 class="mono" style="color: #FFF; margin-bottom: 20px; font-size: 0.85rem;">КОНТАКТЫ</h4>
+          <p style="color: #AAA;">Бишкек, Кыргызстан</p>
+          <p style="color: #AAA;">WhatsApp: +996 555 123 456</p>
+        </div>
+      </div>
+
+      <div style="border-top: 1px solid var(--border-dark); padding-top: 30px; display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 0.75rem; color: #666;">
+        <span>© 2026 LORIKA GROUP. ALL RIGHTS RESERVED.</span>
+        <span>DESIGNED BY $1M MARKETING ENGINE</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Trigger -->
+  <a href="https://wa.me/996555123456" target="_blank" class="floating-whatsapp" title="Задать вопрос Ларисе">
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-0.999 3.648 3.742-.981z"/></svg>
+  </a>
+
+  <!-- JavaScript Interactions -->
+  <script>
+    // 1. Magnetic Cursor Follower
+    const cursor = document.getElementById('cursor');
+    document.addEventListener('mousemove', (e) => {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+    });
+
+    document.querySelectorAll('a, button, input').forEach(el => {
+      el.addEventListener('mouseenter', () => cursor.classList.add('active'));
+      el.addEventListener('mouseleave', () => cursor.classList.remove('active'));
+    });
+
+    // 2. Interactive Before/After Fit Slider
+    const fitContainer = document.getElementById('fitContainer');
+    const fitAfter = document.getElementById('fitAfter');
+    const fitHandle = document.getElementById('fitHandle');
+    let isDragging = false;
+
+    function moveSlider(x) {
+      const rect = fitContainer.getBoundingClientRect();
+      let pos = (x - rect.left) / rect.width;
+      if (pos < 0.05) pos = 0.05;
+      if (pos > 0.95) pos = 0.95;
+      
+      fitAfter.style.width = (pos * 100) + '%';
+      fitHandle.style.left = (pos * 100) + '%';
+    }
+
+    fitContainer.addEventListener('mousedown', (e) => { isDragging = true; moveSlider(e.clientX); });
+    window.addEventListener('mouseup', () => { isDragging = false; });
+    window.addEventListener('mousemove', (e) => { if (isDragging) moveSlider(e.clientX); });
+    
+    fitContainer.addEventListener('touchstart', (e) => { isDragging = true; moveSlider(e.touches[0].clientX); });
+    window.addEventListener('touchend', () => { isDragging = false; });
+    window.addEventListener('touchmove', (e) => { if (isDragging) moveSlider(e.touches[0].clientX); });
+
+    // 3. Dynamic Calculator
+    function updateCalc() {
+      const qty = parseInt(document.getElementById('qtyRange').value);
+      document.getElementById('qtyVal').innerText = qty + ' шт';
+
+      let discount = 0;
+      document.querySelectorAll('.disc-pill').forEach(p => p.classList.remove('active'));
+      
+      if (qty >= 1000) { discount = 0.15; document.getElementById('pill1000').classList.add('active'); }
+      else if (qty >= 500) { discount = 0.10; document.getElementById('pill500').classList.add('active'); }
+      else if (qty >= 300) { discount = 0.05; document.getElementById('pill300').classList.add('active'); }
+      else { document.getElementById('pill100').classList.add('active'); }
+
+      const baseCost = 13.00;
+      const unitCost = baseCost * (1 - discount);
+      const totalCost = qty * unitCost;
+      const retailPrice = 45.00;
+      const totalRevenue = qty * retailPrice;
+      const netProfit = totalRevenue - totalCost;
+
+      document.getElementById('unitCost').innerText = '$' + unitCost.toFixed(2) + ' USD';
+      document.getElementById('totalCost').innerText = '$' + totalCost.toLocaleString('en-US', {maximumFractionDigits: 0}) + ' USD';
+      document.getElementById('totalRevenue').innerText = '$' + totalRevenue.toLocaleString('en-US', {maximumFractionDigits: 0}) + ' USD';
+      document.getElementById('netProfit').innerText = '$' + netProfit.toLocaleString('en-US', {maximumFractionDigits: 0}) + ' USD';
+    }
+
+    // 4. Fabric Selector Tabs
+    const fabricData = {
+      chiffon: {
+        title: 'Турецкий Плотный Шифон',
+        desc: 'Утяжеленная ткань с печатью плиссе. Скрывает неровности фигуры, 100% не просвечивает.',
+        img: 'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?q=80&w=300&auto=format&fit=crop'
+      },
+      silk: {
+        title: 'Натуральный Шелковый Подклад',
+        desc: 'Дышащий гипоаллергенный подклад. Придает изделию струящийся вид и тактильный комфорт.',
+        img: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?q=80&w=300&auto=format&fit=crop'
+      },
+      organza: {
+        title: 'Праздничная Органза & Лионза',
+        desc: 'Премиальная ткань для вечерних бутик-платьев с благородным матовым блеском.',
+        img: 'https://images.unsplash.com/photo-1558769132-cb1aea458c5e?q=80&w=300&auto=format&fit=crop'
+      }
+    };
+
+    function setFabric(key) {
+      document.querySelectorAll('.fabric-tab').forEach(t => t.classList.remove('active'));
+      event.target.classList.add('active');
+
+      const data = fabricData[key];
+      document.getElementById('fabricTitle').innerText = data.title;
+      document.getElementById('fabricDesc').innerText = data.desc;
+      document.getElementById('fabricThumb').style.backgroundImage = `url('${data.img}')`;
+    }
+
+    // Initialize Calculator on load
+    updateCalc();
+  </script>
+</body>
+</html>
