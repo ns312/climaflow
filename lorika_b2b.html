@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LORIKA GROUP | Ателье-Фабрика Пошива Одежды Plus Size в Бишкеке</title>
+  <title>Швейная Ателье-Фабрика LORIKA | Пошив Одежды Plus Size в Бишкеке</title>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,7 +12,7 @@
 
   <style>
     /* ==========================================================================
-       1. GLOBAL DESIGN SYSTEM (EDITORIAL B&W LUXURY HYBRID - RUBLE VERSION)
+       1. GLOBAL DESIGN SYSTEM (NO-FLUFF EDITORIAL B&W - ILYAHOV AUDITED)
        ========================================================================== */
     :root {
       --bg-cream: #F8F6F0;
@@ -66,8 +66,8 @@
     }
 
     .cursor-follower.active {
-      width: 60px;
-      height: 60px;
+      width: 54px;
+      height: 54px;
       background: rgba(0, 0, 0, 0.1);
       border-color: var(--text-main);
     }
@@ -76,28 +76,27 @@
       cursor: pointer !important;
     }
 
-    /* Typography & Editorial Spacing */
     .serif { font-family: var(--font-serif); }
     .mono { font-family: var(--font-mono); }
     
     .stretched-title {
       font-family: var(--font-serif);
-      font-size: clamp(3.2rem, 7.5vw, 7rem);
+      font-size: clamp(3rem, 7.5vw, 6.8rem);
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: -0.02em;
       line-height: 0.95;
-      transform: scaleY(1.1);
+      transform: scaleY(1.08);
       transform-origin: top left;
     }
 
     .tag-pill {
       display: inline-block;
-      padding: 8px 20px;
+      padding: 8px 18px;
       border: 1px solid var(--text-main);
       border-radius: 40px;
       font-family: var(--font-mono);
-      font-size: 0.78rem;
+      font-size: 0.75rem;
       text-transform: uppercase;
       letter-spacing: 1px;
       background: transparent;
@@ -113,7 +112,7 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 18px 40px;
+      padding: 16px 36px;
       background-color: var(--text-main);
       color: var(--bg-cream);
       border: 1px solid var(--text-main);
@@ -131,7 +130,7 @@
     }
 
     .section-padding {
-      padding: 120px 8vw;
+      padding: 100px 8vw;
     }
 
     .grid-container {
@@ -143,11 +142,30 @@
       border-bottom: 1px solid var(--border-thin);
     }
 
+    /* Scarcity Banner Box (Ilyahov No-Fluff Style) */
+    .scarcity-banner-box {
+      background: var(--bg-card);
+      border: 1px solid var(--text-main);
+      padding: 24px 30px;
+      margin-top: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .scarcity-text {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
     /* Editorial Quote Callout Box */
     .editorial-quote-box {
       background: var(--bg-card);
       border-left: 4px solid var(--text-main);
-      padding: 40px;
+      padding: 36px;
       margin: 40px 0;
       border-top: 1px solid var(--border-thin);
       border-right: 1px solid var(--border-thin);
@@ -156,34 +174,34 @@
 
     .quote-text {
       font-family: var(--font-serif);
-      font-size: 1.35rem;
+      font-size: 1.3rem;
       font-style: italic;
       line-height: 1.6;
       color: #1A1A1A;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
 
     .quote-author {
       font-family: var(--font-mono);
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       text-transform: uppercase;
       letter-spacing: 1.5px;
       color: var(--text-muted);
     }
 
     /* ==========================================================================
-       2. HEADER & NAVIGATION
+       2. HEADER & NAVIGATION (CLEAN NO-FLUFF HEADER)
        ========================================================================== */
     header {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
-      padding: 24px 8vw;
+      padding: 20px 8vw;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: rgba(248, 246, 240, 0.92);
+      background: rgba(248, 246, 240, 0.94);
       backdrop-filter: blur(12px);
       z-index: 1000;
       border-bottom: 1px solid var(--border-thin);
@@ -191,7 +209,7 @@
 
     .logo {
       font-family: var(--font-serif);
-      font-size: 1.7rem;
+      font-size: 1.6rem;
       font-weight: 800;
       letter-spacing: -0.5px;
       text-decoration: none;
@@ -200,7 +218,7 @@
 
     .nav-links {
       display: flex;
-      gap: 32px;
+      gap: 30px;
       list-style: none;
     }
 
@@ -208,7 +226,7 @@
       text-decoration: none;
       color: var(--text-main);
       font-family: var(--font-mono);
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       text-transform: uppercase;
       letter-spacing: 1px;
       opacity: 0.7;
@@ -219,46 +237,13 @@
       opacity: 1;
     }
 
-    .header-actions {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .scarcity-badge {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-family: var(--font-mono);
-      font-size: 0.75rem;
-      background: rgba(0, 0, 0, 0.05);
-      padding: 6px 14px;
-      border-radius: 20px;
-      border: 1px solid var(--border-thin);
-    }
-
-    .pulse-dot {
-      width: 8px;
-      height: 8px;
-      background-color: #E63946;
-      border-radius: 50%;
-      box-shadow: 0 0 0 0 rgba(230, 57, 70, 0.7);
-      animation: pulse 1.8s infinite;
-    }
-
-    @keyframes pulse {
-      0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(230, 57, 70, 0.7); }
-      70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(230, 57, 70, 0); }
-      100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(230, 57, 70, 0); }
-    }
-
     /* ==========================================================================
        3. HERO CANVAS SECTION
        ========================================================================== */
     .hero {
-      padding-top: 200px;
-      padding-bottom: 120px;
-      min-height: 95vh;
+      padding-top: 170px;
+      padding-bottom: 90px;
+      min-height: 85vh;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -267,54 +252,53 @@
     .hero-meta {
       display: flex;
       justify-content: space-between;
-      margin-bottom: 30px;
+      margin-bottom: 24px;
       font-family: var(--font-mono);
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       text-transform: uppercase;
       opacity: 0.7;
     }
 
     .hero-main-title {
-      margin-bottom: 40px;
+      margin-bottom: 30px;
     }
 
     .hero-grid {
       display: grid;
       grid-template-columns: 1.1fr 0.9fr;
-      gap: 60px;
+      gap: 50px;
       align-items: start;
-      margin-top: 40px;
     }
 
     .hero-description {
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       font-weight: 300;
       color: #222;
-      max-width: 620px;
-      line-height: 1.7;
+      max-width: 600px;
+      line-height: 1.65;
     }
 
     .hero-form-card {
       background: var(--bg-card);
-      padding: 44px;
+      padding: 36px;
       border: 1px solid var(--text-main);
-      box-shadow: 14px 14px 0px var(--text-main);
+      box-shadow: 10px 10px 0px var(--text-main);
     }
 
     .form-title {
       font-family: var(--font-serif);
-      font-size: 1.6rem;
-      margin-bottom: 10px;
+      font-size: 1.45rem;
+      margin-bottom: 8px;
     }
 
     .form-subtitle {
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       color: var(--text-muted);
-      margin-bottom: 24px;
+      margin-bottom: 20px;
     }
 
     .input-group {
-      margin-bottom: 20px;
+      margin-bottom: 16px;
     }
 
     .input-group label {
@@ -322,15 +306,15 @@
       font-family: var(--font-mono);
       font-size: 0.75rem;
       text-transform: uppercase;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
 
     .input-control {
       width: 100%;
-      padding: 16px 20px;
+      padding: 14px 16px;
       border: 1px solid var(--border-thin);
       font-family: var(--font-sans);
-      font-size: 1rem;
+      font-size: 0.95rem;
       background: var(--bg-cream);
       outline: none;
       transition: border-color 0.3s;
@@ -341,37 +325,37 @@
     }
 
     /* ==========================================================================
-       4. BEFORE / AFTER INTERACTIVE FIT SLIDER & INTERVIEW QUOTE
+       4. BEFORE / AFTER INTERACTIVE FIT SLIDER
        ========================================================================== */
     .slider-section {
       background: var(--bg-card);
     }
 
     .section-header {
-      margin-bottom: 60px;
+      margin-bottom: 50px;
       text-align: center;
     }
 
     .section-tag {
       font-family: var(--font-mono);
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       text-transform: uppercase;
       letter-spacing: 2px;
       opacity: 0.6;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
     .section-title {
       font-family: var(--font-serif);
-      font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+      font-size: clamp(2rem, 4vw, 3.4rem);
       line-height: 1.1;
     }
 
     .fit-container {
       position: relative;
       width: 100%;
-      max-width: 950px;
-      height: 580px;
+      max-width: 900px;
+      height: 520px;
       margin: 0 auto;
       overflow: hidden;
       border: 1px solid var(--text-main);
@@ -407,18 +391,18 @@
 
     .fit-label {
       position: absolute;
-      bottom: 24px;
-      padding: 8px 18px;
+      bottom: 20px;
+      padding: 6px 14px;
       font-family: var(--font-mono);
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       text-transform: uppercase;
       background: var(--text-main);
       color: var(--bg-cream);
       z-index: 10;
     }
 
-    .label-before { right: 24px; }
-    .label-after { left: 24px; }
+    .label-before { right: 20px; }
+    .label-after { left: 20px; }
 
     .fit-handle {
       position: absolute;
@@ -436,8 +420,8 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 46px;
-      height: 46px;
+      width: 42px;
+      height: 42px;
       border-radius: 50%;
       background: var(--text-main);
       color: var(--bg-cream);
@@ -450,25 +434,25 @@
     }
 
     /* ==========================================================================
-       5. ASTRA BRAND FEATURE 1: NO FORCED SIZE SETS & CHESTNY ZNAK
+       5. ASTRA BRAND FEATURES: NO FORCED SIZE SETS & CHESTNY ZNAK
        ========================================================================== */
     .feature-grid-2col {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 50px;
-      margin-top: 60px;
+      gap: 40px;
+      margin-top: 50px;
     }
 
     .feature-card-large {
-      padding: 50px;
+      padding: 40px;
       border: 1px solid var(--border-thin);
       background: var(--bg-card);
     }
 
     .feature-card-title {
       font-family: var(--font-serif);
-      font-size: 1.8rem;
-      margin-bottom: 20px;
+      font-size: 1.6rem;
+      margin-bottom: 16px;
     }
 
     /* ==========================================================================
@@ -477,63 +461,63 @@
     .reason-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
-      margin-top: 60px;
+      gap: 24px;
+      margin-top: 50px;
     }
 
     .reason-card {
-      padding: 44px;
+      padding: 36px;
       border: 1px solid var(--border-thin);
       background: var(--bg-cream);
       transition: transform 0.3s, border-color 0.3s;
     }
 
     .reason-card:hover {
-      transform: translateY(-6px);
+      transform: translateY(-4px);
       border-color: var(--text-main);
     }
 
     .reason-num {
       font-family: var(--font-serif);
-      font-size: 3rem;
+      font-size: 2.8rem;
       font-weight: 700;
       opacity: 0.3;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
     }
 
     .reason-title {
       font-family: var(--font-serif);
-      font-size: 1.4rem;
-      margin-bottom: 16px;
+      font-size: 1.3rem;
+      margin-bottom: 14px;
     }
 
     .reason-desc {
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       color: #444;
     }
 
     /* ==========================================================================
-       7. INTERACTIVE BATCH CALCULATOR (RUBLES) & FABRIC SELECTOR
+       7. INTERACTIVE BATCH CALCULATOR (RUBLES - MOBILE CLEAN)
        ========================================================================== */
     .calc-wrapper {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 60px;
+      gap: 50px;
       background: var(--bg-card);
-      padding: 60px;
+      padding: 50px;
       border: 1px solid var(--text-main);
     }
 
     .calc-slider-box {
-      margin-bottom: 36px;
+      margin-bottom: 30px;
     }
 
     .slider-header {
       display: flex;
       justify-content: space-between;
       font-family: var(--font-mono);
-      font-size: 0.9rem;
-      margin-bottom: 14px;
+      font-size: 0.85rem;
+      margin-bottom: 12px;
     }
 
     .range-input {
@@ -545,14 +529,15 @@
 
     .discount-pills {
       display: flex;
-      gap: 12px;
-      margin-top: 16px;
+      gap: 10px;
+      margin-top: 14px;
+      flex-wrap: wrap;
     }
 
     .disc-pill {
       font-family: var(--font-mono);
-      font-size: 0.75rem;
-      padding: 4px 12px;
+      font-size: 0.72rem;
+      padding: 4px 10px;
       border: 1px solid var(--border-thin);
       border-radius: 12px;
     }
@@ -566,7 +551,7 @@
     .calc-results {
       background: var(--bg-dark);
       color: var(--text-light);
-      padding: 44px;
+      padding: 36px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -575,34 +560,37 @@
     .res-row {
       display: flex;
       justify-content: space-between;
-      padding: 16px 0;
+      align-items: center;
+      padding: 14px 0;
       border-bottom: 1px solid var(--border-dark);
       font-family: var(--font-mono);
+      font-size: 0.85rem;
     }
 
     .res-val {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       font-weight: 700;
     }
 
     .res-val.highlight {
-      font-size: 1.6rem;
+      font-size: 1.45rem;
       color: #25D366;
     }
 
     /* Fabric Selector Tabs */
     .fabric-tabs {
       display: flex;
-      gap: 10px;
-      margin-top: 30px;
-      margin-bottom: 30px;
+      gap: 8px;
+      margin-top: 24px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
     }
 
     .fabric-tab {
-      padding: 10px 20px;
+      padding: 8px 16px;
       border: 1px solid var(--border-thin);
       font-family: var(--font-mono);
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       background: transparent;
       transition: all 0.3s;
     }
@@ -614,40 +602,45 @@
 
     .fabric-preview {
       display: flex;
-      gap: 20px;
+      gap: 16px;
       align-items: center;
-      padding: 20px;
+      padding: 16px;
       background: var(--bg-cream);
       border: 1px solid var(--border-thin);
     }
 
     .fabric-thumb {
-      width: 80px;
-      height: 80px;
+      width: 70px;
+      height: 70px;
       background-size: cover;
       background-position: center;
       filter: grayscale(100%);
+      flex-shrink: 0;
     }
 
     /* ==========================================================================
-       8. DEEP COMPARISON MATRIX (5 ALTERNATIVES)
+       8. MOBILE-FRIENDLY COMPARISON MATRIX (TABBED & ACCORDION CARDS)
        ========================================================================== */
+    .matrix-wrapper {
+      margin-top: 40px;
+    }
+
+    /* Desktop Matrix Table */
     .matrix-table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 40px;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
     }
 
     .matrix-table th, .matrix-table td {
-      padding: 18px 20px;
+      padding: 16px;
       border: 1px solid var(--border-thin);
       text-align: left;
     }
 
     .matrix-table th {
       font-family: var(--font-mono);
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       text-transform: uppercase;
       background: var(--bg-card);
     }
@@ -657,13 +650,48 @@
       font-weight: 600;
     }
 
+    /* Mobile Accordion Cards (Hidden on Desktop) */
+    .mobile-matrix-cards {
+      display: none;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .mobile-matrix-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-thin);
+      padding: 20px;
+    }
+
+    .mobile-matrix-card.active-lorika {
+      border: 2px solid var(--text-main);
+      background: #FFF;
+    }
+
+    .mobile-card-header {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border-thin);
+    }
+
+    .mobile-card-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      font-size: 0.85rem;
+    }
+
     /* ==========================================================================
        9. 1-MINUTE PRODUCTION PROCESS VIDEO MOCKUP
        ========================================================================== */
     .video-mockup-card {
       background: var(--bg-dark);
       color: var(--bg-cream);
-      padding: 50px;
+      padding: 40px;
       border: 1px solid var(--text-main);
       position: relative;
     }
@@ -672,14 +700,14 @@
       display: grid;
       grid-template-columns: repeat(6, 1fr);
       gap: 10px;
-      margin-top: 40px;
+      margin-top: 30px;
     }
 
     .step-box {
-      padding: 16px;
+      padding: 14px;
       border: 1px solid var(--border-dark);
       font-family: var(--font-mono);
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       opacity: 0.6;
       transition: opacity 0.3s, border-color 0.3s;
     }
@@ -693,7 +721,7 @@
     .step-time {
       color: #888;
       display: block;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
 
     /* ==========================================================================
@@ -721,11 +749,11 @@
     }
 
     .chat-card {
-      width: 440px;
-      margin-right: 30px;
+      width: 400px;
+      margin-right: 24px;
       background: #181818;
       border: 1px solid var(--border-dark);
-      padding: 26px;
+      padding: 22px;
       flex-shrink: 0;
     }
 
@@ -733,14 +761,14 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 16px;
-      padding-bottom: 12px;
+      margin-bottom: 14px;
+      padding-bottom: 10px;
       border-bottom: 1px solid var(--border-dark);
     }
 
     .chat-client {
       font-family: var(--font-mono);
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       font-weight: 700;
     }
 
@@ -750,24 +778,24 @@
     }
 
     .chat-msg {
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       line-height: 1.5;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
     .msg-client {
       background: #222;
-      padding: 12px 16px;
+      padding: 10px 14px;
       border-radius: 8px 8px 8px 0;
       color: #EEE;
     }
 
     .msg-admin {
       background: #2A2A2A;
-      padding: 12px 16px;
+      padding: 10px 14px;
       border-radius: 8px 8px 0 8px;
       color: #FFF;
-      margin-left: 20px;
+      margin-left: 16px;
       border-left: 2px solid var(--bg-cream);
     }
 
@@ -777,14 +805,14 @@
     .map-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 50px;
+      gap: 40px;
       align-items: center;
-      margin-top: 40px;
+      margin-top: 30px;
     }
 
     .map-frame {
       width: 100%;
-      height: 450px;
+      height: 400px;
       border: 1px solid var(--text-main);
       filter: grayscale(100%) contrast(120%);
     }
@@ -795,10 +823,10 @@
     }
 
     .transit-table th, .transit-table td {
-      padding: 16px;
+      padding: 14px;
       border-bottom: 1px solid var(--border-thin);
       font-family: var(--font-mono);
-      font-size: 0.85rem;
+      font-size: 0.8rem;
     }
 
     /* ==========================================================================
@@ -807,13 +835,13 @@
     .technologist-wrapper {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 60px;
+      gap: 50px;
       align-items: center;
     }
 
     .larisa-photo {
       width: 100%;
-      height: 620px;
+      height: 550px;
       background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1000&auto=format&fit=crop');
       background-size: cover;
       background-position: center;
@@ -824,23 +852,23 @@
     footer {
       background: var(--bg-dark);
       color: var(--bg-cream);
-      padding: 100px 8vw 50px;
+      padding: 80px 8vw 40px;
       border-top: 1px solid var(--border-dark);
     }
 
     .footer-grid {
       display: grid;
       grid-template-columns: 2fr 1fr 1fr;
-      gap: 60px;
-      margin-bottom: 60px;
+      gap: 50px;
+      margin-bottom: 50px;
     }
 
     .floating-whatsapp {
       position: fixed;
-      bottom: 30px;
-      right: 30px;
-      width: 60px;
-      height: 60px;
+      bottom: 24px;
+      right: 24px;
+      width: 56px;
+      height: 56px;
       background-color: var(--accent-green);
       color: #FFF;
       border-radius: 50%;
@@ -857,16 +885,28 @@
       transform: scale(1.1);
     }
 
-    /* Mobile Responsive */
+    /* ==========================================================================
+       13. MOBILE RESPONSIVE OPTIMIZATIONS
+       ========================================================================== */
     @media (max-width: 992px) {
       .hero-grid, .reason-grid, .calc-wrapper, .technologist-wrapper, .footer-grid, .feature-grid-2col, .map-grid {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 30px;
       }
       .nav-links { display: none; }
-      .calc-wrapper { padding: 30px; }
+      .calc-wrapper { padding: 24px; }
       .video-timeline { grid-template-columns: repeat(2, 1fr); }
-      .fit-container { height: 420px; }
+      .fit-container { height: 380px; }
+
+      /* Mobile Matrix Toggle */
+      .matrix-table-desktop { display: none; }
+      .mobile-matrix-cards { display: flex; }
+
+      .scarcity-banner-box {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+      }
     }
   </style>
 </head>
@@ -877,35 +917,31 @@
 
   <!-- Header Navigation -->
   <header>
-    <a href="#" class="logo">LORIKA GROUP</a>
+    <a href="#" class="logo">LORIKA</a>
     <ul class="nav-links">
       <li><a href="#about">Ателье-Фабрика</a></li>
       <li><a href="#fit">Посадка Plus Size</a></li>
       <li><a href="#calc">Калькулятор ₽</a></li>
       <li><a href="#matrix">Сравнение</a></li>
-      <li><a href="#map">Карта и Логистика</a></li>
       <li><a href="#reviews">Отзывы</a></li>
+      <li><a href="#map">Карта</a></li>
     </ul>
     <div class="header-actions">
-      <div class="scarcity-badge">
-        <span class="pulse-dot"></span>
-        <span>Слотов: 2 из 5</span>
-      </div>
-      <a href="https://wa.me/996555123456" target="_blank" class="btn-black">WhatsApp</a>
+      <a href="https://wa.me/996555123456" target="_blank" class="btn-black" style="padding: 10px 20px; font-size: 0.75rem;">WhatsApp</a>
     </div>
   </header>
 
-  <!-- Hero Section -->
+  <!-- Hero Section (Mobile Cleaned - No Fluff) -->
   <section class="hero section-padding grid-container hairline-bottom">
     <div class="hero-meta">
       <span>г. Бишкек • Кыргызстан</span>
-      <span>Стаж Ларисы: 30+ лет</span>
+      <span>Пошив под ключ</span>
       <span>Сайз Плюс 50–64+</span>
     </div>
 
     <div class="hero-main-title">
-      <h1 class="stretched-title scramble-title">LORIKA GROUP</h1>
-      <p class="section-tag" style="margin-top: 15px;">Ателье-Фабрика Премиального Пошива Женской Одежды</p>
+      <h1 class="stretched-title scramble-title">LORIKA</h1>
+      <p class="section-tag" style="margin-top: 15px;">Швейная Ателье-Фабрика Женской Одежды</p>
     </div>
 
     <div class="hero-grid">
@@ -913,11 +949,20 @@
         <p class="hero-description">
           Пошив женской одежды <strong>Plus Size (50–64+)</strong> под ключ <strong>от 1 150 ₽ за комплект</strong> с точностью элитного Ателье и гарантией брака менее 3% по договору.
         </p>
-        <div style="margin-top: 30px; display: flex; gap: 15px; flex-wrap: wrap;">
+        <div style="margin-top: 24px; display: flex; gap: 12px; flex-wrap: wrap;">
           <span class="tag-pill">Анатомические лекала</span>
           <span class="tag-pill">Закупка на Мадине</span>
           <span class="tag-pill">ОТК &lt;3% брака</span>
           <span class="tag-pill">Честный ЗНАК</span>
+        </div>
+
+        <!-- Scarcity Banner (Ilyahov Style) -->
+        <div class="scarcity-banner-box">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <span class="pulse-dot"></span>
+            <span class="scarcity-text"><strong>Лимит производства:</strong> Принимаем не более 5 новых брендов в месяц</span>
+          </div>
+          <span class="mono" style="font-size: 0.8rem; font-weight: 700; background: var(--text-main); color: var(--bg-cream); padding: 4px 10px;">Свободно: 2 слота</span>
         </div>
       </div>
 
@@ -940,36 +985,36 @@
     </div>
   </section>
 
-  <!-- Interactive Before/After Fit Slider & Direct Interview Quote -->
+  <!-- Interactive Before/After Fit Slider & Editorial Quote -->
   <section id="fit" class="slider-section section-padding hairline-bottom">
     <div class="grid-container">
       <div class="section-header">
         <p class="section-tag">Инженерная Экспертиза Лекал</p>
-        <h2 class="section-title">Сравните посадку: Обычный цех vs Ателье-Фабрика Lorika</h2>
-        <p style="margin-top: 15px; color: var(--text-muted);">Потяните ползунок, чтобы увидеть разницу на реальной Plus Size фигуре (56 размер).</p>
+        <h2 class="section-title">Сравните посадку: Обычный цех vs Ателье-Фабрика LORIKA</h2>
+        <p style="margin-top: 12px; color: var(--text-muted);">Потяните ползунок, чтобы увидеть разницу на реальной Plus Size фигуре (56 размер).</p>
       </div>
 
       <div class="fit-container" id="fitContainer">
         <div class="fit-image fit-before"></div>
         <div class="fit-image fit-after" id="fitAfter"></div>
         <div class="fit-label label-before">Обычный цех: Растянутый ГОСТ (Возврат 40%)</div>
-        <div class="fit-label label-after">Lorika Group: Анатомический крой (0% возвратов)</div>
+        <div class="fit-label label-after">LORIKA: Анатомический крой (0% возвратов)</div>
         <div class="fit-handle" id="fitHandle">
           <div class="fit-handle-circle">&lt;&gt;</div>
         </div>
       </div>
 
-      <!-- Real Interview Quote Callout -->
+      <!-- Real Interview Quote Callout (No Fluff Attribution) -->
       <div class="editorial-quote-box">
         <p class="quote-text">
           «Худенькая девушка оденет что угодно, и на ней это будет смотреться нормально. А пышная женщина не простит плохую посадку! Если грудь перетянута или висит складка на животе — она сразу сделает возврат. Я пропускаю каждую модель через себя, чтобы одежда Plus Size идеально моделировала и стройнила фигуру»
         </p>
-        <div class="quote-author">—— ЛАРИСА, Основатель и главный технолог Lorika Group (из 50-мин интервью)</div>
+        <div class="quote-author">—— ЛАРИСА, главный технолог Швейной Ателье-Фабрики LORIKA</div>
       </div>
     </div>
   </section>
 
-  <!-- Astra Brand Feature 1 & 2: No Forced Size Sets & Direct Honest Sign Labeling -->
+  <!-- Astra Brand Features: No Forced Size Sets & Direct Honest Sign Labeling -->
   <section id="about" class="section-padding grid-container hairline-bottom">
     <div class="section-header">
       <p class="section-tag">Преимущества Для Умных Селлеров</p>
@@ -978,17 +1023,17 @@
 
     <div class="feature-grid-2col">
       <div class="feature-card-large">
-        <span class="tag-pill" style="margin-bottom: 20px;">Гибкий поштучный набор</span>
+        <span class="tag-pill" style="margin-bottom: 16px;">Гибкий поштучный набор</span>
         <h3 class="feature-card-title">Отшив только тех размеров, которые продаются у вас!</h3>
-        <p style="color: #444; font-size: 1.05rem; line-height: 1.7;">
+        <p style="color: #444; font-size: 1rem; line-height: 1.65;">
           Обычные цеха заставляют выкупать жесткие размерные линейки, в итоге крайние размеры (48 или 68) висят мертвым грузом. Если ваша аналитика на Wildberries показывает, что 70% продаж дают размеры 52 и 54 — мы отшьем 70% партии именно в них!
         </p>
       </div>
 
       <div class="feature-card-large">
-        <span class="tag-pill" style="margin-bottom: 20px;">Честный ЗНАК & Баркоды</span>
+        <span class="tag-pill" style="margin-bottom: 16px;">Честный ЗНАК & Баркоды</span>
         <h3 class="feature-card-title">Экономия до 150 000 ₽ на услугах 3PL-фулфилментов!</h3>
-        <p style="color: #444; font-size: 1.05rem; line-height: 1.7;">
+        <p style="color: #444; font-size: 1rem; line-height: 1.65;">
           Наши мастера печатают и наклеивают индивидуальные штрихкоды, DataMatrix коды «Честный ЗНАК» и декларации соответствия ЕАЭС прямо в цеху в Бишкеке. Ваш груз отправляется сразу на склады Коледино, Электросталь или Алматы!
         </p>
       </div>
@@ -1023,7 +1068,7 @@
     </div>
   </section>
 
-  <!-- Interactive Batch Calculator (Rubles) & Fabric Selector -->
+  <!-- Interactive Batch Calculator (Rubles - Mobile Cleaned) -->
   <section id="calc" class="section-padding grid-container hairline-bottom">
     <div class="section-header">
       <p class="section-tag">Интерактивная Экономика в Рублях</p>
@@ -1035,7 +1080,7 @@
         <div class="calc-slider-box">
           <div class="slider-header">
             <span>Размер партии:</span>
-            <span id="qtyVal" class="serif" style="font-size: 1.4rem; font-weight: 700;">300 шт</span>
+            <span id="qtyVal" class="serif" style="font-size: 1.3rem; font-weight: 700;">300 шт</span>
           </div>
           <input type="range" min="100" max="1000" step="50" value="300" class="range-input" id="qtyRange" oninput="updateCalc()">
           
@@ -1047,7 +1092,7 @@
           </div>
         </div>
 
-        <p class="section-tag" style="margin-top: 30px;">Выбор ткани с рынка Мадина:</p>
+        <p class="section-tag" style="margin-top: 24px;">Выбор ткани с рынка Мадина:</p>
         <div class="fabric-tabs">
           <button class="fabric-tab active" onclick="setFabric('chiffon')">Турецкий Шифон</button>
           <button class="fabric-tab" onclick="setFabric('silk')">Шелковый Подклад</button>
@@ -1063,43 +1108,45 @@
         </div>
       </div>
 
+      <!-- Clean Mobile Calculation Card -->
       <div class="calc-results">
         <div>
-          <h3 class="serif" style="font-size: 1.8rem; margin-bottom: 20px;">Прогноз Юнит-Экономики</h3>
+          <h3 class="serif" style="font-size: 1.6rem; margin-bottom: 16px;">Расчет прибыли</h3>
           <div class="res-row">
             <span>Себестоимость единицы:</span>
             <span class="res-val" id="unitCost">1 140 ₽</span>
           </div>
           <div class="res-row">
-            <span>Общие инвестиции в пошив:</span>
+            <span>Инвестиции в пошив:</span>
             <span class="res-val" id="totalCost">342 000 ₽</span>
           </div>
           <div class="res-row">
-            <span>Прогнозируемая выручка WB/Kaspi:</span>
+            <span>Выручка на WB/Kaspi:</span>
             <span class="res-val" id="totalRevenue">1 200 000 ₽</span>
           </div>
-          <div class="res-row" style="border-bottom: none; margin-top: 20px;">
-            <span>Ваша Чистая Прибыль:</span>
+          <div class="res-row" style="border-bottom: none; margin-top: 16px;">
+            <span>Чистая Прибыль:</span>
             <span class="res-val highlight" id="netProfit">858 000 ₽</span>
           </div>
         </div>
 
-        <a href="https://wa.me/996555123456" target="_blank" class="btn-black" style="width: 100%; text-align: center; background: #25D366; border-color: #25D366; margin-top: 30px;">
-          💬 ЗАФИКСИРОВАТЬ ЭТУ ЦЕНУ В WHATSAPP
+        <a href="https://wa.me/996555123456" target="_blank" class="btn-black" style="width: 100%; text-align: center; background: #25D366; border-color: #25D366; margin-top: 24px; padding: 14px;">
+          💬 ЗАФИКСИРОВАТЬ ЦЕНУ В WHATSAPP
         </a>
       </div>
     </div>
   </section>
 
-  <!-- Deep Comparison Matrix Section (5 Alternatives) -->
+  <!-- Deep Comparison Matrix Section (Desktop Table + Mobile Cards) -->
   <section id="matrix" class="section-padding grid-container hairline-bottom">
     <div class="section-header">
       <p class="section-tag">Сравнительный Анализ Рынка</p>
       <h2 class="section-title">Сравнение 5 вариантов пошива для селлеров</h2>
     </div>
 
-    <div style="overflow-x: auto;">
-      <table class="matrix-table">
+    <div class="matrix-wrapper">
+      <!-- Desktop Table -->
+      <table class="matrix-table matrix-table-desktop">
         <thead>
           <tr>
             <th>Параметр</th>
@@ -1107,7 +1154,7 @@
             <th>Фабрики Москвы / РФ</th>
             <th>Турция (Стамбул)</th>
             <th>Китай (Гуанчжоу)</th>
-            <th style="background: var(--text-main); color: var(--bg-cream);">Lorika Group</th>
+            <th style="background: var(--text-main); color: var(--bg-cream);">Ателье-Фабрика LORIKA</th>
           </tr>
         </thead>
         <tbody>
@@ -1153,14 +1200,41 @@
           </tr>
         </tbody>
       </table>
+
+      <!-- Mobile Accordion Cards (Clean & Fast on Phones) -->
+      <div class="mobile-matrix-cards">
+        <div class="mobile-matrix-card active-lorika">
+          <div class="mobile-card-header" style="color: #25D366;">★ АТЕЛЬЕ-ФАБРИКА LORIKA (НАШ СТАНДАРТ)</div>
+          <div class="mobile-card-row"><span>Себестоимость:</span> <strong>1 150 – 1 400 ₽</strong></div>
+          <div class="mobile-card-row"><span>Брак:</span> <strong>Меньше 3% (ОТК)</strong></div>
+          <div class="mobile-card-row"><span>Выкройки:</span> <strong>Анатомические Plus Size</strong></div>
+          <div class="mobile-card-row"><span>Сроки:</span> <strong>7 – 10 дней</strong></div>
+          <div class="mobile-card-row"><span>Маркировка:</span> <strong>Прямо в цеху в Бишкеке</strong></div>
+        </div>
+
+        <div class="mobile-matrix-card">
+          <div class="mobile-card-header">Надомные цеха Бишкека</div>
+          <div class="mobile-card-row"><span>Себестоимость:</span> 800 – 1 000 ₽</div>
+          <div class="mobile-card-row"><span>Брак:</span> ❌ 15% – 20% (Высокий)</div>
+          <div class="mobile-card-row"><span>Сроки:</span> ❌ 30 – 60 дней</div>
+        </div>
+
+        <div class="mobile-matrix-card">
+          <div class="mobile-card-header">Фабрики Москвы / РФ</div>
+          <div class="mobile-card-row"><span>Себестоимость:</span> ❌ 2 500 – 4 000 ₽ (Дорого)</div>
+          <div class="mobile-card-row"><span>Брак:</span> ⚠️ 5% – 10%</div>
+          <div class="mobile-card-row"><span>Сроки:</span> ⚠️ 20 – 30 дней</div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- 1-Minute Production Process Section -->
+  <!-- 1-Minute Production Process Section (Warm & Inviting Header) -->
   <section id="process" class="section-padding grid-container hairline-bottom">
     <div class="section-header">
       <p class="section-tag">Прозрачность Процесса</p>
-      <h2 class="section-title">60 секунд по фабрике Lorika Group</h2>
+      <h2 class="section-title">Добро пожаловать на нашу швейную фабрику LORIKA</h2>
+      <p style="margin-top: 10px; color: var(--text-muted);">Видео-экскурсия по цеху и пошаговым этапам пошива вашей партии.</p>
     </div>
 
     <div class="video-mockup-card">
@@ -1169,10 +1243,10 @@
         <span class="mono" style="opacity: 0.5;">HD 1080P</span>
       </div>
 
-      <div style="height: 300px; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.03); margin: 30px 0; border: 1px dashed var(--border-dark);">
+      <div style="height: 280px; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.03); margin: 24px 0; border: 1px dashed var(--border-dark);">
         <div style="text-align: center;">
-          <div style="width: 60px; height: 60px; border-radius: 50%; border: 2px solid #FFF; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px;">▶</div>
-          <p class="mono" style="font-size: 0.9rem;">НАЖМИТЕ ДЛЯ ПРОСМОТРА 1-МИНУТНОЙ ЭКСКУРСИИ ПО ЦЕХУ</p>
+          <div style="width: 54px; height: 54px; border-radius: 50%; border: 2px solid #FFF; display: flex; align-items: center; justify-content: center; margin: 0 auto 14px;">▶</div>
+          <p class="mono" style="font-size: 0.85rem;">НАЖМИТЕ ДЛЯ ПРОСМОТРА ВИДЕО-ЭКСКУРСИИ ПО ЦЕХУ</p>
         </div>
       </div>
 
@@ -1205,10 +1279,10 @@
     </div>
   </section>
 
-  <!-- Infinite B&W WhatsApp Review Carousel -->
+  <!-- Infinite B&W WhatsApp Review Carousel (Clean Header) -->
   <section id="reviews" class="carousel-section section-padding">
-    <div class="grid-container" style="margin-bottom: 40px;">
-      <p class="section-tag" style="color: #888;">Реальный Опыт Клиентов</p>
+    <div class="grid-container" style="margin-bottom: 30px;">
+      <p class="section-tag" style="color: #888;">Отзывы Наших Клиентов</p>
       <h2 class="section-title" style="color: #FFF;">Переписки в WhatsApp с селлерами</h2>
     </div>
 
@@ -1265,52 +1339,52 @@
     </div>
   </section>
 
-  <!-- Interactive Yandex Map & Logistics Transit Hub -->
+  <!-- Interactive Yandex Map & Logistics Hub -->
   <section id="map" class="section-padding grid-container hairline-bottom">
     <div class="section-header">
       <p class="section-tag">География & Доставка</p>
-      <h2 class="section-title">Фабрика в Бишкеке и экспресс-карго в СНГ</h2>
+      <h2 class="section-title">Карта производства и сроки отправки карго</h2>
     </div>
 
-    <div class="map-grid">
-      <div>
-        <iframe class="map-frame" src="https://yandex.ru/map-widget/v1/?ll=74.603701%2C42.874621&z=12" frameborder="0" allowfullscreen="true"></iframe>
-      </div>
+    <div style="margin-bottom: 30px;">
+      <h3 class="serif" style="font-size: 1.5rem; margin-bottom: 16px;">Сроки Карго-Доставки из Бишкека</h3>
+      <table class="transit-table">
+        <thead>
+          <tr>
+            <th>Направление / Город</th>
+            <th>Сроки доставки</th>
+            <th>Тип отправки</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Москва / Подмосковье (WB)</strong></td>
+            <td>5 – 7 дней</td>
+            <td>Прямая авто-фура</td>
+          </tr>
+          <tr>
+            <td><strong>Алматы / Астана (Kaspi)</strong></td>
+            <td>1 – 2 дня</td>
+            <td>Экспресс-карго</td>
+          </tr>
+          <tr>
+            <td><strong>Казань / Поволжье (WB/Ozon)</strong></td>
+            <td>5 дней</td>
+            <td>Прямой рейс</td>
+          </tr>
+          <tr>
+            <td><strong>Новосибирск / Сибирь</strong></td>
+            <td>4 дня</td>
+            <td>Авто-терминал</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
-      <div>
-        <h3 class="serif" style="font-size: 1.8rem; margin-bottom: 20px;">Сроки Карго-Доставки из Бишкека</h3>
-        <table class="transit-table">
-          <thead>
-            <tr>
-              <th>Направление / Город</th>
-              <th>Сроки доставки</th>
-              <th>Тип отправки</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Москва / Подмосковье (WB)</strong></td>
-              <td>5 – 7 дней</td>
-              <td>Прямая авто-фура</td>
-            </tr>
-            <tr>
-              <td><strong>Алматы / Астана (Kaspi)</strong></td>
-              <td>1 – 2 дня</td>
-              <td>Экспресс-карго</td>
-            </tr>
-            <tr>
-              <td><strong>Казань / Поволжье (WB/Ozon)</strong></td>
-              <td>5 дней</td>
-              <td>Прямой рейс</td>
-            </tr>
-            <tr>
-              <td><strong>Новосибирск / Сибирь</strong></td>
-              <td>4 дня</td>
-              <td>Авто-терминал</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+    <!-- Map Embedded at Very Bottom -->
+    <div style="margin-top: 30px;">
+      <p class="section-tag" style="margin-bottom: 10px;">Интерактивная карта фабрики (г. Бишкек):</p>
+      <iframe class="map-frame" src="https://yandex.ru/map-widget/v1/?ll=74.603701%2C42.874621&z=12" frameborder="0" allowfullscreen="true"></iframe>
     </div>
   </section>
 
@@ -1320,20 +1394,20 @@
       <div class="larisa-photo"></div>
 
       <div>
-        <p class="section-tag">Основатель и Главный Технолог</p>
-        <h2 class="serif" style="font-size: 2.8rem; margin-bottom: 24px;">Лариса</h2>
-        <p style="font-size: 1.1rem; line-height: 1.7; color: #333; margin-bottom: 30px;">
+        <p class="section-tag">Главный Технолог LORIKA</p>
+        <h2 class="serif" style="font-size: 2.6rem; margin-bottom: 20px;">Лариса</h2>
+        <p style="font-size: 1.05rem; line-height: 1.7; color: #333; margin-bottom: 24px;">
           «Здравствуйте! Я занимаюсь пошивом более 30 лет. Швейное дело — это моя инженерная страсть. Я лично выезжаю на закупку тканей на Мадину, разрабатываю конструктив выкроек Plus Size и ручаюсь за каждый шов в цеху. Давайте создадим ваш первый бестселлер с маржой 70%+!»
         </p>
 
         <div style="display: flex; gap: 20px;">
           <div>
-            <div class="serif" style="font-size: 2rem; font-weight: 700;">30+</div>
-            <div class="mono" style="font-size: 0.75rem; color: #666;">ЛЕТ ОПЫТА В ЛЕКАЛАХ</div>
+            <div class="serif" style="font-size: 1.8rem; font-weight: 700;">30+</div>
+            <div class="mono" style="font-size: 0.72rem; color: #666;">ЛЕТ ОПЫТА В ЛЕКАЛАХ</div>
           </div>
           <div style="border-left: 1px solid var(--border-thin); padding-left: 20px;">
-            <div class="serif" style="font-size: 2rem; font-weight: 700;">&lt;3%</div>
-            <div class="mono" style="font-size: 0.75rem; color: #666;">ГАРАНТИЯ БРАКА ОТК</div>
+            <div class="serif" style="font-size: 1.8rem; font-weight: 700;">&lt;3%</div>
+            <div class="mono" style="font-size: 0.72rem; color: #666;">ГАРАНТИЯ БРАКА ОТК</div>
           </div>
         </div>
       </div>
@@ -1345,28 +1419,28 @@
     <div class="grid-container">
       <div class="footer-grid">
         <div>
-          <a href="#" class="logo" style="color: #FFF;">LORIKA GROUP</a>
-          <p style="margin-top: 20px; color: #AAA; font-size: 0.95rem; max-width: 400px;">
-            Первая Ателье-Фабрика контрактного пошива женской одежды Plus Size в Бишкеке. Доставка на склады Wildberries, Ozon и Kaspi.kz.
+          <a href="#" class="logo" style="color: #FFF;">LORIKA</a>
+          <p style="margin-top: 16px; color: #AAA; font-size: 0.9rem; max-width: 380px;">
+            Швейная Ателье-Фабрика контрактного пошива женской одежды Plus Size в Бишкеке. Доставка на склады Wildberries, Ozon и Kaspi.kz.
           </p>
         </div>
 
         <div>
-          <h4 class="mono" style="color: #FFF; margin-bottom: 20px; font-size: 0.85rem;">НАВИГАЦИЯ</h4>
+          <h4 class="mono" style="color: #FFF; margin-bottom: 16px; font-size: 0.8rem;">НАВИГАЦИЯ</h4>
           <p><a href="#about" style="color: #AAA; text-decoration: none;">Ателье-Фабрика</a></p>
           <p><a href="#fit" style="color: #AAA; text-decoration: none;">Посадка Plus Size</a></p>
           <p><a href="#calc" style="color: #AAA; text-decoration: none;">Калькулятор ₽</a></p>
-          <p><a href="#map" style="color: #AAA; text-decoration: none;">Карта и Логистика</a></p>
+          <p><a href="#map" style="color: #AAA; text-decoration: none;">Карта и Доставка</a></p>
         </div>
 
         <div>
-          <h4 class="mono" style="color: #FFF; margin-bottom: 20px; font-size: 0.85rem;">КОНТАКТЫ</h4>
+          <h4 class="mono" style="color: #FFF; margin-bottom: 16px; font-size: 0.8rem;">КОНТАКТЫ</h4>
           <p style="color: #AAA;">Бишкек, Кыргызстан</p>
           <p style="color: #AAA;">WhatsApp: +996 555 123 456</p>
         </div>
       </div>
 
-      <div style="border-top: 1px solid var(--border-dark); padding-top: 30px; display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 0.75rem; color: #666;">
+      <div style="border-top: 1px solid var(--border-dark); padding-top: 24px; display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 0.72rem; color: #666;">
         <span>© 2026 LORIKA GROUP. ALL RIGHTS RESERVED.</span>
         <span>DESIGNED BY $1M MARKETING ENGINE</span>
       </div>
@@ -1375,7 +1449,7 @@
 
   <!-- Floating WhatsApp Trigger -->
   <a href="https://wa.me/996555123456" target="_blank" class="floating-whatsapp" title="Задать вопрос Ларисе">
-    <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-0.999 3.648 3.742-.981z"/></svg>
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-0.999 3.648 3.742-.981z"/></svg>
   </a>
 
   <!-- JavaScript Interactions -->
