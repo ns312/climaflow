@@ -169,7 +169,7 @@
       border-bottom: 1px solid var(--border-thin);
     }
 
-    /* Premium Animated Scarcity Banner Box */
+    /* Scarcity Banner Box */
     .scarcity-banner-box {
       background: var(--bg-card);
       border: 1px solid var(--text-main);
@@ -200,7 +200,6 @@
       letter-spacing: 0.5px;
     }
 
-    /* Premium Animated Badge */
     .scarcity-badge-animated {
       font-family: var(--font-mono);
       font-size: 0.8rem;
@@ -274,7 +273,7 @@
 
     .nav-links {
       display: flex;
-      gap: 30px;
+      gap: 28px;
       list-style: none;
     }
 
@@ -491,25 +490,71 @@
     }
 
     /* ==========================================================================
-       5. ASTRA BRAND FEATURES: NO FORCED SIZE SETS & CHESTNY ZNAK
+       5. OUR MODELS SHOWCASE SECTION (НАШИ МОДЕЛИ PLUS SIZE)
        ========================================================================== */
-    .feature-grid-2col {
+    .models-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
       margin-top: 50px;
     }
 
-    .feature-card-large {
-      padding: 40px;
-      border: 1px solid var(--border-thin);
+    .model-card {
       background: var(--bg-card);
+      border: 1px solid var(--border-thin);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.3s, box-shadow 0.3s;
     }
 
-    .feature-card-title {
+    .model-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+      border-color: var(--text-main);
+    }
+
+    .model-img-wrapper {
+      position: relative;
+      width: 100%;
+      height: 380px;
+      overflow: hidden;
+      background: #EFEFEF;
+    }
+
+    .model-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(100%) contrast(110%);
+      transition: filter 0.3s, transform 0.5s;
+    }
+
+    .model-card:hover .model-img {
+      filter: grayscale(0%) contrast(100%);
+      transform: scale(1.04);
+    }
+
+    .model-body {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      justify-content: space-between;
+    }
+
+    .model-name {
       font-family: var(--font-serif);
-      font-size: 1.6rem;
-      margin-bottom: 16px;
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+    }
+
+    .model-desc {
+      font-size: 0.9rem;
+      color: #555;
+      line-height: 1.6;
+      margin-bottom: 20px;
     }
 
     /* ==========================================================================
@@ -554,7 +599,7 @@
     }
 
     /* ==========================================================================
-       7. INTERACTIVE BATCH CALCULATOR (CLEAN MOBILE LABELS UNDER NUMBERS)
+       7. INTERACTIVE BATCH CALCULATOR
        ========================================================================== */
     .calc-wrapper {
       display: grid;
@@ -614,11 +659,10 @@
       justify-content: space-between;
     }
 
-    /* Optimized Result Row Layout with Small Labels Under Numbers */
     .res-card-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 20px;
+      gap: 16px;
       margin-top: 10px;
     }
 
@@ -645,7 +689,7 @@
     }
 
     .res-item-value.net {
-      font-size: 1.6rem;
+      font-size: 1.55rem;
       color: #25D366;
     }
 
@@ -900,7 +944,7 @@
     }
 
     /* ==========================================================================
-       12. TRUST HUB & FOOTER
+       12. TECHNOLOGIST TRUST HUB (WITH REAL PHOTO OF LARISA)
        ========================================================================== */
     .technologist-wrapper {
       display: grid;
@@ -909,14 +953,18 @@
       align-items: center;
     }
 
-    .larisa-photo {
+    .larisa-photo-real {
       width: 100%;
-      height: 550px;
-      background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1000&auto=format&fit=crop');
-      background-size: cover;
-      background-position: center;
+      height: 560px;
+      object-fit: cover;
+      object-position: center top;
       filter: grayscale(100%) contrast(110%);
       border: 1px solid var(--text-main);
+      transition: filter 0.5s ease;
+    }
+
+    .larisa-photo-real:hover {
+      filter: grayscale(0%) contrast(100%);
     }
 
     footer {
@@ -963,7 +1011,7 @@
 
     /* Mobile Responsive Optimizations */
     @media (max-width: 992px) {
-      .hero-grid, .reason-grid, .calc-wrapper, .technologist-wrapper, .footer-grid, .feature-grid-2col, .map-grid {
+      .hero-grid, .reason-grid, .calc-wrapper, .technologist-wrapper, .footer-grid, .feature-grid-2col, .map-grid, .models-grid {
         grid-template-columns: 1fr;
         gap: 30px;
       }
@@ -972,6 +1020,7 @@
       .res-card-grid { grid-template-columns: 1fr; gap: 12px; }
       .video-timeline { grid-template-columns: repeat(2, 1fr); }
       .fit-container { height: 380px; }
+      .larisa-photo-real { height: 420px; }
 
       .matrix-table-desktop { display: none; }
       .mobile-matrix-cards { display: flex; }
@@ -989,34 +1038,35 @@
   <!-- Magnetic Cursor Follower -->
   <div class="cursor-follower" id="cursor"></div>
 
-  <!-- Header Navigation with Official LORIKA+ Logo -->
+  <!-- Header Navigation with Official LORIKA+ Logo and Green WhatsApp Button -->
   <header>
     <a href="#">
       <img src="lorika_logo.png" alt="LORIKA+ Красота в деталях" class="header-logo-img">
     </a>
     <ul class="nav-links">
       <li><a href="#about">Ателье-Фабрика</a></li>
+      <li><a href="#models">Наши модели</a></li>
       <li><a href="#fit">Посадка Plus Size</a></li>
       <li><a href="#calc">Калькулятор ₽</a></li>
       <li><a href="#matrix">Сравнение</a></li>
       <li><a href="#reviews">Отзывы</a></li>
-      <li><a href="#map">Карта</a></li>
+      <li><a href="#map">Контакты</a></li>
     </ul>
     <div class="header-actions">
-      <!-- Green Action WhatsApp Button -->
-      <a href="https://wa.me/996555123456" target="_blank" class="btn-whatsapp">
+      <!-- Green Action WhatsApp Button with Direct Phone +996 703 326 999 -->
+      <a href="https://wa.me/996703326999" target="_blank" class="btn-whatsapp">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-0.999 3.648 3.742-.981z"/></svg>
         <span>WhatsApp</span>
       </a>
     </div>
   </header>
 
-  <!-- Hero Section (Cleaned Metadata - No Clutter) -->
+  <!-- Hero Section -->
   <section class="hero section-padding grid-container hairline-bottom">
     <div class="hero-meta">
       <span>Пошив под ключ</span>
       <span>•</span>
-      <span>Женская Одежда Plus Size</span>
+      <span>Женская Одежда Plus Size (50-64+)</span>
     </div>
 
     <div class="hero-main-title">
@@ -1050,7 +1100,7 @@
         <h3 class="form-title">Рассчитать партию за 15 сек</h3>
         <p class="form-subtitle">Зафиксируйте оптовую цену от 1 150 ₽/шт и получите расчет в WhatsApp.</p>
         
-        <form onsubmit="event.preventDefault(); alert('Расчет отправлен в WhatsApp!');">
+        <form onsubmit="event.preventDefault(); alert('Расчет отправлен в WhatsApp на номер +996 703 326 999!');">
           <div class="input-group">
             <label>Ваш номер WhatsApp</label>
             <input type="tel" class="input-control" placeholder="+7 (___) ___-__-__" required>
@@ -1070,7 +1120,7 @@
     <div class="grid-container">
       <div class="section-header">
         <p class="section-tag">Инженерная Экспертиза Лекал</p>
-        <h2 class="section-title">Сравните посадку: Обычный цех vs Ателье-Фабрика LORIKA</h2>
+        <h2 class="section-title">Сравните посадку: Обычный цех vs Ателье-Фабрика LORIKA+</h2>
         <p style="margin-top: 12px; color: var(--text-muted);">Потяните ползунок, чтобы увидеть разницу на реальной Plus Size фигуре (56 размер).</p>
       </div>
 
@@ -1090,6 +1140,65 @@
           «Худенькая девушка оденет что угодно, и на ней это будет смотреться нормально. А пышная женщина не простит плохую посадку! Если грудь перетянута или висит складка на животе — она сразу сделает возврат. Я пропускаю каждую модель через себя, чтобы одежда Plus Size идеально моделировала и стройнила фигуру»
         </p>
         <div class="quote-author">—— ЛАРИСА, главный технолог Швейной Ателье-Фабрики LORIKA+</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR MODELS SHOWCASE SECTION (НАШИ МОДЕЛИ) -->
+  <section id="models" class="section-padding grid-container hairline-bottom">
+    <div class="section-header">
+      <p class="section-tag">Образцы и Каталог</p>
+      <h2 class="section-title">Наши модели женской одежды Plus Size</h2>
+      <p style="margin-top: 10px; color: var(--text-muted);">Вы можете отшить эти модели под своим брендом или прислать эскиз/фото вашей модели!</p>
+    </div>
+
+    <div class="models-grid">
+      <!-- Model 1: Юбка Миди -->
+      <div class="model-card">
+        <div class="model-img-wrapper">
+          <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=800&auto=format&fit=crop" alt="Юбка миди десятиклинка" class="model-img">
+        </div>
+        <div class="model-body">
+          <div>
+            <h3 class="model-name">Юбка миди «Десятиклинка»</h3>
+            <p class="model-desc">Элегантная модель из сетки на хлопковом подкладе. Двойной покрой десятиклинка добавляет образу легкости. Идеальная посадка на размеры 50–64+.</p>
+          </div>
+          <a href="https://wa.me/996703326999?text=Здравствуйте!%20Хочу%20запросить%20лекало%20модели%20Юбка%20миди" target="_blank" class="btn-whatsapp" style="width: 100%; font-size: 0.75rem;">
+            <span>💬 Запросить лекало в WhatsApp</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Model 2: Платье-Жатка -->
+      <div class="model-card">
+        <div class="model-img-wrapper">
+          <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=800&auto=format&fit=crop" alt="Платье жатка из шифона" class="model-img">
+        </div>
+        <div class="model-body">
+          <div>
+            <h3 class="model-name">Платье-жатка «Бутик Москвы»</h3>
+            <p class="model-desc">Спец-технология складки из турецкого шифона на шелковом подкладе. Скопировано с модели из бутика за 28 000 ₽. Скрывает животик и бедра.</p>
+          </div>
+          <a href="https://wa.me/996703326999?text=Здравствуйте!%20Хочу%20запросить%20лекало%20модели%20Платье-жатка" target="_blank" class="btn-whatsapp" style="width: 100%; font-size: 0.75rem;">
+            <span>💬 Запросить лекало в WhatsApp</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Model 3: Костюм Тройка -->
+      <div class="model-card">
+        <div class="model-img-wrapper">
+          <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=800&auto=format&fit=crop" alt="Костюм тройка жилетка" class="model-img">
+        </div>
+        <div class="model-body">
+          <div>
+            <h3 class="model-name">Костюм-Тройка «Жилетка + Рубашка»</h3>
+            <p class="model-desc">Стильный многослойный лук для женщин 35–50+ лет. Высокомаржинальный хит продаж для Wildberries, Ozon и Kaspi.kz.</p>
+          </div>
+          <a href="https://wa.me/996703326999?text=Здравствуйте!%20Хочу%20запросить%20лекало%20модели%20Костюм-Тройка" target="_blank" class="btn-whatsapp" style="width: 100%; font-size: 0.75rem;">
+            <span>💬 Запросить лекало в WhatsApp</span>
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -1148,7 +1257,7 @@
     </div>
   </section>
 
-  <!-- Interactive Batch Calculator (Mobile Clean Layout with Labels Under Numbers) -->
+  <!-- Interactive Batch Calculator (Mobile Clean Layout with Small Labels Under Big Numbers) -->
   <section id="calc" class="section-padding grid-container hairline-bottom">
     <div class="section-header">
       <p class="section-tag">Интерактивная Экономика в Рублях</p>
@@ -1216,7 +1325,7 @@
           </div>
         </div>
 
-        <a href="https://wa.me/996555123456" target="_blank" class="btn-whatsapp" style="width: 100%; justify-content: center; padding: 16px; margin-top: 24px; font-size: 0.85rem;">
+        <a href="https://wa.me/996703326999" target="_blank" class="btn-whatsapp" style="width: 100%; justify-content: center; padding: 16px; margin-top: 24px; font-size: 0.85rem;">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-0.999 3.648 3.742-.981z"/></svg>
           <span>ЗАФИКСИРОВАТЬ ЦЕНУ В WHATSAPP</span>
         </a>
@@ -1426,15 +1535,29 @@
     </div>
   </section>
 
-  <!-- Interactive Yandex Map & Logistics Hub -->
+  <!-- Interactive Yandex Map & Logistics Hub with Official Contact Card -->
   <section id="map" class="section-padding grid-container hairline-bottom">
     <div class="section-header">
       <p class="section-tag">География & Доставка</p>
-      <h2 class="section-title">Карта производства и сроки отправки карго</h2>
+      <h2 class="section-title">Контакты фабрики и сроки отправки карго</h2>
+    </div>
+
+    <!-- Official Contact Card Details -->
+    <div style="background: var(--bg-card); border: 1px solid var(--text-main); padding: 36px; margin-bottom: 40px; text-align: center;">
+      <h3 class="serif" style="font-size: 1.8rem; margin-bottom: 16px;">Швейная Ателье-Фабрика LORIKA+</h3>
+      <p class="mono" style="font-size: 1.1rem; margin-bottom: 8px;">
+        📱 WhatsApp / Тел: <a href="https://wa.me/996703326999" target="_blank" style="color: #25D366; text-decoration: none; font-weight: 700;">+996 703 326 999</a>
+      </p>
+      <p class="mono" style="font-size: 0.95rem; color: #555; margin-bottom: 8px;">
+        ✉️ Email: <a href="mailto:lara100573@gmail.com" style="color: var(--text-main); text-decoration: underline;">lara100573@gmail.com</a>
+      </p>
+      <p class="mono" style="font-size: 0.95rem; color: #111;">
+        📍 <strong>Адрес:</strong> Кыргызстан, г. Бишкек, ул. Ласло-Мессароша 76/4
+      </p>
     </div>
 
     <div style="margin-bottom: 30px;">
-      <h3 class="serif" style="font-size: 1.5rem; margin-bottom: 16px;">Сроки Карго-Доставки из Бишкека</h3>
+      <h3 class="serif" style="font-size: 1.5rem; margin-bottom: 16px;">Сроки Экспресс-Доставки из Бишкека</h3>
       <table class="transit-table">
         <thead>
           <tr>
@@ -1469,21 +1592,22 @@
     </div>
 
     <div style="margin-top: 30px;">
-      <p class="section-tag" style="margin-bottom: 10px;">Интерактивная карта фабрики (г. Бишкек):</p>
-      <iframe class="map-frame" src="https://yandex.ru/map-widget/v1/?ll=74.603701%2C42.874621&z=12" frameborder="0" allowfullscreen="true"></iframe>
+      <p class="section-tag" style="margin-bottom: 10px;">Интерактивная карта (г. Бишкек, ул. Ласло-Мессароша 76/4):</p>
+      <iframe class="map-frame" src="https://yandex.ru/map-widget/v1/?ll=74.524621%2C42.874621&z=14" frameborder="0" allowfullscreen="true"></iframe>
     </div>
   </section>
 
-  <!-- Technologist Trust Hub & Footer with Official LORIKA+ Logo -->
+  <!-- Technologist Trust Hub (WITH REAL PHOTO OF LARISA IN RED SWEATER) -->
   <section class="section-padding grid-container">
     <div class="technologist-wrapper">
-      <div class="larisa-photo"></div>
+      <!-- REAL PHOTO OF LARISA IN RED SWEATER AT WORKSTATION -->
+      <img src="larisa_red_sweater.jpg" alt="Лариса — Основатель и Главный Технолог LORIKA+" class="larisa-photo-real">
 
       <div>
-        <p class="section-tag">Главный Технолог LORIKA+</p>
+        <p class="section-tag">Основатель и Главный Технолог LORIKA+</p>
         <h2 class="serif" style="font-size: 2.6rem; margin-bottom: 20px;">Лариса</h2>
         <p style="font-size: 1.05rem; line-height: 1.7; color: #333; margin-bottom: 24px;">
-          «Здравствуйте! Я занимаюсь пошивом более 30 лет. Швейное дело — это моя инженерная страсть. Я лично выезжаю на закупку тканей на Мадину, разрабатываю конструктив выкроек Plus Size и ручаюсь за каждый шов в цеху. Давайте создадим ваш первый бестселлер с маржой 70%+!»
+          «Здравствуйте! Я занимаюсь пошивом женской одежды уже более 30 лет. Швейное дело — это моя инженерная страсть. Я лично выезжаю на закупку тканей на Мадину, разрабатываю конструктив выкроек Plus Size (50–64+) и ручаюсь за каждый шов в нашем цеху. Давайте отшьем ваш первый бестселлер с маржой 70%+!»
         </p>
 
         <div style="display: flex; gap: 20px;">
@@ -1500,7 +1624,7 @@
     </div>
   </section>
 
-  <!-- Footer with LORIKA+ Logo Artwork -->
+  <!-- Footer with LORIKA+ Logo Artwork & Official Contacts -->
   <footer>
     <div class="grid-container">
       <div class="footer-grid">
@@ -1514,15 +1638,17 @@
         <div>
           <h4 class="mono" style="color: #FFF; margin-bottom: 16px; font-size: 0.8rem;">НАВИГАЦИЯ</h4>
           <p><a href="#about" style="color: #AAA; text-decoration: none;">Ателье-Фабрика</a></p>
+          <p><a href="#models" style="color: #AAA; text-decoration: none;">Наши модели</a></p>
           <p><a href="#fit" style="color: #AAA; text-decoration: none;">Посадка Plus Size</a></p>
           <p><a href="#calc" style="color: #AAA; text-decoration: none;">Калькулятор ₽</a></p>
-          <p><a href="#map" style="color: #AAA; text-decoration: none;">Карта и Доставка</a></p>
+          <p><a href="#map" style="color: #AAA; text-decoration: none;">Контакты</a></p>
         </div>
 
         <div>
           <h4 class="mono" style="color: #FFF; margin-bottom: 16px; font-size: 0.8rem;">КОНТАКТЫ</h4>
-          <p style="color: #AAA;">Бишкек, Кыргызстан</p>
-          <p style="color: #AAA;">WhatsApp: +996 555 123 456</p>
+          <p style="color: #AAA;">📍 г. Бишкек, ул. Ласло-Мессароша 76/4</p>
+          <p style="color: #AAA;">📱 <a href="https://wa.me/996703326999" target="_blank" style="color: #25D366; text-decoration: none; font-weight: 700;">+996 703 326 999</a></p>
+          <p style="color: #AAA;">✉️ <a href="mailto:lara100573@gmail.com" style="color: #AAA; text-decoration: underline;">lara100573@gmail.com</a></p>
         </div>
       </div>
 
@@ -1533,8 +1659,8 @@
     </div>
   </footer>
 
-  <!-- Floating WhatsApp Trigger -->
-  <a href="https://wa.me/996555123456" target="_blank" class="floating-whatsapp" title="Задать вопрос Ларисе">
+  <!-- Floating WhatsApp Trigger with Direct Phone +996 703 326 999 -->
+  <a href="https://wa.me/996703326999" target="_blank" class="floating-whatsapp" title="Задать вопрос Ларисе в WhatsApp">
     <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-0.999 3.648 3.742-.981z"/></svg>
   </a>
 
