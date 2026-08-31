@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ASTRA BRAND | Швейное Производство Одежды 50-60 Размеров в Бишкеке</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Inter:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       1. GLOBAL DESIGN SYSTEM (ASTRA BRAND EDITORIAL LUXURY B&W)
+       ========================================================================== */
+    :root {
+      --bg-cream: #F8F6F0;
+      --bg-card: #FFFFFF;
+      --bg-dark: #0E0E0E;
+      --text-main: #111111;
+      --text-muted: #666666;
+      --text-light: #F8F6F0;
+      --border-thin: rgba(17, 17, 17, 0.15);
+      --border-dark: rgba(255, 255, 255, 0.15);
+      --accent-green: #25D366;
+      --accent-green-dark: #128C7E;
+      --font-serif: 'Bodoni Moda', serif;
+      --font-sans: 'Inter', sans-serif;
+      --font-mono: 'Space Mono', monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      cursor: default;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      background-color: var(--bg-cream);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Magnetic Cursor Follower */
+    .cursor-follower {
+      position: fixed;
+      width: 32px;
+      height: 32px;
+      border: 1px solid var(--text-main);
+      border-radius: 50%;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      transition: transform 0.15s ease-out, width 0.2s, height 0.2s, background-color 0.2s;
+      z-index: 9999;
+      mix-blend-mode: difference;
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .cursor-follower.active {
+      width: 54px;
+      height: 54px;
+      background: rgba(0, 0, 0, 0.1);
+      border-color: var(--text-main);
+    }
+
+    a, button, input, select {
+      cursor: pointer !important;
+    }
+
+    .serif { font-family: var(--font-serif); }
+    .mono { font-family: var(--font-mono); }
+    
+    .stretched-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.8rem, 7vw, 6.2rem);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      line-height: 0.95;
+      transform: scaleY(1.08);
+      transform-origin: top left;
+    }
+
+    .tag-pill {
+      display: inline-block;
+      padding: 8px 18px;
+      border: 1px solid var(--text-main);
+      border-radius: 40px;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      background: transparent;
+      transition: all 0.3s ease;
+    }
+
+    .tag-pill:hover {
+      background: var(--text-main);
+      color: var(--bg-cream);
+    }
+
+    .btn-black {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px 36px;
+      background-color: var(--text-main);
+      color: var(--bg-cream);
+      border: 1px solid var(--text-main);
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      text-decoration: none;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .btn-black:hover {
+      background-color: transparent;
+      color: var(--text-main);
+    }
+
+    .btn-whatsapp {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 28px;
+      background-color: var(--accent-green);
+      color: #FFFFFF;
+      border: 1px solid var(--accent-green);
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-decoration: none;
+      border-radius: 4px;
+      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.25);
+      transition: all 0.3s ease;
+    }
+
+    .btn-whatsapp:hover {
+      background-color: var(--accent-green-dark);
+      border-color: var(--accent-green-dark);
+      box-shadow: 0 6px 16px rgba(18, 140, 126, 0.35);
+    }
+
+    .section-padding {
+      padding: 90px 8vw;
+    }
+
+    .grid-container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .hairline-bottom {
+      border-bottom: 1px solid var(--border-thin);
+    }
+
+    /* Scarcity Banner Box */
+    .scarcity-banner-box {
+      background: var(--bg-card);
+      border: 1px solid var(--text-main);
+      padding: 22px 28px;
+      margin-top: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .scarcity-banner-box::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: #E63946;
+    }
+
+    .scarcity-text {
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .scarcity-badge-animated {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      font-weight: 700;
+      background: var(--text-main);
+      color: var(--bg-cream);
+      padding: 6px 14px;
+      border-radius: 2px;
+      position: relative;
+      animation: subtleGlow 3s ease-in-out infinite;
+    }
+
+    @keyframes subtleGlow {
+      0% { box-shadow: 0 0 0 0 rgba(17, 17, 17, 0.4); }
+      50% { box-shadow: 0 0 12px 3px rgba(17, 17, 17, 0.25); }
+      100% { box-shadow: 0 0 0 0 rgba(17, 17, 17, 0.4); }
+    }
+
+    /* Editorial Process Box */
+    .process-highlight-box {
+      background: var(--bg-card);
+      border-left: 4px solid var(--text-main);
+      padding: 32px;
+      margin: 30px 0;
+      border-top: 1px solid var(--border-thin);
+      border-right: 1px solid var(--border-thin);
+      border-bottom: 1px solid var(--border-thin);
+    }
+
+    .process-text {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: #111;
+    }
+
+    /* ==========================================================================
+       2. HEADER & NAVIGATION
+       ========================================================================== */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 16px 8vw;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(248, 246, 240, 0.95);
+      backdrop-filter: blur(12px);
+      z-index: 1000;
+      border-bottom: 1px solid var(--border-thin);
+    }
+
+    .logo-text {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: var(--text-main);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-main);
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      opacity: 0.7;
+      transition: opacity 0.3s;
+    }
+
+    .nav-links a:hover {
+      opacity: 1;
+    }
+
+    /* ==========================================================================
+       3. HERO COVER SECTION
+       ========================================================================== */
+    .hero-cover-section {
+      padding-top: 150px;
+      padding-bottom: 70px;
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-cover-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .hero-offer-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+      line-height: 1.05;
+      font-weight: 700;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+
+    .hero-offer-desc {
+      font-size: 1.25rem;
+      font-weight: 300;
+      color: #222;
+      line-height: 1.65;
+      margin-bottom: 30px;
+    }
+
+    /* ==========================================================================
+       4. CALCULATOR IN RUBLES (₽)
+       ========================================================================== */
+    .calc-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      background: var(--bg-card);
+      padding: 50px;
+      border: 1px solid var(--text-main);
+    }
+
+    .calc-results {
+      background: var(--bg-dark);
+      color: var(--text-light);
+      padding: 36px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .res-card-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 10px;
+    }
+
+    .res-item-box {
+      background: rgba(255,255,255,0.04);
+      padding: 16px;
+      border: 1px solid var(--border-dark);
+    }
+
+    .res-item-label {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      color: #888888;
+      display: block;
+      margin-top: 4px;
+    }
+
+    .res-item-value {
+      font-family: var(--font-mono);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #FFFFFF;
+    }
+
+    .res-item-value.net {
+      font-size: 1.55rem;
+      color: #25D366;
+    }
+
+    /* Mobile Responsive Optimizations */
+    @media (max-width: 992px) {
+      header { padding: 12px 5vw; }
+      .hero-cover-grid, .calc-wrapper, .res-card-grid { grid-template-columns: 1fr; gap: 24px; }
+      .nav-links { display: none; }
+      .calc-wrapper { padding: 24px; }
+    }
+
+    /* Scroll Reveal Animation */
+    .reveal-on-scroll {
+      opacity: 0;
+      transform: translateY(36px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal-on-scroll.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cursor-follower" id="cursor"></div>
+
+  <!-- Header Navigation -->
+  <header>
+    <a href="#" class="logo-text">ASTRA BRAND</a>
+    <ul class="nav-links">
+      <li><a href="#offer">Главный Оффер</a></li>
+      <li><a href="#quality">Контроль ОТК & ВТО</a></li>
+      <li><a href="#sizes">Размеры 50-60</a></li>
+      <li><a href="#calc">Калькулятор ₽</a></li>
+      <li><a href="#delivery">Доставка 7-12 дней</a></li>
+    </ul>
+    <div class="header-actions">
+      <a href="https://wa.me/996703326999" target="_blank" class="btn-whatsapp">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-0.999 3.648 3.742-.981z"/></svg>
+        <span>WhatsApp</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO COVER SECTION WITH MAIN OFFER & 7-12 DAYS DELIVERY -->
+  <section id="offer" class="hero-cover-section section-padding grid-container hairline-bottom">
+    <div class="hero-cover-grid">
+      <div class="reveal-on-scroll">
+        <span class="section-tag" style="color: #25D366; font-weight: 700;">★ ASTRA BRAND • ШВЕЙНОЕ ПРОИЗВОДСТВО</span>
+        <h1 class="hero-offer-title">Пошив Женской Одежды (50–60 Размеров) с Доставкой за 7–12 Дней</h1>
+        <p class="hero-offer-desc">
+          Контрактное швейное производство в Бишкеке. Отшив партий под ключ в рублях (₽), разбор лекал на цифровом САПР за 5 дней и гарантированный двухэтапный контроль ОТК.
+        </p>
+
+        <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+          <a href="https://wa.me/996703326999?text=Здравствуйте!%20Хочу%20рассчитать%20стоимость%20партии%20Astra%20Brand" target="_blank" class="btn-whatsapp">
+            <span>💬 Рассчитать партию в WhatsApp</span>
+          </a>
+          <a href="#calc" class="btn-black">РАССЧИТАТЬ В РУБЛЯХ (₽)</a>
+        </div>
+      </div>
+
+      <div class="reveal-on-scroll">
+        <!-- Process Highlight Box (Exact Text from Client WhatsApp) -->
+        <div class="process-highlight-box">
+          <p class="section-tag" style="margin-bottom: 12px; color: #111;">СТАНДАРТ КАЧЕСТВА ASTRA BRAND:</p>
+          <p class="process-text">
+            <strong>«Каждое изделие проходит межоперационный процесс проверки изделия и проходит итоговую проверку ОТК. ВТО — влажно-тепловая обработка изделия.»</strong>
+          </p>
+          <div style="margin-top: 20px; display: flex; gap: 10px; flex-wrap: wrap;">
+            <span class="tag-pill">Размеры: с 50 по 60</span>
+            <span class="tag-pill">Доставка: 7–12 дней</span>
+            <span class="tag-pill">Образец САПР: до 5 дней</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CALCULATOR IN RUBLES (₽) -->
+  <section id="calc" class="section-padding grid-container hairline-bottom">
+    <div class="section-header">
+      <p class="section-tag">Расчет Экономики в Рублях</p>
+      <h2 class="section-title">Калькулятор партии и чистой прибыли (₽)</h2>
+    </div>
+
+    <div class="calc-wrapper reveal-on-scroll">
+      <div>
+        <div style="margin-bottom: 24px;">
+          <label class="mono" style="font-size: 0.85rem; display: block; margin-bottom: 10px;">Размер партии (шт): <strong id="qtyVal">300 шт</strong></label>
+          <input type="range" min="100" max="1000" step="50" value="300" class="range-input" id="qtyRange" oninput="updateCalc()" style="width: 100%;">
+        </div>
+
+        <p class="process-text" style="font-size: 0.95rem; color: #555;">
+          • Пошив одежды строго **с 50 по 60 размер** без брака.<br>
+          • Двухэтапная проверка ОТК + ВТО (влажно-тепловая обработка).<br>
+          • Сроки доставки карго до вашего склада: **7–12 дней**.
+        </p>
+      </div>
+
+      <div class="calc-results">
+        <div>
+          <h3 class="serif" style="font-size: 1.5rem; margin-bottom: 16px;">Расчет в Рублях (₽)</h3>
+          
+          <div class="res-card-grid">
+            <div class="res-item-box">
+              <span class="res-item-value" id="unitCost">1 140 ₽</span>
+              <span class="res-item-label">Себестоимость / шт</span>
+            </div>
+
+            <div class="res-item-box">
+              <span class="res-item-value" id="totalCost">342 000 ₽</span>
+              <span class="res-item-label">Инвестиции в пошив</span>
+            </div>
+
+            <div class="res-item-box">
+              <span class="res-item-value" id="totalRevenue">1 200 000 ₽</span>
+              <span class="res-item-label">Выручка WB/Kaspi</span>
+            </div>
+
+            <div class="res-item-box" style="border-color: rgba(37, 211, 102, 0.4); background: rgba(37, 211, 102, 0.05);">
+              <span class="res-item-value net" id="netProfit">858 000 ₽</span>
+              <span class="res-item-label" style="color: #25D366; font-weight: 700;">Чистая прибыль</span>
+            </div>
+          </div>
+        </div>
+
+        <a href="https://wa.me/996703326999" target="_blank" class="btn-whatsapp" style="width: 100%; justify-content: center; padding: 16px; margin-top: 24px; font-size: 0.85rem;">
+          <span>💬 ЗАФИКСИРОВАТЬ РАСЧЕТ В WHATSAPP</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Cursor Follower
+    const cursor = document.getElementById('cursor');
+    document.addEventListener('mousemove', (e) => {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+    });
+
+    // Calculator in Rubles (₽)
+    function updateCalc() {
+      const qty = parseInt(document.getElementById('qtyRange').value);
+      document.getElementById('qtyVal').innerText = qty + ' шт';
+      
+      let discount = qty >= 500 ? 0.10 : (qty >= 300 ? 0.05 : 0);
+      const baseCost = 1200;
+      const unitCost = baseCost * (1 - discount);
+      const totalCost = qty * unitCost;
+      const retailPrice = 4000;
+      const totalRevenue = qty * retailPrice;
+      const netProfit = totalRevenue - totalCost;
+
+      document.getElementById('unitCost').innerText = Math.round(unitCost).toLocaleString('ru-RU') + ' ₽';
+      document.getElementById('totalCost').innerText = Math.round(totalCost).toLocaleString('ru-RU') + ' ₽';
+      document.getElementById('totalRevenue').innerText = Math.round(totalRevenue).toLocaleString('ru-RU') + ' ₽';
+      document.getElementById('netProfit').innerText = Math.round(netProfit).toLocaleString('ru-RU') + ' ₽';
+    }
+
+    // Scroll Reveal Observer
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('is-visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
+
+    updateCalc();
+  </script>
+</body>
+</html>
