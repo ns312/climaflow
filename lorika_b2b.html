@@ -1011,6 +1011,14 @@
 
     /* Mobile Responsive Optimizations */
     @media (max-width: 992px) {
+      header {
+        padding: 12px 5vw;
+      }
+      .header-logo-img {
+        height: 64px !important;
+        max-height: 68px;
+        width: auto;
+      }
       .hero-grid, .reason-grid, .calc-wrapper, .technologist-wrapper, .footer-grid, .feature-grid-2col, .map-grid, .models-grid {
         grid-template-columns: 1fr;
         gap: 30px;
@@ -1030,6 +1038,54 @@
         align-items: flex-start;
         gap: 12px;
       }
+    }
+
+    /* ==========================================================================
+       14. LUXURY $1M PROTOTYPE MICRO-ANIMATIONS
+       ========================================================================== */
+    .reveal-on-scroll {
+      opacity: 0;
+      transform: translateY(36px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+
+    .reveal-on-scroll.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Staggered delay helpers */
+    .delay-1 { transition-delay: 0.1s; }
+    .delay-2 { transition-delay: 0.2s; }
+    .delay-3 { transition-delay: 0.3s; }
+    .delay-4 { transition-delay: 0.4s; }
+
+    /* Shimmer Effect for Accent Cards */
+    .shimmer-card {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .shimmer-card::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(
+        60deg,
+        transparent 30%,
+        rgba(255, 255, 255, 0.25) 50%,
+        transparent 70%
+      );
+      transform: rotate(30deg) translateX(-100%);
+      transition: transform 0.8s ease;
+    }
+
+    .shimmer-card:hover::after {
+      transform: rotate(30deg) translateX(100%);
     }
   </style>
 </head>
@@ -1154,7 +1210,7 @@
 
     <div class="models-grid">
       <!-- Model 1: Юбка Миди -->
-      <div class="model-card">
+      <div class="model-card reveal-on-scroll delay-1">
         <div class="model-img-wrapper">
           <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=800&auto=format&fit=crop" alt="Юбка миди десятиклинка" class="model-img">
         </div>
@@ -1170,7 +1226,7 @@
       </div>
 
       <!-- Model 2: Платье-Жатка -->
-      <div class="model-card">
+      <div class="model-card reveal-on-scroll delay-2">
         <div class="model-img-wrapper">
           <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=800&auto=format&fit=crop" alt="Платье жатка из шифона" class="model-img">
         </div>
@@ -1186,7 +1242,7 @@
       </div>
 
       <!-- Model 3: Костюм Тройка -->
-      <div class="model-card">
+      <div class="model-card reveal-on-scroll delay-3">
         <div class="model-img-wrapper">
           <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=800&auto=format&fit=crop" alt="Костюм тройка жилетка" class="model-img">
         </div>
@@ -1756,6 +1812,26 @@
       document.getElementById('fabricDesc').innerText = data.desc;
       document.getElementById('fabricThumb').style.backgroundImage = `url('${data.img}')`;
     }
+
+    // 5. Luxury $1M Scroll Reveal Observer
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px 0px -60px 0px',
+      threshold: 0.1
+    };
+
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal-on-scroll').forEach(el => {
+      revealObserver.observe(el);
+    });
 
     // Initialize Calculator on load
     updateCalc();
