@@ -82,7 +82,7 @@
     
     .stretched-title {
       font-family: var(--font-serif);
-      font-size: clamp(3rem, 7.5vw, 6.8rem);
+      font-size: clamp(2.8rem, 7vw, 6.2rem);
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: -0.02em;
@@ -135,12 +135,12 @@
       align-items: center;
       justify-content: center;
       gap: 8px;
-      padding: 12px 24px;
+      padding: 14px 28px;
       background-color: var(--accent-green);
       color: #FFFFFF;
       border: 1px solid var(--accent-green);
       font-family: var(--font-mono);
-      font-size: 0.8rem;
+      font-size: 0.82rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 1px;
@@ -157,7 +157,7 @@
     }
 
     .section-padding {
-      padding: 100px 8vw;
+      padding: 90px 8vw;
     }
 
     .grid-container {
@@ -293,30 +293,94 @@
     }
 
     /* ==========================================================================
-       3. HERO CANVAS SECTION
+       3. NEW HERO COVER SECTION (1ST SCREEN WITH COVER HERO PHOTO & MAIN OFFER)
        ========================================================================== */
-    .hero {
-      padding-top: 160px;
-      padding-bottom: 90px;
-      min-height: 85vh;
+    .hero-cover-section {
+      padding-top: 150px;
+      padding-bottom: 70px;
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-cover-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .hero-cover-img-wrapper {
+      position: relative;
+      width: 100%;
+      height: 520px;
+      border: 1px solid var(--text-main);
+      box-shadow: 14px 14px 0px var(--text-main);
+      overflow: hidden;
+      background: #EAEAEA;
+    }
+
+    .hero-cover-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      filter: grayscale(100%) contrast(110%);
+      transition: filter 0.5s ease, transform 0.5s ease;
+    }
+
+    .hero-cover-img-wrapper:hover .hero-cover-img {
+      filter: grayscale(0%) contrast(100%);
+      transform: scale(1.03);
+    }
+
+    .hero-offer-box {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: center;
+    }
+
+    .hero-offer-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+      line-height: 1.05;
+      font-weight: 700;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+
+    .hero-offer-desc {
+      font-size: 1.25rem;
+      font-weight: 300;
+      color: #222;
+      line-height: 1.65;
+      margin-bottom: 30px;
+    }
+
+    .hero-offer-btns {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    /* ==========================================================================
+       4. SECOND BLOCK (PREVIOUS HERO FORM SECTION - 2ND SCREEN)
+       ========================================================================== */
+    .hero-form-section {
+      padding-top: 70px;
+      padding-bottom: 90px;
+      background: var(--bg-card);
     }
 
     .hero-meta {
       display: flex;
       justify-content: flex-start;
       gap: 30px;
-      margin-bottom: 24px;
+      margin-bottom: 20px;
       font-family: var(--font-mono);
       font-size: 0.8rem;
       text-transform: uppercase;
       opacity: 0.7;
-    }
-
-    .hero-main-title {
-      margin-bottom: 30px;
     }
 
     .hero-grid {
@@ -335,7 +399,7 @@
     }
 
     .hero-form-card {
-      background: var(--bg-card);
+      background: var(--bg-cream);
       padding: 36px;
       border: 1px solid var(--text-main);
       box-shadow: 10px 10px 0px var(--text-main);
@@ -371,7 +435,7 @@
       border: 1px solid var(--border-thin);
       font-family: var(--font-sans);
       font-size: 0.95rem;
-      background: var(--bg-cream);
+      background: #FFF;
       outline: none;
       transition: border-color 0.3s;
     }
@@ -381,10 +445,10 @@
     }
 
     /* ==========================================================================
-       4. BEFORE / AFTER INTERACTIVE FIT SLIDER
+       5. BEFORE / AFTER INTERACTIVE FIT SLIDER
        ========================================================================== */
     .slider-section {
-      background: var(--bg-card);
+      background: var(--bg-cream);
     }
 
     .section-header {
@@ -490,7 +554,7 @@
     }
 
     /* ==========================================================================
-       5. TECHNOLOGIST TRUST HUB (REPOSITIONED UP BELOW FIT SECTION)
+       6. TECHNOLOGIST TRUST HUB
        ========================================================================== */
     .technologist-wrapper {
       display: grid;
@@ -514,7 +578,7 @@
     }
 
     /* ==========================================================================
-       6. OUR MODELS SHOWCASE SECTION
+       7. OUR MODELS SHOWCASE SECTION
        ========================================================================== */
     .models-grid {
       display: grid;
@@ -582,7 +646,7 @@
     }
 
     /* ==========================================================================
-       7. ASTRA BRAND FEATURES
+       8. ASTRA BRAND FEATURES
        ========================================================================== */
     .feature-grid-2col {
       display: grid;
@@ -604,7 +668,7 @@
     }
 
     /* ==========================================================================
-       8. REASON-WHY ADVERTISING
+       9. REASON-WHY ADVERTISING
        ========================================================================== */
     .reason-grid {
       display: grid;
@@ -645,7 +709,7 @@
     }
 
     /* ==========================================================================
-       9. INTERACTIVE BATCH CALCULATOR
+       10. INTERACTIVE BATCH CALCULATOR
        ========================================================================== */
     .calc-wrapper {
       display: grid;
@@ -781,7 +845,7 @@
     }
 
     /* ==========================================================================
-       10. COMPARISON MATRIX
+       11. COMPARISON MATRIX
        ========================================================================== */
     .matrix-wrapper {
       margin-top: 40px;
@@ -846,7 +910,7 @@
     }
 
     /* ==========================================================================
-       11. 1-MINUTE PRODUCTION PROCESS VIDEO MOCKUP
+       12. 1-MINUTE PRODUCTION PROCESS VIDEO MOCKUP
        ========================================================================== */
     .video-mockup-card {
       background: var(--bg-dark);
@@ -885,7 +949,7 @@
     }
 
     /* ==========================================================================
-       12. INFINITE B&W WHATSAPP REVIEW CAROUSEL
+       13. INFINITE B&W WHATSAPP REVIEW CAROUSEL
        ========================================================================== */
     .carousel-section {
       background: var(--bg-dark);
@@ -960,7 +1024,7 @@
     }
 
     /* ==========================================================================
-       13. MODERN MINIMALIST CARGO LOGISTICS & YANDEX MAP
+       14. MODERN MINIMALIST CARGO LOGISTICS & YANDEX MAP
        ========================================================================== */
     .cargo-cards-grid {
       display: grid;
@@ -1012,7 +1076,7 @@
     }
 
     /* ==========================================================================
-       14. FOOTER & FLOATING WHATSAPP
+       15. FOOTER & FLOATING WHATSAPP
        ========================================================================== */
     footer {
       background: var(--bg-dark);
@@ -1066,10 +1130,11 @@
         max-height: 68px;
         width: auto;
       }
-      .hero-grid, .reason-grid, .calc-wrapper, .technologist-wrapper, .footer-grid, .feature-grid-2col, .cargo-cards-grid, .models-grid {
+      .hero-cover-grid, .hero-grid, .reason-grid, .calc-wrapper, .technologist-wrapper, .footer-grid, .feature-grid-2col, .cargo-cards-grid, .models-grid {
         grid-template-columns: 1fr;
         gap: 24px;
       }
+      .hero-cover-img-wrapper { height: 380px; }
       .nav-links { display: none; }
       .calc-wrapper { padding: 24px; }
       .res-card-grid { grid-template-columns: 1fr; gap: 12px; }
@@ -1117,13 +1182,14 @@
       <img src="lorika_logo_transparent.png" alt="LORIKA+ Красота в деталях" class="header-logo-img">
     </a>
     <ul class="nav-links">
+      <li><a href="#cover">Оффер</a></li>
       <li><a href="#about">Ателье-Фабрика</a></li>
       <li><a href="#larisa">О Ларисе</a></li>
       <li><a href="#models">Наши модели</a></li>
       <li><a href="#calc">Калькулятор ₽</a></li>
       <li><a href="#matrix">Сравнение</a></li>
       <li><a href="#reviews">Отзывы</a></li>
-      <li><a href="#map">Карта и Логистика</a></li>
+      <li><a href="#map">Логистика</a></li>
     </ul>
     <div class="header-actions">
       <!-- Green Action WhatsApp Button with Direct Phone +996 703 326 999 -->
@@ -1134,23 +1200,50 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero section-padding grid-container hairline-bottom">
+  <!-- ==========================================================================
+       NEW FIRST SCREEN (HERO COVER BLOCK WITH HERO_COVER_1.JPG & CORE OFFER)
+       ========================================================================== -->
+  <section id="cover" class="hero-cover-section section-padding grid-container hairline-bottom">
+    <div class="hero-cover-grid">
+      <!-- High-Fashion Hero Cover Photo (hero_cover_1.jpg) -->
+      <div class="hero-cover-img-wrapper reveal-on-scroll delay-1">
+        <img src="hero_cover_1.jpg" alt="Швейная Ателье-Фабрика LORIKA+ Одежда Plus Size" class="hero-cover-img">
+      </div>
+
+      <!-- Core B2B Offer Box -->
+      <div class="hero-offer-box reveal-on-scroll delay-2">
+        <span class="section-tag" style="margin-bottom: 12px; color: #25D366; font-weight: 700;">★ ШВЕЙНАЯ АТЕЛЬЕ-ФАБРИКА LORIKA+</span>
+        <h1 class="hero-offer-title">Пошив Одежды Plus Size в Бишкеке под ключ от 1 150 ₽</h1>
+        <p class="hero-offer-desc">
+          Производство женской одежды больших размеров (50–64+) с точностью элитного ателье, личной подборкой тканей от главного технолога и гарантией брака менее 3% по договору.
+        </p>
+
+        <div class="hero-offer-btns">
+          <a href="https://wa.me/996703326999?text=Здравствуйте!%20Хочу%20рассчитать%20стоимость%20партии" target="_blank" class="btn-whatsapp">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-0.999 3.648 3.742-.981z"/></svg>
+            <span>💬 Рассчитать партию в WhatsApp</span>
+          </a>
+          <a href="#models" class="btn-black">ПОСМОТРЕТЬ КАТАЛОГ МОДЕЛЕЙ</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECOND BLOCK (PREVIOUS HERO FORM SECTION - MOVED TO 2ND BLOCK)
+       ========================================================================== -->
+  <section class="hero-form-section section-padding grid-container hairline-bottom">
     <div class="hero-meta">
       <span>Пошив под ключ</span>
       <span>•</span>
       <span>Женская Одежда Plus Size (50-64+)</span>
     </div>
 
-    <div class="hero-main-title">
-      <h1 class="stretched-title scramble-title">LORIKA+</h1>
-      <p class="section-tag" style="margin-top: 15px;">Красота в деталях • Швейная Ателье-Фабрика</p>
-    </div>
-
     <div class="hero-grid">
-      <div>
+      <div class="reveal-on-scroll delay-1">
+        <h2 class="stretched-title scramble-title" style="margin-bottom: 20px;">LORIKA+</h2>
         <p class="hero-description">
-          Пошив женской одежды <strong>Plus Size (50–64+)</strong> под ключ <strong>от 1 150 ₽ за комплект</strong> с точностью элитного Ателье и гарантией брака менее 3% по договору.
+          Зафиксируйте оптовую цену от 1 150 ₽ за комплект и получите инженерные лекала от Ларисы с гарантией идеальной посадки и 0% возвратов на маркетплейсах.
         </p>
         <div style="margin-top: 24px; display: flex; gap: 12px; flex-wrap: wrap;">
           <span class="tag-pill">Анатомические лекала</span>
@@ -1169,7 +1262,7 @@
         </div>
       </div>
 
-      <div class="hero-form-card">
+      <div class="hero-form-card reveal-on-scroll delay-2">
         <h3 class="form-title">Рассчитать партию за 15 сек</h3>
         <p class="form-subtitle">Зафиксируйте оптовую цену от 1 150 ₽/шт и получите расчет в WhatsApp.</p>
         
@@ -1209,7 +1302,7 @@
     </div>
   </section>
 
-  <!-- TECHNOLOGIST TRUST HUB (MOVED UP TO BELOW FIT SECTION) -->
+  <!-- TECHNOLOGIST TRUST HUB -->
   <section id="larisa" class="section-padding grid-container hairline-bottom">
     <div class="technologist-wrapper">
       <!-- REAL PHOTO OF LARISA IN RED SWEATER AT WORKSTATION -->
@@ -1690,6 +1783,7 @@
 
         <div>
           <h4 class="mono" style="color: #FFF; margin-bottom: 16px; font-size: 0.8rem;">НАВИГАЦИЯ</h4>
+          <p><a href="#cover" style="color: #AAA; text-decoration: none;">Главный Оффер</a></p>
           <p><a href="#about" style="color: #AAA; text-decoration: none;">Ателье-Фабрика</a></p>
           <p><a href="#larisa" style="color: #AAA; text-decoration: none;">О Ларисе</a></p>
           <p><a href="#models" style="color: #AAA; text-decoration: none;">Наши модели</a></p>
