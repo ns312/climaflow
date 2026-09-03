@@ -337,14 +337,18 @@
     /* ==========================================================================
        3. MANTECO-STYLE FULL-SCREEN FULL-COLOR HERO VIDEO SECTION (1ST SCREEN)
        ========================================================================== */
+    /* ==========================================================================
+       3. MANTECO-STYLE FULL-SCREEN HERO VIDEO SECTION (1ST SCREEN)
+       ========================================================================== */
     .hero-cover-section {
       padding-top: 0;
       padding-bottom: 0;
-      min-height: 100vh;
+      height: 100vh;
       width: 100vw;
       display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       align-items: center;
-      justify-content: center;
       position: relative;
       overflow: hidden;
       background: #000;
@@ -365,109 +369,116 @@
       height: 100%;
       object-fit: cover;
       object-position: center;
-      filter: none; /* Full vibrant color like Manteco.com */
+      filter: none; /* Full vibrant color */
       transform: scale(1.02);
     }
 
-    /* Dark luxury overlay to keep text ultra-readable */
     .hero-video-overlay {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.75) 100%);
+      background: linear-gradient(180deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.25) 45%, rgba(0,0,0,0.85) 100%);
       z-index: 2;
     }
 
-    .hero-cover-content {
+    /* Centered Logo Overlay on Cover */
+    .hero-center-logo-wrapper {
+      position: relative;
+      z-index: 10;
+      margin-top: 140px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-center-logo-img {
+      height: clamp(70px, 12vw, 110px);
+      width: auto;
+      object-fit: contain;
+      filter: brightness(0) invert(1);
+      drop-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    }
+
+    /* Bottom Inter Headline Overlay */
+    .hero-bottom-headline-container {
       position: relative;
       z-index: 10;
       width: 100%;
-      max-width: 1300px;
-      padding: 140px 8vw 80px;
-      color: #FFFFFF;
+      max-width: 1400px;
+      padding: 0 8vw 60px;
       display: flex;
-      flex-direction: column;
-      align-items: flex-start;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 30px;
     }
 
-    .hero-live-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 8px 20px;
-      border: 1px solid rgba(255, 255, 255, 0.4);
-      border-radius: 40px;
-      font-family: var(--font-mono);
-      font-size: 0.76rem;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      margin-bottom: 28px;
-      background: rgba(0, 0, 0, 0.4);
-      backdrop-filter: blur(12px);
-      color: #FFF;
-    }
-
-    .pulse-green {
-      width: 9px;
-      height: 9px;
-      background-color: var(--accent-green);
-      border-radius: 50%;
-      display: inline-block;
-      box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.8);
-      animation: pulseGreenGlow 2s infinite;
-    }
-
-    .hero-offer-title {
-      font-family: var(--font-serif);
-      font-size: clamp(2.8rem, 5.8vw, 5.2rem);
-      line-height: 1.02;
-      font-weight: 800;
-      margin-bottom: 24px;
-      text-transform: uppercase;
+    .hero-manteco-title {
+      font-family: 'Inter', sans-serif; /* Inter Font like Manteco */
+      font-size: clamp(2.2rem, 5vw, 4.2rem);
+      font-weight: 700;
+      line-height: 1.12;
       letter-spacing: -0.02em;
       color: #FFFFFF;
-      text-shadow: 0 4px 20px rgba(0,0,0,0.6);
+      max-width: 900px;
+      text-shadow: 0 6px 30px rgba(0,0,0,0.8);
     }
 
-    .hero-offer-desc {
-      font-size: 1.35rem;
-      font-weight: 300;
-      color: rgba(255, 255, 255, 0.92);
-      line-height: 1.65;
-      margin-bottom: 40px;
-      max-width: 680px;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.5);
-    }
-
-    .hero-offer-btns {
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-
-    .btn-black-hero {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 16px 36px;
-      background-color: #FFFFFF;
-      color: #111111;
-      border: 1px solid #FFFFFF;
-      font-family: var(--font-mono);
-      font-size: 0.85rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      text-decoration: none;
-      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .btn-black-hero:hover {
-      background-color: transparent;
+    .hero-scroll-indicator {
+      font-size: 2.5rem;
       color: #FFFFFF;
+      opacity: 0.85;
+      animation: bounceArrow 2s infinite;
+      cursor: pointer;
+    }
+
+    @keyframes bounceArrow {
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+      40% { transform: translateY(-10px); }
+      60% { transform: translateY(-5px); }
+    }
+
+    /* ==========================================================================
+       4. SECOND BLOCK: GIRL PHOTO IN COLOR + OFFER & FORM
+       ========================================================================== */
+    .block-2-section {
+      padding: 100px 8vw;
+      background: var(--bg-cream);
+      position: relative;
+    }
+
+    .block-2-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .girl-photo-wrapper {
+      position: relative;
+      width: 100%;
+      height: 580px;
+      border: 1.5px solid var(--text-main);
+      box-shadow: 18px 18px 0px var(--text-main);
+      overflow: hidden;
+      background: #111;
+    }
+
+    .girl-photo-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      filter: none !important; /* 100% Full Color as requested */
+      transition: transform 0.5s ease;
+    }
+
+    .girl-photo-wrapper:hover .girl-photo-img {
+      transform: scale(1.04);
     }
       font-size: 0.72rem;
       text-transform: uppercase;
@@ -694,6 +705,9 @@
   <!-- ==========================================================================
        MANTECO-STYLE FULL-SCREEN FULL-COLOR HERO VIDEO SECTION (1ST SCREEN)
        ========================================================================== -->
+  <!-- ==========================================================================
+       MANTECO-STYLE FULL-SCREEN HERO VIDEO SECTION (1ST SCREEN)
+       ========================================================================== -->
   <section id="cover" class="hero-cover-section hairline-bottom">
     <!-- Background Video Container -->
     <div class="hero-video-bg-container">
@@ -703,78 +717,67 @@
       <div class="hero-video-overlay"></div>
     </div>
 
-    <!-- Core Content Over Video -->
-    <div class="hero-cover-content reveal-on-scroll delay-1">
-      <div class="hero-live-pill">
-        <span class="pulse-green"></span>
-        <span>BISHKEK FACTORY ONLINE • СВОБОДНО: 2 СЛОТА</span>
-      </div>
-      
-      <h1 class="hero-offer-title">Пошив Одежды Plus Size в Бишкеке под ключ от 1 150 ₽</h1>
-      <p class="hero-offer-desc">
-        Производство женской одежды больших размеров (50–64+) с точностью элитного ателье, личной подборкой тканей от главного технолога Ларисы и гарантией идеальной посадки.
-      </p>
+    <!-- Centered Logo Overlay (Manteco Crest Style) -->
+    <div class="hero-center-logo-wrapper reveal-on-scroll delay-1">
+      <img src="lorika_logo_transparent.png" alt="LORIKA+ Красота в деталях" class="hero-center-logo-img">
+    </div>
 
-      <div class="hero-offer-btns">
-        <a href="https://wa.me/996703326999?text=Здравствуйте!%20Хочу%20рассчитать%20стоимость%20партии%20LORIKA%2B" target="_blank" class="btn-whatsapp">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-0.999 3.648 3.742-.981z"/></svg>
-          <span>💬 Рассчитать партию в WhatsApp</span>
-        </a>
-        <a href="#form" class="btn-black-hero">РАССЧИТАТЬ СМЕТУ ЗА 15 СЕК</a>
-      </div>
+    <!-- Bottom Inter Headline Overlay (Manteco Layout) -->
+    <div class="hero-bottom-headline-container reveal-on-scroll delay-2">
+      <h1 class="hero-manteco-title">Пошив Одежды Plus Size в Бишкеке под ключ от 1 150 ₽</h1>
+      <a href="#block2" class="hero-scroll-indicator" title="Листать вниз">↓</a>
     </div>
   </section>
 
   <!-- ==========================================================================
-       AWWWARDS SCREEN 2: HERO FORM & SCARCITY CALCULATOR BLOCK
+       BLOCK 2: FULL-COLOR GIRL PHOTO & OFFER / FORM DETAILS
        ========================================================================== -->
-  <section id="form" class="hero-form-section section-padding grid-container hairline-bottom">
-    <div class="hero-meta">
-      <span>★ ПРЕМИУМ ПОШИВ ПОД КЛЮЧ</span>
-      <span>•</span>
-      <span>ЖЕНСКАЯ ОДЕЖДА PLUS SIZE (50-64+)</span>
-      <span>•</span>
-      <span>БИШКЕК</span>
-    </div>
+  <section id="block2" class="block-2-section hairline-bottom">
+    <div class="block-2-grid">
+      <!-- Left Column: Full-Color Girl Photo (hero_cover_1.jpg) -->
+      <div class="girl-photo-wrapper reveal-on-scroll delay-1">
+        <span class="hero-floating-badge badge-top-left" style="position: absolute; top: 20px; left: 20px; z-index: 5;">★ 30+ ЛЕТ ОПЫТА | ЛАРИСА</span>
+        <span class="hero-floating-badge badge-bottom-right" style="position: absolute; bottom: 20px; right: 20px; z-index: 5; background: rgba(248, 246, 240, 0.95); color: #111;">● БРАК &lt;3% ПО ДОГОВОРУ</span>
+        <img src="hero_cover_1.jpg" alt="LORIKA+ Одежда Plus Size" class="girl-photo-img">
+      </div>
 
-    <div class="hero-grid">
-      <div class="reveal-on-scroll delay-1">
-        <h2 class="stretched-title scramble-title" style="margin-bottom: 20px;">LORIKA+</h2>
-        <p class="hero-description">
-          Зафиксируйте оптовую цену от 1 150 ₽ за комплект и получите инженерные лекала от Ларисы с гарантией идеальной посадки и 0% возвратов на маркетплейсах.
+      <!-- Right Column: B2B Offer Details, Live Pill & Interactive Form -->
+      <div class="reveal-on-scroll delay-2">
+        <div class="hero-live-pill" style="border-color: var(--text-main); color: var(--text-main); background: rgba(0,0,0,0.03); margin-bottom: 20px;">
+          <span class="pulse-green"></span>
+          <span>BISHKEK FACTORY ONLINE • СВОБОДНО: 2 СЛОТА</span>
+        </div>
+
+        <h2 class="stretched-title scramble-title" style="margin-bottom: 16px; font-size: clamp(2.2rem, 4vw, 3.8rem);">LORIKA+</h2>
+        
+        <p class="hero-description" style="font-size: 1.15rem; margin-bottom: 24px;">
+          Производство женской одежды больших размеров (50–64+) с точностью элитного ателье, личной подборкой тканей от главного технолога Ларисы и гарантией 0% возвратов на маркетплейсах.
         </p>
-        <div style="margin-top: 28px; display: flex; gap: 12px; flex-wrap: wrap;">
+
+        <div style="margin-bottom: 28px; display: flex; gap: 10px; flex-wrap: wrap;">
           <span class="tag-pill">Анатомические лекала</span>
           <span class="tag-pill">Закупка на Мадине</span>
           <span class="tag-pill">ОТК &lt;3% брака</span>
           <span class="tag-pill">Честный ЗНАК</span>
         </div>
 
-        <!-- Premium Animated Scarcity Banner Box -->
-        <div class="scarcity-banner-box">
-          <div style="display: flex; align-items: center; gap: 14px;">
-            <span class="pulse-green"></span>
-            <span class="scarcity-text"><strong>Лимит производства:</strong> Берем не более 5 новых брендов в месяц</span>
-          </div>
-          <span class="scarcity-badge-animated">Свободно: 2 слота</span>
+        <!-- 15-Sec Calculation Form Card -->
+        <div class="hero-form-card" style="padding: 32px;">
+          <h3 class="form-title" style="font-size: 1.4rem;">Рассчитать партию за 15 сек</h3>
+          <p class="form-subtitle" style="margin-bottom: 18px; font-size: 0.85rem;">Зафиксируйте оптовую цену от 1 150 ₽/шт и получите расчет в WhatsApp.</p>
+          
+          <form onsubmit="event.preventDefault(); alert('Расчет отправлен в WhatsApp на номер +996 703 326 999!');">
+            <div class="input-group">
+              <label>Ваш номер WhatsApp</label>
+              <input type="tel" class="input-control" placeholder="+7 (___) ___-__-__" required>
+            </div>
+            <div class="input-group">
+              <label>Планируемый тираж (шт)</label>
+              <input type="number" class="input-control" placeholder="Например: 300 шт" value="300" required>
+            </div>
+            <button type="submit" class="btn-black" style="width: 100%; margin-top: 10px; padding: 16px;">ПОЛУЧИТЬ РАСЧЕТ В WHATSAPP</button>
+          </form>
         </div>
-      </div>
-
-      <div class="hero-form-card reveal-on-scroll delay-2">
-        <h3 class="form-title">Рассчитать партию за 15 сек</h3>
-        <p class="form-subtitle">Зафиксируйте оптовую цену от 1 150 ₽/шт и получите мгновенный расчет и подборку тканей в WhatsApp.</p>
-        
-        <form onsubmit="event.preventDefault(); alert('Расчет отправлен в WhatsApp на номер +996 703 326 999!');">
-          <div class="input-group">
-            <label>Ваш номер WhatsApp</label>
-            <input type="tel" class="input-control" placeholder="+7 (___) ___-__-__" required>
-          </div>
-          <div class="input-group">
-            <label>Планируемый тираж (шт)</label>
-            <input type="number" class="input-control" placeholder="Например: 300 шт" value="300" required>
-          </div>
-          <button type="submit" class="btn-black" style="width: 100%; margin-top: 12px; padding: 18px;">ПОЛУЧИТЬ РАСЧЕТ И КАТАЛОГ</button>
-        </form>
       </div>
     </div>
   </section>
