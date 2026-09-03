@@ -67,6 +67,7 @@
     .preloader-counter-container {
       display: flex;
       align-items: flex-end;
+      margin-bottom: 60px; /* Raised percentage counter higher from bottom */
     }
 
     .preloader-counter-num {
@@ -81,6 +82,26 @@
     /* ==========================================================================
        1. GLOBAL DESIGN SYSTEM (EDITORIAL LUXURY B&W WITH LORIKA+ BRANDING)
        ========================================================================== */
+
+    /* Centered Logo Overlay on Cover */
+    .hero-center-logo-wrapper {
+      position: relative;
+      z-index: 10;
+      margin-top: 90px; /* Raised higher */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-center-logo-img {
+      height: clamp(90px, 15vw, 145px); /* Larger logo as requested */
+      width: auto;
+      object-fit: contain;
+      filter: brightness(0) invert(1);
+      drop-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    }
+
     :root {
       --bg-cream: #F8F6F0;
       --bg-card: #FFFFFF;
@@ -623,10 +644,10 @@
         width: auto;
       }
       .hero-center-logo-wrapper {
-        margin-top: 100px;
+        margin-top: 80px;
       }
       .hero-center-logo-img {
-        height: 64px;
+        height: clamp(80px, 22vw, 115px); /* Larger logo on mobile */
       }
       .hero-bottom-headline-container {
         padding: 0 6vw 40px;
@@ -715,7 +736,7 @@
   <section id="cover" class="hero-cover-section hairline-bottom">
     <!-- Background Video Container -->
     <div class="hero-video-bg-container">
-      <video class="hero-video-element" autoplay loop muted playsinline poster="hero_cover_1.jpg">
+      <video class="hero-video-element" id="hero-video" autoplay loop muted playsinline webkit-playsinline muted="muted" playsinline="playsinline" poster="hero_cover_1.jpg">
         <source src="hero_video.mp4" type="video/mp4">
       </video>
       <div class="hero-video-overlay"></div>
@@ -832,6 +853,30 @@
       window.addEventListener('load', () => {
         currentPercent = 92;
       });
+    })();
+
+    // Force Mobile Video Autoplay for iOS Safari & Android
+    (function() {
+      const heroVid = document.getElementById('hero-video');
+      if (heroVid) {
+        heroVid.muted = true;
+        const playVideo = function() {
+          const promise = heroVid.play();
+          if (promise !== undefined) {
+            promise.catch(function() {
+              const onTouch = function() {
+                heroVid.play();
+                document.removeEventListener('touchstart', onTouch);
+                document.removeEventListener('click', onTouch);
+              };
+              document.addEventListener('touchstart', onTouch, { once: true });
+              document.addEventListener('click', onTouch, { once: true });
+            });
+          }
+        };
+        playVideo();
+        document.addEventListener('DOMContentLoaded', playVideo);
+      }
     })();
   </script>
 </body>
