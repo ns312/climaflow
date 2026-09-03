@@ -1222,25 +1222,25 @@
         <span class="tag-pill">Маркировка Честный ЗНАК</span>
       </div>
 
-      <!-- Quick B2B Highlights Grid -->
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; margin-top: 40px; border-top: 1px solid rgba(17,17,17,0.12); padding-top: 36px;">
-        <div>
-          <div style="font-family: 'Cormorant Garamond', serif; font-size: 2.8rem; font-weight: 500; color: #111;">1 150 ₽</div>
+      <!-- Quick B2B Highlights Grid with Animated Count-Up Numbers -->
+      <div id="stat-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; margin-top: 40px; border-top: 1px solid rgba(17,17,17,0.12); padding-top: 36px;">
+        <div class="stat-card reveal-on-scroll delay-1">
+          <div class="stat-num" data-val="1150" data-suffix=" ₽" data-format="1 150 ₽" style="font-family: 'Cormorant Garamond', serif; font-size: 2.8rem; font-weight: 500; color: #111;">0 ₽</div>
           <div style="font-family: 'Inter', sans-serif; font-size: 0.85rem; color: #666; text-transform: uppercase; letter-spacing: 1px;">Оптовый старт пошива</div>
         </div>
 
-        <div>
-          <div style="font-family: 'Cormorant Garamond', serif; font-size: 2.8rem; font-weight: 500; color: #111;">50–64+</div>
+        <div class="stat-card reveal-on-scroll delay-2">
+          <div class="stat-num" data-val="64" data-prefix="50–" data-suffix="+" data-format="50–64+" style="font-family: 'Cormorant Garamond', serif; font-size: 2.8rem; font-weight: 500; color: #111;">0</div>
           <div style="font-family: 'Inter', sans-serif; font-size: 0.85rem; color: #666; text-transform: uppercase; letter-spacing: 1px;">Идеальная посадка Plus Size</div>
         </div>
 
-        <div>
-          <div style="font-family: 'Cormorant Garamond', serif; font-size: 2.8rem; font-weight: 500; color: #111;">&lt; 3%</div>
+        <div class="stat-card reveal-on-scroll delay-3">
+          <div class="stat-num" data-val="3" data-prefix="< " data-suffix="%" data-format="< 3%" style="font-family: 'Cormorant Garamond', serif; font-size: 2.8rem; font-weight: 500; color: #111;">0%</div>
           <div style="font-family: 'Inter', sans-serif; font-size: 0.85rem; color: #666; text-transform: uppercase; letter-spacing: 1px;">Порог брака по договору</div>
         </div>
 
-        <div>
-          <div style="font-family: 'Cormorant Garamond', serif; font-size: 2.8rem; font-weight: 500; color: #111;">15 минут</div>
+        <div class="stat-card reveal-on-scroll delay-4">
+          <div class="stat-num" data-val="15" data-suffix=" минут" data-format="15 минут" style="font-family: 'Cormorant Garamond', serif; font-size: 2.8rem; font-weight: 500; color: #111;">0 минут</div>
           <div style="font-family: 'Inter', sans-serif; font-size: 0.85rem; color: #666; text-transform: uppercase; letter-spacing: 1px;">Расчет сметы в WhatsApp</div>
         </div>
       </div>
@@ -1414,6 +1414,54 @@
         }
       }
     });
+
+    // Smooth Count-Up Animation for Block 3 Numbers on Scroll
+    (function() {
+      let animated = false;
+      const statGrid = document.getElementById('stat-grid');
+      if (!statGrid) return;
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !animated) {
+            animated = true;
+            document.querySelectorAll('.stat-num').forEach(el => {
+              const target = parseInt(el.getAttribute('data-val')) || 0;
+              const prefix = el.getAttribute('data-prefix') || '';
+              const suffix = el.getAttribute('data-suffix') || '';
+              const finalFormat = el.getAttribute('data-format');
+              const duration = 1600; // ms
+              const startTime = performance.now();
+
+              function animateNumber(currentTime) {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                // EaseOutExpo curve
+                const easeProgress = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+                const currentVal = Math.floor(easeProgress * target);
+
+                if (target === 1150) {
+                  const formatted = new Intl.NumberFormat('ru-RU').format(currentVal);
+                  el.innerText = `${formatted}${suffix}`;
+                } else {
+                  el.innerText = `${prefix}${currentVal}${suffix}`;
+                }
+
+                if (progress < 1) {
+                  requestAnimationFrame(animateNumber);
+                } else {
+                  el.innerText = finalFormat;
+                }
+              }
+
+              requestAnimationFrame(animateNumber);
+            });
+          }
+        });
+      }, { threshold: 0.25 });
+
+      observer.observe(statGrid);
+    })();
   </script>
 </body>
 </html>
