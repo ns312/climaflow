@@ -754,192 +754,153 @@
     }
 
     /* ==========================================================================
-       AWWWARDS SITE OF THE DAY LEVEL LUXURY OBSIDIAN FORM DESIGN
+       AURORE & ASTRÉE HIGH-FASHION BANNER & FORM DESIGN
        ========================================================================== */
-    .awwwards-form-card {
-      background: radial-gradient(circle at 90% 10%, rgba(37, 211, 102, 0.09) 0%, transparent 55%), #0E0E0E;
-      color: #F8F6F0;
-      padding: 56px 44px;
+    .aurore-hero-banner-wrapper {
       position: relative;
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      box-shadow: 0 30px 90px rgba(0,0,0,0.35);
-      transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
       width: 100%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      height: 65vh;
+      min-height: 440px;
       overflow: hidden;
-    }
-
-    .awwwards-form-card:hover {
-      border-color: rgba(255, 255, 255, 0.3);
-      box-shadow: 0 40px 110px rgba(0,0,0,0.5);
-    }
-
-    /* Animated Corner Brackets / Corner Arrows */
-    .form-corner-bracket {
-      position: absolute;
-      width: 24px;
-      height: 24px;
-      pointer-events: none;
-      transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-      z-index: 10;
-    }
-
-    .corner-top-left {
-      top: 16px;
-      left: 16px;
-      border-top: 2px solid rgba(255, 255, 255, 0.7);
-      border-left: 2px solid rgba(255, 255, 255, 0.7);
-      transform: translate(-14px, -14px);
-      opacity: 0;
-    }
-
-    .corner-top-right {
-      top: 16px;
-      right: 16px;
-      border-top: 2px solid rgba(255, 255, 255, 0.7);
-      border-right: 2px solid rgba(255, 255, 255, 0.7);
-      transform: translate(14px, -14px);
-      opacity: 0;
-    }
-
-    .corner-bottom-left {
-      bottom: 16px;
-      left: 16px;
-      border-bottom: 2px solid rgba(255, 255, 255, 0.7);
-      border-left: 2px solid rgba(255, 255, 255, 0.7);
-      transform: translate(-14px, 14px);
-      opacity: 0;
-    }
-
-    .corner-bottom-right {
-      bottom: 16px;
-      right: 16px;
-      border-bottom: 2px solid rgba(255, 255, 255, 0.7);
-      border-right: 2px solid rgba(255, 255, 255, 0.7);
-      transform: translate(14px, 14px);
-      opacity: 0;
-    }
-
-    /* When visible on scroll, brackets snap into position */
-    .reveal-on-scroll.is-visible .corner-top-left,
-    .reveal-on-scroll.is-visible .corner-top-right,
-    .reveal-on-scroll.is-visible .corner-bottom-left,
-    .reveal-on-scroll.is-visible .corner-bottom-right {
-      transform: translate(0, 0);
-      opacity: 1;
-    }
-
-    /* Animated Laser Line Accents */
-    .form-border-line-top, .form-border-line-bottom {
-      position: absolute;
-      left: 0;
-      width: 100%;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, #25D366, transparent);
-      transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .form-border-line-top {
-      top: 0;
-      transform: scaleX(0);
-    }
-
-    .form-border-line-bottom {
-      bottom: 0;
-      transform: scaleX(0);
-    }
-
-    .reveal-on-scroll.is-visible .form-border-line-top,
-    .reveal-on-scroll.is-visible .form-border-line-bottom {
-      transform: scaleX(1);
-    }
-
-    /* Minimalist Dark Input Group */
-    .awwwards-input-group {
-      margin-bottom: 26px;
-      position: relative;
-    }
-
-    .awwwards-input-label {
-      display: block;
-      font-family: 'Inter', sans-serif !important;
-      font-size: 0.74rem;
-      font-weight: 500;
-      color: rgba(255, 255, 255, 0.6);
-      margin-bottom: 6px;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-    }
-
-    .awwwards-input-field {
-      width: 100%;
-      background: transparent !important;
-      border: none !important;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
-      padding: 12px 0 !important;
-      font-family: 'Cormorant Garamond', serif !important;
-      font-size: 1.25rem !important;
-      color: #FFFFFF !important;
-      outline: none !important;
-      border-radius: 0 !important;
-      transition: all 0.3s ease !important;
-    }
-
-    .awwwards-input-field:focus {
-      border-bottom-color: #25D366 !important;
-      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.15);
-    }
-
-    .awwwards-input-field::placeholder {
-      color: rgba(255, 255, 255, 0.35);
-      font-weight: 300;
-    }
-
-    /* Live Interactive Calculation Pill */
-    .calc-live-preview-pill {
-      background: rgba(37, 211, 102, 0.12);
-      border: 1px solid rgba(37, 211, 102, 0.3);
-      padding: 10px 18px;
-      border-radius: 4px;
-      font-family: 'Inter', sans-serif !important;
-      font-size: 0.8rem;
-      color: #25D366;
-      margin-bottom: 24px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    /* Master Awwwards CTA Button */
-    .btn-awwwards-submit {
-      width: 100%;
-      padding: 20px 32px;
-      background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
-      color: #FFFFFF;
-      border: none;
-      font-family: 'Inter', sans-serif !important;
-      font-size: 0.85rem;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 12px;
-      box-shadow: 0 10px 30px rgba(37, 211, 102, 0.35);
-      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-      margin-top: 14px;
-      text-decoration: none;
     }
 
-    .btn-awwwards-submit:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 16px 40px rgba(37, 211, 102, 0.5);
-      background: linear-gradient(135deg, #28E16D 0%, #159B8B 100%);
+    .aurore-hero-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    /* Giant White Overlaid Typography Banner across Image */
+    .aurore-giant-title {
+      position: absolute;
+      width: 100%;
+      text-align: center;
+      font-family: 'Cormorant Garamond', 'Bodoni Moda', serif !important;
+      font-size: clamp(3rem, 11.5vw, 11rem);
+      font-weight: 400;
+      color: #FFFFFF;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+      line-height: 0.85;
+      padding: 0 2vw;
+      pointer-events: none;
+      z-index: 5;
+    }
+
+    .aurore-form-section {
+      background: #FAF9F6;
+      padding: 80px 8vw 90px;
+      border-bottom: 1px solid var(--border-thin);
+    }
+
+    .aurore-form-title {
+      font-family: 'Cormorant Garamond', serif !important;
+      font-size: clamp(1.8rem, 3.4vw, 2.8rem) !important;
+      font-weight: 500 !important;
+      letter-spacing: 1px !important;
+      text-transform: uppercase !important;
+      color: #111111 !important;
+      margin-bottom: 12px;
+    }
+
+    .aurore-form-subtitle {
+      font-family: 'Inter', sans-serif !important;
+      font-size: 0.94rem !important;
+      color: #666666 !important;
+      margin-bottom: 36px;
+      max-width: 720px;
+      line-height: 1.65;
+      font-weight: 300;
+    }
+
+    .aurore-form-grid {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      max-width: 960px;
+      margin-bottom: 28px;
+    }
+
+    @media (max-width: 768px) {
+      .aurore-form-grid {
+        flex-direction: column;
+        align-items: stretch;
+      }
+    }
+
+    .aurore-input-field {
+      flex: 1;
+      background: #F4F4F2 !important;
+      border: 1px solid #E2E2DD !important;
+      padding: 18px 24px !important;
+      font-family: 'Inter', sans-serif !important;
+      font-size: 0.95rem !important;
+      color: #111111 !important;
+      outline: none !important;
+      border-radius: 0px !important;
+      transition: border-color 0.3s ease !important;
+    }
+
+    .aurore-input-field:focus {
+      border-color: #111111 !important;
+      background: #FFFFFF !important;
+    }
+
+    .aurore-input-field::placeholder {
+      color: #999999;
+      font-weight: 300;
+    }
+
+    /* Exact Aurore & Astrée Reference Button */
+    .btn-aurore-submit {
+      background: #2A2A2A;
+      color: #FFFFFF;
+      border: none;
+      padding: 18px 52px;
+      font-family: 'Inter', sans-serif !important;
+      font-size: 0.88rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      cursor: pointer;
+      border-radius: 0px;
+      transition: background 0.3s ease, transform 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .btn-aurore-submit:hover {
+      background: #111111;
+      transform: translateY(-1px);
+    }
+
+    /* Consent Checkboxes matching screenshot */
+    .aurore-checkbox-group {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      max-width: 820px;
+    }
+
+    .aurore-checkbox-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-family: 'Inter', sans-serif !important;
+      font-size: 0.82rem;
+      color: #555555;
+      line-height: 1.5;
+    }
+
+    .aurore-checkbox-item input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      accent-color: #2A2A2A;
+      margin-top: 2px;
+      cursor: pointer;
     }
 
     .input-control:focus {
@@ -1808,102 +1769,45 @@
   <!-- ==========================================================================
        BLOCK 2: FULL-COLOR GIRL PHOTO & PROMINENT MANTECO FORM CARD
        ========================================================================== -->
-  <section id="about" class="block-2-section hairline-bottom">
-    <div class="block-2-grid" style="align-items: stretch;">
-      <!-- Left Column: Brand Story & Full-Color Girl Photo (hero_cover_1.jpg) -->
-      <div class="reveal-on-scroll delay-1" style="display: flex; flex-direction: column; justify-content: space-between;">
-        <div>
-          <div class="hero-live-pill" style="border-color: var(--text-main); color: var(--text-main); background: rgba(0,0,0,0.03); margin-bottom: 20px;">
-            <span class="pulse-green"></span>
-            <span>BISHKEK FACTORY ONLINE • СВОБОДНО: 2 СЛОТА</span>
+  <!-- ==========================================================================
+       AURORE & ASTRÉE STYLE: GIANT LORIKA+ WHITE TYPOGRAPHY PHOTO BANNER & FORM
+       ========================================================================== -->
+  <section id="about" class="hairline-bottom">
+    <!-- Giant White Overlaid Brand Typography Banner over Girl Photo -->
+    <div class="aurore-hero-banner-wrapper reveal-on-scroll delay-1">
+      <div class="aurore-giant-title">LORIKA +</div>
+      <img src="hero_cover_1.jpg" alt="LORIKA+ Plus Size Fashion" class="aurore-hero-img">
+    </div>
+
+    <!-- Aurore & Astrée Clean High-Fashion Form Section -->
+    <div class="aurore-form-section reveal-on-scroll delay-2">
+      <div style="max-width: 1100px; margin: 0 auto;">
+        <h2 class="aurore-form-title">РАССЧИТАЙТЕ СМЕТУ ПОШИВА LORIKA+</h2>
+        <p class="aurore-form-subtitle">
+          Укажите ваш номер WhatsApp и планируемый тираж, чтобы мгновенно получить оптовую смету от 1 150 ₽/шт и подборку тканей от главного технолога Ларисы. Мы пишем редко и по делу — только то, что действительно стоит вашего внимания.
+        </p>
+
+        <form onsubmit="event.preventDefault(); window.open('https://wa.me/996703326999?text=Здравствуйте!%20Хочу%20рассчитать%20стоимость%20партии%20LORIKA%2B', '_blank');">
+          <!-- Horizontal Input Grid & Dark Rectangle Button -->
+          <div class="aurore-form-grid">
+            <input type="tel" class="aurore-input-field" placeholder="Номер WhatsApp*" required>
+            <input type="number" class="aurore-input-field" placeholder="Планируемый тираж (шт)*" value="300" required>
+            <button type="submit" class="btn-aurore-submit">Отправить</button>
           </div>
 
-          <h2 class="stretched-title scramble-title" style="margin-bottom: 16px; font-size: clamp(2.2rem, 4vw, 3.8rem);">LORIKA+</h2>
-          
-          <p class="hero-description" style="font-size: 1.25rem; margin-bottom: 20px; line-height: 1.6;">
-            Производство женской одежды больших размеров (50–64+) с точностью элитного ателье, личной подборкой тканей от главного технолога Ларисы и гарантией 0% возвратов на маркетплейсах.
-          </p>
+          <!-- Consent Checkboxes matching reference screenshot -->
+          <div class="aurore-checkbox-group">
+            <label class="aurore-checkbox-item">
+              <input type="checkbox" checked required>
+              <span>Я даю согласие на обработку персональных данных в соответствии с политикой конфиденциальности и соглашением об обработке персональных данных</span>
+            </label>
 
-          <div style="margin-bottom: 28px; display: flex; gap: 10px; flex-wrap: wrap;">
-            <span class="tag-pill">Анатомические лекала</span>
-            <span class="tag-pill">Закупка на Мадине</span>
-            <span class="tag-pill">ОТК &lt;3% брака</span>
-            <span class="tag-pill">Честный ЗНАК</span>
+            <label class="aurore-checkbox-item">
+              <input type="checkbox" checked>
+              <span>Я даю согласие на получение от LORIKA+ информационных и рекламных рассылок о новых коллекциях, акциях и скидках на указанный адрес WhatsApp/Email</span>
+            </label>
           </div>
-        </div>
-
-        <!-- Girl Photo Card -->
-        <div class="girl-photo-wrapper" style="height: 440px; margin-top: 10px;">
-          <span class="hero-floating-badge badge-top-left" style="position: absolute; top: 20px; left: 20px; z-index: 5;">★ 30+ ЛЕТ ОПЫТА | ЛАРИСА</span>
-          <span class="hero-floating-badge badge-bottom-right" style="position: absolute; bottom: 20px; right: 20px; z-index: 5; background: rgba(248, 246, 240, 0.95); color: #111;">● БРАК &lt;3% ПО ДОГОВОРУ</span>
-          <img src="hero_cover_1.jpg" alt="LORIKA+ Одежда Plus Size" class="girl-photo-img">
-        </div>
-      </div>
-
-      <!-- Right Column: Awwwards Site of the Day Dark Obsidian Luxury Form Card -->
-      <div class="reveal-on-scroll delay-2" style="display: flex;">
-        <div class="awwwards-form-card">
-          <!-- Animated Top & Bottom Laser Edge Lines -->
-          <div class="form-border-line-top"></div>
-          <div class="form-border-line-bottom"></div>
-
-          <!-- Animated Corner Arrows / Brackets -->
-          <div class="form-corner-bracket corner-top-left"></div>
-          <div class="form-corner-bracket corner-top-right"></div>
-          <div class="form-corner-bracket corner-bottom-left"></div>
-          <div class="form-corner-bracket corner-bottom-right"></div>
-
-          <div>
-            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
-              <span style="font-family: 'Space Mono', monospace; font-size: 0.72rem; letter-spacing: 2px; text-transform: uppercase; color: #25D366; font-weight: 700;">● BISHKEK VIP SLOT #1</span>
-              <span style="font-family: 'Space Mono', monospace; font-size: 0.72rem; color: rgba(255,255,255,0.4);">01 / 02</span>
-            </div>
-
-            <h3 style="font-family: 'Manrope', sans-serif; font-size: clamp(1.6rem, 2.5vw, 2.1rem); font-weight: 800; color: #FFF; margin-bottom: 10px; line-height: 1.15; text-transform: uppercase; letter-spacing: -0.02em;">
-              Экспресс-Расчёт Сметы
-            </h3>
-
-            <p style="font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; color: rgba(255, 255, 255, 0.7); margin-bottom: 28px; line-height: 1.5; font-weight: 400;">
-              Зафиксируйте оптовую цену пошива от 1 150 ₽/шт и получите коммерческое предложение и расчет сметы напрямую от Ларисы.
-            </p>
-
-            <form onsubmit="event.preventDefault(); window.open('https://wa.me/996703326999?text=Здравствуйте!%20Хочу%20рассчитать%20стоимость%20партии%20LORIKA%2B', '_blank');">
-              <div class="awwwards-input-group">
-                <label class="awwwards-input-label">Номер WhatsApp*</label>
-                <input type="tel" class="awwwards-input-field" placeholder="+7 (___) ___-__-__" required>
-              </div>
-
-              <div class="awwwards-input-group">
-                <label class="awwwards-input-label">Планируемый тираж (шт)*</label>
-                <input type="number" class="awwwards-input-field" placeholder="Например: 300 шт" value="300" required oninput="updateLiveCalc(this.value)">
-              </div>
-
-              <div class="awwwards-input-group">
-                <label class="awwwards-input-label">Категория одежды Plus Size</label>
-                <input type="text" class="awwwards-input-field" placeholder="Платья, костюмы, блузы (50–64+)">
-              </div>
-
-              <!-- Live Interactive Dynamic Calculation Preview -->
-              <div class="calc-live-preview-pill">
-                <span style="font-size: 1.1rem;">⚡️</span>
-                <span>Ориентир сметы: <strong id="calc-result" style="color: #FFF; font-weight: 700;">~345 000 ₽</strong> (0% брака + лекала Ларисы)</span>
-              </div>
-
-              <button type="submit" class="btn-awwwards-submit">
-                <span>ПОЛУЧИТЬ СМЕТУ В WHATSAPP</span>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-              </button>
-            </form>
-          </div>
-
-          <div style="margin-top: 24px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: space-between;">
-            <div style="display: flex; align-items: center; gap: 8px;">
-              <span class="pulse-green"></span>
-              <span style="font-family: 'Inter', sans-serif; font-size: 0.78rem; color: rgba(255,255,255,0.6);">Гарантия возврата 0% по договору</span>
-            </div>
-            <span style="font-family: 'Space Mono', monospace; font-size: 0.72rem; color: rgba(255,255,255,0.4);">OTK &lt;3%</span>
-          </div>
-        </div>
+        </form>
       </div>
     </div>
   </section>
