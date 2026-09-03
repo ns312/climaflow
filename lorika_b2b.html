@@ -8,9 +8,75 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Inter:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
   <style>
+    /* ==========================================================================
+       ALBINI-STYLE FULLSCREEN PRELOADER WITH MANROPE TYPOGRAPHY & GIANT % COUNTER
+       ========================================================================== */
+    #preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: #FFFFFF;
+      color: #0E0E0E;
+      z-index: 999999;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 5vw 6vw;
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      pointer-events: all;
+      font-family: 'Manrope', sans-serif;
+    }
+
+    #preloader.loaded {
+      opacity: 0;
+      transform: translateY(-100%);
+      pointer-events: none;
+    }
+
+    .preloader-header-brand {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .preloader-logo-title {
+      font-family: 'Manrope', sans-serif;
+      font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
+      line-height: 0.92;
+      color: #000000;
+    }
+
+    .preloader-logo-sub {
+      font-family: 'Manrope', sans-serif;
+      font-size: clamp(0.9rem, 1.5vw, 1.25rem);
+      font-weight: 500;
+      text-transform: lowercase;
+      color: #444444;
+      margin-top: 6px;
+      letter-spacing: -0.01em;
+    }
+
+    .preloader-counter-container {
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .preloader-counter-num {
+      font-family: 'Manrope', sans-serif;
+      font-size: clamp(5.5rem, 19vw, 15rem);
+      font-weight: 800;
+      line-height: 0.82;
+      letter-spacing: -0.05em;
+      color: #000000;
+    }
     /* ==========================================================================
        1. GLOBAL DESIGN SYSTEM (EDITORIAL LUXURY B&W WITH LORIKA+ BRANDING)
        ========================================================================== */
@@ -1331,8 +1397,18 @@
     .delay-3 { transition-delay: 0.3s; }
     .delay-4 { transition-delay: 0.4s; }
   </style>
-</head>
 <body>
+
+  <!-- Albini-Style Fullscreen Preloader with Manrope Typography -->
+  <div id="preloader">
+    <div class="preloader-header-brand">
+      <div class="preloader-logo-title">LORIKA+</div>
+      <div class="preloader-logo-sub">красота в деталях</div>
+    </div>
+    <div class="preloader-counter-container">
+      <div class="preloader-counter-num" id="preloader-counter">0%</div>
+    </div>
+  </div>
 
   <!-- Magnetic Cursor Follower -->
   <div class="cursor-follower" id="cursor"></div>
@@ -2097,6 +2173,31 @@
 
     // Initialize Calculator on load
     updateCalc();
+
+    // Albini-Style Preloader Counter (0% to 100%)
+    (function() {
+      const counterEl = document.getElementById('preloader-counter');
+      const preloaderEl = document.getElementById('preloader');
+      let currentPercent = 0;
+      
+      const timer = setInterval(() => {
+        currentPercent += Math.floor(Math.random() * 7) + 3;
+        if (currentPercent >= 100) {
+          currentPercent = 100;
+          counterEl.textContent = '100%';
+          clearInterval(timer);
+          setTimeout(() => {
+            preloaderEl.classList.add('loaded');
+          }, 350);
+        } else {
+          counterEl.textContent = currentPercent + '%';
+        }
+      }, 35);
+
+      window.addEventListener('load', () => {
+        currentPercent = 92;
+      });
+    })();
   </script>
 </body>
 </html>
