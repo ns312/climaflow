@@ -402,42 +402,27 @@
       drop-shadow: 0 10px 25px rgba(0,0,0,0.5);
     }
 
-    /* Bottom Inter Headline Overlay */
+    /* Bottom Inter Headline Overlay (Manteco Minimalist Sophisticated Layout) */
     .hero-bottom-headline-container {
       position: relative;
       z-index: 10;
       width: 100%;
       max-width: 1400px;
-      padding: 0 8vw 60px;
+      padding: 0 8vw 50px;
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-start;
       align-items: flex-end;
-      gap: 30px;
     }
 
     .hero-manteco-title {
-      font-family: 'Inter', sans-serif; /* Inter Font like Manteco */
-      font-size: clamp(2.2rem, 5vw, 4.2rem);
-      font-weight: 700;
-      line-height: 1.12;
-      letter-spacing: -0.02em;
-      color: #FFFFFF;
-      max-width: 900px;
-      text-shadow: 0 6px 30px rgba(0,0,0,0.8);
-    }
-
-    .hero-scroll-indicator {
-      font-size: 2.5rem;
-      color: #FFFFFF;
-      opacity: 0.85;
-      animation: bounceArrow 2s infinite;
-      cursor: pointer;
-    }
-
-    @keyframes bounceArrow {
-      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-      40% { transform: translateY(-10px); }
-      60% { transform: translateY(-5px); }
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(1.25rem, 2.4vw, 2.2rem); /* Smaller, refined & sophisticated */
+      font-weight: 500; /* Sophisticated medium weight */
+      line-height: 1.35;
+      letter-spacing: -0.01em;
+      color: rgba(255, 255, 255, 0.95);
+      max-width: 680px;
+      text-shadow: 0 4px 18px rgba(0,0,0,0.75);
     }
 
     /* ==========================================================================
@@ -633,15 +618,34 @@
         padding: 12px 5vw;
       }
       .header-logo-img {
-        height: 64px !important;
-        max-height: 68px;
+        height: 56px !important;
+        max-height: 60px;
         width: auto;
       }
-      .hero-cover-grid, .hero-grid {
-        grid-template-columns: 1fr;
-        gap: 24px;
+      .hero-center-logo-wrapper {
+        margin-top: 100px;
       }
-      .hero-cover-img-wrapper { height: 380px; }
+      .hero-center-logo-img {
+        height: 64px;
+      }
+      .hero-bottom-headline-container {
+        padding: 0 6vw 40px;
+      }
+      .hero-manteco-title {
+        font-size: 1.25rem;
+        line-height: 1.4;
+        max-width: 100%;
+      }
+      .block-2-section {
+        padding: 60px 6vw;
+      }
+      .block-2-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+      .girl-photo-wrapper {
+        height: 380px;
+      }
       .nav-links { display: none; }
       .scarcity-banner-box {
         flex-direction: column;
@@ -725,7 +729,6 @@
     <!-- Bottom Inter Headline Overlay (Manteco Layout) -->
     <div class="hero-bottom-headline-container reveal-on-scroll delay-2">
       <h1 class="hero-manteco-title">Пошив Одежды Plus Size в Бишкеке под ключ от 1 150 ₽</h1>
-      <a href="#block2" class="hero-scroll-indicator" title="Листать вниз">↓</a>
     </div>
   </section>
 
