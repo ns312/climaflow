@@ -1473,10 +1473,13 @@
         width: auto;
       }
       .hero-center-logo-wrapper {
-        margin-top: 80px;
+        margin-top: 26vh; /* Lower logo down to middle of mobile screen */
       }
       .hero-center-logo-img {
-        height: clamp(80px, 22vw, 115px); /* Larger logo on mobile */
+        height: clamp(85px, 24vw, 120px);
+      }
+      .header-actions {
+        display: none !important; /* Hide green WA button in header as requested */
       }
       .hero-bottom-headline-container {
         padding: 0 6vw 40px;
