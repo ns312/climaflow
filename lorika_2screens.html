@@ -677,57 +677,168 @@
     }
 
     .hero-form-card {
-      background: var(--bg-cream);
-      padding: 44px;
-      border: 1.5px solid var(--text-main);
-      box-shadow: 14px 14px 0px var(--text-main);
+    /* ==========================================================================
+       MANTECO-STYLE FORM WITH ANIMATED CORNER BRACKETS & EDGE FRAME DRAW
+       ========================================================================== */
+    .manteco-form-card {
+      background: #F4F1EA;
+      padding: 48px 40px;
       position: relative;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid rgba(17, 17, 17, 0.12);
+      box-shadow: 0 20px 45px rgba(0,0,0,0.04);
+      transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    .hero-form-card:hover {
-      transform: translate(-2px, -2px);
-      box-shadow: 18px 18px 0px var(--text-main);
+    /* Animated Corner Brackets / Corner Arrows */
+    .form-corner-bracket {
+      position: absolute;
+      width: 22px;
+      height: 22px;
+      pointer-events: none;
+      transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 10;
     }
 
-    .form-title {
-      font-family: var(--font-serif);
-      font-size: 1.65rem;
-      font-weight: 700;
-      margin-bottom: 10px;
-      text-transform: uppercase;
+    .corner-top-left {
+      top: 14px;
+      left: 14px;
+      border-top: 2px solid #8C7355;
+      border-left: 2px solid #8C7355;
+      transform: translate(-14px, -14px);
+      opacity: 0;
     }
 
-    .form-subtitle {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      margin-bottom: 26px;
-      line-height: 1.5;
+    .corner-top-right {
+      top: 14px;
+      right: 14px;
+      border-top: 2px solid #8C7355;
+      border-right: 2px solid #8C7355;
+      transform: translate(14px, -14px);
+      opacity: 0;
     }
 
-    .input-group {
-      margin-bottom: 20px;
+    .corner-bottom-left {
+      bottom: 14px;
+      left: 14px;
+      border-bottom: 2px solid #8C7355;
+      border-left: 2px solid #8C7355;
+      transform: translate(-14px, 14px);
+      opacity: 0;
     }
 
-    .input-group label {
+    .corner-bottom-right {
+      bottom: 14px;
+      right: 14px;
+      border-bottom: 2px solid #8C7355;
+      border-right: 2px solid #8C7355;
+      transform: translate(14px, 14px);
+      opacity: 0;
+    }
+
+    /* When visible on scroll, brackets snap into position creating the frame! */
+    .reveal-on-scroll.is-visible .corner-top-left,
+    .reveal-on-scroll.is-visible .corner-top-right,
+    .reveal-on-scroll.is-visible .corner-bottom-left,
+    .reveal-on-scroll.is-visible .corner-bottom-right {
+      transform: translate(0, 0);
+      opacity: 1;
+    }
+
+    /* Animated Gold Top/Bottom Line Accents */
+    .form-border-line-top, .form-border-line-bottom {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #8C7355, transparent);
+      transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .form-border-line-top {
+      top: 0;
+      transform: scaleX(0);
+    }
+
+    .form-border-line-bottom {
+      bottom: 0;
+      transform: scaleX(0);
+    }
+
+    .reveal-on-scroll.is-visible .form-border-line-top,
+    .reveal-on-scroll.is-visible .form-border-line-bottom {
+      transform: scaleX(1);
+    }
+
+    /* Manteco Minimalist Underline Input Controls */
+    .manteco-input-group {
+      margin-bottom: 24px;
+    }
+
+    .manteco-input-label {
       display: block;
-      font-family: var(--font-mono);
+      font-family: 'Inter', sans-serif;
       font-size: 0.76rem;
+      font-weight: 500;
+      color: #777;
+      margin-bottom: 4px;
       text-transform: uppercase;
       letter-spacing: 1px;
-      margin-bottom: 8px;
-      font-weight: 700;
     }
 
-    .input-control {
+    .manteco-input-field {
       width: 100%;
-      padding: 16px 18px;
-      border: 1px solid var(--border-thin);
-      font-family: var(--font-sans);
-      font-size: 1rem;
-      background: #FFF;
-      outline: none;
-      transition: all 0.3s ease;
+      background: transparent !important;
+      border: none !important;
+      border-bottom: 1px solid rgba(17, 17, 17, 0.25) !important;
+      padding: 12px 0 !important;
+      font-family: 'Inter', sans-serif !important;
+      font-size: 1.05rem !important;
+      color: #111 !important;
+      outline: none !important;
+      border-radius: 0 !important;
+      transition: border-color 0.3s ease !important;
+    }
+
+    .manteco-input-field:focus {
+      border-bottom-color: #8C7355 !important;
+    }
+
+    .manteco-input-field::placeholder {
+      color: #999;
+      font-weight: 300;
+    }
+
+    /* Manteco Underline Action Button */
+    .btn-manteco-action {
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: #111;
+      margin-top: 24px;
+      display: inline-flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-decoration: none;
+    }
+
+    .btn-manteco-action-line {
+      width: 130px;
+      height: 2px;
+      background: #8C7355;
+      margin-top: 8px;
+      transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1), background 0.4s ease;
+    }
+
+    .btn-manteco-action:hover .btn-manteco-action-line {
+      width: 100%;
+      background: #111;
+    }
     }
 
     .input-control:focus {
@@ -900,21 +1011,43 @@
           <span class="tag-pill">Честный ЗНАК</span>
         </div>
 
-        <!-- 15-Sec Calculation Form Card -->
-        <div class="hero-form-card" style="padding: 32px;">
-          <h3 class="form-title" style="font-size: 1.4rem;">Рассчитать партию за 15 сек</h3>
-          <p class="form-subtitle" style="margin-bottom: 18px; font-size: 0.85rem;">Зафиксируйте оптовую цену от 1 150 ₽/шт и получите расчет в WhatsApp.</p>
-          
-          <form onsubmit="event.preventDefault(); alert('Расчет отправлен в WhatsApp на номер +996 703 326 999!');">
-            <div class="input-group">
-              <label>Ваш номер WhatsApp</label>
-              <input type="tel" class="input-control" placeholder="+7 (___) ___-__-__" required>
+        <!-- Manteco Exact Style Form Card with Animated Corner Brackets & Frame Drawing -->
+        <div class="manteco-form-card">
+          <!-- Animated Top & Bottom Gold Edge Lines -->
+          <div class="form-border-line-top"></div>
+          <div class="form-border-line-bottom"></div>
+
+          <!-- Animated Corner Arrows / Brackets -->
+          <div class="form-corner-bracket corner-top-left"></div>
+          <div class="form-corner-bracket corner-top-right"></div>
+          <div class="form-corner-bracket corner-bottom-left"></div>
+          <div class="form-corner-bracket corner-bottom-right"></div>
+
+          <h3 style="font-family: 'Manrope', sans-serif; font-size: 1.6rem; font-weight: 700; color: #111; margin-bottom: 10px;">Рассчитать стоимость LORIKA+</h3>
+          <p style="font-family: 'Inter', sans-serif; font-size: 0.88rem; color: #666; margin-bottom: 30px; line-height: 1.5; font-weight: 400;">
+            Укажите ваш номер WhatsApp и планируемый тираж для расчёта стоимости пошива и подборки тканей от Ларисы.
+          </p>
+
+          <form onsubmit="event.preventDefault(); alert('Заявка отправлена! Менеджер свяжется с вами в WhatsApp!');">
+            <div class="manteco-input-group">
+              <label class="manteco-input-label">Номер WhatsApp*</label>
+              <input type="tel" class="manteco-input-field" placeholder="+7 (___) ___-__-__" required>
             </div>
-            <div class="input-group">
-              <label>Планируемый тираж (шт)</label>
-              <input type="number" class="input-control" placeholder="Например: 300 шт" value="300" required>
+
+            <div class="manteco-input-group">
+              <label class="manteco-input-label">Тираж (шт)*</label>
+              <input type="number" class="manteco-input-field" placeholder="Например: 300 шт" value="300" required>
             </div>
-            <button type="submit" class="btn-black" style="width: 100%; margin-top: 10px; padding: 16px;">ПОЛУЧИТЬ РАСЧЕТ В WHATSAPP</button>
+
+            <div class="manteco-input-group">
+              <label class="manteco-input-label">Категория одежды</label>
+              <input type="text" class="manteco-input-field" placeholder="Платья, костюмы, блузы (Plus Size)">
+            </div>
+
+            <button type="submit" class="btn-manteco-action">
+              <span>ПОЛУЧИТЬ РАСЧЕТ И КАТАЛОГ</span>
+              <span class="btn-manteco-action-line"></span>
+            </button>
           </form>
         </div>
       </div>
