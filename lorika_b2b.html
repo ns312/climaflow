@@ -754,64 +754,76 @@
     }
 
     /* ==========================================================================
-       MANTECO-STYLE FORM WITH ANIMATED CORNER BRACKETS & EDGE FRAME DRAW
+       AWWWARDS SITE OF THE DAY LEVEL LUXURY OBSIDIAN FORM DESIGN
        ========================================================================== */
-    .manteco-form-card {
-      background: #F4F1EA;
-      padding: 48px 40px;
+    .awwwards-form-card {
+      background: radial-gradient(circle at 90% 10%, rgba(37, 211, 102, 0.09) 0%, transparent 55%), #0E0E0E;
+      color: #F8F6F0;
+      padding: 56px 44px;
       position: relative;
-      border: 1px solid rgba(17, 17, 17, 0.12);
-      box-shadow: 0 20px 45px rgba(0,0,0,0.04);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 30px 90px rgba(0,0,0,0.35);
       transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+    }
+
+    .awwwards-form-card:hover {
+      border-color: rgba(255, 255, 255, 0.3);
+      box-shadow: 0 40px 110px rgba(0,0,0,0.5);
     }
 
     /* Animated Corner Brackets / Corner Arrows */
     .form-corner-bracket {
       position: absolute;
-      width: 22px;
-      height: 22px;
+      width: 24px;
+      height: 24px;
       pointer-events: none;
       transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
       z-index: 10;
     }
 
     .corner-top-left {
-      top: 14px;
-      left: 14px;
-      border-top: 2px solid #8C7355;
-      border-left: 2px solid #8C7355;
+      top: 16px;
+      left: 16px;
+      border-top: 2px solid rgba(255, 255, 255, 0.7);
+      border-left: 2px solid rgba(255, 255, 255, 0.7);
       transform: translate(-14px, -14px);
       opacity: 0;
     }
 
     .corner-top-right {
-      top: 14px;
-      right: 14px;
-      border-top: 2px solid #8C7355;
-      border-right: 2px solid #8C7355;
+      top: 16px;
+      right: 16px;
+      border-top: 2px solid rgba(255, 255, 255, 0.7);
+      border-right: 2px solid rgba(255, 255, 255, 0.7);
       transform: translate(14px, -14px);
       opacity: 0;
     }
 
     .corner-bottom-left {
-      bottom: 14px;
-      left: 14px;
-      border-bottom: 2px solid #8C7355;
-      border-left: 2px solid #8C7355;
+      bottom: 16px;
+      left: 16px;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.7);
+      border-left: 2px solid rgba(255, 255, 255, 0.7);
       transform: translate(-14px, 14px);
       opacity: 0;
     }
 
     .corner-bottom-right {
-      bottom: 14px;
-      right: 14px;
-      border-bottom: 2px solid #8C7355;
-      border-right: 2px solid #8C7355;
+      bottom: 16px;
+      right: 16px;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.7);
+      border-right: 2px solid rgba(255, 255, 255, 0.7);
       transform: translate(14px, 14px);
       opacity: 0;
     }
 
-    /* When visible on scroll, brackets snap into position creating the frame! */
+    /* When visible on scroll, brackets snap into position */
     .reveal-on-scroll.is-visible .corner-top-left,
     .reveal-on-scroll.is-visible .corner-top-right,
     .reveal-on-scroll.is-visible .corner-bottom-left,
@@ -820,13 +832,13 @@
       opacity: 1;
     }
 
-    /* Animated Gold Top/Bottom Line Accents */
+    /* Animated Laser Line Accents */
     .form-border-line-top, .form-border-line-bottom {
       position: absolute;
       left: 0;
       width: 100%;
       height: 2px;
-      background: linear-gradient(90deg, transparent, #8C7355, transparent);
+      background: linear-gradient(90deg, transparent, #25D366, transparent);
       transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
@@ -845,75 +857,89 @@
       transform: scaleX(1);
     }
 
-    /* Manteco Minimalist Underline Input Controls */
-    .manteco-input-group {
-      margin-bottom: 24px;
+    /* Minimalist Dark Input Group */
+    .awwwards-input-group {
+      margin-bottom: 26px;
+      position: relative;
     }
 
-    .manteco-input-label {
+    .awwwards-input-label {
       display: block;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.76rem;
+      font-family: 'Inter', sans-serif !important;
+      font-size: 0.74rem;
       font-weight: 500;
-      color: #777;
-      margin-bottom: 4px;
+      color: rgba(255, 255, 255, 0.6);
+      margin-bottom: 6px;
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 1.5px;
     }
 
-    .manteco-input-field {
+    .awwwards-input-field {
       width: 100%;
       background: transparent !important;
       border: none !important;
-      border-bottom: 1px solid rgba(17, 17, 17, 0.25) !important;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
       padding: 12px 0 !important;
-      font-family: 'Inter', sans-serif !important;
-      font-size: 1.05rem !important;
-      color: #111 !important;
+      font-family: 'Cormorant Garamond', serif !important;
+      font-size: 1.25rem !important;
+      color: #FFFFFF !important;
       outline: none !important;
       border-radius: 0 !important;
-      transition: border-color 0.3s ease !important;
+      transition: all 0.3s ease !important;
     }
 
-    .manteco-input-field:focus {
-      border-bottom-color: #8C7355 !important;
+    .awwwards-input-field:focus {
+      border-bottom-color: #25D366 !important;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.15);
     }
 
-    .manteco-input-field::placeholder {
-      color: #999;
+    .awwwards-input-field::placeholder {
+      color: rgba(255, 255, 255, 0.35);
       font-weight: 300;
     }
 
-    /* Manteco Underline Action Button */
-    .btn-manteco-action {
-      background: none;
+    /* Live Interactive Calculation Pill */
+    .calc-live-preview-pill {
+      background: rgba(37, 211, 102, 0.12);
+      border: 1px solid rgba(37, 211, 102, 0.3);
+      padding: 10px 18px;
+      border-radius: 4px;
+      font-family: 'Inter', sans-serif !important;
+      font-size: 0.8rem;
+      color: #25D366;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* Master Awwwards CTA Button */
+    .btn-awwwards-submit {
+      width: 100%;
+      padding: 20px 32px;
+      background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+      color: #FFFFFF;
       border: none;
-      padding: 0;
-      cursor: pointer;
-      font-family: 'Inter', sans-serif;
+      font-family: 'Inter', sans-serif !important;
       font-size: 0.85rem;
-      font-weight: 600;
-      letter-spacing: 2.5px;
+      font-weight: 700;
+      letter-spacing: 2px;
       text-transform: uppercase;
-      color: #111;
-      margin-top: 24px;
-      display: inline-flex;
-      flex-direction: column;
-      align-items: flex-start;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      box-shadow: 0 10px 30px rgba(37, 211, 102, 0.35);
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      margin-top: 14px;
       text-decoration: none;
     }
 
-    .btn-manteco-action-line {
-      width: 130px;
-      height: 2px;
-      background: #8C7355;
-      margin-top: 8px;
-      transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1), background 0.4s ease;
-    }
-
-    .btn-manteco-action:hover .btn-manteco-action-line {
-      width: 100%;
-      background: #111;
+    .btn-awwwards-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 40px rgba(37, 211, 102, 0.5);
+      background: linear-gradient(135deg, #28E16D 0%, #159B8B 100%);
     }
 
     .input-control:focus {
@@ -1767,10 +1793,10 @@
         </div>
       </div>
 
-      <!-- Right Column: Prominent, Large Manteco Luxury Form Card -->
+      <!-- Right Column: Awwwards Site of the Day Dark Obsidian Luxury Form Card -->
       <div class="reveal-on-scroll delay-2" style="display: flex;">
-        <div class="manteco-form-card">
-          <!-- Animated Top & Bottom Gold Edge Lines -->
+        <div class="awwwards-form-card">
+          <!-- Animated Top & Bottom Laser Edge Lines -->
           <div class="form-border-line-top"></div>
           <div class="form-border-line-bottom"></div>
 
@@ -1781,38 +1807,54 @@
           <div class="form-corner-bracket corner-bottom-right"></div>
 
           <div>
-            <span style="font-family: 'Inter', sans-serif; font-size: 0.76rem; letter-spacing: 2px; text-transform: uppercase; color: #8C7355; font-weight: 600; display: block; margin-bottom: 8px;">★ ФОРМА РАССЧЁТА СМЕТЫ</span>
-            <h3 style="font-family: 'Manrope', sans-serif; font-size: 1.85rem; font-weight: 700; color: #111; margin-bottom: 12px; line-height: 1.2;">Рассчитать стоимость пошива LORIKA+</h3>
-            <p style="font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; color: #555; margin-bottom: 36px; line-height: 1.5; font-weight: 400;">
-              Зафиксируйте оптовую цену от 1 150 ₽/шт и получите мгновенный расчёт сметы и подборку тканей от главного технолога Ларисы в WhatsApp.
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
+              <span style="font-family: 'Space Mono', monospace; font-size: 0.72rem; letter-spacing: 2px; text-transform: uppercase; color: #25D366; font-weight: 700;">● BISHKEK VIP SLOT #1</span>
+              <span style="font-family: 'Space Mono', monospace; font-size: 0.72rem; color: rgba(255,255,255,0.4);">01 / 02</span>
+            </div>
+
+            <h3 style="font-family: 'Manrope', sans-serif; font-size: clamp(1.6rem, 2.5vw, 2.1rem); font-weight: 800; color: #FFF; margin-bottom: 10px; line-height: 1.15; text-transform: uppercase; letter-spacing: -0.02em;">
+              Экспресс-Расчёт Сметы
+            </h3>
+
+            <p style="font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; color: rgba(255, 255, 255, 0.7); margin-bottom: 28px; line-height: 1.5; font-weight: 400;">
+              Зафиксируйте оптовую цену пошива от 1 150 ₽/шт и получите коммерческое предложение и расчет сметы напрямую от Ларисы.
             </p>
 
-            <form onsubmit="event.preventDefault(); alert('Заявка отправлена! Менеджер свяжется с вами в WhatsApp!');">
-              <div class="manteco-input-group">
-                <label class="manteco-input-label">Ваш номер WhatsApp*</label>
-                <input type="tel" class="manteco-input-field" placeholder="+7 (___) ___-__-__" required>
+            <form onsubmit="event.preventDefault(); window.open('https://wa.me/996703326999?text=Здравствуйте!%20Хочу%20рассчитать%20стоимость%20партии%20LORIKA%2B', '_blank');">
+              <div class="awwwards-input-group">
+                <label class="awwwards-input-label">Номер WhatsApp*</label>
+                <input type="tel" class="awwwards-input-field" placeholder="+7 (___) ___-__-__" required>
               </div>
 
-              <div class="manteco-input-group">
-                <label class="manteco-input-label">Планируемый тираж (шт)*</label>
-                <input type="number" class="manteco-input-field" placeholder="Например: 300 шт" value="300" required>
+              <div class="awwwards-input-group">
+                <label class="awwwards-input-label">Планируемый тираж (шт)*</label>
+                <input type="number" class="awwwards-input-field" placeholder="Например: 300 шт" value="300" required oninput="updateLiveCalc(this.value)">
               </div>
 
-              <div class="manteco-input-group">
-                <label class="manteco-input-label">Категория или наименование одежды</label>
-                <input type="text" class="manteco-input-field" placeholder="Платья, костюмы, блузы (Plus Size 50-64+)">
+              <div class="awwwards-input-group">
+                <label class="awwwards-input-label">Категория одежды Plus Size</label>
+                <input type="text" class="awwwards-input-field" placeholder="Платья, костюмы, блузы (50–64+)">
               </div>
 
-              <button type="submit" class="btn-manteco-action" style="width: 100%; margin-top: 32px;">
-                <span style="font-size: 0.85rem; font-weight: 600; letter-spacing: 2px;">ПОЛУЧИТЬ РАСЧЁТ В WHATSAPP</span>
-                <span class="btn-manteco-action-line" style="width: 100%;"></span>
+              <!-- Live Interactive Dynamic Calculation Preview -->
+              <div class="calc-live-preview-pill">
+                <span style="font-size: 1.1rem;">⚡️</span>
+                <span>Ориентир сметы: <strong id="calc-result" style="color: #FFF; font-weight: 700;">~345 000 ₽</strong> (0% брака + лекала Ларисы)</span>
+              </div>
+
+              <button type="submit" class="btn-awwwards-submit">
+                <span>ПОЛУЧИТЬ СМЕТУ В WHATSAPP</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
               </button>
             </form>
           </div>
 
-          <div style="margin-top: 24px; padding-top: 18px; border-top: 1px solid rgba(17,17,17,0.1); display: flex; align-items: center; gap: 10px;">
-            <span class="pulse-green"></span>
-            <span style="font-family: 'Cormorant Garamond', serif; font-size: 0.95rem; color: #666;">Ответ главного технолога Ларисы в течение 15 минут</span>
+          <div style="margin-top: 24px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: space-between;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span class="pulse-green"></span>
+              <span style="font-family: 'Inter', sans-serif; font-size: 0.78rem; color: rgba(255,255,255,0.6);">Гарантия возврата 0% по договору</span>
+            </div>
+            <span style="font-family: 'Space Mono', monospace; font-size: 0.72rem; color: rgba(255,255,255,0.4);">OTK &lt;3%</span>
           </div>
         </div>
       </div>
@@ -2461,6 +2503,18 @@
     document.querySelectorAll('.reveal-on-scroll').forEach(el => {
       revealObserver.observe(el);
     });
+
+    // Live Calculation Update for Awwwards Form
+    function updateLiveCalc(val) {
+      const qty = parseInt(val) || 0;
+      const price = 1150;
+      const total = qty * price;
+      const formatted = new Intl.NumberFormat('ru-RU').format(total);
+      const elem = document.getElementById('calc-result');
+      if (elem) {
+        elem.innerText = `~${formatted} ₽`;
+      }
+    }
 
     // Initialize Calculator on load
     updateCalc();
