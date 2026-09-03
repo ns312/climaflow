@@ -8,7 +8,7 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
   <style>
     /* ==========================================================================
@@ -55,9 +55,9 @@
     }
 
     .preloader-logo-sub {
-      font-family: 'Manrope', sans-serif;
-      font-size: clamp(0.9rem, 1.5vw, 1.25rem);
-      font-weight: 500;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+      font-weight: 400;
       text-transform: lowercase;
       color: #444444;
       margin-top: 6px;
@@ -83,7 +83,7 @@
     .hero-center-logo-wrapper {
       position: relative;
       z-index: 10;
-      margin-top: 90px; /* Raised higher */
+      margin-top: 90px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -91,14 +91,14 @@
     }
 
     .hero-center-logo-img {
-      height: clamp(90px, 15vw, 145px); /* Larger logo as requested */
+      height: clamp(90px, 15vw, 145px);
       width: auto;
       object-fit: contain;
       filter: brightness(0) invert(1);
       drop-shadow: 0 10px 25px rgba(0,0,0,0.5);
     }
     /* ==========================================================================
-       1. GLOBAL DESIGN SYSTEM (EDITORIAL LUXURY B&W WITH LORIKA+ BRANDING)
+       1. GLOBAL DESIGN SYSTEM (EDITORIAL LUXURY THIN SERIF TYPOGRAPHY)
        ========================================================================== */
     :root {
       --bg-cream: #F8F6F0;
@@ -111,8 +111,8 @@
       --border-dark: rgba(255, 255, 255, 0.15);
       --accent-green: #25D366;
       --accent-green-dark: #128C7E;
-      --font-serif: 'Bodoni Moda', serif;
-      --font-sans: 'Inter', sans-serif;
+      --font-serif: 'Cormorant Garamond', 'Bodoni Moda', serif;
+      --font-sans: 'Cormorant Garamond', 'Bodoni Moda', serif;
       --font-mono: 'Space Mono', monospace;
     }
 
@@ -131,10 +131,36 @@
     body {
       background-color: var(--bg-cream);
       color: var(--text-main);
-      font-family: var(--font-sans);
-      line-height: 1.6;
+      font-family: var(--font-serif);
+      font-weight: 400;
+      line-height: 1.65;
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
+    }
+
+    /* GLOBAL THIN ELEGANT SERIF FOR ALL SITE TEXT & HEADLINES */
+    h1, h2, h3, h4, h5, h6, p, label, input, textarea, select, li, a, .hero-manteco-title, .hero-description, .tag-pill, .hero-live-pill, .scarcity-text, .manteco-input-label, .manteco-input-field {
+      font-family: 'Cormorant Garamond', 'Bodoni Moda', serif !important;
+    }
+
+    .hero-manteco-title {
+      font-size: clamp(1.45rem, 2.8vw, 2.6rem) !important;
+      font-weight: 400 !important;
+      letter-spacing: 0.5px !important;
+    }
+
+    .hero-description, p {
+      font-size: 1.25rem !important;
+      font-weight: 400 !important;
+    }
+
+    /* EXCEPTIONS KEPT AS CURRENT: BUTTONS & BRAND FACTORY NAME */
+    .btn-represent, .btn-represent *, .btn-black, .btn-black *, .btn-whatsapp, .btn-whatsapp *, .btn-manteco-action, .btn-manteco-action * {
+      font-family: 'Inter', sans-serif !important;
+    }
+
+    .preloader-logo-title, .header-center-text, .scramble-title {
+      font-family: 'Manrope', sans-serif !important;
     }
 
     /* Magnetic Cursor Follower */
