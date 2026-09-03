@@ -293,31 +293,39 @@
     }
 
     /* ==========================================================================
-       3. NEW HERO COVER SECTION (1ST SCREEN WITH COVER HERO PHOTO & MAIN OFFER)
+       3. AWWWARDS-LEVEL HERO COVER SECTION (1ST SCREEN)
        ========================================================================== */
     .hero-cover-section {
-      padding-top: 150px;
-      padding-bottom: 70px;
-      min-height: 90vh;
+      padding-top: 140px;
+      padding-bottom: 90px;
+      min-height: 92vh;
       display: flex;
       align-items: center;
+      position: relative;
+      background: radial-gradient(circle at 80% 20%, rgba(37, 211, 102, 0.04) 0%, transparent 60%);
     }
 
     .hero-cover-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 70px;
       align-items: center;
     }
 
     .hero-cover-img-wrapper {
       position: relative;
       width: 100%;
-      height: 520px;
-      border: 1px solid var(--text-main);
-      box-shadow: 14px 14px 0px var(--text-main);
+      height: 560px;
+      border: 1.5px solid var(--text-main);
+      box-shadow: 20px 20px 0px var(--text-main);
       overflow: hidden;
-      background: #EAEAEA;
+      background: #111;
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .hero-cover-img-wrapper:hover {
+      transform: translate(-4px, -4px);
+      box-shadow: 26px 26px 0px var(--text-main);
     }
 
     .hero-cover-img {
@@ -325,13 +333,43 @@
       height: 100%;
       object-fit: cover;
       object-position: center;
-      filter: grayscale(100%) contrast(110%);
-      transition: filter 0.5s ease, transform 0.5s ease;
+      filter: grayscale(100%) contrast(115%);
+      transition: filter 0.6s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     .hero-cover-img-wrapper:hover .hero-cover-img {
-      filter: grayscale(0%) contrast(100%);
-      transform: scale(1.03);
+      filter: grayscale(0%) contrast(105%);
+      transform: scale(1.05);
+    }
+
+    /* Floating Awwwards Luxury Badges */
+    .hero-floating-badge {
+      position: absolute;
+      padding: 12px 20px;
+      background: rgba(14, 14, 14, 0.92);
+      color: #FFF;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      z-index: 10;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .badge-top-left {
+      top: 24px;
+      left: 24px;
+    }
+
+    .badge-bottom-right {
+      bottom: 24px;
+      right: 24px;
+      background: rgba(248, 246, 240, 0.95);
+      color: #111;
+      border: 1px solid var(--text-main);
     }
 
     .hero-offer-box {
@@ -340,108 +378,159 @@
       justify-content: center;
     }
 
+    .hero-live-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      border: 1px solid var(--text-main);
+      border-radius: 30px;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 24px;
+      width: fit-content;
+      background: rgba(255,255,255,0.6);
+    }
+
+    .pulse-green {
+      width: 8px;
+      height: 8px;
+      background-color: var(--accent-green);
+      border-radius: 50%;
+      display: inline-block;
+      box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+      animation: pulseGreenGlow 2s infinite;
+    }
+
+    @keyframes pulseGreenGlow {
+      0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+      70% { box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+    }
+
     .hero-offer-title {
       font-family: var(--font-serif);
-      font-size: clamp(2.4rem, 4.5vw, 3.8rem);
-      line-height: 1.05;
-      font-weight: 700;
-      margin-bottom: 20px;
+      font-size: clamp(2.6rem, 4.8vw, 4.2rem);
+      line-height: 1.02;
+      font-weight: 800;
+      margin-bottom: 24px;
       text-transform: uppercase;
+      letter-spacing: -0.02em;
     }
 
     .hero-offer-desc {
-      font-size: 1.25rem;
+      font-size: 1.28rem;
       font-weight: 300;
       color: #222;
       line-height: 1.65;
-      margin-bottom: 30px;
+      margin-bottom: 36px;
+      max-width: 620px;
     }
 
     .hero-offer-btns {
       display: flex;
-      gap: 16px;
+      gap: 18px;
       flex-wrap: wrap;
+      align-items: center;
     }
 
     /* ==========================================================================
-       4. SECOND BLOCK (PREVIOUS HERO FORM SECTION - 2ND SCREEN)
+       4. AWWWARDS-LEVEL SECOND SCREEN (HERO FORM & SCARCITY CALCULATOR)
        ========================================================================== */
     .hero-form-section {
-      padding-top: 70px;
-      padding-bottom: 90px;
+      padding-top: 100px;
+      padding-bottom: 110px;
       background: var(--bg-card);
+      position: relative;
     }
 
     .hero-meta {
       display: flex;
       justify-content: flex-start;
-      gap: 30px;
-      margin-bottom: 20px;
+      align-items: center;
+      gap: 24px;
+      margin-bottom: 24px;
       font-family: var(--font-mono);
       font-size: 0.8rem;
       text-transform: uppercase;
-      opacity: 0.7;
+      letter-spacing: 1px;
+      opacity: 0.75;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 50px;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 60px;
       align-items: start;
     }
 
     .hero-description {
-      font-size: 1.2rem;
+      font-size: 1.25rem;
       font-weight: 300;
       color: #222;
-      max-width: 600px;
-      line-height: 1.65;
+      max-width: 620px;
+      line-height: 1.7;
     }
 
     .hero-form-card {
       background: var(--bg-cream);
-      padding: 36px;
-      border: 1px solid var(--text-main);
-      box-shadow: 10px 10px 0px var(--text-main);
+      padding: 44px;
+      border: 1.5px solid var(--text-main);
+      box-shadow: 14px 14px 0px var(--text-main);
+      position: relative;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .hero-form-card:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 18px 18px 0px var(--text-main);
     }
 
     .form-title {
       font-family: var(--font-serif);
-      font-size: 1.45rem;
-      margin-bottom: 8px;
+      font-size: 1.65rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      text-transform: uppercase;
     }
 
     .form-subtitle {
-      font-size: 0.85rem;
+      font-size: 0.9rem;
       color: var(--text-muted);
-      margin-bottom: 20px;
+      margin-bottom: 26px;
+      line-height: 1.5;
     }
 
     .input-group {
-      margin-bottom: 16px;
+      margin-bottom: 20px;
     }
 
     .input-group label {
       display: block;
       font-family: var(--font-mono);
-      font-size: 0.75rem;
+      font-size: 0.76rem;
       text-transform: uppercase;
-      margin-bottom: 6px;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+      font-weight: 700;
     }
 
     .input-control {
       width: 100%;
-      padding: 14px 16px;
+      padding: 16px 18px;
       border: 1px solid var(--border-thin);
       font-family: var(--font-sans);
-      font-size: 0.95rem;
+      font-size: 1rem;
       background: #FFF;
       outline: none;
-      transition: border-color 0.3s;
+      transition: all 0.3s ease;
     }
 
     .input-control:focus {
       border-color: var(--text-main);
+      box-shadow: 0 0 0 3px rgba(17, 17, 17, 0.1);
     }
 
     /* ==========================================================================
@@ -1201,42 +1290,50 @@
   </header>
 
   <!-- ==========================================================================
-       NEW FIRST SCREEN (HERO COVER BLOCK WITH HERO_COVER_1.JPG & CORE OFFER)
+       AWWWARDS-LEVEL FIRST SCREEN (HERO COVER BLOCK WITH FLOATING BADGES & LIVE PILL)
        ========================================================================== -->
   <section id="cover" class="hero-cover-section section-padding grid-container hairline-bottom">
     <div class="hero-cover-grid">
-      <!-- High-Fashion Hero Cover Photo (hero_cover_1.jpg) -->
+      <!-- High-Fashion Hero Cover Photo (hero_cover_1.jpg) with Awwwards Floating Badges -->
       <div class="hero-cover-img-wrapper reveal-on-scroll delay-1">
+        <span class="hero-floating-badge badge-top-left">★ 30+ ЛЕТ ОПЫТА | ЛАРИСА</span>
+        <span class="hero-floating-badge badge-bottom-right">● БРАК &lt;3% ПО ДОГОВОРУ</span>
         <img src="hero_cover_1.jpg" alt="Швейная Ателье-Фабрика LORIKA+ Одежда Plus Size" class="hero-cover-img">
       </div>
 
       <!-- Core B2B Offer Box -->
       <div class="hero-offer-box reveal-on-scroll delay-2">
-        <span class="section-tag" style="margin-bottom: 12px; color: #25D366; font-weight: 700;">★ ШВЕЙНАЯ АТЕЛЬЕ-ФАБРИКА LORIKA+</span>
+        <div class="hero-live-pill">
+          <span class="pulse-green"></span>
+          <span>BISHKEK FACTORY ONLINE • СВОБОДНО: 2 СЛОТА</span>
+        </div>
+        
         <h1 class="hero-offer-title">Пошив Одежды Plus Size в Бишкеке под ключ от 1 150 ₽</h1>
         <p class="hero-offer-desc">
-          Производство женской одежды больших размеров (50–64+) с точностью элитного ателье, личной подборкой тканей от главного технолога и гарантией брака менее 3% по договору.
+          Производство женской одежды больших размеров (50–64+) с точностью элитного ателье, личной подборкой тканей от главного технолога Ларисы и гарантией идеальной посадки.
         </p>
 
         <div class="hero-offer-btns">
-          <a href="https://wa.me/996703326999?text=Здравствуйте!%20Хочу%20рассчитать%20стоимость%20партии" target="_blank" class="btn-whatsapp">
+          <a href="https://wa.me/996703326999?text=Здравствуйте!%20Хочу%20рассчитать%20стоимость%20партии%20LORIKA%2B" target="_blank" class="btn-whatsapp">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-0.999 3.648 3.742-.981z"/></svg>
             <span>💬 Рассчитать партию в WhatsApp</span>
           </a>
-          <a href="#models" class="btn-black">ПОСМОТРЕТЬ КАТАЛОГ МОДЕЛЕЙ</a>
+          <a href="#models" class="btn-black">КАТАЛОГ МОДЕЛЕЙ (50-64+)</a>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ==========================================================================
-       SECOND BLOCK (PREVIOUS HERO FORM SECTION - MOVED TO 2ND BLOCK)
+       AWWWARDS-LEVEL SECOND SCREEN (PREVIOUS HERO FORM SECTION & SCARCITY)
        ========================================================================== -->
   <section class="hero-form-section section-padding grid-container hairline-bottom">
     <div class="hero-meta">
-      <span>Пошив под ключ</span>
+      <span>★ ПРЕМИУМ ПОШИВ ПОД КЛЮЧ</span>
       <span>•</span>
-      <span>Женская Одежда Plus Size (50-64+)</span>
+      <span>ЖЕНСКАЯ ОДЕЖДА PLUS SIZE (50-64+)</span>
+      <span>•</span>
+      <span>БИШКЕК</span>
     </div>
 
     <div class="hero-grid">
@@ -1245,7 +1342,7 @@
         <p class="hero-description">
           Зафиксируйте оптовую цену от 1 150 ₽ за комплект и получите инженерные лекала от Ларисы с гарантией идеальной посадки и 0% возвратов на маркетплейсах.
         </p>
-        <div style="margin-top: 24px; display: flex; gap: 12px; flex-wrap: wrap;">
+        <div style="margin-top: 28px; display: flex; gap: 12px; flex-wrap: wrap;">
           <span class="tag-pill">Анатомические лекала</span>
           <span class="tag-pill">Закупка на Мадине</span>
           <span class="tag-pill">ОТК &lt;3% брака</span>
@@ -1254,8 +1351,8 @@
 
         <!-- Premium Animated Scarcity Banner Box -->
         <div class="scarcity-banner-box">
-          <div style="display: flex; align-items: center; gap: 12px;">
-            <span class="pulse-dot"></span>
+          <div style="display: flex; align-items: center; gap: 14px;">
+            <span class="pulse-green"></span>
             <span class="scarcity-text"><strong>Лимит производства:</strong> Берем не более 5 новых брендов в месяц</span>
           </div>
           <span class="scarcity-badge-animated">Свободно: 2 слота</span>
@@ -1264,7 +1361,7 @@
 
       <div class="hero-form-card reveal-on-scroll delay-2">
         <h3 class="form-title">Рассчитать партию за 15 сек</h3>
-        <p class="form-subtitle">Зафиксируйте оптовую цену от 1 150 ₽/шт и получите расчет в WhatsApp.</p>
+        <p class="form-subtitle">Зафиксируйте оптовую цену от 1 150 ₽/шт и получите мгновенный расчет и подборку тканей в WhatsApp.</p>
         
         <form onsubmit="event.preventDefault(); alert('Расчет отправлен в WhatsApp на номер +996 703 326 999!');">
           <div class="input-group">
@@ -1275,7 +1372,7 @@
             <label>Планируемый тираж (шт)</label>
             <input type="number" class="input-control" placeholder="Например: 300 шт" value="300" required>
           </div>
-          <button type="submit" class="btn-black" style="width: 100%; margin-top: 10px;">ПОЛУЧИТЬ РАСЧЕТ И КАТАЛОГ</button>
+          <button type="submit" class="btn-black" style="width: 100%; margin-top: 12px; padding: 18px;">ПОЛУЧИТЬ РАСЧЕТ И КАТАЛОГ</button>
         </form>
       </div>
     </div>
