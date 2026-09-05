@@ -201,7 +201,17 @@ align-items:baseline}
 .card .ct{font-size:11px;color:var(--mid);letter-spacing:.08em;text-transform:uppercase;
 margin-top:4px}
 .card .pr{font-weight:800;font-size:14px;color:var(--brass-dark);font-variant-numeric:tabular-nums}
+.card .img-count-badge{position:absolute;top:10px;left:10px;z-index:3;background:rgba(26,24,21,.85);backdrop-filter:blur(4px);color:var(--silk);font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 8px;border-radius:2px;border:1px solid rgba(197,160,89,.4)}
+.card .img-nav{position:absolute;top:50%;transform:translateY(-50%);z-index:4;width:28px;height:28px;background:rgba(26,24,21,.75);color:#fff;border:1px solid rgba(197,160,89,.4);border-radius:50%;font-size:16px;line-height:1;cursor:pointer;opacity:0;transition:opacity .25s ease,background .25s ease,transform .25s ease;display:flex;align-items:center;justify-content:center;padding:0}
+.card:hover .img-nav{opacity:1}
+.card .img-nav:hover{background:var(--brass-dark);color:#fff;transform:translateY(-50%) scale(1.1)}
+.card .img-nav.prev{left:8px}
+.card .img-nav.next{right:8px}
+.card .img-dots{position:absolute;bottom:50px;left:50%;transform:translateX(-50%);z-index:4;display:flex;gap:5px;padding:4px 8px;background:rgba(26,24,21,.65);border-radius:10px;backdrop-filter:blur(4px)}
+.card .img-dots .dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.4);cursor:pointer;transition:all .25s ease}
+.card .img-dots .dot.active{width:14px;border-radius:4px;background:var(--brass)}
 @media(max-width:1000px){#shop .grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:550px){#shop .grid{grid-template-columns:1fr}}
 
 /* ── 6 · LOOKBOOK / PRODUCTION PROCESS ────────────────────────────── */
 #look{padding:clamp(44px,7vh,90px) 0 clamp(30px,5vh,60px)}
@@ -733,37 +743,166 @@ if(!RM) addEventListener('scroll', () => {
 
 /* ── product grid ─────────────────────────────────────────────────── */
 const PRODUCTS = [
-  {nm:'Платье Plus Size «Шарм»', ct:'Платья (50-60)', pr:650, img:'hero_cover_1.jpg'},
-  {nm:'Брючный костюм «Миледи»', ct:'Костюмы', pr:910, img:'our_models_showcase.png'},
-  {nm:'Льняная блуза «Силуэт»', ct:'Блузы / Рубашки', pr:480, img:'larisa_red_sweater.jpg'},
-  {nm:'Спортивный худи Plus', ct:'Трикотаж', pr:580, img:'https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/917d6f93-fb36-439a-8c48-884b67b35381_1600w.jpg'}
+  {
+    nm: 'Белый костюм-тройка с жилетом',
+    ct: 'Костюмы-тройки Plus Size (50-60)',
+    pr: 980,
+    imgs: [
+      'images/white_suit_3.png',
+      'images/white_suit_2.png',
+      'images/white_suit_1.png'
+    ]
+  },
+  {
+    nm: 'Черное платье-смокинг с разрезом',
+    ct: 'Вечерние платья & Смокинги (50-60)',
+    pr: 890,
+    imgs: [
+      'images/black_tuxedo_1.png',
+      'images/black_tuxedo_2.png'
+    ]
+  },
+  {
+    nm: 'Брючный костюм Luxe Line',
+    ct: 'Деловая одежда Plus Size',
+    pr: 920,
+    imgs: [
+      'images/plus_look_01_a.png'
+    ]
+  },
+  {
+    nm: 'Повседневное платье «Астра»',
+    ct: 'Платья и Сарафаны (50-60)',
+    pr: 650,
+    imgs: [
+      'images/plus_look_02_a.jpg',
+      'images/plus_look_02_b.png'
+    ]
+  },
+  {
+    nm: 'Классический костюм-двойка',
+    ct: 'Костюмы & Жакеты (50-60)',
+    pr: 880,
+    imgs: [
+      'images/plus_look_03_a.jpg',
+      'images/plus_look_03_b.jpg'
+    ]
+  },
+  {
+    nm: 'Летний ансамбль «Силуэт»',
+    ct: 'Блузы & Костюмы (50-60)',
+    pr: 740,
+    imgs: [
+      'images/plus_look_04_a.jpg',
+      'images/plus_look_04_b.jpg'
+    ]
+  },
+  {
+    nm: 'Премиум платье «Шарм»',
+    ct: 'Платья 50-60',
+    pr: 690,
+    imgs: [
+      'images/plus_look_05_a.jpg',
+      'images/plus_look_05_b.jpg'
+    ]
+  },
+  {
+    nm: 'Оверсайз жакет Plus Size',
+    ct: 'Верхняя одежда (50-60)',
+    pr: 950,
+    imgs: [
+      'images/plus_look_06_a.jpg'
+    ]
+  }
 ];
-const grid = document.getElementById('grid');
-const heart = '<svg viewBox="0 0 24 24"><path d="M12 20.5 3.8 12.6a5 5 0 0 1 7.1-7l1.1 1.1 1.1-1.1a5 5 0 0 1 7.1 7Z"/></svg>';
-grid.innerHTML = PRODUCTS.map((p, i) => `
-  <article class="card rv">
-    <div class="ph">
-      <img src="${p.img}" alt="${p.nm}" loading="lazy">
-      <button class="fav" aria-pressed="false" aria-label="Save ${p.nm}">${heart}</button>
-      <button class="add" data-i="${i}">Запросить смету</button>
-    </div>
-    <div class="meta">
-      <div><div class="nm">${p.nm}</div><div class="ct">${p.ct}</div></div>
-      <div class="pr">от ${p.pr} ₽</div>
-    </div>
-  </article>`).join('');
 
-grid.addEventListener('click', e => {
-  const fav = e.target.closest('.fav');
-  if(fav){
-    fav.setAttribute('aria-pressed', fav.getAttribute('aria-pressed') === 'true' ? 'false' : 'true');
-    return;
+const cardStates = PRODUCTS.map(() => 0);
+
+function renderGrid() {
+  const grid = document.getElementById('grid');
+  if(!grid) return;
+  const heart = '<svg viewBox="0 0 24 24"><path d="M12 20.5 3.8 12.6a5 5 0 0 1 7.1-7l1.1 1.1 1.1-1.1a5 5 0 0 1 7.1 7Z"/></svg>';
+  
+  grid.innerHTML = PRODUCTS.map((p, i) => {
+    const curIdx = cardStates[i] || 0;
+    const activeImg = p.imgs[curIdx] || p.imgs[0];
+    const isMulti = p.imgs.length > 1;
+    
+    return `
+    <article class="card rv" data-card="${i}">
+      <div class="ph">
+        <img id="p-img-${i}" src="${activeImg}" alt="${p.nm}" loading="lazy">
+        ${isMulti ? `<span class="img-count-badge">${p.imgs.length} ракурса</span>` : ''}
+        ${isMulti ? `<button class="img-nav prev" onclick="switchCardImg(${i}, -1, event)" aria-label="Предыдущее фото">‹</button>` : ''}
+        ${isMulti ? `<button class="img-nav next" onclick="switchCardImg(${i}, 1, event)" aria-label="Следующее фото">›</button>` : ''}
+        ${isMulti ? `
+          <div class="img-dots" id="p-dots-${i}">
+            ${p.imgs.map((_, idx) => `<span class="dot ${idx === curIdx ? 'active' : ''}" onclick="setCardImg(${i}, ${idx}, event)"></span>`).join('')}
+          </div>
+        ` : ''}
+        <button class="fav" aria-pressed="false" aria-label="Сохранить ${p.nm}">${heart}</button>
+        <button class="add" data-i="${i}">Запросить смету</button>
+      </div>
+      <div class="meta">
+        <div><div class="nm">${p.nm}</div><div class="ct">${p.ct}</div></div>
+        <div class="pr">от ${p.pr} ₽</div>
+      </div>
+    </article>`;
+  }).join('');
+}
+
+function switchCardImg(cardIdx, dir, e) {
+  if(e) e.stopPropagation();
+  const imgs = PRODUCTS[cardIdx].imgs;
+  cardStates[cardIdx] = (cardStates[cardIdx] + dir + imgs.length) % imgs.length;
+  updateCardUI(cardIdx);
+}
+
+function setCardImg(cardIdx, imgIdx, e) {
+  if(e) e.stopPropagation();
+  cardStates[cardIdx] = imgIdx;
+  updateCardUI(cardIdx);
+}
+
+function updateCardUI(cardIdx) {
+  const p = PRODUCTS[cardIdx];
+  const curIdx = cardStates[cardIdx];
+  const imgEl = document.getElementById(`p-img-${cardIdx}`);
+  if(imgEl) {
+    imgEl.style.opacity = '0.4';
+    setTimeout(() => {
+      imgEl.src = p.imgs[curIdx];
+      imgEl.style.opacity = '1';
+    }, 100);
   }
-  const add = e.target.closest('.add');
-  if(add){
-    window.open('https://wa.me/996703326999?text=Здравствуйте!%20Хочу%20запросить%20смету%20по%20модели.', '_blank');
+  const dotsContainer = document.getElementById(`p-dots-${cardIdx}`);
+  if(dotsContainer) {
+    const dots = dotsContainer.querySelectorAll('.dot');
+    dots.forEach((d, idx) => {
+      d.classList.toggle('active', idx === curIdx);
+    });
   }
-});
+}
+
+renderGrid();
+
+const gridEl = document.getElementById('grid');
+if(gridEl) {
+  gridEl.addEventListener('click', e => {
+    const fav = e.target.closest('.fav');
+    if(fav){
+      fav.setAttribute('aria-pressed', fav.getAttribute('aria-pressed') === 'true' ? 'false' : 'true');
+      return;
+    }
+    const add = e.target.closest('.add');
+    if(add){
+      const i = add.getAttribute('data-i');
+      const p = PRODUCTS[i] || {};
+      const text = encodeURIComponent(`Здравствуйте! Хочу запросить смету по модели «${p.nm || 'Plus Size'}» (${p.ct || 'Одежда'}).`);
+      window.open(`https://wa.me/996703326999?text=${text}`, '_blank');
+    }
+  });
+}
 
 /* ── B2B Calculator Logic ────────────────────────────────────────── */
 let baseP = 1200, fabP = 450;
