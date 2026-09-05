@@ -23,7 +23,7 @@
 --brass-glow:rgba(197, 160, 89, 0.28);
 --line:rgba(26, 24, 21, 0.12);
 --line-brass:rgba(197, 160, 89, 0.35);
---nav:125px;
+--nav:86px;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{overflow-x:clip;scroll-behavior:smooth}
@@ -55,9 +55,10 @@ position:relative;padding:6px 0;color:var(--ink)}
 nav ul a::after{content:'';position:absolute;left:0;right:0;bottom:0;height:2px;
 background:var(--brass);transform:scaleX(0);transform-origin:right;transition:transform .4s cubic-bezier(.6,0,.2,1)}
 nav ul a:hover::after{transform:scaleX(1);transform-origin:left}
-nav .mk-logo{display:flex;align-items:center;justify-content:center;text-decoration:none;padding:4px 0}
-nav .mk-logo img{height:88px;width:auto;display:block;transition:transform .3s ease;filter:drop-shadow(0 2px 8px rgba(0,0,0,0.08))}
-nav .mk-logo:hover img{transform:scale(1.05)}
+nav .mk-text{display:flex;flex-direction:column;align-items:center;justify-content:center;text-decoration:none;text-align:center;padding:4px 0}
+nav .mk-text .brand-title{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:clamp(26px,2.2vw,32px);letter-spacing:.24em;color:var(--ink);line-height:1;text-transform:uppercase;transition:color .3s ease,letter-spacing .3s ease}
+nav .mk-text .brand-sub{font-family:Archivo,sans-serif;font-weight:700;font-size:8.5px;letter-spacing:.32em;color:var(--brass-dark);text-transform:uppercase;margin-top:5px}
+nav .mk-text:hover .brand-title{color:var(--brass-dark);letter-spacing:.26em}
 nav .util{display:flex;gap:20px;justify-content:flex-end;align-items:center;
 font:600 11px/1 Archivo,sans-serif;letter-spacing:.14em;text-transform:uppercase}
 nav .util a.wa-btn{color:var(--brass-dark);font-weight:700;display:flex;align-items:center;gap:6px}
@@ -419,8 +420,9 @@ transition:opacity 1s cubic-bezier(.19,1,.22,1),transform 1.1s cubic-bezier(.19,
       <li><a href="#calc">Калькулятор</a></li>
       <li><a href="#reviews">Отзывы</a></li>
     </ul>
-    <a href="#" class="mk-logo" aria-label="Astra Brand Homepage">
-      <img src="images/astra_logo_dark.png" alt="Astra Brand Logo">
+    <a href="#" class="mk-text" aria-label="Astra Brand Homepage">
+      <span class="brand-title">ASTRA BRAND</span>
+      <span class="brand-sub">BISHKEK GARMENT FACTORY</span>
     </a>
     <div class="util">
       <a href="#signup" class="btn" style="padding:12px 24px; font-size:10px;"><span>Запросить смету</span></a>
