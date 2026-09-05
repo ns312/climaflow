@@ -3,26 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Astra Brand — Контрактный пошив Plus Size (50-60) в Бишкеке под ключ</title>
-    <meta name="description" content="Швейная фабрика Astra Brand в Бишкеке: контрактное производство и пошив женской одежды больших размеров (50-60) под ключ. Маркировка Честный ЗНАК, идеальные лекала, опт от 300 шт.">
+    <title>ASTRA BRAND — Премиальный контрактный пошив Plus Size (50-60) в Бишкеке</title>
+    <meta name="description" content="Швейная фабрика Astra Brand в Бишкеке: профессиональный пошив женской одежды Plus Size (50-60) для брендов РФ и СНГ под ключ. Маркировка Честный ЗНАК, электронные лекала, опт от 300 шт.">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Inter:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            --bg-primary: #ffffff;
-            --bg-secondary: #f9f9f9;
-            --border-color: #000000;
-            --border-light: #e0e0e0;
-            --color-text-primary: #000000;
-            --color-text-secondary: #555555;
-            --font-family: 'Inter', sans-serif;
+            --bg-dark: #0b0b0d;
+            --bg-card: #141417;
+            --bg-card-hover: #1c1c21;
+            --accent-gold: #d4af37;
+            --accent-gold-light: #f3e5ab;
+            --accent-gold-gradient: linear-gradient(135deg, #d4af37 0%, #aa7c11 100%);
+            --border-glow: rgba(212, 175, 55, 0.25);
+            --border-subtle: rgba(255, 255, 255, 0.08);
+            --text-primary: #f5f5f7;
+            --text-secondary: #9a9a9e;
+            --font-sans: 'Inter', sans-serif;
             --font-serif: 'Cormorant Garamond', serif;
             --font-mono: 'Space Mono', monospace;
-            --transition: all 0.25s ease-in-out;
+            --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         * {
@@ -32,114 +36,114 @@
         }
 
         body {
-            background-color: var(--bg-primary);
-            color: var(--color-text-primary);
-            font-family: var(--font-family);
-            line-height: 1.5;
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            font-family: var(--font-sans);
+            line-height: 1.6;
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
         }
 
         .container {
-            max-width: 1140px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 24px;
         }
 
         .section {
-            padding: 80px 0;
-            border-bottom: 2px solid var(--border-color);
+            padding: 100px 0;
+            border-bottom: 1px solid var(--border-subtle);
+            position: relative;
         }
 
         h1, h2, h3, h4 {
-            font-weight: 800;
-            text-transform: uppercase;
+            font-family: var(--font-serif);
             letter-spacing: 0.5px;
-            margin-bottom: 15px;
+            font-weight: 700;
         }
 
         .section-title {
-            font-size: clamp(1.8rem, 3.2vw, 2.5rem);
+            font-size: clamp(2.2rem, 3.8vw, 3.2rem);
             text-align: center;
             margin-bottom: 20px;
-            line-height: 1.25;
-            font-weight: 800;
+            line-height: 1.15;
+            color: #ffffff;
+            font-family: var(--font-serif);
+        }
+
+        .section-title span.gold {
+            color: var(--accent-gold);
+            font-style: italic;
         }
 
         .section-subtitle {
             text-align: center;
-            color: var(--color-text-secondary);
+            color: var(--text-secondary);
             margin-top: -10px;
-            margin-bottom: 45px;
-            font-size: 15px;
-            max-width: 800px;
+            margin-bottom: 50px;
+            font-size: 16px;
+            max-width: 820px;
             margin-left: auto;
             margin-right: auto;
+            font-weight: 300;
         }
 
         p {
-            color: var(--color-text-secondary);
-            margin-bottom: 18px;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
             font-size: 15px;
         }
 
-        /* Buttons */
+        /* Luxury Buttons */
         .btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: 14px 32px;
+            padding: 16px 36px;
             font-weight: 700;
             font-size: 13px;
             text-transform: uppercase;
             text-decoration: none;
-            border: 2px solid var(--border-color);
+            border-radius: 4px;
             cursor: pointer;
             transition: var(--transition);
-            letter-spacing: 1px;
+            letter-spacing: 1.2px;
             text-align: center;
+            font-family: var(--font-sans);
         }
 
-        .btn-primary {
-            background-color: var(--border-color);
+        .btn-gold {
+            background: var(--accent-gold-gradient);
+            color: #000000;
+            border: none;
+            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(212, 175, 55, 0.5);
+            background: linear-gradient(135deg, #e5be48 0%, #c4921b 100%);
+        }
+
+        .btn-outline {
+            background: rgba(255, 255, 255, 0.03);
             color: #ffffff;
+            border: 1px solid var(--accent-gold);
+            backdrop-filter: blur(8px);
         }
 
-        .btn-primary:hover {
-            background-color: #333333;
-            border-color: #333333;
-        }
-
-        .btn-secondary {
-            background-color: transparent;
-            color: var(--color-text-primary);
-        }
-
-        .btn-secondary:hover {
-            background-color: #f0f0f0;
-        }
-
-        /* Inputs */
-        input[type="text"], input[type="tel"], input[type="email"] {
-            width: 100%;
-            padding: 16px;
-            border: 2px solid var(--border-color);
-            font-size: 14px;
-            font-family: var(--font-family);
-            outline: none;
-            background: #fff;
-            transition: var(--transition);
-        }
-
-        input[type="text"]:focus, input[type="tel"]:focus, input[type="email"]:focus {
-            border-color: #000;
-            background: #fafafa;
+        .btn-outline:hover {
+            background: rgba(212, 175, 55, 0.15);
+            border-color: var(--accent-gold-light);
+            color: var(--accent-gold-light);
+            transform: translateY(-2px);
         }
 
         /* Header Navigation */
         header {
-            border-bottom: 2px solid var(--border-color);
-            background-color: #ffffff;
+            border-bottom: 1px solid var(--border-subtle);
+            background-color: rgba(11, 11, 13, 0.85);
+            backdrop-filter: blur(16px);
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -149,114 +153,174 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 76px;
+            height: 84px;
         }
 
         .logo {
-            font-size: 18px;
-            font-weight: 900;
+            font-family: var(--font-serif);
+            font-size: 22px;
+            font-weight: 700;
             text-decoration: none;
-            color: #000000;
+            color: #ffffff;
             line-height: 1.1;
             display: flex;
             flex-direction: column;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
+        }
+
+        .logo span.brand {
+            color: var(--accent-gold);
+            font-size: 13px;
+            font-family: var(--font-sans);
+            letter-spacing: 3px;
         }
 
         .nav-links {
             display: flex;
-            gap: 16px;
+            gap: 22px;
             list-style: none;
         }
 
         .nav-links a {
-            color: var(--color-text-primary);
+            color: var(--text-secondary);
             text-decoration: none;
             font-size: 11.5px;
-            font-weight: 700;
+            font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
+            transition: var(--transition);
         }
 
         .nav-links a:hover {
-            text-decoration: underline;
+            color: var(--accent-gold);
         }
 
         /* Hero Section */
+        .hero-wrapper {
+            position: relative;
+            padding: 120px 0 100px;
+            background: radial-gradient(circle at 70% 30%, rgba(212, 175, 55, 0.08) 0%, transparent 60%);
+        }
+
         .hero-grid {
             display: grid;
-            grid-template-columns: 1.25fr 0.75fr;
-            gap: 40px;
-            align-items: start;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            font-family: var(--font-mono);
+            font-size: 11px;
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            padding: 6px 14px;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid var(--border-glow);
+            border-radius: 20px;
         }
 
         .hero-content h1 {
-            font-size: clamp(2.2rem, 3.8vw, 3.4rem);
+            font-size: clamp(2.5rem, 4.5vw, 3.8rem);
             line-height: 1.08;
-            margin-bottom: 22px;
-            font-weight: 800;
+            margin-bottom: 24px;
+            color: #ffffff;
         }
 
         .hero-content p {
-            font-size: 16px;
-            margin-bottom: 32px;
-            line-height: 1.6;
+            font-size: 17px;
+            margin-bottom: 36px;
+            line-height: 1.7;
+            color: #b0b0b8;
         }
 
         .hero-btns {
             display: flex;
-            gap: 15px;
+            gap: 18px;
             flex-wrap: wrap;
         }
 
-        .spec-box {
-            border: 2px solid var(--border-color);
-            padding: 28px;
-            background-color: var(--bg-primary);
+        .spec-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            padding: 36px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
         }
 
-        .spec-box h3 {
-            font-size: 15px;
-            border-bottom: 2px solid var(--border-color);
-            padding-bottom: 10px;
-            margin-bottom: 16px;
+        .spec-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--accent-gold-gradient);
+        }
+
+        .spec-card h3 {
+            font-size: 18px;
+            color: var(--accent-gold);
+            border-bottom: 1px solid var(--border-subtle);
+            padding-bottom: 14px;
+            margin-bottom: 20px;
             text-align: center;
+            font-family: var(--font-sans);
+            font-weight: 700;
         }
 
         .spec-list {
             list-style: none;
             display: flex;
             flex-direction: column;
-            gap: 12px;
-            font-size: 13.5px;
-            color: #222;
+            gap: 16px;
+            font-size: 14px;
+            color: #d0d0d8;
         }
 
-        .spec-list li::before {
-            content: "• ";
-            font-weight: 700;
+        .spec-list li {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.05);
+            padding-bottom: 10px;
+        }
+
+        .spec-list li b {
+            color: #ffffff;
         }
 
         /* Offers Grid */
         .offers-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
+            gap: 28px;
         }
 
         .offer-card {
-            border: 2px solid var(--border-color);
-            padding: 30px;
-            background-color: var(--bg-primary);
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            padding: 36px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            transition: var(--transition);
+        }
+
+        .offer-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--border-glow);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
         }
 
         .offer-card h3 {
-            font-size: 16px;
-            border-bottom: 2px solid var(--border-color);
-            padding-bottom: 12px;
+            font-size: 20px;
+            color: #ffffff;
             margin-bottom: 16px;
             line-height: 1.3;
         }
@@ -264,100 +328,122 @@
         .offer-tag {
             font-family: var(--font-mono);
             font-size: 11px;
-            font-weight: 700;
+            color: var(--accent-gold);
             text-transform: uppercase;
-            margin-top: 20px;
-            padding-top: 12px;
-            border-top: 1px dashed var(--border-color);
+            margin-top: 24px;
+            padding-top: 14px;
+            border-top: 1px dashed var(--border-subtle);
+            letter-spacing: 1px;
         }
 
         /* Compare Table */
         .compare-table-wrapper {
             overflow-x: auto;
-            border: 2px solid var(--border-color);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            background: var(--bg-card);
         }
 
         .compare-table {
             width: 100%;
             border-collapse: collapse;
             text-align: left;
-            font-size: 14px;
+            font-size: 14.5px;
         }
 
         .compare-table th, .compare-table td {
-            padding: 18px 20px;
-            border: 1px solid var(--border-color);
+            padding: 22px 24px;
+            border-bottom: 1px solid var(--border-subtle);
+            border-right: 1px solid var(--border-subtle);
         }
 
         .compare-table th {
-            background-color: var(--bg-secondary);
-            font-weight: 800;
+            background-color: rgba(255, 255, 255, 0.03);
+            font-weight: 700;
             text-transform: uppercase;
             font-size: 12px;
+            color: var(--accent-gold);
+            letter-spacing: 1px;
         }
 
         .compare-table td.highlight {
-            background-color: rgba(0, 0, 0, 0.04);
-            font-weight: 700;
+            background-color: rgba(212, 175, 55, 0.05);
+            font-weight: 600;
+            color: #ffffff;
         }
 
         /* Workflow Grid */
         .workflow-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
+            gap: 28px;
         }
 
         .workflow-card {
-            border: 2px solid var(--border-color);
-            padding: 28px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            padding: 32px;
             position: relative;
-            background-color: var(--bg-primary);
+            transition: var(--transition);
+        }
+
+        .workflow-card:hover {
+            border-color: var(--accent-gold);
+            transform: translateY(-4px);
         }
 
         .workflow-card .step-number {
             position: absolute;
-            top: 20px;
-            right: 20px;
-            font-size: 26px;
+            top: 24px;
+            right: 24px;
+            font-size: 28px;
             font-weight: 800;
-            color: var(--color-text-secondary);
-            border-bottom: 2px solid var(--border-color);
-            line-height: 1;
-            padding-bottom: 4px;
+            color: var(--accent-gold);
+            opacity: 0.6;
+            font-family: var(--font-mono);
+        }
+
+        .workflow-card h3 {
+            font-size: 18px;
+            color: #ffffff;
+            margin-bottom: 12px;
+            padding-right: 40px;
         }
 
         /* Tabs & Gallery */
         .gallery-tabs {
             display: flex;
-            gap: 12px;
-            margin-bottom: 30px;
+            gap: 14px;
+            margin-bottom: 40px;
             justify-content: center;
-            border-bottom: 2px solid var(--border-color);
-            padding-bottom: 12px;
+            flex-wrap: wrap;
         }
 
         .tab-btn {
-            padding: 12px 24px;
-            border: 1px solid var(--border-color);
-            background: transparent;
+            padding: 14px 28px;
+            border: 1px solid var(--border-subtle);
+            border-radius: 30px;
+            background: var(--bg-card);
+            color: var(--text-secondary);
             cursor: pointer;
-            font-weight: 700;
-            font-size: 12px;
+            font-weight: 600;
+            font-size: 12.5px;
             text-transform: uppercase;
+            letter-spacing: 1px;
             transition: var(--transition);
         }
 
-        .tab-btn.active {
-            border: 2px solid var(--border-color);
-            background-color: var(--border-color);
-            color: #ffffff;
+        .tab-btn.active, .tab-btn:hover {
+            border-color: var(--accent-gold);
+            background: var(--accent-gold-gradient);
+            color: #000000;
         }
 
         .gallery-content {
             display: none;
             grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
+            gap: 28px;
         }
 
         .gallery-content.active {
@@ -365,94 +451,96 @@
         }
 
         .gallery-item {
-            border: 2px solid var(--border-color);
-            padding: 20px;
-            background-color: var(--bg-secondary);
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            padding: 24px;
+            transition: var(--transition);
         }
 
         .gallery-item-placeholder {
-            height: 180px;
-            border: 1px dashed var(--border-color);
+            height: 200px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #1c1c22 0%, #2a2a34 100%);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 12px;
+            font-size: 13px;
             font-weight: 700;
-            color: var(--color-text-secondary);
-            margin-bottom: 16px;
+            color: var(--accent-gold);
+            margin-bottom: 20px;
             text-transform: uppercase;
-            background: #fff;
-            padding: 15px;
+            letter-spacing: 1px;
             text-align: center;
+            padding: 20px;
+            border: 1px dashed var(--border-glow);
+        }
+
+        .gallery-item h3 {
+            font-size: 18px;
+            color: #ffffff;
+            margin-bottom: 10px;
         }
 
         /* Fabric Grid */
         .fabric-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
+            gap: 24px;
         }
 
         .fabric-card {
-            border: 2px solid var(--border-color);
-            padding: 24px 20px;
-            text-align: left;
-            background-color: var(--bg-primary);
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            padding: 28px 24px;
             cursor: pointer;
             transition: var(--transition);
-            min-height: 170px;
+            min-height: 180px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
         }
 
         .fabric-card.active, .fabric-card:hover {
-            background-color: #000000;
-            color: #ffffff;
-        }
-
-        .fabric-card.active h3, .fabric-card:hover h3 {
-            color: #ffffff;
-        }
-
-        .fabric-card.active p, .fabric-card:hover p {
-            color: #cccccc;
+            background: var(--bg-card-hover);
+            border-color: var(--accent-gold);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.15);
         }
 
         .fabric-card h3 {
-            font-size: 15px;
-            font-weight: 800;
+            font-size: 17px;
+            color: var(--accent-gold);
             margin-bottom: 12px;
-            line-height: 1.2;
         }
 
         .fabric-card p {
-            font-size: 13px;
+            font-size: 13.5px;
             margin-bottom: 0;
-            line-height: 1.45;
+            color: #b0b0b8;
         }
 
-        /* B2B Calculator Section */
+        /* B2B Calculator */
         .calc-grid {
             display: grid;
             grid-template-columns: 1.15fr 0.85fr;
-            gap: 36px;
+            gap: 40px;
             align-items: start;
         }
 
         .calc-inputs {
             display: flex;
             flex-direction: column;
-            gap: 24px;
+            gap: 28px;
         }
 
         .calc-group-title {
-            font-size: 12px;
-            font-weight: 800;
+            font-size: 13px;
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 10px;
-            color: #000;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+            color: var(--accent-gold);
         }
 
         .select-grid {
@@ -468,34 +556,32 @@
         }
 
         .option-btn {
-            border: 2px solid var(--border-color);
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 8px;
             padding: 16px 12px;
             text-align: center;
             cursor: pointer;
-            font-weight: 700;
-            font-size: 12.5px;
-            background: #fff;
+            font-weight: 600;
+            font-size: 13px;
+            color: #e0e0e0;
             transition: var(--transition);
             display: flex;
             align-items: center;
             justify-content: center;
-            min-height: 52px;
+            min-height: 54px;
         }
 
         .option-btn.active {
-            background-color: #000000;
-            color: #ffffff;
-        }
-
-        /* Slider styles */
-        .range-container {
-            margin-top: 10px;
+            background: rgba(212, 175, 55, 0.15);
+            border-color: var(--accent-gold);
+            color: var(--accent-gold-light);
         }
 
         .range-slider {
             width: 100%;
             height: 6px;
-            background: #e0e0e0;
+            background: #26262e;
             outline: none;
             -webkit-appearance: none;
             border-radius: 3px;
@@ -503,96 +589,99 @@
 
         .range-slider::-webkit-slider-thumb {
             -webkit-appearance: none;
-            width: 22px;
-            height: 22px;
+            width: 24px;
+            height: 24px;
             border-radius: 50%;
-            background: #000000;
+            background: var(--accent-gold);
             cursor: pointer;
-            border: 2px solid #ffffff;
-            box-shadow: 0 0 0 2px #000000;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
         }
 
         .slider-labels {
             display: flex;
             justify-content: space-between;
-            font-size: 11px;
-            color: #666;
+            font-size: 12px;
+            color: var(--text-secondary);
             margin-top: 10px;
-            font-weight: 600;
         }
 
         .calc-results-box {
-            border: 2px solid var(--border-color);
-            padding: 32px;
-            background-color: var(--bg-primary);
+            background: var(--bg-card);
+            border: 1px solid var(--border-glow);
+            border-radius: 12px;
+            padding: 36px;
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 22px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.5);
         }
 
         .calc-results-box h3 {
-            font-size: 16px;
-            border-bottom: 2px solid var(--border-color);
-            padding-bottom: 12px;
-            margin-bottom: 5px;
-            text-align: left;
+            font-size: 20px;
+            color: #ffffff;
+            border-bottom: 1px solid var(--border-subtle);
+            padding-bottom: 14px;
         }
 
         .price-line {
             display: flex;
             justify-content: space-between;
-            font-size: 14px;
-            color: #333;
-            align-items: center;
+            font-size: 15px;
+            color: var(--text-secondary);
         }
 
         .price-line b {
-            font-size: 16px;
-            color: #000;
+            color: #ffffff;
+            font-size: 17px;
         }
 
         .total-budget-line {
-            border-top: 2px solid var(--border-color);
-            padding-top: 18px;
-            margin-top: 5px;
+            border-top: 1px solid var(--border-subtle);
+            padding-top: 20px;
         }
 
         .total-budget-line .label {
-            font-size: 16px;
-            font-weight: 800;
+            font-size: 15px;
             text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-secondary);
         }
 
         .total-budget-line .amount {
-            font-size: 26px;
-            font-weight: 900;
-            color: #000;
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--accent-gold);
             display: block;
-            margin-top: 4px;
+            margin-top: 6px;
+            font-family: var(--font-serif);
         }
 
         .calc-footnote {
-            font-size: 11px;
-            color: #777;
-            line-height: 1.4;
-            border-top: 1px dashed var(--border-light);
-            padding-top: 12px;
+            font-size: 12px;
+            color: #777780;
+            line-height: 1.5;
+            border-top: 1px dashed var(--border-subtle);
+            padding-top: 14px;
         }
 
         /* Brief Quiz */
         .quiz-container {
-            border: 2px solid var(--border-color);
-            padding: 40px;
-            background-color: var(--bg-primary);
-            max-width: 800px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            padding: 48px;
+            max-width: 860px;
             margin: 0 auto;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
         }
 
         .quiz-progress-line {
-            height: 3px;
-            background-color: #e0e0e0;
-            margin-bottom: 30px;
+            height: 4px;
+            background-color: #22222a;
+            border-radius: 2px;
+            margin-bottom: 36px;
             position: relative;
+            overflow: hidden;
         }
 
         .quiz-progress-fill {
@@ -601,142 +690,145 @@
             left: 0;
             height: 100%;
             width: 25%;
-            background-color: #000000;
+            background: var(--accent-gold-gradient);
             transition: var(--transition);
         }
 
         .quiz-step-title {
-            font-size: 15px;
-            font-weight: 800;
+            font-size: 18px;
+            font-weight: 700;
             text-transform: uppercase;
-            margin-bottom: 24px;
-            text-align: left;
+            margin-bottom: 28px;
+            color: var(--accent-gold);
+            font-family: var(--font-sans);
         }
 
         .quiz-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 16px;
-            margin-bottom: 30px;
+            gap: 18px;
+            margin-bottom: 36px;
         }
 
         .quiz-card {
-            border: 2px solid var(--border-color);
-            padding: 22px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-subtle);
+            border-radius: 10px;
+            padding: 24px;
             text-align: center;
             cursor: pointer;
-            font-weight: 700;
-            font-size: 14px;
-            background: #fff;
+            font-weight: 600;
+            font-size: 15px;
+            color: #e0e0e0;
             transition: var(--transition);
         }
 
-        .quiz-card.active {
-            background-color: #000000;
-            color: #ffffff;
+        .quiz-card.active, .quiz-card:hover {
+            border-color: var(--accent-gold);
+            background: rgba(212, 175, 55, 0.12);
+            color: var(--accent-gold-light);
         }
 
-        .quiz-action-bar {
-            display: flex;
-            justify-content: flex-end;
+        /* Inputs */
+        input[type="text"], input[type="tel"] {
+            width: 100%;
+            padding: 18px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-subtle);
+            border-radius: 8px;
+            font-size: 15px;
+            color: #ffffff;
+            font-family: var(--font-sans);
+            outline: none;
+            transition: var(--transition);
+        }
+
+        input[type="text"]:focus, input[type="tel"]:focus {
+            border-color: var(--accent-gold);
+            background: rgba(255, 255, 255, 0.06);
         }
 
         /* Legal Guarantees */
         .guarantees-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
+            gap: 28px;
         }
 
         .guarantee-card {
-            border: 2px solid var(--border-color);
-            padding: 30px;
-            background-color: var(--bg-primary);
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            padding: 36px;
         }
 
         .guarantee-card h3 {
-            font-size: 15px;
-            font-weight: 800;
-            border-bottom: 1px dashed var(--border-color);
-            padding-bottom: 12px;
-            margin-bottom: 16px;
-            line-height: 1.3;
-        }
-
-        .guarantee-card p {
-            font-size: 13.5px;
-            line-height: 1.55;
-            margin-bottom: 0;
+            font-size: 18px;
+            color: var(--accent-gold);
+            border-bottom: 1px dashed var(--border-subtle);
+            padding-bottom: 14px;
+            margin-bottom: 18px;
+            font-family: var(--font-sans);
         }
 
         /* Virtual Visit Section */
         .visit-grid {
             display: grid;
             grid-template-columns: 1.15fr 0.85fr;
-            gap: 40px;
+            gap: 50px;
             align-items: center;
         }
 
         .visit-content h3 {
-            font-size: 17px;
-            margin-bottom: 16px;
-            font-weight: 800;
-        }
-
-        .visit-content p {
-            margin-bottom: 24px;
-            font-size: 14.5px;
+            font-size: 22px;
+            margin-bottom: 20px;
+            color: #ffffff;
         }
 
         .checklist-items {
             list-style: none;
             display: flex;
             flex-direction: column;
-            gap: 14px;
+            gap: 16px;
         }
 
         .checklist-items li {
-            font-size: 14px;
-            color: #222;
-            line-height: 1.45;
+            font-size: 15px;
+            color: #d0d0d8;
             display: flex;
-            gap: 8px;
+            gap: 12px;
         }
 
         .checklist-items li span.check {
+            color: var(--accent-gold);
             font-weight: 800;
         }
 
         .location-card {
-            border: 2px solid var(--border-color);
-            padding: 50px 30px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            padding: 60px 40px;
             text-align: center;
-            background-color: var(--bg-secondary);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 250px;
+            border: 1px solid var(--border-glow);
         }
 
         .location-card h4 {
-            font-size: 15px;
-            font-weight: 800;
-            margin-bottom: 10px;
-        }
-
-        .location-card p {
-            font-size: 13px;
-            margin-bottom: 0;
+            font-size: 18px;
+            color: var(--accent-gold);
+            margin-bottom: 12px;
+            font-family: var(--font-sans);
         }
 
         /* Case Slider Box */
         .case-slider-box {
-            border: 2px solid var(--border-color);
-            padding: 40px;
-            background-color: var(--bg-primary);
-            max-width: 860px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            padding: 48px;
+            max-width: 900px;
             margin: 0 auto;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
         }
 
         .case-slide {
@@ -748,97 +840,75 @@
         }
 
         .case-slide h3 {
-            font-size: 17px;
-            font-weight: 800;
-            border-bottom: 2px solid var(--border-color);
-            padding-bottom: 14px;
-            margin-bottom: 24px;
-            line-height: 1.35;
-        }
-
-        .case-section-block {
-            margin-bottom: 20px;
+            font-size: 22px;
+            color: var(--accent-gold);
+            border-bottom: 1px solid var(--border-subtle);
+            padding-bottom: 16px;
+            margin-bottom: 28px;
         }
 
         .case-section-block b.case-label {
             display: block;
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 800;
-            margin-bottom: 6px;
-            color: #000;
+            margin-bottom: 8px;
+            color: #ffffff;
             text-transform: uppercase;
-        }
-
-        .case-section-block p {
-            font-size: 14px;
-            line-height: 1.6;
-            margin-bottom: 0;
-            color: #444;
-        }
-
-        .case-results-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            margin-top: 8px;
+            letter-spacing: 1px;
         }
 
         .case-results-list li {
-            font-size: 14px;
-            font-weight: 700;
-            color: #000;
-            line-height: 1.5;
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--accent-gold-light);
+            margin-bottom: 6px;
         }
 
         .case-nav-row {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px dashed var(--border-light);
+            margin-top: 36px;
+            padding-top: 24px;
+            border-top: 1px dashed var(--border-subtle);
         }
 
         .nav-arrow-btn {
-            border: 2px solid var(--border-color);
-            background: #fff;
-            padding: 8px 18px;
+            border: 1px solid var(--border-subtle);
+            background: rgba(255, 255, 255, 0.03);
+            color: #ffffff;
+            padding: 10px 22px;
+            border-radius: 30px;
             font-weight: 800;
             cursor: pointer;
             transition: var(--transition);
-            font-size: 16px;
         }
 
         .nav-arrow-btn:hover {
-            background: #000;
-            color: #fff;
-        }
-
-        .case-dots, .reviews-dots {
-            display: flex;
-            gap: 10px;
+            background: var(--accent-gold);
+            color: #000;
         }
 
         .dot {
-            width: 9px;
-            height: 9px;
+            width: 10px;
+            height: 10px;
             border-radius: 50%;
-            border: 2px solid var(--border-color);
+            border: 1px solid var(--accent-gold);
             background: transparent;
             cursor: pointer;
         }
 
         .dot.active {
-            background: #000;
+            background: var(--accent-gold);
         }
 
-        /* Testimonials Slider (Screenshot 1 of fourth batch) */
+        /* Testimonials Slider */
         .reviews-slider-box {
-            border: 2px solid var(--border-color);
-            padding: 45px;
-            background-color: var(--bg-primary);
-            max-width: 860px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            padding: 48px;
+            max-width: 900px;
             margin: 0 auto;
         }
 
@@ -851,193 +921,94 @@
         }
 
         .review-quote-text {
-            font-size: 15px;
-            line-height: 1.7;
-            color: #333333;
-            margin-bottom: 25px;
+            font-size: 17px;
+            line-height: 1.8;
+            color: #d0d0d8;
+            margin-bottom: 28px;
             font-style: italic;
+            font-family: var(--font-serif);
         }
 
         .review-author {
             font-family: var(--font-mono);
             font-size: 12px;
             font-weight: 700;
+            color: var(--accent-gold);
             text-transform: uppercase;
-            border-top: 1px dashed var(--border-color);
+            border-top: 1px dashed var(--border-subtle);
             padding-top: 18px;
-            color: #000;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
         }
 
-        /* PDF Download Banner (Screenshot 2 of fourth batch) */
+        /* PDF Download Banner */
         .pdf-banner-box {
-            border: 2px solid var(--border-color);
-            padding: 40px;
-            background-color: var(--bg-primary);
-            max-width: 860px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-glow);
+            border-radius: 16px;
+            padding: 44px;
+            max-width: 900px;
             margin: 0 auto 50px auto;
             display: grid;
             grid-template-columns: 1.3fr 0.7fr;
-            gap: 30px;
+            gap: 36px;
             align-items: center;
         }
 
         .pdf-banner-info h3 {
-            font-size: 16px;
-            font-weight: 800;
-            margin-bottom: 10px;
-            line-height: 1.3;
+            font-size: 22px;
+            color: #ffffff;
+            margin-bottom: 12px;
         }
 
-        .pdf-banner-info p {
-            font-size: 13.5px;
-            margin-bottom: 0;
-            color: #555;
-        }
-
-        .pdf-form-inline {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        /* Test Sample Order Box (Screenshot 2 of fourth batch) */
+        /* Sample Order Box */
         .sample-order-box {
-            border: 2px solid var(--border-color);
-            padding: 45px;
-            background-color: var(--bg-primary);
-            max-width: 600px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            padding: 50px;
+            max-width: 640px;
             margin: 0 auto;
             text-align: center;
         }
 
         .sample-order-box h3 {
-            font-size: 18px;
-            font-weight: 900;
-            margin-bottom: 12px;
-            letter-spacing: 0.5px;
+            font-size: 24px;
+            color: var(--accent-gold);
+            margin-bottom: 14px;
         }
 
-        .sample-order-box p {
-            font-size: 13.5px;
-            margin-bottom: 28px;
-            line-height: 1.55;
-        }
-
-        .sample-form {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
-
-        /* Final Main Contact Footer Box (Screenshot 3 of fourth batch) */
-        .main-footer-box {
-            border: 2px solid var(--border-color);
-            padding: 50px 40px;
-            background-color: var(--bg-primary);
-            max-width: 1140px;
-            margin: 0 auto;
-        }
-
-        .main-footer-grid {
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 40px;
-            align-items: start;
-        }
-
-        .footer-brand-col h3 {
-            font-size: 18px;
-            font-weight: 900;
-            margin-bottom: 12px;
-            letter-spacing: 1px;
-        }
-
-        .footer-brand-col p {
-            font-size: 14px;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-
-        .footer-brand-col .address-text {
-            font-size: 13.5px;
-            color: #444;
-        }
-
-        .footer-contacts-col h4 {
-            font-size: 15px;
-            font-weight: 800;
-            margin-bottom: 16px;
-        }
-
-        .footer-contacts-col p {
-            font-size: 14px;
-            margin-bottom: 10px;
-            color: #111;
-        }
-
-        .copyright-bottom-bar {
-            text-align: center;
-            padding: 24px 0;
-            font-size: 12px;
-            color: #777;
-            font-family: var(--font-mono);
-            border-top: 1px solid var(--border-light);
-            background: #fff;
-        }
-
-        /* Video Section */
-        .video-box {
-            max-width: 860px;
-            margin: 0 auto;
-            border: 2px solid var(--border-color);
-            background: #000;
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-        }
-
-        .video-box iframe, .video-box video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        /* FAQ Accordion Section */
+        /* FAQ Accordion */
         .faq-accordion {
-            max-width: 860px;
+            max-width: 900px;
             margin: 0 auto;
             display: flex;
             flex-direction: column;
-            gap: 16px;
+            gap: 18px;
         }
 
         .faq-item {
-            border: 2px solid var(--border-color);
-            background-color: var(--bg-primary);
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 10px;
             transition: var(--transition);
         }
 
         .faq-header {
-            padding: 22px 28px;
+            padding: 24px 30px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             cursor: pointer;
-            font-weight: 800;
-            font-size: 14.5px;
-            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 15px;
+            color: #ffffff;
             user-select: none;
         }
 
         .faq-header .icon {
             font-size: 20px;
-            font-weight: 800;
-            transition: transform 0.25s ease;
+            color: var(--accent-gold);
+            transition: transform 0.3s ease;
         }
 
         .faq-item.active .faq-header .icon {
@@ -1046,16 +1017,48 @@
 
         .faq-body {
             display: none;
-            padding: 0 28px 24px 28px;
-            font-size: 14px;
-            line-height: 1.6;
-            color: #444;
-            border-top: 1px dashed var(--border-light);
-            padding-top: 16px;
+            padding: 0 30px 24px 30px;
+            font-size: 14.5px;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            border-top: 1px dashed var(--border-subtle);
+            padding-top: 18px;
         }
 
         .faq-item.active .faq-body {
             display: block;
+        }
+
+        /* Main Contact Footer Box */
+        .main-footer-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            padding: 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .main-footer-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 50px;
+        }
+
+        .footer-brand-col h3 {
+            font-size: 24px;
+            color: var(--accent-gold);
+            margin-bottom: 14px;
+        }
+
+        .copyright-bottom-bar {
+            text-align: center;
+            padding: 28px 0;
+            font-size: 12px;
+            color: #666;
+            font-family: var(--font-mono);
+            border-top: 1px solid var(--border-subtle);
+            background: var(--bg-dark);
         }
 
         @media (max-width: 900px) {
@@ -1072,7 +1075,7 @@
                 grid-template-columns: 1fr;
             }
             .case-slider-box, .reviews-slider-box, .sample-order-box {
-                padding: 24px;
+                padding: 28px;
             }
         }
     </style>
@@ -1083,8 +1086,8 @@
     <header>
         <div class="container nav-container">
             <a href="#" class="logo">
-                <span>ASTRA</span>
-                <span>BRAND</span>
+                ASTRA
+                <span class="brand">BRAND</span>
             </a>
             <ul class="nav-links">
                 <li><a href="#offers">УСЛОВИЯ</a></li>
@@ -1099,29 +1102,30 @@
                 <li><a href="#reviews">ОТЗЫВЫ</a></li>
                 <li><a href="#faq">FAQ</a></li>
             </ul>
-            <a href="https://wa.me/996703326999?text=Здравствуйте!%20Хочу%20получить%20консультацию%20по%20пошиву" target="_blank" class="btn btn-secondary">СВЯЗАТЬСЯ</a>
+            <a href="https://wa.me/996703326999?text=Здравствуйте!%20Хочу%20получить%20консультацию%20по%20пошиву" target="_blank" class="btn btn-gold">СВЯЗАТЬСЯ</a>
         </div>
     </header>
 
     <!-- SECTION 1: HERO -->
-    <section class="section">
+    <section class="hero-wrapper section">
         <div class="container hero-grid">
             <div class="hero-content">
-                <h1>КОНТРАКТНЫЙ ПОШИВ PLUS SIZE (50–60) ОДЕЖДЫ ДЛЯ БРЕНДОВ РФ И СНГ ПОД КЛЮЧ</h1>
+                <span class="hero-tag">ПРЕМИУМ ФАБРИКА БИШКЕК</span>
+                <h1>КОНТРАКТНЫЙ ПОШИВ <span class="gold">PLUS SIZE (50–60)</span> ОДЕЖДЫ ДЛЯ БРЕНДОВ РФ И СНГ ПОД КЛЮЧ</h1>
                 <p>Швейная фабрика Astra Brand в Бишкеке с узкой специализацией: идеальные лекала Plus Size на женскую фигуру 50–60 размеров. Отшиваем партии для Wildberries, Ozon и Kaspi с маркировкой Честный Знак.</p>
                 <div class="hero-btns">
-                    <a href="#quiz" class="btn btn-primary">РАССЧИТАТЬ БРИФ</a>
-                    <a href="https://wa.me/996703326999?text=Здравствуйте!%20Хочу%20заказать%20образцы%20лекал" target="_blank" class="btn btn-secondary">ЗАКАЗАТЬ ОБРАЗЕЦ</a>
+                    <a href="#quiz" class="btn btn-gold">РАССЧИТАТЬ БРИФ</a>
+                    <a href="https://wa.me/996703326999?text=Здравствуйте!%20Хочу%20заказать%20образцы%20лекал" target="_blank" class="btn btn-outline">ЗАКАЗАТЬ ОБРАЗЕЦ</a>
                 </div>
             </div>
-            <div class="spec-box">
-                <h3>[СПЕЦИФИКАЦИЯ ФАБРИКИ]</h3>
+            <div class="spec-card">
+                <h3>[ СПЕЦИФИКАЦИЯ ФАБРИКИ ]</h3>
                 <ul class="spec-list">
-                    <li><b>Мощность:</b> до 16 000 ед/мес</li>
-                    <li><b>Разработка лекал:</b> электронные лекала (до 5 дней)</li>
-                    <li><b>Доставка:</b> Доставляем за 7–12 дней</li>
-                    <li><b>Минимальный заказ:</b> от 300 ед. на модель</li>
-                    <li><b>Размеры:</b> с 50 по 60 размер</li>
+                    <li><span>Мощность:</span> <b>до 16 000 ед/мес</b></li>
+                    <li><span>Разработка лекал:</span> <b>электронные (до 5 дней)</b></li>
+                    <li><span>Доставка Cargo:</span> <b>7–12 дней до РФ</b></li>
+                    <li><span>Минимальный заказ:</span> <b>от 300 ед. на модель</b></li>
+                    <li><span>Размерный ряд:</span> <b>с 50 по 60 размер</b></li>
                 </ul>
             </div>
         </div>
@@ -1130,7 +1134,7 @@
     <!-- SECTION 2: OFFERS -->
     <section class="section" id="offers">
         <div class="container">
-            <h2 class="section-title">КЛЮЧЕВЫЕ ОФФЕРЫ И УСЛОВИЯ РАБОТЫ</h2>
+            <h2 class="section-title">КЛЮЧЕВЫЕ ОФФЕРЫ И <span class="gold">УСЛОВИЯ РАБОТЫ</span></h2>
             <div class="offers-grid">
                 <div class="offer-card">
                     <div>
@@ -1162,7 +1166,7 @@
     <!-- SECTION 3: COMPARE TABLE -->
     <section class="section" id="compare">
         <div class="container">
-            <h2 class="section-title">СРАВНЕНИЕ УСЛОВИЙ: ПОШИВ В РФ VS ASTRA BRAND (БИШКЕК)</h2>
+            <h2 class="section-title">СРАВНЕНИЕ УСЛОВИЙ: <span class="gold">ПОШИВ В РФ VS ASTRA BRAND</span></h2>
             <p class="section-subtitle">Таблица наглядно демонстрирует экономические преимущества размещения заказов на нашем производстве.</p>
             
             <div class="compare-table-wrapper">
@@ -1209,7 +1213,7 @@
     <!-- SECTION 4: WORKFLOW -->
     <section class="section" id="workflow">
         <div class="container">
-            <h2 class="section-title">СХЕМА СОТРУДНИЧЕСТВА ШАГ ЗА ШАГОМ</h2>
+            <h2 class="section-title">СХЕМА СОТРУДНИЧЕСТВА <span class="gold">ШАГ ЗА ШАГОМ</span></h2>
             <div class="workflow-grid">
                 <div class="workflow-card">
                     <span class="step-number">01</span>
@@ -1253,7 +1257,7 @@
     <!-- SECTION 5: FACILITIES TABS -->
     <section class="section" id="facets">
         <div class="container">
-            <h2 class="section-title">ПРОИЗВОДСТВЕННЫЕ МОЩНОСТИ (ЦЕХИ ФАБРИКИ)</h2>
+            <h2 class="section-title">ПРОИЗВОДСТВЕННЫЕ МОЩНОСТИ <span class="gold">(ЦЕХИ ФАБРИКИ)</span></h2>
             <div class="gallery-tabs">
                 <button class="tab-btn active" onclick="switchTab('design')">КОНСТРУКТОРСКИЙ ЦЕХ</button>
                 <button class="tab-btn" onclick="switchTab('cut')">РАСКРОЙНЫЙ ЦЕХ</button>
@@ -1338,7 +1342,7 @@
     <!-- SECTION 6: FABRICS MAP -->
     <section class="section" id="fabrics">
         <div class="container">
-            <h2 class="section-title">ИНТЕРАКТИВНАЯ КАРТА ИСПОЛЬЗУЕМЫХ ТКАНЕЙ</h2>
+            <h2 class="section-title">ИНТЕРАКТИВНАЯ КАРТА <span class="gold">ИСПОЛЬЗУЕМЫХ ТКАНЕЙ</span></h2>
             <p class="section-subtitle">Мы закупаем ткани напрямую с крупнейшего оптового рынка Азии в Бишкеке «Мадина». Ниже представлены основные ткани, с которыми мы работаем.</p>
             
             <div class="fabric-grid">
@@ -1368,7 +1372,7 @@
     <!-- SECTION 7: B2B CALCULATOR -->
     <section class="section" id="calc">
         <div class="container">
-            <h2 class="section-title">В2В КАЛЬКУЛЯТОР ОПТОВОГО ПОШИВА</h2>
+            <h2 class="section-title">В2В КАЛЬКУЛЯТОР <span class="gold">ОПТОВОГО ПОШИВА</span></h2>
             <div class="calc-grid">
                 <div class="calc-inputs">
                     <div>
@@ -1389,7 +1393,7 @@
                     </div>
 
                     <div>
-                        <div class="calc-group-title">ОБЪЕМ ПАРТИИ: <span id="slider-qty-text">300</span> шт.</div>
+                        <div class="calc-group-title">ОБЪЕМ ПАРТИИ: <span id="slider-qty-text" style="color:var(--accent-gold);">300</span> шт.</div>
                         <div class="range-container">
                             <input type="range" min="300" max="5000" step="100" value="300" class="range-slider" id="qty-slider" oninput="updateCalculator()">
                             <div class="slider-labels">
@@ -1421,7 +1425,7 @@
                         *В расчете учитывается прогрессивная скидка на партию: 5% при заказе от 500 шт, 10% от 1000 шт, 15% от 3000 шт.
                     </div>
 
-                    <a href="https://wa.me/996703326999?text=Здравствуйте!%20Хочу%20отправить%20расчет%20оптового%20пошива" target="_blank" class="btn btn-primary" style="width: 100%; margin-top: 10px;">
+                    <a href="https://wa.me/996703326999?text=Здравствуйте!%20Хочу%20отправить%20расчет%20оптового%20пошива" target="_blank" class="btn btn-gold" style="width: 100%; margin-top: 10px;">
                         ОТПРАВИТЬ РАСЧЕТ МЕНЕДЖЕРУ В WHATSAPP
                     </a>
                 </div>
@@ -1432,7 +1436,7 @@
     <!-- SECTION 8: BRIEF QUIZ -->
     <section class="section" id="quiz">
         <div class="container">
-            <h2 class="section-title">ИНТЕРАКТИВНЫЙ БРИФ НА ЭКСПРЕСС-РАСЧЕТ</h2>
+            <h2 class="section-title">ИНТЕРАКТИВНЫЙ БРИФ НА <span class="gold">ЭКСПРЕСС-РАСЧЕТ</span></h2>
             <p class="section-subtitle">Ответьте на 4 простых вопроса, чтобы наш технолог подготовил детальную спецификацию пошива.</p>
 
             <div class="quiz-container">
@@ -1448,8 +1452,8 @@
                         <div class="quiz-card" onclick="selectQuizOption(this)">Блузы / Рубашки</div>
                         <div class="quiz-card" onclick="selectQuizOption(this)">Спортивный трикотаж / Худи</div>
                     </div>
-                    <div class="quiz-action-bar">
-                        <button class="btn btn-primary" onclick="goToStep(2)">ДАЛЕЕ</button>
+                    <div class="quiz-action-bar" style="display:flex; justify-content:flex-end;">
+                        <button class="btn btn-gold" onclick="goToStep(2)">ДАЛЕЕ →</button>
                     </div>
                 </div>
 
@@ -1461,8 +1465,8 @@
                         <div class="quiz-card" onclick="selectQuizOption(this)">От 1 000 до 3 000 шт</div>
                         <div class="quiz-card" onclick="selectQuizOption(this)">Более 3 000 шт (Крупный опт)</div>
                     </div>
-                    <div class="quiz-action-bar">
-                        <button class="btn btn-primary" onclick="goToStep(3)">ДАЛЕЕ</button>
+                    <div class="quiz-action-bar" style="display:flex; justify-content:flex-end;">
+                        <button class="btn btn-gold" onclick="goToStep(3)">ДАЛЕЕ →</button>
                     </div>
                 </div>
 
@@ -1474,19 +1478,19 @@
                         <div class="quiz-card" onclick="selectQuizOption(this)">Да, есть готовые лекала в PLT / DXF</div>
                         <div class="quiz-card" onclick="selectQuizOption(this)">Нужна консультация конструктора</div>
                     </div>
-                    <div class="quiz-action-bar">
-                        <button class="btn btn-primary" onclick="goToStep(4)">ДАЛЕЕ</button>
+                    <div class="quiz-action-bar" style="display:flex; justify-content:flex-end;">
+                        <button class="btn btn-gold" onclick="goToStep(4)">ДАЛЕЕ →</button>
                     </div>
                 </div>
 
                 <div id="step-4" class="quiz-step-content" style="display:none;">
                     <div class="quiz-step-title">ШАГ 4: КУДА ОТПРАВИТЬ ДЕТАЛЬНЫЙ РАСЧЕТ И СМЕТУ?</div>
-                    <div style="margin-bottom: 25px;">
+                    <div style="margin-bottom: 28px;">
                         <input type="text" placeholder="Ваше имя">
-                        <input type="tel" placeholder="Телефон / WhatsApp (+7...)" style="margin-top:15px;">
+                        <input type="tel" placeholder="Телефон / WhatsApp (+7...)" style="margin-top:16px;">
                     </div>
                     <div class="quiz-action-bar">
-                        <button class="btn btn-primary" style="width:100%;" onclick="submitQuiz()">ПОЛУЧИТЬ РАСЧЕТ В WHATSAPP</button>
+                        <button class="btn btn-gold" style="width:100%;" onclick="submitQuiz()">ПОЛУЧИТЬ РАСЧЕТ В WHATSAPP</button>
                     </div>
                 </div>
             </div>
@@ -1496,7 +1500,7 @@
     <!-- SECTION 9: LEGAL GUARANTEES -->
     <section class="section" id="guarantees">
         <div class="container">
-            <h2 class="section-title">ГАРАНТИИ БЕЗОПАСНОСТИ СДЕЛКИ И МИНИМИЗАЦИИ РИСКОВ</h2>
+            <h2 class="section-title">ГАРАНТИИ БЕЗОПАСНОСТИ СДЕЛКИ <span class="gold">И МИНИМИЗАЦИИ РИСКОВ</span></h2>
             <div class="guarantees-grid">
                 <div class="guarantee-card">
                     <h3>1. ЮРИДИЧЕСКАЯ ЧИСТОТА</h3>
@@ -1519,16 +1523,16 @@
     <!-- SECTION 10: VIRTUAL VISIT & LOCATION -->
     <section class="section">
         <div class="container">
-            <h2 class="section-title">ВИРТУАЛЬНЫЙ ВИЗИТ НА ФАБРИКУ</h2>
+            <h2 class="section-title">ВИРТУАЛЬНЫЙ ВИЗИТ <span class="gold">НА ФАБРИКУ</span></h2>
             <div class="visit-grid">
                 <div class="visit-content">
                     <h3>УДАЛЕННЫЙ КОНТРОЛЬ БЕЗ ПОЕЗДКИ В БИШКЕК</h3>
                     <p>Мы понимаем ваши опасения при работе со швейными цехами в другой стране, поэтому внедрили систему полной прозрачности:</p>
                     <ul class="checklist-items">
-                        <li><span class="check">[✔]</span> Еженедельный видеоотчет процесса раскроя и пошива вашей партии.</li>
-                        <li><span class="check">[✔]</span> Видеозвонок технолога из швейного цеха в реальном времени по первому требованию.</li>
-                        <li><span class="check">[✔]</span> Предоставление физических образцов ткани перед запуском массового кроя на согласование.</li>
-                        <li><span class="check">[✔]</span> Официальный визит: мы всегда рады встретить вас в аэропорту Манас, разместить в гостинице и показать фабрику лично.</li>
+                        <li><span class="check">✔</span> Еженедельный видеоотчет процесса раскроя и пошива вашей партии.</li>
+                        <li><span class="check">✔</span> Видеозвонок технолога из швейного цеха в реальном времени по первому требованию.</li>
+                        <li><span class="check">✔</span> Предоставление физических образцов ткани перед запуском массового кроя на согласование.</li>
+                        <li><span class="check">✔</span> Официальный визит: мы всегда рады встретить вас в аэропорту Манас, разместить в гостинице и показать фабрику лично.</li>
                     </ul>
                 </div>
 
@@ -1543,7 +1547,7 @@
     <!-- SECTION 11: REAL B2B CASES SLIDER -->
     <section class="section" id="cases">
         <div class="container">
-            <h2 class="section-title">РЕАЛЬНЫЕ КЕЙСЫ НАШИХ В2В-ПАРТНЕРОВ</h2>
+            <h2 class="section-title">РЕАЛЬНЫЕ КЕЙСЫ <span class="gold">НАШИХ В2В-ПАРТНЕРОВ</span></h2>
             
             <div class="case-slider-box">
                 <!-- Case Slide 1 -->
@@ -1632,10 +1636,10 @@
         </div>
     </section>
 
-    <!-- SECTION 12: REVIEWS SLIDER (Screenshot 1 of fourth batch) -->
+    <!-- SECTION 12: REVIEWS SLIDER -->
     <section class="section" id="reviews">
         <div class="container">
-            <h2 class="section-title">ОТЗЫВЫ НАШИХ В2В-ПАРТНЕРОВ</h2>
+            <h2 class="section-title">ОТЗЫВЫ <span class="gold">НАШИХ В2В-ПАРТНЕРОВ</span></h2>
             
             <div class="reviews-slider-box">
                 <!-- Review 1 -->
@@ -1684,7 +1688,7 @@
         </div>
     </section>
 
-    <!-- SECTION 13: DOWNLOAD PDF CATALOG & ORDER SAMPLE (Screenshot 2 of fourth batch) -->
+    <!-- SECTION 13: DOWNLOAD PDF CATALOG & ORDER SAMPLE -->
     <section class="section">
         <div class="container">
             <!-- PDF Download Box -->
@@ -1693,9 +1697,9 @@
                     <h3>СКАЧАТЬ КАТАЛОГ БАЗОВЫХ МОДЕЛЕЙ И ПРАЙС-ЛИСТ В PDF</h3>
                     <p>Получите файл с нашими популярными моделями Plus Size, расценками на пошив и условиями доставки до склада в Москве.</p>
                 </div>
-                <div class="pdf-form-inline">
+                <div style="display:flex; flex-direction:column; gap:14px;">
                     <input type="tel" id="pdf-phone" placeholder="Ваш WhatsApp">
-                    <button class="btn btn-primary" onclick="downloadPdfCatalog()">СКАЧАТЬ PDF</button>
+                    <button class="btn btn-gold" onclick="downloadPdfCatalog()">СКАЧАТЬ PDF</button>
                 </div>
             </div>
 
@@ -1704,11 +1708,11 @@
                 <h3>ЗАКАЗАТЬ ТЕСТОВЫЙ ОБРАЗЕЦ</h3>
                 <p>Пришлите фотографию или эскиз любого изделия Plus Size. Мы разработаем лекала и отошьем тестовый образец всего за $30. При заказе партии стоимость образца возвращается!</p>
                 
-                <div class="sample-form">
+                <div style="display:flex; flex-direction:column; gap:16px;">
                     <input type="text" id="sample-name" placeholder="Ваше имя">
                     <input type="tel" id="sample-phone" placeholder="Ваш номер телефона (WhatsApp)">
                     <input type="text" id="sample-product" placeholder="Какое изделие нужно отшить (например, летнее платье)">
-                    <button class="btn btn-primary" style="width:100%;" onclick="orderSample()">ПОЛУЧИТЬ ОБРАЗЕЦ ЗА $30</button>
+                    <button class="btn btn-gold" style="width:100%; margin-top:8px;" onclick="orderSample()">ПОЛУЧИТЬ ОБРАЗЕЦ ЗА $30</button>
                 </div>
             </div>
         </div>
@@ -1717,7 +1721,7 @@
     <!-- SECTION 14: VIDEO TOUR -->
     <section class="section">
         <div class="container">
-            <h2 class="section-title">НАШЕ ПРОИЗВОДСТВО</h2>
+            <h2 class="section-title">НАШЕ <span class="gold">ПРОИЗВОДСТВО</span></h2>
             <p class="section-subtitle">Посмотрите короткую видео-экскурсию по нашим цехам: раскройный стол, швейные потоки Jack/Juki и отдел контроля качества ОТК.</p>
             
             <div class="video-box">
@@ -1729,7 +1733,7 @@
     <!-- SECTION 15: FAQ ACCORDION -->
     <section class="section" id="faq">
         <div class="container">
-            <h2 class="section-title">ВОПРОСЫ И ОТВЕТЫ (FAQ ДЛЯ B2B)</h2>
+            <h2 class="section-title">ВОПРОСЫ И ОТВЕТЫ <span class="gold">(FAQ ДЛЯ B2B)</span></h2>
             
             <div class="faq-accordion">
                 <div class="faq-item active" onclick="toggleFaq(this)">
@@ -1785,21 +1789,21 @@
         </div>
     </section>
 
-    <!-- SECTION 16: MAIN CONTACT FOOTER BOX (Screenshot 3 of fourth batch) -->
-    <section class="section" style="border-bottom:none; background-color: var(--bg-secondary);">
+    <!-- SECTION 16: MAIN CONTACT FOOTER BOX -->
+    <section class="section" style="border-bottom:none;">
         <div class="container">
             <div class="main-footer-box">
                 <div class="main-footer-grid">
                     <div class="footer-brand-col">
                         <h3>ASTRA BRAND</h3>
                         <p>Ваш надежный партнер по разработке электронных лекал и пошиву Plus Size одежды (50–60 размеров) в Кыргызстане.</p>
-                        <p class="address-text">Адрес фабрики: Кыргызская Республика, г. Бишкек, ул. Ласло-Мессароша 76/4</p>
+                        <p style="color:#a0a0a8; font-size:13.5px;">Адрес фабрики: Кыргызская Республика, г. Бишкек, ул. Ласло-Мессароша 76/4</p>
                     </div>
                     <div class="footer-contacts-col">
-                        <h4>КОНТАКТЫ БРОНИРОВАНИЯ ПОШИВА</h4>
-                        <p>📞 Телефон: +996 703 326 999 (WhatsApp)</p>
-                        <p>✉ Email: lara100573@gmail.com</p>
-                        <a href="https://wa.me/996703326999?text=Здравствуйте!%20Хочу%20забронировать%20пошив" target="_blank" class="btn btn-primary" style="margin-top: 10px; width: 100%;">
+                        <h4 style="font-size:16px; color:#fff; margin-bottom:16px;">КОНТАКТЫ БРОНИРОВАНИЯ ПОШИВА</h4>
+                        <p style="color:#d0d0d8; margin-bottom:8px;">📞 Телефон: +996 703 326 999 (WhatsApp)</p>
+                        <p style="color:#d0d0d8; margin-bottom:16px;">✉ Email: lara100573@gmail.com</p>
+                        <a href="https://wa.me/996703326999?text=Здравствуйте!%20Хочу%20забронировать%20пошив" target="_blank" class="btn btn-gold" style="width: 100%;">
                             НАПИСАТЬ В WHATSAPP
                         </a>
                     </div>
@@ -1810,7 +1814,7 @@
 
     <!-- COPYRIGHT BAR -->
     <div class="copyright-bottom-bar">
-        © 2026 Astra Brand. Черно-белый интерактивный прототип структуры и контента.
+        © 2026 Astra Brand Group. Все права защищены.
     </div>
 
     <script>
@@ -1926,7 +1930,6 @@
 
         /* PDF Download Action */
         function downloadPdfCatalog() {
-            const phone = document.getElementById('pdf-phone').value || '';
             window.open('https://climaflow312.com/brief.pdf', '_blank');
         }
 
