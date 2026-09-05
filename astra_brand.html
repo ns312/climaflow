@@ -1,469 +1,1007 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Astra Brand — Контрактный Пошив Одежды Plus Size в Бишкеке</title>
-  <meta name="description" content="Швейная ателье-фабрика Astra Brand: оптовый пошив женской одежды больших размеров (50-64+) в Бишкеке под ключ от 1 150 ₽.">
-  
-  <!-- Premium Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astra Brand — Контрактный пошив Plus Size (50-60) в Бишкеке под ключ</title>
+    <meta name="description" content="Швейная фабрика Astra Brand в Бишкеке: контрактное производство и пошив женской одежды больших размеров (50-60) под ключ. Маркировка Честный ЗНАК, идеальные лекала, опт от 300 шт.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 
-  <style>
-    :root {
-      --bg-dark: #0E0E0E;
-      --bg-light: #FAF9F6;
-      --text-main: #111111;
-      --text-muted: #666666;
-      --accent-brass: #D4AF37;
-      --border-thin: rgba(17, 17, 17, 0.12);
-    }
+    <style>
+        :root {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f9f9f9;
+            --border-color: #000000;
+            --border-light: #e0e0e0;
+            --color-text-primary: #000000;
+            --color-text-secondary: #555555;
+            --font-family: 'Inter', sans-serif;
+            --font-serif: 'Cormorant Garamond', serif;
+            --font-mono: 'Space Mono', monospace;
+            --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    body {
-      background: var(--bg-light);
-      color: var(--text-main);
-      font-family: 'Inter', sans-serif;
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-    }
+        body {
+            background-color: var(--bg-primary);
+            color: var(--color-text-primary);
+            font-family: var(--font-family);
+            line-height: 1.5;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
 
-    /* Represent Style Header */
-    header#main-header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 72px;
-      z-index: 1000;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 5vw;
-      background: rgba(14, 14, 14, 0.48);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      transition: all 0.4s ease;
-    }
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-    .brand-logo-text {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.6rem;
-      font-weight: 600;
-      letter-spacing: 3px;
-      color: #FFFFFF;
-      text-transform: uppercase;
-      text-decoration: none;
-    }
+        .section {
+            padding: 80px 0;
+            border-bottom: 2px solid var(--border-color);
+        }
 
-    .brand-logo-text span {
-      font-weight: 300;
-      color: var(--accent-brass);
-    }
+        h1, h2, h3, h4 {
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 15px;
+        }
 
-    .nav-actions {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
+        .section-title {
+            font-size: clamp(1.8rem, 3vw, 2.4rem);
+            text-align: center;
+            margin-bottom: 35px;
+            line-height: 1.2;
+        }
 
-    .btn-brass {
-      background: linear-gradient(135deg, #2A2A2A 0%, #111111 100%);
-      color: #FFFFFF;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      padding: 12px 24px;
-      font-size: 0.82rem;
-      font-weight: 600;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
+        .section-subtitle {
+            text-align: center;
+            color: var(--color-text-secondary);
+            margin-top: -20px;
+            margin-bottom: 40px;
+            font-size: 15px;
+        }
 
-    .btn-brass:hover {
-      background: #FFFFFF;
-      color: #111111;
-    }
+        p {
+            color: var(--color-text-secondary);
+            margin-bottom: 20px;
+            font-size: 15px;
+        }
 
-    /* Hero Section with Fullscreen Video Background */
-    .hero-section {
-      position: relative;
-      width: 100%;
-      height: 100vh;
-      min-height: 600px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      background: #000;
-    }
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 32px;
+            font-weight: 700;
+            font-size: 13px;
+            text-transform: uppercase;
+            text-decoration: none;
+            border: 2px solid var(--border-color);
+            cursor: pointer;
+            transition: var(--transition);
+            letter-spacing: 1px;
+        }
 
-    .hero-video-bg {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0.65;
-    }
+        .btn-primary {
+            background-color: var(--border-color);
+            color: #ffffff;
+        }
 
-    .hero-content {
-      position: relative;
-      z-index: 10;
-      text-align: center;
-      color: #FFFFFF;
-      padding: 0 20px;
-      max-width: 900px;
-    }
+        .btn-primary:hover {
+            background-color: #333333;
+            border-color: #333333;
+        }
 
-    .hero-title {
-      font-family: 'Cormorant Garamond', 'Bodoni Moda', serif;
-      font-size: clamp(2.5rem, 7vw, 6rem);
-      font-weight: 400;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      margin-bottom: 20px;
-      line-height: 0.95;
-    }
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--color-text-primary);
+        }
 
-    .hero-subtitle {
-      font-family: 'Inter', sans-serif;
-      font-size: clamp(1rem, 2vw, 1.35rem);
-      font-weight: 300;
-      color: rgba(255, 255, 255, 0.85);
-      margin-bottom: 36px;
-      line-height: 1.6;
-    }
+        .btn-secondary:hover {
+            background-color: #f0f0f0;
+        }
 
-    /* Aurore & Astree Banner & Form Section */
-    .aurore-hero-banner-wrapper {
-      position: relative;
-      width: 100%;
-      height: 60vh;
-      min-height: 400px;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+        /* Header Navigation */
+        header {
+            border-bottom: 2px solid var(--border-color);
+            background-color: #ffffff;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
-    .aurore-hero-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 76px;
+        }
 
-    .aurore-giant-title {
-      position: absolute;
-      width: 100%;
-      text-align: center;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(3rem, 11vw, 10rem);
-      font-weight: 400;
-      color: #FFFFFF;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      text-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
-      pointer-events: none;
-      z-index: 5;
-    }
+        .logo {
+            font-size: 18px;
+            font-weight: 900;
+            text-decoration: none;
+            color: #000000;
+            line-height: 1.1;
+            display: flex;
+            flex-direction: column;
+        }
 
-    .form-section {
-      background: #FAF9F6;
-      padding: 80px 8vw 90px;
-      border-bottom: 1px solid var(--border-thin);
-    }
+        .nav-links {
+            display: flex;
+            gap: 18px;
+            list-style: none;
+        }
 
-    .form-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.8rem, 3.4vw, 2.8rem);
-      font-weight: 500;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      margin-bottom: 12px;
-    }
+        .nav-links a {
+            color: var(--color-text-primary);
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
 
-    .form-subtitle {
-      font-size: 0.94rem;
-      color: #666;
-      margin-bottom: 36px;
-      max-width: 720px;
-      line-height: 1.65;
-    }
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
 
-    .form-grid {
-      display: flex;
-      gap: 16px;
-      max-width: 960px;
-      margin-bottom: 28px;
-    }
+        /* Hero Section */
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.25fr 0.75fr;
+            gap: 40px;
+            align-items: start;
+        }
 
-    @media (max-width: 768px) {
-      .form-grid {
-        flex-direction: column;
-      }
-    }
+        .hero-content h1 {
+            font-size: clamp(2.2rem, 3.8vw, 3.4rem);
+            line-height: 1.08;
+            margin-bottom: 22px;
+            font-weight: 800;
+        }
 
-    .input-field {
-      flex: 1;
-      background: #F4F4F2;
-      border: 1px solid #E2E2DD;
-      padding: 18px 24px;
-      font-size: 0.95rem;
-      color: #111;
-      outline: none;
-    }
+        .hero-content p {
+            font-size: 16px;
+            margin-bottom: 32px;
+            line-height: 1.6;
+        }
 
-    .btn-submit {
-      background: #2A2A2A;
-      color: #FFF;
-      border: none;
-      padding: 18px 52px;
-      font-size: 0.88rem;
-      font-weight: 600;
-      letter-spacing: 1px;
-      cursor: pointer;
-      white-space: nowrap;
-      transition: background 0.3s ease;
-    }
+        .hero-btns {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
 
-    .btn-submit:hover {
-      background: #111;
-    }
+        .spec-box {
+            border: 2px solid var(--border-color);
+            padding: 28px;
+            background-color: var(--bg-primary);
+        }
 
-    /* B2B Metrics Section */
-    .metrics-section {
-      padding: 90px 8vw;
-      background: #F8F6F0;
-      border-bottom: 1px solid var(--border-thin);
-    }
+        .spec-box h3 {
+            font-size: 15px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+            margin-bottom: 16px;
+            text-align: center;
+        }
 
-    .stat-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 24px;
-      margin-top: 40px;
-      border-top: 1px solid rgba(17, 17, 17, 0.12);
-      padding-top: 36px;
-    }
+        .spec-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            font-size: 13.5px;
+            color: #222;
+        }
 
-    .stat-num {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 3rem;
-      font-weight: 500;
-      color: #111;
-    }
+        .spec-list li::before {
+            content: "• ";
+            font-weight: 700;
+        }
 
-    .stat-label {
-      font-size: 0.85rem;
-      color: #666;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
+        /* Offers Grid */
+        .offers-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
 
-    /* Footer */
-    .aurore-footer {
-      background: #111111;
-      color: #FFFFFF;
-      padding: 70px 8vw 40px;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-    }
+        .offer-card {
+            border: 2px solid var(--border-color);
+            padding: 30px;
+            background-color: var(--bg-primary);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
 
-    .footer-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 50px;
-      margin-bottom: 60px;
-    }
+        .offer-card h3 {
+            font-size: 16px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 12px;
+            margin-bottom: 16px;
+            line-height: 1.3;
+        }
 
-    .footer-col-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.1rem;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      margin-bottom: 22px;
-    }
+        .offer-tag {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-top: 20px;
+            padding-top: 12px;
+            border-top: 1px dashed var(--border-color);
+        }
 
-    .footer-links {
-      list-style: none;
-    }
+        /* Compare Table */
+        .compare-table-wrapper {
+            overflow-x: auto;
+            border: 2px solid var(--border-color);
+        }
 
-    .footer-links li {
-      margin-bottom: 10px;
-    }
+        .compare-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 14px;
+        }
 
-    .footer-links a {
-      color: rgba(255, 255, 255, 0.65);
-      text-decoration: none;
-      font-size: 0.88rem;
-    }
+        .compare-table th, .compare-table td {
+            padding: 18px 20px;
+            border: 1px solid var(--border-color);
+        }
 
-    .footer-bottom {
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      padding-top: 28px;
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.78rem;
-      color: rgba(255, 255, 255, 0.45);
-    }
-  </style>
+        .compare-table th {
+            background-color: var(--bg-secondary);
+            font-weight: 800;
+            text-transform: uppercase;
+            font-size: 12px;
+        }
+
+        .compare-table td.highlight {
+            background-color: rgba(0, 0, 0, 0.04);
+            font-weight: 700;
+        }
+
+        /* Workflow Grid */
+        .workflow-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .workflow-card {
+            border: 2px solid var(--border-color);
+            padding: 28px;
+            position: relative;
+            background-color: var(--bg-primary);
+        }
+
+        .workflow-card .step-number {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 26px;
+            font-weight: 800;
+            color: var(--color-text-secondary);
+            border-bottom: 2px solid var(--border-color);
+            line-height: 1;
+            padding-bottom: 4px;
+        }
+
+        /* Tabs & Gallery */
+        .gallery-tabs {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 30px;
+            justify-content: center;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 12px;
+        }
+
+        .tab-btn {
+            padding: 12px 24px;
+            border: 1px solid var(--border-color);
+            background: transparent;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 12px;
+            text-transform: uppercase;
+            transition: var(--transition);
+        }
+
+        .tab-btn.active {
+            border: 2px solid var(--border-color);
+            background-color: var(--border-color);
+            color: #ffffff;
+        }
+
+        .gallery-content {
+            display: none;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .gallery-content.active {
+            display: grid;
+        }
+
+        .gallery-item {
+            border: 2px solid var(--border-color);
+            padding: 20px;
+            background-color: var(--bg-secondary);
+        }
+
+        .gallery-item-placeholder {
+            height: 180px;
+            border: 1px dashed var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--color-text-secondary);
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            background: #fff;
+        }
+
+        /* Fabric Grid */
+        .fabric-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .fabric-card {
+            border: 2px solid var(--border-color);
+            padding: 20px;
+            text-align: center;
+            background-color: var(--bg-primary);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .fabric-card:hover, .fabric-card.active {
+            background-color: var(--border-color);
+            color: #ffffff;
+        }
+
+        .fabric-card:hover p, .fabric-card.active p {
+            color: #dddddd;
+        }
+
+        /* B2B Calculator */
+        .calc-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 36px;
+        }
+
+        .calc-inputs {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .select-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        .select-card {
+            border: 2px solid var(--border-color);
+            padding: 14px;
+            text-align: center;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 13px;
+        }
+
+        .select-card.active {
+            background-color: var(--border-color);
+            color: #ffffff;
+        }
+
+        .calc-results {
+            border: 2px solid var(--border-color);
+            padding: 32px;
+            background-color: var(--bg-secondary);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 16px;
+            font-size: 15px;
+        }
+
+        .price-row.total {
+            border-top: 2px solid var(--border-color);
+            padding-top: 18px;
+            font-weight: 800;
+            font-size: 22px;
+        }
+
+        /* Brief Quiz */
+        .quiz-box {
+            border: 3px solid var(--border-color);
+            padding: 40px;
+            background-color: var(--bg-primary);
+            max-width: 760px;
+            margin: 0 auto;
+        }
+
+        .quiz-progress {
+            height: 6px;
+            background-color: var(--border-light);
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .quiz-progress-bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 25%;
+            background-color: var(--border-color);
+            transition: var(--transition);
+        }
+
+        .quiz-step {
+            display: none;
+        }
+
+        .quiz-step.active {
+            display: block;
+        }
+
+        .quiz-options {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-bottom: 30px;
+        }
+
+        .quiz-option {
+            border: 2px solid var(--border-color);
+            padding: 20px;
+            cursor: pointer;
+            font-weight: 700;
+            text-align: center;
+            font-size: 14px;
+            transition: var(--transition);
+        }
+
+        .quiz-option.active {
+            background-color: var(--border-color);
+            color: #ffffff;
+        }
+
+        .quiz-nav {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .drag-drop-zone {
+            border: 2px dashed var(--border-color);
+            padding: 30px;
+            text-align: center;
+            background-color: var(--bg-secondary);
+            cursor: pointer;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        /* Guarantees Box */
+        .guarantees-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .guarantee-card {
+            border: 2px solid var(--border-color);
+            padding: 30px;
+            background-color: var(--bg-secondary);
+        }
+
+        .guarantee-card h4 {
+            font-size: 15px;
+            font-weight: 800;
+            border-bottom: 2px dashed var(--border-color);
+            padding-bottom: 12px;
+            margin-bottom: 16px;
+        }
+
+        /* Trust & Location */
+        .trust-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .trust-checklist {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .trust-checklist li {
+            padding-left: 32px;
+            position: relative;
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        .trust-checklist li::before {
+            content: '[✓]';
+            position: absolute;
+            left: 0;
+            font-weight: 800;
+        }
+
+        /* Video Container */
+        .video-wrapper {
+            max-width: 800px;
+            margin: 30px auto 0 auto;
+            border: 3px solid var(--border-color);
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .video-wrapper iframe, .video-wrapper video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+            object-fit: cover;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0E0E0E;
+            color: #ffffff;
+            padding: 60px 0 30px 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-grid p, .footer-grid a {
+            color: #aaaaaa;
+            font-size: 14px;
+            text-decoration: none;
+        }
+
+        .footer-grid a:hover {
+            color: #ffffff;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333333;
+            padding-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: #777777;
+            font-family: var(--font-mono);
+        }
+
+        @media (max-width: 900px) {
+            .hero-grid, .calc-grid, .trust-grid {
+                grid-template-columns: 1fr;
+            }
+            .offers-grid, .workflow-grid, .fabric-grid, .guarantees-grid, .gallery-content.active {
+                grid-template-columns: 1fr;
+            }
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
 </head>
 <body>
 
-  <!-- Header -->
-  <header id="main-header">
-    <a href="#" class="brand-logo-text">ASTRA <span>BRAND</span></a>
-    <div class="nav-actions">
-      <a href="https://wa.me/996703326999" target="_blank" class="btn-brass">Запросить Смету</a>
-    </div>
-  </header>
-
-  <!-- Hero Section -->
-  <section class="hero-section">
-    <video class="hero-video-bg" autoplay loop muted playsinline poster="hero_cover_1.jpg">
-      <source src="hero_video.mp4" type="video/mp4">
-    </video>
-    <div class="hero-content">
-      <h1 class="hero-title">ASTRA BRAND</h1>
-      <p class="hero-subtitle">Контрактное производство и пошив женской одежды Plus Size (50–64+) в Бишкеке под ключ от 1 150 ₽/шт.</p>
-      <a href="https://wa.me/996703326999" target="_blank" class="btn-brass" style="padding: 16px 36px; font-size: 0.9rem;">Рассчитать Стоимость</a>
-    </div>
-  </section>
-
-  <!-- Aurore & Astree Banner -->
-  <div class="aurore-hero-banner-wrapper">
-    <div class="aurore-giant-title">ASTRA BRAND</div>
-    <img src="hero_cover_1.jpg" alt="Astra Brand Fashion" class="aurore-hero-img">
-  </div>
-
-  <!-- Form Section -->
-  <section class="form-section">
-    <div style="max-width: 1100px; margin: 0 auto;">
-      <h2 class="form-title">РАССЧИТАЙТЕ СМЕТУ ПОШИВА ASTRA BRAND</h2>
-      <p class="form-subtitle">Укажите номер WhatsApp и планируемый тираж для мгновенного расчета оптовой сметы от 1 150 ₽/шт и подборки тканей от главного технолога Ларисы.</p>
-
-      <form onsubmit="event.preventDefault(); window.open('https://wa.me/996703326999?text=Здравствуйте!%20Хочу%20рассчитать%20стоимость%20партии%20в%20Astra%20Brand', '_blank');">
-        <div class="form-grid">
-          <input type="tel" class="input-field" placeholder="Номер WhatsApp*" required>
-          <input type="number" class="input-field" placeholder="Планируемый тираж (шт)*" value="300" required>
-          <button type="submit" class="btn-submit">Отправить</button>
+    <!-- Header Navigation -->
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <span>ASTRA</span>
+                <span>BRAND</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#offers">УСЛОВИЯ</a></li>
+                <li><a href="#compare">СРАВНЕНИЕ</a></li>
+                <li><a href="#workflow">СХЕМА РАБОТЫ</a></li>
+                <li><a href="#facets">ЦЕХИ</a></li>
+                <li><a href="#fabrics">ТКАНИ</a></li>
+                <li><a href="#calc">КАЛЬКУЛЯТОР</a></li>
+                <li><a href="#quiz">БРИФ-КВИЗ</a></li>
+                <li><a href="#guarantees">ГАРАНТИИ</a></li>
+            </ul>
+            <a href="https://wa.me/996703326999" target="_blank" class="btn btn-secondary">СВЯЗАТЬСЯ</a>
         </div>
-      </form>
-    </div>
-  </section>
+    </header>
 
-  <!-- B2B Metrics Section -->
-  <section class="metrics-section">
-    <div style="max-width: 1200px; margin: 0 auto;">
-      <h2 class="form-title">ЭКСПЕРТИЗА И МОЩНОСТИ ASTRA BRAND</h2>
-      <p class="form-subtitle">Производство женской одежды больших размеров с точностью элитного ателье и гарантией 0% возвратов на маркетплейсах.</p>
-
-      <div class="stat-grid" id="stat-grid">
-        <div>
-          <div class="stat-num" data-val="1150" data-suffix=" ₽">0 ₽</div>
-          <div class="stat-label">Оптовый старт пошива</div>
+    <!-- SECTION 1: HERO -->
+    <section class="section">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <h1>КОНТРАКТНЫЙ ПОШИВ PLUS SIZE (50–60) ОДЕЖДЫ ДЛЯ БРЕНДОВ РФ И СНГ ПОД КЛЮЧ</h1>
+                <p>Швейная фабрика Astra Brand в Бишкеке с узкой специализацией: идеальные лекала Plus Size на женскую фигуру 50–60 размеров. Отшиваем партии для Wildberries, Ozon и Kaspi с маркировкой Честный Знак.</p>
+                <div class="hero-btns">
+                    <a href="#quiz" class="btn btn-primary">РАССЧИТАТЬ БРИФ</a>
+                    <a href="https://wa.me/996703326999?text=Здравствуйте!%20Хочу%20заказать%20образцы%20лекал" target="_blank" class="btn btn-secondary">ЗАКАЗАТЬ ОБРАЗЕЦ</a>
+                </div>
+            </div>
+            <div class="spec-box">
+                <h3>[СПЕЦИФИКАЦИЯ ФАБРИКИ]</h3>
+                <ul class="spec-list">
+                    <li><b>Мощность:</b> до 16 000 ед/мес</li>
+                    <li><b>Разработка лекал:</b> электронные лекала (до 5 дней)</li>
+                    <li><b>Доставка:</b> Доставляем за 7–12 дней</li>
+                    <li><b>Минимальный заказ:</b> от 300 ед. на модель</li>
+                    <li><b>Размеры:</b> с 50 по 60 размер</li>
+                </ul>
+            </div>
         </div>
-        <div>
-          <div class="stat-num" data-val="64" data-prefix="50–" data-suffix="+">0</div>
-          <div class="stat-label">Идеальная посадка Plus Size</div>
+    </section>
+
+    <!-- SECTION 2: OFFERS -->
+    <section class="section" id="offers">
+        <div class="container">
+            <h2 class="section-title">КЛЮЧЕВЫЕ ОФФЕРЫ И УСЛОВИЯ РАБОТЫ</h2>
+            <div class="offers-grid">
+                <div class="offer-card">
+                    <div>
+                        <h3>ДЛЯ СЕЛЛЕРОВ WB И OZON</h3>
+                        <p>Полноценный аутсорсинг: пошив + глажка + маркировка штрихкодами и кодами Честный Знак + упаковка в ЗИП-пакеты. Отгружаем напрямую транспортным компаниям.</p>
+                    </div>
+                    <div class="offer-tag">ТЕСТОВАЯ ПАРТИЯ: ОТ 300 ШТ.</div>
+                </div>
+
+                <div class="offer-card">
+                    <div>
+                        <h3>ИДЕАЛЬНЫЕ PLUS-SIZE ЛЕКАЛА (50–60)</h3>
+                        <p>Наше конструкторское бюро специализируется на лекалах с 50 по 60 размер. Гарантируем идеальную анатомическую посадку (скрываем проблемные зоны рук, живота и бедер).</p>
+                    </div>
+                    <div class="offer-tag">ЭЛЕКТРОННЫЕ ЛЕКАЛА: ДО 5 ДНЕЙ</div>
+                </div>
+
+                <div class="offer-card">
+                    <div>
+                        <h3>КОНТРОЛЬ КАЧЕСТВА & ВТО</h3>
+                        <p>Каждое изделие проходит межоперационный процесс проверки изделия и проходит итоговую проверку ОТК. ВТО — влажно-тепловая обработка изделия.</p>
+                    </div>
+                    <div class="offer-tag">МЕЖОПЕРАЦИОННОЕ ОТК + ВТО</div>
+                </div>
+            </div>
         </div>
-        <div>
-          <div class="stat-num" data-val="3" data-prefix="< " data-suffix="%">0%</div>
-          <div class="stat-label">Порог брака по договору</div>
+    </section>
+
+    <!-- SECTION 3: COMPARE TABLE -->
+    <section class="section" id="compare">
+        <div class="container">
+            <h2 class="section-title">СРАВНЕНИЕ УСЛОВИЙ: ПОШИВ В РФ VS ASTRA BRAND (БИШКЕК)</h2>
+            <p class="section-subtitle">Таблица наглядно демонстрирует экономические преимущества размещения заказов на нашем производстве.</p>
+            
+            <div class="compare-table-wrapper">
+                <table class="compare-table">
+                    <thead>
+                        <tr>
+                            <th>КРИТЕРИИ СРАВНЕНИЯ</th>
+                            <th>ПОШИВ НА ФАБРИКАХ В РФ</th>
+                            <th>ASTRA BRAND (БИШКЕК)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><b>Себестоимость пошива платья</b></td>
+                            <td>От 900 до 1500 рублей</td>
+                            <td class="highlight">От 550 до 850 рублей (-40%)</td>
+                        </tr>
+                        <tr>
+                            <td><b>Доступность тканей и фурнитуры</b></td>
+                            <td>Сложная логистика, высокие наценки импортеров</td>
+                            <td class="highlight">Прямой закуп на рынке «Мадина» (по ценам фабрик Китая и Турции)</td>
+                        </tr>
+                        <tr>
+                            <td><b>Порог минимальной партии</b></td>
+                            <td>От 500-1000 шт. на размерный ряд</td>
+                            <td class="highlight">От 300 шт. на модель (свободный набор размеров)</td>
+                        </tr>
+                        <tr>
+                            <td><b>Таможня и сертификаты</b></td>
+                            <td>Не требуется растаможка</td>
+                            <td class="highlight">Без пошлин (ЕАЭС). Предоставляем декларации соответствия</td>
+                        </tr>
+                        <tr>
+                            <td><b>Маркировка Честный Знак</b></td>
+                            <td>Делается силами заказчика</td>
+                            <td class="highlight">Полная оклейка кодами DataMatrix на фабрике перед отправкой</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-        <div>
-          <div class="stat-num" data-val="15" data-suffix=" минут">0 минут</div>
-          <div class="stat-label">Расчет сметы в WhatsApp</div>
+    </section>
+
+    <!-- SECTION 4: WORKFLOW -->
+    <section class="section" id="workflow">
+        <div class="container">
+            <h2 class="section-title">СХЕМА СОТРУДНИЧЕСТВА ШАГ ЗА ШАГОМ</h2>
+            <div class="workflow-grid">
+                <div class="workflow-card">
+                    <span class="step-number">01</span>
+                    <h3>ЗАЯВКА И РАСЧЕТ</h3>
+                    <p>Вы присылаете фото, эскиз или образец изделия. Мы рассчитываем предварительную смету пошива за 1 рабочий день.</p>
+                </div>
+
+                <div class="workflow-card">
+                    <span class="step-number">02</span>
+                    <h3>ПОШИВ ОБРАЗЦА ПО ЭЛЕКТРОННЫМ ЛЕКАЛАМ</h3>
+                    <p>Наш конструктор разрабатывает электронные лекала до 5 рабочих дней, и мы отшиваем эталонный образец для примерки.</p>
+                </div>
+
+                <div class="workflow-card">
+                    <span class="step-number">03</span>
+                    <h3>ДОГОВОР И ЗАЛОГ</h3>
+                    <p>Утверждаем образец, подписываем договор и спецификацию. Вы вносите 50% предоплаты для закупки материалов.</p>
+                </div>
+
+                <div class="workflow-card">
+                    <span class="step-number">04</span>
+                    <h3>МАССОВЫЙ ПОШИВ</h3>
+                    <p>Запускаем партию в производство. Средний срок пошива тиража в 1000 единиц составляет от 7 до 10 рабочих дней.</p>
+                </div>
+
+                <div class="workflow-card">
+                    <span class="step-number">05</span>
+                    <h3>МЕЖОПЕРАЦИОННЫЙ КОНТРОЛЬ, ОТК И ВТО</h3>
+                    <p>Каждое изделие проходит межоперационный процесс проверки изделия и проходит итоговую проверку ОТК. ВТО — влажно-тепловая обработка изделия.</p>
+                </div>
+
+                <div class="workflow-card">
+                    <span class="step-number">06</span>
+                    <h3>ДОСТАВКА CARGO (7-12 ДНЕЙ)</h3>
+                    <p>Мы отгружаем готовую партию проверенной карго-компании. Доставляем за 7–12 дней до вашего склада.</p>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Footer -->
-  <footer class="aurore-footer">
-    <div style="max-width: 1200px; margin: 0 auto;">
-      <div class="footer-grid">
-        <div>
-          <h4 class="footer-col-title">КАТАЛОГ ПОШИВА</h4>
-          <ul class="footer-links">
-            <li><a href="#">Платья Plus Size (50–64+)</a></li>
-            <li><a href="#">Костюмы & Блейзеры</a></li>
-            <li><a href="#">Блузы & Туники</a></li>
-            <li><a href="#">Одежда для Wildberries & Ozon</a></li>
-          </ul>
+    <!-- SECTION 5: FACILITIES TABS -->
+    <section class="section" id="facets">
+        <div class="container">
+            <h2 class="section-title">ПРОИЗВОДСТВЕННЫЕ МОЩНОСТИ (ЦЕХИ ФАБРИКИ)</h2>
+            <div class="gallery-tabs">
+                <button class="tab-btn active" onclick="switchTab('design')">КОНСТРУКТОРСКИЙ ЦЕХ</button>
+                <button class="tab-btn" onclick="switchTab('cut')">РАСКРОЙНЫЙ ЦЕХ</button>
+                <button class="tab-btn" onclick="switchTab('sew')">ШВЕЙНЫЙ ЦЕХ</button>
+                <button class="tab-btn" onclick="switchTab('pack')">УПАКОВКА И ОТК</button>
+            </div>
+
+            <div class="gallery-content active" id="tab-design">
+                <div class="gallery-item">
+                    <div class="gallery-item-placeholder">РАБОЧЕЕ МЕСТО КОНСТРУКТОРА ЛЕКАЛ</div>
+                    <h3>1. ЭЛЕКТРОННЫЕ ЛЕКАЛА</h3>
+                    <p>Построение электронных лекал, точная градация по размерам без искажений пропорций больших размеров.</p>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-placeholder">ПЕЧАТЬ РАСКЛАДОК ЛЕКАЛ</div>
+                    <h3>2. ШИРОКОФОРМАТНЫЙ ПЛОТТЕР</h3>
+                    <p>Печать готовых раскладок для раскройного цеха, что минимизирует остатки и расход ткани на 8-12%.</p>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-placeholder">ОБРАЗЦЫ ГОТОВЫХ ИЗДЕЛИЙ</div>
+                    <h3>3. ПРОБНЫЙ ПОШИВ</h3>
+                    <p>Пошив первого образца изделия для примерки на профессиональной Plus Size модели перед утверждением серии.</p>
+                </div>
+            </div>
         </div>
-        <div>
-          <h4 class="footer-col-title">НАВИГАЦИЯ & B2B</h4>
-          <ul class="footer-links">
-            <li><a href="#">О фабрике Astra Brand</a></li>
-            <li><a href="#">Условия пошива от 1 150 ₽</a></li>
-            <li><a href="#">Гарантия 0% возвратов</a></li>
-            <li><a href="#">Честный ЗНАК & ЕАЭС</a></li>
-          </ul>
+    </section>
+
+    <!-- SECTION 6: FABRICS -->
+    <section class="section" id="fabrics">
+        <div class="container">
+            <h2 class="section-title">ИНТЕРАКТИВНАЯ КАРТА ИСПОЛЬЗУЕМЫХ ТКАНЕЙ</h2>
+            <p class="section-subtitle">Закупаем полотно напрямую у официальных импортеров фабрик Турции и Китая на рынке «Мадина».</p>
+            <div class="fabric-grid">
+                <div class="fabric-card active">
+                    <h3>ТУРЕЦКИЙ ШИФОН</h3>
+                    <p>Плотность 130г/м². Отлично подходит под платья Plus Size.</p>
+                </div>
+                <div class="fabric-card">
+                    <h3>ШЕЛКОВЫЙ ПОДКТАД</h3>
+                    <p>Дышащая ткань, приятная к телу, не электризуется.</p>
+                </div>
+                <div class="fabric-card">
+                    <h3>ОРГАНЗА & ЛИОНЗА</h3>
+                    <p>Для вечерней и нарядной коллекции 50-60 размеров.</p>
+                </div>
+                <div class="fabric-card">
+                    <h3>КОСТЮМНЫЙ КРЕП</h3>
+                    <p>Плотная жатка, держит форму жакетов и брюк.</p>
+                </div>
+            </div>
         </div>
-        <div>
-          <h4 class="footer-col-title">КОНТАКТНАЯ ИНФОРМАЦИЯ</h4>
-          <p style="color: rgba(255,255,255,0.7); line-height: 1.8;">г. Бишкек, Кыргызская Республика<br><strong style="color: #FFF;">+996 703 326 999</strong><br>Ежедневно, 09:00 – 19:00</p>
+    </section>
+
+    <!-- SECTION 7: CALCULATOR -->
+    <section class="section" id="calc">
+        <div class="container">
+            <h2 class="section-title">КАЛЬКУЛЯТОР СЕБЕСТОИМОСТИ И ПРИБЫЛИ</h2>
+            <div class="calc-grid">
+                <div class="calc-inputs">
+                    <div class="form-group">
+                        <label>ТИРАЖ ПАРТИИ (ШТУК)</label>
+                        <div class="select-grid">
+                            <div class="select-card active" onclick="setQty(300)">300 шт</div>
+                            <div class="select-card" onclick="setQty(500)">500 шт</div>
+                            <div class="select-card" onclick="setQty(1000)">1000 шт</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>КАТЕГОРИЯ ИЗДЕЛИЯ</label>
+                        <div class="select-grid">
+                            <div class="select-card active" onclick="setCategory('dress')">Платье</div>
+                            <div class="select-card" onclick="setCategory('suit')">Костюм</div>
+                            <div class="select-card" onclick="setCategory('blouse')">Блуза</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="calc-results">
+                    <div>
+                        <div class="price-row"><span>Себестоимость пошива:</span><span id="res-unit">650 ₽/шт</span></div>
+                        <div class="price-row"><span>Вложения в партию:</span><span id="res-invest">195 000 ₽</span></div>
+                        <div class="price-row"><span>Выручка на WB (по 3 500 ₽):</span><span id="res-revenue">1 050 000 ₽</span></div>
+                    </div>
+                    <div class="price-row total"><span>Чистая маржа:</span><span id="res-profit">~580 000 ₽</span></div>
+                </div>
+            </div>
         </div>
-      </div>
+    </section>
 
-      <div class="footer-bottom">
-        <div>© 2026 ASTRA BRAND GROUP. ВСЕ ПРАВА ЗАКРЕПЛЕНЫ.</div>
-        <div>ПОШИВ ЖЕНСКОЙ ОДЕЖДЫ PLUS SIZE В БИШКЕКЕ</div>
-      </div>
-    </div>
-  </footer>
+    <!-- SECTION 8: BRIEF QUIZ -->
+    <section class="section" id="quiz">
+        <div class="container">
+            <h2 class="section-title">БРИФ-КВИЗ: РАССЧЕТ СМЕТЫ ЗА 1 МИНУТУ</h2>
+            <div class="quiz-box">
+                <div class="quiz-progress"><div class="quiz-progress-bar" id="quiz-bar"></div></div>
+                <form onsubmit="event.preventDefault(); alert('Заявка отправлена! Смета придет в WhatsApp.');">
+                    <div class="quiz-step active" id="q-step-1">
+                        <h3>1. Какую категорию одежды планируете отшивать?</h3>
+                        <div class="quiz-options" style="margin-top:20px;">
+                            <div class="quiz-option active">Платья / Сарафаны (50-60)</div>
+                            <div class="quiz-option">Костюмы / Жакеты</div>
+                            <div class="quiz-option">Блузы / Туники</div>
+                            <div class="quiz-option">Брюки / Юбки</div>
+                        </div>
+                        <div class="quiz-nav"><button type="button" class="btn btn-primary" onclick="nextQuiz(2)">ДАЛЕЕ →</button></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
 
-  <script>
-    // Count-Up Animation for Stat Numbers
-    (function() {
-      let animated = false;
-      const statGrid = document.getElementById('stat-grid');
-      if (!statGrid) return;
+    <!-- SECTION 9: GUARANTEES -->
+    <section class="section" id="guarantees">
+        <div class="container">
+            <h2 class="section-title">ЮРИДИЧЕСКИЕ ГАРАНТИИ ПО ДОГОВОРУ</h2>
+            <div class="guarantees-grid">
+                <div class="guarantee-card">
+                    <h4>0% ВОЗВРАТОВ ПО ЛЕКАЛАМ</h4>
+                    <p>Электронные выкройки строятся под анатомию 50-60 размеров. Изделие скрывает проблемные зоны и идеально садится.</p>
+                </div>
+                <div class="guarantee-card">
+                    <h4>ПОРОГ БРАКА МЕНЕЕ 3%</h4>
+                    <p>Если в партии обнаружен брак выше 3% — компенсируем или перешиваем за свой счет по условиям спецификации.</p>
+                </div>
+                <div class="guarantee-card">
+                    <h4>ФИКСАЦИЯ СРОКОВ ПОШИВА</h4>
+                    <p>Сроки изготовления от 7 до 10 рабочих дней строго прописываются в договоре с финансовой ответственностью.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting && !animated) {
-            animated = true;
-            document.querySelectorAll('.stat-num').forEach(el => {
-              const target = parseInt(el.getAttribute('data-val')) || 0;
-              const prefix = el.getAttribute('data-prefix') || '';
-              const suffix = el.getAttribute('data-suffix') || '';
-              const duration = 1600;
-              const startTime = performance.now();
+    <!-- SECTION 10: VIDEO TOUR -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">НАШЕ ПРОИЗВОДСТВО В БИШКЕКЕ (ВИДЕО)</h2>
+            <div class="video-wrapper">
+                <video controls poster="hero_cover_1.jpg" style="width:100%; height:100%;">
+                    <source src="hero_video.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </section>
 
-              function animateNumber(currentTime) {
-                const elapsed = currentTime - startTime;
-                const progress = Math.min(elapsed / duration, 1);
-                const easeProgress = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
-                const currentVal = Math.floor(easeProgress * target);
+    <!-- SECTION 11: FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3 style="color:#fff; margin-bottom:12px;">ASTRA BRAND</h3>
+                    <p>Швейная ателье-фабрика контрактного пошива женской одежды Plus Size (50-60) в Бишкеке. Прямая доставка на склады Wildberries, Ozon и Kaspi.</p>
+                </div>
+                <div>
+                    <h4 style="color:#fff; margin-bottom:12px;">НАВИГАЦИЯ</h4>
+                    <p><a href="#offers">Условия пошива</a></p>
+                    <p><a href="#compare">Сравнение с РФ</a></p>
+                    <p><a href="#workflow">Схема работы</a></p>
+                    <p><a href="#calc">Калькулятор маржи</a></p>
+                </div>
+                <div>
+                    <h4 style="color:#fff; margin-bottom:12px;">КОНТАКТЫ</h4>
+                    <p>📍 г. Бишкек, ул. Ласло-Мессароша 76/4</p>
+                    <p>📱 <a href="https://wa.me/996703326999" target="_blank" style="color:#25D366; font-weight:700;">+996 703 326 999</a></p>
+                    <p>✉️ lara100573@gmail.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div>© 2026 ASTRA BRAND GROUP. ВСЕ ПРАВА ЗАКРЕПЛЕНЫ.</div>
+                <div>ЧЕСТНЫЙ ЗНАК · ДЕКЛАРАЦИИ ТР ТС ЕАЭС</div>
+            </div>
+        </div>
+    </footer>
 
-                if (target === 1150) {
-                  const formatted = new Intl.NumberFormat('ru-RU').format(currentVal);
-                  el.innerText = `${formatted}${suffix}`;
-                } else {
-                  el.innerText = `${prefix}${currentVal}${suffix}`;
-                }
+    <script>
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            document.querySelectorAll('.gallery-content').forEach(c => c.classList.remove('active'));
+            document.getElementById('tab-' + tabId).classList.add('active');
+        }
 
-                if (progress < 1) requestAnimationFrame(animateNumber);
-              }
-              requestAnimationFrame(animateNumber);
-            });
-          }
-        });
-      }, { threshold: 0.25 });
+        function setQty(qty) {
+            document.querySelectorAll('.select-card').forEach(c => c.classList.remove('active'));
+            event.target.classList.add('active');
+            const unit = 650;
+            const invest = qty * unit;
+            const revenue = qty * 3500;
+            const profit = revenue - invest;
+            document.getElementById('res-unit').innerText = unit + ' ₽/шт';
+            document.getElementById('res-invest').innerText = invest.toLocaleString('ru-RU') + ' ₽';
+            document.getElementById('res-revenue').innerText = revenue.toLocaleString('ru-RU') + ' ₽';
+            document.getElementById('res-profit').innerText = '~' + profit.toLocaleString('ru-RU') + ' ₽';
+        }
 
-      observer.observe(statGrid);
-    })();
-  </script>
+        function nextQuiz(step) {
+            document.getElementById('quiz-bar').style.width = (step * 25) + '%';
+        }
+    </script>
 </body>
 </html>
