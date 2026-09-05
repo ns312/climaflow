@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Astra Brand — Контрактный Пошив Одежды Plus Size в Бишкеке</title>
+  <meta name="description" content="Швейная ателье-фабрика Astra Brand: оптовый пошив женской одежды больших размеров (50-64+) в Бишкеке под ключ от 1 150 ₽.">
+  
+  <!-- Premium Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-dark: #0E0E0E;
+      --bg-light: #FAF9F6;
+      --text-main: #111111;
+      --text-muted: #666666;
+      --accent-brass: #D4AF37;
+      --border-thin: rgba(17, 17, 17, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: var(--bg-light);
+      color: var(--text-main);
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Represent Style Header */
+    header#main-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 72px;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5vw;
+      background: rgba(14, 14, 14, 0.48);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.4s ease;
+    }
+
+    .brand-logo-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 600;
+      letter-spacing: 3px;
+      color: #FFFFFF;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+
+    .brand-logo-text span {
+      font-weight: 300;
+      color: var(--accent-brass);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .btn-brass {
+      background: linear-gradient(135deg, #2A2A2A 0%, #111111 100%);
+      color: #FFFFFF;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 12px 24px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .btn-brass:hover {
+      background: #FFFFFF;
+      color: #111111;
+    }
+
+    /* Hero Section with Fullscreen Video Background */
+    .hero-section {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      min-height: 600px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: #000;
+    }
+
+    .hero-video-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.65;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      color: #FFFFFF;
+      padding: 0 20px;
+      max-width: 900px;
+    }
+
+    .hero-title {
+      font-family: 'Cormorant Garamond', 'Bodoni Moda', serif;
+      font-size: clamp(2.5rem, 7vw, 6rem);
+      font-weight: 400;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      line-height: 0.95;
+    }
+
+    .hero-subtitle {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(1rem, 2vw, 1.35rem);
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.85);
+      margin-bottom: 36px;
+      line-height: 1.6;
+    }
+
+    /* Aurore & Astree Banner & Form Section */
+    .aurore-hero-banner-wrapper {
+      position: relative;
+      width: 100%;
+      height: 60vh;
+      min-height: 400px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .aurore-hero-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .aurore-giant-title {
+      position: absolute;
+      width: 100%;
+      text-align: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 11vw, 10rem);
+      font-weight: 400;
+      color: #FFFFFF;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+      pointer-events: none;
+      z-index: 5;
+    }
+
+    .form-section {
+      background: #FAF9F6;
+      padding: 80px 8vw 90px;
+      border-bottom: 1px solid var(--border-thin);
+    }
+
+    .form-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 3.4vw, 2.8rem);
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .form-subtitle {
+      font-size: 0.94rem;
+      color: #666;
+      margin-bottom: 36px;
+      max-width: 720px;
+      line-height: 1.65;
+    }
+
+    .form-grid {
+      display: flex;
+      gap: 16px;
+      max-width: 960px;
+      margin-bottom: 28px;
+    }
+
+    @media (max-width: 768px) {
+      .form-grid {
+        flex-direction: column;
+      }
+    }
+
+    .input-field {
+      flex: 1;
+      background: #F4F4F2;
+      border: 1px solid #E2E2DD;
+      padding: 18px 24px;
+      font-size: 0.95rem;
+      color: #111;
+      outline: none;
+    }
+
+    .btn-submit {
+      background: #2A2A2A;
+      color: #FFF;
+      border: none;
+      padding: 18px 52px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.3s ease;
+    }
+
+    .btn-submit:hover {
+      background: #111;
+    }
+
+    /* B2B Metrics Section */
+    .metrics-section {
+      padding: 90px 8vw;
+      background: #F8F6F0;
+      border-bottom: 1px solid var(--border-thin);
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+      margin-top: 40px;
+      border-top: 1px solid rgba(17, 17, 17, 0.12);
+      padding-top: 36px;
+    }
+
+    .stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3rem;
+      font-weight: 500;
+      color: #111;
+    }
+
+    .stat-label {
+      font-size: 0.85rem;
+      color: #666;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Footer */
+    .aurore-footer {
+      background: #111111;
+      color: #FFFFFF;
+      padding: 70px 8vw 40px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 50px;
+      margin-bottom: 60px;
+    }
+
+    .footer-col-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+
+    .footer-links a {
+      color: rgba(255, 255, 255, 0.65);
+      text-decoration: none;
+      font-size: 0.88rem;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 28px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.78rem;
+      color: rgba(255, 255, 255, 0.45);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header id="main-header">
+    <a href="#" class="brand-logo-text">ASTRA <span>BRAND</span></a>
+    <div class="nav-actions">
+      <a href="https://wa.me/996703326999" target="_blank" class="btn-brass">Запросить Смету</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <video class="hero-video-bg" autoplay loop muted playsinline poster="hero_cover_1.jpg">
+      <source src="hero_video.mp4" type="video/mp4">
+    </video>
+    <div class="hero-content">
+      <h1 class="hero-title">ASTRA BRAND</h1>
+      <p class="hero-subtitle">Контрактное производство и пошив женской одежды Plus Size (50–64+) в Бишкеке под ключ от 1 150 ₽/шт.</p>
+      <a href="https://wa.me/996703326999" target="_blank" class="btn-brass" style="padding: 16px 36px; font-size: 0.9rem;">Рассчитать Стоимость</a>
+    </div>
+  </section>
+
+  <!-- Aurore & Astree Banner -->
+  <div class="aurore-hero-banner-wrapper">
+    <div class="aurore-giant-title">ASTRA BRAND</div>
+    <img src="hero_cover_1.jpg" alt="Astra Brand Fashion" class="aurore-hero-img">
+  </div>
+
+  <!-- Form Section -->
+  <section class="form-section">
+    <div style="max-width: 1100px; margin: 0 auto;">
+      <h2 class="form-title">РАССЧИТАЙТЕ СМЕТУ ПОШИВА ASTRA BRAND</h2>
+      <p class="form-subtitle">Укажите номер WhatsApp и планируемый тираж для мгновенного расчета оптовой сметы от 1 150 ₽/шт и подборки тканей от главного технолога Ларисы.</p>
+
+      <form onsubmit="event.preventDefault(); window.open('https://wa.me/996703326999?text=Здравствуйте!%20Хочу%20рассчитать%20стоимость%20партии%20в%20Astra%20Brand', '_blank');">
+        <div class="form-grid">
+          <input type="tel" class="input-field" placeholder="Номер WhatsApp*" required>
+          <input type="number" class="input-field" placeholder="Планируемый тираж (шт)*" value="300" required>
+          <button type="submit" class="btn-submit">Отправить</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- B2B Metrics Section -->
+  <section class="metrics-section">
+    <div style="max-width: 1200px; margin: 0 auto;">
+      <h2 class="form-title">ЭКСПЕРТИЗА И МОЩНОСТИ ASTRA BRAND</h2>
+      <p class="form-subtitle">Производство женской одежды больших размеров с точностью элитного ателье и гарантией 0% возвратов на маркетплейсах.</p>
+
+      <div class="stat-grid" id="stat-grid">
+        <div>
+          <div class="stat-num" data-val="1150" data-suffix=" ₽">0 ₽</div>
+          <div class="stat-label">Оптовый старт пошива</div>
+        </div>
+        <div>
+          <div class="stat-num" data-val="64" data-prefix="50–" data-suffix="+">0</div>
+          <div class="stat-label">Идеальная посадка Plus Size</div>
+        </div>
+        <div>
+          <div class="stat-num" data-val="3" data-prefix="< " data-suffix="%">0%</div>
+          <div class="stat-label">Порог брака по договору</div>
+        </div>
+        <div>
+          <div class="stat-num" data-val="15" data-suffix=" минут">0 минут</div>
+          <div class="stat-label">Расчет сметы в WhatsApp</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="aurore-footer">
+    <div style="max-width: 1200px; margin: 0 auto;">
+      <div class="footer-grid">
+        <div>
+          <h4 class="footer-col-title">КАТАЛОГ ПОШИВА</h4>
+          <ul class="footer-links">
+            <li><a href="#">Платья Plus Size (50–64+)</a></li>
+            <li><a href="#">Костюмы & Блейзеры</a></li>
+            <li><a href="#">Блузы & Туники</a></li>
+            <li><a href="#">Одежда для Wildberries & Ozon</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-title">НАВИГАЦИЯ & B2B</h4>
+          <ul class="footer-links">
+            <li><a href="#">О фабрике Astra Brand</a></li>
+            <li><a href="#">Условия пошива от 1 150 ₽</a></li>
+            <li><a href="#">Гарантия 0% возвратов</a></li>
+            <li><a href="#">Честный ЗНАК & ЕАЭС</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-title">КОНТАКТНАЯ ИНФОРМАЦИЯ</h4>
+          <p style="color: rgba(255,255,255,0.7); line-height: 1.8;">г. Бишкек, Кыргызская Республика<br><strong style="color: #FFF;">+996 703 326 999</strong><br>Ежедневно, 09:00 – 19:00</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 ASTRA BRAND GROUP. ВСЕ ПРАВА ЗАКРЕПЛЕНЫ.</div>
+        <div>ПОШИВ ЖЕНСКОЙ ОДЕЖДЫ PLUS SIZE В БИШКЕКЕ</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Count-Up Animation for Stat Numbers
+    (function() {
+      let animated = false;
+      const statGrid = document.getElementById('stat-grid');
+      if (!statGrid) return;
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !animated) {
+            animated = true;
+            document.querySelectorAll('.stat-num').forEach(el => {
+              const target = parseInt(el.getAttribute('data-val')) || 0;
+              const prefix = el.getAttribute('data-prefix') || '';
+              const suffix = el.getAttribute('data-suffix') || '';
+              const duration = 1600;
+              const startTime = performance.now();
+
+              function animateNumber(currentTime) {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                const easeProgress = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+                const currentVal = Math.floor(easeProgress * target);
+
+                if (target === 1150) {
+                  const formatted = new Intl.NumberFormat('ru-RU').format(currentVal);
+                  el.innerText = `${formatted}${suffix}`;
+                } else {
+                  el.innerText = `${prefix}${currentVal}${suffix}`;
+                }
+
+                if (progress < 1) requestAnimationFrame(animateNumber);
+              }
+              requestAnimationFrame(animateNumber);
+            });
+          }
+        });
+      }, { threshold: 0.25 });
+
+      observer.observe(statGrid);
+    })();
+  </script>
+</body>
+</html>
