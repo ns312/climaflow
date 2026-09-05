@@ -3,90 +3,111 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ASTRA BRAND · Контрактный пошив Plus Size (50–60) в Бишкеке</title>
+<title>ASTRA BRAND · Премиальный пошив Plus Size (50–60) в Бишкеке</title>
 <meta name="description" content="Швейная фабрика Astra Brand в Бишкеке: контрактное производство и пошив женской одежды больших размеров (50-60) под ключ. Маркировка Честный ЗНАК, электронные лекала, опт от 300 шт.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23101010'/%3E%3Ctext x='16' y='23' font-family='Archivo,Helvetica' font-size='18' font-weight='800' fill='%23EFEDE8' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23C5A059'/%3E%3Ctext x='16' y='23' font-family='Archivo,Helvetica' font-size='18' font-weight='800' fill='%231A1815' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&amp;family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&amp;display=swap" rel="stylesheet">
 <style>
 :root{
---bone:#EFEDE8; --ink:#101010; --mid:#8A8781; --line:rgba(16,16,16,.14);
+--bg-bone:#F5F3EE; 
+--bg-card:#EBE7DF;
+--bg-card-hover:#E0DAD0;
+--ink:#1A1815; 
+--mid:#7A756D; 
+--brass:#C5A059;
+--brass-dark:#9E7930;
+--brass-light:#E8D5A3;
+--brass-gradient:linear-gradient(135deg, #C5A059 0%, #9E7930 100%);
+--brass-glow:rgba(197, 160, 89, 0.28);
+--line:rgba(26, 24, 21, 0.12);
+--line-brass:rgba(197, 160, 89, 0.35);
 --nav:96px;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{overflow-x:clip;scroll-behavior:smooth}
-body{background:var(--bone);color:var(--ink);overflow-x:clip;
+body{background:var(--bg-bone);color:var(--ink);overflow-x:clip;
 font:400 15px/1.6 Archivo,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
 img{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
 .wrap{max-width:1440px;margin:0 auto;padding:0 clamp(18px,3.4vw,44px)}
-.lbl{font:500 10px/1 Archivo,sans-serif;letter-spacing:.22em;text-transform:uppercase}
+.lbl{font:600 10px/1 Archivo,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:var(--brass-dark)}
 
-/* ── announcement + nav ──────────────────────────────────────────── */
-.ann{background:var(--ink);color:var(--bone);overflow:hidden}
+/* ── Announcement Ticker (Brass Accent) ────────────────────────── */
+.ann{background:#1A1815;color:var(--brass-light);border-bottom:1px solid var(--brass-dark);overflow:hidden}
 .ann .row{display:flex;width:max-content}
 .ann .tk{display:flex;align-items:center;flex:0 0 auto;gap:52px;padding-right:52px;
-animation:tick 34s linear infinite;font:500 10px/1 Archivo,sans-serif;
-letter-spacing:.2em;text-transform:uppercase;padding-top:9px;padding-bottom:9px}
+animation:tick 34s linear infinite;font:600 10px/1 Archivo,sans-serif;
+letter-spacing:.2em;text-transform:uppercase;padding-top:10px;padding-bottom:10px}
 @keyframes tick{from{transform:translateX(0)}to{transform:translateX(-100%)}}
 .ann:hover .tk{animation-play-state:paused}
-.ann .tk i{font-style:normal;opacity:.5}
+.ann .tk i{font-style:normal;color:var(--brass);opacity:.7}
 
-nav{position:sticky;top:0;z-index:60;background:rgba(239,237,232,.92);
-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+/* ── Navigation (Glassmorphic Silk + Brass Badge) ──────────────── */
+nav{position:sticky;top:0;z-index:60;background:rgba(245,243,238,.92);
+backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
 nav .bar{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:20px;
 height:var(--nav)}
 nav ul{display:flex;gap:26px;list-style:none}
-nav ul a{font:500 11px/1 Archivo,sans-serif;letter-spacing:.16em;text-transform:uppercase;
-position:relative;padding:6px 0}
-nav ul a::after{content:'';position:absolute;left:0;right:0;bottom:0;height:1px;
-background:var(--ink);transform:scaleX(0);transform-origin:right;transition:transform .4s cubic-bezier(.6,0,.2,1)}
+nav ul a{font:600 11px/1 Archivo,sans-serif;letter-spacing:.16em;text-transform:uppercase;
+position:relative;padding:6px 0;color:var(--ink)}
+nav ul a::after{content:'';position:absolute;left:0;right:0;bottom:0;height:2px;
+background:var(--brass);transform:scaleX(0);transform-origin:right;transition:transform .4s cubic-bezier(.6,0,.2,1)}
 nav ul a:hover::after{transform:scaleX(1);transform-origin:left}
-nav .mk{font-weight:800;font-size:24px;letter-spacing:.26em;text-align:center;
-padding-left:.26em;display:flex;flex-direction:column;align-items:center;line-height:1}
-nav .mk span.sub{font-size:9px;letter-spacing:.3em;font-weight:500;margin-top:3px;opacity:.6}
-nav .util{display:flex;gap:22px;justify-content:flex-end;align-items:center;
-font:500 11px/1 Archivo,sans-serif;letter-spacing:.14em;text-transform:uppercase}
-nav .util span{opacity:.55}
+nav .mk{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:26px;letter-spacing:.2em;
+text-align:center;color:var(--ink);display:flex;flex-direction:column;align-items:center;line-height:1}
+nav .mk span.sub{font-size:9px;font-family:Archivo,sans-serif;letter-spacing:.3em;font-weight:700;
+color:var(--brass-dark);margin-top:3px}
+nav .util{display:flex;gap:20px;justify-content:flex-end;align-items:center;
+font:600 11px/1 Archivo,sans-serif;letter-spacing:.14em;text-transform:uppercase}
+nav .util a.wa-btn{color:var(--brass-dark);font-weight:700;display:flex;align-items:center;gap:6px}
 @media(max-width:900px){nav ul,nav .util span{display:none}nav .bar{grid-template-columns:1fr auto 1fr}}
 
-/* ── 1 · HERO ────────────────────────────────────────────────────── */
+/* ── Brass Buttons ──────────────────────────────────────────────── */
+.btn{display:inline-block;background:var(--brass-gradient);color:#ffffff;padding:16px 36px;
+font:700 11px/1 Archivo,sans-serif;letter-spacing:.2em;text-transform:uppercase;
+position:relative;overflow:hidden;isolation:isolate;cursor:pointer;border:none;border-radius:2px;
+box-shadow:0 4px 18px var(--brass-glow);transition:all .35s cubic-bezier(.16,1,.3,1)}
+.btn span{position:relative;z-index:2;display:block;transition:transform .45s cubic-bezier(.6,0,.2,1)}
+.btn::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg, #a8823b 0%, #7d5e1f 100%);z-index:1;
+transform:translateY(101%);transition:transform .45s cubic-bezier(.6,0,.2,1)}
+.btn:hover::before{transform:translateY(0)}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(197, 160, 89, 0.45)}
+
+.btn-line{font:700 11px/1 Archivo,sans-serif;letter-spacing:.2em;text-transform:uppercase;
+padding-bottom:5px;border-bottom:2px solid var(--brass);color:var(--ink);position:relative;cursor:pointer}
+.btn-line::after{content:'';position:absolute;left:0;bottom:-2px;width:100%;height:2px;
+background:var(--brass-dark);transform:scaleX(0);transform-origin:right;
+transition:transform .45s cubic-bezier(.6,0,.2,1)}
+.btn-line:hover::after{transform:scaleX(1);transform-origin:left}
+
+/* ── Brass Badge Tag ─────────────────────────────────────────────── */
+.brass-badge{display:inline-block;font-family:Archivo,sans-serif;font-size:10.5px;font-weight:700;
+letter-spacing:.18em;text-transform:uppercase;color:#ffffff;background:var(--brass-gradient);
+padding:6px 14px;border-radius:2px;box-shadow:0 2px 10px var(--brass-glow)}
+
+/* ── 1 · HERO SECTION ────────────────────────────────────────────── */
 #hero{position:relative;min-height:calc(100svh - var(--nav) - 34px);display:flex;
 flex-direction:column;justify-content:center;overflow:hidden;
-padding:clamp(20px,4vh,48px) 0 clamp(26px,5vh,60px)}
+padding:clamp(20px,4vh,48px) 0 clamp(26px,5vh,60px);background:radial-gradient(circle at 80% 20%, rgba(197,160,89,0.12) 0%, transparent 60%)}
 #hero > .wrap{position:relative}
 #hero .stage{position:relative;width:100%;display:grid;place-items:center;
 min-height:min(58vh,560px)}
 #hero .word{position:absolute;inset:0;display:grid;place-items:center;pointer-events:none}
-#hero .word b{font-weight:900;font-size:clamp(60px,16.5vw,240px);letter-spacing:-.03em;
-line-height:.8;white-space:nowrap;display:block;color:var(--ink)}
+#hero .word b{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:clamp(64px,18.5vw,260px);
+letter-spacing:-.02em;line-height:.8;white-space:nowrap;display:block;color:rgba(197,160,89,0.22)}
 #hero .model{position:relative;z-index:2;height:min(62vh,600px);width:auto;
-filter:drop-shadow(0 26px 46px rgba(16,16,16,.22))}
+filter:drop-shadow(0 26px 46px rgba(26,24,21,.18))}
 #hero .word.back{z-index:1}
 #hero .tl{position:absolute;left:clamp(18px,3.4vw,44px);top:clamp(6px,2vh,22px);z-index:4}
-#hero .tl p{font:500 12px/1.9 Archivo,sans-serif;letter-spacing:.24em;text-transform:uppercase}
-#hero .tl .rule{width:52px;height:1px;background:var(--ink);margin-top:12px}
+#hero .tl p{font:600 12px/1.9 Archivo,sans-serif;letter-spacing:.24em;text-transform:uppercase;color:var(--ink)}
+#hero .tl .rule{width:52px;height:2px;background:var(--brass);margin-top:12px}
 #hero .br{position:absolute;right:clamp(18px,3.4vw,44px);bottom:clamp(52px,9vh,86px);
 z-index:4;text-align:right}
-#hero .br p{font:500 11px/1.9 Archivo,sans-serif;letter-spacing:.24em;text-transform:uppercase}
-#hero .acts{position:relative;z-index:4;display:flex;gap:18px;align-items:center;
+#hero .br p{font:600 11px/1.9 Archivo,sans-serif;letter-spacing:.24em;text-transform:uppercase;color:var(--ink)}
+#hero .acts{position:relative;z-index:4;display:flex;gap:20px;align-items:center;
 margin-top:clamp(14px,3vh,30px);flex-wrap:wrap}
-
-.btn{display:inline-block;background:var(--ink);color:var(--bone);padding:16px 34px;
-font:500 11px/1 Archivo,sans-serif;letter-spacing:.2em;text-transform:uppercase;
-position:relative;overflow:hidden;isolation:isolate;cursor:pointer;border:none}
-.btn span{position:relative;z-index:2;display:block;transition:transform .45s cubic-bezier(.6,0,.2,1)}
-.btn::before{content:'';position:absolute;inset:0;background:#2E2E2E;z-index:1;
-transform:translateY(101%);transition:transform .45s cubic-bezier(.6,0,.2,1)}
-.btn:hover::before{transform:translateY(0)}
-
-.btn-line{font:500 11px/1 Archivo,sans-serif;letter-spacing:.2em;text-transform:uppercase;
-padding-bottom:5px;border-bottom:1px solid var(--ink);position:relative;cursor:pointer}
-.btn-line::after{content:'';position:absolute;left:0;bottom:-1px;width:100%;height:1px;
-background:var(--ink);transform:scaleX(0);transform-origin:right;
-transition:transform .45s cubic-bezier(.6,0,.2,1)}
-.btn-line:hover::after{transform:scaleX(1);transform-origin:left}
 
 @media(max-width:820px){
 #hero .model{height:46vh}
@@ -94,237 +115,244 @@ transition:transform .45s cubic-bezier(.6,0,.2,1)}
 #hero .tl,#hero .br{position:static;text-align:left;margin-bottom:14px}
 }
 
-/* ── 2 · CATEGORY STRIP ─────────────────────────────────────────── */
-#cats{background:var(--ink);color:var(--bone);padding:clamp(36px,6vh,64px) 0}
+/* ── 2 · CATEGORY STRIP (Deep Espresso + Brass Accents) ─────────── */
+#cats{background:#1A1815;color:var(--bg-bone);padding:clamp(40px,7vh,72px) 0;border-top:2px solid var(--brass)}
 #cats .row{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,3vw,48px)}
 #cats a{display:grid;grid-template-columns:auto 1fr;gap:clamp(14px,1.8vw,26px);
-align-items:center;padding:6px 0}
-#cats .ph{width:clamp(86px,8vw,114px);aspect-ratio:3/4;overflow:hidden;background:#1B1B1B;
-flex:0 0 auto}
+align-items:center;padding:10px;background:rgba(255,255,255,0.03);border:1px solid rgba(197,160,89,0.2);
+border-radius:4px;transition:all .35s}
+#cats a:hover{border-color:var(--brass);transform:translateY(-3px);background:rgba(197,160,89,0.08)}
+#cats .ph{width:clamp(86px,8vw,114px);aspect-ratio:3/4;overflow:hidden;background:#262420;
+flex:0 0 auto;border-radius:2px}
 #cats .ph img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.8,.3,1);
 filter:grayscale(1) contrast(1.06)}
 #cats a:hover .ph img{transform:scale(1.09)}
-#cats h3{font-weight:700;font-size:clamp(16px,1.5vw,20px);letter-spacing:.04em;
-text-transform:uppercase;margin-bottom:6px;color:#fff}
-#cats p{font-size:12.5px;color:rgba(239,237,232,.6);margin-bottom:10px;max-width:24ch}
-#cats .go{font:500 10.5px/1 Archivo,sans-serif;letter-spacing:.18em;text-transform:uppercase;
-display:inline-flex;align-items:center;gap:8px;color:#fff}
+#cats h3{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:clamp(18px,1.6vw,22px);
+letter-spacing:.04em;margin-bottom:6px;color:var(--brass-light)}
+#cats p{font-size:12.5px;color:rgba(245,243,238,.65);margin-bottom:10px;max-width:24ch}
+#cats .go{font:600 10.5px/1 Archivo,sans-serif;letter-spacing:.18em;text-transform:uppercase;
+display:inline-flex;align-items:center;gap:8px;color:var(--brass)}
 #cats .go i{font-style:normal;transition:transform .4s cubic-bezier(.6,0,.2,1);display:inline-block}
 #cats a:hover .go i{transform:translateX(6px)}
-@media(max-width:860px){#cats .row{grid-template-columns:1fr;gap:24px}}
+@media(max-width:860px){#cats .row{grid-template-columns:1fr;gap:20px}}
 
-/* ── 3 · SEASON / COMPARE ────────────────────────────────────────── */
-#season{position:relative;background:#DCD9D3;overflow:hidden}
+/* ── 3 · SEASON / COMPARE TABLE ─────────────────────────────────── */
+#season{position:relative;background:var(--bg-card);overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 #season .grid{display:grid;grid-template-columns:1fr 1fr;align-items:center;
 min-height:min(78vh,660px)}
 #season .copy{padding:clamp(34px,6vh,72px) clamp(20px,4vw,60px);position:relative;z-index:2}
-#season .kick{margin-bottom:16px;color:#54514C}
-#season h2{font-weight:800;font-size:clamp(36px,5.8vw,80px);line-height:.92;letter-spacing:-.03em;
-text-transform:uppercase}
-#season p{margin-top:18px;max-width:38ch;color:#4A4741;font-size:14.5px}
-#season .shot{position:relative;align-self:stretch;overflow:hidden}
+#season .kick{margin-bottom:16px;color:var(--brass-dark)}
+#season h2{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:clamp(38px,6vw,84px);
+line-height:.92;letter-spacing:-.02em;color:var(--ink)}
+#season p{margin-top:18px;max-width:40ch;color:var(--mid);font-size:15px}
+#season .shot{position:relative;align-self:stretch;overflow:hidden;border-left:1px solid var(--line-brass)}
 #season .shot img{width:100%;height:100%;object-fit:cover;object-position:center 28%;
 filter:grayscale(1) contrast(1.05)}
 #season .btn{margin-top:clamp(20px,3.4vh,34px)}
 
-.compare-mini-table{margin-top:24px;border-top:1px solid rgba(16,16,16,.18)}
-.compare-mini-table .c-row{display:flex;justify-content:space-between;padding:12px 0;
-border-bottom:1px solid rgba(16,16,16,.1);font-size:13px}
-.compare-mini-table dt{font-weight:700;text-transform:uppercase;letter-spacing:.05em}
-.compare-mini-table dd{font-weight:600;color:var(--ink)}
+.compare-mini-table{margin-top:28px;border-top:1px solid var(--line-brass)}
+.compare-mini-table .c-row{display:flex;justify-content:space-between;padding:13px 0;
+border-bottom:1px solid var(--line);font-size:13.5px}
+.compare-mini-table dt{font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--ink)}
+.compare-mini-table dd{font-weight:700;color:var(--brass-dark)}
 
 @media(max-width:860px){
 #season .grid{grid-template-columns:1fr}
 #season .shot{height:52vw;min-height:280px;order:-1}
 }
 
-/* ── 4 · SERVICE ROW ─────────────────────────────────────────────── */
-#svc{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+/* ── 4 · SERVICE ROW (Brass Accents) ─────────────────────────────── */
+#svc{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg-bone)}
 #svc .row{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(14px,2.6vw,36px);
-padding:clamp(24px,3.8vh,38px) 0}
-#svc div h4{font-weight:700;font-size:12px;letter-spacing:.14em;text-transform:uppercase;
-margin-bottom:5px}
-#svc div p{font-size:12.5px;color:var(--mid)}
+padding:clamp(26px,4vh,42px) 0}
+#svc div h4{font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;
+margin-bottom:6px;color:var(--brass-dark)}
+#svc div p{font-size:13px;color:var(--mid)}
 @media(max-width:820px){#svc .row{grid-template-columns:1fr 1fr;gap:20px}}
 
-/* ── 5 · PRODUCT GRID / OFFERS ───────────────────────────────────── */
-#shop{padding:clamp(40px,7vh,86px) 0 clamp(48px,8vh,96px)}
+/* ── 5 · PRODUCT / OFFERS GRID ───────────────────────────────────── */
+#shop{padding:clamp(44px,7vh,90px) 0 clamp(48px,8vh,96px)}
 #shop .hd{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;
-margin-bottom:clamp(20px,3.4vh,34px);flex-wrap:wrap}
-#shop h2{font-weight:800;font-size:clamp(26px,3.4vw,44px);letter-spacing:-.015em;
-text-transform:uppercase}
-#shop .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(12px,1.8vw,26px)}
+margin-bottom:clamp(24px,3.6vh,38px);flex-wrap:wrap}
+#shop h2{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:clamp(30px,4vw,52px);
+letter-spacing:-.015em;color:var(--ink)}
+#shop .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(14px,2vw,28px)}
 
-.card{position:relative}
-.card .ph{position:relative;aspect-ratio:3/4;overflow:hidden;background:#E4E1DC}
+.card{position:relative;background:var(--bg-card);border:1px solid var(--line);border-radius:4px;padding:12px}
+.card .ph{position:relative;aspect-ratio:3/4;overflow:hidden;background:#DFD9CF;border-radius:2px}
 .card .ph img{width:100%;height:100%;object-fit:cover;
 transition:transform 1s cubic-bezier(.2,.8,.3,1),filter .6s}
 .card:hover .ph img{transform:scale(1.05)}
 .card .fav{position:absolute;top:10px;right:10px;width:32px;height:32px;border-radius:50%;
-background:rgba(239,237,232,.9);display:grid;place-items:center;border:0;cursor:pointer;
+background:rgba(245,243,238,.9);display:grid;place-items:center;border:1px solid var(--brass);cursor:pointer;
 z-index:3;transition:background .25s,transform .25s}
 .card .fav svg{width:14px;height:14px;fill:none;stroke:var(--ink);stroke-width:1.6}
-.card .fav[aria-pressed="true"] svg{fill:var(--ink)}
+.card .fav[aria-pressed="true"] svg{fill:var(--brass-dark)}
 .card .fav:hover{transform:scale(1.09)}
-.card .add{position:absolute;left:10px;right:10px;bottom:10px;z-index:3;background:var(--ink);
-color:var(--bone);border:0;cursor:pointer;padding:12px;font:500 10px/1 Archivo,sans-serif;
-letter-spacing:.2em;text-transform:uppercase;
+.card .add{position:absolute;left:10px;right:10px;bottom:10px;z-index:3;background:var(--brass-gradient);
+color:#ffffff;border:0;cursor:pointer;padding:12px;font:700 10px/1 Archivo,sans-serif;
+letter-spacing:.2em;text-transform:uppercase;box-shadow:0 4px 15px var(--brass-glow);
 opacity:0;transform:translateY(12px);
 transition:opacity .45s cubic-bezier(.2,.8,.3,1),transform .45s cubic-bezier(.2,.8,.3,1)}
 .card:hover .add,.card:focus-within .add{opacity:1;transform:none}
-.card .meta{padding-top:12px;display:flex;justify-content:space-between;gap:12px;
+.card .meta{padding-top:14px;display:flex;justify-content:space-between;gap:12px;
 align-items:baseline}
-.card .nm{font-weight:700;font-size:14px;text-transform:uppercase}
+.card .nm{font-weight:700;font-size:14px;text-transform:uppercase;color:var(--ink)}
 .card .ct{font-size:11px;color:var(--mid);letter-spacing:.08em;text-transform:uppercase;
-margin-top:3px}
-.card .pr{font-weight:700;font-size:13.5px;font-variant-numeric:tabular-nums}
+margin-top:4px}
+.card .pr{font-weight:800;font-size:14px;color:var(--brass-dark);font-variant-numeric:tabular-nums}
 @media(max-width:1000px){#shop .grid{grid-template-columns:repeat(2,1fr)}}
 
-/* ── 6 · LOOKBOOK / FACILITIES ────────────────────────────────────── */
+/* ── 6 · LOOKBOOK / PRODUCTION PROCESS ────────────────────────────── */
 #look{padding:clamp(44px,7vh,90px) 0 clamp(30px,5vh,60px)}
 #look .lhd{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,4vw,60px);
 align-items:end;margin-bottom:clamp(24px,4vh,46px)}
-#look h2{font-weight:800;font-size:clamp(34px,5.4vw,76px);line-height:.9;letter-spacing:-.03em;
-text-transform:uppercase}
-#look .lhd p{color:var(--mid);max-width:36ch;font-size:14px}
+#look h2{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:clamp(36px,5.6vw,80px);
+line-height:.9;letter-spacing:-.02em;color:var(--ink)}
+#look .lhd p{color:var(--mid);max-width:38ch;font-size:14.5px}
 #look .lgrid{display:grid;grid-template-columns:repeat(12,1fr);
 gap:clamp(12px,1.8vw,26px);align-items:start}
 #look .lg-a{grid-column:1/6}
 #look .lg-b{grid-column:6/13;margin-top:clamp(28px,7vw,96px)}
 #look .lg-c{grid-column:3/8;margin-top:clamp(16px,3vw,44px)}
-#look .ph{overflow:hidden;background:#E4E1DC}
+#look .ph{overflow:hidden;background:#DFD9CF;border:1px solid var(--line-brass);border-radius:4px}
 #look .lg-a .ph{aspect-ratio:3/4}
 #look .lg-b .ph{aspect-ratio:4/3}
 #look .lg-c .ph{aspect-ratio:1/1}
 #look img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.04);
 transition:transform 1.1s cubic-bezier(.2,.8,.3,1)}
 #look figure:hover img{transform:scale(1.04)}
-#look figcaption{margin-top:12px;font:500 10.5px/1 Archivo,sans-serif;letter-spacing:.18em;
+#look figcaption{margin-top:14px;font:600 10.5px/1 Archivo,sans-serif;letter-spacing:.18em;
 text-transform:uppercase;color:var(--mid);display:flex;gap:10px}
-#look figcaption span{color:var(--ink);font-weight:700}
+#look figcaption span{color:var(--brass-dark);font-weight:800}
 @media(max-width:820px){
 #look .lhd{grid-template-columns:1fr}
 #look .lgrid{grid-template-columns:1fr}
 #look .lg-a,#look .lg-b,#look .lg-c{grid-column:1/-1;margin-top:0}
 }
 
-/* ── 7 · CLOTH / FABRICS ──────────────────────────────────────────── */
-#cloth{background:#DCD9D3}
+/* ── 7 · CLOTH / FABRICS MAP ──────────────────────────────────────── */
+#cloth{background:var(--bg-card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 #cloth .cgrid{display:grid;grid-template-columns:1fr 1fr;align-items:stretch}
 #cloth .ccopy{padding:clamp(34px,6vh,80px) clamp(20px,4vw,64px);align-self:center}
-#cloth h2{font-weight:800;font-size:clamp(30px,4.4vw,60px);line-height:.94;letter-spacing:-.03em;
-text-transform:uppercase;margin-bottom:16px}
-#cloth p{color:#4A4741;max-width:36ch;font-size:14px}
-#cloth dl{margin-top:26px;border-top:1px solid rgba(16,16,16,.18)}
-#cloth dl div{display:flex;justify-content:space-between;gap:14px;padding:12px 0;
-border-bottom:1px solid rgba(16,16,16,.1);font-size:13px}
-#cloth dt{font-weight:700;text-transform:uppercase;letter-spacing:.05em}
-#cloth dd{color:#5A574F;font-weight:500}
-#cloth .cshot{position:relative;min-height:min(62vh,520px);overflow:hidden}
+#cloth h2{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:clamp(34px,4.8vw,66px);
+line-height:.94;letter-spacing:-.02em;color:var(--ink);margin-bottom:16px}
+#cloth p{color:var(--mid);max-width:38ch;font-size:14.5px}
+#cloth dl{margin-top:28px;border-top:1px solid var(--line-brass)}
+#cloth dl div{display:flex;justify-content:space-between;gap:14px;padding:13px 0;
+border-bottom:1px solid var(--line);font-size:13.5px}
+#cloth dt{font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--ink)}
+#cloth dd{color:var(--brass-dark);font-weight:600}
+#cloth .cshot{position:relative;min-height:min(62vh,520px);overflow:hidden;border-left:1px solid var(--line-brass)}
 #cloth .cshot video,#cloth .cshot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
 filter:grayscale(1) contrast(1.06)}
 @media(max-width:820px){#cloth .cgrid{grid-template-columns:1fr}}
 
-/* ── 8 · B2B CALCULATOR & QUIZ ────────────────────────────────────── */
-#calc{padding:clamp(44px,7vh,90px) 0;border-top:1px solid var(--line)}
-#calc h2{font-weight:800;font-size:clamp(30px,4.6vw,60px);letter-spacing:-.03em;
-text-transform:uppercase;margin-bottom:14px;text-align:center}
-#calc .calc-box{max-width:960px;margin:30px auto 0;background:#E4E1DC;border:1px solid var(--line);
-padding:clamp(24px,4vw,48px)}
-#calc .c-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:36px;align-items:start}
-#calc .group-lbl{font:600 11px/1 Archivo,sans-serif;letter-spacing:.18em;text-transform:uppercase;
-margin-bottom:12px}
+/* ── 8 · B2B CALCULATOR ───────────────────────────────────────────── */
+#calc{padding:clamp(48px,8vh,96px) 0;background:var(--bg-bone)}
+#calc h2{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:clamp(32px,5vw,64px);
+letter-spacing:-.02em;text-transform:uppercase;margin-bottom:14px;text-align:center;color:var(--ink)}
+#calc .calc-box{max-width:980px;margin:32px auto 0;background:var(--bg-card);border:1px solid var(--line-brass);
+border-radius:6px;padding:clamp(28px,4.5vw,52px);box-shadow:0 10px 30px rgba(0,0,0,0.05)}
+#calc .c-grid{display:grid;grid-template-columns:1.15fr 0.85fr;gap:40px;align-items:start}
+#calc .group-lbl{font:700 11px/1 Archivo,sans-serif;letter-spacing:.18em;text-transform:uppercase;
+margin-bottom:12px;color:var(--brass-dark)}
 #calc .opts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-#calc .opt-btn{background:var(--bone);border:1px solid var(--line);padding:14px 10px;
-text-align:center;cursor:pointer;font:600 11.5px/1.2 Archivo,sans-serif;letter-spacing:.05em;
-text-transform:uppercase;transition:all .3s}
-#calc .opt-btn.active{background:var(--ink);color:var(--bone);border-color:var(--ink)}
+#calc .opt-btn{background:var(--bg-bone);border:1px solid var(--line);padding:15px 10px;
+text-align:center;cursor:pointer;font:700 11.5px/1.2 Archivo,sans-serif;letter-spacing:.05em;
+text-transform:uppercase;transition:all .3s;border-radius:2px}
+#calc .opt-btn.active{background:var(--brass-gradient);color:#ffffff;border-color:var(--brass-dark);
+box-shadow:0 2px 10px var(--brass-glow)}
 
-#calc .slider-wrap{margin-top:20px}
-#calc input[type="range"]{width:100%;height:4px;background:var(--mid);outline:none;
--webkit-appearance:none;cursor:pointer}
-#calc input[type="range"]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;
-border-radius:50%;background:var(--ink);cursor:pointer}
+#calc .slider-wrap{margin-top:24px}
+#calc input[type="range"]{width:100%;height:6px;background:#D0C9BD;outline:none;
+-webkit-appearance:none;cursor:pointer;border-radius:3px}
+#calc input[type="range"]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;
+border-radius:50%;background:var(--brass-dark);cursor:pointer;box-shadow:0 0 12px var(--brass-glow)}
 
-#calc .res-panel{background:var(--ink);color:var(--bone);padding:32px;display:flex;
-flex-direction:column;justify-content:space-between}
-#calc .res-panel h3{font-weight:800;font-size:18px;letter-spacing:.1em;text-transform:uppercase;
-margin-bottom:20px;border-bottom:1px solid rgba(239,237,232,.2);padding-bottom:12px}
-#calc .p-row{display:flex;justify-content:space-between;font-size:13.5px;margin-bottom:10px;
-color:rgba(239,237,232,.7)}
-#calc .p-row b{color:#fff;font-weight:700}
-#calc .p-total{border-top:1px solid rgba(239,237,232,.2);padding-top:18px;margin-top:10px}
-#calc .p-total .amt{font-weight:900;font-size:32px;display:block;margin-top:4px}
+#calc .res-panel{background:#1A1815;color:var(--bg-bone);padding:36px;border-radius:4px;
+border:1px solid var(--brass-dark);display:flex;flex-direction:column;justify-content:space-between}
+#calc .res-panel h3{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:22px;
+letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px;color:var(--brass-light);
+border-bottom:1px solid rgba(197,160,89,0.3);padding-bottom:12px}
+#calc .p-row{display:flex;justify-content:space-between;font-size:14px;margin-bottom:12px;
+color:rgba(245,243,238,.75)}
+#calc .p-row b{color:#ffffff;font-weight:700}
+#calc .p-total{border-top:1px solid rgba(197,160,89,0.3);padding-top:20px;margin-top:10px}
+#calc .p-total .amt{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:36px;
+color:var(--brass-light);display:block;margin-top:4px}
 @media(max-width:820px){#calc .c-grid{grid-template-columns:1fr}}
 
-/* ── 9 · ATELIER / STATS ──────────────────────────────────────────── */
-#atelier{background:var(--ink);color:var(--bone)}
+/* ── 9 · ATELIER / STATS (Deep Espresso + Brass Numbers) ─────────── */
+#atelier{background:#1A1815;color:var(--bg-bone);border-top:2px solid var(--brass)}
 #atelier .agrid{display:grid;grid-template-columns:1.05fr .95fr;align-items:stretch}
 #atelier .ashot{overflow:hidden}
 #atelier .ashot img{width:100%;height:100%;object-fit:cover;min-height:min(66vh,540px);
 filter:grayscale(1) contrast(1.08)}
 #atelier .acopy{padding:clamp(34px,6vh,80px) clamp(20px,4vw,64px);align-self:center}
-#atelier h2{font-weight:800;font-size:clamp(30px,4.4vw,60px);line-height:.94;letter-spacing:-.03em;
-text-transform:uppercase;margin-bottom:16px}
-#atelier p{color:rgba(239,237,232,.62);max-width:34ch;font-size:14px}
-#atelier .acount{margin-top:32px;display:flex;gap:clamp(20px,4vw,52px);flex-wrap:wrap;
-border-top:1px solid rgba(239,237,232,.16);padding-top:22px}
-#atelier .acount b{display:block;font-weight:800;font-size:clamp(28px,3.4vw,44px);
-font-variant-numeric:tabular-nums;line-height:1;margin-bottom:6px}
-#atelier .acount span{font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;
-color:rgba(239,237,232,.5)}
+#atelier h2{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:clamp(34px,4.8vw,64px);
+line-height:.94;letter-spacing:-.02em;text-transform:uppercase;margin-bottom:16px;color:#ffffff}
+#atelier p{color:rgba(245,243,238,.7);max-width:36ch;font-size:14.5px}
+#atelier .acount{margin-top:36px;display:flex;gap:clamp(20px,4vw,52px);flex-wrap:wrap;
+border-top:1px solid rgba(197,160,89,0.25);padding-top:24px}
+#atelier .acount b{display:block;font-family:'Cormorant Garamond',serif;font-weight:700;
+font-size:clamp(32px,3.8vw,52px);color:var(--brass-light);line-height:1;margin-bottom:6px}
+#atelier .acount span{font-size:10px;letter-spacing:.18em;text-transform:uppercase;
+color:rgba(245,243,238,.55);font-family:Archivo,sans-serif;font-weight:600}
 @media(max-width:820px){#atelier .agrid{grid-template-columns:1fr}}
 
-/* ── 10 · CASES & REVIEWS SLIDER ──────────────────────────────────── */
-#reviews{padding:clamp(46px,8vh,96px) 0;border-bottom:1px solid var(--line)}
-#reviews h2{font-weight:800;font-size:clamp(30px,4.6vw,60px);letter-spacing:-.03em;
-text-transform:uppercase;margin-bottom:24px;text-align:center}
-#reviews .r-box{max-width:860px;margin:0 auto;background:#E4E1DC;border:1px solid var(--line);
-padding:clamp(30px,5vw,56px);position:relative}
+/* ── 10 · REVIEWS SLIDER ─────────────────────────────────────────── */
+#reviews{padding:clamp(48px,8vh,96px) 0;border-bottom:1px solid var(--line)}
+#reviews h2{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:clamp(32px,5vw,64px);
+letter-spacing:-.02em;text-transform:uppercase;margin-bottom:28px;text-align:center;color:var(--ink)}
+#reviews .r-box{max-width:900px;margin:0 auto;background:var(--bg-card);border:1px solid var(--line-brass);
+border-radius:6px;padding:clamp(32px,5vw,60px);position:relative;box-shadow:0 10px 30px rgba(0,0,0,0.04)}
 #reviews .rev-slide{display:none}
 #reviews .rev-slide.active{display:block}
-#reviews .quote{font-size:16px;line-height:1.7;color:var(--ink);margin-bottom:24px;
-font-weight:500;font-style:italic}
-#reviews .author{font:600 11px/1 Archivo,sans-serif;letter-spacing:.2em;text-transform:uppercase;
-border-top:1px solid var(--line);padding-top:18px;color:var(--mid)}
-#reviews .controls{display:flex;justify-content:space-between;align-items:center;margin-top:28px}
-#reviews .c-btn{border:1px solid var(--ink);background:transparent;padding:8px 20px;
-font:700 12px Archivo;cursor:pointer;transition:all .3s}
-#reviews .c-btn:hover{background:var(--ink);color:var(--bone)}
+#reviews .quote{font-family:'Cormorant Garamond',serif;font-size:19px;line-height:1.7;color:var(--ink);
+margin-bottom:28px;font-style:italic;font-weight:600}
+#reviews .author{font:700 11px/1 Archivo,sans-serif;letter-spacing:.2em;text-transform:uppercase;
+border-top:1px solid var(--line-brass);padding-top:20px;color:var(--brass-dark)}
+#reviews .controls{display:flex;justify-content:space-between;align-items:center;margin-top:32px}
+#reviews .c-btn{border:1px solid var(--brass-dark);background:transparent;padding:10px 24px;
+font:700 12px Archivo;cursor:pointer;transition:all .3s;color:var(--ink);border-radius:2px}
+#reviews .c-btn:hover{background:var(--brass-gradient);color:#ffffff;border-color:var(--brass-dark)}
 
-/* ── 11 · SIGNUP / BRIEF ──────────────────────────────────────────── */
-#signup{padding:clamp(46px,8vh,100px) 0;text-align:center}
-#signup h2{font-weight:800;font-size:clamp(30px,4.6vw,64px);letter-spacing:-.03em;
-text-transform:uppercase;margin-bottom:14px}
-#signup p{color:var(--mid);max-width:44ch;margin:0 auto 28px;font-size:14px}
-#signup form{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
-#signup input{flex:1;min-width:min(300px,80vw);max-width:380px;padding:16px 18px;
-border:1px solid var(--line);background:transparent;font:400 14px Archivo,sans-serif;
-color:var(--ink)}
-#signup input:focus{outline:2px solid var(--ink);outline-offset:2px}
-#signup .ok{margin-top:16px;font:500 10.5px/1 Archivo,sans-serif;letter-spacing:.18em;
-text-transform:uppercase;opacity:0;transition:opacity .45s}
+/* ── 11 · SIGNUP / SAMPLE ORDER ──────────────────────────────────── */
+#signup{padding:clamp(50px,9vh,110px) 0;text-align:center;background:var(--bg-bone)}
+#signup h2{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:clamp(34px,5.2vw,70px);
+letter-spacing:-.02em;text-transform:uppercase;margin-bottom:14px;color:var(--ink)}
+#signup p{color:var(--mid);max-width:46ch;margin:0 auto 32px;font-size:15px}
+#signup form{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;max-width:600px;margin:0 auto}
+#signup input{flex:1;min-width:min(280px,80vw);padding:18px 20px;
+border:1px solid var(--line-brass);background:#ffffff;font:400 14.5px Archivo,sans-serif;
+color:var(--ink);border-radius:2px;outline:none}
+#signup input:focus{border-color:var(--brass-dark);box-shadow:0 0 10px var(--brass-glow)}
+#signup .ok{margin-top:18px;font:600 11px/1 Archivo,sans-serif;letter-spacing:.18em;
+text-transform:uppercase;color:var(--brass-dark);opacity:0;transition:opacity .45s}
 #signup .ok.on{opacity:1}
 
-footer{padding:clamp(40px,6vh,72px) 0 32px;background:var(--ink);color:var(--bone)}
+/* ── Footer (Deep Espresso + Brass Typography) ───────────────────── */
+footer{padding:clamp(48px,7vh,80px) 0 36px;background:#1A1815;color:var(--bg-bone);border-top:2px solid var(--brass)}
 footer .cols{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:clamp(20px,3vw,44px);
-margin-bottom:44px}
-footer h4{font-weight:700;font-size:11px;letter-spacing:.2em;text-transform:uppercase;
-margin-bottom:16px;color:rgba(239,237,232,.6)}
-footer a{display:block;padding:5px 0;font-size:13.5px;color:rgba(239,237,232,.8)}
-footer a:hover{color:#ffffff}
-footer .mk{font-weight:800;font-size:28px;letter-spacing:.24em;margin-bottom:12px;color:#fff}
-footer address{font-style:normal;font-size:13px;line-height:1.9;color:rgba(239,237,232,.6)}
-footer .legal{border-top:1px solid rgba(239,237,232,.14);padding-top:22px;display:flex;
-justify-content:space-between;gap:18px;flex-wrap:wrap;font-size:11.5px;color:rgba(239,237,232,.5)}
+margin-bottom:48px}
+footer h4{font-weight:700;font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;
+margin-bottom:18px;color:var(--brass)}
+footer a{display:block;padding:6px 0;font-size:14px;color:rgba(245,243,238,.75);transition:color .3s}
+footer a:hover{color:var(--brass-light)}
+footer .mk{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:30px;letter-spacing:.2em;
+margin-bottom:14px;color:var(--brass-light)}
+footer address{font-style:normal;font-size:13.5px;line-height:1.9;color:rgba(245,243,238,.65)}
+footer .legal{border-top:1px solid rgba(197,160,89,0.2);padding-top:24px;display:flex;
+justify-content:space-between;gap:18px;flex-wrap:wrap;font-size:12px;color:rgba(245,243,238,.5)}
 @media(max-width:820px){footer .cols{grid-template-columns:1fr 1fr}}
 
-/* ── reveal ───────────────────────────────────────────────────────── */
+/* ── Animations ─────────────────────────────────────────────────── */
 .vband{position:relative;overflow:hidden;isolation:isolate}
 .vband video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
 .vband .vscrim{position:absolute;inset:0;z-index:1;pointer-events:none}
 .vband .vin{position:relative;z-index:2;width:100%}
-#prog{position:absolute;left:0;bottom:-1px;height:2px;width:100%;background:var(--ink);
+#prog{position:absolute;left:0;bottom:-1px;height:3px;width:100%;background:var(--brass);
 transform:scaleX(0);transform-origin:left;will-change:transform;z-index:2}
 #look .ph img{clip-path:inset(calc((1 - var(--p,1)) * 42%) 0 0 0);
 transform:scale(calc(1 + (1 - var(--p,1)) * 0.06))}
@@ -343,7 +371,7 @@ transition:opacity 1s cubic-bezier(.19,1,.22,1),transform 1.1s cubic-bezier(.19,
 </head>
 <body>
 
-<!-- Announcement Ticker -->
+<!-- Announcement Ticker in Deep Espresso & Brass -->
 <div class="ann" aria-hidden="true">
   <div class="row">
     <div class="tk"><span>Контрактный пошив Plus Size (50-60)</span><i>/</i><span>Маркировка Честный Знак</span><i>/</i><span>Электронные лекала за 5 дней</span><i>/</i><span>Отгрузка на WB, Ozon, Kaspi</span><i>/</i><span>Опт от 300 штук</span><i>/</i></div>
@@ -367,8 +395,8 @@ transition:opacity 1s cubic-bezier(.19,1,.22,1),transform 1.1s cubic-bezier(.19,
       <span class="sub">BISHKEK GARMENT FACTORY</span>
     </div>
     <div class="util">
-      <a href="https://wa.me/996703326999" target="_blank">WhatsApp</a>
-      <a href="#signup" class="btn" style="padding:10px 20px; font-size:10px;">Запросить смету</a>
+      <a href="https://wa.me/996703326999" target="_blank" class="wa-btn">💬 WhatsApp</a>
+      <a href="#signup" class="btn" style="padding:10px 20px; font-size:10px;"><span>Запросить смету</span></a>
     </div>
   </div>
 </nav>
@@ -381,14 +409,15 @@ transition:opacity 1s cubic-bezier(.19,1,.22,1),transform 1.1s cubic-bezier(.19,
       <div class="rule"></div>
     </div>
 
-    <!-- Giant SABLE-style typographic background with model overlay -->
+    <!-- Giant SABLE-style typographic background in antique brass with model overlay -->
     <div class="stage">
       <div class="word back" aria-hidden="true"><b id="wb">ASTRA BRAND</b></div>
       <img class="model hv" id="hm" src="hero_cover_1.jpg" alt="Astra Brand Plus Size Garment Manufacturing Model">
     </div>
 
     <div class="br hv" id="h2">
-      <p>Швейная фабрика<br>Бишкек · 2026<br>Опт от 300 ед.</p>
+      <span class="brass-badge" style="margin-bottom:8px;">Бишкек · 2026</span>
+      <p>Швейная фабрика<br>Опт от 300 ед.</p>
     </div>
 
     <div class="acts hv" id="h3">
@@ -398,7 +427,7 @@ transition:opacity 1s cubic-bezier(.19,1,.22,1),transform 1.1s cubic-bezier(.19,
   </div>
 </header>
 
-<!-- 2 · CATEGORY STRIP (Production Facilities) ──────────────────────── -->
+<!-- 2 · CATEGORY STRIP (Espresso & Antique Brass Cards) ───────────────── -->
 <section id="cats">
   <div class="wrap row">
     <a href="#look" class="rv">
@@ -438,7 +467,7 @@ transition:opacity 1s cubic-bezier(.19,1,.22,1),transform 1.1s cubic-bezier(.19,
       
       <dl class="compare-mini-table rv">
         <div class="c-row"><dt>Себестоимость платья</dt><dd>РФ: 900–1500 ₽ · Astra: 550–850 ₽ (-40%)</dd></div>
-        <div class="c-row"><dt>Закуп сырья</dt><dd>Прямой закуп на рынке «Мадина» по ценам фабрик Китая/Турции</dd></div>
+        <div class="c-row"><dt>Закуп сырья</dt><dd>Прямой закуп на рынке «Мадина» по ценам Китая/Турции</dd></div>
         <div class="c-row"><dt>Порог партии</dt><dd>От 300 шт. на модель (свободный набор размеров)</dd></div>
         <div class="c-row"><dt>Честный Знак & ЕАЭС</dt><dd>Без пошлин, полная маркировка DataMatrix перед отправкой</dd></div>
       </dl>
@@ -477,7 +506,7 @@ transition:opacity 1s cubic-bezier(.19,1,.22,1),transform 1.1s cubic-bezier(.19,
   <div class="wrap">
     <div class="lhd">
       <div>
-        <div class="lbl rv" style="margin-bottom:14px;color:var(--mid)">Производственный процесс</div>
+        <div class="lbl rv" style="margin-bottom:14px;">Производственный процесс</div>
         <h2 class="rv">Бишкек<br>2026</h2>
       </div>
       <p class="rv">Каждая партия проходит сквозной контроль качества: от тестирования настила ткани до финальной влажно-тепловой обработки (ВТО).</p>
@@ -503,7 +532,7 @@ transition:opacity 1s cubic-bezier(.19,1,.22,1),transform 1.1s cubic-bezier(.19,
 <section id="cloth">
   <div class="cgrid">
     <div class="ccopy">
-      <div class="lbl rv" style="margin-bottom:16px;color:var(--mid)">Карта тканей «Мадина»</div>
+      <div class="lbl rv" style="margin-bottom:16px;">Карта тканей «Мадина»</div>
       <h2 class="rv">Прямой закуп<br>тканей из Азии.</h2>
       <p class="rv">Мы закупаем ткани напрямую с оптового рынка «Мадина» в Бишкеке по ценам фабрик Турции и Китая. Это экономит до 30% бюджета на материалы.</p>
       <dl class="rv">
@@ -544,9 +573,9 @@ transition:opacity 1s cubic-bezier(.19,1,.22,1),transform 1.1s cubic-bezier(.19,
           </div>
 
           <div class="slider-wrap">
-            <div class="group-lbl">Объем партии: <b id="qty-disp">300</b> шт.</div>
+            <div class="group-lbl">Объем партии: <b id="qty-disp" style="color:var(--brass-dark);">300</b> шт.</div>
             <input type="range" id="qty-range" min="300" max="5000" step="100" value="300" oninput="calcTotal()">
-            <div style="display:flex; justify-shadow:space-between; font-size:11px; color:var(--mid); margin-top:8px;">
+            <div style="display:flex; justify-content:space-between; font-size:11px; color:var(--mid); margin-top:8px;">
               <span>300 шт</span><span>1000 шт</span><span>5000+ шт</span>
             </div>
           </div>
@@ -559,7 +588,7 @@ transition:opacity 1s cubic-bezier(.19,1,.22,1),transform 1.1s cubic-bezier(.19,
             <div class="p-row"><span>Ткань за ед.:</span><b id="price-fab">450 ₽</b></div>
           </div>
           <div class="p-total">
-            <span style="font-size:12px; letter-spacing:.1em; text-transform:uppercase;">Общий бюджет партии:</span>
+            <span style="font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:rgba(245,243,238,.7);">Общий бюджет партии:</span>
             <span class="amt" id="price-total">495 000 ₽</span>
             <a href="https://wa.me/996703326999?text=Здравствуйте!%20Хочу%20отправить%20расчет%20оптового%20пошива" target="_blank" class="btn" style="width:100%; text-align:center; margin-top:18px;">
               <span>Отправить расчет в WhatsApp</span>
@@ -571,12 +600,12 @@ transition:opacity 1s cubic-bezier(.19,1,.22,1),transform 1.1s cubic-bezier(.19,
   </div>
 </section>
 
-<!-- 9 · ATELIER / STATS ──────────────────────────────────────────── -->
+<!-- 9 · ATELIER / STATS (Espresso + Brass Numbers) ─────────────────── -->
 <section id="atelier">
   <div class="agrid">
     <figure class="ashot rv" data-speed="0.05"><img src="https://cdn.jsdelivr.net/gh/VanhDc/aura-assets@sable-v2/sable/img/atelier.webp" alt="Швейное производство Astra Brand" loading="lazy"></figure>
     <div class="acopy">
-      <div class="lbl rv" style="margin-bottom:16px;color:rgba(239,237,232,.5)">Мощности фабрики</div>
+      <div class="lbl rv" style="margin-bottom:16px;color:var(--brass)">Мощности фабрики</div>
       <h2 class="rv">Бишкек,<br>ул. Ласло-Мессароша</h2>
       <p class="rv">Собственный швейный цех с многоуровневым контролем качества. Еженедельные видеоотчеты для заказчиков из РФ и СНГ.</p>
       <div class="acount rv">
@@ -622,14 +651,15 @@ transition:opacity 1s cubic-bezier(.19,1,.22,1),transform 1.1s cubic-bezier(.19,
     <h2 class="rv">Заказать тестовый образец</h2>
     <p class="rv">Пришлите фото или эскиз изделия Plus Size. Отошьем образец всего за $30 (при заказе партии стоимость возвращается).</p>
     <form class="rv" id="nf" novalidate="">
-      <input type="text" id="s-name" required="" placeholder="Ваше имя" aria-label="Name" style="margin-bottom:8px;">
+      <input type="text" id="s-name" required="" placeholder="Ваше имя" aria-label="Name" style="margin-bottom:10px;">
       <input type="tel" id="s-phone" required="" placeholder="Ваш WhatsApp (+7...)" aria-label="Phone">
-      <button class="btn" type="submit"><span>Получить образец за $30</span></button>
+      <button class="btn" type="submit" style="width:100%; margin-top:12px;"><span>Получить образец за $30</span></button>
     </form>
-    <div class="ok" id="nok" role="status">Заявка принято! Открываем WhatsApp для согласования эскиза...</div>
+    <div class="ok" id="nok" role="status">Заявка принята! Открываем WhatsApp для согласования эскиза...</div>
   </div>
 </section>
 
+<!-- Footer in Deep Espresso & Antique Brass -->
 <footer>
   <div class="wrap">
     <div class="cols">
