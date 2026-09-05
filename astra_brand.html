@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>ASTRA BRAND · Премиальный пошив Plus Size (50–60) в Бишкеке</title>
 <meta name="description" content="Швейная фабрика Astra Brand в Бишкеке: контрактное производство и пошив женской одежды больших размеров (50-60) под ключ. Маркировка Честный ЗНАК, электронные лекала, опт от 300 шт.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23C5A059'/%3E%3Ctext x='16' y='23' font-family='Archivo,Helvetica' font-size='18' font-weight='800' fill='%231A1815' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="images/favicon.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&amp;family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&amp;display=swap" rel="stylesheet">
@@ -55,10 +55,9 @@ position:relative;padding:6px 0;color:var(--ink)}
 nav ul a::after{content:'';position:absolute;left:0;right:0;bottom:0;height:2px;
 background:var(--brass);transform:scaleX(0);transform-origin:right;transition:transform .4s cubic-bezier(.6,0,.2,1)}
 nav ul a:hover::after{transform:scaleX(1);transform-origin:left}
-nav .mk{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:26px;letter-spacing:.2em;
-text-align:center;color:var(--ink);display:flex;flex-direction:column;align-items:center;line-height:1}
-nav .mk span.sub{font-size:9px;font-family:Archivo,sans-serif;letter-spacing:.3em;font-weight:700;
-color:var(--brass-dark);margin-top:3px}
+nav .mk-logo{display:flex;align-items:center;justify-content:center;text-decoration:none}
+nav .mk-logo img{height:46px;width:auto;display:block;transition:transform .3s ease}
+nav .mk-logo:hover img{transform:scale(1.05)}
 nav .util{display:flex;gap:20px;justify-content:flex-end;align-items:center;
 font:600 11px/1 Archivo,sans-serif;letter-spacing:.14em;text-transform:uppercase}
 nav .util a.wa-btn{color:var(--brass-dark);font-weight:700;display:flex;align-items:center;gap:6px}
@@ -420,10 +419,9 @@ transition:opacity 1s cubic-bezier(.19,1,.22,1),transform 1.1s cubic-bezier(.19,
       <li><a href="#calc">Калькулятор</a></li>
       <li><a href="#reviews">Отзывы</a></li>
     </ul>
-    <div class="mk">
-      ASTRA BRAND
-      <span class="sub">BISHKEK GARMENT FACTORY</span>
-    </div>
+    <a href="#" class="mk-logo" aria-label="Astra Brand Homepage">
+      <img src="images/astra_logo_dark.png" alt="Astra Brand Logo">
+    </a>
     <div class="util">
       <a href="https://wa.me/996500774418" target="_blank" class="wa-btn">💬 +996 500 774 418</a>
       <a href="#signup" class="btn" style="padding:10px 20px; font-size:10px;"><span>Запросить смету</span></a>
@@ -834,7 +832,9 @@ transition:opacity 1s cubic-bezier(.19,1,.22,1),transform 1.1s cubic-bezier(.19,
   <div class="wrap">
     <div class="cols">
       <div>
-        <div class="mk">ASTRA BRAND</div>
+        <a href="#" class="mk-logo-footer" aria-label="Astra Brand Homepage" style="display:inline-block; margin-bottom:16px;">
+          <img src="images/astra_logo_gold.png" alt="Astra Brand Logo" style="height:56px; width:auto; display:block;">
+        </a>
         <address>
           Кыргызская Республика<br>г. Бишкек, ул. Уркуи Салиевой 124<br><br>
           📱 +996 500 774 418 (WhatsApp)<br>
