@@ -306,8 +306,8 @@ color:var(--brass-light);display:block;margin-top:4px}
 #atelier{background:#1A1815;color:var(--bg-bone);border-top:2px solid var(--brass)}
 #atelier .agrid{display:grid;grid-template-columns:1.05fr .95fr;align-items:stretch}
 #atelier .ashot{overflow:hidden}
-#atelier .ashot img{width:100%;height:100%;object-fit:cover;min-height:min(66vh,540px);
-filter:grayscale(1) contrast(1.08)}
+#atelier .ashot img,#atelier .ashot video{width:100%;height:100%;object-fit:cover;min-height:min(66vh,540px);
+filter:grayscale(0.15) contrast(1.08)}
 #atelier .acopy{padding:clamp(34px,6vh,80px) clamp(20px,4vw,64px);align-self:center}
 #atelier h2{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:clamp(34px,4.8vw,64px);
 line-height:.94;letter-spacing:-.02em;text-transform:uppercase;margin-bottom:16px;color:#ffffff}
@@ -580,7 +580,7 @@ transition:opacity 1s cubic-bezier(.19,1,.22,1),transform 1.1s cubic-bezier(.19,
       </dl>
     </div>
     <figure class="cshot rv vband" data-speed="0.05">
-      <video data-src="https://cdn.jsdelivr.net/gh/VanhDc/aura-assets@sable-v2/sable/img/cloth.mp4" poster="https://cdn.jsdelivr.net/gh/VanhDc/aura-assets@sable-v2/sable/img/cloth.webp" muted="" loop="" playsinline="" preload="none" aria-label="Ткани на фабрике Astra Brand"></video>
+      <video src="https://cdn.jsdelivr.net/gh/VanhDc/aura-assets@sable-v2/sable/img/cloth.mp4" poster="https://cdn.jsdelivr.net/gh/VanhDc/aura-assets@sable-v2/sable/img/cloth.webp" autoplay loop muted playsinline webkit-playsinline preload="auto" aria-label="Ткани на фабрике Astra Brand"></video>
     </figure>
   </div>
 </section>
@@ -642,7 +642,9 @@ transition:opacity 1s cubic-bezier(.19,1,.22,1),transform 1.1s cubic-bezier(.19,
 <!-- 9 · ATELIER / STATS (Espresso + Brass Numbers) ─────────────────── -->
 <section id="atelier">
   <div class="agrid">
-    <figure class="ashot rv" data-speed="0.05"><img src="images/modern_factory_bw.jpg" alt="Швейное производство Astra Brand" loading="lazy"></figure>
+    <figure class="ashot rv vband" data-speed="0.05">
+      <video src="https://cdn.jsdelivr.net/gh/VanhDc/aura-assets@sable-v2/sable/img/cloth.mp4" poster="https://cdn.jsdelivr.net/gh/VanhDc/aura-assets@sable-v2/sable/img/cloth.webp" autoplay loop muted playsinline webkit-playsinline preload="auto" aria-label="Ткани и производство Astra Brand"></video>
+    </figure>
     <div class="acopy">
       <div class="lbl rv" style="margin-bottom:16px;color:var(--brass)">Мощности фабрики</div>
       <h2 class="rv">Бишкек,<br>ул. Уркуи Салиевой 124</h2>
