@@ -22,7 +22,7 @@
             --font-family: 'Inter', sans-serif;
             --font-serif: 'Cormorant Garamond', serif;
             --font-mono: 'Space Mono', monospace;
-            --transition: all 0.2s ease-in-out;
+            --transition: all 0.25s ease-in-out;
         }
 
         * {
@@ -369,7 +369,7 @@
             text-align: center;
         }
 
-        /* Fabric Grid (Screenshot 1 of second batch) */
+        /* Fabric Grid */
         .fabric-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -415,7 +415,7 @@
             line-height: 1.45;
         }
 
-        /* B2B Calculator Section (Screenshot 2 of second batch) */
+        /* B2B Calculator Section */
         .calc-grid {
             display: grid;
             grid-template-columns: 1.15fr 0.85fr;
@@ -562,7 +562,7 @@
             padding-top: 12px;
         }
 
-        /* Brief Quiz (Screenshot 3 of second batch) */
+        /* Brief Quiz */
         .quiz-container {
             border: 2px solid var(--border-color);
             padding: 40px;
@@ -624,7 +624,7 @@
             justify-content: flex-end;
         }
 
-        /* Legal Guarantees (Screenshot 4 of second batch) */
+        /* Legal Guarantees */
         .guarantees-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -652,7 +652,7 @@
             margin-bottom: 0;
         }
 
-        /* Virtual Visit Section (Screenshot 5 of second batch) */
+        /* Virtual Visit Section */
         .visit-grid {
             display: grid;
             grid-template-columns: 1.15fr 0.85fr;
@@ -713,33 +713,179 @@
             margin-bottom: 0;
         }
 
-        /* Cases Section */
-        .cases-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-        }
-
-        .case-card {
+        /* Case Slider Box (Screenshots 1-3 of third batch) */
+        .case-slider-box {
             border: 2px solid var(--border-color);
-            padding: 28px;
+            padding: 40px;
             background-color: var(--bg-primary);
+            max-width: 860px;
+            margin: 0 auto;
         }
 
-        .case-card h3 {
-            font-size: 16px;
+        .case-slide {
+            display: none;
+        }
+
+        .case-slide.active {
+            display: block;
+        }
+
+        .case-slide h3 {
+            font-size: 17px;
+            font-weight: 800;
             border-bottom: 2px solid var(--border-color);
-            padding-bottom: 10px;
-            margin-bottom: 15px;
+            padding-bottom: 14px;
+            margin-bottom: 24px;
+            line-height: 1.35;
         }
 
-        .case-metrics {
-            margin-top: 15px;
-            border-top: 1px dashed var(--border-light);
-            padding-top: 12px;
-            font-family: var(--font-mono);
-            font-size: 12px;
+        .case-section-block {
+            margin-bottom: 20px;
+        }
+
+        .case-section-block b.case-label {
+            display: block;
+            font-size: 14px;
+            font-weight: 800;
+            margin-bottom: 6px;
+            color: #000;
+            text-transform: uppercase;
+        }
+
+        .case-section-block p {
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 0;
+            color: #444;
+        }
+
+        .case-results-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        .case-results-list li {
+            font-size: 14px;
             font-weight: 700;
+            color: #000;
+            line-height: 1.5;
+        }
+
+        .case-nav-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px dashed var(--border-light);
+        }
+
+        .nav-arrow-btn {
+            border: 2px solid var(--border-color);
+            background: #fff;
+            padding: 8px 18px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 16px;
+        }
+
+        .nav-arrow-btn:hover {
+            background: #000;
+            color: #fff;
+        }
+
+        .case-dots {
+            display: flex;
+            gap: 10px;
+        }
+
+        .dot {
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            border: 2px solid var(--border-color);
+            background: transparent;
+            cursor: pointer;
+        }
+
+        .dot.active {
+            background: #000;
+        }
+
+        /* Video Section (Screenshot 4 of third batch) */
+        .video-box {
+            max-width: 860px;
+            margin: 0 auto;
+            border: 2px solid var(--border-color);
+            background: #000;
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-box iframe, .video-box video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* FAQ Accordion Section (Screenshot 5 of third batch) */
+        .faq-accordion {
+            max-width: 860px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .faq-item {
+            border: 2px solid var(--border-color);
+            background-color: var(--bg-primary);
+            transition: var(--transition);
+        }
+
+        .faq-header {
+            padding: 22px 28px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 800;
+            font-size: 14.5px;
+            text-transform: uppercase;
+            user-select: none;
+        }
+
+        .faq-header .icon {
+            font-size: 20px;
+            font-weight: 800;
+            transition: transform 0.25s ease;
+        }
+
+        .faq-item.active .faq-header .icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-body {
+            display: none;
+            padding: 0 28px 24px 28px;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #444;
+            border-top: 1px dashed var(--border-light);
+            padding-top: 16px;
+        }
+
+        .faq-item.active .faq-body {
+            display: block;
         }
 
         /* Footer */
@@ -780,20 +926,17 @@
             .hero-grid, .calc-grid, .visit-grid {
                 grid-template-columns: 1fr;
             }
-            .offers-grid, .workflow-grid, .fabric-grid, .guarantees-grid, .gallery-content.active, .cases-grid {
+            .offers-grid, .workflow-grid, .fabric-grid, .guarantees-grid, .gallery-content.active {
                 grid-template-columns: 1fr;
             }
             .nav-links {
                 display: none;
             }
-            .select-grid {
+            .select-grid, .select-grid-2, .quiz-grid {
                 grid-template-columns: 1fr;
             }
-            .select-grid-2 {
-                grid-template-columns: 1fr;
-            }
-            .quiz-grid {
-                grid-template-columns: 1fr;
+            .case-slider-box {
+                padding: 24px;
             }
         }
     </style>
@@ -817,12 +960,13 @@
                 <li><a href="#quiz">БРИФ-КВИЗ</a></li>
                 <li><a href="#guarantees">ГАРАНТИИ</a></li>
                 <li><a href="#cases">КЕЙСЫ</a></li>
+                <li><a href="#faq">FAQ</a></li>
             </ul>
             <a href="https://wa.me/996703326999?text=Здравствуйте!%20Хочу%20получить%20консультацию%20по%20пошиву" target="_blank" class="btn btn-secondary">СВЯЗАТЬСЯ</a>
         </div>
     </header>
 
-    <!-- SECTION 1: HERO (Screenshot 1) -->
+    <!-- SECTION 1: HERO -->
     <section class="section">
         <div class="container hero-grid">
             <div class="hero-content">
@@ -846,7 +990,7 @@
         </div>
     </section>
 
-    <!-- SECTION 2: OFFERS (Screenshot 2) -->
+    <!-- SECTION 2: OFFERS -->
     <section class="section" id="offers">
         <div class="container">
             <h2 class="section-title">КЛЮЧЕВЫЕ ОФФЕРЫ И УСЛОВИЯ РАБОТЫ</h2>
@@ -878,7 +1022,7 @@
         </div>
     </section>
 
-    <!-- SECTION 3: COMPARE TABLE (Screenshot 3) -->
+    <!-- SECTION 3: COMPARE TABLE -->
     <section class="section" id="compare">
         <div class="container">
             <h2 class="section-title">СРАВНЕНИЕ УСЛОВИЙ: ПОШИВ В РФ VS ASTRA BRAND (БИШКЕК)</h2>
@@ -925,7 +1069,7 @@
         </div>
     </section>
 
-    <!-- SECTION 4: WORKFLOW (Screenshot 4) -->
+    <!-- SECTION 4: WORKFLOW -->
     <section class="section" id="workflow">
         <div class="container">
             <h2 class="section-title">СХЕМА СОТРУДНИЧЕСТВА ШАГ ЗА ШАГОМ</h2>
@@ -969,7 +1113,7 @@
         </div>
     </section>
 
-    <!-- SECTION 5: FACILITIES TABS (Screenshot 5) -->
+    <!-- SECTION 5: FACILITIES TABS -->
     <section class="section" id="facets">
         <div class="container">
             <h2 class="section-title">ПРОИЗВОДСТВЕННЫЕ МОЩНОСТИ (ЦЕХИ ФАБРИКИ)</h2>
@@ -1054,7 +1198,7 @@
         </div>
     </section>
 
-    <!-- SECTION 6: FABRICS MAP (Screenshot 1 - Batch 2) -->
+    <!-- SECTION 6: FABRICS MAP -->
     <section class="section" id="fabrics">
         <div class="container">
             <h2 class="section-title">ИНТЕРАКТИВНАЯ КАРТА ИСПОЛЬЗУЕМЫХ ТКАНЕЙ</h2>
@@ -1084,7 +1228,7 @@
         </div>
     </section>
 
-    <!-- SECTION 7: B2B CALCULATOR (Screenshot 2 - Batch 2) -->
+    <!-- SECTION 7: B2B CALCULATOR -->
     <section class="section" id="calc">
         <div class="container">
             <h2 class="section-title">В2В КАЛЬКУЛЯТОР ОПТОВОГО ПОШИВА</h2>
@@ -1148,7 +1292,7 @@
         </div>
     </section>
 
-    <!-- SECTION 8: BRIEF QUIZ (Screenshot 3 - Batch 2) -->
+    <!-- SECTION 8: BRIEF QUIZ -->
     <section class="section" id="quiz">
         <div class="container">
             <h2 class="section-title">ИНТЕРАКТИВНЫЙ БРИФ НА ЭКСПРЕСС-РАСЧЕТ</h2>
@@ -1212,7 +1356,7 @@
         </div>
     </section>
 
-    <!-- SECTION 9: LEGAL GUARANTEES (Screenshot 4 - Batch 2) -->
+    <!-- SECTION 9: LEGAL GUARANTEES -->
     <section class="section" id="guarantees">
         <div class="container">
             <h2 class="section-title">ГАРАНТИИ БЕЗОПАСНОСТИ СДЕЛКИ И МИНИМИЗАЦИИ РИСКОВ</h2>
@@ -1235,7 +1379,7 @@
         </div>
     </section>
 
-    <!-- SECTION 10: VIRTUAL VISIT & LOCATION (Screenshot 5 - Batch 2) -->
+    <!-- SECTION 10: VIRTUAL VISIT & LOCATION -->
     <section class="section">
         <div class="container">
             <h2 class="section-title">ВИРТУАЛЬНЫЙ ВИЗИТ НА ФАБРИКУ</h2>
@@ -1259,28 +1403,194 @@
         </div>
     </section>
 
-    <!-- SECTION 11: REAL B2B CASES -->
+    <!-- SECTION 11: REAL B2B CASES SLIDER (Screenshots 1-3 of third batch) -->
     <section class="section" id="cases">
         <div class="container">
             <h2 class="section-title">РЕАЛЬНЫЕ КЕЙСЫ НАШИХ В2В-ПАРТНЕРОВ</h2>
-            <div class="cases-grid">
-                <div class="case-card">
-                    <h3>КЕЙС 1: БРЕНД PLUS SIZE (WILDBERRIES)</h3>
-                    <p>Пошив серии платьев 52–58 размера (1 500 шт). Разработка электронных лекал за 4 дня. Отгрузка на склад Коледино с кодами Честный Знак.</p>
-                    <div class="case-metrics">ПАРТИЯ: 1 500 ШТ · СРОК: 9 ДНЕЙ · МАРЖА: 58%</div>
+            
+            <div class="case-slider-box">
+                <!-- Case Slide 1 -->
+                <div class="case-slide active" id="case-slide-1">
+                    <h3>КЕЙС 1: ЗАПУСК БРЕНДА PLUS-SIZE ПЛАТЬЕВ «ШАРМ & СТИЛЬ» (ЕКАТЕРИНБУРГ)</h3>
+                    
+                    <div class="case-section-block">
+                        <b class="case-label">Задача:</b>
+                        <p>Селлер Wildberries обратился с задачей с нуля разработать и отшить осеннюю коллекцию женских платьев больших размеров (52–66) по фотографиям из каталога Pinterest. Главная сложность: добиться безупречной посадки, которая скрывала бы недостатки фигуры в области живота и бедер.</p>
+                    </div>
+
+                    <div class="case-section-block">
+                        <b class="case-label">Наше решение:</b>
+                        <p>Наши конструкторы разработали точные электронные лекала с правильными припусками. Мы закупили качественный штапель и трикотаж на рынке «Мадина» напрямую у импортера. Отшивали опытную партию в 1 200 единиц, промаркировали Честным Знаком и подготовили под склад Коледино.</p>
+                    </div>
+
+                    <div class="case-section-block">
+                        <b class="case-label">РЕЗУЛЬТАТЫ СОТРУДНИЧЕСТВА:</b>
+                        <ul class="case-results-list">
+                            <li>• Процент выкупа платьев на ПВЗ вырос с 32% (у старого поставщика) до 49%.</li>
+                            <li>• Срок производства всей партии: 9 рабочих дней.</li>
+                            <li>• Себестоимость готового изделия в закупке: $7.8 за штуку.</li>
+                        </ul>
+                    </div>
                 </div>
 
-                <div class="case-card">
-                    <h3>КЕЙС 2: СЕТЕВОЙ МАГАЗИН (KASPI.KZ)</h3>
-                    <p>Производство женских брючных костюмов (800 шт). Комплектация ткани и фурнитуры под ключ с рынка Мадина.</p>
-                    <div class="case-metrics">ПАРТИЯ: 800 ШТ · СРОК: 7 ДНЕЙ · МАРЖА: 62%</div>
+                <!-- Case Slide 2 -->
+                <div class="case-slide" id="case-slide-2">
+                    <h3>КЕЙС 2: АУТСОРСИНГ ПРОИЗВОДСТВА ДЛЯ СЕТИ ШОУРУМОВ «МИЛЕДИ» (МОСКВА, 5 ФИЛИАЛОВ)</h3>
+                    
+                    <div class="case-section-block">
+                        <b class="case-label">Задача:</b>
+                        <p>Снизить себестоимость пошива брючных костюмов больших размеров (50–72), не потеряв при этом плотность ткани и ровность внутренних отметочных швов, которые так важны для состоятельных клиенток шоурумов.</p>
+                    </div>
+
+                    <div class="case-section-block">
+                        <b class="case-label">Наше решение:</b>
+                        <p>Перенесли пошив из Краснодара в Бишкек к нам. Мы использовали давальческие лекала клиента, закупили плотное трикотажное полотно «Алекси» и организовали сквозной контроль качества на швейном потоке силами бригадиров-технологов.</p>
+                    </div>
+
+                    <div class="case-section-block">
+                        <b class="case-label">РЕЗУЛЬТАТЫ СОТРУДНИЧЕСТВА:</b>
+                        <ul class="case-results-list">
+                            <li>• Себестоимость костюма в закупке упала с 1 450 руб до 910 руб (включая доставку карго в РФ).</li>
+                            <li>• Рост маржинальности сети шоурумов составил +18%.</li>
+                            <li>• Уровень брака: всего 2 штуки на партию в 3 000 единиц (0.06%).</li>
+                        </ul>
+                    </div>
                 </div>
 
-                <div class="case-card">
-                    <h3>КЕЙС 3: БУТИК ОДЕЖДЫ (МОСКВА, OZON)</h3>
-                    <p>Контрактный пошив шифоновых блуз 50-60 размера. Полноценное ОТК и ВТО перед упаковыванием в брендированные пакетирования.</p>
-                    <div class="case-metrics">ПАРТИЯ: 500 ШТ · СРОК: 6 ДНЕЙ · МАРЖА: 54%</div>
+                <!-- Case Slide 3 -->
+                <div class="case-slide" id="case-slide-3">
+                    <h3>КЕЙС 3: СРОЧНЫЙ ВЫПУСК КОЛЛЕКЦИИ ЛЬНЯНЫХ БЛУЗ «СВОБОДНЫЙ СИЛУЭТ» (АЛМАТЫ)</h3>
+                    
+                    <div class="case-section-block">
+                        <b class="case-label">Задача:</b>
+                        <p>Срочно изготовить коллекцию летних льняных блуз свободного кроя для бренда в Казахстане. Общий тираж 2 000 шт. Требуемый срок сдачи — не более 7 дней, иначе бренд упускал летний пиковый сезон.</p>
+                    </div>
+
+                    <div class="case-section-block">
+                        <b class="case-label">Наше решение:</b>
+                        <p>Фабрика перевела швейный цех в двухсменный режим работы. Ткань (смесовый лен) была закуплена и доставлена на склады фабрики за 12 часов. Раскрой выполняли параллельно на двух столах настила.</p>
+                    </div>
+
+                    <div class="case-section-block">
+                        <b class="case-label">РЕЗУЛЬТАТЫ СОТРУДНИЧЕСТВА:</b>
+                        <ul class="case-results-list">
+                            <li>• Партия в 2 000 блуз полностью готова и промаркирована за 6 рабочих дней.</li>
+                            <li>• Доставка в Алматы выполнена наземным транспортом на следующий день.</li>
+                            <li>• Продано 100% коллекции без остатков и упущенной прибыли.</li>
+                        </ul>
+                    </div>
                 </div>
+
+                <!-- Slider Nav Controls -->
+                <div class="case-nav-row">
+                    <button class="nav-arrow-btn" onclick="moveCaseSlide(-1)">←</button>
+                    <div class="case-dots">
+                        <span class="dot active" onclick="setCaseSlide(1)"></span>
+                        <span class="dot" onclick="setCaseSlide(2)"></span>
+                        <span class="dot" onclick="setCaseSlide(3)"></span>
+                    </div>
+                    <button class="nav-arrow-btn" onclick="moveCaseSlide(1)">→</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 12: VIDEO TOUR (Screenshot 4 of third batch) -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">НАШЕ ПРОИЗВОДСТВО</h2>
+            <p class="section-subtitle">Посмотрите короткую видео-экскурсию по нашим цехам: раскройный стол, швейные потоки Jack/Juki и отдел контроля качества ОТК.</p>
+            
+            <div class="video-box">
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=0" title="Видео-экскурсия по швейной фабрике Astra Brand" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 13: FAQ ACCORDION (Screenshot 5 of third batch) -->
+    <section class="section" id="faq">
+        <div class="container">
+            <h2 class="section-title">ВОПРОСЫ И ОТВЕТЫ (FAQ ДЛЯ B2B)</h2>
+            
+            <div class="faq-accordion">
+                <div class="faq-item active" onclick="toggleFaq(this)">
+                    <div class="faq-header">
+                        <span>Каков минимальный объем заказа на пошив одной модели?</span>
+                        <span class="icon">+</span>
+                    </div>
+                    <div class="faq-body">
+                        Минимальная тестовая партия составляет от 300 штук на одну модель. При этом вы можете свободно распределить тираж по размерному ряду Plus Size (от 50 до 60 размера).
+                    </div>
+                </div>
+
+                <div class="faq-item" onclick="toggleFaq(this)">
+                    <div class="faq-header">
+                        <span>Разрабатываете ли вы лекала по фотографии или эскизу?</span>
+                        <span class="icon">+</span>
+                    </div>
+                    <div class="faq-body">
+                        Да! Наше конструкторское бюро разрабатывает точные электронные лекала по эскизам, фото из Pinterest/каталогов или готовым физическим образцам всего за 3–5 рабочих дней.
+                    </div>
+                </div>
+
+                <div class="faq-item" onclick="toggleFaq(this)">
+                    <div class="faq-header">
+                        <span>Работаете ли вы с маркировкой Честный Знак и маркетплейсами?</span>
+                        <span class="icon">+</span>
+                    </div>
+                    <div class="faq-body">
+                        Да, отшиваем партии под ключ для Wildberries, Ozon и Kaspi.kz. Оклеиваем каждое изделие кодами DataMatrix (Честный Знак), штрихкодами, упаковываем в ЗИП-пакеты и отгружаем прямо на ТК.
+                    </div>
+                </div>
+
+                <div class="faq-item" onclick="toggleFaq(this)">
+                    <div class="faq-header">
+                        <span>Как происходит оплата и доставка в РФ и страны СНГ?</span>
+                        <span class="icon">+</span>
+                    </div>
+                    <div class="faq-body">
+                        Оплата производится по официальному договору поставки (50% предоплата для закупки ткани, 50% перед отгрузкой партии). Доставка осуществляется проверенными карго-компаниями за 7–12 дней до Москвы, Екатеринбурга, Алматы и других городов СНГ.
+                    </div>
+                </div>
+
+                <div class="faq-item" onclick="toggleFaq(this)">
+                    <div class="faq-header">
+                        <span>Как вы контролируете брак на производстве?</span>
+                        <span class="icon">+</span>
+                    </div>
+                    <div class="faq-body">
+                        На фабрике внедрен 3-этапный контроль качества: проверка сырья на браковщике, межоперационный контроль в процессе пошива и 100% финишное ОТК перед ВТО и упаковкой. Гарантируем уровень брака менее 1%.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 14: FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3 style="color:#fff; margin-bottom:12px; font-size:18px;">ASTRA BRAND</h3>
+                    <p>Швейная фабрика контрактного пошива женской одежды Plus Size (50-60) в Бишкеке. Прямая доставка на склады Wildberries, Ozon и Kaspi.</p>
+                </div>
+                <div>
+                    <h4 style="color:#fff; margin-bottom:12px; font-size:14px;">НАВИГАЦИЯ</h4>
+                    <p><a href="#offers">Условия пошива</a></p>
+                    <p><a href="#compare">Сравнение с РФ</a></p>
+                    <p><a href="#workflow">Схема работы</a></p>
+                    <p><a href="#calc">Калькулятор маржи</a></p>
+                </div>
+                <div>
+                    <h4 style="color:#fff; margin-bottom:12px; font-size:14px;">КОНТАКТЫ</h4>
+                    <p>📍 г. Бишкек, ул. Льва Толстого / Ласло-Мессароша</p>
+                    <p>📱 <a href="https://wa.me/996703326999" target="_blank" style="color:#25D366; font-weight:700;">+996 703 326 999</a></p>
+                    <p>✉️ lara100573@gmail.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div>© 2026 ASTRA BRAND GROUP. ВСЕ ПРАВА ЗАКРЕПЛЕНЫ.</div>
+                <div>ЧЕСТНЫЙ ЗНАК · ДЕКЛАРАЦИИ ТР ТС ЕАЭС</div>
             </div>
         </div>
     </footer>
@@ -1288,6 +1598,7 @@
     <script>
         let currentBasePrice = 1200;
         let currentFabricPrice = 450;
+        let currentCaseIdx = 1;
 
         function switchTab(tabId) {
             document.querySelectorAll('.gallery-tabs .tab-btn').forEach(btn => btn.classList.remove('active'));
@@ -1351,6 +1662,31 @@
         function submitQuiz() {
             alert('Спасибо! Ваш расчет сформирован и отправляется в WhatsApp.');
             window.open('https://wa.me/996703326999?text=Здравствуйте!%20Я%20прошел%20бриф-расчет%20на%20сайте%20Astra%20Brand.', '_blank');
+        }
+
+        /* Case Slider Controls */
+        function setCaseSlide(idx) {
+            currentCaseIdx = idx;
+            document.querySelectorAll('.case-slide').forEach(s => s.classList.remove('active'));
+            document.querySelectorAll('.dot').forEach(d => d.classList.remove('active'));
+            document.getElementById('case-slide-' + idx).classList.add('active');
+            document.querySelectorAll('.dot')[idx - 1].classList.add('active');
+        }
+
+        function moveCaseSlide(direction) {
+            currentCaseIdx += direction;
+            if (currentCaseIdx > 3) currentCaseIdx = 1;
+            if (currentCaseIdx < 1) currentCaseIdx = 3;
+            setCaseSlide(currentCaseIdx);
+        }
+
+        /* FAQ Accordion Toggle */
+        function toggleFaq(element) {
+            const isActive = element.classList.contains('active');
+            document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+            if (!isActive) {
+                element.classList.add('active');
+            }
         }
     </script>
 </body>
