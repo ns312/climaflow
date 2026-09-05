@@ -23,7 +23,7 @@
 --brass-glow:rgba(197, 160, 89, 0.28);
 --line:rgba(26, 24, 21, 0.12);
 --line-brass:rgba(197, 160, 89, 0.35);
---nav:96px;
+--nav:110px;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{overflow-x:clip;scroll-behavior:smooth}
@@ -55,8 +55,8 @@ position:relative;padding:6px 0;color:var(--ink)}
 nav ul a::after{content:'';position:absolute;left:0;right:0;bottom:0;height:2px;
 background:var(--brass);transform:scaleX(0);transform-origin:right;transition:transform .4s cubic-bezier(.6,0,.2,1)}
 nav ul a:hover::after{transform:scaleX(1);transform-origin:left}
-nav .mk-logo{display:flex;align-items:center;justify-content:center;text-decoration:none;padding:6px 0}
-nav .mk-logo img{height:64px;width:auto;display:block;transition:transform .3s ease;filter:drop-shadow(0 2px 8px rgba(0,0,0,0.06))}
+nav .mk-logo{display:flex;align-items:center;justify-content:center;text-decoration:none;padding:4px 0}
+nav .mk-logo img{height:78px;width:auto;display:block;transition:transform .3s ease;filter:drop-shadow(0 2px 10px rgba(0,0,0,0.08))}
 nav .mk-logo:hover img{transform:scale(1.04)}
 nav .util{display:flex;gap:20px;justify-content:flex-end;align-items:center;
 font:600 11px/1 Archivo,sans-serif;letter-spacing:.14em;text-transform:uppercase}
@@ -94,8 +94,8 @@ padding:clamp(20px,4vh,48px) 0 clamp(26px,5vh,60px);background:radial-gradient(c
 #hero .stage{position:relative;width:100%;display:grid;place-items:center;
 min-height:min(58vh,560px)}
 #hero .word{position:absolute;inset:0;display:grid;place-items:center;pointer-events:none}
-#hero .word b{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:clamp(64px,18.5vw,260px);
-letter-spacing:-.02em;line-height:.8;white-space:nowrap;display:block;color:rgba(197,160,89,0.22)}
+#hero .hero-logo-cover{width:min(92vw,780px);height:auto;max-height:min(54vh,480px);object-fit:contain;
+opacity:0.85;filter:drop-shadow(0 8px 30px rgba(197,160,89,0.32));transition:transform .5s ease}
 #hero .model{position:relative;z-index:2;height:min(62vh,600px);width:auto;
 filter:drop-shadow(0 26px 46px rgba(26,24,21,.18))}
 #hero .word.back{z-index:1}
@@ -438,7 +438,9 @@ transition:opacity 1s cubic-bezier(.19,1,.22,1),transform 1.1s cubic-bezier(.19,
 
     <!-- Giant SABLE-style typographic background in antique brass with model overlay -->
     <div class="stage">
-      <div class="word back" aria-hidden="true"><b id="wb">ASTRA BRAND</b></div>
+      <div class="word back" aria-hidden="true">
+        <img src="images/astra_logo_gold.png" alt="Astra Brand Logo" class="hero-logo-cover">
+      </div>
       <img class="model hv" id="hm" src="images/hero_chocolate_suit.jpg" alt="Astra Brand Plus Size Garment Manufacturing Model">
     </div>
 
