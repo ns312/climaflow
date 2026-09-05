@@ -178,7 +178,7 @@ margin-bottom:clamp(24px,3.6vh,38px);flex-wrap:wrap}
 letter-spacing:-.015em;color:var(--ink)}
 #shop .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(14px,2vw,28px)}
 
-.card{position:relative;background:var(--bg-card);border:1px solid var(--line);border-radius:4px;padding:12px}
+.card{position:relative;background:var(--bg-card);border:1px solid var(--line);border-radius:4px;padding:12px;display:flex;flex-direction:column}
 .card .ph{position:relative;aspect-ratio:3/4;overflow:hidden;background:#DFD9CF;border-radius:2px}
 .card .ph img{width:100%;height:100%;object-fit:cover;
 transition:transform 1s cubic-bezier(.2,.8,.3,1),filter .6s}
@@ -195,12 +195,12 @@ letter-spacing:.2em;text-transform:uppercase;box-shadow:0 4px 15px var(--brass-g
 opacity:0;transform:translateY(12px);
 transition:opacity .45s cubic-bezier(.2,.8,.3,1),transform .45s cubic-bezier(.2,.8,.3,1)}
 .card:hover .add,.card:focus-within .add{opacity:1;transform:none}
-.card .meta{padding-top:14px;display:flex;justify-content:space-between;gap:12px;
-align-items:baseline}
-.card .nm{font-weight:700;font-size:14px;text-transform:uppercase;color:var(--ink)}
-.card .ct{font-size:11px;color:var(--mid);letter-spacing:.08em;text-transform:uppercase;
-margin-top:4px}
-.card .pr{font-weight:800;font-size:14px;color:var(--brass-dark);font-variant-numeric:tabular-nums}
+.card .meta{padding-top:12px;display:flex;flex-direction:column;flex-grow:1;justify-content:space-between}
+.card .nm{font-weight:700;font-size:13px;line-height:1.35;text-transform:uppercase;color:var(--ink);margin-bottom:3px;min-height:35px}
+.card .ct{font-size:10.5px;color:var(--mid);letter-spacing:.06em;text-transform:uppercase;margin-bottom:12px}
+.card .pr-bar{display:flex;align-items:center;justify-content:space-between;padding-top:8px;border-top:1px dashed rgba(26,24,21,.12);margin-top:auto}
+.card .pr-lbl{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--mid);font-weight:500}
+.card .pr-val{font-size:12.5px;font-weight:800;color:var(--brass-dark);font-variant-numeric:tabular-nums;background:rgba(197,160,89,.1);padding:3px 8px;border-radius:3px;border:1px solid rgba(197,160,89,.25);letter-spacing:.02em}
 .card .img-count-badge{position:absolute;top:10px;left:10px;z-index:3;background:rgba(26,24,21,.85);backdrop-filter:blur(4px);color:var(--silk);font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 8px;border-radius:2px;border:1px solid rgba(197,160,89,.4)}
 .card .img-nav{position:absolute;top:50%;transform:translateY(-50%);z-index:4;width:28px;height:28px;background:rgba(26,24,21,.75);color:#fff;border:1px solid rgba(197,160,89,.4);border-radius:50%;font-size:16px;line-height:1;cursor:pointer;opacity:0;transition:opacity .25s ease,background .25s ease,transform .25s ease;display:flex;align-items:center;justify-content:center;padding:0}
 .card:hover .img-nav{opacity:1}
@@ -860,7 +860,10 @@ function renderGrid() {
       </div>
       <div class="meta">
         <div><div class="nm">${p.nm}</div><div class="ct">${p.ct}</div></div>
-        <div class="pr">от ${p.pr} ₽</div>
+        <div class="pr-bar">
+          <span class="pr-lbl">Оптовый пошив</span>
+          <span class="pr-val">от ${p.pr} ₽</span>
+        </div>
       </div>
     </article>`;
   }).join('');
