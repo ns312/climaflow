@@ -1312,6 +1312,128 @@
             </div>
         </section>
 
+        
+        <!-- 10. AWWWARDS 3D EXPLODED G-WAGON ASSEMBLY & LEAD FORM SECTION -->
+        <section class="py-28 bg-[#0A0A0A] text-white relative overflow-hidden border-t border-b border-gold/30" id="exploded-g-wagon-section">
+            <div class="max-w-[1300px] mx-auto px-6 relative z-20">
+                
+                <div class="text-center max-w-4xl mx-auto mb-16 reveal">
+                    <span class="text-xs font-mono uppercase tracking-[0.3em] text-gold font-bold mb-3 block">( 3D СБОРКА И ПРЯМОЙ РАСЧЕТ )</span>
+                    <h2 class="font-oswald text-4xl sm:text-6xl font-bold uppercase tracking-tight text-white leading-tight">
+                        СОБЕРИТЕ СВОЙ МЕЧТАННЫЙ <span class="hero-text-wave-zoom">G-CLASS G63</span> И ПОЛУЧИТЕ ТОЧНЫЙ РАСЧЕТ В WHATSAPP
+                    </h2>
+                    <p class="text-xs font-mono text-white/70 mt-3 uppercase tracking-wider">
+                        🔧 Прокручивайте ползунок или нажимайте кнопки, чтобы собрать запчасти черного матового Гелика и зафиксировать цену
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <!-- Left Column: 3D Exploded Canvas Interactive Stage -->
+                    <div class="lg:col-span-7 reveal">
+                        <div class="relative w-full aspect-[16/10] bg-dark/90 rounded-3xl overflow-hidden border-2 border-gold/50 shadow-[0_0_60px_rgba(197,160,89,0.25)] flex flex-col justify-between p-6 group">
+                            
+                            <!-- Top HUD Controls inside Canvas -->
+                            <div class="flex justify-between items-center font-mono text-[11px] text-gold/90 uppercase tracking-widest z-30 bg-dark/70 backdrop-blur-md px-4 py-2 rounded-xl border border-gold/30">
+                                <span class="flex items-center gap-2">
+                                    <span class="w-2 h-2 bg-gold rounded-full animate-ping"></span>
+                                    <span>G63 ASSEMBLY ENGINE v4.2</span>
+                                </span>
+                                <span id="parts-assembled-badge" class="font-bold text-white">0 / 4 ЗАПЧАСТЕЙ СОБРАНО</span>
+                            </div>
+
+                            <!-- 3D Interactive Canvas Stage -->
+                            <div class="relative flex-1 flex items-center justify-center my-4 overflow-hidden">
+                                <canvas id="g-wagon-parts-canvas" class="absolute inset-0 w-full h-full z-10 cursor-grab active:cursor-grabbing"></canvas>
+                                
+                                <!-- Golden Glow backdrop for assembled car -->
+                                <div id="assembled-glow" class="absolute inset-0 bg-radial from-gold/20 via-transparent to-transparent opacity-0 transition-opacity duration-1000"></div>
+                            </div>
+
+                            <!-- Interactive Part Assembly Slider Controls -->
+                            <div class="z-30 bg-dark/90 backdrop-blur-md p-4 rounded-2xl border border-gold/30 flex flex-col gap-3">
+                                <div class="flex justify-between items-center font-mono text-xs text-white/90">
+                                    <span>ПРОЦЕСС СБОРКИ ЭЛЕМЕНТОВ KITS:</span>
+                                    <span id="slider-percentage" class="text-gold font-bold font-oswald text-lg">0%</span>
+                                </div>
+                                <input type="range" id="assembly-slider" min="0" max="100" value="0" 
+                                       class="w-full h-2 bg-white/20 rounded-lg appearance-none cursor-pointer accent-gold hover:accent-white transition-all">
+                                <div class="grid grid-cols-4 gap-2 pt-2">
+                                    <button onclick="setAssemblyStep(25)" class="text-[10px] font-mono uppercase bg-white/10 hover:bg-gold hover:text-dark py-1.5 rounded-lg transition-colors border border-white/10">1. Кузов V8</button>
+                                    <button onclick="setAssemblyStep(50)" class="text-[10px] font-mono uppercase bg-white/10 hover:bg-gold hover:text-dark py-1.5 rounded-lg transition-colors border border-white/10">2. Колеса 22"</button>
+                                    <button onclick="setAssemblyStep(75)" class="text-[10px] font-mono uppercase bg-white/10 hover:bg-gold hover:text-dark py-1.5 rounded-lg transition-colors border border-white/10">3. Оптика LED</button>
+                                    <button onclick="setAssemblyStep(100)" class="text-[10px] font-mono uppercase bg-gold text-dark font-bold py-1.5 rounded-lg transition-colors">4. ФИНАЛ 100%</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Right Column: High-Converting WhatsApp Lead Form -->
+                    <div class="lg:col-span-5 reveal">
+                        <div class="bg-gradient-to-b from-[#1E1E1E] to-[#121212] p-8 md:p-10 rounded-3xl border-2 border-gold/60 shadow-2xl relative">
+                            
+                            <div class="flex items-center gap-3 mb-4">
+                                <span class="w-3 h-3 bg-[#25D366] rounded-full animate-ping"></span>
+                                <span class="text-xs font-mono text-gold uppercase tracking-widest font-bold">ОФИЦИАЛЬНАЯ ЗАЯВКА BEKNAZAR</span>
+                            </div>
+
+                            <h3 class="font-oswald text-3xl font-bold uppercase text-white mb-2">
+                                ПОЛУЧИТЬ ИНДИВИДУАЛЬНЫЙ РАСЧЕТ
+                            </h3>
+                            <p class="text-xs font-manrope text-white/70 leading-relaxed mb-6">
+                                Заполните форму, и наш главный логист в Шардже отправит точный сметный расчет со всеми портовыми сборами прямо в ваш WhatsApp в течение 5 минут.
+                            </p>
+
+                            <form id="g63-lead-form" onsubmit="sendWhatsAppLead(event)" class="space-y-4 font-manrope">
+                                
+                                <div>
+                                    <label class="block text-[11px] font-mono text-white/80 uppercase mb-1.5">Ваше Имя / Название компании</label>
+                                    <input type="text" id="lead-name" required placeholder="Например: Александр" 
+                                           class="w-full bg-white/5 border border-white/20 focus:border-gold rounded-xl px-4 py-3.5 text-sm text-white placeholder-white/40 outline-none transition-colors">
+                                </div>
+
+                                <div>
+                                    <label class="block text-[11px] font-mono text-white/80 uppercase mb-1.5">Номер WhatsApp</label>
+                                    <input type="tel" id="lead-phone" required placeholder="+7 (999) 000-00-00" 
+                                           class="w-full bg-white/5 border border-white/20 focus:border-gold rounded-xl px-4 py-3.5 text-sm text-white placeholder-white/40 outline-none transition-colors">
+                                </div>
+
+                                <div>
+                                    <label class="block text-[11px] font-mono text-white/80 uppercase mb-1.5">Страна и Город Назначения</label>
+                                    <select id="lead-destination" class="w-full bg-dark border border-white/20 focus:border-gold rounded-xl px-4 py-3.5 text-sm text-white outline-none transition-colors">
+                                        <option value="Россия (Москва / Регионы)">🇷🇺 Россия (Москва / Регионы)</option>
+                                        <option value="Грузия (Тбилиси / Поти)">🇬🇪 Грузия (Тбилиси / Поти)</option>
+                                        <option value="Казахстан (Алматы / Астана)">🇰🇿 Казахстан (Алматы / Астана)</option>
+                                        <option value="Турция (Стамбул / Мерсин)">🇹🇷 Турция (Стамбул / Мерсин)</option>
+                                        <option value="Другая страна СНГ">🌍 Другая страна СНГ</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label class="block text-[11px] font-mono text-white/80 uppercase mb-1.5">Интересующий Автомобиль</label>
+                                    <input type="text" id="lead-car" placeholder="Например: Mercedes G63 AMG / Li Auto L9 / Porsche" 
+                                           class="w-full bg-white/5 border border-white/20 focus:border-gold rounded-xl px-4 py-3.5 text-sm text-white placeholder-white/40 outline-none transition-colors">
+                                </div>
+
+                                <button type="submit" class="magnetic-btn w-full bg-[#25D366] hover:bg-white text-dark font-mono text-xs sm:text-sm font-bold uppercase py-4 px-6 rounded-xl shadow-[0_0_30px_rgba(37,211,102,0.5)] flex items-center justify-center gap-3 transition-all duration-300 mt-2">
+                                    <iconify-icon icon="logos:whatsapp-icon" width="22" height="22"></iconify-icon>
+                                    <span>ОТПРАВИТЬ ЗАЯВКУ В WHATSAPP</span>
+                                </button>
+
+                                <p class="text-[10px] text-white/50 text-center font-mono uppercase mt-3">
+                                    🔒 Ваши данные защищены. Никакого спама. Прямая связь с офисом в Шардже.
+                                </p>
+                            </form>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
         <!-- 9. FAQ ACCORDION SECTION -->
         <section class="py-24 bg-[#FEFDFB] border-b border-grey-light" id="faq-section">
             <div class="max-w-[1000px] mx-auto px-6">
@@ -1797,6 +1919,123 @@
         })();
     </script>
 
+
+
+    <script>
+        // AWWWARDS 3D EXPLODED G-WAGON ASSEMBLY CANVAS ENGINE
+        (function() {
+            const canvas = document.getElementById('g-wagon-parts-canvas');
+            if (!canvas) return;
+
+            const ctx = canvas.getContext('2d');
+            let width = canvas.width = canvas.offsetWidth;
+            let height = canvas.height = canvas.offsetHeight;
+
+            window.addEventListener('resize', () => {
+                width = canvas.width = canvas.offsetWidth;
+                height = canvas.height = canvas.offsetHeight;
+            });
+
+            // G-Wagon Assembly Parts Data (Body, Wheels, Headlights, Roof Rack)
+            const parts = [
+                { name: 'Кузов AMG V8', color: '#1E1E1E', startX: -width, startY: -height/2, targetX: 0, targetY: 0, sizeW: 240, sizeH: 110 },
+                { name: 'Колеса 22" Forged', color: '#C5A059', startX: width, startY: height/2, targetX: -70, targetY: 35, sizeW: 45, sizeH: 45 },
+                { name: 'Колеса 22" Rear', color: '#C5A059', startX: width, startY: -height/2, targetX: 75, targetY: 35, sizeW: 45, sizeH: 45 },
+                { name: 'LED Оптика & Гриль', color: '#FEFDFB', startX: -width/2, startY: height, targetX: -95, targetY: 5, sizeW: 30, sizeH: 40 }
+            ];
+
+            let assemblyProgress = 0;
+            const slider = document.getElementById('assembly-slider');
+            const percentEl = document.getElementById('slider-percentage');
+            const badgeEl = document.getElementById('parts-assembled-badge');
+            const glowEl = document.getElementById('assembled-glow');
+
+            function renderAssembly() {
+                ctx.clearRect(0, 0, width, height);
+
+                // Draw Cybernetic Grid Platform
+                const centerX = width / 2;
+                const centerY = height / 2 + 30;
+
+                ctx.strokeStyle = 'rgba(197, 160, 89, 0.15)';
+                ctx.lineWidth = 1.5;
+                ctx.beginPath();
+                ctx.ellipse(centerX, centerY + 40, width * 0.38, height * 0.18, 0, 0, Math.PI * 2);
+                ctx.stroke();
+
+                const t = assemblyProgress / 100;
+                const ease = 1 - Math.pow(1 - t, 3);
+
+                // Draw Parts flying into central position
+                parts.forEach((p, idx) => {
+                    const currentX = centerX + p.targetX + (p.startX - p.targetX) * (1 - ease);
+                    const currentY = centerY + p.targetY + (p.startY - p.targetY) * (1 - ease);
+
+                    ctx.save();
+                    ctx.translate(currentX, currentY);
+
+                    // Draw Car Part Block with Neon Gold Outline
+                    ctx.fillStyle = p.color;
+                    ctx.shadowColor = '#C5A059';
+                    ctx.shadowBlur = 15 * ease;
+                    ctx.fillRect(-p.sizeW/2, -p.sizeH/2, p.sizeW, p.sizeH);
+
+                    ctx.strokeStyle = '#C5A059';
+                    ctx.lineWidth = 2;
+                    ctx.strokeRect(-p.sizeW/2, -p.sizeH/2, p.sizeW, p.sizeH);
+
+                    // Draw Part Name Tag
+                    ctx.fillStyle = '#FFFFFF';
+                    ctx.font = '10px Space Mono';
+                    ctx.fillText(p.name, -p.sizeW/2, -p.sizeH/2 - 8);
+                    ctx.restore();
+                });
+
+                // Update Badges & UI
+                if (percentEl) percentEl.innerText = Math.floor(assemblyProgress) + '%';
+                const assembledCount = Math.floor((assemblyProgress / 100) * 4);
+                if (badgeEl) badgeEl.innerText = `${assembledCount} / 4 ЗАПЧАСТЕЙ СОБРАНО`;
+
+                if (glowEl) {
+                    glowEl.style.opacity = assemblyProgress >= 90 ? (assemblyProgress - 90)/10 : 0;
+                }
+            }
+
+            if (slider) {
+                slider.addEventListener('input', (e) => {
+                    assemblyProgress = parseFloat(e.target.value);
+                    renderAssembly();
+                });
+            }
+
+            window.setAssemblyStep = function(val) {
+                assemblyProgress = val;
+                if (slider) slider.value = val;
+                renderAssembly();
+            };
+
+            renderAssembly();
+        })();
+
+        // Send Lead Details Directly to WhatsApp
+        window.sendWhatsAppLead = function(event) {
+            event.preventDefault();
+            const name = document.getElementById('lead-name').value;
+            const phone = document.getElementById('lead-phone').value;
+            const dest = document.getElementById('lead-destination').value;
+            const car = document.getElementById('lead-car').value || 'Mercedes G63 AMG';
+
+            const text = `Здравствуйте, Beknazar Logistics!%0A%0A` +
+                         `📌 *НОВАЯ ЗАЯВКА НА РАСЧЕТ ИЗ ОАЭ*%0A` +
+                         `👤 *Имя/Компания:* ${encodeURIComponent(name)}%0A` +
+                         `📞 *WhatsApp:* ${encodeURIComponent(phone)}%0A` +
+                         `📍 *Направление:* ${encodeURIComponent(dest)}%0A` +
+                         `🚘 *Автомобиль:* ${encodeURIComponent(car)}%0A%0A` +
+                         `Прошу прислать точный сметный расчет со всеми портовыми сборами.`;
+
+            window.open(`https://wa.me/971555299650?text=${text}`, '_blank');
+        };
+    </script>
 
 </body>
 </html>
