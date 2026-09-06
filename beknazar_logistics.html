@@ -1959,8 +1959,9 @@
 
 
 
+    
     <script>
-        // AWWWARDS 3D EXPLODED G-WAGON ASSEMBLY CANVAS ENGINE
+        // AWWWARDS SCROLL-DRIVEN 3D G-WAGON ASSEMBLY ENGINE
         (function() {
             const canvas = document.getElementById('g-wagon-parts-canvas');
             if (!canvas) return;
@@ -1976,13 +1977,14 @@
 
             // G-Wagon Assembly Parts Data (Body, Wheels, Headlights, Roof Rack)
             const parts = [
-                { name: 'Кузов AMG V8', color: '#1E1E1E', startX: -width, startY: -height/2, targetX: 0, targetY: 0, sizeW: 240, sizeH: 110 },
-                { name: 'Колеса 22" Forged', color: '#C5A059', startX: width, startY: height/2, targetX: -70, targetY: 35, sizeW: 45, sizeH: 45 },
-                { name: 'Колеса 22" Rear', color: '#C5A059', startX: width, startY: -height/2, targetX: 75, targetY: 35, sizeW: 45, sizeH: 45 },
-                { name: 'LED Оптика & Гриль', color: '#FEFDFB', startX: -width/2, startY: height, targetX: -95, targetY: 5, sizeW: 30, sizeH: 40 }
+                { name: 'Кузов AMG V8', color: '#1E1E1E', startX: -width * 0.8, startY: -height * 0.6, targetX: 0, targetY: 0, sizeW: 240, sizeH: 110 },
+                { name: 'Колеса 22" Forged', color: '#C5A059', startX: width * 0.8, startY: height * 0.6, targetX: -70, targetY: 35, sizeW: 45, sizeH: 45 },
+                { name: 'Колеса 22" Rear', color: '#C5A059', startX: width * 0.8, startY: -height * 0.6, targetX: 75, targetY: 35, sizeW: 45, sizeH: 45 },
+                { name: 'LED Оптика & Гриль', color: '#FEFDFB', startX: -width * 0.6, startY: height * 0.8, targetX: -95, targetY: 5, sizeW: 30, sizeH: 40 }
             ];
 
             let assemblyProgress = 0;
+            const section = document.getElementById('exploded-g-wagon-section');
             const slider = document.getElementById('assembly-slider');
             const percentEl = document.getElementById('slider-percentage');
             const badgeEl = document.getElementById('parts-assembled-badge');
@@ -1991,53 +1993,69 @@
             function renderAssembly() {
                 ctx.clearRect(0, 0, width, height);
 
-                // Draw Cybernetic Grid Platform
                 const centerX = width / 2;
-                const centerY = height / 2 + 30;
+                const centerY = height / 2 + 25;
 
-                ctx.strokeStyle = 'rgba(197, 160, 89, 0.15)';
+                // Draw Cybernetic Grid Platform
+                ctx.strokeStyle = 'rgba(197, 160, 89, 0.2)';
                 ctx.lineWidth = 1.5;
                 ctx.beginPath();
-                ctx.ellipse(centerX, centerY + 40, width * 0.38, height * 0.18, 0, 0, Math.PI * 2);
+                ctx.ellipse(centerX, centerY + 40, width * 0.4, height * 0.2, 0, 0, Math.PI * 2);
                 ctx.stroke();
 
                 const t = assemblyProgress / 100;
                 const ease = 1 - Math.pow(1 - t, 3);
 
                 // Draw Parts flying into central position
-                parts.forEach((p, idx) => {
+                parts.forEach((p) => {
                     const currentX = centerX + p.targetX + (p.startX - p.targetX) * (1 - ease);
                     const currentY = centerY + p.targetY + (p.startY - p.targetY) * (1 - ease);
 
                     ctx.save();
                     ctx.translate(currentX, currentY);
 
-                    // Draw Car Part Block with Neon Gold Outline
                     ctx.fillStyle = p.color;
                     ctx.shadowColor = '#C5A059';
-                    ctx.shadowBlur = 15 * ease;
+                    ctx.shadowBlur = 20 * ease;
                     ctx.fillRect(-p.sizeW/2, -p.sizeH/2, p.sizeW, p.sizeH);
 
                     ctx.strokeStyle = '#C5A059';
                     ctx.lineWidth = 2;
                     ctx.strokeRect(-p.sizeW/2, -p.sizeH/2, p.sizeW, p.sizeH);
 
-                    // Draw Part Name Tag
                     ctx.fillStyle = '#FFFFFF';
                     ctx.font = '10px Space Mono';
                     ctx.fillText(p.name, -p.sizeW/2, -p.sizeH/2 - 8);
                     ctx.restore();
                 });
 
-                // Update Badges & UI
                 if (percentEl) percentEl.innerText = Math.floor(assemblyProgress) + '%';
                 const assembledCount = Math.floor((assemblyProgress / 100) * 4);
                 if (badgeEl) badgeEl.innerText = `${assembledCount} / 4 ЗАПЧАСТЕЙ СОБРАНО`;
 
                 if (glowEl) {
-                    glowEl.style.opacity = assemblyProgress >= 90 ? (assemblyProgress - 90)/10 : 0;
+                    glowEl.style.opacity = assemblyProgress >= 85 ? (assemblyProgress - 85)/15 : 0;
                 }
             }
+
+            // Scroll Listener to Bind Page Scroll to 3D Part Assembly
+            window.addEventListener('scroll', () => {
+                if (!section) return;
+                const rect = section.getBoundingClientRect();
+                const windowHeight = window.innerHeight;
+
+                if (rect.top <= windowHeight && rect.bottom >= 0) {
+                    const totalScrollable = rect.height + windowHeight;
+                    const scrolled = windowHeight - rect.top;
+                    let scrollPercent = (scrolled / totalScrollable) * 100 * 1.5;
+                    if (scrollPercent < 0) scrollPercent = 0;
+                    if (scrollPercent > 100) scrollPercent = 100;
+
+                    assemblyProgress = scrollPercent;
+                    if (slider) slider.value = scrollPercent;
+                    renderAssembly();
+                }
+            });
 
             if (slider) {
                 slider.addEventListener('input', (e) => {
@@ -2074,6 +2092,7 @@
             window.open(`https://wa.me/971555299650?text=${text}`, '_blank');
         };
     </script>
+
 
 </body>
 </html>
