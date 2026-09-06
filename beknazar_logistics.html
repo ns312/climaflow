@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BEKNAZAR GENERAL TRADING | Логистика и Доставка Авто из ОАЭ в РФ, Грузию, Казахстан и Турцию</title>
+    <title>BEKNAZAR SUIUNBEK GEN TR LLC | Логистика и Доставка Авто из ОАЭ в РФ, Грузию, Казахстан и Турцию</title>
     <meta name="description" content="Официальная доставка автомобилей и грузов из ОАЭ под ключ. Выкуп в Дубае, RTA экспорт, морской фрахт, T1 транзит, СБКТС, ЭПТС и закрытие Утилизационного сбора.">
     
     <!-- Tailwind CSS -->
@@ -84,6 +84,16 @@
         50% { transform: scale(1.06); box-shadow: 0 0 0 16px rgba(37, 211, 102, 0); }
       }
 
+      /* Marquee Animation */
+      @keyframes marquee {
+        0% { transform: translateX(0%); }
+        100% { transform: translateX(-50%); }
+      }
+      .animate-marquee {
+        display: flex; width: 200%; animation: marquee 30s linear infinite;
+      }
+      .animate-marquee:hover { animation-play-state: paused; }
+
       .track-3d {
         animation: mobileCarouselSpin3D 22s linear infinite;
         transform-style: preserve-3d;
@@ -98,12 +108,28 @@
         animation: pulseGlow 2.5s infinite;
       }
 
-      /* Mobile Accordion Smooth Reveal */
-      #mega-menu-inner .mobile-accordion-wrapper {
-        display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+      /* 3D Tilt Card Base */
+      .tilt-card {
+        transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease;
+        transform-style: preserve-3d;
       }
-      #mega-menu-inner .mobile-accordion-wrapper.is-open { grid-template-rows: 1fr; }
-      #mega-menu-inner .mobile-accordion-inner { overflow: hidden; }
+
+      /* Scroll Reveal */
+      .reveal {
+        opacity: 0; transform: translateY(35px); transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .reveal.active {
+        opacity: 1; transform: translateY(0);
+      }
+
+      /* SVG Map Line Dash Animation */
+      @keyframes dash {
+        to { stroke-dashoffset: -40; }
+      }
+      .animated-route-line {
+        stroke-dasharray: 8, 8;
+        animation: dash 1.5s linear infinite;
+      }
     </style>
 </head>
 <body class="antialiased text-dark">
@@ -111,7 +137,7 @@
     <!-- FLOATING WHATSAPP BUTTON -->
     <a href="https://wa.me/971555299650?text=Здравствуйте!%20Интересует%20расчет%20доставки%20авто%20из%20ОАЭ." 
        target="_blank" rel="noopener noreferrer" 
-       class="fixed bottom-7 right-7 z-[9999] flex items-center justify-center w-16 h-16 bg-[#25D366] text-white rounded-full shadow-2xl wa-pulse hover:scale-110 transition-transform duration-300"
+       class="magnetic-btn fixed bottom-7 right-7 z-[9999] flex items-center justify-center w-16 h-16 bg-[#25D366] text-white rounded-full shadow-2xl wa-pulse hover:scale-110 transition-transform duration-300"
        aria-label="Написать в WhatsApp">
         <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="currentColor">
             <path d="M20.52 3.48A11.88 11.88 0 0 0 12.06 0C5.52 0 .24 5.28.24 11.82c0 2.08.56 4.12 1.62 5.92L0 24l6.44-1.68a11.78 11.78 0 0 0 5.62 1.44h.01c6.54 0 11.82-5.28 11.82-11.82 0-3.16-1.23-6.13-3.37-8.46ZM12.06 21.78h-.01c-1.9 0-3.77-.51-5.41-1.47l-.39-.23-3.82 1 1.02-3.73-.25-.38a9.82 9.82 0 0 1-1.5-5.24C1.7 6.4 6.7 1.4 12.06 1.4c2.63 0 5.1 1.02 6.96 2.88a9.79 9.79 0 0 1 2.88 6.95c0 5.36-5 10.55-9.84 10.55Zm5.7-7.35c-.31-.15-1.82-.9-2.1-1-.28-.1-.48-.15-.68.15-.2.31-.78 1-.95 1.2-.18.2-.35.23-.66.08-.31-.15-1.3-.48-2.48-1.53-.92-.82-1.54-1.83-1.72-2.14-.18-.31-.02-.48.13-.63.14-.14.31-.35.46-.53.15-.18.2-.31.31-.51.1-.2.05-.38-.03-.53-.08-.15-.68-1.64-.93-2.25-.24-.58-.48-.5-.68-.51h-.58c-.2 0-.53.08-.8.38-.28.311.05 1.03-1.05 2.5 0 1.47 1.08 2.89 1.23 3.09.15.2 2.12 3.24 5.13 4.54.72.31 1.28.49 1.72.63.72.23 1.38.2 1.9.12.58-.09 1.82-.74 2.08-1.46.26-.72.26-1.33.18-1.46-.08-.13-.28-.2-.58-.35Z"/>
@@ -125,12 +151,12 @@
             <!-- Logo -->
             <a href="#" class="flex items-center gap-3 group cursor-pointer z-50 relative">
                 <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 bg-dark text-white rounded-lg flex items-center justify-center font-oswald text-xl font-bold tracking-widest border border-gold">
+                    <div class="w-10 h-10 bg-dark text-white rounded-lg flex items-center justify-center font-oswald text-xl font-bold tracking-widest border border-gold shadow-md">
                         B
                     </div>
                     <div class="flex flex-col">
                         <span class="text-dark leading-none text-lg font-bold tracking-tight font-oswald uppercase">BEKNAZAR</span>
-                        <span class="text-[9px] font-mono text-gold tracking-widest uppercase mt-0.5">GENERAL TRADING UAE</span>
+                        <span class="text-[9px] font-mono text-gold tracking-widest uppercase mt-0.5">SUIUNBEK GEN TR LLC</span>
                     </div>
                 </div>
             </a>
@@ -140,9 +166,9 @@
                 <div class="flex items-center gap-6">
                     <a href="#hero-section" class="text-dark/70 hover:text-dark transition-colors text-xs font-semibold tracking-wider font-mono uppercase">Главная</a>
                     <a href="#calculator-section" class="text-dark/70 hover:text-dark transition-colors text-xs font-semibold tracking-wider font-mono uppercase">Калькулятор</a>
-                    <a href="#corridors-section" class="text-dark/70 hover:text-dark transition-colors text-xs font-semibold tracking-wider font-mono uppercase">Маршруты</a>
+                    <a href="#map-section" class="text-dark/70 hover:text-dark transition-colors text-xs font-semibold tracking-wider font-mono uppercase">Карта & Маршруты</a>
                     <a href="#process-timeline" class="text-dark/70 hover:text-dark transition-colors text-xs font-semibold tracking-wider font-mono uppercase">Процесс 7 шагов</a>
-                    <a href="#guarantee-section" class="text-dark/70 hover:text-dark transition-colors text-xs font-semibold tracking-wider font-mono uppercase">Гарантии</a>
+                    <a href="#split-section" class="text-dark/70 hover:text-dark transition-colors text-xs font-semibold tracking-wider font-mono uppercase">До/После</a>
                     <a href="#faq-section" class="text-dark/70 hover:text-dark transition-colors text-xs font-semibold tracking-wider font-mono uppercase">FAQ</a>
                 </div>
             </nav>
@@ -151,7 +177,7 @@
             <div class="flex items-center gap-4 z-50 relative">
                 <a href="https://wa.me/971555299650?text=Здравствуйте!%20Хочу%20рассчитать%20стоимость%20доставки%20авто%20из%20Дубая." 
                    target="_blank" rel="noopener noreferrer" 
-                   class="hidden md:flex items-center gap-2 uppercase transition bg-dark hover:bg-gold text-white hover:text-dark text-xs font-bold tracking-widest rounded-full py-3 px-6 shadow-md font-mono">
+                   class="magnetic-btn hidden md:flex items-center gap-2 uppercase transition bg-dark hover:bg-gold text-white hover:text-dark text-xs font-bold tracking-widest rounded-full py-3 px-6 shadow-md font-mono">
                     <span>Расчет в WhatsApp</span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
                 </a>
@@ -164,14 +190,11 @@
 
             <!-- MEGA MENU OVERLAY -->
             <div id="mega-menu-aura" class="fixed z-[100] md:p-12 transition-all duration-500 ease-out flex bg-[#1A1A1A]/95 opacity-0 invisible p-4 inset-0 items-center justify-center backdrop-blur-xl">
-                <!-- Close Button -->
                 <button onclick="toggleMegaMenu(false)" class="absolute top-6 right-6 md:top-8 md:right-8 z-[110] text-white hover:text-gold transition-colors p-3 bg-white/10 rounded-full cursor-pointer">
                     <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
                 </button>
 
-                <!-- Inner Modal -->
                 <div id="mega-menu-inner" class="w-full h-full max-w-[1200px] max-h-[85vh] relative flex flex-col md:flex-row shadow-2xl transition-all duration-700 ease-out scale-95 opacity-0 bg-white overflow-hidden rounded-2xl">
-                    <!-- Navigation List -->
                     <div class="w-full md:w-[50%] h-full relative flex flex-col justify-between p-8 md:p-16 bg-white">
                         <div class="flex flex-col gap-6">
                             <span class="text-xs font-mono text-gold uppercase tracking-widest">( НАВИГАЦИЯ РАЗДЕЛОВ )</span>
@@ -182,14 +205,14 @@
                                 <a href="#calculator-section" onclick="toggleMegaMenu(false)" class="text-2xl md:text-3xl font-oswald uppercase tracking-wide text-dark hover:text-gold transition-colors flex items-center justify-between border-b border-grey-light pb-3">
                                     <span>02. Калькулятор Стоимости</span> <span class="text-xs font-mono text-grey-mid">ОНЛАЙН РАСЧЕТ</span>
                                 </a>
-                                <a href="#corridors-section" onclick="toggleMegaMenu(false)" class="text-2xl md:text-3xl font-oswald uppercase tracking-wide text-dark hover:text-gold transition-colors flex items-center justify-between border-b border-grey-light pb-3">
-                                    <span>03. Коридоры & Маршруты</span> <span class="text-xs font-mono text-grey-mid">РФ, ГРУЗИЯ, КЗ, ТУРЦИЯ</span>
+                                <a href="#map-section" onclick="toggleMegaMenu(false)" class="text-2xl md:text-3xl font-oswald uppercase tracking-wide text-dark hover:text-gold transition-colors flex items-center justify-between border-b border-grey-light pb-3">
+                                    <span>03. Интерактивная Карта</span> <span class="text-xs font-mono text-grey-mid">РФ, ГРУЗИЯ, КЗ, ТУРЦИЯ</span>
                                 </a>
                                 <a href="#process-timeline" onclick="toggleMegaMenu(false)" class="text-2xl md:text-3xl font-oswald uppercase tracking-wide text-dark hover:text-gold transition-colors flex items-center justify-between border-b border-grey-light pb-3">
                                     <span>04. Процесс 7 Шагов</span> <span class="text-xs font-mono text-grey-mid">ОТ ВЫКУПА ДО КЛЮЧЕЙ</span>
                                 </a>
-                                <a href="#guarantee-section" onclick="toggleMegaMenu(false)" class="text-2xl md:text-3xl font-oswald uppercase tracking-wide text-dark hover:text-gold transition-colors flex items-center justify-between border-b border-grey-light pb-3">
-                                    <span>05. Гарантии & Договор</span> <span class="text-xs font-mono text-grey-mid">100% СТРАХОВАНИЕ</span>
+                                <a href="#split-section" onclick="toggleMegaMenu(false)" class="text-2xl md:text-3xl font-oswald uppercase tracking-wide text-dark hover:text-gold transition-colors flex items-center justify-between border-b border-grey-light pb-3">
+                                    <span>05. Безопасность 360°</span> <span class="text-xs font-mono text-grey-mid">ИНСПЕКЦИЯ & ПОГРУЗКА</span>
                                 </a>
                                 <a href="#faq-section" onclick="toggleMegaMenu(false)" class="text-2xl md:text-3xl font-oswald uppercase tracking-wide text-dark hover:text-gold transition-colors flex items-center justify-between">
                                     <span>06. Вопросы и Ответы</span> <span class="text-xs font-mono text-grey-mid">ТАМОЖНЯ & УТИЛЬСБОР</span>
@@ -203,7 +226,6 @@
                         </div>
                     </div>
 
-                    <!-- Right Image Preview Area -->
                     <div class="hidden md:block w-[50%] h-full relative bg-dark">
                         <img src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?q=80&w=1200&auto=format&fit=crop" alt="Dubai Logistics Hub" class="w-full h-full object-cover opacity-60">
                         <div class="absolute inset-0 bg-gradient-to-t from-dark via-transparent to-transparent"></div>
@@ -219,22 +241,30 @@
         </div>
     </header>
 
-    <!-- MAIN CONTENT AREA -->
-    <main class="pt-20 min-h-screen">
+    <!-- MARQUEE LIVE TRACKING TICKER -->
+    <div class="fixed top-20 left-0 w-full z-40 bg-dark text-white border-b border-gold/30 py-2.5 overflow-hidden font-mono text-xs shadow-md">
+        <div class="animate-marquee whitespace-nowrap flex gap-12 items-center">
+            <span class="inline-flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-red-500 animate-ping"></span> <strong class="text-gold">ДУБАЙ $\rightarrow$ МОСКВА:</strong> PORSCHE CAYENNE 2024 [В ПУТИ / МОРСКОЙ ФРАХТ]</span>
+            <span class="inline-flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-[#25D366]"></span> <strong class="text-gold">ДУБАЙ $\rightarrow$ ПОТИ:</strong> MERCEDES G63 AMG [ТРАНЗИТ T1 ВЫПУЩЕН]</span>
+            <span class="inline-flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-blue-400"></span> <strong class="text-gold">ДУБАЙ $\rightarrow$ АЛМАТЫ:</strong> BMW X7 M-SPORT [ВЫГРУЗКА НА ТЕРМИНАЛЕ]</span>
+            <span class="inline-flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-yellow-400"></span> <strong class="text-gold">ДУБАЙ $\rightarrow$ МЕРСИН:</strong> RANGE ROVER AUTOBIOGRAPHY [ГОТОВ К ВЫДАЧЕ]</span>
+            <span class="inline-flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-red-500 animate-ping"></span> <strong class="text-gold">ДУБАЙ $\rightarrow$ МОСКВА:</strong> LI AUTO L9 [ПОГРУЗКА В КОНТЕЙНЕР 40FT]</span>
+        </div>
+    </div>
 
-        <!-- 1. HERO SECTION (Alex Hormozi Grand Slam Offer) -->
+    <!-- MAIN CONTENT AREA -->
+    <main class="pt-28 min-h-screen">
+
+        <!-- 1. HERO SECTION (Alex Hormozi Offer) -->
         <section class="overflow-hidden w-full min-h-screen relative flex items-center justify-center bg-dark text-white" id="hero-section">
-            <!-- Background Image with Overlay -->
             <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?q=80&w=1920&auto=format&fit=crop" 
                  alt="Dubai Luxury Car Cargo Logistics" 
                  class="z-10 w-full h-full object-cover absolute inset-0 opacity-40">
 
             <div class="absolute inset-0 z-20 bg-gradient-to-t from-dark via-dark/60 to-transparent"></div>
 
-            <!-- Content Area -->
             <div class="z-30 max-w-[1200px] mx-auto px-6 py-28 text-center flex flex-col items-center justify-center">
                 
-                <!-- Tagline Badge -->
                 <div class="inline-flex items-center gap-3 bg-white/10 border border-gold/40 rounded-full py-2 px-5 backdrop-blur-md mb-8">
                     <span class="w-2.5 h-2.5 bg-[#25D366] rounded-full animate-ping"></span>
                     <span class="text-[10px] md:text-xs font-mono uppercase font-bold text-white tracking-[0.2em]">
@@ -242,61 +272,58 @@
                     </span>
                 </div>
 
-                <!-- Main Headline -->
                 <h1 class="font-oswald text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold uppercase tracking-tight leading-[0.95] text-white mb-8 drop-shadow-2xl">
                     ДОСТАВКА АВТО И ГРУЗОВ ИЗ ОАЭ <br>
                     <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold via-white to-gold">ПРОЗРАЧНО И ПОД КЛЮЧ ЗА 18–35 ДНЕЙ</span>
                 </h1>
 
-                <!-- Sub-Headline -->
                 <p class="font-manrope text-base sm:text-xl md:text-2xl text-white/90 font-light max-w-4xl mb-12 leading-relaxed">
                     Выкуп на площадках Дубая (Al Aweer, Ras Al Khor), экспортные документы RTA & VCC, морской фрахт, таможенный транзит T1, СБКТС, ЭПТС и закрытие Утилизационного сбора. <strong class="text-gold font-semibold">100% Фиксированная цена по договору и страхование всех рисков.</strong>
                 </p>
 
-                <!-- Action Buttons -->
                 <div class="flex flex-col sm:flex-row items-center gap-5 w-full sm:w-auto">
                     <a href="#calculator-section" 
-                       class="w-full sm:w-auto uppercase transition duration-300 bg-gold hover:bg-white text-dark text-xs font-bold tracking-[0.2em] font-mono rounded-full py-5 px-10 shadow-2xl flex items-center justify-center gap-3">
+                       class="magnetic-btn w-full sm:w-auto uppercase transition duration-300 bg-gold hover:bg-white text-dark text-xs font-bold tracking-[0.2em] font-mono rounded-full py-5 px-10 shadow-2xl flex items-center justify-center gap-3">
                         <span>Рассчитать стоимость онлайн</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
                     </a>
 
                     <a href="https://wa.me/971555299650?text=Здравствуйте!%20Хочу%20получить%20бесплатную%20консультацию%20по%20доставке%20авто%20из%20ОАЭ." 
                        target="_blank" rel="noopener noreferrer"
-                       class="w-full sm:w-auto uppercase transition duration-300 bg-white/10 hover:bg-white/20 border border-white/30 text-white text-xs font-bold tracking-[0.2em] font-mono rounded-full py-5 px-10 backdrop-blur-md flex items-center justify-center gap-3">
+                       class="magnetic-btn w-full sm:w-auto uppercase transition duration-300 bg-white/10 hover:bg-white/20 border border-white/30 text-white text-xs font-bold tracking-[0.2em] font-mono rounded-full py-5 px-10 backdrop-blur-md flex items-center justify-center gap-3">
                         <iconify-icon icon="logos:whatsapp-icon" width="20" height="20"></iconify-icon>
                         <span>Написать руководителю в WA</span>
                     </a>
                 </div>
 
-                <!-- Trust Metrics -->
+                <!-- Animated Stat Counters -->
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 pt-12 border-t border-white/15 w-full max-w-4xl">
                     <div class="flex flex-col items-center">
-                        <span class="font-oswald text-3xl md:text-4xl font-bold text-gold">100%</span>
-                        <span class="text-[11px] font-mono uppercase tracking-widest text-white/70 mt-1">Страхование All-Risk</span>
+                        <span class="font-oswald text-4xl md:text-5xl font-bold text-gold counter" data-target="100">0</span>
+                        <span class="text-[11px] font-mono uppercase tracking-widest text-white/70 mt-1">% Страхование All-Risk</span>
                     </div>
                     <div class="flex flex-col items-center">
-                        <span class="font-oswald text-3xl md:text-4xl font-bold text-gold">18–35</span>
-                        <span class="text-[11px] font-mono uppercase tracking-widest text-white/70 mt-1">Дней средний срок</span>
+                        <span class="font-oswald text-4xl md:text-5xl font-bold text-gold counter" data-target="18">0</span>
+                        <span class="text-[11px] font-mono uppercase tracking-widest text-white/70 mt-1">Дней минимальный срок</span>
                     </div>
                     <div class="flex flex-col items-center">
-                        <span class="font-oswald text-3xl md:text-4xl font-bold text-gold">$0</span>
+                        <span class="font-oswald text-4xl md:text-5xl font-bold text-gold">$0</span>
                         <span class="text-[11px] font-mono uppercase tracking-widest text-white/70 mt-1">Скрытых платежей</span>
                     </div>
                     <div class="flex flex-col items-center">
-                        <span class="font-oswald text-3xl md:text-4xl font-bold text-gold">450+</span>
-                        <span class="text-[11px] font-mono uppercase tracking-widest text-white/70 mt-1">Доставленных авто</span>
+                        <span class="font-oswald text-4xl md:text-5xl font-bold text-gold counter" data-target="450">0</span>
+                        <span class="text-[11px] font-mono uppercase tracking-widest text-white/70 mt-1">+ Доставленных авто</span>
                     </div>
                 </div>
 
             </div>
         </section>
 
-        <!-- 2. PROBLEM & WARNING SECTION (Filtering Buyers & Calling Out Traps) -->
+        <!-- 2. PROBLEM & WARNING SECTION (With 3D Tilt Cards) -->
         <section class="py-24 bg-[#F5F5F5] border-b border-grey-light" id="problem-section">
             <div class="max-w-[1200px] mx-auto px-6">
                 
-                <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="text-center max-w-3xl mx-auto mb-16 reveal">
                     <span class="text-xs font-mono uppercase tracking-[0.25em] text-gold font-bold mb-3 block">( ОСТОРОЖНО: РИСКИ ИМПОРТА )</span>
                     <h2 class="font-oswald text-3xl md:text-5xl font-bold uppercase tracking-tight text-dark leading-tight">
                         ПОЧЕМУ 80% ПОКУПАТЕЛЕЙ ТЕРЯЮТ ДЕНЬГИ И НЕРВЫ ПРИ ДОСТАВКЕ АВТО ИЗ ОАЭ?
@@ -306,7 +333,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     
                     <!-- Trap 1 -->
-                    <div class="bg-white p-8 rounded-2xl border border-grey-light shadow-sm flex flex-col justify-between">
+                    <div class="tilt-card reveal bg-white p-8 rounded-2xl border border-grey-light shadow-sm flex flex-col justify-between hover:shadow-2xl">
                         <div>
                             <div class="w-12 h-12 bg-red-100 text-red-600 rounded-xl flex items-center justify-center mb-6 font-mono font-bold text-lg">01</div>
                             <h3 class="font-oswald text-xl font-bold uppercase text-dark mb-3">Скрытые платежи в портах</h3>
@@ -320,7 +347,7 @@
                     </div>
 
                     <!-- Trap 2 -->
-                    <div class="bg-white p-8 rounded-2xl border border-grey-light shadow-sm flex flex-col justify-between">
+                    <div class="tilt-card reveal bg-white p-8 rounded-2xl border border-grey-light shadow-sm flex flex-col justify-between hover:shadow-2xl">
                         <div>
                             <div class="w-12 h-12 bg-red-100 text-red-600 rounded-xl flex items-center justify-center mb-6 font-mono font-bold text-lg">02</div>
                             <h3 class="font-oswald text-xl font-bold uppercase text-dark mb-3">Повреждения кузова без страховки</h3>
@@ -334,7 +361,7 @@
                     </div>
 
                     <!-- Trap 3 -->
-                    <div class="bg-white p-8 rounded-2xl border border-grey-light shadow-sm flex flex-col justify-between">
+                    <div class="tilt-card reveal bg-white p-8 rounded-2xl border border-grey-light shadow-sm flex flex-col justify-between hover:shadow-2xl">
                         <div>
                             <div class="w-12 h-12 bg-red-100 text-red-600 rounded-xl flex items-center justify-center mb-6 font-mono font-bold text-lg">03</div>
                             <h3 class="font-oswald text-xl font-bold uppercase text-dark mb-3">Задержки на таможне T1</h3>
@@ -348,7 +375,7 @@
                     </div>
 
                     <!-- Trap 4 -->
-                    <div class="bg-white p-8 rounded-2xl border border-grey-light shadow-sm flex flex-col justify-between">
+                    <div class="tilt-card reveal bg-white p-8 rounded-2xl border border-grey-light shadow-sm flex flex-col justify-between hover:shadow-2xl">
                         <div>
                             <div class="w-12 h-12 bg-red-100 text-red-600 rounded-xl flex items-center justify-center mb-6 font-mono font-bold text-lg">04</div>
                             <h3 class="font-oswald text-xl font-bold uppercase text-dark mb-3">Штрафной Коммерческий Утильсбор</h3>
@@ -369,7 +396,7 @@
         <section class="py-24 bg-white border-b border-grey-light" id="calculator-section">
             <div class="max-w-[1200px] mx-auto px-6">
                 
-                <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="text-center max-w-3xl mx-auto mb-16 reveal">
                     <span class="text-xs font-mono uppercase tracking-[0.25em] text-gold font-bold mb-3 block">( ОНЛАЙН РАСЧЕТ ДОСТАВКИ )</span>
                     <h2 class="font-oswald text-3xl md:text-5xl font-bold uppercase tracking-tight text-dark">
                         КАЛЬКУЛЯТОР ЛОГИСТИКИ ИЗ ОАЭ
@@ -377,7 +404,7 @@
                     <p class="text-sm font-manrope text-grey-dark mt-3">Выберите параметры вашего автомобиля и направление для моментального расчета примерной стоимости и сроков.</p>
                 </div>
 
-                <div class="bg-[#1A1A1A] text-white rounded-3xl p-8 md:p-14 shadow-2xl border border-gold/30">
+                <div class="tilt-card reveal bg-[#1A1A1A] text-white rounded-3xl p-8 md:p-14 shadow-2xl border border-gold/30">
                     <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
                         
                         <!-- Controls Column -->
@@ -437,7 +464,7 @@
 
                             <div class="mt-8">
                                 <button type="button" onclick="sendCalcToWA()" 
-                                        class="w-full bg-[#25D366] hover:bg-[#20bd5a] text-white font-mono text-xs font-bold uppercase tracking-widest py-4 px-6 rounded-xl transition-all duration-300 flex items-center justify-center gap-3 shadow-lg">
+                                        class="magnetic-btn w-full bg-[#25D366] hover:bg-[#20bd5a] text-white font-mono text-xs font-bold uppercase tracking-widest py-4 px-6 rounded-xl transition-all duration-300 flex items-center justify-center gap-3 shadow-lg">
                                     <iconify-icon icon="logos:whatsapp-icon" width="20" height="20"></iconify-icon>
                                     <span>Получить точную смету в WA</span>
                                 </button>
@@ -450,15 +477,15 @@
             </div>
         </section>
 
-        <!-- 4. THE 4 PRIMARY CORRIDORS (Assortment Cards) -->
-        <section class="py-24 bg-[#FEFDFB] border-b border-grey-light" id="corridors-section">
+        <!-- 4. INTERACTIVE ROUTE MAP & CORRIDORS -->
+        <section class="py-24 bg-[#FEFDFB] border-b border-grey-light" id="map-section">
             <div class="max-w-[1400px] mx-auto px-6">
                 
-                <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6 reveal">
                     <div>
-                        <span class="text-xs font-mono uppercase tracking-[0.25em] text-gold font-bold mb-3 block">( ГЕОГРАФИЯ ДОСТАВКИ )</span>
+                        <span class="text-xs font-mono uppercase tracking-[0.25em] text-gold font-bold mb-3 block">( ИНТЕРАКТИВНАЯ КАРТА ЛОГИСТИКИ )</span>
                         <h2 class="font-oswald text-4xl md:text-6xl font-bold uppercase tracking-tight text-dark">
-                            КЛЮЧЕВЫЕ МАРШРУТЫ
+                            КЛЮЧЕВЫЕ МАРШРУТЫ И ТЕРМИНАЛЫ
                         </h2>
                     </div>
                     <p class="text-sm font-manrope text-grey-dark max-w-md">
@@ -466,11 +493,69 @@
                     </p>
                 </div>
 
+                <!-- Animated SVG Route Map Container -->
+                <div class="bg-dark rounded-3xl p-8 md:p-12 mb-16 border border-gold/30 shadow-2xl relative overflow-hidden text-white reveal">
+                    <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#C5A059_1px,transparent_1px)] [background-size:16px_16px]"></div>
+                    
+                    <div class="relative z-10">
+                        <div class="flex items-center justify-between mb-8 flex-wrap gap-4">
+                            <div class="flex items-center gap-3">
+                                <span class="w-3 h-3 rounded-full bg-[#25D366] animate-ping"></span>
+                                <span class="text-xs font-mono uppercase font-bold text-gold tracking-widest">ЖИВОЙ МОНИТОРИНГ КОРИДОРОВ 2026</span>
+                            </div>
+                            <div class="flex items-center gap-6 text-xs font-mono text-white/70">
+                                <span class="flex items-center gap-2"><span class="w-3 h-0.5 bg-gold"></span> Морской фрахт</span>
+                                <span class="flex items-center gap-2"><span class="w-3 h-0.5 bg-[#25D366]"></span> Автовоз / Трал</span>
+                            </div>
+                        </div>
+
+                        <!-- Vector Interactive Routes SVG -->
+                        <div class="w-full h-[300px] md:h-[400px] relative flex items-center justify-center">
+                            <svg class="w-full h-full" viewBox="0 0 1000 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <!-- Background Map Outline Dots -->
+                                <!-- Dubai Node (150, 400) -->
+                                <circle cx="150" cy="400" r="10" fill="#C5A059" class="animate-pulse"/>
+                                <text x="150" y="430" fill="#FFFFFF" font-family="Space Mono" font-size="12" font-weight="bold" text-anchor="middle">ДУБАЙ / ШАРДЖА (ОАЭ)</text>
+
+                                <!-- Bandar Abbas Node (350, 320) -->
+                                <circle cx="350" cy="320" r="6" fill="#C5A059"/>
+                                <text x="350" y="345" fill="#C5A059" font-family="Space Mono" font-size="10" text-anchor="middle">Бендер-Аббас</text>
+
+                                <!-- Poti Georgia Node (500, 200) -->
+                                <circle cx="500" cy="200" r="8" fill="#25D366" class="animate-pulse"/>
+                                <text x="500" y="180" fill="#25D366" font-family="Space Mono" font-size="11" font-weight="bold" text-anchor="middle">ПОТИ / БАТУМИ (ГРУЗИЯ)</text>
+
+                                <!-- Mersin Turkey Node (400, 240) -->
+                                <circle cx="400" cy="240" r="7" fill="#C5A059"/>
+                                <text x="400" y="265" fill="#FFFFFF" font-family="Space Mono" font-size="10" text-anchor="middle">Мерсин (Турция)</text>
+
+                                <!-- Moscow Russia Node (750, 100) -->
+                                <circle cx="750" cy="100" r="10" fill="#C5A059" class="animate-pulse"/>
+                                <text x="750" y="80" fill="#FFFFFF" font-family="Space Mono" font-size="12" font-weight="bold" text-anchor="middle">МОСКВА (РОССИЯ)</text>
+
+                                <!-- Almaty Kazakhstan Node (850, 280) -->
+                                <circle cx="850" cy="280" r="8" fill="#C5A059"/>
+                                <text x="850" y="305" fill="#FFFFFF" font-family="Space Mono" font-size="11" text-anchor="middle">Алматы (Казахстан)</text>
+
+                                <!-- Animated Shipping Paths -->
+                                <!-- Dubai -> Poti -->
+                                <path d="M 150 400 C 250 350, 380 250, 500 200" stroke="#C5A059" stroke-width="3" class="animated-route-line"/>
+                                <!-- Poti -> Moscow -->
+                                <path d="M 500 200 L 750 100" stroke="#25D366" stroke-width="3" class="animated-route-line"/>
+                                <!-- Dubai -> Mersin -->
+                                <path d="M 150 400 L 400 240" stroke="#C5A059" stroke-width="2" stroke-dasharray="4 4"/>
+                                <!-- Dubai -> Almaty -->
+                                <path d="M 150 400 C 450 380, 650 350, 850 280" stroke="#C5A059" stroke-width="2" stroke-dasharray="4 4"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- 4 Accordion Grid Cards -->
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     
                     <!-- Corridor 1: Russia -->
-                    <div class="group relative bg-surface border border-grey-light rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-500 flex flex-col justify-between">
+                    <div class="tilt-card reveal group relative bg-surface border border-grey-light rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-500 flex flex-col justify-between">
                         <div class="h-64 relative overflow-hidden">
                             <img src="https://images.unsplash.com/photo-1513326738677-b964603b136d?q=80&w=800&auto=format&fit=crop" alt="Доставка авто в Россию" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                             <div class="absolute inset-0 bg-gradient-to-t from-dark via-transparent to-transparent opacity-80"></div>
@@ -491,7 +576,7 @@
                     </div>
 
                     <!-- Corridor 2: Georgia -->
-                    <div class="group relative bg-surface border border-grey-light rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-500 flex flex-col justify-between">
+                    <div class="tilt-card reveal group relative bg-surface border border-grey-light rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-500 flex flex-col justify-between">
                         <div class="h-64 relative overflow-hidden">
                             <img src="https://images.unsplash.com/photo-1565008447742-97f6f38c985c?q=80&w=800&auto=format&fit=crop" alt="Доставка авто в Грузию Поти" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                             <div class="absolute inset-0 bg-gradient-to-t from-dark via-transparent to-transparent opacity-80"></div>
@@ -512,7 +597,7 @@
                     </div>
 
                     <!-- Corridor 3: Kazakhstan -->
-                    <div class="group relative bg-surface border border-grey-light rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-500 flex flex-col justify-between">
+                    <div class="tilt-card reveal group relative bg-surface border border-grey-light rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-500 flex flex-col justify-between">
                         <div class="h-64 relative overflow-hidden">
                             <img src="https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?q=80&w=800&auto=format&fit=crop" alt="Доставка авто в Казахстан" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                             <div class="absolute inset-0 bg-gradient-to-t from-dark via-transparent to-transparent opacity-80"></div>
@@ -533,7 +618,7 @@
                     </div>
 
                     <!-- Corridor 4: Turkey -->
-                    <div class="group relative bg-surface border border-grey-light rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-500 flex flex-col justify-between">
+                    <div class="tilt-card reveal group relative bg-surface border border-grey-light rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-500 flex flex-col justify-between">
                         <div class="h-64 relative overflow-hidden">
                             <img src="https://images.unsplash.com/photo-1527838832700-54595d24a194?q=80&w=800&auto=format&fit=crop" alt="Доставка авто в Турцию" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                             <div class="absolute inset-0 bg-gradient-to-t from-dark via-transparent to-transparent opacity-80"></div>
@@ -557,11 +642,56 @@
             </div>
         </section>
 
-        <!-- 5. 3D PERSPECTIVE CAROUSEL OF REAL SHIPPED CARS -->
+        <!-- 5. BEFORE / AFTER INTERACTIVE SPLIT SLIDER -->
+        <section class="py-24 bg-white border-b border-grey-light" id="split-section">
+            <div class="max-w-[1200px] mx-auto px-6">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                    <span class="text-xs font-mono uppercase tracking-[0.25em] text-gold font-bold mb-3 block">( СТАВИТЕ БЕГУНОК ДЛЯ СРАВНЕНИЯ )</span>
+                    <h2 class="font-oswald text-3xl md:text-5xl font-bold uppercase tracking-tight text-dark">
+                        БЕЗОПАСНОСТЬ 360°: ИНСПЕКЦИЯ $\rightarrow$ ПОГРУЗКА
+                    </h2>
+                    <p class="text-sm font-manrope text-grey-dark mt-3">Потяните бегунок по центру, чтобы увидеть разницу между осмотром на авторынке и профессиональным креплением в контейнере.</p>
+                </div>
+
+                <!-- Split Container -->
+                <div class="relative w-full h-[400px] md:h-[550px] rounded-3xl overflow-hidden shadow-2xl border border-grey-light select-none reveal" id="split-container">
+                    
+                    <!-- Right Image (After: Loaded in Container) -->
+                    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1600&auto=format&fit=crop" 
+                         alt="Закрепленный авто в контейнере" 
+                         class="absolute inset-0 w-full h-full object-cover">
+                    <div class="absolute bottom-8 right-8 bg-dark/80 backdrop-blur-md text-white font-mono text-xs px-4 py-2 rounded-xl border border-gold">
+                        ПОСЛЕ: Пломбируемый 40ft контейнер
+                    </div>
+
+                    <!-- Left Image Wrapper (Before: Dubai Yard Inspection) -->
+                    <div class="absolute inset-0 w-1/2 overflow-hidden border-r-2 border-gold" id="split-left-wrap">
+                        <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?q=80&w=1600&auto=format&fit=crop" 
+                             alt="Осмотр на авторынке в Дубае" 
+                             class="absolute inset-0 w-full h-full object-cover max-w-none" id="split-left-img">
+                        <div class="absolute bottom-8 left-8 bg-dark/80 backdrop-blur-md text-white font-mono text-xs px-4 py-2 rounded-xl border border-gold">
+                            ДО: Инспекция 360° в Al Aweer (Дубай)
+                        </div>
+                    </div>
+
+                    <!-- Slider Handle Bar -->
+                    <div class="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-10 flex items-center justify-center cursor-ew-resize z-30" id="split-handle">
+                        <div class="w-10 h-10 bg-gold text-dark rounded-full flex items-center justify-center shadow-2xl font-bold font-mono text-sm border-2 border-white">
+                            $\leftrightarrow$
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 6. 3D PERSPECTIVE CAROUSEL OF REAL SHIPPED CARS -->
         <section class="py-24 bg-dark text-white overflow-hidden" id="perspective-gallery">
             <div class="max-w-[1400px] mx-auto px-6">
                 
-                <div class="text-center mb-16">
+                <div class="text-center mb-16 reveal">
                     <span class="text-xs font-mono uppercase tracking-[0.25em] text-gold font-bold mb-3 block">( ГАЛЕРЕЯ ДОСТАВЛЕННЫХ АВТО )</span>
                     <h2 class="font-oswald text-3xl md:text-5xl font-bold uppercase tracking-tight text-white">
                         РЕАЛЬНЫЕ КЕЙСЫ И ТРАНСПОРТИРОВКА
@@ -614,11 +744,11 @@
             </div>
         </section>
 
-        <!-- 6. HORMOZI 7-STEP PROCESS TIMELINE (Sticky Stacked Cards) -->
+        <!-- 7. HORMOZI 7-STEP PROCESS TIMELINE (Sticky Stacked Cards) -->
         <section class="py-24 bg-[#F5F5F5] border-b border-grey-light" id="process-timeline">
             <div class="max-w-[1200px] mx-auto px-6">
                 
-                <div class="text-center max-w-3xl mx-auto mb-20">
+                <div class="text-center max-w-3xl mx-auto mb-20 reveal">
                     <span class="text-xs font-mono uppercase tracking-[0.25em] text-gold font-bold mb-3 block">( ПРОЗРАЧНАЯ СХЕМА РАБОТЫ )</span>
                     <h2 class="font-oswald text-4xl md:text-6xl font-bold uppercase tracking-tight text-dark">
                         7 ШАГОВ ОТ ВЫКУПА ДО КЛЮЧЕЙ
@@ -628,7 +758,7 @@
                 <div class="space-y-6">
                     
                     <!-- Step 01 -->
-                    <div class="bg-white rounded-2xl p-8 md:p-10 border border-grey-light shadow-sm flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+                    <div class="tilt-card reveal bg-white rounded-2xl p-8 md:p-10 border border-grey-light shadow-sm flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
                         <div class="flex items-center gap-6">
                             <span class="font-mono text-3xl font-bold text-gold">( 01 / 07 )</span>
                             <div>
@@ -640,7 +770,7 @@
                     </div>
 
                     <!-- Step 02 -->
-                    <div class="bg-white rounded-2xl p-8 md:p-10 border border-grey-light shadow-sm flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+                    <div class="tilt-card reveal bg-white rounded-2xl p-8 md:p-10 border border-grey-light shadow-sm flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
                         <div class="flex items-center gap-6">
                             <span class="font-mono text-3xl font-bold text-gold">( 02 / 07 )</span>
                             <div>
@@ -652,7 +782,7 @@
                     </div>
 
                     <!-- Step 03 -->
-                    <div class="bg-white rounded-2xl p-8 md:p-10 border border-grey-light shadow-sm flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+                    <div class="tilt-card reveal bg-white rounded-2xl p-8 md:p-10 border border-grey-light shadow-sm flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
                         <div class="flex items-center gap-6">
                             <span class="font-mono text-3xl font-bold text-gold">( 03 / 07 )</span>
                             <div>
@@ -664,7 +794,7 @@
                     </div>
 
                     <!-- Step 04 -->
-                    <div class="bg-white rounded-2xl p-8 md:p-10 border border-grey-light shadow-sm flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+                    <div class="tilt-card reveal bg-white rounded-2xl p-8 md:p-10 border border-grey-light shadow-sm flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
                         <div class="flex items-center gap-6">
                             <span class="font-mono text-3xl font-bold text-gold">( 04 / 07 )</span>
                             <div>
@@ -676,7 +806,7 @@
                     </div>
 
                     <!-- Step 05 -->
-                    <div class="bg-white rounded-2xl p-8 md:p-10 border border-grey-light shadow-sm flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+                    <div class="tilt-card reveal bg-white rounded-2xl p-8 md:p-10 border border-grey-light shadow-sm flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
                         <div class="flex items-center gap-6">
                             <span class="font-mono text-3xl font-bold text-gold">( 05 / 07 )</span>
                             <div>
@@ -688,7 +818,7 @@
                     </div>
 
                     <!-- Step 06 -->
-                    <div class="bg-white rounded-2xl p-8 md:p-10 border border-grey-light shadow-sm flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+                    <div class="tilt-card reveal bg-white rounded-2xl p-8 md:p-10 border border-grey-light shadow-sm flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
                         <div class="flex items-center gap-6">
                             <span class="font-mono text-3xl font-bold text-gold">( 06 / 07 )</span>
                             <div>
@@ -700,7 +830,7 @@
                     </div>
 
                     <!-- Step 07 -->
-                    <div class="bg-dark text-white rounded-2xl p-8 md:p-10 border border-gold shadow-xl flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+                    <div class="tilt-card reveal bg-dark text-white rounded-2xl p-8 md:p-10 border border-gold shadow-xl flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
                         <div class="flex items-center gap-6">
                             <span class="font-mono text-3xl font-bold text-gold">( 07 / 07 )</span>
                             <div>
@@ -715,11 +845,11 @@
             </div>
         </section>
 
-        <!-- 7. GUARANTEE & RISK REVERSAL SECTION -->
+        <!-- 8. GUARANTEE & RISK REVERSAL SECTION -->
         <section class="py-24 bg-white border-b border-grey-light" id="guarantee-section">
             <div class="max-w-[1200px] mx-auto px-6">
                 
-                <div class="bg-gradient-to-br from-[#1A1A1A] to-[#2d2825] text-white rounded-3xl p-10 md:p-16 relative overflow-hidden shadow-2xl">
+                <div class="tilt-card reveal bg-gradient-to-br from-[#1A1A1A] to-[#2d2825] text-white rounded-3xl p-10 md:p-16 relative overflow-hidden shadow-2xl border border-gold/30">
                     <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
                         <div class="lg:col-span-8">
                             <span class="text-xs font-mono uppercase tracking-[0.25em] text-gold font-bold mb-4 block">( 100% ФИНАНСОВАЯ ГАРАНТИЯ )</span>
@@ -727,7 +857,7 @@
                                 МЫ БЕРЕМ ВСЕ ЛОГИСТИЧЕСКИЕ И ТАМОЖЕННЫЕ РИСКИ НА СЕБЯ
                             </h2>
                             <p class="text-sm font-manrope text-white/80 leading-relaxed max-w-2xl mb-8">
-                                По официальному договору компании **Beknazar General Trading**, мы несем 100% материальную ответственность за сохранность вашего автомобиля. При возникновении страхового случая или задержки по нашей вине — возмещаем полную стоимость.
+                                По официальному договору компании **BEKNAZAR SUIUNBEK GEN TR LLC**, мы несем 100% материальную ответственность за сохранность вашего автомобиля. При возникновении страхового случая или задержки по нашей вине — возмещаем полную стоимость.
                             </p>
                             <div class="flex flex-wrap gap-4">
                                 <div class="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full text-xs font-mono">
@@ -749,7 +879,7 @@
                             <iconify-icon icon="lucide:shield-check" width="64" height="64" class="text-gold mb-4"></iconify-icon>
                             <h3 class="font-oswald text-2xl font-bold uppercase text-white mb-2">ДОГОВОР ОАЭ / СНГ</h3>
                             <p class="text-xs text-white/70 font-manrope mb-6">Юридическая чистота сделки с прозрачной оплатой в AED, USD или USDT.</p>
-                            <a href="https://wa.me/971555299650?text=Здравствуйте!%20Отправьте,%20пожалуйста,%20образец%20договора%20доставки." target="_blank" class="w-full bg-gold hover:bg-white text-dark font-mono text-xs font-bold uppercase py-3 px-6 rounded-xl transition-all">Запросить образец договора</a>
+                            <a href="https://wa.me/971555299650?text=Здравствуйте!%20Отправьте,%20пожалуйста,%20образец%20договора%20доставки." target="_blank" class="magnetic-btn w-full bg-gold hover:bg-white text-dark font-mono text-xs font-bold uppercase py-3 px-6 rounded-xl transition-all">Запросить образец договора</a>
                         </div>
                     </div>
                 </div>
@@ -757,11 +887,11 @@
             </div>
         </section>
 
-        <!-- 8. FAQ ACCORDION SECTION -->
+        <!-- 9. FAQ ACCORDION SECTION -->
         <section class="py-24 bg-[#FEFDFB] border-b border-grey-light" id="faq-section">
             <div class="max-w-[1000px] mx-auto px-6">
                 
-                <div class="text-center mb-16">
+                <div class="text-center mb-16 reveal">
                     <span class="text-xs font-mono uppercase tracking-[0.25em] text-gold font-bold mb-3 block">( ОТВЕТЫ НА ВОПРОСЫ )</span>
                     <h2 class="font-oswald text-4xl md:text-5xl font-bold uppercase tracking-tight text-dark">
                         ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ
@@ -771,18 +901,18 @@
                 <div class="space-y-4">
                     
                     <!-- Item 1 -->
-                    <details class="group bg-surface border border-grey-light p-6 md:p-8 rounded-2xl cursor-pointer open:bg-white transition-colors duration-300">
+                    <details class="reveal group bg-surface border border-grey-light p-6 md:p-8 rounded-2xl cursor-pointer open:bg-white transition-colors duration-300">
                         <summary class="flex justify-between items-center font-oswald text-xl md:text-2xl uppercase tracking-wide text-dark list-none font-bold">
                             <span>Как происходит оплата за автомобиль и логистику?</span>
                             <span class="text-gold text-2xl group-open:rotate-45 transition-transform duration-300">+</span>
                         </summary>
                         <div class="mt-4 font-manrope text-xs md:text-sm text-grey-dark leading-relaxed border-t border-grey-light pt-4">
-                            Оплата автомобиля производится напрямую продавцу/автосалону в Дубае банковским переводом Swift в дирхамах (AED), долларах (USD) или наличными/USDT на месте. Логистические услуги оплачиваются поэтапно по договору с Beknazar General Trading.
+                            Оплата автомобиля производится напрямую продавцу/автосалону в Дубае банковским переводом Swift в дирхамах (AED), долларах (USD) или наличными/USDT на месте. Логистические услуги оплачиваются поэтапно по договору с BEKNAZAR SUIUNBEK GEN TR LLC.
                         </div>
                     </details>
 
                     <!-- Item 2 -->
-                    <details class="group bg-surface border border-grey-light p-6 md:p-8 rounded-2xl cursor-pointer open:bg-white transition-colors duration-300">
+                    <details class="reveal group bg-surface border border-grey-light p-6 md:p-8 rounded-2xl cursor-pointer open:bg-white transition-colors duration-300">
                         <summary class="flex justify-between items-center font-oswald text-xl md:text-2xl uppercase tracking-wide text-dark list-none font-bold">
                             <span>Как избежать повышенного коммерческого утилизационного сбора в РФ?</span>
                             <span class="text-gold text-2xl group-open:rotate-45 transition-transform duration-300">+</span>
@@ -793,7 +923,7 @@
                     </details>
 
                     <!-- Item 3 -->
-                    <details class="group bg-surface border border-grey-light p-6 md:p-8 rounded-2xl cursor-pointer open:bg-white transition-colors duration-300">
+                    <details class="reveal group bg-surface border border-grey-light p-6 md:p-8 rounded-2xl cursor-pointer open:bg-white transition-colors duration-300">
                         <summary class="flex justify-between items-center font-oswald text-xl md:text-2xl uppercase tracking-wide text-dark list-none font-bold">
                             <span>Какие документы выдаются при экспорте из Дубая?</span>
                             <span class="text-gold text-2xl group-open:rotate-45 transition-transform duration-300">+</span>
@@ -804,7 +934,7 @@
                     </details>
 
                     <!-- Item 4 -->
-                    <details class="group bg-surface border border-grey-light p-6 md:p-8 rounded-2xl cursor-pointer open:bg-white transition-colors duration-300">
+                    <details class="reveal group bg-surface border border-grey-light p-6 md:p-8 rounded-2xl cursor-pointer open:bg-white transition-colors duration-300">
                         <summary class="flex justify-between items-center font-oswald text-xl md:text-2xl uppercase tracking-wide text-dark list-none font-bold">
                             <span>Что делать, если машина повредится во время перевозки?</span>
                             <span class="text-gold text-2xl group-open:rotate-45 transition-transform duration-300">+</span>
@@ -823,7 +953,6 @@
     <!-- GLOBAL FOOTER -->
     <footer class="relative bg-[#181311] overflow-hidden flex flex-col items-center pt-28 pb-10 border-t border-white/10 w-full text-white">
 
-        <!-- Shimmer Top Text -->
         <div class="relative z-30 flex flex-col items-center text-center px-6 mb-20 w-full">
             <span class="text-xs font-mono text-gold uppercase tracking-[0.3em] font-bold mb-4">BEKNAZAR SUIUNBEK GEN TR LLC</span>
             <h2 class="text-3xl md:text-5xl lg:text-6xl font-bold font-oswald uppercase tracking-tight text-white max-w-4xl leading-tight">
@@ -832,20 +961,19 @@
 
             <a href="https://wa.me/971555299650?text=Здравствуйте!%20Хочу%20обсудить%20доставку%20авто%20из%20Дубая." 
                target="_blank" rel="noopener noreferrer" 
-               class="flex items-center gap-3 hover:bg-gold hover:text-dark transition-all duration-300 text-xs font-mono font-bold uppercase tracking-widest text-white border border-gold/60 rounded-full mt-10 py-4 px-10">
+               class="magnetic-btn flex items-center gap-3 hover:bg-gold hover:text-dark transition-all duration-300 text-xs font-mono font-bold uppercase tracking-widest text-white border border-gold/60 rounded-full mt-10 py-4 px-10">
                 <span>Связаться с логистом в WhatsApp</span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
             </a>
         </div>
 
-        <!-- Footer Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 text-xs font-manrope text-white/60 w-full max-w-[1400px] z-30 border-t border-b border-white/10 mx-auto py-12 px-6 gap-8">
             <div>
                 <h4 class="text-white font-oswald font-bold uppercase tracking-widest text-sm mb-4">МЕНЮ</h4>
                 <div class="flex flex-col gap-2 font-mono">
                     <a href="#hero-section" class="hover:text-gold transition-colors">Главная</a>
                     <a href="#calculator-section" class="hover:text-gold transition-colors">Калькулятор</a>
-                    <a href="#corridors-section" class="hover:text-gold transition-colors">Маршруты</a>
+                    <a href="#map-section" class="hover:text-gold transition-colors">Карта</a>
                     <a href="#process-timeline" class="hover:text-gold transition-colors">7 Шагов</a>
                 </div>
             </div>
@@ -880,10 +1008,7 @@
             </div>
         </div>
 
-        <!-- 3D Volumetric Logo & Giant Text Container -->
         <div class="flex flex-col items-center justify-center overflow-hidden min-h-[350px] w-full relative pt-12">
-            
-            <!-- Animated 3D Volumetric Element Background -->
             <div class="absolute inset-0 z-10 flex items-center justify-center pointer-events-none opacity-80" style="perspective: 1200px;">
                 <div class="relative w-[280px] h-[280px] md:w-[450px] md:h-[450px]" style="transform-style: preserve-3d; animation: premiumSpin3D 25s infinite linear;">
                     <div class="volumetric-layer flex items-center justify-center font-oswald text-9xl font-bold text-gold/20">B</div>
@@ -893,7 +1018,6 @@
                 </div>
             </div>
 
-            <!-- Giant Shimmer Typography -->
             <h1 class="relative z-20 text-[11vw] leading-[0.85] font-oswald font-bold uppercase tracking-tighter text-transparent bg-clip-text text-center select-none w-full px-4" 
                 style="
                     background-image: linear-gradient(-75deg, #A89B90 10%, #ffffff 30%, #C5A059 50%, #ffffff 70%, #A89B90 90%);
@@ -906,7 +1030,6 @@
             </h1>
         </div>
 
-        <!-- Bottom Copyright -->
         <div class="relative z-30 w-full max-w-[1400px] mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-xs text-white/40 font-mono mt-8">
             <span>© 2026 BEKNAZAR SUIUNBEK GEN TR LLC. ВСЕ ПРАВА ЗАЩИЩЕНЫ.</span>
             <span>АВТО-ЛОГИСТИКА И ИМПОРТ ИЗ ОАЭ</span>
@@ -914,24 +1037,16 @@
 
     </footer>
 
-    <!-- CALCULATOR & INTERACTIVE SCRIPTS -->
+    <!-- INTERACTIVE ANIMATION SCRIPTS -->
     <script>
-        // Calculator State
+        // 1. Calculator State
         let calcState = {
-            dest: 'rf',
-            basePrice: 2400,
-            time: '25–35 дней',
-            typeAdd: 0,
-            methodAdd: 0,
-            typeName: 'Седан',
-            destName: 'Россия'
+            dest: 'rf', basePrice: 2400, time: '25–35 дней', typeAdd: 0, methodAdd: 0, typeName: 'Седан', destName: 'Россия'
         };
 
         function setCalcValue(group, val, cost, time) {
             if (group === 'dest') {
-                calcState.dest = val;
-                calcState.basePrice = cost;
-                calcState.time = time;
+                calcState.dest = val; calcState.basePrice = cost; calcState.time = time;
                 if(val === 'rf') calcState.destName = 'Россия (МСК)';
                 if(val === 'ge') calcState.destName = 'Грузия (Поти)';
                 if(val === 'kz') calcState.destName = 'Казахстан';
@@ -999,6 +1114,104 @@
                 inner.classList.add('scale-95', 'opacity-0');
                 document.body.style.overflow = 'auto';
             }
+        }
+
+        // 2. 3D Tilt Cards Animation
+        document.querySelectorAll('.tilt-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                const rotateX = (-y / rect.height) * 14;
+                const rotateY = (x / rect.width) * 14;
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+            });
+
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+            });
+        });
+
+        // 3. Magnetic CTA Buttons
+        document.querySelectorAll('.magnetic-btn').forEach(btn => {
+            btn.addEventListener('mousemove', (e) => {
+                const rect = btn.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                btn.style.transform = `translate(${x * 0.25}px, ${y * 0.25}px)`;
+            });
+            btn.addEventListener('mouseleave', () => {
+                btn.style.transform = 'translate(0px, 0px)';
+            });
+        });
+
+        // 4. Scroll Reveal & Counter Animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+
+                    // Trigger Counters if inside target
+                    entry.target.querySelectorAll('.counter').forEach(counter => {
+                        const target = +counter.getAttribute('data-target');
+                        let count = 0;
+                        const inc = target / 60;
+                        const updateCount = () => {
+                            count += inc;
+                            if (count < target) {
+                                counter.innerText = Math.ceil(count);
+                                setTimeout(updateCount, 25);
+                            } else {
+                                counter.innerText = target;
+                            }
+                        };
+                        updateCount();
+                    });
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.reveal, #hero-section').forEach(el => observer.observe(el));
+
+        // 5. Interactive Before/After Split Slider
+        const splitContainer = document.getElementById('split-container');
+        const splitLeftWrap = document.getElementById('split-left-wrap');
+        const splitHandle = document.getElementById('split-handle');
+        const splitLeftImg = document.getElementById('split-left-img');
+
+        if(splitContainer && splitLeftWrap && splitHandle) {
+            let isDragging = false;
+
+            const updateSplit = (clientX) => {
+                const rect = splitContainer.getBoundingClientRect();
+                let x = clientX - rect.left;
+                if (x < 0) x = 0;
+                if (x > rect.width) x = rect.width;
+                const pct = (x / rect.width) * 100;
+
+                splitLeftWrap.style.width = pct + '%';
+                splitHandle.style.left = pct + '%';
+                splitLeftImg.style.width = rect.width + 'px';
+            };
+
+            // Resize sync
+            window.addEventListener('resize', () => {
+                if(splitContainer) splitLeftImg.style.width = splitContainer.getBoundingClientRect().width + 'px';
+            });
+            splitLeftImg.style.width = splitContainer.getBoundingClientRect().width + 'px';
+
+            splitHandle.addEventListener('mousedown', () => isDragging = true);
+            window.addEventListener('mouseup', () => isDragging = false);
+            window.addEventListener('mousemove', (e) => {
+                if (isDragging) updateSplit(e.clientX);
+            });
+
+            // Touch events for mobile
+            splitHandle.addEventListener('touchstart', () => isDragging = true);
+            window.addEventListener('touchend', () => isDragging = false);
+            window.addEventListener('touchmove', (e) => {
+                if (isDragging && e.touches[0]) updateSplit(e.touches[0].clientX);
+            });
         }
     </script>
 </body>
