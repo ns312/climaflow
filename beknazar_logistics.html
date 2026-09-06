@@ -128,7 +128,7 @@
         animation: mobileCarouselSpin3D 22s linear infinite;
         transform-style: preserve-3d;
       }
-      .track-3d:hover { animation-play-state: paused; }
+      /* track-3d auto spins smoothly */
 
       .volumetric-layer {
         position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; will-change: transform;
@@ -512,7 +512,7 @@
             </div>
         </section>
 
-        <!-- 2. SECTION: PROBLEM-SECTION -->
+                <!-- 2. SECTION: PROBLEM-SECTION -->
         <section class="py-24 bg-[#F5F5F5] border-b border-grey-light overflow-hidden" id="problem-section">
             <div class="max-w-[1300px] mx-auto px-6">
                 
@@ -529,52 +529,121 @@
                 <!-- 4 3D Scroll-Flip Cards Grid -->
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" id="flip-cards-grid">
                     
-                                            <!-- Card 1 -->
-                        <div class="absolute inset-0" style="transform: rotateY(0deg) translateZ(320px);">
-                            <div class="w-full h-full rounded-2xl overflow-hidden bg-white/10 border border-gold/40 relative group shadow-2xl">
-                                <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover" alt="Доставленный автомобиль Porsche Cayenne 2024 из Дубая под ключ компании Beknazar Logistics">
-                                <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/30 to-transparent"></div>
-                                <div class="absolute bottom-6 left-6 right-6 flex flex-col gap-2">
-                                    <span class="text-[10px] font-mono text-gold uppercase block font-bold tracking-wider">ОАЭ ➔ МОСКВА • 26 ДНЕЙ</span>
-                                    <h4 class="font-oswald text-xl font-bold uppercase text-white leading-tight">Porsche Cayenne 2024</h4>
-                                    <button onclick="openCaseModal(0)" class="magnetic-btn w-full bg-gold hover:bg-white text-dark font-mono text-xs font-bold uppercase py-2.5 px-4 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 shadow-lg mt-1 cursor-pointer">
-                                        <span>Подробнее о кейсе</span>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-                                    </button>
+                    <!-- Card 1 -->
+                    <div class="flip-card-container h-[420px] cursor-pointer" onclick="toggleCardFlip(this)">
+                        <div class="flip-card-inner relative w-full h-full duration-700 transition-transform" style="transform-style: preserve-3d;">
+                            <div class="flip-card-front absolute inset-0 bg-[#FEFDFB] p-8 rounded-3xl border-2 border-gold/30 shadow-md flex flex-col justify-between hover:border-gold hover:shadow-2xl transition-all duration-300 group" style="backface-visibility: hidden;">
+                                <div>
+                                    <div class="flex justify-between items-center mb-6">
+                                        <div class="w-12 h-12 bg-dark text-gold rounded-xl flex items-center justify-center font-mono font-bold text-lg border border-gold/50 shadow-md drop-shadow-[0_0_10px_rgba(197,160,89,0.3)]">01</div>
+                                        <span class="text-[10px] font-mono text-gold uppercase border border-gold/40 bg-gold/5 px-2.5 py-1 rounded-full flex items-center gap-1 font-bold">👆 НАЖМИТЕ 🔄</span>
+                                    </div>
+                                    <h3 class="font-oswald text-2xl font-bold uppercase text-dark mb-3">Скрытые Сборы и Накрутки</h3>
+                                    <p class="text-xs text-grey-dark leading-relaxed font-manrope">
+                                        Серые посредники маскируют комиссии за регистрацию RTA, погрузку в порт Джебель-Али и оформление транзита, раздувая смету на $2,000–$5,000.
+                                    </p>
+                                </div>
+                                <div class="pt-4 border-t border-grey-light text-[11px] font-mono text-dark font-bold flex items-center justify-between">
+                                    <span>РЕШЕНИЕ BEKNAZAR</span>
+                                    <span class="text-gold font-bold flex items-center gap-1 group-hover:translate-x-1 transition-transform">Узнать решение →</span>
+                                </div>
+                            </div>
+                            <div class="flip-card-back absolute inset-0 rounded-3xl overflow-hidden shadow-2xl border-2 border-gold flex flex-col justify-between p-7 text-white" 
+                                 style="backface-visibility: hidden; transform: rotateY(180deg); background-image: linear-gradient(rgba(26,26,26,0.85), rgba(26,26,26,0.95)), url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=800&auto=format&fit=crop'); background-size: cover; background-position: center;">
+                                <div>
+                                    <span class="text-[10px] font-mono text-gold uppercase tracking-widest block mb-2">РЕШЕНИЕ ПРОБЛЕМЫ #01</span>
+                                    <h4 class="font-oswald text-xl font-bold uppercase text-white mb-3">Фиксированный Договор ОАЭ</h4>
+                                    <p class="text-xs font-manrope text-white/80 leading-relaxed">
+                                        Официальный инвойс от юрлица BEKNAZAR SUIUNBEK GEN TR LLC в ОАЭ с фиксированной стоимостью фрахта без скрытых накруток.
+                                    </p>
+                                </div>
+                                <div>
+                                    <a href="https://wa.me/971555299650?text=Здравствуйте!%20Хочу%20узнать%20подробности%20про%20фиксацию%20стоимости%20доставки." 
+                                       target="_blank" onclick="event.stopPropagation()" 
+                                       class="magnetic-btn w-full bg-gold hover:bg-white text-dark font-mono text-xs font-bold uppercase py-3.5 px-4 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 shadow-lg">
+                                        <iconify-icon icon="logos:whatsapp-icon" width="18" height="18"></iconify-icon>
+                                        <span>Консультация в WA</span>
+                                    </a>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                                            <!-- Card 2 -->
-                        <div class="absolute inset-0" style="transform: rotateY(120deg) translateZ(320px);">
-                            <div class="w-full h-full rounded-2xl overflow-hidden bg-white/10 border border-gold/40 relative group shadow-2xl">
-                                <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover" alt="Выкупленный и доставленный внедорожник Mercedes-AMG G63 из ОАЭ в СНГ">
-                                <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/30 to-transparent"></div>
-                                <div class="absolute bottom-6 left-6 right-6 flex flex-col gap-2">
-                                    <span class="text-[10px] font-mono text-gold uppercase block font-bold tracking-wider">ОАЭ ➔ ПОТИ • 22 ДНЯ</span>
-                                    <h4 class="font-oswald text-xl font-bold uppercase text-white leading-tight">Mercedes G63 AMG</h4>
-                                    <button onclick="openCaseModal(1)" class="magnetic-btn w-full bg-gold hover:bg-white text-dark font-mono text-xs font-bold uppercase py-2.5 px-4 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 shadow-lg mt-1 cursor-pointer">
-                                        <span>Подробнее о кейсе</span>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-                                    </button>
+                    <!-- Card 2 -->
+                    <div class="flip-card-container h-[420px] cursor-pointer" onclick="toggleCardFlip(this)">
+                        <div class="flip-card-inner relative w-full h-full duration-700 transition-transform" style="transform-style: preserve-3d;">
+                            <div class="flip-card-front absolute inset-0 bg-[#FEFDFB] p-8 rounded-3xl border-2 border-gold/30 shadow-md flex flex-col justify-between hover:border-gold hover:shadow-2xl transition-all duration-300 group" style="backface-visibility: hidden;">
+                                <div>
+                                    <div class="flex justify-between items-center mb-6">
+                                        <div class="w-12 h-12 bg-dark text-gold rounded-xl flex items-center justify-center font-mono font-bold text-lg border border-gold/50 shadow-md drop-shadow-[0_0_10px_rgba(197,160,89,0.3)]">02</div>
+                                        <span class="text-[10px] font-mono text-gold uppercase border border-gold/40 bg-gold/5 px-2.5 py-1 rounded-full flex items-center gap-1 font-bold">👆 НАЖМИТЕ 🔄</span>
+                                    </div>
+                                    <h3 class="font-oswald text-2xl font-bold uppercase text-dark mb-3">Риск Повреждений При Погрузке</h3>
+                                    <p class="text-xs text-grey-dark leading-relaxed font-manrope">
+                                        Небрежная погрузка в порту Джебель-Али и отсутствие международного страхования приводят к царапинам и сколам без компенсации.
+                                    </p>
+                                </div>
+                                <div class="pt-4 border-t border-grey-light text-[11px] font-mono text-dark font-bold flex items-center justify-between">
+                                    <span>РЕШЕНИЕ BEKNAZAR</span>
+                                    <span class="text-gold font-bold flex items-center gap-1 group-hover:translate-x-1 transition-transform">Узнать решение →</span>
+                                </div>
+                            </div>
+                            <div class="flip-card-back absolute inset-0 rounded-3xl overflow-hidden shadow-2xl border-2 border-gold flex flex-col justify-between p-7 text-white" 
+                                 style="backface-visibility: hidden; transform: rotateY(180deg); background-image: linear-gradient(rgba(26,26,26,0.85), rgba(26,26,26,0.95)), url('https://images.unsplash.com/photo-1563720223185-11003d516935?q=80&w=800&auto=format&fit=crop'); background-size: cover; background-position: center;">
+                                <div>
+                                    <span class="text-[10px] font-mono text-gold uppercase tracking-widest block mb-2">РЕШЕНИЕ ПРОБЛЕМЫ #02</span>
+                                    <h4 class="font-oswald text-xl font-bold uppercase text-white mb-3">100% Страховка Lloyd's & Фото/Видео</h4>
+                                    <p class="text-xs font-manrope text-white/80 leading-relaxed">
+                                        Полный видеоосмотр перед погрузкой в Шардже + страховое покрытие 100% стоимости авто на всем маршруте в контейнере.
+                                    </p>
+                                </div>
+                                <div>
+                                    <a href="https://wa.me/971555299650?text=Здравствуйте!%20Хочу%20узнать%20подробности%20о%20страховании%20автомобиля." 
+                                       target="_blank" onclick="event.stopPropagation()" 
+                                       class="magnetic-btn w-full bg-gold hover:bg-white text-dark font-mono text-xs font-bold uppercase py-3.5 px-4 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 shadow-lg">
+                                        <iconify-icon icon="logos:whatsapp-icon" width="18" height="18"></iconify-icon>
+                                        <span>Консультация в WA</span>
+                                    </a>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                                            <!-- Card 3 -->
-                        <div class="absolute inset-0" style="transform: rotateY(240deg) translateZ(320px);">
-                            <div class="w-full h-full rounded-2xl overflow-hidden bg-white/10 border border-gold/40 relative group shadow-2xl">
-                                <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover" alt="Таможенное оформление и перевозка кроссовера BMW X7 M-Sport из ОАЭ">
-                                <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/30 to-transparent"></div>
-                                <div class="absolute bottom-6 left-6 right-6 flex flex-col gap-2">
-                                    <span class="text-[10px] font-mono text-gold uppercase block font-bold tracking-wider">ОАЭ ➔ АЛМАТЫ • 19 ДНЕЙ</span>
-                                    <h4 class="font-oswald text-xl font-bold uppercase text-white leading-tight">BMW X7 M-Sport</h4>
-                                    <button onclick="openCaseModal(2)" class="magnetic-btn w-full bg-gold hover:bg-white text-dark font-mono text-xs font-bold uppercase py-2.5 px-4 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 shadow-lg mt-1 cursor-pointer">
-                                        <span>Подробнее о кейсе</span>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-                                    </button>
+                    <!-- Card 3 -->
+                    <div class="flip-card-container h-[420px] cursor-pointer" onclick="toggleCardFlip(this)">
+                        <div class="flip-card-inner relative w-full h-full duration-700 transition-transform" style="transform-style: preserve-3d;">
+                            <div class="flip-card-front absolute inset-0 bg-[#FEFDFB] p-8 rounded-3xl border-2 border-gold/30 shadow-md flex flex-col justify-between hover:border-gold hover:shadow-2xl transition-all duration-300 group" style="backface-visibility: hidden;">
+                                <div>
+                                    <div class="flex justify-between items-center mb-6">
+                                        <div class="w-12 h-12 bg-dark text-gold rounded-xl flex items-center justify-center font-mono font-bold text-lg border border-gold/50 shadow-md drop-shadow-[0_0_10px_rgba(197,160,89,0.3)]">03</div>
+                                        <span class="text-[10px] font-mono text-gold uppercase border border-gold/40 bg-gold/5 px-2.5 py-1 rounded-full flex items-center gap-1 font-bold">👆 НАЖМИТЕ 🔄</span>
+                                    </div>
+                                    <h3 class="font-oswald text-2xl font-bold uppercase text-dark mb-3">Задержки Доставки до 3+ Месяцев</h3>
+                                    <p class="text-xs text-grey-dark leading-relaxed font-manrope">
+                                        Простой на терминалах, отсутствие брони судов и затягивание таможенной очистки на границе из-за посредников без связей.
+                                    </p>
+                                </div>
+                                <div class="pt-4 border-t border-grey-light text-[11px] font-mono text-dark font-bold flex items-center justify-between">
+                                    <span>РЕШЕНИЕ BEKNAZAR</span>
+                                    <span class="text-gold font-bold flex items-center gap-1 group-hover:translate-x-1 transition-transform">Узнать решение →</span>
+                                </div>
+                            </div>
+                            <div class="flip-card-back absolute inset-0 rounded-3xl overflow-hidden shadow-2xl border-2 border-gold flex flex-col justify-between p-7 text-white" 
+                                 style="backface-visibility: hidden; transform: rotateY(180deg); background-image: linear-gradient(rgba(26,26,26,0.85), rgba(26,26,26,0.95)), url('https://images.unsplash.com/photo-1555215695-3004980ad54e?q=80&w=800&auto=format&fit=crop'); background-size: cover; background-position: center;">
+                                <div>
+                                    <span class="text-[10px] font-mono text-gold uppercase tracking-widest block mb-2">РЕШЕНИЕ ПРОБЛЕМЫ #03</span>
+                                    <h4 class="font-oswald text-xl font-bold uppercase text-white mb-3">Приоритетные Слоты Maersk / MSC</h4>
+                                    <p class="text-xs font-manrope text-white/80 leading-relaxed">
+                                        Прямой контракт с морскими линиями и гарантированный выход судов каждую неделю со сроком от 18 дней.
+                                    </p>
+                                </div>
+                                <div>
+                                    <a href="https://wa.me/971555299650?text=Здравствуйте!%20Интересуют%20точные%20сроки%20доставки%20авто." 
+                                       target="_blank" onclick="event.stopPropagation()" 
+                                       class="magnetic-btn w-full bg-gold hover:bg-white text-dark font-mono text-xs font-bold uppercase py-3.5 px-4 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 shadow-lg">
+                                        <iconify-icon icon="logos:whatsapp-icon" width="18" height="18"></iconify-icon>
+                                        <span>Консультация в WA</span>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -583,8 +652,6 @@
                     <!-- Card 4 -->
                     <div class="flip-card-container h-[420px] cursor-pointer" onclick="toggleCardFlip(this)">
                         <div class="flip-card-inner relative w-full h-full duration-700 transition-transform" style="transform-style: preserve-3d;">
-                            
-                            <!-- Front Side -->
                             <div class="flip-card-front absolute inset-0 bg-[#FEFDFB] p-8 rounded-3xl border-2 border-gold/30 shadow-md flex flex-col justify-between hover:border-gold hover:shadow-2xl transition-all duration-300 group" style="backface-visibility: hidden;">
                                 <div>
                                     <div class="flex justify-between items-center mb-6">
@@ -601,8 +668,6 @@
                                     <span class="text-gold font-bold flex items-center gap-1 group-hover:translate-x-1 transition-transform">Узнать решение →</span>
                                 </div>
                             </div>
-
-                            <!-- Back Side -->
                             <div class="flip-card-back absolute inset-0 rounded-3xl overflow-hidden shadow-2xl border-2 border-gold flex flex-col justify-between p-7 text-white" 
                                  style="backface-visibility: hidden; transform: rotateY(180deg); background-image: linear-gradient(rgba(26,26,26,0.85), rgba(26,26,26,0.95)), url('https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?q=80&w=800&auto=format&fit=crop'); background-size: cover; background-position: center;">
                                 <div>
@@ -621,7 +686,6 @@
                                     </a>
                                 </div>
                             </div>
-
                         </div>
                     </div>
 
@@ -629,7 +693,7 @@
             </div>
         </section>
 
-        <!-- 3. SECTION: PERSPECTIVE-GALLERY -->
+                <!-- 3. SECTION: PERSPECTIVE-GALLERY -->
         <section class="py-24 bg-dark text-white overflow-hidden" id="perspective-gallery">
             <div class="max-w-[1400px] mx-auto px-6">
                 
@@ -644,7 +708,7 @@
                 <div class="flex overflow-hidden w-full h-[450px] relative items-center justify-center" style="perspective: 1200px;">
                     <div class="track-3d relative w-[280px] h-[380px]">
                         
-                                                <!-- Card 1 -->
+                        <!-- Card 1 -->
                         <div class="absolute inset-0" style="transform: rotateY(0deg) translateZ(320px);">
                             <div class="w-full h-full rounded-2xl overflow-hidden bg-white/10 border border-gold/40 relative group shadow-2xl">
                                 <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover" alt="Доставленный автомобиль Porsche Cayenne 2024 из Дубая под ключ компании Beknazar Logistics">
@@ -653,14 +717,14 @@
                                     <span class="text-[10px] font-mono text-gold uppercase block font-bold tracking-wider">ОАЭ ➔ МОСКВА • 26 ДНЕЙ</span>
                                     <h4 class="font-oswald text-xl font-bold uppercase text-white leading-tight">Porsche Cayenne 2024</h4>
                                     <button onclick="openCaseModal(0)" class="magnetic-btn w-full bg-gold hover:bg-white text-dark font-mono text-xs font-bold uppercase py-2.5 px-4 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 shadow-lg mt-1 cursor-pointer">
-                                        <span>Подробнее о кейсе</span>
+                                        <span>Подробнее</span>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
                                     </button>
                                 </div>
                             </div>
                         </div>
 
-                                                <!-- Card 2 -->
+                        <!-- Card 2 -->
                         <div class="absolute inset-0" style="transform: rotateY(120deg) translateZ(320px);">
                             <div class="w-full h-full rounded-2xl overflow-hidden bg-white/10 border border-gold/40 relative group shadow-2xl">
                                 <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover" alt="Выкупленный и доставленный внедорожник Mercedes-AMG G63 из ОАЭ в СНГ">
@@ -669,14 +733,14 @@
                                     <span class="text-[10px] font-mono text-gold uppercase block font-bold tracking-wider">ОАЭ ➔ ПОТИ • 22 ДНЯ</span>
                                     <h4 class="font-oswald text-xl font-bold uppercase text-white leading-tight">Mercedes G63 AMG</h4>
                                     <button onclick="openCaseModal(1)" class="magnetic-btn w-full bg-gold hover:bg-white text-dark font-mono text-xs font-bold uppercase py-2.5 px-4 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 shadow-lg mt-1 cursor-pointer">
-                                        <span>Подробнее о кейсе</span>
+                                        <span>Подробнее</span>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
                                     </button>
                                 </div>
                             </div>
                         </div>
 
-                                                <!-- Card 3 -->
+                        <!-- Card 3 -->
                         <div class="absolute inset-0" style="transform: rotateY(240deg) translateZ(320px);">
                             <div class="w-full h-full rounded-2xl overflow-hidden bg-white/10 border border-gold/40 relative group shadow-2xl">
                                 <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover" alt="Таможенное оформление и перевозка кроссовера BMW X7 M-Sport из ОАЭ">
@@ -685,7 +749,7 @@
                                     <span class="text-[10px] font-mono text-gold uppercase block font-bold tracking-wider">ОАЭ ➔ АЛМАТЫ • 19 ДНЕЙ</span>
                                     <h4 class="font-oswald text-xl font-bold uppercase text-white leading-tight">BMW X7 M-Sport</h4>
                                     <button onclick="openCaseModal(2)" class="magnetic-btn w-full bg-gold hover:bg-white text-dark font-mono text-xs font-bold uppercase py-2.5 px-4 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 shadow-lg mt-1 cursor-pointer">
-                                        <span>Подробнее о кейсе</span>
+                                        <span>Подробнее</span>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
                                     </button>
                                 </div>
@@ -2231,5 +2295,63 @@
         };
     </script>
 
+    <!-- AWWWARDS SALES CASE POPUP MODAL -->
+    <div id="case-modal-overlay" onclick="closeCaseModalOnBackdrop(event)" class="fixed inset-0 z-[9999] bg-dark/90 backdrop-blur-xl flex items-center justify-center p-4 md:p-6 opacity-0 pointer-events-none transition-all duration-500 overflow-y-auto">
+        <div id="case-modal-content" class="relative w-full max-w-2xl bg-[#1A1A1A] border border-gold/50 rounded-3xl shadow-[0_0_50px_rgba(197,160,89,0.25)] p-6 md:p-8 transform scale-95 transition-transform duration-500 my-auto text-white">
+            
+            <!-- Close Button -->
+            <button onclick="closeCaseModal()" class="absolute top-5 right-5 w-10 h-10 rounded-full bg-white/10 hover:bg-gold hover:text-dark text-white flex items-center justify-center transition-all cursor-pointer z-20 border border-white/20">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+            </button>
+
+            <!-- Case Header -->
+            <div class="mb-4">
+                <span id="case-route-badge" class="text-[11px] font-mono uppercase tracking-widest text-gold font-bold bg-gold/10 px-3 py-1 rounded-full border border-gold/30 inline-block mb-2">ОАЭ ➔ МОСКВА</span>
+                <h3 id="case-car-title" class="font-oswald text-2xl md:text-3xl font-bold uppercase tracking-tight text-white">PORSCHE CAYENNE 2024</h3>
+            </div>
+
+            <!-- Case Main Image -->
+            <div class="relative w-full h-[240px] md:h-[280px] rounded-2xl overflow-hidden border border-gold/30 shadow-xl mb-6">
+                <img id="case-main-img" src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1200&auto=format&fit=crop" alt="Case Car Image" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-dark via-transparent to-transparent opacity-80"></div>
+                <div class="absolute bottom-3 left-4 right-4 flex justify-between items-center text-xs font-mono">
+                    <span class="bg-dark/90 backdrop-blur-md px-3 py-1 rounded-lg border border-gold/50 text-gold font-bold">ЭКОНОМИЯ: <span id="case-savings">$14,500 USD</span></span>
+                    <span class="bg-dark/90 backdrop-blur-md px-3 py-1 rounded-lg border border-white/20 text-white font-bold" id="case-time">26 ДНЕЙ</span>
+                </div>
+            </div>
+
+            <!-- Short Concise Description -->
+            <div class="bg-white/5 p-4 rounded-2xl border border-white/10 mb-5">
+                <h4 class="font-oswald text-sm font-bold text-gold uppercase mb-1.5 flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-gold"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>
+                    <span>Короткое описание кейса</span>
+                </h4>
+                <p id="case-task-text" class="font-manrope text-xs text-white/90 leading-relaxed">
+                    Автомобиль выкуплен в автосалоне Дубая под ключ. Пройдена техническая проверка RTA, оформлены экспортные документы, застрахован на 100% стоимости и доставлен закрытым контейнером.
+                </p>
+            </div>
+
+            <!-- Quick Key Highlights Checklist -->
+            <div class="mb-6">
+                <ul id="case-works-list" class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-manrope text-white/80">
+                    <li class="flex items-center gap-2 bg-white/5 px-3 py-2 rounded-xl border border-white/5"><span class="text-gold">✓</span> <span>360° Видео-осмотр RTA</span></li>
+                    <li class="flex items-center gap-2 bg-white/5 px-3 py-2 rounded-xl border border-white/5"><span class="text-gold">✓</span> <span>100% Страхование All-Risk</span></li>
+                    <li class="flex items-center gap-2 bg-white/5 px-3 py-2 rounded-xl border border-white/5"><span class="text-gold">✓</span> <span>Контейнерный фрахт</span></li>
+                    <li class="flex items-center gap-2 bg-white/5 px-3 py-2 rounded-xl border border-white/5"><span class="text-gold">✓</span> <span>ЭПТС и льготный утильсбор</span></li>
+                </ul>
+            </div>
+
+            <!-- Prominent Direct WhatsApp CTA Button Under Case -->
+            <div class="border-t border-white/15 pt-5 flex flex-col gap-3">
+                <a id="case-wa-btn" href="https://wa.me/971555299650?text=Здравствуйте!%20Хочу%20узнать%20подробности%20по%20автомобилю." 
+                   target="_blank" 
+                   class="magnetic-btn w-full bg-[#25D366] hover:bg-[#20bd5a] text-white font-mono text-xs md:text-sm font-bold uppercase py-4 px-6 rounded-2xl transition-all duration-300 flex items-center justify-center gap-3 shadow-[0_0_25px_rgba(37,211,102,0.4)]">
+                    <iconify-icon icon="logos:whatsapp-icon" width="22" height="22"></iconify-icon>
+                    <span>НАПИСАТЬ В WHATSAPP ПО ЭТОМУ АВТО</span>
+                </a>
+            </div>
+
+        </div>
+    </div>
 </body>
 </html>
