@@ -160,6 +160,47 @@
         stroke-dasharray: 8, 8;
         animation: dash 1.5s linear infinite;
       }
+    
+      /* Animated Liquid Wave & Zoom Texture Clipped INSIDE Letters */
+      .hero-text-wave-zoom {
+        background-image: linear-gradient(
+          115deg,
+          #FFFFFF 0%,
+          #C5A059 20%,
+          #FEFDFB 40%,
+          #E6C687 60%,
+          #C5A059 80%,
+          #FFFFFF 100%
+        );
+        background-size: 250% 250%;
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        display: inline-block;
+        animation: liquidWaveZoom 4.5s ease-in-out infinite alternate;
+      }
+
+      @keyframes liquidWaveZoom {
+        0% {
+          background-position: 0% 50%;
+          background-size: 200% 200%;
+          transform: scale(1);
+          filter: drop-shadow(0 0 15px rgba(197, 160, 89, 0.35));
+        }
+        50% {
+          background-position: 100% 50%;
+          background-size: 320% 320%;
+          transform: scale(1.025);
+          filter: drop-shadow(0 0 35px rgba(197, 160, 89, 0.85));
+        }
+        100% {
+          background-position: 0% 50%;
+          background-size: 220% 220%;
+          transform: scale(1);
+          filter: drop-shadow(0 0 15px rgba(197, 160, 89, 0.35));
+        }
+      }
+
     </style>
 </head>
 <body class="antialiased text-dark">
@@ -381,8 +422,8 @@
                 </div>
 
                 <h1 class="font-oswald text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold uppercase tracking-tight leading-[0.95] text-white mb-8 drop-shadow-2xl">
-                    ДОСТАВКА АВТО И ГРУЗОВ ИЗ ОАЭ <br>
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold via-white to-gold">ПРОЗРАЧНО И ПОД КЛЮЧ ЗА 18–35 ДНЕЙ</span>
+                    <span class="hero-text-wave-zoom">ДОСТАВКА АВТО И ГРУЗОВ ИЗ ОАЭ</span> <br>
+                    <span class="hero-text-wave-zoom">ПРОЗРАЧНО И ПОД КЛЮЧ ЗА 18–35 ДНЕЙ</span>
                 </h1>
 
                 <p class="font-manrope text-base sm:text-xl md:text-2xl text-white/90 font-light max-w-4xl mb-12 leading-relaxed">
