@@ -529,138 +529,54 @@
                 <!-- 4 3D Scroll-Flip Cards Grid -->
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" id="flip-cards-grid">
                     
-                    <!-- Card 1 -->
-                    <div class="flip-card-container h-[420px] cursor-pointer" onclick="toggleCardFlip(this)">
-                        <div class="flip-card-inner relative w-full h-full duration-700 transition-transform" style="transform-style: preserve-3d;">
-                            
-                            <!-- Front Side -->
-                            <div class="flip-card-front absolute inset-0 bg-[#FEFDFB] p-8 rounded-3xl border-2 border-gold/30 shadow-md flex flex-col justify-between hover:border-gold hover:shadow-2xl transition-all duration-300 group" style="backface-visibility: hidden;">
-                                <div>
-                                    <div class="flex justify-between items-center mb-6">
-                                        <div class="w-12 h-12 bg-dark text-gold rounded-xl flex items-center justify-center font-mono font-bold text-lg border border-gold/50 shadow-md drop-shadow-[0_0_10px_rgba(197,160,89,0.3)]">01</div>
-                                        <span class="text-[10px] font-mono text-gold uppercase border border-gold/40 bg-gold/5 px-2.5 py-1 rounded-full flex items-center gap-1 font-bold">👆 НАЖМИТЕ 🔄</span>
-                                    </div>
-                                    <h3 class="font-oswald text-2xl font-bold uppercase text-dark mb-3">Скрытые платежи в портах</h3>
-                                    <p class="text-xs text-grey-dark leading-relaxed font-manrope">
-                                        Недобросовестные брокеры называют привлекательную ставку фрахта, а по прибытию выставляют счета за хранение, демередж и терминальные сборы на $1 500 – $3 000 больше.
-                                    </p>
-                                </div>
-                                <div class="pt-4 border-t border-grey-light text-[11px] font-mono text-dark font-bold flex items-center justify-between">
-                                    <span>РЕШЕНИЕ BEKNAZAR</span>
-                                    <span class="text-gold font-bold flex items-center gap-1 group-hover:translate-x-1 transition-transform">Узнать решение →</span>
+                                            <!-- Card 1 -->
+                        <div class="absolute inset-0" style="transform: rotateY(0deg) translateZ(320px);">
+                            <div class="w-full h-full rounded-2xl overflow-hidden bg-white/10 border border-gold/40 relative group shadow-2xl">
+                                <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover" alt="Доставленный автомобиль Porsche Cayenne 2024 из Дубая под ключ компании Beknazar Logistics">
+                                <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/30 to-transparent"></div>
+                                <div class="absolute bottom-6 left-6 right-6 flex flex-col gap-2">
+                                    <span class="text-[10px] font-mono text-gold uppercase block font-bold tracking-wider">ОАЭ ➔ МОСКВА • 26 ДНЕЙ</span>
+                                    <h4 class="font-oswald text-xl font-bold uppercase text-white leading-tight">Porsche Cayenne 2024</h4>
+                                    <button onclick="openCaseModal(0)" class="magnetic-btn w-full bg-gold hover:bg-white text-dark font-mono text-xs font-bold uppercase py-2.5 px-4 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 shadow-lg mt-1 cursor-pointer">
+                                        <span>Подробнее о кейсе</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                                    </button>
                                 </div>
                             </div>
-
-                            <!-- Back Side -->
-                            <div class="flip-card-back absolute inset-0 rounded-3xl overflow-hidden shadow-2xl border-2 border-gold flex flex-col justify-between p-7 text-white" 
-                                 style="backface-visibility: hidden; transform: rotateY(180deg); background-image: linear-gradient(rgba(26,26,26,0.85), rgba(26,26,26,0.95)), url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800&auto=format&fit=crop'); background-size: cover; background-position: center;">
-                                <div>
-                                    <span class="text-[10px] font-mono text-gold uppercase tracking-widest block mb-2">РЕШЕНИЕ ПРОБЛЕМЫ #01</span>
-                                    <h4 class="font-oswald text-xl font-bold uppercase text-white mb-3">Фиксация итоговой суммы в договоре</h4>
-                                    <p class="text-xs font-manrope text-white/80 leading-relaxed">
-                                        Все терминальные и портовые сборы фиксируются в инвойсе компании BEKNAZAR SUIUNBEK GEN TR LLC до отправки. Никаких доплат по прибытию!
-                                    </p>
-                                </div>
-                                <div>
-                                    <a href="https://wa.me/971555299650?text=Здравствуйте!%20Хочу%20получить%20консультацию%20по%20стоимости%20доставки%20без%20скрытых%20платежей." 
-                                       target="_blank" onclick="event.stopPropagation()" 
-                                       class="magnetic-btn w-full bg-gold hover:bg-white text-dark font-mono text-xs font-bold uppercase py-3.5 px-4 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 shadow-lg">
-                                        <iconify-icon icon="logos:whatsapp-icon" width="18" height="18"></iconify-icon>
-                                        <span>Консультация в WA</span>
-                                    </a>
-                                </div>
-                            </div>
-
                         </div>
                     </div>
 
-                    <!-- Card 2 -->
-                    <div class="flip-card-container h-[420px] cursor-pointer" onclick="toggleCardFlip(this)">
-                        <div class="flip-card-inner relative w-full h-full duration-700 transition-transform" style="transform-style: preserve-3d;">
-                            
-                            <!-- Front Side -->
-                            <div class="flip-card-front absolute inset-0 bg-[#FEFDFB] p-8 rounded-3xl border-2 border-gold/30 shadow-md flex flex-col justify-between hover:border-gold hover:shadow-2xl transition-all duration-300 group" style="backface-visibility: hidden;">
-                                <div>
-                                    <div class="flex justify-between items-center mb-6">
-                                        <div class="w-12 h-12 bg-dark text-gold rounded-xl flex items-center justify-center font-mono font-bold text-lg border border-gold/50 shadow-md drop-shadow-[0_0_10px_rgba(197,160,89,0.3)]">02</div>
-                                        <span class="text-[10px] font-mono text-gold uppercase border border-gold/40 bg-gold/5 px-2.5 py-1 rounded-full flex items-center gap-1 font-bold">👆 НАЖМИТЕ 🔄</span>
-                                    </div>
-                                    <h3 class="font-oswald text-2xl font-bold uppercase text-dark mb-3">Повреждения кузова без страховки</h3>
-                                    <p class="text-xs text-grey-dark leading-relaxed font-manrope">
-                                        Царапины, сколы и вмятины при погрузке в контейнеры или на автовозах. Без акта описи 360° и полиса All-Risk вам никто не возместит ущерб.
-                                    </p>
-                                </div>
-                                <div class="pt-4 border-t border-grey-light text-[11px] font-mono text-dark font-bold flex items-center justify-between">
-                                    <span>РЕШЕНИЕ BEKNAZAR</span>
-                                    <span class="text-gold font-bold flex items-center gap-1 group-hover:translate-x-1 transition-transform">Узнать решение →</span>
+                                            <!-- Card 2 -->
+                        <div class="absolute inset-0" style="transform: rotateY(120deg) translateZ(320px);">
+                            <div class="w-full h-full rounded-2xl overflow-hidden bg-white/10 border border-gold/40 relative group shadow-2xl">
+                                <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover" alt="Выкупленный и доставленный внедорожник Mercedes-AMG G63 из ОАЭ в СНГ">
+                                <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/30 to-transparent"></div>
+                                <div class="absolute bottom-6 left-6 right-6 flex flex-col gap-2">
+                                    <span class="text-[10px] font-mono text-gold uppercase block font-bold tracking-wider">ОАЭ ➔ ПОТИ • 22 ДНЯ</span>
+                                    <h4 class="font-oswald text-xl font-bold uppercase text-white leading-tight">Mercedes G63 AMG</h4>
+                                    <button onclick="openCaseModal(1)" class="magnetic-btn w-full bg-gold hover:bg-white text-dark font-mono text-xs font-bold uppercase py-2.5 px-4 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 shadow-lg mt-1 cursor-pointer">
+                                        <span>Подробнее о кейсе</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                                    </button>
                                 </div>
                             </div>
-
-                            <!-- Back Side -->
-                            <div class="flip-card-back absolute inset-0 rounded-3xl overflow-hidden shadow-2xl border-2 border-gold flex flex-col justify-between p-7 text-white" 
-                                 style="backface-visibility: hidden; transform: rotateY(180deg); background-image: linear-gradient(rgba(26,26,26,0.85), rgba(26,26,26,0.95)), url('https://images.unsplash.com/photo-1617814076367-b759c7d7e738?q=80&w=800&auto=format&fit=crop'); background-size: cover; background-position: center;">
-                                <div>
-                                    <span class="text-[10px] font-mono text-gold uppercase tracking-widest block mb-2">РЕШЕНИЕ ПРОБЛЕМЫ #02</span>
-                                    <h4 class="font-oswald text-xl font-bold uppercase text-white mb-3">Фото/видео 360° + Страховка 100%</h4>
-                                    <p class="text-xs font-manrope text-white/80 leading-relaxed">
-                                        Перед погрузкой составляется подробный акт с 360° фиксацией. Каждое авто застраховано по системе All-Risk на полную стоимость.
-                                    </p>
-                                </div>
-                                <div>
-                                    <a href="https://wa.me/971555299650?text=Здравствуйте!%20Интересует%20консультация%20по%20страхованию%20автомобиля%20при%20доставке." 
-                                       target="_blank" onclick="event.stopPropagation()" 
-                                       class="magnetic-btn w-full bg-gold hover:bg-white text-dark font-mono text-xs font-bold uppercase py-3.5 px-4 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 shadow-lg">
-                                        <iconify-icon icon="logos:whatsapp-icon" width="18" height="18"></iconify-icon>
-                                        <span>Консультация в WA</span>
-                                    </a>
-                                </div>
-                            </div>
-
                         </div>
                     </div>
 
-                    <!-- Card 3 -->
-                    <div class="flip-card-container h-[420px] cursor-pointer" onclick="toggleCardFlip(this)">
-                        <div class="flip-card-inner relative w-full h-full duration-700 transition-transform" style="transform-style: preserve-3d;">
-                            
-                            <!-- Front Side -->
-                            <div class="flip-card-front absolute inset-0 bg-[#FEFDFB] p-8 rounded-3xl border-2 border-gold/30 shadow-md flex flex-col justify-between hover:border-gold hover:shadow-2xl transition-all duration-300 group" style="backface-visibility: hidden;">
-                                <div>
-                                    <div class="flex justify-between items-center mb-6">
-                                        <div class="w-12 h-12 bg-dark text-gold rounded-xl flex items-center justify-center font-mono font-bold text-lg border border-gold/50 shadow-md drop-shadow-[0_0_10px_rgba(197,160,89,0.3)]">03</div>
-                                        <span class="text-[10px] font-mono text-gold uppercase border border-gold/40 bg-gold/5 px-2.5 py-1 rounded-full flex items-center gap-1 font-bold">👆 НАЖМИТЕ 🔄</span>
-                                    </div>
-                                    <h3 class="font-oswald text-2xl font-bold uppercase text-dark mb-3">Задержки на таможне T1</h3>
-                                    <p class="text-xs text-grey-dark leading-relaxed font-manrope">
-                                        Зависание машин на транзитных терминалах Поти или Мерсина из-за ошибок в RTA сертификатах и неверно выписанных транзитных декларациях T1.
-                                    </p>
-                                </div>
-                                <div class="pt-4 border-t border-grey-light text-[11px] font-mono text-dark font-bold flex items-center justify-between">
-                                    <span>РЕШЕНИЕ BEKNAZAR</span>
-                                    <span class="text-gold font-bold flex items-center gap-1 group-hover:translate-x-1 transition-transform">Узнать решение →</span>
+                                            <!-- Card 3 -->
+                        <div class="absolute inset-0" style="transform: rotateY(240deg) translateZ(320px);">
+                            <div class="w-full h-full rounded-2xl overflow-hidden bg-white/10 border border-gold/40 relative group shadow-2xl">
+                                <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover" alt="Таможенное оформление и перевозка кроссовера BMW X7 M-Sport из ОАЭ">
+                                <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/30 to-transparent"></div>
+                                <div class="absolute bottom-6 left-6 right-6 flex flex-col gap-2">
+                                    <span class="text-[10px] font-mono text-gold uppercase block font-bold tracking-wider">ОАЭ ➔ АЛМАТЫ • 19 ДНЕЙ</span>
+                                    <h4 class="font-oswald text-xl font-bold uppercase text-white leading-tight">BMW X7 M-Sport</h4>
+                                    <button onclick="openCaseModal(2)" class="magnetic-btn w-full bg-gold hover:bg-white text-dark font-mono text-xs font-bold uppercase py-2.5 px-4 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 shadow-lg mt-1 cursor-pointer">
+                                        <span>Подробнее о кейсе</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                                    </button>
                                 </div>
                             </div>
-
-                            <!-- Back Side -->
-                            <div class="flip-card-back absolute inset-0 rounded-3xl overflow-hidden shadow-2xl border-2 border-gold flex flex-col justify-between p-7 text-white" 
-                                 style="backface-visibility: hidden; transform: rotateY(180deg); background-image: linear-gradient(rgba(26,26,26,0.85), rgba(26,26,26,0.95)), url('https://images.unsplash.com/photo-1565008447742-97f6f38c985c?q=80&w=800&auto=format&fit=crop'); background-size: cover; background-position: center;">
-                                <div>
-                                    <span class="text-[10px] font-mono text-gold uppercase tracking-widest block mb-2">РЕШЕНИЕ ПРОБЛЕМЫ #03</span>
-                                    <h4 class="font-oswald text-xl font-bold uppercase text-white mb-3">Собственные юристы в ОАЭ и Грузии</h4>
-                                    <p class="text-xs font-manrope text-white/80 leading-relaxed">
-                                        Штат экспедиторов в Дубае и Поти оперативно выпускает T1 декларации без задержек на таможенных терминалах.
-                                    </p>
-                                </div>
-                                <div>
-                                    <a href="https://wa.me/971555299650?text=Здравствуйте!%20Хочу%20проконсультироваться%20по%20транзиту%20T1%20и%20документам." 
-                                       target="_blank" onclick="event.stopPropagation()" 
-                                       class="magnetic-btn w-full bg-gold hover:bg-white text-dark font-mono text-xs font-bold uppercase py-3.5 px-4 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 shadow-lg">
-                                        <iconify-icon icon="logos:whatsapp-icon" width="18" height="18"></iconify-icon>
-                                        <span>Консультация в WA</span>
-                                    </a>
-                                </div>
-                            </div>
-
                         </div>
                     </div>
 
@@ -728,38 +644,50 @@
                 <div class="flex overflow-hidden w-full h-[450px] relative items-center justify-center" style="perspective: 1200px;">
                     <div class="track-3d relative w-[280px] h-[380px]">
                         
-                        <!-- Card 1 -->
+                                                <!-- Card 1 -->
                         <div class="absolute inset-0" style="transform: rotateY(0deg) translateZ(320px);">
                             <div class="w-full h-full rounded-2xl overflow-hidden bg-white/10 border border-gold/40 relative group shadow-2xl">
                                 <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover" alt="Доставленный автомобиль Porsche Cayenne 2024 из Дубая под ключ компании Beknazar Logistics">
-                                <div class="absolute inset-0 bg-gradient-to-t from-dark via-transparent to-transparent"></div>
-                                <div class="absolute bottom-6 left-6 right-6">
-                                    <span class="text-[10px] font-mono text-gold uppercase block">ОАЭ → Москва</span>
-                                    <h4 class="font-oswald text-xl font-bold uppercase text-white">Porsche Cayenne 2024</h4>
+                                <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/30 to-transparent"></div>
+                                <div class="absolute bottom-6 left-6 right-6 flex flex-col gap-2">
+                                    <span class="text-[10px] font-mono text-gold uppercase block font-bold tracking-wider">ОАЭ ➔ МОСКВА • 26 ДНЕЙ</span>
+                                    <h4 class="font-oswald text-xl font-bold uppercase text-white leading-tight">Porsche Cayenne 2024</h4>
+                                    <button onclick="openCaseModal(0)" class="magnetic-btn w-full bg-gold hover:bg-white text-dark font-mono text-xs font-bold uppercase py-2.5 px-4 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 shadow-lg mt-1 cursor-pointer">
+                                        <span>Подробнее о кейсе</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                                    </button>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Card 2 -->
+                                                <!-- Card 2 -->
                         <div class="absolute inset-0" style="transform: rotateY(120deg) translateZ(320px);">
                             <div class="w-full h-full rounded-2xl overflow-hidden bg-white/10 border border-gold/40 relative group shadow-2xl">
                                 <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover" alt="Выкупленный и доставленный внедорожник Mercedes-AMG G63 из ОАЭ в СНГ">
-                                <div class="absolute inset-0 bg-gradient-to-t from-dark via-transparent to-transparent"></div>
-                                <div class="absolute bottom-6 left-6 right-6">
-                                    <span class="text-[10px] font-mono text-gold uppercase block">ОАЭ → Поти</span>
-                                    <h4 class="font-oswald text-xl font-bold uppercase text-white">Mercedes G63 AMG</h4>
+                                <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/30 to-transparent"></div>
+                                <div class="absolute bottom-6 left-6 right-6 flex flex-col gap-2">
+                                    <span class="text-[10px] font-mono text-gold uppercase block font-bold tracking-wider">ОАЭ ➔ ПОТИ • 22 ДНЯ</span>
+                                    <h4 class="font-oswald text-xl font-bold uppercase text-white leading-tight">Mercedes G63 AMG</h4>
+                                    <button onclick="openCaseModal(1)" class="magnetic-btn w-full bg-gold hover:bg-white text-dark font-mono text-xs font-bold uppercase py-2.5 px-4 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 shadow-lg mt-1 cursor-pointer">
+                                        <span>Подробнее о кейсе</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                                    </button>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Card 3 -->
+                                                <!-- Card 3 -->
                         <div class="absolute inset-0" style="transform: rotateY(240deg) translateZ(320px);">
                             <div class="w-full h-full rounded-2xl overflow-hidden bg-white/10 border border-gold/40 relative group shadow-2xl">
                                 <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover" alt="Таможенное оформление и перевозка кроссовера BMW X7 M-Sport из ОАЭ">
-                                <div class="absolute inset-0 bg-gradient-to-t from-dark via-transparent to-transparent"></div>
-                                <div class="absolute bottom-6 left-6 right-6">
-                                    <span class="text-[10px] font-mono text-gold uppercase block">ОАЭ → Алматы</span>
-                                    <h4 class="font-oswald text-xl font-bold uppercase text-white">BMW X7 M-Sport</h4>
+                                <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/30 to-transparent"></div>
+                                <div class="absolute bottom-6 left-6 right-6 flex flex-col gap-2">
+                                    <span class="text-[10px] font-mono text-gold uppercase block font-bold tracking-wider">ОАЭ ➔ АЛМАТЫ • 19 ДНЕЙ</span>
+                                    <h4 class="font-oswald text-xl font-bold uppercase text-white leading-tight">BMW X7 M-Sport</h4>
+                                    <button onclick="openCaseModal(2)" class="magnetic-btn w-full bg-gold hover:bg-white text-dark font-mono text-xs font-bold uppercase py-2.5 px-4 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 shadow-lg mt-1 cursor-pointer">
+                                        <span>Подробнее о кейсе</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -2094,6 +2022,214 @@
         };
     </script>
 
+
+
+    <!-- AWWWARDS CASE MODAL OVERLAY -->
+    <div id="case-modal-overlay" onclick="closeCaseModalOnBackdrop(event)" class="fixed inset-0 z-[999999] bg-dark/95 backdrop-blur-2xl opacity-0 pointer-events-none transition-all duration-500 flex items-center justify-center p-4 sm:p-8 select-none">
+        
+        <div id="case-modal-content" class="relative w-full max-w-4xl max-h-[90vh] bg-gradient-to-b from-[#1E1E1E] to-[#121212] border-2 border-gold/60 rounded-3xl overflow-y-auto shadow-[0_0_80px_rgba(197,160,89,0.3)] text-white transform scale-95 transition-all duration-500 p-6 sm:p-10">
+            
+            <!-- Close Button -->
+            <button onclick="closeCaseModal()" class="absolute top-6 right-6 z-50 text-white/70 hover:text-gold bg-white/10 hover:bg-white/20 p-3 rounded-full transition-all duration-300 cursor-pointer" aria-label="Закрыть модальное окно">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+            </button>
+
+            <!-- Case Header -->
+            <div class="flex items-center gap-3 mb-4">
+                <img src="images/beknazar_official_logo.jpg" alt="Beknazar Official Logo" class="h-10 w-10 rounded-full border border-gold/60 shadow-md object-cover">
+                <div>
+                    <span id="case-route-badge" class="font-mono text-xs text-gold uppercase tracking-widest font-bold block">ОАЭ ➔ РОССИЯ (МОСКВА)</span>
+                    <span class="font-mono text-[10px] text-white/60 uppercase">ОФИЦИАЛЬНЫЙ КЕЙС BEKNAZAR LOGISTICS</span>
+                </div>
+            </div>
+
+            <h3 id="case-car-title" class="font-oswald text-3xl sm:text-5xl font-bold uppercase text-white mb-6 leading-tight">
+                PORSCHE CAYENNE 2024 COUPE
+            </h3>
+
+            <!-- Main Media Stage -->
+            <div class="relative w-full aspect-[16/9] rounded-2xl overflow-hidden border border-gold/40 shadow-2xl mb-8 group">
+                <img id="case-main-img" src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1200&auto=format&fit=crop" alt="Case Main Photo" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-transparent to-transparent"></div>
+                <div class="absolute bottom-4 left-6 right-6 flex justify-between items-center text-xs font-mono">
+                    <span class="bg-dark/90 backdrop-blur-md px-3 py-1.5 rounded-xl border border-gold/50 text-gold font-bold">ЭКОНОМИЯ КЛИЕНТА: <span id="case-savings">$14,500 USD</span></span>
+                    <span class="bg-dark/90 backdrop-blur-md px-3 py-1.5 rounded-xl border border-white/20 text-white font-bold" id="case-time">СРОК: 26 ДНЕЙ</span>
+                </div>
+            </div>
+
+            <!-- Case Deconstructed Sales Story Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 font-manrope text-xs leading-relaxed">
+                <div class="bg-white/5 p-6 rounded-2xl border border-white/10">
+                    <h4 class="font-oswald text-lg font-bold text-gold uppercase mb-3 flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-gold"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+                        <span>1. Задача и Пожелания Клиента</span>
+                    </h4>
+                    <p id="case-task-text" class="text-white/80">
+                        Срочный подбор и выкуп нового Porsche Cayenne 2024 в официальном автосалоне Дубая, организация безопасного морского контейнерного фрахта и таможенная очистка в РФ под физическое лицо с сохранением льготной ставки утильсбора 3 400 руб.
+                    </p>
+                </div>
+
+                <div class="bg-white/5 p-6 rounded-2xl border border-white/10">
+                    <h4 class="font-oswald text-lg font-bold text-gold uppercase mb-3 flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-gold"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                        <span>2. Выполненные Работы</span>
+                    </h4>
+                    <ul id="case-works-list" class="space-y-1.5 text-white/80 list-disc list-inside">
+                        <li>360° видео-инспекция толщиномером на площадке Al Aweer</li>
+                        <li>Оформление экспортного сертификата RTA & VCC</li>
+                        <li>Погрузка в контейнер 40ft HC со страхованию All-Risk</li>
+                        <li>Выпуск ЭПТС, СБКТС и закрытие утильсбора в ФТС РФ</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Case Testimonial Quote -->
+            <div class="bg-gold/10 border-l-4 border-gold p-5 rounded-r-2xl mb-8">
+                <p id="case-quote-text" class="font-manrope text-xs sm:text-sm italic text-white/90 leading-relaxed mb-2">
+                    «Ребята из Beknazar Logistics доставили Кайен точно в срок прямо к моему дому в Москве. Никаких скрытых доплат по прибытию! Экономия по сравнению с дилерами составила больше $14 000.»
+                </p>
+                <span id="case-client-name" class="font-mono text-[11px] text-gold font-bold uppercase">— Александр В., г. Москва</span>
+            </div>
+
+            <!-- Navigation & Direct WhatsApp CTA Footer -->
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-white/15 pt-6">
+                <div class="flex items-center gap-2 w-full sm:w-auto">
+                    <button onclick="navigateCase(-1)" class="flex-1 sm:flex-initial px-4 py-3 bg-white/10 hover:bg-gold hover:text-dark text-white rounded-xl font-mono text-xs uppercase font-bold transition-all border border-white/10 flex items-center justify-center gap-2 cursor-pointer">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"></path></svg>
+                        <span>Пред. кейс</span>
+                    </button>
+                    <button onclick="navigateCase(1)" class="flex-1 sm:flex-initial px-4 py-3 bg-white/10 hover:bg-gold hover:text-dark text-white rounded-xl font-mono text-xs uppercase font-bold transition-all border border-white/10 flex items-center justify-center gap-2 cursor-pointer">
+                        <span>След. кейс</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"></path></svg>
+                    </button>
+                </div>
+
+                <a id="case-wa-btn" href="https://wa.me/971555299650?text=Здравствуйте!%20Посмотрел%20кейс%20Porsche%20Cayenne.%20Хочу%20заказать%20аналогичное%20авто." 
+                   target="_blank" class="magnetic-btn w-full sm:w-auto bg-[#25D366] hover:bg-white text-dark font-mono text-xs font-bold uppercase py-4 px-8 rounded-xl transition-all duration-300 flex items-center justify-center gap-3 shadow-[0_0_30px_rgba(37,211,102,0.5)]">
+                    <iconify-icon icon="logos:whatsapp-icon" width="22" height="22"></iconify-icon>
+                    <span>ЗАКАЗАТЬ АНАЛОГИЧНЫЙ АВТОМОБИЛЬ В WA</span>
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script>
+        // AWWWARDS CASE MODAL ENGINE DATA
+        const casesData = [
+            {
+                carTitle: "PORSCHE CAYENNE 2024 COUPE",
+                routeBadge: "ОАЭ ➔ РОССИЯ (МОСКВА)",
+                img: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1200&auto=format&fit=crop",
+                savings: "$14,500 USD",
+                time: "СРОК: 26 ДНЕЙ",
+                task: "Срочный подбор и выкуп нового Porsche Cayenne 2024 в официальном автосалоне Дубая, организация безопасного морского контейнерного фрахта и таможенная очистка в РФ под физическое лицо с сохранением льготной ставки утильсбора 3 400 руб.",
+                works: [
+                    "360° видео-инспекция толщиномером на площадке Al Aweer",
+                    "Оформление экспортного сертификата RTA & VCC в Дубае",
+                    "Погрузка в морской контейнер 40ft HC со страхованию All-Risk",
+                    "Выпуск ЭПТС, СБКТС и закрытие утильсбора в ФТС РФ"
+                ],
+                quote: "«Ребята из Beknazar Logistics доставили Кайен точно в срок прямо к моему дому в Москве. Никаких скрытых доплат по прибытию! Экономия по сравнению с дилерами составила больше $14 000.»",
+                client: "— Александр В., г. Москва",
+                waText: "Здравствуйте!%20Посмотрел%20ваш%20кейс%20Porsche%20Cayenne%202024.%20Хочу%20привезти%20аналогичный%20автомобиль%20из%20ОАЭ."
+            },
+            {
+                carTitle: "MERCEDES-AMG G63 GELÄNDEWAGEN",
+                routeBadge: "ОАЭ ➔ ГРУЗИЯ (ПОТИ / ТБИЛИСИ)",
+                img: "https://images.unsplash.com/photo-1563720223185-11003d516935?q=80&w=1200&auto=format&fit=crop",
+                savings: "$18,200 USD",
+                time: "СРОК: 22 ДНЯ",
+                task: "Выкуп черного матового G63 AMG в Шардже с полной детальной проверкой лакокрасочного покрытия, пломбировкой в контейнер и оформлением транзитной декларации T1 в порту Поти.",
+                works: [
+                    "Проверка сервисной истории и эндоскопия двигателя V8 Biturbo",
+                    "Страхование All-Risk на полную стоимость машины ($220,000)",
+                    "Морской транзит Джебель-Али ➔ Поти",
+                    "Выпуск транзитной декларации T1 без задержек в порту"
+                ],
+                quote: "«Очень доволен работой команды Бекназара. Гелик приехал в идеале, каждый шаг фрахта отслеживался по трекингу. Юристы в Поти оформили транзит за пару часов!»",
+                client: "— Георгий М., г. Тбилиси",
+                waText: "Здравствуйте!%20Посмотрел%20ваш%20кейс%20Mercedes%20G63%20AMG.%20Хочу%20проконсультироваться%20по%20доставке%20Гелика%20из%20ОАЭ."
+            },
+            {
+                carTitle: "BMW X7 M-SPORT 2024",
+                routeBadge: "ОАЭ ➔ КАЗАХСТАН (АЛМАТЫ)",
+                img: "https://images.unsplash.com/photo-1555215695-3004980ad54e?q=80&w=1200&auto=format&fit=crop",
+                savings: "$12,800 USD",
+                time: "СРОК: 19 ДНЕЙ",
+                task: "Подбор 7-местного семейного кроссовера BMW X7 M-Sport на дилерской площадке Ras Al Khor, мультимодальный фрахт через Каспийское море в Актау и доставкой автовозом до Алматы.",
+                works: [
+                    "Юридическая проверка экспортных прав и чистоты инвойса",
+                    "Контейнерная погрузка с мягкой фиксацией колес",
+                    "Растаможка по правилам Евразийского Экономического Союза (ЕАЭС)",
+                    "Адресная передача ключей и документов «до двери»"
+                ],
+                quote: "«Бекназар лично контролировал отправку машины из Дубая. BMW X7 пришел ровно за 19 дней в Алматы. Профессионалы высокого уровня!»",
+                client: "— Нурлан С., г. Алматы",
+                waText: "Здравствуйте!%20Посмотрел%20ваш%20кейс%20BMW%20X7%20M-Sport.%20Хочу%20рассчитать%20стоимость%20доставки%20в%20Казахстан."
+            }
+        ];
+
+        let currentCaseIdx = 0;
+
+        window.openCaseModal = function(idx) {
+            currentCaseIdx = idx;
+            const c = casesData[idx];
+            if (!c) return;
+
+            document.getElementById('case-car-title').innerText = c.carTitle;
+            document.getElementById('case-route-badge').innerText = c.routeBadge;
+            document.getElementById('case-main-img').src = c.img;
+            document.getElementById('case-savings').innerText = c.savings;
+            document.getElementById('case-time').innerText = c.time;
+            document.getElementById('case-task-text').innerText = c.task;
+            document.getElementById('case-quote-text').innerText = c.quote;
+            document.getElementById('case-client-name').innerText = c.client;
+
+            const worksList = document.getElementById('case-works-list');
+            worksList.innerHTML = c.works.map(w => `<li>${w}</li>`).join('');
+
+            const waBtn = document.getElementById('case-wa-btn');
+            waBtn.href = `https://wa.me/971555299650?text=${c.waText}`;
+
+            const overlay = document.getElementById('case-modal-overlay');
+            const modalContent = document.getElementById('case-modal-content');
+            
+            overlay.classList.remove('opacity-0', 'pointer-events-none');
+            overlay.classList.add('opacity-100', 'pointer-events-auto');
+
+            modalContent.classList.remove('scale-95');
+            modalContent.classList.add('scale-100');
+            document.body.style.overflow = 'hidden';
+        };
+
+        window.closeCaseModal = function() {
+            const overlay = document.getElementById('case-modal-overlay');
+            const modalContent = document.getElementById('case-modal-content');
+
+            if (overlay) {
+                overlay.classList.remove('opacity-100', 'pointer-events-auto');
+                overlay.classList.add('opacity-0', 'pointer-events-none');
+            }
+            if (modalContent) {
+                modalContent.classList.remove('scale-100');
+                modalContent.classList.add('scale-95');
+            }
+            document.body.style.overflow = '';
+        };
+
+        window.closeCaseModalOnBackdrop = function(e) {
+            if (e.target.id === 'case-modal-overlay') {
+                window.closeCaseModal();
+            }
+        };
+
+        window.navigateCase = function(direction) {
+            currentCaseIdx = (currentCaseIdx + direction + casesData.length) % casesData.length;
+            window.openCaseModal(currentCaseIdx);
+        };
+    </script>
 
 </body>
 </html>
