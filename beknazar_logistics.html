@@ -242,11 +242,11 @@
     <!-- MARQUEE LIVE TRACKING TICKER -->
     <div class="fixed top-20 left-0 w-full z-40 bg-dark text-white border-b border-gold/30 py-2.5 overflow-hidden font-mono text-xs shadow-md">
         <div class="animate-marquee whitespace-nowrap flex gap-12 items-center">
-            <span class="inline-flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-red-500 animate-ping"></span> <strong class="text-gold">ДУБАЙ $\rightarrow$ МОСКВА:</strong> PORSCHE CAYENNE 2024 [В ПУТИ / МОРСКОЙ ФРАХТ]</span>
-            <span class="inline-flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-[#25D366]"></span> <strong class="text-gold">ДУБАЙ $\rightarrow$ ПОТИ:</strong> MERCEDES G63 AMG [ТРАНЗИТ T1 ВЫПУЩЕН]</span>
-            <span class="inline-flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-blue-400"></span> <strong class="text-gold">ДУБАЙ $\rightarrow$ АЛМАТЫ:</strong> BMW X7 M-SPORT [ВЫГРУЗКА НА ТЕРМИНАЛЕ]</span>
-            <span class="inline-flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-yellow-400"></span> <strong class="text-gold">ДУБАЙ $\rightarrow$ МЕРСИН:</strong> RANGE ROVER AUTOBIOGRAPHY [ГОТОВ К ВЫДАЧЕ]</span>
-            <span class="inline-flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-red-500 animate-ping"></span> <strong class="text-gold">ДУБАЙ $\rightarrow$ МОСКВА:</strong> LI AUTO L9 [ПОГРУЗКА В КОНТЕЙНЕР 40FT]</span>
+            <span class="inline-flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-red-500 animate-ping"></span> <strong class="text-gold">ДУБАЙ → МОСКВА:</strong> PORSCHE CAYENNE 2024 [В ПУТИ / МОРСКОЙ ФРАХТ]</span>
+            <span class="inline-flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-[#25D366]"></span> <strong class="text-gold">ДУБАЙ → ПОТИ:</strong> MERCEDES G63 AMG [ТРАНЗИТ T1 ВЫПУЩЕН]</span>
+            <span class="inline-flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-blue-400"></span> <strong class="text-gold">ДУБАЙ → АЛМАТЫ:</strong> BMW X7 M-SPORT [ВЫГРУЗКА НА ТЕРМИНАЛЕ]</span>
+            <span class="inline-flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-yellow-400"></span> <strong class="text-gold">ДУБАЙ → МЕРСИН:</strong> RANGE ROVER AUTOBIOGRAPHY [ГОТОВ К ВЫДАЧЕ]</span>
+            <span class="inline-flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-red-500 animate-ping"></span> <strong class="text-gold">ДУБАЙ → МОСКВА:</strong> LI AUTO L9 [ПОГРУЗКА В КОНТЕЙНЕР 40FT]</span>
         </div>
     </div>
 
@@ -266,7 +266,7 @@
                 <div class="inline-flex items-center gap-3 bg-white/10 border border-gold/40 rounded-full py-2 px-5 backdrop-blur-md mb-8">
                     <span class="w-2.5 h-2.5 bg-[#25D366] rounded-full animate-ping"></span>
                     <span class="text-[10px] md:text-xs font-mono uppercase font-bold text-white tracking-[0.2em]">
-                        ОАЭ $\rightarrow$ РФ · ГРУЗИЯ · КАЗАХСТАН · ТУРЦИЯ | ПРЯМОЙ ОПЕРАТОР
+                        ОАЭ → РФ · ГРУЗИЯ · КАЗАХСТАН · ТУРЦИЯ | ПРЯМОЙ ОПЕРАТОР
                     </span>
                 </div>
 
@@ -318,71 +318,199 @@
         </section>
 
         <!-- 2. PROBLEM & WARNING SECTION (With 3D Tilt Cards) -->
-        <section class="py-24 bg-[#F5F5F5] border-b border-grey-light" id="problem-section">
-            <div class="max-w-[1200px] mx-auto px-6">
+        <section class="py-24 bg-[#F5F5F5] border-b border-grey-light overflow-hidden" id="problem-section">
+            <div class="max-w-[1300px] mx-auto px-6">
                 
                 <div class="text-center max-w-3xl mx-auto mb-16 reveal">
                     <span class="text-xs font-mono uppercase tracking-[0.25em] text-gold font-bold mb-3 block">( ОСТОРОЖНО: РИСКИ ИМПОРТА )</span>
                     <h2 class="font-oswald text-3xl md:text-5xl font-bold uppercase tracking-tight text-dark leading-tight">
                         ПОЧЕМУ 80% ПОКУПАТЕЛЕЙ ТЕРЯЮТ ДЕНЬГИ И НЕРВЫ ПРИ ДОСТАВКЕ АВТО ИЗ ОАЭ?
                     </h2>
+                    <p class="text-xs font-mono text-grey-dark mt-3 uppercase tracking-wider">
+                        🔄 Карточки автоматически переворачиваются при прокрутке. Нажмите на карточку, чтобы развернуть.
+                    </p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- 4 3D Scroll-Flip Cards Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" id="flip-cards-grid">
                     
-                    <!-- Trap 1 -->
-                    <div class="tilt-card reveal bg-white p-8 rounded-2xl border border-grey-light shadow-sm flex flex-col justify-between hover:shadow-2xl">
-                        <div>
-                            <div class="w-12 h-12 bg-red-100 text-red-600 rounded-xl flex items-center justify-center mb-6 font-mono font-bold text-lg">01</div>
-                            <h3 class="font-oswald text-xl font-bold uppercase text-dark mb-3">Скрытые платежи в портах</h3>
-                            <p class="text-xs text-grey-dark leading-relaxed font-manrope">
-                                Недобросовестные брокеры называют привлекательную ставку фрахта, а по прибытию выставляют счета за хранение, демередж и терминальные сборы на $1 500 – $3 000 больше.
-                            </p>
-                        </div>
-                        <div class="mt-6 pt-4 border-t border-grey-light text-[11px] font-mono text-dark font-bold">
-                            РЕШЕНИЕ BEKNAZAR: Фиксация итоговой суммы в договоре.
+                    <!-- Card 1 -->
+                    <div class="flip-card-container h-[420px] cursor-pointer" onclick="toggleCardFlip(this)">
+                        <div class="flip-card-inner relative w-full h-full duration-700 transition-transform" style="transform-style: preserve-3d;">
+                            
+                            <!-- Front Side -->
+                            <div class="flip-card-front absolute inset-0 bg-white p-8 rounded-3xl border border-grey-light shadow-sm flex flex-col justify-between" style="backface-visibility: hidden;">
+                                <div>
+                                    <div class="flex justify-between items-center mb-6">
+                                        <div class="w-12 h-12 bg-red-100 text-red-600 rounded-xl flex items-center justify-center font-mono font-bold text-lg">01</div>
+                                        <span class="text-[10px] font-mono text-grey-mid uppercase border border-grey-light px-2 py-1 rounded-full">Нажмите 🔄</span>
+                                    </div>
+                                    <h3 class="font-oswald text-2xl font-bold uppercase text-dark mb-3">Скрытые платежи в портах</h3>
+                                    <p class="text-xs text-grey-dark leading-relaxed font-manrope">
+                                        Недобросовестные брокеры называют привлекательную ставку фрахта, а по прибытию выставляют счета за хранение, демередж и терминальные сборы на $1 500 – $3 000 больше.
+                                    </p>
+                                </div>
+                                <div class="pt-4 border-t border-grey-light text-[11px] font-mono text-dark font-bold flex items-center justify-between">
+                                    <span>РЕШЕНИЕ BEKNAZAR</span>
+                                    <span class="text-gold">Подробнее →</span>
+                                </div>
+                            </div>
+
+                            <!-- Back Side -->
+                            <div class="flip-card-back absolute inset-0 rounded-3xl overflow-hidden shadow-2xl border-2 border-gold flex flex-col justify-between p-7 text-white" 
+                                 style="backface-visibility: hidden; transform: rotateY(180deg); background-image: linear-gradient(rgba(26,26,26,0.85), rgba(26,26,26,0.95)), url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800&auto=format&fit=crop'); background-size: cover; background-position: center;">
+                                <div>
+                                    <span class="text-[10px] font-mono text-gold uppercase tracking-widest block mb-2">РЕШЕНИЕ ПРОБЛЕМЫ #01</span>
+                                    <h4 class="font-oswald text-xl font-bold uppercase text-white mb-3">Фиксация итоговой суммы в договоре</h4>
+                                    <p class="text-xs font-manrope text-white/80 leading-relaxed">
+                                        Все терминальные и портовые сборы фиксируются в инвойсе компании BEKNAZAR SUIUNBEK GEN TR LLC до отправки. Никаких доплат по прибытию!
+                                    </p>
+                                </div>
+                                <div>
+                                    <a href="https://wa.me/971555299650?text=Здравствуйте!%20Хочу%20получить%20консультацию%20по%20стоимости%20доставки%20без%20скрытых%20платежей." 
+                                       target="_blank" onclick="event.stopPropagation()" 
+                                       class="magnetic-btn w-full bg-gold hover:bg-white text-dark font-mono text-xs font-bold uppercase py-3.5 px-4 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 shadow-lg">
+                                        <iconify-icon icon="logos:whatsapp-icon" width="18" height="18"></iconify-icon>
+                                        <span>Консультация в WA</span>
+                                    </a>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
 
-                    <!-- Trap 2 -->
-                    <div class="tilt-card reveal bg-white p-8 rounded-2xl border border-grey-light shadow-sm flex flex-col justify-between hover:shadow-2xl">
-                        <div>
-                            <div class="w-12 h-12 bg-red-100 text-red-600 rounded-xl flex items-center justify-center mb-6 font-mono font-bold text-lg">02</div>
-                            <h3 class="font-oswald text-xl font-bold uppercase text-dark mb-3">Повреждения кузова без страховки</h3>
-                            <p class="text-xs text-grey-dark leading-relaxed font-manrope">
-                                Царапины, сколы и вмятины при погрузке в контейнеры или на автовозах. Без акта описи 360° и полиса All-Risk вам никто не возместит ущерб.
-                            </p>
-                        </div>
-                        <div class="mt-6 pt-4 border-t border-grey-light text-[11px] font-mono text-dark font-bold">
-                            РЕШЕНИЕ BEKNAZAR: Фото/видео 360° + Страховка 100%.
+                    <!-- Card 2 -->
+                    <div class="flip-card-container h-[420px] cursor-pointer" onclick="toggleCardFlip(this)">
+                        <div class="flip-card-inner relative w-full h-full duration-700 transition-transform" style="transform-style: preserve-3d;">
+                            
+                            <!-- Front Side -->
+                            <div class="flip-card-front absolute inset-0 bg-white p-8 rounded-3xl border border-grey-light shadow-sm flex flex-col justify-between" style="backface-visibility: hidden;">
+                                <div>
+                                    <div class="flex justify-between items-center mb-6">
+                                        <div class="w-12 h-12 bg-red-100 text-red-600 rounded-xl flex items-center justify-center font-mono font-bold text-lg">02</div>
+                                        <span class="text-[10px] font-mono text-grey-mid uppercase border border-grey-light px-2 py-1 rounded-full">Нажмите 🔄</span>
+                                    </div>
+                                    <h3 class="font-oswald text-2xl font-bold uppercase text-dark mb-3">Повреждения кузова без страховки</h3>
+                                    <p class="text-xs text-grey-dark leading-relaxed font-manrope">
+                                        Царапины, сколы и вмятины при погрузке в контейнеры или на автовозах. Без акта описи 360° и полиса All-Risk вам никто не возместит ущерб.
+                                    </p>
+                                </div>
+                                <div class="pt-4 border-t border-grey-light text-[11px] font-mono text-dark font-bold flex items-center justify-between">
+                                    <span>РЕШЕНИЕ BEKNAZAR</span>
+                                    <span class="text-gold">Подробнее →</span>
+                                </div>
+                            </div>
+
+                            <!-- Back Side -->
+                            <div class="flip-card-back absolute inset-0 rounded-3xl overflow-hidden shadow-2xl border-2 border-gold flex flex-col justify-between p-7 text-white" 
+                                 style="backface-visibility: hidden; transform: rotateY(180deg); background-image: linear-gradient(rgba(26,26,26,0.85), rgba(26,26,26,0.95)), url('https://images.unsplash.com/photo-1617814076367-b759c7d7e738?q=80&w=800&auto=format&fit=crop'); background-size: cover; background-position: center;">
+                                <div>
+                                    <span class="text-[10px] font-mono text-gold uppercase tracking-widest block mb-2">РЕШЕНИЕ ПРОБЛЕМЫ #02</span>
+                                    <h4 class="font-oswald text-xl font-bold uppercase text-white mb-3">Фото/видео 360° + Страховка 100%</h4>
+                                    <p class="text-xs font-manrope text-white/80 leading-relaxed">
+                                        Перед погрузкой составляется подробный акт с 360° фиксацией. Каждое авто застраховано по системе All-Risk на полную стоимость.
+                                    </p>
+                                </div>
+                                <div>
+                                    <a href="https://wa.me/971555299650?text=Здравствуйте!%20Интересует%20консультация%20по%20страхованию%20автомобиля%20при%20доставке." 
+                                       target="_blank" onclick="event.stopPropagation()" 
+                                       class="magnetic-btn w-full bg-gold hover:bg-white text-dark font-mono text-xs font-bold uppercase py-3.5 px-4 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 shadow-lg">
+                                        <iconify-icon icon="logos:whatsapp-icon" width="18" height="18"></iconify-icon>
+                                        <span>Консультация в WA</span>
+                                    </a>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
 
-                    <!-- Trap 3 -->
-                    <div class="tilt-card reveal bg-white p-8 rounded-2xl border border-grey-light shadow-sm flex flex-col justify-between hover:shadow-2xl">
-                        <div>
-                            <div class="w-12 h-12 bg-red-100 text-red-600 rounded-xl flex items-center justify-center mb-6 font-mono font-bold text-lg">03</div>
-                            <h3 class="font-oswald text-xl font-bold uppercase text-dark mb-3">Задержки на таможне T1</h3>
-                            <p class="text-xs text-grey-dark leading-relaxed font-manrope">
-                                Зависание машин на транзитных терминалах Поти или Мерсина из-за ошибок в RTA сертификатах и неверно выписанных транзитных декларациях T1.
-                            </p>
-                        </div>
-                        <div class="mt-6 pt-4 border-t border-grey-light text-[11px] font-mono text-dark font-bold">
-                            РЕШЕНИЕ BEKNAZAR: Собственные юристы в ОАЭ и Грузии.
+                    <!-- Card 3 -->
+                    <div class="flip-card-container h-[420px] cursor-pointer" onclick="toggleCardFlip(this)">
+                        <div class="flip-card-inner relative w-full h-full duration-700 transition-transform" style="transform-style: preserve-3d;">
+                            
+                            <!-- Front Side -->
+                            <div class="flip-card-front absolute inset-0 bg-white p-8 rounded-3xl border border-grey-light shadow-sm flex flex-col justify-between" style="backface-visibility: hidden;">
+                                <div>
+                                    <div class="flex justify-between items-center mb-6">
+                                        <div class="w-12 h-12 bg-red-100 text-red-600 rounded-xl flex items-center justify-center font-mono font-bold text-lg">03</div>
+                                        <span class="text-[10px] font-mono text-grey-mid uppercase border border-grey-light px-2 py-1 rounded-full">Нажмите 🔄</span>
+                                    </div>
+                                    <h3 class="font-oswald text-2xl font-bold uppercase text-dark mb-3">Задержки на таможне T1</h3>
+                                    <p class="text-xs text-grey-dark leading-relaxed font-manrope">
+                                        Зависание машин на транзитных терминалах Поти или Мерсина из-за ошибок в RTA сертификатах и неверно выписанных транзитных декларациях T1.
+                                    </p>
+                                </div>
+                                <div class="pt-4 border-t border-grey-light text-[11px] font-mono text-dark font-bold flex items-center justify-between">
+                                    <span>РЕШЕНИЕ BEKNAZAR</span>
+                                    <span class="text-gold">Подробнее →</span>
+                                </div>
+                            </div>
+
+                            <!-- Back Side -->
+                            <div class="flip-card-back absolute inset-0 rounded-3xl overflow-hidden shadow-2xl border-2 border-gold flex flex-col justify-between p-7 text-white" 
+                                 style="backface-visibility: hidden; transform: rotateY(180deg); background-image: linear-gradient(rgba(26,26,26,0.85), rgba(26,26,26,0.95)), url('https://images.unsplash.com/photo-1565008447742-97f6f38c985c?q=80&w=800&auto=format&fit=crop'); background-size: cover; background-position: center;">
+                                <div>
+                                    <span class="text-[10px] font-mono text-gold uppercase tracking-widest block mb-2">РЕШЕНИЕ ПРОБЛЕМЫ #03</span>
+                                    <h4 class="font-oswald text-xl font-bold uppercase text-white mb-3">Собственные юристы в ОАЭ и Грузии</h4>
+                                    <p class="text-xs font-manrope text-white/80 leading-relaxed">
+                                        Штат экспедиторов в Дубае и Поти оперативно выпускает T1 декларации без задержек на таможенных терминалах.
+                                    </p>
+                                </div>
+                                <div>
+                                    <a href="https://wa.me/971555299650?text=Здравствуйте!%20Хочу%20проконсультироваться%20по%20транзиту%20T1%20и%20документам." 
+                                       target="_blank" onclick="event.stopPropagation()" 
+                                       class="magnetic-btn w-full bg-gold hover:bg-white text-dark font-mono text-xs font-bold uppercase py-3.5 px-4 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 shadow-lg">
+                                        <iconify-icon icon="logos:whatsapp-icon" width="18" height="18"></iconify-icon>
+                                        <span>Консультация в WA</span>
+                                    </a>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
 
-                    <!-- Trap 4 -->
-                    <div class="tilt-card reveal bg-white p-8 rounded-2xl border border-grey-light shadow-sm flex flex-col justify-between hover:shadow-2xl">
-                        <div>
-                            <div class="w-12 h-12 bg-red-100 text-red-600 rounded-xl flex items-center justify-center mb-6 font-mono font-bold text-lg">04</div>
-                            <h3 class="font-oswald text-xl font-bold uppercase text-dark mb-3">Штрафной Коммерческий Утильсбор</h3>
-                            <p class="text-xs text-grey-dark leading-relaxed font-manrope">
-                                Ошибки в схеме таможенного оформления приводят к доначислению утилизационного сбора от 800 000 до 1 600 000+ рублей при ввозе в РФ.
-                            </p>
-                        </div>
-                        <div class="mt-6 pt-4 border-t border-grey-light text-[11px] font-mono text-dark font-bold">
-                            РЕШЕНИЕ BEKNAZAR: Соблюдение льготного тарифа 3 400 руб.
+                    <!-- Card 4 -->
+                    <div class="flip-card-container h-[420px] cursor-pointer" onclick="toggleCardFlip(this)">
+                        <div class="flip-card-inner relative w-full h-full duration-700 transition-transform" style="transform-style: preserve-3d;">
+                            
+                            <!-- Front Side -->
+                            <div class="flip-card-front absolute inset-0 bg-white p-8 rounded-3xl border border-grey-light shadow-sm flex flex-col justify-between" style="backface-visibility: hidden;">
+                                <div>
+                                    <div class="flex justify-between items-center mb-6">
+                                        <div class="w-12 h-12 bg-red-100 text-red-600 rounded-xl flex items-center justify-center font-mono font-bold text-lg">04</div>
+                                        <span class="text-[10px] font-mono text-grey-mid uppercase border border-grey-light px-2 py-1 rounded-full">Нажмите 🔄</span>
+                                    </div>
+                                    <h3 class="font-oswald text-2xl font-bold uppercase text-dark mb-3">Штрафной Коммерческий Утильсбор</h3>
+                                    <p class="text-xs text-grey-dark leading-relaxed font-manrope">
+                                        Ошибки в схеме таможенного оформления приводят к доначислению утилизационного сбора от 800 000 до 1 600 000+ рублей при ввозе в РФ.
+                                    </p>
+                                </div>
+                                <div class="pt-4 border-t border-grey-light text-[11px] font-mono text-dark font-bold flex items-center justify-between">
+                                    <span>РЕШЕНИЕ BEKNAZAR</span>
+                                    <span class="text-gold">Подробнее →</span>
+                                </div>
+                            </div>
+
+                            <!-- Back Side -->
+                            <div class="flip-card-back absolute inset-0 rounded-3xl overflow-hidden shadow-2xl border-2 border-gold flex flex-col justify-between p-7 text-white" 
+                                 style="backface-visibility: hidden; transform: rotateY(180deg); background-image: linear-gradient(rgba(26,26,26,0.85), rgba(26,26,26,0.95)), url('https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?q=80&w=800&auto=format&fit=crop'); background-size: cover; background-position: center;">
+                                <div>
+                                    <span class="text-[10px] font-mono text-gold uppercase tracking-widest block mb-2">РЕШЕНИЕ ПРОБЛЕМЫ #04</span>
+                                    <h4 class="font-oswald text-xl font-bold uppercase text-white mb-3">Соблюдение льготного тарифа 3 400 руб.</h4>
+                                    <p class="text-xs font-manrope text-white/80 leading-relaxed">
+                                        Наша таможенная служба в РФ выстраивает легальную цепочку декларирования под физическое лицо с гарантией сохранения льготы.
+                                    </p>
+                                </div>
+                                <div>
+                                    <a href="https://wa.me/971555299650?text=Здравствуйте!%20Хочу%20проконсультироваться%20по%20льготному%20утилизационному%20сбору." 
+                                       target="_blank" onclick="event.stopPropagation()" 
+                                       class="magnetic-btn w-full bg-gold hover:bg-white text-dark font-mono text-xs font-bold uppercase py-3.5 px-4 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 shadow-lg">
+                                        <iconify-icon icon="logos:whatsapp-icon" width="18" height="18"></iconify-icon>
+                                        <span>Консультация в WA</span>
+                                    </a>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
 
@@ -636,14 +764,14 @@
                         </div>
                         <div class="p-8 flex flex-col flex-grow justify-between">
                             <div>
-                                <h3 class="font-oswald text-2xl font-bold uppercase text-dark mb-3">ОАЭ $\rightarrow$ РОССИЯ</h3>
+                                <h3 class="font-oswald text-2xl font-bold uppercase text-dark mb-3">ОАЭ → РОССИЯ</h3>
                                 <p class="text-xs font-manrope text-grey-dark leading-relaxed mb-6">
                                     Морской фрахт в Поти или Иран + Автовоз до Москвы/Регионов. Оформление СБКТС, ЭПТС, уплата льготного утилизационного сбора 3 400 руб.
                                 </p>
                             </div>
                             <div class="border-t border-grey-light pt-4 flex justify-between items-center text-xs font-mono font-bold text-dark">
                                 <span>ОТ $2 400 USD</span>
-                                <a href="https://wa.me/971555299650?text=Интересует%20доставка%20авто%20из%20ОАЭ%20в%20Россию" target="_blank" class="text-gold hover:underline">Заказать $\rightarrow$</a>
+                                <a href="https://wa.me/971555299650?text=Интересует%20доставка%20авто%20из%20ОАЭ%20в%20Россию" target="_blank" class="text-gold hover:underline">Заказать →</a>
                             </div>
                         </div>
                     </div>
@@ -657,14 +785,14 @@
                         </div>
                         <div class="p-8 flex flex-col flex-grow justify-between">
                             <div>
-                                <h3 class="font-oswald text-2xl font-bold uppercase text-dark mb-3">ОАЭ $\rightarrow$ ГРУЗИЯ</h3>
+                                <h3 class="font-oswald text-2xl font-bold uppercase text-dark mb-3">ОАЭ → ГРУЗИЯ</h3>
                                 <p class="text-xs font-manrope text-grey-dark leading-relaxed mb-6">
                                     Прямой морской фрахт из порта Джебель-Али в порты Поти и Батуми. Оформление транзитных деклараций T1, хранение на авто-терминалах.
                                 </p>
                             </div>
                             <div class="border-t border-grey-light pt-4 flex justify-between items-center text-xs font-mono font-bold text-dark">
                                 <span>ОТ $2 100 USD</span>
-                                <a href="https://wa.me/971555299650?text=Интересует%20доставка%20авто%20из%20ОАЭ%20в%20Грузию" target="_blank" class="text-gold hover:underline">Заказать $\rightarrow$</a>
+                                <a href="https://wa.me/971555299650?text=Интересует%20доставка%20авто%20из%20ОАЭ%20в%20Грузию" target="_blank" class="text-gold hover:underline">Заказать →</a>
                             </div>
                         </div>
                     </div>
@@ -678,14 +806,14 @@
                         </div>
                         <div class="p-8 flex flex-col flex-grow justify-between">
                             <div>
-                                <h3 class="font-oswald text-2xl font-bold uppercase text-dark mb-3">ОАЭ $\rightarrow$ КАЗАХСТАН</h3>
+                                <h3 class="font-oswald text-2xl font-bold uppercase text-dark mb-3">ОАЭ → КАЗАХСТАН</h3>
                                 <p class="text-xs font-manrope text-grey-dark leading-relaxed mb-6">
                                     Быстрый транзит через Актау и Алматы. Растаможка по правилам Таможенного союза ЕАЭС с минимальной налоговой нагрузкой.
                                 </p>
                             </div>
                             <div class="border-t border-grey-light pt-4 flex justify-between items-center text-xs font-mono font-bold text-dark">
                                 <span>ОТ $2 300 USD</span>
-                                <a href="https://wa.me/971555299650?text=Интересует%20доставка%20авто%20из%20ОАЭ%20в%20Казахстан" target="_blank" class="text-gold hover:underline">Заказать $\rightarrow$</a>
+                                <a href="https://wa.me/971555299650?text=Интересует%20доставка%20авто%20из%20ОАЭ%20в%20Казахстан" target="_blank" class="text-gold hover:underline">Заказать →</a>
                             </div>
                         </div>
                     </div>
@@ -699,14 +827,14 @@
                         </div>
                         <div class="p-8 flex flex-col flex-grow justify-between">
                             <div>
-                                <h3 class="font-oswald text-2xl font-bold uppercase text-dark mb-3">ОАЭ $\rightarrow$ ТУРЦИЯ</h3>
+                                <h3 class="font-oswald text-2xl font-bold uppercase text-dark mb-3">ОАЭ → ТУРЦИЯ</h3>
                                 <p class="text-xs font-manrope text-grey-dark leading-relaxed mb-6">
                                     Доставка в порт Мерсин или Стамбул. Оформление временного ввоза, транзитных деклараций и доработка автомобилей в сервис-центрах.
                                 </p>
                             </div>
                             <div class="border-t border-grey-light pt-4 flex justify-between items-center text-xs font-mono font-bold text-dark">
                                 <span>ОТ $2 200 USD</span>
-                                <a href="https://wa.me/971555299650?text=Интересует%20доставка%20авто%20из%20ОАЭ%20в%20Турцию" target="_blank" class="text-gold hover:underline">Заказать $\rightarrow$</a>
+                                <a href="https://wa.me/971555299650?text=Интересует%20доставка%20авто%20из%20ОАЭ%20в%20Турцию" target="_blank" class="text-gold hover:underline">Заказать →</a>
                             </div>
                         </div>
                     </div>
@@ -722,7 +850,7 @@
                 <div class="text-center max-w-3xl mx-auto mb-16 reveal">
                     <span class="text-xs font-mono uppercase tracking-[0.25em] text-gold font-bold mb-3 block">( СТАВИТЕ БЕГУНОК ДЛЯ СРАВНЕНИЯ )</span>
                     <h2 class="font-oswald text-3xl md:text-5xl font-bold uppercase tracking-tight text-dark">
-                        БЕЗОПАСНОСТЬ 360°: ИНСПЕКЦИЯ $\rightarrow$ ПОГРУЗКА
+                        БЕЗОПАСНОСТЬ 360°: ИНСПЕКЦИЯ → ПОГРУЗКА
                     </h2>
                     <p class="text-sm font-manrope text-grey-dark mt-3">Потяните бегунок по центру, чтобы увидеть разницу между осмотром на авторынке и профессиональным креплением в контейнере.</p>
                 </div>
@@ -781,7 +909,7 @@
                                 <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover" alt="Porsche Cayenne shipped from Dubai">
                                 <div class="absolute inset-0 bg-gradient-to-t from-dark via-transparent to-transparent"></div>
                                 <div class="absolute bottom-6 left-6 right-6">
-                                    <span class="text-[10px] font-mono text-gold uppercase block">ОАЭ $\rightarrow$ Москва</span>
+                                    <span class="text-[10px] font-mono text-gold uppercase block">ОАЭ → Москва</span>
                                     <h4 class="font-oswald text-xl font-bold uppercase text-white">Porsche Cayenne 2024</h4>
                                 </div>
                             </div>
@@ -793,7 +921,7 @@
                                 <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover" alt="Mercedes G-Class shipped from Dubai">
                                 <div class="absolute inset-0 bg-gradient-to-t from-dark via-transparent to-transparent"></div>
                                 <div class="absolute bottom-6 left-6 right-6">
-                                    <span class="text-[10px] font-mono text-gold uppercase block">ОАЭ $\rightarrow$ Поти</span>
+                                    <span class="text-[10px] font-mono text-gold uppercase block">ОАЭ → Поти</span>
                                     <h4 class="font-oswald text-xl font-bold uppercase text-white">Mercedes G63 AMG</h4>
                                 </div>
                             </div>
@@ -805,7 +933,7 @@
                                 <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover" alt="BMW X7 shipped from Dubai">
                                 <div class="absolute inset-0 bg-gradient-to-t from-dark via-transparent to-transparent"></div>
                                 <div class="absolute bottom-6 left-6 right-6">
-                                    <span class="text-[10px] font-mono text-gold uppercase block">ОАЭ $\rightarrow$ Алматы</span>
+                                    <span class="text-[10px] font-mono text-gold uppercase block">ОАЭ → Алматы</span>
                                     <h4 class="font-oswald text-xl font-bold uppercase text-white">BMW X7 M-Sport</h4>
                                 </div>
                             </div>
@@ -1073,10 +1201,10 @@
             <div>
                 <h4 class="text-white font-oswald font-bold uppercase tracking-widest text-sm mb-4">НАПРАВЛЕНИЯ</h4>
                 <div class="flex flex-col gap-2 font-mono">
-                    <p>ОАЭ $\rightarrow$ Россия (МСК, СПБ, ЮГ)</p>
-                    <p>ОАЭ $\rightarrow$ Грузия (Поти, Батуми)</p>
-                    <p>ОАЭ $\rightarrow$ Казахстан (Алматы)</p>
-                    <p>ОАЭ $\rightarrow$ Турция (Мерсин)</p>
+                    <p>ОАЭ → Россия (МСК, СПБ, ЮГ)</p>
+                    <p>ОАЭ → Грузия (Поти, Батуми)</p>
+                    <p>ОАЭ → Казахстан (Алматы)</p>
+                    <p>ОАЭ → Турция (Мерсин)</p>
                 </div>
             </div>
         </div>
@@ -1188,6 +1316,34 @@
                 document.body.style.overflow = 'auto';
             }
         }
+
+        
+        // Card Flip Handler (Manual click & Scroll Reveal Flip)
+        function toggleCardFlip(container) {
+            const inner = container.querySelector('.flip-card-inner');
+            if (inner.style.transform === 'rotateY(180deg)') {
+                inner.style.transform = 'rotateY(0deg)';
+            } else {
+                inner.style.transform = 'rotateY(180deg)';
+            }
+        }
+
+        // Scroll Observer for Auto-Flipping Cards when scrolled into view
+        const flipObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const cards = entry.target.querySelectorAll('.flip-card-inner');
+                    cards.forEach((card, idx) => {
+                        setTimeout(() => {
+                            card.style.transform = 'rotateY(180deg)';
+                        }, (idx + 1) * 350);
+                    });
+                }
+            });
+        }, { threshold: 0.3 });
+
+        const flipGrid = document.getElementById('flip-cards-grid');
+        if (flipGrid) flipObserver.observe(flipGrid);
 
         // 2. 3D Tilt Cards Animation
         document.querySelectorAll('.tilt-card').forEach(card => {
