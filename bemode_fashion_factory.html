@@ -9,13 +9,13 @@
     <!-- Google Fonts: Cormorant Garamond, Manrope, Montserrat, JetBrains Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=JetBrains+Mono:wght@400;500;700&family=Manrope:wght@300;400;500;600;700;800&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=JetBrains+Mono:wght@400;500;700&family=Manrope:wght@300;400;500;600;700;800&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
     
     <!-- Iconify CDN -->
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 
     <style>
-    /* ============================================================== KALTGRAT ANIMATIONS & QUIET LUXURY TOKENS */
+    /* ============================================================== AWWWARDS & KALTGRAT DESIGN SYSTEM */
     :root {
         --sand-50: #FAF8F5;   --sand-100: #F4F0E8;  --sand-200: #E8E2D5;
         --dark-900: #1C1917;  --dark-700: #44403C;  --dark-500: #78716C;
@@ -39,9 +39,9 @@
 
         --s-3xs: 4px; --s-2xs: 8px; --s-xs: 14px; --s-sm: 20px; --s-md: 28px;
         --s-lg: 40px; --s-xl: 56px; --s-2xl: 80px;
-        --ease: cubic-bezier(.2,0,0,1);
-        --dur: 180ms;
-        --radius-pill: 999px; --radius-panel: 14px; --radius-data: 6px;
+        --ease: cubic-bezier(.25,1,.5,1);
+        --dur: 200ms;
+        --radius-pill: 999px; --radius-panel: 16px; --radius-data: 6px;
     }
     * { box-sizing: border-box; }
     html { -webkit-text-size-adjust: 100%; overflow-x: hidden; scroll-behavior: smooth; }
@@ -49,7 +49,7 @@
         margin: 0; background: var(--ground); color: var(--text-primary);
         font-family: var(--font-sans); font-size: var(--step-0); line-height: 1.55;
         font-variant-numeric: tabular-nums; overflow-x: hidden; -webkit-font-smoothing: antialiased;
-        padding-bottom: 70px;
+        padding-bottom: 74px;
     }
     @media(min-width: 1024px) { body { padding-bottom: 0; } }
 
@@ -76,17 +76,16 @@
     section { padding: var(--s-xl) 0; }
     @media(min-width: 768px) { section { padding: var(--s-2xl) 0; } }
 
-    /* Keyframe reveal triggers */
     .rv { opacity: 0; transform: translateY(18px); animation: rv .5s var(--ease) forwards; }
     @keyframes rv { to { opacity: 1; transform: none; } }
-    .d1{animation-delay:.06s}.d2{animation-delay:.12s}.d3{animation-delay:.18s}.d4{animation-delay:.24s}
+    .ci { opacity: 0; transform: translateY(16px); animation: ci .62s var(--ease) both; animation-delay: calc(1.35s + var(--i,0) * 90ms); }
+    @keyframes ci { to { opacity: 1; transform: none; } }
     .io { opacity: 0; transform: translateY(22px); transition: opacity .6s var(--ease), transform .6s var(--ease); }
     .io.in { opacity: 1; transform: none; }
 
-    /* ========================================================= 01 · HERO COVER (KALTGRAT BEAM + LETTER MASK + REG TICKS) */
+    /* ========================================================= 01 · HERO COVER (TIMING BEAM + LETTER MASK) */
     .cover { position: relative; min-height: 100svh; overflow: hidden; isolation: isolate; padding: 0; background: var(--sand-100); }
     
-    /* 1. TIMING BEAM ANIMATION */
     .beam {
         position: absolute; z-index: 10; left: 0; top: 0; height: 3px; width: 100%;
         background: linear-gradient(90deg, transparent, var(--action), transparent);
@@ -114,7 +113,6 @@
         linear-gradient(90deg, rgba(250,248,245,.85) 0%, rgba(250,248,245,0) 60%);
     }
 
-    /* 2. LETTER MASK WORDMARK ANIMATION */
     .cover__type { position: absolute; z-index: 1; left: 0; right: 0; top: 26%; text-align: center; pointer-events: none; }
     .cover__type h1 {
         font-size: clamp(3rem, 16vw, 13.5rem); line-height: .82; letter-spacing: -.03em;
@@ -128,7 +126,6 @@
     }
     @keyframes letterUp { to { transform: translateY(0); } }
 
-    /* 3. HERO RACER ENTRANCE ANIMATION */
     .cover__racer {
         position: absolute; z-index: 2; left: 50%; bottom: -2%; width: min(88vw,740px);
         transform: translateX(-50%); animation: racerIn 1.15s var(--ease) .95s both;
@@ -160,7 +157,6 @@
     .meta dd { margin: 0; font-size: var(--step-0); font-weight: 700; letter-spacing: -.01em; font-family: var(--font-sans); }
     @media(min-width: 768px) { .meta dd { font-size: var(--step-1); } }
 
-    /* 4. CORNER REGISTRATION TICKS ANIMATION */
     .reg { position: absolute; z-index: 3; width: 18px; height: 18px; opacity: .5; }
     .reg::before, .reg::after { content: ""; position: absolute; background: var(--dark-900); }
     .reg::before { left: 0; top: 50%; width: 100%; height: 1px; transform: scaleX(0); animation: tick .5s var(--ease) 1.25s both; }
@@ -170,12 +166,7 @@
     .reg--tl { top: var(--s-xs); left: var(--s-xs); } .reg--tr { top: var(--s-xs); right: var(--s-xs); }
     .reg--bl { bottom: var(--s-xs); left: var(--s-xs); } .reg--br { bottom: var(--s-xs); right: var(--s-xs); }
 
-    .ci { opacity: 0; transform: translateY(16px); animation: ci .62s var(--ease) both; animation-delay: calc(1.35s + var(--i,0) * 90ms); }
-    @keyframes ci { to { opacity: 1; transform: none; } }
-    .cover .rule { transform: scaleX(0); transform-origin: left; animation: ruleIn .85s var(--ease) 1.3s both; }
-    @keyframes ruleIn { to { transform: scaleX(1); } }
-
-    /* ========================================================= 02 · STICKY 4 PILLARS INDEX (SCROLLING PROGRESS) */
+    /* ========================================================= 02 · STICKY 4 PILLARS INDEX */
     .face { position: relative; height: 420vh; padding: 0; background: var(--ground); }
     .face__sticky { position: sticky; top: 0; height: 100svh; overflow: hidden; isolation: isolate; }
     .face__panes { position: absolute; inset: 0; }
@@ -210,7 +201,6 @@
     @media(min-width: 768px) { .face__stat dd { font-size: var(--step-2); } }
     .face__stat--hot dd { color: var(--action); }
     
-    /* 5. STICKY VERTICAL PROGRESS INDEX */
     .index {
         position: absolute; z-index: 2; right: var(--s-lg); top: 50%; transform: translateY(-50%);
         height: min(58svh,470px); width: 240px; display: flex; flex-direction: column; gap: var(--s-3xs);
@@ -232,31 +222,125 @@
     }
     .index__seg.is-on span { color: var(--action); font-weight: 700; }
 
-    /* ========================================================= 03 · LOOKBOOK GALLERY */
-    .lookbook__grid { display: grid; grid-template-columns: 1fr; gap: var(--s-sm); margin-top: var(--s-md); }
-    @media(min-width: 640px) { .lookbook__grid { grid-template-columns: repeat(2, 1fr); } }
-    @media(min-width: 1024px) { .lookbook__grid { grid-template-columns: repeat(4, 1fr); gap: var(--s-md); margin-top: var(--s-lg); } }
-
-    .lb-card {
-        background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-panel); overflow: hidden;
-        transition: transform .4s var(--ease), box-shadow .4s var(--ease); cursor: pointer;
+    /* ========================================================= 03 · STORIES / LOOKBOOK HORIZONTAL CAROUSEL (SWIPE WITH PEEK) */
+    .stories-sec { background: var(--sand-50); border-bottom: 1px solid var(--line); overflow: hidden; }
+    
+    .stories-feed-wrap {
+        margin-top: var(--s-md);
+        position: relative;
     }
-    .lb-card:hover { transform: translateY(-6px); box-shadow: 0 16px 30px rgba(0,0,0,.08); }
-    .lb-card__img { height: 320px; overflow: hidden; position: relative; }
-    .lb-card__img img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s var(--ease); }
-    .lb-card:hover .lb-card__img img { transform: scale(1.06); }
-    .lb-card__body { padding: var(--s-sm); display: flex; flex-direction: column; }
-    .lb-card__tag { font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; letter-spacing: .14em; color: var(--action); font-weight: 700; }
 
-    /* ========================================================= 04 · PLOTTED QUALITY TRACE (ANIMATED SVG GRAPH) */
+    /* Horizontal scroll container with scroll snap & half-card peek on right */
+    .stories-feed {
+        display: flex;
+        gap: 18px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding-bottom: 24px;
+        padding-right: 15vw; /* Allow next card to peek out! */
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+    .stories-feed::-webkit-scrollbar { display: none; }
+
+    .story-card {
+        flex: 0 0 min(82vw, 360px);
+        scroll-snap-align: start;
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: var(--radius-panel);
+        overflow: hidden;
+        position: relative;
+        transition: transform .4s var(--ease), box-shadow .4s var(--ease);
+        cursor: pointer;
+        user-select: none;
+    }
+    .story-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(0,0,0,.08); }
+    
+    .story-card__head {
+        position: absolute; top: 12px; left: 12px; right: 12px; z-index: 3;
+        display: flex; gap: 4px;
+    }
+    .story-bar { height: 3px; flex: 1; background: rgba(255,255,255,.4); border-radius: 2px; overflow: hidden; }
+    .story-bar__fill { height: 100%; width: 0%; background: #FFFFFF; transition: width .3s ease; }
+    .story-card.is-active .story-bar__fill { width: 100%; }
+
+    .story-card__img { height: 440px; position: relative; overflow: hidden; }
+    .story-card__img img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s var(--ease); }
+    .story-card:hover .story-card__img img { transform: scale(1.06); }
+    .story-card__img::after {
+        content: ""; position: absolute; inset: 0;
+        background: linear-gradient(180deg, rgba(0,0,0,.2) 0%, rgba(0,0,0,0) 40%, rgba(0,0,0,.85) 100%);
+    }
+
+    .story-card__info {
+        position: absolute; bottom: 0; left: 0; right: 0; z-index: 3;
+        padding: 20px; color: #FFFFFF;
+    }
+    .story-card__tag { font-family: var(--font-mono); font-size: 10px; letter-spacing: .16em; text-transform: uppercase; color: var(--gold-500); font-weight: 700; }
+    .story-card__title { font-family: var(--font-editorial); font-size: 26px; font-weight: 600; margin-top: 4px; color: #FFFFFF; }
+    .story-card__sub { font-size: 13px; color: rgba(255,255,255,.8); margin-top: 4px; line-height: 1.4; }
+    .story-card__btn {
+        margin-top: 14px; display: inline-flex; align-items: center; gap: 8px;
+        font-family: var(--font-mono); font-size: 11px; text-transform: uppercase; letter-spacing: .1em; font-weight: 700; color: var(--gold-500);
+    }
+
+    /* Swipe hint gesture tag */
+    .swipe-hint {
+        display: inline-flex; align-items: center; gap: 6px;
+        font-family: var(--font-mono); font-size: 11px; text-transform: uppercase; letter-spacing: .14em;
+        color: var(--text-muted); margin-top: 12px;
+    }
+
+    /* ========================================================= 04 · AWWWARDS FULLSCREEN PAGE DETAIL MODAL */
+    .page-modal {
+        position: fixed; inset: 0; z-index: 9999;
+        background: var(--ground); color: var(--text-primary);
+        overflow-y: auto; overflow-x: hidden;
+        opacity: 0; pointer-events: none; transform: translateY(100%);
+        transition: transform .5s var(--ease), opacity .5s var(--ease);
+    }
+    .page-modal.is-open { opacity: 1; pointer-events: auto; transform: translateY(0); }
+    
+    .modal-nav {
+        position: sticky; top: 0; z-index: 50;
+        background: rgba(250,248,245,.95); backdrop-filter: blur(14px);
+        border-bottom: 1px solid var(--line); padding: 16px var(--s-sm);
+        display: flex; justify-content: space-between; align-items: center;
+    }
+    .modal-close-btn {
+        display: inline-flex; align-items: center; gap: 8px;
+        padding: 10px 20px; border-radius: var(--radius-pill);
+        background: var(--dark-900); color: #FFFFFF;
+        font-family: var(--font-mono); font-size: 11px; text-transform: uppercase; font-weight: 700; border: none;
+    }
+
+    .modal-grid {
+        display: grid; grid-template-columns: 1fr; gap: var(--s-md); padding-top: var(--s-md);
+    }
+    @media(min-width: 900px) {
+        .modal-grid { grid-template-columns: 1.1fr 0.9fr; gap: var(--s-xl); }
+    }
+    .modal-gallery {
+        display: grid; gap: 16px;
+    }
+    .modal-gallery img {
+        width: 100%; border-radius: var(--radius-panel); object-fit: cover; max-height: 580px;
+        box-shadow: 0 10px 30px rgba(0,0,0,.06);
+    }
+
+    .modal-meta-box {
+        background: var(--surface); border: 1px solid var(--line);
+        border-radius: var(--radius-panel); padding: var(--s-md); margin-top: 20px;
+    }
+
+    /* ========================================================= 05 · PLOTTED QUALITY TRACE (ANIMATED SVG CHART LINE) */
     .trace {
         position: relative; isolation: isolate; overflow: hidden; background: var(--sand-100);
         border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
     }
     .trace__ice { position: absolute; inset: 0; z-index: 0; }
-    .trace__ice img {
-        width: 100%; height: 100%; object-fit: cover; filter: saturate(.3) brightness(.9) contrast(1.02); opacity: .25;
-    }
+    .trace__ice img { width: 100%; height: 100%; object-fit: cover; filter: saturate(.3) brightness(.9) contrast(1.02); opacity: .25; }
     .trace > .wrap { position: relative; z-index: 1; }
     .trace__head { display: grid; grid-template-columns: 1fr; gap: var(--s-md); align-items: end; }
     @media(min-width: 768px) { .trace__head { grid-template-columns: auto 1fr; gap: var(--s-2xl); } }
@@ -269,13 +353,12 @@
     @media(min-width: 768px) { .trace__key dd { font-size: var(--step-1); } }
     .trace__key .hot { color: var(--action); }
     
-    /* 6. ANIMATED SVG CHART LINE DRAWING */
     .chart { margin: var(--s-md) 0 0; padding: 0; }
     .chart svg { width: 100%; height: auto; display: block; }
     .chart__line { stroke-dasharray: 2600; stroke-dashoffset: 2600; transition: stroke-dashoffset 1.8s var(--ease); }
     .chart.in .chart__line { stroke-dashoffset: 0; }
 
-    /* ========================================================= 05 · EQUIPMENT HOTSPOTS & SCANNING POPOVER */
+    /* ========================================================= 06 · EQUIPMENT HOTSPOTS & SCANNING POPOVER */
     .kit {
         position: relative; margin-top: var(--s-md); overflow: hidden; background: var(--surface);
         width: 100%; border: 1px solid var(--line); border-radius: var(--radius-panel);
@@ -283,7 +366,6 @@
     @media(min-width: 768px) { .kit { margin-top: var(--s-xl); } }
     .kit > img { width: 100%; display: block; filter: contrast(1.02) brightness(.96); will-change: transform; transform: translateZ(0); }
 
-    /* 7. HOTSPOT PULSING RING ANIMATION */
     .hs {
         position: absolute; left: var(--x); top: var(--y); transform: translate(-50%,-50%);
         width: 44px; height: 44px; padding: 0; border: 0; background: none; cursor: pointer;
@@ -306,7 +388,6 @@
     .hs:hover .hs__ring, .hs:focus-visible .hs__ring, .hs.is-on .hs__ring { transform: scale(1); border-color: var(--action); }
     .hs:hover .hs__dot, .hs:focus-visible .hs__dot { transform: scale(1.5); }
 
-    /* 8. SCANNING POPOVER ANIMATION WITH CORNER BRACKETS */
     .kitpop {
         position: absolute; z-index: 10; width: calc(100vw - 28px); max-width: 620px; pointer-events: none;
         background: var(--surface); border: 1px solid var(--line);
@@ -349,7 +430,7 @@
     .kitpop dd { margin: 0; font-family: var(--font-mono); font-size: var(--step--1); font-weight: 600; }
     .kitpop .hot { color: var(--action); }
 
-    /* ========================================================= 06 · COMPLETED BATCHES TABLE + MOUSE HOVER CARD */
+    /* ========================================================= 07 · COMPLETED BATCHES TABLE + MOUSE HOVER CARD */
     .sheet { margin-top: var(--s-md); border-top: 1px solid var(--line); }
     .sheet__head, .row { display: grid; grid-template-columns: 44px 1fr 90px; gap: var(--s-xs); padding: var(--s-2xs) 0; align-items: baseline; }
     @media(min-width: 768px) { .sheet__head, .row { grid-template-columns: 70px 1fr 140px 140px 100px; gap: var(--s-sm); } }
@@ -360,7 +441,6 @@
     .row .nat, .row .st, .row .qty { font-family: var(--font-mono); color: var(--text-muted); font-size: var(--step--1); }
     .row.is-red b, .row.is-red .name { color: var(--text-primary); font-weight: 600; }
     
-    /* 9. MOUSE TRACKING HOVER CARD */
     .card {
         position: fixed; z-index: 20; width: 270px; pointer-events: none; opacity: 0;
         transform: translateY(6px); transition: opacity .16s var(--ease), transform .16s var(--ease);
@@ -377,7 +457,7 @@
     .card__stats dd { margin: 0; font-family: var(--font-mono); font-size: var(--step-0); font-weight: 600; }
     .card__stats .hot { color: var(--action); }
 
-    /* ========================================================= 07 · CALCULATOR */
+    /* ========================================================= 08 · CALCULATOR */
     .calc__grid { display: grid; grid-template-columns: 1fr; gap: var(--s-md); margin-top: var(--s-md); }
     @media(min-width: 1024px) { .calc__grid { grid-template-columns: 1fr 420px; gap: var(--s-xl); margin-top: var(--s-lg); } }
     .calc__panel { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-panel); padding: var(--s-sm); box-shadow: 0 10px 30px rgba(0,0,0,.03); }
@@ -430,7 +510,7 @@
   <div class="cover__grid">
     <div class="cover__top">
       <div class="label ci" style="--i:0">BeMode&nbsp;·&nbsp;Feminine&nbsp;Garment&nbsp;Factory&nbsp;·&nbsp;Bishkek</div>
-      <div class="label mono ci" style="--i:1">ISO-9001&nbsp;/&nbsp;CAD&nbsp;/&nbsp;QUIET&nbsp;LUXURY</div>
+      <div class="label mono ci" style="--i:1">ISO-9001&nbsp;/&nbsp;CAD&nbsp;/&nbsp;ATELIER&nbsp;STANDARD</div>
     </div>
     <div></div>
     <div class="cover__bottom">
@@ -471,76 +551,79 @@
   </div>
 </section>
 
-<!-- 03 · LOOKBOOK SHOWCASE -->
-<section class="lookbook" id="lookbook" style="background:var(--sand-50); border-bottom:1px solid var(--line)">
+<!-- 03 · STORIES / LOOKBOOK HORIZONTAL CAROUSEL (SWIPE WITH PEEK) -->
+<section class="stories-sec" id="lookbook">
   <div class="wrap">
-    <div class="label">Production Portfolio & Lookbook</div>
-    <h2>Коллекции, отшитые нашей фабрикой</h2>
-    <p class="lede">От шелковых платьев миди до твидовых костюмов и оверсайз жакетов с идеальной посадкой по лекалам.</p>
-
-    <div class="lookbook__grid">
-      <!-- Card 1 -->
-      <div class="lb-card" onclick="openSampleModal('Шелковое платье комбинация')">
-        <div class="lb-card__img">
-          <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?q=80&w=800&auto=format&fit=crop" alt="Шелковые платья">
-        </div>
-        <div class="lb-card__body">
-          <span class="lb-card__tag">ПЛАТЬЯ & МИДИ</span>
-          <h3 style="font-size:var(--step-0); margin-top:4px">Шелковые платья-комбинации</h3>
-          <p style="font-size:var(--step--1); color:var(--text-muted); margin-top:4px">Шелк-армани, закрытые швы, безупречная обработка горловины.</p>
-          <div style="display:flex; justify-content:space-between; margin-top:12px; font-family:var(--font-mono); font-size:11px; font-weight:700; color:var(--action)">
-            <span>От 500 шт</span>
-            <span>Заказать образец →</span>
-          </div>
-        </div>
+    <div style="display:flex; justify-content:space-between; align-items:end; flex-wrap:wrap; gap:16px">
+      <div>
+        <div class="label">Interactive Editorial Stories</div>
+        <h2>Коллекции & Образцы готовых изделий</h2>
+        <p class="lede">Смахните влево, чтобы просмотреть всю ленту образов. Нажмите на карточку для открытия закрытой спецификации.</p>
       </div>
-
-      <!-- Card 2 -->
-      <div class="lb-card" onclick="openSampleModal('Жакет оверсайз / Твидовый костюм')">
-        <div class="lb-card__img">
-          <img src="https://images.unsplash.com/photo-1584273143981-41c073dfe8f8?q=80&w=800&auto=format&fit=crop" alt="Жакеты и костюмы">
-        </div>
-        <div class="lb-card__body">
-          <span class="lb-card__tag">ЖАКЕТЫ & КОСТЮМЫ</span>
-          <h3 style="font-size:var(--step-0); margin-top:4px">Двубортные жакеты & Твид</h3>
-          <p style="font-size:var(--step--1); color:var(--text-muted); margin-top:4px">Дублирование полочек, форма плеча, формоустойчивые ткани.</p>
-          <div style="display:flex; justify-content:space-between; margin-top:12px; font-family:var(--font-mono); font-size:11px; font-weight:700; color:var(--action)">
-            <span>От 500 шт</span>
-            <span>Заказать образец →</span>
-          </div>
-        </div>
+      <div class="swipe-hint">
+        <span>Листайте ленту →</span>
       </div>
+    </div>
 
-      <!-- Card 3 -->
-      <div class="lb-card" onclick="openSampleModal('Корсетные топы и блузы')">
-        <div class="lb-card__img">
-          <img src="https://images.unsplash.com/photo-1550614000-4895a10e1bfd?q=80&w=800&auto=format&fit=crop" alt="Корсетные изделия">
-        </div>
-        <div class="lb-card__body">
-          <span class="lb-card__tag">КОРСЕТЫ & ТОПЫ</span>
-          <h3 style="font-size:var(--step-0); margin-top:4px">Корсетные топы и блузы</h3>
-          <p style="font-size:var(--step--1); color:var(--text-muted); margin-top:4px">Косточки упругости, точнейшая утяжка по лекалам САПР.</p>
-          <div style="display:flex; justify-content:space-between; margin-top:12px; font-family:var(--font-mono); font-size:11px; font-weight:700; color:var(--action)">
-            <span>От 500 шт</span>
-            <span>Заказать образец →</span>
+    <div class="stories-feed-wrap">
+      <div class="stories-feed" id="storiesFeed">
+        
+        <!-- Story Card 1 -->
+        <div class="story-card is-active" onclick="openDetailModal('silk')">
+          <div class="story-card__head"><div class="story-bar"><div class="story-bar__fill"></div></div></div>
+          <div class="story-card__img">
+            <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?q=80&w=800&auto=format&fit=crop" alt="Шелковые платья">
+          </div>
+          <div class="story-card__info">
+            <div class="story-card__tag">ПЛАТЬЯ & МИДИ</div>
+            <h3 class="story-card__title">Шелковые платья-комбинации</h3>
+            <p class="story-card__sub">Шелк-армани, закрытые французские швы, идеал по косой.</p>
+            <div class="story-card__btn">Открыть спецификацию ↗</div>
           </div>
         </div>
-      </div>
 
-      <!-- Card 4 -->
-      <div class="lb-card" onclick="openSampleModal('Трикотажные сеты / Плюс-сайз')">
-        <div class="lb-card__img">
-          <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=800&auto=format&fit=crop" alt="Трикотаж и Плюс-сайз">
-        </div>
-        <div class="lb-card__body">
-          <span class="lb-card__tag">ТРИКОТАЖ & CASUAL</span>
-          <h3 style="font-size:var(--step-0); margin-top:4px">Оверсайз сеты & Плюс-сайз</h3>
-          <p style="font-size:var(--step--1); color:var(--text-muted); margin-top:4px">Усиленные бейки, футер 3-нитка, ровные 4-ниточные швы.</p>
-          <div style="display:flex; justify-content:space-between; margin-top:12px; font-family:var(--font-mono); font-size:11px; font-weight:700; color:var(--action)">
-            <span>От 500 шт</span>
-            <span>Заказать образец →</span>
+        <!-- Story Card 2 (Peeked out on mobile/desktop!) -->
+        <div class="story-card" onclick="openDetailModal('suit')">
+          <div class="story-card__head"><div class="story-bar"><div class="story-bar__fill"></div></div></div>
+          <div class="story-card__img">
+            <img src="https://images.unsplash.com/photo-1584273143981-41c073dfe8f8?q=80&w=800&auto=format&fit=crop" alt="Двубортные жакеты">
+          </div>
+          <div class="story-card__info">
+            <div class="story-card__tag">ЖАКЕТЫ & КОСТЮМЫ</div>
+            <h3 class="story-card__title">Двубортные жакеты & Твид</h3>
+            <p class="story-card__sub">Формоустойчивое дублирование полочек, форма плеча.</p>
+            <div class="story-card__btn">Открыть спецификацию ↗</div>
           </div>
         </div>
+
+        <!-- Story Card 3 -->
+        <div class="story-card" onclick="openDetailModal('corset')">
+          <div class="story-card__head"><div class="story-bar"><div class="story-bar__fill"></div></div></div>
+          <div class="story-card__img">
+            <img src="https://images.unsplash.com/photo-1550614000-4895a10e1bfd?q=80&w=800&auto=format&fit=crop" alt="Корсетные топы">
+          </div>
+          <div class="story-card__info">
+            <div class="story-card__tag">КОРСЕТЫ & ТОПЫ</div>
+            <h3 class="story-card__title">Корсетные топы & Блузы</h3>
+            <p class="story-card__sub">Упругие косточки, точнейшая утяжка по лекалам САПР.</p>
+            <div class="story-card__btn">Открыть спецификацию ↗</div>
+          </div>
+        </div>
+
+        <!-- Story Card 4 -->
+        <div class="story-card" onclick="openDetailModal('casual')">
+          <div class="story-card__head"><div class="story-bar"><div class="story-bar__fill"></div></div></div>
+          <div class="story-card__img">
+            <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=800&auto=format&fit=crop" alt="Трикотажные сеты">
+          </div>
+          <div class="story-card__info">
+            <div class="story-card__tag">ТРИКОТАЖ & CASUAL</div>
+            <h3 class="story-card__title">Оверсайз сеты & Плюс-сайз</h3>
+            <p class="story-card__sub">Усиленные бейки, футер 3-нитка пенье, ровный оверлок.</p>
+            <div class="story-card__btn">Открыть спецификацию ↗</div>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
@@ -665,6 +748,57 @@
     <iconify-icon icon="logos:whatsapp-icon" width="16" height="16"></iconify-icon>
     <span>WhatsApp</span>
   </a>
+</div>
+
+<!-- ==================================================== AWWWARDS FULLSCREEN PAGE DETAIL MODAL -->
+<div class="page-modal" id="pageModal">
+  <div class="modal-nav">
+    <div style="font-family:var(--font-mono); font-size:11px; text-transform:uppercase; letter-spacing:.14em; color:var(--action); font-weight:700" id="modalTag">Спецификация изделия</div>
+    <button type="button" onclick="closeDetailModal()" class="modal-close-btn">Закрыть ✕</button>
+  </div>
+
+  <div class="wrap">
+    <div class="modal-grid">
+      <div class="modal-gallery">
+        <img id="modalMainImg" src="" alt="Main Garment Detail">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px">
+          <img id="modalSubImg1" src="" alt="Detail 1">
+          <img id="modalSubImg2" src="" alt="Detail 2">
+        </div>
+      </div>
+
+      <div>
+        <h1 id="modalTitle" style="font-size:clamp(2.2rem, 4vw, 3.8rem); line-height:1.1">Наименование изделия</h1>
+        <p class="lede" id="modalDesc" style="margin-top:12px">Подробное описание спецификации пошива и обработки ткани.</p>
+
+        <div class="modal-meta-box">
+          <div style="font-family:var(--font-mono); font-size:11px; text-transform:uppercase; letter-spacing:.14em; color:var(--action); font-weight:700">Экономика & ТТХ пошива</div>
+          <dl style="display:grid; gap:12px; margin-top:16px">
+            <div style="display:flex; justify-content:space-between; border-bottom:1px solid var(--line-soft); padding-bottom:8px">
+              <span style="color:var(--text-muted); font-size:13px">Ткань / Состав:</span>
+              <strong id="modalFabric" style="font-family:var(--font-mono); font-size:13px">Шелк-Армани / 100%</strong>
+            </div>
+            <div style="display:flex; justify-content:space-between; border-bottom:1px solid var(--line-soft); padding-bottom:8px">
+              <span style="color:var(--text-muted); font-size:13px">Обработка швов:</span>
+              <strong id="modalSeam" style="font-family:var(--font-mono); font-size:13px">Французский закрытый шов</strong>
+            </div>
+            <div style="display:flex; justify-content:space-between; border-bottom:1px solid var(--line-soft); padding-bottom:8px">
+              <span style="color:var(--text-muted); font-size:13px">Себестоимость партии:</span>
+              <strong id="modalCost" style="font-family:var(--font-mono); font-size:14px; color:var(--action)">от 450 ₽ / ед</strong>
+            </div>
+            <div style="display:flex; justify-content:space-between">
+              <span style="color:var(--text-muted); font-size:13px">Срок пошива образца:</span>
+              <strong id="modalTime" style="font-family:var(--font-mono); font-size:13px">3 рабочих дня</strong>
+            </div>
+          </dl>
+        </div>
+
+        <button type="button" onclick="sendWAFromModal()" class="btn btn--go" style="width:100%; margin-top:24px; padding:18px; text-align:center; font-size:13px">
+          💬 Заказать пошив эталонного образца в WhatsApp
+        </button>
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- SAMPLE MODAL OVERLAY -->
@@ -914,12 +1048,99 @@
     body.addEventListener('mouseleave', () => card.classList.remove('is-on'));
   }
 
-  /* Intersection Observer for triggers */
+  /* Intersection Observer */
   const io = new IntersectionObserver(es => es.forEach(e => {
     if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
   }), {threshold:.18});
   document.querySelectorAll('.io').forEach(n => io.observe(n));
 })();
+
+/* AWWWARDS FULLSCREEN PAGE DETAIL MODAL DATA ENGINE */
+const PRODUCT_DATA = {
+  silk: {
+    tag: 'ПЛАТЬЯ & МИДИ · ТЕХНИЧЕСКАЯ СПЕЦИФИКАЦИЯ',
+    title: 'Шелковые платья-комбинации',
+    desc: 'Премиальный отшив из шелка-армани и вискозы. Конструирование кроя по косой 45° на автоматизированном лекале САПР Графис. Все внутренние швы выполняются закрытым двойным французским швом (бельевая обработка).',
+    fabric: 'Шелк-Армани / Плотность 115 г/м²',
+    seam: 'Французский закрытый двойной шов',
+    cost: 'от 450 ₽ / ед',
+    time: '3 рабочих дня (образец)',
+    imgMain: 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?q=80&w=1200&auto=format&fit=crop',
+    imgSub1: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=800&auto=format&fit=crop',
+    imgSub2: 'https://images.unsplash.com/photo-1550614000-4895a10e1bfd?q=80&w=800&auto=format&fit=crop'
+  },
+  suit: {
+    tag: 'ЖАКЕТЫ & КОСТЮМЫ · ТЕХНИЧЕСКАЯ СПЕЦИФИКАЦИЯ',
+    title: 'Двубортные жакеты & Твид',
+    desc: 'Структурированный крой с четким плечевым поясом. Дублирование клеевыми материалами Kufner (Германия) полочек, бортов и шлицы. Вточная подкладка из плотной вискозы с нагрудными прорезными карманами в рамку.',
+    fabric: 'Итальянский твид / Шерсть 70%',
+    seam: 'Дублированный бортовой шов',
+    cost: 'от 890 ₽ / ед',
+    time: '4 рабочих дня (образец)',
+    imgMain: 'https://images.unsplash.com/photo-1584273143981-41c073dfe8f8?q=80&w=1200&auto=format&fit=crop',
+    imgSub1: 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?q=80&w=800&auto=format&fit=crop',
+    imgSub2: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=800&auto=format&fit=crop'
+  },
+  corset: {
+    tag: 'КОРСЕТЫ & ТОПЫ · ТЕХНИЧЕСКАЯ СПЕЦИФИКАЦИЯ',
+    title: 'Корсетные топы и блузы',
+    desc: 'Точная утяжка по 12 анатомическим точкам. Вшивание спиральных металлических и регилиновых косточек упругости. Застежка на потайную молнию YKK или корсетную шнуровку с люверсами.',
+    fabric: 'Натуральный хлопок / Косточки упругости',
+    seam: 'Усиленный кулисный шов',
+    cost: 'от 480 ₽ / ед',
+    time: '3 рабочих дня (образец)',
+    imgMain: 'https://images.unsplash.com/photo-1550614000-4895a10e1bfd?q=80&w=1200&auto=format&fit=crop',
+    imgSub1: 'https://images.unsplash.com/photo-1584273143981-41c073dfe8f8?q=80&w=800&auto=format&fit=crop',
+    imgSub2: 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?q=80&w=800&auto=format&fit=crop'
+  },
+  casual: {
+    tag: 'ТРИКОТАЖ & CASUAL · ТЕХНИЧЕСКАЯ СПЕЦИФИКАЦИЯ',
+    title: 'Оверсайз сеты & Плюс-сайз',
+    desc: 'Пошив изделий из футера 3-нитка пенье 330–380 г/м². Четырехниточные оверлочные строчки на оборудовании Juki, плоский шов флэтлок на горловине и манжетах. Усиленная силиконовая бейка в плечевых швах.',
+    fabric: 'Футер 3-нитка пенье 340 г/м²',
+    seam: '4-ниточный оверлок Juki + Флэтлок',
+    cost: 'от 520 ₽ / ед',
+    time: '2 рабочих дня (образец)',
+    imgMain: 'https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=1200&auto=format&fit=crop',
+    imgSub1: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=800&auto=format&fit=crop',
+    imgSub2: 'https://images.unsplash.com/photo-1584273143981-41c073dfe8f8?q=80&w=800&auto=format&fit=crop'
+  }
+};
+
+let currentModalItem = 'silk';
+
+function openDetailModal(key) {
+  const data = PRODUCT_DATA[key] || PRODUCT_DATA.silk;
+  currentModalItem = key;
+
+  document.getElementById('modalTag').innerText = data.tag;
+  document.getElementById('modalTitle').innerText = data.title;
+  document.getElementById('modalDesc').innerText = data.desc;
+  document.getElementById('modalFabric').innerText = data.fabric;
+  document.getElementById('modalSeam').innerText = data.seam;
+  document.getElementById('modalCost').innerText = data.cost;
+  document.getElementById('modalTime').innerText = data.time;
+
+  document.getElementById('modalMainImg').src = data.imgMain;
+  document.getElementById('modalSubImg1').src = data.imgSub1;
+  document.getElementById('modalSubImg2').src = data.imgSub2;
+
+  const modal = document.getElementById('pageModal');
+  modal.classList.add('is-open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeDetailModal() {
+  const modal = document.getElementById('pageModal');
+  modal.classList.remove('is-open');
+  document.body.style.overflow = '';
+}
+
+function sendWAFromModal() {
+  const data = PRODUCT_DATA[currentModalItem];
+  const text = `Здравствуйте, BeMode! Заинтересовала спецификация: ${data.title}. Хочу уточнить детали и заказать образец.`;
+  window.open(`https://wa.me/996502985896?text=${encodeURIComponent(text)}`, '_blank');
+}
 
 /* B2B Calculator Engine */
 let cCat = 'dresses', cServ = 'ready', cVol = 500;
