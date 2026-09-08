@@ -5,31 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bemode | Оптовый пошив женской одежды премиального качества | Бишкек • Дордой</title>
     <meta name="description" content="Швейная фабрика Bemode (ОсОО Бемод) — оптовый пошив платьев, комплектов и женской одежды (18-35 лет, размеры 42-48) по проверенным лекалам с индивидуальной адаптацией. Шоурум ТРК Дордой. Отгрузка в Казахстан, РФ, Узбекистан с Честным ЗНАКОМ и ЕАЭС.">
-    <!-- Google Fonts -->
+    
+    <!-- Google Fonts: Cormorant Garamond, Cinzel, Montserrat & Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <style>
-        /* 12 STOREEZ DEVTOOLS EXACT STYLES & TOKENS */
+        /* 12 STOREEZ DEVTOOLS EXACT STYLES & LUXURY DESIGN SYSTEM */
         :root {
             --color-text: #4f3e35;
             --color-text-muted: #8c7a70;
             --color-bg: #ffffff;
-            --color-bg-alt: #f9f8f6;
+            --color-bg-alt: #f9f7f4;
             --color-border: #e6e1dc;
             --color-accent: #2c221e;
-            --font-main: 'Montserrat', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            --font-serif: 'Cinzel', serif;
-            --spacing-unit: 8px;
+            --color-gold: #c29d7e;
+            --font-main: 'Montserrat', 'Inter', -apple-system, sans-serif;
+            --font-serif: 'Cormorant Garamond', 'Cinzel', serif;
+            --font-display: 'Cinzel', serif;
             --letter-spacing-base: 0.7px;
-            --transition-smooth: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            --transition-bounce: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
@@ -39,7 +46,7 @@
             font-size: 13px;
             font-weight: 400;
             letter-spacing: var(--letter-spacing-base);
-            line-height: 1.385;
+            line-height: 1.4;
             -webkit-font-smoothing: antialiased;
             overflow-x: hidden;
         }
@@ -65,31 +72,54 @@
             position: relative;
         }
 
+        /* SCROLL REVEAL ANIMATIONS */
+        .reveal-up {
+            opacity: 0;
+            transform: translateY(35px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal-up.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .delay-1 { transition-delay: 0.15s; }
+        .delay-2 { transition-delay: 0.3s; }
+        .delay-3 { transition-delay: 0.45s; }
+
         /* 1. TOP ANNOUNCEMENT TICKER */
         .announcement-bar {
-            background: var(--color-accent);
+            background: linear-gradient(90deg, #2c221e 0%, #4f3e35 50%, #2c221e 100%);
             color: #ffffff;
             font-size: 11px;
             font-weight: 500;
-            letter-spacing: 1px;
+            letter-spacing: 1.2px;
             text-transform: uppercase;
-            padding: 9px 16px;
+            padding: 10px 20px;
             text-align: center;
             display: flex;
             justify-content: center;
             align-items: center;
             gap: 15px;
-            overflow: hidden;
+            position: relative;
+            z-index: 101;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
         .announcement-bar span {
-            opacity: 0.9;
+            opacity: 0.95;
         }
 
         .announcement-bar a {
-            color: #f3ece7;
+            color: var(--color-gold);
             text-decoration: underline;
             font-weight: 600;
+            transition: var(--transition-smooth);
+        }
+
+        .announcement-bar a:hover {
+            color: #ffffff;
         }
 
         /* 2. HEADER */
@@ -97,9 +127,9 @@
             position: sticky;
             top: 0;
             z-index: 100;
-            background-color: rgba(255, 255, 255, 0.96);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(230, 225, 220, 0.5);
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(230, 225, 220, 0.6);
             transition: var(--transition-smooth);
         }
 
@@ -107,14 +137,14 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            height: 70px;
-            padding: 0 40px;
+            height: 74px;
+            padding: 0 45px;
         }
 
         .header-left, .header-right {
             display: flex;
             align-items: center;
-            gap: 28px;
+            gap: 32px;
             flex: 1;
         }
 
@@ -123,13 +153,13 @@
         }
 
         .nav-link {
-            font-size: 12px;
+            font-size: 11.5px;
             font-weight: 500;
             text-transform: uppercase;
-            letter-spacing: 1.2px;
+            letter-spacing: 1.4px;
             color: var(--color-text);
             position: relative;
-            padding: 4px 0;
+            padding: 6px 0;
         }
 
         .nav-link::after {
@@ -138,8 +168,8 @@
             bottom: 0;
             left: 0;
             width: 0;
-            height: 1px;
-            background-color: var(--color-text);
+            height: 1.5px;
+            background-color: var(--color-accent);
             transition: var(--transition-smooth);
         }
 
@@ -152,49 +182,56 @@
         }
 
         .logo-text {
-            font-family: var(--font-serif);
-            font-size: 26px;
+            font-family: var(--font-display);
+            font-size: 28px;
             font-weight: 600;
-            letter-spacing: 4px;
+            letter-spacing: 5px;
             color: var(--color-accent);
             text-transform: uppercase;
+            background: linear-gradient(135deg, #2c221e 0%, #4f3e35 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .logo-sub {
             font-size: 8.5px;
-            letter-spacing: 2.5px;
+            letter-spacing: 3px;
             text-transform: uppercase;
             color: var(--color-text-muted);
-            margin-top: 1px;
+            margin-top: 2px;
         }
 
         .header-btn {
-            font-size: 11px;
+            font-size: 10.5px;
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            padding: 10px 20px;
+            letter-spacing: 1.2px;
+            padding: 12px 24px;
             border: 1px solid var(--color-text);
             transition: var(--transition-smooth);
             background: transparent;
             color: var(--color-text);
+            border-radius: 2px;
         }
 
         .header-btn:hover {
-            background-color: var(--color-text);
+            background-color: var(--color-accent);
             color: #ffffff;
+            border-color: var(--color-accent);
+            box-shadow: 0 4px 15px rgba(44, 34, 30, 0.2);
+            transform: translateY(-1px);
         }
 
         /* 3. HERO EDITORIAL SECTION */
         .hero-editorial {
             position: relative;
-            height: 85vh;
-            min-height: 580px;
+            height: 88vh;
+            min-height: 600px;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
-            background: #f2ece6;
+            background: #1a1513;
         }
 
         .hero-bg-img {
@@ -205,18 +242,19 @@
             height: 100%;
             object-fit: cover;
             object-position: center 25%;
-            filter: brightness(0.92);
-            transition: transform 8s ease-out;
+            filter: brightness(0.88) contrast(1.05);
+            transition: transform 10s ease-out;
+            will-change: transform;
         }
 
         .hero-editorial:hover .hero-bg-img {
-            transform: scale(1.03);
+            transform: scale(1.04);
         }
 
         .hero-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.45) 100%);
+            background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.55) 100%);
         }
 
         .hero-content {
@@ -224,90 +262,105 @@
             z-index: 10;
             text-align: center;
             color: #ffffff;
-            max-width: 860px;
+            max-width: 900px;
             padding: 0 24px;
         }
 
         .hero-tag {
             font-size: 11px;
             text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-bottom: 16px;
+            letter-spacing: 3.5px;
+            margin-bottom: 20px;
             font-weight: 500;
             display: inline-block;
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(8px);
-            padding: 6px 18px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(12px);
+            padding: 8px 22px;
             border-radius: 30px;
             border: 1px solid rgba(255,255,255,0.3);
+            color: #f7ede6;
+            animation: pulse-glow 3s infinite alternate;
+        }
+
+        @keyframes pulse-glow {
+            0% { box-shadow: 0 0 10px rgba(255,255,255,0.1); }
+            100% { box-shadow: 0 0 22px rgba(255,255,255,0.3); }
         }
 
         .hero-title {
             font-family: var(--font-serif);
-            font-size: 42px;
-            font-weight: 400;
-            line-height: 1.2;
-            letter-spacing: 2px;
-            margin-bottom: 20px;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            font-size: 52px;
+            font-weight: 500;
+            line-height: 1.15;
+            letter-spacing: 1.5px;
+            margin-bottom: 22px;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.4);
         }
 
         .hero-desc {
-            font-size: 14px;
-            line-height: 1.6;
-            margin-bottom: 34px;
+            font-size: 14.5px;
+            line-height: 1.75;
+            margin-bottom: 38px;
             font-weight: 300;
             color: #f0ebe6;
-            max-width: 680px;
+            max-width: 720px;
             margin-left: auto;
             margin-right: auto;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.3);
         }
 
         .hero-actions {
             display: flex;
             justify-content: center;
-            gap: 16px;
+            gap: 18px;
             flex-wrap: wrap;
         }
 
         .btn-primary {
             background-color: #ffffff;
             color: var(--color-accent);
-            padding: 16px 36px;
+            padding: 18px 40px;
             font-size: 11px;
             font-weight: 600;
-            letter-spacing: 1.5px;
+            letter-spacing: 1.8px;
             text-transform: uppercase;
-            transition: var(--transition-smooth);
+            transition: var(--transition-bounce);
             border: 1px solid #ffffff;
+            border-radius: 2px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
         }
 
         .btn-primary:hover {
             background-color: var(--color-accent);
             color: #ffffff;
             border-color: var(--color-accent);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.3);
         }
 
         .btn-outline-white {
             background-color: transparent;
             color: #ffffff;
-            padding: 16px 36px;
+            padding: 18px 40px;
             font-size: 11px;
             font-weight: 600;
-            letter-spacing: 1.5px;
+            letter-spacing: 1.8px;
             text-transform: uppercase;
-            border: 1px solid rgba(255, 255, 255, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.75);
             transition: var(--transition-smooth);
+            border-radius: 2px;
+            backdrop-filter: blur(4px);
         }
 
         .btn-outline-white:hover {
-            background-color: rgba(255, 255, 255, 0.15);
+            background-color: rgba(255, 255, 255, 0.2);
             border-color: #ffffff;
+            transform: translateY(-2px);
         }
 
-        /* 4. STORIES BAR (12 STOREEZ STYLE REELS) */
+        /* 4. STORIES BAR (12 STOREEZ STYLE REELS CAROUSEL) */
         .stories-section {
-            padding: 40px 40px 20px;
+            padding: 50px 45px 30px;
             background: var(--color-bg);
             border-bottom: 1px solid var(--color-border);
         }
@@ -316,28 +369,28 @@
             display: flex;
             justify-content: space-between;
             align-items: flex-end;
-            margin-bottom: 24px;
+            margin-bottom: 28px;
         }
 
         .section-title {
             font-family: var(--font-serif);
-            font-size: 22px;
+            font-size: 30px;
             font-weight: 500;
-            letter-spacing: 1px;
+            letter-spacing: 0.8px;
             color: var(--color-accent);
         }
 
         .section-sub {
             font-size: 12px;
             color: var(--color-text-muted);
-            margin-top: 4px;
+            margin-top: 6px;
         }
 
         .stories-carousel {
             display: flex;
-            gap: 20px;
+            gap: 24px;
             overflow-x: auto;
-            padding-bottom: 16px;
+            padding-bottom: 20px;
             scrollbar-width: none;
         }
 
@@ -346,49 +399,58 @@
         }
 
         .story-item {
-            flex: 0 0 140px;
+            flex: 0 0 150px;
             cursor: pointer;
             text-align: center;
+            perspective: 1000px;
         }
 
         .story-thumb {
-            width: 140px;
-            height: 186px; /* 3:4 ratio */
-            border-radius: 4px;
+            width: 150px;
+            height: 200px; /* 3:4 ratio */
+            border-radius: 6px;
             overflow: hidden;
             position: relative;
-            margin-bottom: 10px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+            margin-bottom: 12px;
+            box-shadow: 0 6px 18px rgba(44, 34, 30, 0.08);
             transition: var(--transition-smooth);
             border: 2px solid transparent;
         }
 
         .story-item:hover .story-thumb {
-            transform: translateY(-4px);
-            border-color: var(--color-accent);
+            transform: translateY(-6px) scale(1.02);
+            border-color: var(--color-gold);
+            box-shadow: 0 12px 28px rgba(44, 34, 30, 0.16);
         }
 
         .story-thumb img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .story-item:hover .story-thumb img {
+            transform: scale(1.08);
         }
 
         .story-badge {
             position: absolute;
-            top: 8px;
-            left: 8px;
-            background: rgba(44, 34, 30, 0.85);
+            top: 10px;
+            left: 10px;
+            background: rgba(44, 34, 30, 0.88);
+            backdrop-filter: blur(4px);
             color: #fff;
-            font-size: 9px;
-            padding: 3px 8px;
+            font-size: 8.5px;
+            padding: 4px 9px;
             border-radius: 2px;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.8px;
             text-transform: uppercase;
+            font-weight: 600;
         }
 
         .story-title {
-            font-size: 11px;
+            font-size: 11.5px;
             font-weight: 500;
             color: var(--color-text);
             white-space: nowrap;
@@ -398,71 +460,82 @@
 
         /* 5. CONCEPT / ZERO RISK VALUE PROPOSITION BLOCK */
         .value-prop-section {
-            padding: 80px 40px;
+            padding: 100px 45px;
             background-color: var(--color-bg-alt);
+            position: relative;
         }
 
         .value-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 70px;
             align-items: center;
         }
 
         .value-text h3 {
             font-family: var(--font-serif);
-            font-size: 32px;
+            font-size: 40px;
             font-weight: 400;
-            line-height: 1.3;
+            line-height: 1.25;
             color: var(--color-accent);
-            margin-bottom: 24px;
+            margin-bottom: 28px;
         }
 
         .value-text p {
-            font-size: 13.5px;
-            line-height: 1.7;
+            font-size: 14px;
+            line-height: 1.75;
             color: var(--color-text);
-            margin-bottom: 30px;
+            margin-bottom: 36px;
         }
 
         .feature-list {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 24px;
+            gap: 28px;
         }
 
         .feature-card {
             background: #ffffff;
-            padding: 24px;
-            border-radius: 2px;
+            padding: 28px;
+            border-radius: 4px;
             border: 1px solid var(--color-border);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+            transition: var(--transition-smooth);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(44, 34, 30, 0.08);
+            border-color: var(--color-gold);
         }
 
         .feature-num {
             font-family: var(--font-serif);
-            font-size: 20px;
-            color: var(--color-text-muted);
-            margin-bottom: 8px;
+            font-size: 26px;
+            color: var(--color-gold);
+            margin-bottom: 10px;
+            font-weight: 600;
         }
 
         .feature-title {
-            font-size: 13px;
+            font-size: 13.5px;
             font-weight: 600;
-            margin-bottom: 6px;
+            margin-bottom: 8px;
             color: var(--color-accent);
         }
 
         .feature-desc {
-            font-size: 11.5px;
+            font-size: 12px;
             color: var(--color-text-muted);
-            line-height: 1.5;
+            line-height: 1.55;
         }
 
         .value-image-wrap {
             position: relative;
             aspect-ratio: 3/4;
-            border-radius: 4px;
+            border-radius: 6px;
             overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
         }
 
         .value-image-wrap img {
@@ -471,28 +544,29 @@
             object-fit: cover;
         }
 
-        /* 6. LOOKBOOK CATALOG GRID (3:4 HOVER SWAP) */
+        /* 6. LOOKBOOK CATALOG GRID (3:4 HOVER SWAP & FABRIC INSPECTOR) */
         .catalog-section {
-            padding: 80px 40px;
+            padding: 100px 45px;
             background: var(--color-bg);
         }
 
         .catalog-filter {
             display: flex;
             justify-content: center;
-            gap: 30px;
-            margin-bottom: 45px;
+            gap: 36px;
+            margin-bottom: 50px;
             border-bottom: 1px solid var(--color-border);
-            padding-bottom: 16px;
+            padding-bottom: 20px;
         }
 
         .filter-btn {
-            font-size: 12px;
+            font-size: 12.5px;
             text-transform: uppercase;
-            letter-spacing: 1.2px;
+            letter-spacing: 1.5px;
             color: var(--color-text-muted);
-            padding: 6px 0;
+            padding: 8px 0;
             position: relative;
+            transition: var(--transition-smooth);
         }
 
         .filter-btn.active {
@@ -503,7 +577,7 @@
         .filter-btn.active::after {
             content: '';
             position: absolute;
-            bottom: -17px;
+            bottom: -21px;
             left: 0;
             width: 100%;
             height: 2px;
@@ -513,12 +587,13 @@
         .catalog-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 28px;
+            gap: 32px;
         }
 
         .product-card {
             position: relative;
             cursor: pointer;
+            transition: var(--transition-smooth);
         }
 
         .product-image-box {
@@ -526,14 +601,15 @@
             aspect-ratio: 3/4;
             overflow: hidden;
             background: #f5f2ef;
-            margin-bottom: 14px;
+            margin-bottom: 16px;
+            border-radius: 4px;
         }
 
         .product-image-box img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: opacity 0.5s ease, transform 0.6s ease;
+            transition: opacity 0.6s ease, transform 0.7s ease;
         }
 
         .product-img-secondary {
@@ -548,28 +624,51 @@
         }
 
         .product-card:hover .product-img-primary {
-            transform: scale(1.04);
+            transform: scale(1.05);
         }
 
         .product-badge {
             position: absolute;
-            top: 12px;
-            left: 12px;
-            background: rgba(255, 255, 255, 0.9);
+            top: 14px;
+            left: 14px;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(4px);
             color: var(--color-accent);
             font-size: 9px;
             font-weight: 600;
-            padding: 4px 8px;
-            letter-spacing: 0.8px;
+            padding: 5px 10px;
+            letter-spacing: 1px;
             text-transform: uppercase;
+            border-radius: 2px;
+        }
+
+        .inspect-btn {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            background: rgba(44, 34, 30, 0.85);
+            backdrop-filter: blur(4px);
+            color: #ffffff;
+            font-size: 10px;
+            padding: 6px 10px;
+            border-radius: 30px;
+            opacity: 0;
+            transition: var(--transition-smooth);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .product-card:hover .inspect-btn {
+            opacity: 1;
         }
 
         .size-badges {
             position: absolute;
-            bottom: 12px;
-            left: 12px;
+            bottom: 14px;
+            left: 14px;
             display: flex;
-            gap: 4px;
+            gap: 5px;
             opacity: 0;
             transition: var(--transition-smooth);
         }
@@ -579,11 +678,12 @@
         }
 
         .size-chip {
-            background: rgba(44, 34, 30, 0.85);
+            background: rgba(44, 34, 30, 0.88);
             color: #ffffff;
             font-size: 9px;
-            padding: 3px 6px;
+            padding: 4px 7px;
             border-radius: 2px;
+            font-weight: 500;
         }
 
         .product-info {
@@ -594,26 +694,26 @@
             font-size: 10px;
             text-transform: uppercase;
             color: var(--color-text-muted);
-            letter-spacing: 1px;
-            margin-bottom: 4px;
+            letter-spacing: 1.2px;
+            margin-bottom: 5px;
         }
 
         .product-title {
-            font-size: 13px;
+            font-size: 13.5px;
             font-weight: 500;
             color: var(--color-text);
-            margin-bottom: 6px;
+            margin-bottom: 8px;
         }
 
         .product-price-row {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-top: 6px;
+            margin-top: 8px;
         }
 
         .product-price {
-            font-size: 13px;
+            font-size: 14px;
             font-weight: 600;
             color: var(--color-accent);
         }
@@ -625,110 +725,123 @@
 
         .quick-order-btn {
             width: 100%;
-            margin-top: 12px;
-            padding: 10px;
+            margin-top: 14px;
+            padding: 12px;
             border: 1px solid var(--color-border);
-            font-size: 10px;
+            font-size: 10.5px;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.2px;
             font-weight: 600;
             color: var(--color-accent);
             transition: var(--transition-smooth);
+            border-radius: 2px;
         }
 
         .product-card:hover .quick-order-btn {
             background: var(--color-accent);
             color: #ffffff;
             border-color: var(--color-accent);
+            box-shadow: 0 4px 15px rgba(44, 34, 30, 0.2);
         }
 
-        /* 7. B2B CALCULATOR SECTION */
+        /* 7. B2B CALCULATOR SECTION WITH ANIMATED TICKER */
         .calculator-section {
-            padding: 80px 40px;
-            background-color: var(--color-accent);
+            padding: 100px 45px;
+            background: linear-gradient(135deg, #2c221e 0%, #3e3029 100%);
             color: #ffffff;
+            position: relative;
         }
 
         .calc-wrapper {
-            max-width: 900px;
+            max-width: 960px;
             margin: 0 auto;
-            background: rgba(255, 255, 255, 0.05);
-            padding: 50px;
-            border-radius: 4px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(10px);
+            padding: 60px;
+            border-radius: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
         }
 
         .calc-title {
             font-family: var(--font-serif);
-            font-size: 28px;
+            font-size: 36px;
             text-align: center;
-            margin-bottom: 12px;
+            margin-bottom: 14px;
             letter-spacing: 1px;
         }
 
         .calc-sub {
             text-align: center;
-            font-size: 12.5px;
+            font-size: 13px;
             color: #d1c5be;
-            margin-bottom: 40px;
+            margin-bottom: 45px;
         }
 
         .calc-form {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 30px;
+            gap: 32px;
         }
 
         .calc-group {
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            gap: 10px;
         }
 
         .calc-label {
             font-size: 11px;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.2px;
             color: #d1c5be;
         }
 
-        .calc-select, .calc-input {
-            background: rgba(255, 255, 255, 0.1);
+        .calc-select {
+            background: rgba(255, 255, 255, 0.08);
             border: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 14px 16px;
+            padding: 16px 18px;
             color: #ffffff;
             font-family: inherit;
             font-size: 13px;
-            border-radius: 2px;
+            border-radius: 4px;
             outline: none;
+            transition: var(--transition-smooth);
+        }
+
+        .calc-select:focus {
+            border-color: var(--color-gold);
+            background: rgba(255, 255, 255, 0.12);
         }
 
         .calc-select option {
-            background: var(--color-accent);
+            background: #2c221e;
             color: #ffffff;
         }
 
         .calc-result-box {
             grid-column: span 2;
             background: rgba(255, 255, 255, 0.08);
-            padding: 24px;
-            border-radius: 2px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 30px;
+            border-radius: 4px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-top: 10px;
+            margin-top: 15px;
         }
 
         .result-amount {
             font-family: var(--font-serif);
-            font-size: 26px;
+            font-size: 32px;
             font-weight: 600;
             color: #f7ede6;
+            transition: var(--transition-smooth);
         }
 
         /* 8. LOGISTICS & GEOGRAPHY SECTION */
         .geography-section {
-            padding: 80px 40px;
+            padding: 100px 45px;
             background: var(--color-bg);
             text-align: center;
         }
@@ -736,49 +849,56 @@
         .geo-grid {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
-            gap: 20px;
-            margin-top: 40px;
+            gap: 24px;
+            margin-top: 50px;
         }
 
         .geo-card {
             background: var(--color-bg-alt);
-            padding: 28px 18px;
-            border-radius: 2px;
+            padding: 32px 20px;
+            border-radius: 4px;
             border: 1px solid var(--color-border);
+            transition: var(--transition-smooth);
+        }
+
+        .geo-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--color-gold);
+            box-shadow: 0 10px 25px rgba(44, 34, 30, 0.08);
         }
 
         .geo-flag {
-            font-size: 32px;
-            margin-bottom: 12px;
+            font-size: 36px;
+            margin-bottom: 14px;
         }
 
         .geo-country {
-            font-size: 13px;
+            font-size: 14px;
             font-weight: 600;
             color: var(--color-accent);
-            margin-bottom: 6px;
+            margin-bottom: 8px;
         }
 
         .geo-cities {
-            font-size: 11px;
+            font-size: 11.5px;
             color: var(--color-text-muted);
-            line-height: 1.4;
+            line-height: 1.5;
         }
 
         .geo-percent {
             display: inline-block;
-            margin-top: 10px;
+            margin-top: 12px;
             background: rgba(79, 62, 53, 0.08);
             color: var(--color-accent);
             font-size: 10px;
             font-weight: 600;
-            padding: 2px 8px;
-            border-radius: 10px;
+            padding: 4px 10px;
+            border-radius: 12px;
         }
 
         /* 9. SHOWROOM & TRUST SECTION */
         .showroom-section {
-            padding: 80px 40px;
+            padding: 100px 45px;
             background-color: var(--color-bg-alt);
             border-top: 1px solid var(--color-border);
         }
@@ -786,38 +906,38 @@
         .showroom-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 60px;
+            gap: 70px;
             align-items: center;
         }
 
         .showroom-text h3 {
             font-family: var(--font-serif);
-            font-size: 30px;
+            font-size: 38px;
             color: var(--color-accent);
-            margin-bottom: 20px;
-            line-height: 1.3;
+            margin-bottom: 24px;
+            line-height: 1.25;
         }
 
         .showroom-text p {
-            font-size: 13px;
-            line-height: 1.7;
-            margin-bottom: 24px;
+            font-size: 13.5px;
+            line-height: 1.75;
+            margin-bottom: 28px;
         }
 
         .trust-badge-box {
             display: flex;
-            gap: 24px;
-            margin-top: 30px;
+            gap: 30px;
+            margin-top: 36px;
         }
 
         .trust-item {
-            border-left: 2px solid var(--color-accent);
-            padding-left: 16px;
+            border-left: 2px solid var(--color-gold);
+            padding-left: 18px;
         }
 
         .trust-val {
             font-family: var(--font-serif);
-            font-size: 22px;
+            font-size: 26px;
             font-weight: 600;
             color: var(--color-accent);
         }
@@ -825,49 +945,50 @@
         .trust-lbl {
             font-size: 11px;
             color: var(--color-text-muted);
-            margin-top: 2px;
+            margin-top: 4px;
         }
 
         /* FOOTER */
         footer.site-footer {
             background-color: var(--color-accent);
             color: #d1c5be;
-            padding: 60px 40px 40px;
+            padding: 80px 45px 40px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .footer-grid {
             display: grid;
             grid-template-columns: 2fr 1fr 1fr 1.5fr;
-            gap: 40px;
-            margin-bottom: 50px;
+            gap: 45px;
+            margin-bottom: 60px;
         }
 
         .footer-brand .logo-text {
             color: #ffffff;
             text-align: left;
+            -webkit-text-fill-color: initial;
         }
 
         .footer-brand p {
             font-size: 12px;
-            margin-top: 14px;
-            line-height: 1.6;
+            margin-top: 16px;
+            line-height: 1.7;
             color: #a89a91;
         }
 
         .footer-col h5 {
             font-size: 11px;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
+            letter-spacing: 1.6px;
             color: #ffffff;
-            margin-bottom: 18px;
+            margin-bottom: 22px;
         }
 
         .footer-links {
             list-style: none;
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 12px;
         }
 
         .footer-links a {
@@ -880,7 +1001,7 @@
         }
 
         .footer-bottom {
-            padding-top: 30px;
+            padding-top: 35px;
             border-top: 1px solid rgba(255, 255, 255, 0.08);
             display: flex;
             justify-content: space-between;
@@ -889,12 +1010,53 @@
             color: #8c7a70;
         }
 
+        /* FLOATING QUICK B2B PILL */
+        .floating-b2b-pill {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            z-index: 99;
+            background: rgba(44, 34, 30, 0.92);
+            backdrop-filter: blur(12px);
+            color: #ffffff;
+            padding: 12px 20px;
+            border-radius: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: var(--transition-bounce);
+            cursor: pointer;
+        }
+
+        .floating-b2b-pill:hover {
+            transform: translateY(-4px) scale(1.04);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.35);
+            background: var(--color-accent);
+        }
+
+        .online-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #4CAF50;
+            border-radius: 50%;
+            box-shadow: 0 0 8px #4CAF50;
+            animation: pulse-dot 1.8s infinite;
+        }
+
+        @keyframes pulse-dot {
+            0% { transform: scale(0.9); opacity: 0.7; }
+            50% { transform: scale(1.3); opacity: 1; }
+            100% { transform: scale(0.9); opacity: 0.7; }
+        }
+
         /* MODAL / DRAWER SYSTEM */
         .drawer-overlay {
             position: fixed;
             inset: 0;
-            background: rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(4px);
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(6px);
             z-index: 1000;
             opacity: 0;
             pointer-events: none;
@@ -909,13 +1071,13 @@
         .slide-drawer {
             position: fixed;
             top: 0;
-            right: -520px;
+            right: -540px;
             width: 100%;
-            max-width: 500px;
+            max-width: 520px;
             height: 100%;
             background: #ffffff;
             z-index: 1001;
-            box-shadow: -10px 0 30px rgba(0,0,0,0.15);
+            box-shadow: -15px 0 40px rgba(0,0,0,0.2);
             transition: var(--transition-smooth);
             display: flex;
             flex-direction: column;
@@ -926,7 +1088,7 @@
         }
 
         .drawer-header {
-            padding: 24px 30px;
+            padding: 28px 34px;
             border-bottom: 1px solid var(--color-border);
             display: flex;
             justify-content: space-between;
@@ -935,72 +1097,244 @@
 
         .drawer-title {
             font-family: var(--font-serif);
-            font-size: 20px;
+            font-size: 22px;
             color: var(--color-accent);
         }
 
         .close-btn {
-            font-size: 22px;
+            font-size: 26px;
             color: var(--color-text-muted);
             cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .close-btn:hover {
+            color: var(--color-accent);
         }
 
         .drawer-body {
-            padding: 30px;
+            padding: 34px;
             overflow-y: auto;
             flex: 1;
         }
 
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 22px;
         }
 
         .form-label {
             display: block;
             font-size: 11px;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.2px;
             color: var(--color-text-muted);
             margin-bottom: 8px;
         }
 
         .form-input {
             width: 100%;
-            padding: 14px;
+            padding: 16px;
             border: 1px solid var(--color-border);
             font-family: inherit;
             font-size: 13px;
             outline: none;
+            border-radius: 4px;
             transition: var(--transition-smooth);
         }
 
         .form-input:focus {
             border-color: var(--color-accent);
+            box-shadow: 0 0 0 3px rgba(79, 62, 53, 0.08);
         }
 
         .submit-btn {
             width: 100%;
             background: var(--color-accent);
             color: #ffffff;
-            padding: 16px;
+            padding: 18px;
             font-size: 11px;
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-top: 10px;
-            transition: var(--transition-smooth);
+            letter-spacing: 1.8px;
+            margin-top: 12px;
+            transition: var(--transition-bounce);
+            border-radius: 4px;
         }
 
         .submit-btn:hover {
             background: #1a1310;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(44, 34, 30, 0.25);
         }
 
-        /* RESPONSIVE */
+        /* FULLSCREEN 12 STOREEZ STORY VIEWER MODAL */
+        .story-modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.92);
+            backdrop-filter: blur(15px);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: var(--transition-smooth);
+        }
+
+        .story-modal-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .story-container {
+            width: 100%;
+            max-width: 420px;
+            height: 90vh;
+            max-height: 760px;
+            background: #000;
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .story-progress-bar {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            right: 12px;
+            display: flex;
+            gap: 6px;
+            z-index: 10;
+        }
+
+        .progress-segment {
+            flex: 1;
+            height: 3px;
+            background: rgba(255,255,255,0.3);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            width: 0%;
+            height: 100%;
+            background: #ffffff;
+            transition: width 0.1s linear;
+        }
+
+        .story-close {
+            position: absolute;
+            top: 24px;
+            right: 16px;
+            color: #fff;
+            font-size: 26px;
+            z-index: 12;
+            cursor: pointer;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .story-slide-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .story-caption-box {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 30px 20px;
+            background: linear-gradient(0deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
+            color: #fff;
+            z-index: 10;
+        }
+
+        .story-caption-title {
+            font-family: var(--font-serif);
+            font-size: 22px;
+            margin-bottom: 6px;
+        }
+
+        .story-caption-sub {
+            font-size: 12px;
+            color: #d1c5be;
+            margin-bottom: 16px;
+        }
+
+        /* FABRIC INSPECTOR MODAL */
+        .fabric-modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.85);
+            backdrop-filter: blur(10px);
+            z-index: 1500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: var(--transition-smooth);
+        }
+
+        .fabric-modal-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .fabric-box {
+            background: #fff;
+            width: 90%;
+            max-width: 700px;
+            border-radius: 6px;
+            overflow: hidden;
+            position: relative;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .fabric-img-wrap {
+            aspect-ratio: 1/1;
+            overflow: hidden;
+        }
+
+        .fabric-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .fabric-info-wrap {
+            padding: 35px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .fabric-title {
+            font-family: var(--font-serif);
+            font-size: 24px;
+            color: var(--color-accent);
+            margin-bottom: 12px;
+        }
+
+        .fabric-desc {
+            font-size: 12.5px;
+            color: var(--color-text-muted);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        /* RESPONSIVE DESIGN */
         @media (max-width: 1024px) {
             .catalog-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
-            .value-grid, .showroom-grid, .calc-form {
+            .value-grid, .showroom-grid, .calc-form, .fabric-box {
                 grid-template-columns: 1fr;
             }
             .geo-grid {
@@ -1019,13 +1353,19 @@
                 display: none;
             }
             .hero-title {
-                font-size: 28px;
+                font-size: 32px;
             }
             .catalog-grid {
                 grid-template-columns: 1fr;
             }
             .geo-grid {
                 grid-template-columns: 1fr;
+            }
+            .floating-b2b-pill {
+                bottom: 16px;
+                right: 16px;
+                font-size: 11px;
+                padding: 10px 16px;
             }
         }
     </style>
@@ -1065,7 +1405,7 @@
     <section class="hero-editorial">
         <img class="hero-bg-img" src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1600&q=85" alt="Bemode Fashion Lookbook">
         <div class="hero-overlay"></div>
-        <div class="hero-content">
+        <div class="hero-content reveal-up active">
             <div class="hero-tag">Средний сегмент • 650 – 1200 KGS / шт</div>
             <h1 class="hero-title">Премиальный пошив женской одежды под брендом Bemode</h1>
             <p class="hero-desc">Адаптируем наши проверенные топовые модели (платья, комплекты, юбки, верхняя одежда) под ваш бренд. 100% гарантия посадки, лекал и качества для байеров Казахстана, России, Узбекистана и Кыргызстана.</p>
@@ -1078,35 +1418,35 @@
 
     <!-- 4. STORIES / REELS CAROUSEL -->
     <section class="stories-section">
-        <div class="section-header-compact">
+        <div class="section-header-compact reveal-up">
             <div>
                 <h2 class="section-title">Категории и Коллекции</h2>
-                <p class="section-sub">Нажмите для просмотра актуального B2B каталога Bemode</p>
+                <p class="section-sub">Нажмите на историю для полноэкранного просмотра лукбука Bemode</p>
             </div>
         </div>
-        <div class="stories-carousel">
-            <div class="story-item" onclick="filterCatalog('dresses')">
+        <div class="stories-carousel reveal-up delay-1">
+            <div class="story-item" onclick="openStoryModal('dresses')">
                 <div class="story-thumb">
                     <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=400&q=80" alt="Платья">
                     <div class="story-badge">Хит продаж</div>
                 </div>
                 <div class="story-title">Платья 18-35 лет</div>
             </div>
-            <div class="story-item" onclick="filterCatalog('sets')">
+            <div class="story-item" onclick="openStoryModal('sets')">
                 <div class="story-thumb">
                     <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=400&q=80" alt="Комплекты">
                     <div class="story-badge">Комплекты</div>
                 </div>
                 <div class="story-title">Комплекты & Юбки</div>
             </div>
-            <div class="story-item" onclick="filterCatalog('outerwear')">
+            <div class="story-item" onclick="openStoryModal('outerwear')">
                 <div class="story-thumb">
                     <img src="https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=400&q=80" alt="Верхняя одежда">
                     <div class="story-badge">Сезон 2026</div>
                 </div>
                 <div class="story-title">Верхняя одежда</div>
             </div>
-            <div class="story-item" onclick="location.href='#showroom'">
+            <div class="story-item" onclick="openStoryModal('showroom')">
                 <div class="story-thumb">
                     <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=400&q=80" alt="Шоурум Дордой">
                     <div class="story-badge">ТРК Дордой</div>
@@ -1119,27 +1459,27 @@
     <!-- 5. CONCEPT & VALUE PROPOSITION SECTION -->
     <section class="value-prop-section" id="concept">
         <div class="value-grid">
-            <div class="value-text">
+            <div class="value-text reveal-up">
                 <h3>Уникальная модель сотрудничества: 0% риска неликвида и плохой посадки</h3>
-                <p>Мы не работаем на авось по сырым сторонним выкройкам. **Фабрика Bemode производит изделия на основе своих доведённых до идеала моделей**. Вы выбираете понравившийся фасон из нашей линейки, и мы бесплатно дорабатываем детали, цвет и параметры под требования вашего бренда.</p>
+                <p>Мы не работаем по сырым сторонним выкройкам. **Фабрика Bemode производит изделия на основе своих доведённых до идеала моделей**. Вы выбираете понравившийся фасон из нашей линейки, и мы бесплатно дорабатываем детали, цвет и параметры под требования вашего бренда.</p>
                 
                 <div class="feature-list">
-                    <div class="feature-card">
+                    <div class="feature-card reveal-up delay-1">
                         <div class="feature-num">01</div>
                         <div class="feature-title">Размеры 42 – 48</div>
                         <div class="feature-desc">Анатомическая градация на целевую аудиторию 18–35 лет.</div>
                     </div>
-                    <div class="feature-card">
+                    <div class="feature-card reveal-up delay-2">
                         <div class="feature-num">02</div>
                         <div class="feature-title">MOQ от 100 шт</div>
                         <div class="feature-desc">Минимальный объем партии на модель/цвет для удобного старта.</div>
                     </div>
-                    <div class="feature-card">
+                    <div class="feature-card reveal-up delay-1">
                         <div class="feature-num">03</div>
                         <div class="feature-title">Белая отгрузка ЕАЭС</div>
                         <div class="feature-desc">Полный комплект документов, Декларация ТР ТС, Честный ЗНАК.</div>
                     </div>
-                    <div class="feature-card">
+                    <div class="feature-card reveal-up delay-2">
                         <div class="feature-num">04</div>
                         <div class="feature-title">Опыт 20+ лет</div>
                         <div class="feature-desc">Основатель и ведущий технолог-швея личный гарант ОТК.</div>
@@ -1147,7 +1487,7 @@
                 </div>
             </div>
             
-            <div class="value-image-wrap">
+            <div class="value-image-wrap reveal-up delay-2">
                 <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1000&q=85" alt="Bemode Editorial Model">
             </div>
         </div>
@@ -1155,25 +1495,26 @@
 
     <!-- 6. LOOKBOOK CATALOG GRID -->
     <section class="catalog-section" id="catalog">
-        <div style="text-align: center; margin-bottom: 30px;">
+        <div style="text-align: center; margin-bottom: 30px;" class="reveal-up">
             <h2 class="section-title">Каталог базовых моделей 2026</h2>
             <p class="section-sub">Стоимость отшива: 650 сом – 1200 сом / шт (в зависимости от сложности)</p>
         </div>
 
-        <div class="catalog-filter">
-            <button class="filter-btn active" onclick="filterCatalog('all')">Все модели</button>
-            <button class="filter-btn" onclick="filterCatalog('dresses')">Платья</button>
-            <button class="filter-btn" onclick="filterCatalog('sets')">Комплекты & Юбки</button>
-            <button class="filter-btn" onclick="filterCatalog('outerwear')">Верхняя одежда</button>
+        <div class="catalog-filter reveal-up delay-1">
+            <button class="filter-btn active" onclick="filterCatalog('all', event)">Все модели</button>
+            <button class="filter-btn" onclick="filterCatalog('dresses', event)">Платья</button>
+            <button class="filter-btn" onclick="filterCatalog('sets', event)">Комплекты & Юбки</button>
+            <button class="filter-btn" onclick="filterCatalog('outerwear', event)">Верхняя одежда</button>
         </div>
 
         <div class="catalog-grid" id="catalogGrid">
             <!-- PRODUCT 1 -->
-            <div class="product-card" onclick="openProductDrawer('Миди-платье Silk Touch', '650 - 850 KGS', 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=800&q=80')">
+            <div class="product-card reveal-up" onclick="openProductDrawer('Миди-платье Silk Touch', '650 - 850 KGS', 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=800&q=80')">
                 <div class="product-image-box">
                     <img class="product-img-primary" src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=800&q=80" alt="Платье 1">
                     <img class="product-img-secondary" src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=80" alt="Платье 1 Вид 2">
                     <div class="product-badge">Бестселлер</div>
+                    <button class="inspect-btn" onclick="event.stopPropagation(); openFabricModal('Миди-платье Silk Touch', 'Шёлк-сатин высокой плотности. Двойной потайной шов, устойчивость к сминанию.')">🔎 Детали ткани</button>
                     <div class="size-badges">
                         <span class="size-chip">42</span>
                         <span class="size-chip">44</span>
@@ -1193,11 +1534,12 @@
             </div>
 
             <!-- PRODUCT 2 -->
-            <div class="product-card" onclick="openProductDrawer('Комплект Двойка Luxury', '950 - 1200 KGS', 'https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=800&q=80')">
+            <div class="product-card reveal-up delay-1" onclick="openProductDrawer('Комплект Двойка Luxury', '950 - 1200 KGS', 'https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=800&q=80')">
                 <div class="product-image-box">
                     <img class="product-img-primary" src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=800&q=80" alt="Комплект">
                     <img class="product-img-secondary" src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=800&q=80" alt="Комплект 2">
                     <div class="product-badge">Премиум пошив</div>
+                    <button class="inspect-btn" onclick="event.stopPropagation(); openFabricModal('Комплект Двойка Luxury', 'Костюмный поливискоз с добавлением эластана. Держит форму, не скатывается.')">🔎 Детали ткани</button>
                     <div class="size-badges">
                         <span class="size-chip">42</span>
                         <span class="size-chip">44</span>
@@ -1216,11 +1558,12 @@
             </div>
 
             <!-- PRODUCT 3 -->
-            <div class="product-card" onclick="openProductDrawer('Платье A-Силуэт Soft', '700 - 900 KGS', 'https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?auto=format&fit=crop&w=800&q=80')">
+            <div class="product-card reveal-up delay-2" onclick="openProductDrawer('Платье A-Силуэт Soft', '700 - 900 KGS', 'https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?auto=format&fit=crop&w=800&q=80')">
                 <div class="product-image-box">
                     <img class="product-img-primary" src="https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?auto=format&fit=crop&w=800&q=80" alt="Платье 3">
                     <img class="product-img-secondary" src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=800&q=80" alt="Платье 3 Вид 2">
                     <div class="product-badge">Летний тренд</div>
+                    <button class="inspect-btn" onclick="event.stopPropagation(); openFabricModal('Платье A-Силуэт Soft', 'Легкий софт-ниагара премиального турецкого качества. Дышащая текстура.')">🔎 Детали ткани</button>
                     <div class="size-badges">
                         <span class="size-chip">42</span>
                         <span class="size-chip">44</span>
@@ -1240,11 +1583,12 @@
             </div>
 
             <!-- PRODUCT 4 -->
-            <div class="product-card" onclick="openProductDrawer('Пальто-кардиган Wool Blend', '1100 - 1200 KGS', 'https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=800&q=80')">
+            <div class="product-card reveal-up delay-3" onclick="openProductDrawer('Пальто-кардиган Wool Blend', '1100 - 1200 KGS', 'https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=800&q=80')">
                 <div class="product-image-box">
                     <img class="product-img-primary" src="https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=800&q=80" alt="Пальто">
                     <img class="product-img-secondary" src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=800&q=80" alt="Пальто 2">
                     <div class="product-badge">Верхняя одежда</div>
+                    <button class="inspect-btn" onclick="event.stopPropagation(); openFabricModal('Пальто-кардиган Wool Blend', 'Шерсть 60%, акрил 40%. Плотный дубляж бортов, идеальные петли.')">🔎 Детали ткани</button>
                     <div class="size-badges">
                         <span class="size-chip">42-44</span>
                         <span class="size-chip">46-48</span>
@@ -1265,7 +1609,7 @@
 
     <!-- 7. B2B CONTRACT COST CALCULATOR -->
     <section class="calculator-section" id="calculator">
-        <div class="calc-wrapper">
+        <div class="calc-wrapper reveal-up">
             <h2 class="calc-title">B2B Калькулятор Стоимости Партии</h2>
             <p class="calc-sub">Рассчитайте предварительный бюджет заказа оптовой партии швейной фабрики Bemode</p>
             
@@ -1303,10 +1647,10 @@
                 <div class="calc-group">
                     <label class="calc-label">Страна доставки</label>
                     <select class="calc-select" id="calcGeo">
-                        <option value="KZ">Казахстан (Алматы, Шымкент, Тараз)</option>
-                        <option value="RU">Россия (Москва, Пятигорск, Барнаул)</option>
-                        <option value="UZ">Узбекистан (Ташкент)</option>
-                        <option value="KG">Самовывоз из Бишкека / Дордой</option>
+                        <option value="Казахстан (Алматы, Шымкент, Тараз)">Казахстан (Алматы, Шымкент, Тараз)</option>
+                        <option value="Россия (Москва, Пятигорск, Барнаул)">Россия (Москва, Пятигорск, Барнаул)</option>
+                        <option value="Узбекистан (Ташкент)">Узбекистан (Ташкент)</option>
+                        <option value="Кыргызстан (Бишкек / Дордой)">Самовывоз из Бишкека / Дордой</option>
                     </select>
                 </div>
 
@@ -1321,37 +1665,37 @@
         </div>
     </section>
 
-    <!-- 8. GEOGRAPHY & LOGISTICS SECTION -->
+    <!-- 8. LOGISTICS & GEOGRAPHY SECTION -->
     <section class="geography-section">
-        <h2 class="section-title">География оптовых отгрузок Bemode</h2>
-        <p class="section-sub">Доставляем готовые партии в белую со всеми документами</p>
+        <h2 class="section-title reveal-up">География оптовых отгрузок Bemode</h2>
+        <p class="section-sub reveal-up delay-1">Доставляем готовые партии в белую со всеми документами</p>
 
         <div class="geo-grid">
-            <div class="geo-card">
+            <div class="geo-card reveal-up">
                 <div class="geo-flag">🇰🇿</div>
                 <div class="geo-country">Казахстан</div>
                 <div class="geo-cities">Шымкент, Алматы, Тараз</div>
                 <div class="geo-percent">55% наших заказчиков</div>
             </div>
-            <div class="geo-card">
+            <div class="geo-card reveal-up delay-1">
                 <div class="geo-flag">🇰🇬</div>
                 <div class="geo-country">Кыргызстан</div>
                 <div class="geo-cities">Бишкек, Шоурум ТРК «Дордой»</div>
                 <div class="geo-percent">25% объемов</div>
             </div>
-            <div class="geo-card">
+            <div class="geo-card reveal-up delay-2">
                 <div class="geo-flag">🇺🇿</div>
                 <div class="geo-country">Узбекистан</div>
                 <div class="geo-cities">Ташкент</div>
                 <div class="geo-percent">15% объемов</div>
             </div>
-            <div class="geo-card">
+            <div class="geo-card reveal-up delay-3">
                 <div class="geo-flag">🇷🇺</div>
                 <div class="geo-country">Россия</div>
                 <div class="geo-cities">Москва, Пятигорск, Барнаул</div>
                 <div class="geo-percent">5% объемов</div>
             </div>
-            <div class="geo-card">
+            <div class="geo-card reveal-up delay-3">
                 <div class="geo-flag">🇹🇯</div>
                 <div class="geo-country">Таджикистан</div>
                 <div class="geo-cities">Душанбе</div>
@@ -1363,7 +1707,7 @@
     <!-- 9. SHOWROOM & TRUST SECTION -->
     <section class="showroom-section" id="showroom">
         <div class="showroom-grid">
-            <div class="showroom-text">
+            <div class="showroom-text reveal-up">
                 <h3>Приглашаем в наш оптовый шоурум на рынке «Дордой»</h3>
                 <p>Вы можете лично приехать к нам, оценить качество строчек, тактильные свойства тканей и примерить любой образец из каталога перед размещением оптовой партии.</p>
                 <p><strong>Гарантия качества:</strong> Пошив контролируется лично основателем фабрики (стаж 20+ лет) и главным технологом-швеей.</p>
@@ -1379,13 +1723,13 @@
                     </div>
                 </div>
 
-                <div style="margin-top: 30px;">
+                <div style="margin-top: 36px;">
                     <a href="https://wa.me/996502985896?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%AF%20%D0%BE%D1%82%D1%86%D1%80%D0%B0%D0%B2%D0%BB%D1%8F%D1%8E%20%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%20%D0%BD%D0%B0%20%D0%B2%D0%B8%D0%B7%D0%B8%D1%82%20%D0%B2%D0%B0%D1%88%D0%B5%D0%B3%D0%BE%20%D1%88%D0%BE%D1%83%D1%80%D1%83%D0%BC%D0%B0%20%D0%BD%D0%B0%20%D0%94%D0%BE%D1%80%D0%B4%D0%BE%D0%B5" target="_blank" class="btn-primary">Записаться на визит в Шоурум &rarr;</a>
                 </div>
             </div>
             
-            <div>
-                <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1000&q=85" alt="Шоурум Дордой" style="width: 100%; border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+            <div class="reveal-up delay-2">
+                <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1000&q=85" alt="Шоурум Дордой" style="width: 100%; border-radius: 6px; box-shadow: 0 15px 35px rgba(0,0,0,0.12);">
             </div>
         </div>
     </section>
@@ -1425,9 +1769,15 @@
         
         <div class="footer-bottom">
             <div>© 2026 ОсОО «Бемод» (Bemode Garment Factory). Все права защищены.</div>
-            <div>Aesthetics inspired by 12 STOREEZ</div>
+            <div>Quiet Luxury Aesthetics • Inspired by 12 STOREEZ</div>
         </div>
     </footer>
+
+    <!-- FLOATING QUICK B2B PILL -->
+    <div class="floating-b2b-pill" onclick="openDrawer('sample')">
+        <div class="online-dot"></div>
+        <span><strong>Технолог Bemode:</strong> Бесплатный образец</span>
+    </div>
 
 </div>
 
@@ -1439,7 +1789,7 @@
             <span class="close-btn" onclick="closeDrawer()">&times;</span>
         </div>
         <div class="drawer-body">
-            <p style="font-size: 12px; color: var(--color-text-muted); margin-bottom: 24px;">Оставьте контакты. Главный технолог фабрики Bemode свяжется с вами для консультации по лекалам и бесплатного пошива образца.</p>
+            <p style="font-size: 12.5px; color: var(--color-text-muted); margin-bottom: 26px;">Оставьте контакты. Главный технолог фабрики Bemode свяжется с вами для консультации по лекалам и бесплатного пошива образца.</p>
             
             <form onsubmit="submitForm(event)">
                 <div class="form-group">
@@ -1465,17 +1815,74 @@
     </div>
 </div>
 
+<!-- FULLSCREEN 12 STOREEZ STORY VIEWER MODAL -->
+<div class="story-modal-overlay" id="storyModal" onclick="closeStoryModal()">
+    <div class="story-container" onclick="event.stopPropagation()">
+        <div class="story-progress-bar">
+            <div class="progress-segment"><div class="progress-fill" id="storyProgress"></div></div>
+        </div>
+        <span class="story-close" onclick="closeStoryModal()">&times;</span>
+        <img class="story-slide-img" id="storyImg" src="" alt="Story Image">
+        <div class="story-caption-box">
+            <h4 class="story-caption-title" id="storyTitle">Коллекция Bemode</h4>
+            <p class="story-caption-sub" id="storySub">Пошив от 100 шт под ваш бренд</p>
+            <button class="btn-primary" style="width: 100%; padding: 14px; font-size: 10px;" onclick="openDrawer('story')">Хочу эту модель &rarr;</button>
+        </div>
+    </div>
+</div>
+
+<!-- FABRIC INSPECTOR MODAL -->
+<div class="fabric-modal-overlay" id="fabricModal" onclick="closeFabricModal()">
+    <div class="fabric-box" onclick="event.stopPropagation()">
+        <div class="fabric-img-wrap">
+            <img id="fabricImg" src="https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=800&q=80" alt="Текстура ткани">
+        </div>
+        <div class="fabric-info-wrap">
+            <h3 class="fabric-title" id="fabricTitle">Инспекция ткани</h3>
+            <p class="fabric-desc" id="fabricDesc">Ткань высшей категории с ровной плотностью нитей и усиленной обработкой краев.</p>
+            <button class="btn-primary" onclick="closeFabricModal(); openDrawer('sample');">Заказать пошив образца &rarr;</button>
+        </div>
+    </div>
+</div>
+
 <script>
-    // CALCULATOR LOGIC
+    // SCROLL REVEAL OBSERVER
+    document.addEventListener('DOMContentLoaded', () => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal-up').forEach(el => observer.observe(el));
+    });
+
+    // CALCULATOR LOGIC WITH ANIMATED TICKER
+    let currentTotal = 65000;
     function calculatePrice() {
         const basePrice = parseInt(document.getElementById('calcType').value);
         const qty = parseInt(document.getElementById('calcQty').value);
         const service = parseInt(document.getElementById('calcServices').value);
         
-        const pricePerPiece = basePrice + service;
-        const total = pricePerPiece * qty;
+        const targetTotal = (basePrice + service) * qty;
         
-        document.getElementById('resultTotal').innerText = total.toLocaleString() + ' сом';
+        const el = document.getElementById('resultTotal');
+        let start = currentTotal;
+        let step = (targetTotal - start) / 15;
+        let count = 0;
+
+        let timer = setInterval(() => {
+            count++;
+            start += step;
+            el.innerText = Math.round(start).toLocaleString() + ' сом';
+            if (count >= 15) {
+                clearInterval(timer);
+                el.innerText = targetTotal.toLocaleString() + ' сом';
+                currentTotal = targetTotal;
+            }
+        }, 20);
     }
 
     function sendCalcToWA() {
@@ -1517,11 +1924,74 @@
         closeDrawer();
     }
 
+    // STORY VIEWER MODAL
+    let storyTimer;
+    const storiesData = {
+        'dresses': {
+            title: 'Коллекция Платьев 2026',
+            sub: 'Размеры 42-48 • Отшито более 15 000 платьев в Казахстан',
+            img: 'https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=800&q=80'
+        },
+        'sets': {
+            title: 'Комплекты & Двойки',
+            sub: 'Жакеты, юбки, брючные комплекты • Высокая маржинальность',
+            img: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=800&q=80'
+        },
+        'outerwear': {
+            title: 'Верхняя Одежда',
+            sub: 'Легкие пальто, кардиганы оверсайз • Шерсть и костюмные ткани',
+            img: 'https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=800&q=80'
+        },
+        'showroom': {
+            title: 'Оптовый Шоурум ТРК «Дордой»',
+            sub: 'Приезжайте лично оценить качество швов и забрать образцы',
+            img: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&q=80'
+        }
+    };
+
+    function openStoryModal(key) {
+        const data = storiesData[key] || storiesData['dresses'];
+        document.getElementById('storyImg').src = data.img;
+        document.getElementById('storyTitle').innerText = data.title;
+        document.getElementById('storySub').innerText = data.sub;
+        
+        const modal = document.getElementById('storyModal');
+        const fill = document.getElementById('storyProgress');
+        modal.classList.add('active');
+        
+        fill.style.width = '0%';
+        let progress = 0;
+        clearInterval(storyTimer);
+        storyTimer = setInterval(() => {
+            progress += 2;
+            fill.style.width = progress + '%';
+            if (progress >= 100) {
+                clearInterval(storyTimer);
+            }
+        }, 100);
+    }
+
+    function closeStoryModal() {
+        document.getElementById('storyModal').classList.remove('active');
+        clearInterval(storyTimer);
+    }
+
+    // FABRIC INSPECTOR MODAL
+    function openFabricModal(title, desc) {
+        document.getElementById('fabricTitle').innerText = title;
+        document.getElementById('fabricDesc').innerText = desc;
+        document.getElementById('fabricModal').classList.add('active');
+    }
+
+    function closeFabricModal() {
+        document.getElementById('fabricModal').classList.remove('active');
+    }
+
     // FILTER CATALOG
-    function filterCatalog(category) {
+    function filterCatalog(category, event) {
         const buttons = document.querySelectorAll('.filter-btn');
         buttons.forEach(b => b.classList.remove('active'));
-        event.target.classList.add('active');
+        if (event) event.target.classList.add('active');
     }
 
     // Initialize calc
