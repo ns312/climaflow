@@ -3,581 +3,503 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5">
-    <title>BEMODE · Премиальное швейное производство женской одежды | Бишкек</title>
-    <meta name="description" content="Контрактный пошив женской одежды под ключ в Бишкеке. САПР лекала, подбор тканей, 100% контроль качества ОТК, партии от 500 единиц. Сбыт в РФ и СНГ.">
+    <title>12 BEMODE · Официальный контрактный пошив женской одежды | Бишкек</title>
+    <meta name="description" content="Контрактное производство женской одежды премиального качества под ключ. Бишкек. САПР лекала, ткани, 100% ОТК, Честный ЗНАК.">
     
-    <!-- Google Fonts: Cormorant Garamond, Manrope, Montserrat, JetBrains Mono -->
+    <!-- Google Fonts: Montserrat & Inter (Exact 12 STOREEZ typography) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=JetBrains+Mono:wght@400;500&family=Manrope:wght@300;400;500;600;700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
     
     <!-- Iconify CDN -->
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 
     <style>
-    /* ============================================================== 12 STOREEZ EXACT LUXURY DESIGN SYSTEM */
+    /* ============================================================== 12 STOREEZ EXACT REPLICA DESIGN SYSTEM */
     :root {
-        --bg-porcelain: #FAF8F5;
-        --bg-surface: #FFFFFF;
-        --bg-secondary: #F4EFEC;
-        --text-charcoal: #1C1917;
-        --text-muted: #78716C;
-        --text-gold: #B89552;
-        --border-subtle: rgba(28, 25, 23, 0.08);
-        --border-medium: rgba(28, 25, 23, 0.16);
+        --12-bg: #F7F7F7;
+        --12-surface: #FFFFFF;
+        --12-dark: #111111;
+        --12-sub: #666666;
+        --12-muted: #999999;
+        --12-border: #E5E5E5;
+        --12-gold: #B89552;
 
-        --font-serif: 'Cormorant Garamond', Georgia, serif;
-        --font-sans: 'Manrope', 'Montserrat', sans-serif;
-        --font-mono: 'JetBrains Mono', monospace;
+        --font-main: 'Montserrat', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        --font-mono: 'Inter', sans-serif;
 
-        --ease-out: cubic-bezier(0.25, 1, 0.5, 1);
-        --radius: 0px; /* 12 STOREEZ uses sharp, clean, unrounded high-fashion corners! */
-        --radius-pill: 999px;
+        --ease-12: cubic-bezier(0.2, 0, 0, 1);
     }
 
     * { box-sizing: border-box; }
     html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
     body {
         margin: 0;
-        background: var(--bg-porcelain);
-        color: var(--text-charcoal);
-        font-family: var(--font-sans);
-        font-size: 14px;
-        line-height: 1.6;
+        background: var(--12-bg);
+        color: var(--12-dark);
+        font-family: var(--font-main);
+        font-size: 13px;
+        line-height: 1.5;
         -webkit-font-smoothing: antialiased;
-        padding-bottom: 70px;
+        padding-bottom: 64px;
     }
     @media(min-width: 1024px) { body { padding-bottom: 0; } }
 
-    h1, h2, h3, h4 {
-        margin: 0;
-        font-family: var(--font-serif);
-        font-weight: 400;
-        letter-spacing: -0.01em;
-        line-height: 1.12;
-    }
-    p { margin: 0; color: #44403C; font-weight: 400; }
     a { color: inherit; text-decoration: none; }
     img { max-width: 100%; display: block; }
     button { font: inherit; color: inherit; cursor: pointer; border: none; background: none; }
 
-    .wrap { max-width: 1360px; margin: 0 auto; padding: 0 20px; }
-    @media(min-width: 768px) { .wrap { padding: 0 40px; } }
+    .wrap-12 { max-width: 1440px; margin: 0 auto; padding: 0 16px; }
+    @media(min-width: 768px) { .wrap-12 { padding: 0 32px; } }
 
-    /* 12 STOREEZ ANNOUNCEMENT BAR */
-    .top-bar {
-        background: var(--text-charcoal);
+    /* 1. TOP TICKER BAR */
+    .ticker-bar {
+        background: var(--12-dark);
         color: #FFFFFF;
-        font-family: var(--font-mono);
-        font-size: 10px;
+        font-size: 11px;
         text-transform: uppercase;
-        letter-spacing: 0.18em;
+        letter-spacing: 0.12em;
         text-align: center;
-        padding: 8px 16px;
+        padding: 9px 12px;
+        font-weight: 500;
     }
 
-    /* 12 STOREEZ HEADER */
-    .header {
+    /* 2. EXACT 12 STOREEZ HEADER */
+    .header-12 {
         position: sticky;
         top: 0;
         z-index: 100;
-        background: rgba(250, 248, 245, 0.95);
+        background: rgba(255, 255, 255, 0.95);
         backdrop-filter: blur(12px);
-        border-bottom: 1px solid var(--border-subtle);
-        transition: all 0.3s var(--ease-out);
+        border-bottom: 1px solid var(--12-border);
     }
-    .header-inner {
+    .header-12__flex {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        height: 64px;
+        height: 60px;
     }
-    .header-nav {
+    .header-12__left {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+    .btn-burger {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        font-weight: 600;
+    }
+    .header-12__nav {
         display: none;
-        gap: 28px;
-        font-size: 12px;
+        gap: 24px;
+        font-size: 11px;
         text-transform: uppercase;
         letter-spacing: 0.12em;
         font-weight: 500;
+        color: var(--12-sub);
     }
-    @media(min-width: 960px) { .header-nav { display: flex; } }
-    .header-nav a:hover { color: var(--text-gold); }
+    @media(min-width: 1024px) { .header-12__nav { display: flex; } }
+    .header-12__nav a:hover { color: var(--12-dark); }
 
-    .brand-logo {
-        font-family: var(--font-serif);
-        font-size: 26px;
-        font-weight: 500;
-        letter-spacing: 0.32em;
+    .brand-logo-12 {
+        font-size: 20px;
+        font-weight: 600;
+        letter-spacing: 0.35em;
         text-transform: uppercase;
-        color: var(--text-charcoal);
+        color: var(--12-dark);
     }
 
-    .header-actions {
+    .header-12__right {
         display: flex;
         align-items: center;
-        gap: 18px;
-        font-family: var(--font-mono);
+        gap: 16px;
         font-size: 11px;
         text-transform: uppercase;
         letter-spacing: 0.1em;
     }
 
-    /* 12 STOREEZ HERO SLIDER BANNER */
-    .hero {
+    /* 3. HERO SLIDER BANNER (100% 12 STOREEZ LOOK) */
+    .hero-12 {
         position: relative;
-        min-height: 88vh;
-        display: flex;
-        align-items: flex-end;
-        padding-bottom: 60px;
-        background: url('https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
+        height: 85vh;
+        min-height: 560px;
+        background: #000;
+        overflow: hidden;
     }
-    .hero::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(180deg, rgba(250,248,245,0.2) 0%, rgba(28,25,23,0.5) 100%);
+    .hero-12__slide {
+        position: absolute; inset: 0; opacity: 0; transition: opacity 1s var(--ease-12);
     }
-    .hero-content {
-        position: relative;
-        z-index: 2;
+    .hero-12__slide.is-active { opacity: 1; }
+    .hero-12__slide img {
+        width: 100%; height: 100%; object-fit: cover; filter: brightness(0.85);
+    }
+    .hero-12__overlay {
+        position: absolute; bottom: 60px; left: 0; right: 0; z-index: 3;
         color: #FFFFFF;
-        max-width: 680px;
     }
-    .hero-tag {
-        font-family: var(--font-mono);
-        font-size: 11px;
-        text-transform: uppercase;
-        letter-spacing: 0.22em;
-        color: #E8E2D5;
-        margin-bottom: 12px;
-    }
-    .hero-title {
-        font-size: clamp(2.5rem, 6vw, 4.5rem);
-        color: #FFFFFF;
+    .hero-12__title {
+        font-size: clamp(2rem, 5vw, 4.2rem);
+        font-weight: 400;
+        letter-spacing: -0.02em;
         line-height: 1.05;
-        margin-bottom: 16px;
+        margin-bottom: 12px;
+        color: #FFFFFF;
     }
-    .hero-desc {
-        font-size: 15px;
+    .hero-12__sub {
+        font-size: 14px;
         color: rgba(255,255,255,0.85);
-        margin-bottom: 28px;
+        margin-bottom: 24px;
+        max-width: 480px;
         font-weight: 300;
-        max-width: 520px;
     }
 
-    /* 12 STOREEZ BUTTONS */
-    .btn-12 {
+    .btn-main-12 {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        padding: 16px 36px;
-        background: var(--text-charcoal);
-        color: #FFFFFF;
-        font-family: var(--font-mono);
+        padding: 15px 32px;
+        background: #FFFFFF;
+        color: var(--12-dark);
         font-size: 11px;
         text-transform: uppercase;
         letter-spacing: 0.16em;
-        font-weight: 500;
-        border: 1px solid var(--text-charcoal);
-        transition: all 0.3s var(--ease-out);
+        font-weight: 600;
+        transition: all 0.3s ease;
     }
-    .btn-12:hover {
-        background: #FFFFFF;
-        color: var(--text-charcoal);
-    }
-
-    .btn-12-light {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        padding: 16px 36px;
-        background: #FFFFFF;
-        color: var(--text-charcoal);
-        font-family: var(--font-mono);
-        font-size: 11px;
-        text-transform: uppercase;
-        letter-spacing: 0.16em;
-        font-weight: 500;
-        border: 1px solid #FFFFFF;
-        transition: all 0.3s var(--ease-out);
-    }
-    .btn-12-light:hover {
-        background: transparent;
+    .btn-main-12:hover {
+        background: var(--12-dark);
         color: #FFFFFF;
     }
 
-    /* 12 STOREEZ COLLECTION CATALOG GRID (3:4 ASPECT RATIO) */
-    .catalog-section {
-        padding: 80px 0;
+    /* 4. CATEGORY FILTER BAR */
+    .filter-bar-12 {
+        background: var(--12-surface);
+        border-bottom: 1px solid var(--12-border);
+        padding: 16px 0;
     }
-    .section-head {
+    .filter-flex-12 {
         display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
-        margin-bottom: 40px;
-        border-bottom: 1px solid var(--border-subtle);
-        padding-bottom: 16px;
-    }
-    .section-title {
-        font-size: clamp(2rem, 3.5vw, 3rem);
-    }
-    .section-sub {
-        font-family: var(--font-mono);
+        gap: 24px;
+        overflow-x: auto;
         font-size: 11px;
         text-transform: uppercase;
-        letter-spacing: 0.16em;
-        color: var(--text-muted);
+        letter-spacing: 0.12em;
+        color: var(--12-sub);
+        scrollbar-width: none;
     }
+    .filter-flex-12::-webkit-scrollbar { display: none; }
+    .filter-item-12 { cursor: pointer; white-space: nowrap; padding-bottom: 4px; border-bottom: 2px solid transparent; }
+    .filter-item-12.is-active { color: var(--12-dark); font-weight: 600; border-color: var(--12-dark); }
 
-    .grid-12 {
+    /* 5. CATALOG GRID WITH HOVER IMAGE SWAP & SIZE CHIPS (EXACT 12 STOREEZ) */
+    .catalog-12 {
+        padding: 40px 0 80px;
+    }
+    .grid-catalog-12 {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
+        gap: 16px;
     }
     @media(min-width: 960px) {
-        .grid-12 { grid-template-columns: repeat(4, 1fr); gap: 24px; }
+        .grid-catalog-12 { grid-template-columns: repeat(4, 1fr); gap: 24px; }
     }
 
-    .card-12 {
+    .product-card-12 {
+        background: var(--12-surface);
         position: relative;
         cursor: pointer;
     }
-    .card-12-img-wrap {
+    .product-card-12__img-box {
         aspect-ratio: 3 / 4;
-        overflow: hidden;
-        background: var(--bg-secondary);
         position: relative;
-        margin-bottom: 14px;
-    }
-    .card-12-img-wrap img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.8s var(--ease-out);
-    }
-    .card-12:hover .card-12-img-wrap img {
-        transform: scale(1.04);
-    }
-    .card-12-tag {
-        font-family: var(--font-mono);
-        font-size: 10px;
-        text-transform: uppercase;
-        letter-spacing: 0.14em;
-        color: var(--text-gold);
-        margin-bottom: 4px;
-    }
-    .card-12-title {
-        font-size: 15px;
-        font-family: var(--font-sans);
-        font-weight: 500;
-        color: var(--text-charcoal);
-        margin-bottom: 4px;
-    }
-    .card-12-price {
-        font-family: var(--font-mono);
-        font-size: 12px;
-        color: var(--text-muted);
-    }
-    .card-12-action {
-        margin-top: 10px;
-        font-family: var(--font-mono);
-        font-size: 10px;
-        text-transform: uppercase;
-        letter-spacing: 0.14em;
-        color: var(--text-charcoal);
-        font-weight: 600;
-        display: flex;
-        align-items: center;
-        gap: 4px;
-    }
-
-    /* 12 STOREEZ EDITORIAL HERITAGE SPLIT SECTION */
-    .story-section {
-        background: var(--bg-surface);
-        border-top: 1px solid var(--border-subtle);
-        border-bottom: 1px solid var(--border-subtle);
-        padding: 100px 0;
-    }
-    .story-grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 40px;
-        align-items: center;
-    }
-    @media(min-width: 900px) {
-        .story-grid { grid-template-columns: 1fr 1fr; gap: 80px; }
-    }
-    .story-img-wrap {
-        aspect-ratio: 4 / 5;
         overflow: hidden;
+        background: #F0F0F0;
     }
-    .story-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
-    .story-quote {
-        font-size: clamp(1.8rem, 3vw, 2.6rem);
-        line-height: 1.25;
-        font-style: italic;
-        margin-bottom: 24px;
+    .product-card-12__img-box img {
+        width: 100%; height: 100%; object-fit: cover;
+        transition: opacity 0.5s var(--ease-12), transform 0.8s var(--ease-12);
+    }
+    .product-card-12__img-primary { position: absolute; inset: 0; z-index: 1; opacity: 1; }
+    .product-card-12__img-hover { position: absolute; inset: 0; z-index: 2; opacity: 0; }
+    
+    /* HOVER SECOND PHOTO SWAP! */
+    .product-card-12:hover .product-card-12__img-hover { opacity: 1; }
+    .product-card-12:hover .product-card-12__img-box img { transform: scale(1.03); }
+
+    .btn-heart-12 {
+        position: absolute; top: 12px; right: 12px; z-index: 3;
+        width: 32px; height: 32px; border-radius: 50%;
+        background: rgba(255,255,255,0.85); display: grid; place-items: center;
+        color: var(--12-dark); transition: all 0.2s ease;
+    }
+    .btn-heart-12:hover { background: #FFFFFF; color: #E53935; }
+
+    .product-card-12__info {
+        padding: 14px 12px 16px;
+    }
+    .product-card-12__tag {
+        font-size: 10px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--12-sub); margin-bottom: 4px;
+    }
+    .product-card-12__title {
+        font-size: 14px; font-weight: 500; color: var(--12-dark); margin-bottom: 4px;
+    }
+    .product-card-12__price {
+        font-size: 13px; font-weight: 600; color: var(--12-dark); margin-bottom: 8px;
+    }
+    .sizes-row-12 {
+        display: flex; gap: 6px; font-size: 10px; color: var(--12-muted); font-weight: 500;
+    }
+    .size-chip {
+        padding: 2px 6px; border: 1px solid var(--12-border); border-radius: 2px;
     }
 
-    /* 12 STOREEZ CALCULATOR & FAST INQUIRY PANEL */
-    .calc-section {
+    /* 6. EDITORIAL HERITAGE BANNER */
+    .editorial-12 {
+        background: var(--12-surface);
+        border-top: 1px solid var(--12-border);
+        border-bottom: 1px solid var(--12-border);
         padding: 80px 0;
     }
-    .calc-card {
-        background: var(--bg-surface);
-        border: 1px solid var(--border-subtle);
-        padding: 40px;
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 40px;
+    .editorial-grid-12 {
+        display: grid; grid-template-columns: 1fr; gap: 40px; align-items: center;
     }
-    @media(min-width: 960px) {
-        .calc-card { grid-template-columns: 1fr 380px; }
+    @media(min-width: 900px) {
+        .editorial-grid-12 { grid-template-columns: 1fr 1fr; gap: 60px; }
     }
-    .chip-12 {
-        padding: 12px 20px;
-        border: 1px solid var(--border-medium);
-        font-family: var(--font-mono);
-        font-size: 11px;
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        background: transparent;
-        transition: all 0.2s ease;
-    }
-    .chip-12.is-active {
-        background: var(--text-charcoal);
-        color: #FFFFFF;
-        border-color: var(--text-charcoal);
+    .editorial-quote-12 {
+        font-size: clamp(1.8rem, 3vw, 2.8rem); font-weight: 400; line-height: 1.2; margin-bottom: 20px;
     }
 
-    /* 12 STOREEZ FOOTER */
-    .footer {
-        background: var(--text-charcoal);
-        color: #FFFFFF;
-        padding: 80px 0 40px;
-        font-size: 13px;
+    /* 7. SLIDE-IN RIGHT SIDE DRAWER (100% 12 STOREEZ PRODUCT DRAWER) */
+    .side-drawer-12 {
+        position: fixed; top: 0; right: 0; bottom: 0; z-index: 9999;
+        width: min(520px, 100vw); background: var(--12-surface);
+        box-shadow: -10px 0 40px rgba(0,0,0,0.15);
+        opacity: 0; pointer-events: none; transform: translateX(100%);
+        transition: transform 0.4s var(--ease-12), opacity 0.4s var(--ease-12);
+        display: flex; flex-direction: column;
     }
-    .footer-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 40px;
-        margin-bottom: 60px;
+    .side-drawer-12.is-open {
+        opacity: 1; pointer-events: auto; transform: translateX(0);
     }
-    .footer-title {
-        font-family: var(--font-mono);
-        font-size: 11px;
-        text-transform: uppercase;
-        letter-spacing: 0.18em;
-        color: var(--text-gold);
-        margin-bottom: 16px;
+    .drawer-head-12 {
+        padding: 20px; border-bottom: 1px solid var(--12-border);
+        display: flex; justify-content: space-between; align-items: center;
     }
-    .footer-links {
-        display: grid;
-        gap: 10px;
-        color: rgba(255,255,255,0.7);
+    .drawer-body-12 {
+        padding: 24px; overflow-y: auto; flex: 1;
     }
-    .footer-bottom {
-        border-top: 1px solid rgba(255,255,255,0.1);
-        padding-top: 24px;
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        gap: 16px;
-        font-family: var(--font-mono);
-        font-size: 10px;
-        color: rgba(255,255,255,0.5);
+    .drawer-gallery-12 {
+        display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 24px;
+    }
+    .drawer-gallery-12 img {
+        aspect-ratio: 3/4; object-fit: cover; width: 100%; background: #F0F0F0;
     }
 
-    /* FIX MOBILE ACTION BAR */
-    .mobile-bar {
-        position: fixed;
-        bottom: 0; left: 0; right: 0;
-        z-index: 90;
-        background: rgba(250,248,245,0.96);
-        backdrop-filter: blur(12px);
-        border-top: 1px solid var(--border-subtle);
-        padding: 10px 14px;
-        display: flex;
-        gap: 10px;
+    /* 8. FOOTER */
+    .footer-12 {
+        background: var(--12-dark); color: #FFFFFF; padding: 60px 0 30px; font-size: 12px;
     }
-    @media(min-width: 1024px) { .mobile-bar { display: none; } }
+    .footer-flex-12 {
+        display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px;
+    }
+    .footer-col-title {
+        font-size: 11px; text-transform: uppercase; letter-spacing: 0.16em; color: var(--12-muted); margin-bottom: 16px;
+    }
+    .footer-links-12 { display: grid; gap: 10px; color: #CCCCCC; }
 
-    /* 12 STOREEZ SLIDE-UP FULLSCREEN DRAWER MODAL */
-    .drawer-modal {
-        position: fixed; inset: 0; z-index: 9999;
-        background: var(--bg-porcelain);
-        opacity: 0; pointer-events: none; transform: translateY(100%);
-        transition: transform 0.4s var(--ease-out), opacity 0.4s var(--ease-out);
-        overflow-y: auto;
+    /* MOBILE ACTION BAR */
+    .mobile-bar-12 {
+        position: fixed; bottom: 0; left: 0; right: 0; z-index: 90;
+        background: rgba(255,255,255,0.96); backdrop-filter: blur(10px);
+        border-top: 1px solid var(--12-border); padding: 10px 14px; display: flex; gap: 10px;
     }
-    .drawer-modal.is-open {
-        opacity: 1; pointer-events: auto; transform: translateY(0);
-    }
+    @media(min-width: 1024px) { .mobile-bar-12 { display: none; } }
     </style>
 </head>
 <body>
 
-<!-- 1. TOP ANNOUNCEMENT BAR (12 STOREEZ STYLE) -->
-<div class="top-bar">
+<!-- 1. TOP TICKER BAR -->
+<div class="ticker-bar">
   КОНТРАКТНЫЙ ПОШИВ ДЛЯ БРЕНДОВ И СЕЛЛЕРОВ · БИШКЕК → МОСКВА 3–5 ДНЕЙ · ПАРТИИ ОТ 500 ШТ
 </div>
 
-<!-- 2. STICKY MINIMAL HEADER -->
-<header class="header">
-  <div class="wrap header-inner">
-    <nav class="header-nav">
-      <a href="#catalog">Коллекции</a>
-      <a href="#about">О фабрике</a>
-      <a href="#fabrics">Ткани</a>
-      <a href="#process">Стандарты</a>
-      <a href="#calculator">Расчет</a>
-    </nav>
+<!-- 2. EXACT 12 STOREEZ HEADER -->
+<header class="header-12">
+  <div class="wrap-12 header-12__flex">
+    <div class="header-12__left">
+      <button type="button" onclick="openMenuModal()" class="btn-burger">
+        <iconify-icon icon="lucide:menu" width="18" height="18"></iconify-icon>
+        <span>Меню</span>
+      </button>
+      <nav class="header-12__nav">
+        <a href="#catalog">Коллекции</a>
+        <a href="#about">О мануфактуре</a>
+        <a href="#fabrics">Ткани</a>
+        <a href="#calculator">Расчет</a>
+      </nav>
+    </div>
 
-    <div class="brand-logo">B E M O D E</div>
+    <div class="brand-logo-12">B E M O D E</div>
 
-    <div class="header-actions">
-      <a href="https://wa.me/996502985896?text=Здравствуйте,%20BeMode!%20Хочу%20получить%20консультацию." target="_blank" style="display:flex; align-items:center; gap:6px; color:var(--text-gold); font-weight:600">
+    <div class="header-12__right">
+      <a href="https://wa.me/996502985896?text=Здравствуйте,%20BeMode!%20Хочу%20получить%20консультацию." target="_blank" style="display:flex; align-items:center; gap:6px; color:#25D366; font-weight:600">
         <iconify-icon icon="logos:whatsapp-icon" width="16" height="16"></iconify-icon>
         <span>WhatsApp</span>
       </a>
-      <button type="button" onclick="openSampleModal()" class="btn-12" style="padding:10px 20px; font-size:10px">
+      <button type="button" onclick="openSampleModal()" class="btn-main-12" style="padding:10px 18px; font-size:10px">
         Заказать образец
       </button>
     </div>
   </div>
 </header>
 
-<!-- 3. HERO BANNER (12 STOREEZ FULL-HEIGHT EDITORIAL STYLE) -->
-<section class="hero">
-  <div class="wrap" style="width:100%">
-    <div class="hero-content">
-      <div class="hero-tag">Швейная мануфактура женской одежды · Бишкек</div>
-      <h1 class="hero-title">Искусство пошива <br><span class="serif-italic">и безупречного кроя</span></h1>
-      <p class="hero-desc">
-        Контрактное производство полного цикла: от конструирования лекал в САПР до упаковки партии с маркировкой Честный ЗНАК.
-      </p>
-      <div style="display:flex; gap:16px; flex-wrap:wrap">
-        <button type="button" onclick="openSampleModal()" class="btn-12-light">
-          Заказать образец (3 дня)
-        </button>
-        <a href="#catalog" class="btn-12" style="background:transparent; border-color:#FFFFFF; color:#FFFFFF">
-          Смотреть коллекции
-        </a>
+<!-- 3. HERO CAROUSEL BANNER (EXACT 12 STOREEZ LOOK) -->
+<section class="hero-12">
+  <div class="hero-12__slide is-active" id="heroSlide1">
+    <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1600&auto=format&fit=crop" alt="BeMode Hero Collection">
+    <div class="hero-12__overlay">
+      <div class="wrap-12">
+        <div class="hero-12__title">Коллекция 2026/2027 <br>Тихая роскошь</div>
+        <div class="hero-12__sub">Контрактное производство женской одежды премиального уровня под ключ в Бишкеке.</div>
+        <div style="display:flex; gap:12px">
+          <button type="button" onclick="openSampleModal()" class="btn-main-12">Заказать образец (3 дня)</button>
+          <a href="#catalog" class="btn-main-12" style="background:transparent; color:#FFF; border:1px solid #FFF">Смотреть каталог</a>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 4. 12 STOREEZ CATALOG GRID (3:4 RATIO CARDS) -->
-<section class="catalog-section" id="catalog">
-  <div class="wrap">
-    <div class="section-head">
-      <div>
-        <div style="font-family:var(--font-mono); font-size:10px; text-transform:uppercase; letter-spacing:0.18em; color:var(--text-gold); margin-bottom:6px">Контрактное производство</div>
-        <h2 class="section-title">Категории изделий</h2>
-      </div>
-      <div class="section-sub">Партии от 500 ед. · ОТК 99.7%</div>
-    </div>
+<!-- 4. CATEGORY FILTER BAR -->
+<div class="filter-bar-12">
+  <div class="wrap-12 filter-flex-12">
+    <span class="filter-item-12 is-active" onclick="filterCat('all', this)">Все категории</span>
+    <span class="filter-item-12" onclick="filterCat('dresses', this)">Платья & Миди</span>
+    <span class="filter-item-12" onclick="filterCat('suits', this)">Жакеты & Костюмы</span>
+    <span class="filter-item-12" onclick="filterCat('corsets', this)">Корсеты & Блузы</span>
+    <span class="filter-item-12" onclick="filterCat('knitwear', this)">Трикотаж & Casual</span>
+  </div>
+</div>
 
-    <div class="grid-12">
+<!-- 5. PRODUCT CATALOG GRID WITH HOVER PHOTO SWAP -->
+<section class="catalog-12" id="catalog">
+  <div class="wrap-12">
+    <div class="grid-catalog-12">
+      
       <!-- Card 1 -->
-      <div class="card-12" onclick="openDrawer('silk')">
-        <div class="card-12-img-wrap">
-          <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?q=80&w=800&auto=format&fit=crop" alt="Платья миди">
+      <div class="product-card-12" data-cat="dresses" onclick="openSideDrawer('silk')">
+        <div class="product-card-12__img-box">
+          <button type="button" class="btn-heart-12" onclick="event.stopPropagation(); alert('Добавлено в избранное!')"><iconify-icon icon="lucide:heart" width="16" height="16"></iconify-icon></button>
+          <img class="product-card-12__img-primary" src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?q=80&w=800&auto=format&fit=crop" alt="Платье комбинация">
+          <img class="product-card-12__img-hover" src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=800&auto=format&fit=crop" alt="Платье деталь">
         </div>
-        <div class="card-12-tag">Платья & Миди</div>
-        <h3 class="card-12-title">Шелковые комбинации</h3>
-        <div class="card-12-price">от 450 ₽ / ед · Образец 3 дня</div>
-        <div class="card-12-action">Подробнее об отшиве →</div>
+        <div class="product-card-12__info">
+          <div class="product-card-12__tag">Шелк-Армани</div>
+          <div class="product-card-12__title">Шелковое платье-комбинация</div>
+          <div class="product-card-12__price">от 450 ₽ / ед · Мин. 500 шт</div>
+          <div class="sizes-row-12"><span class="size-chip">XS</span><span class="size-chip">S</span><span class="size-chip">M</span><span class="size-chip">L</span><span class="size-chip">XL</span></div>
+        </div>
       </div>
 
       <!-- Card 2 -->
-      <div class="card-12" onclick="openDrawer('suit')">
-        <div class="card-12-img-wrap">
-          <img src="https://images.unsplash.com/photo-1584273143981-41c073dfe8f8?q=80&w=800&auto=format&fit=crop" alt="Жакеты и костюмы">
+      <div class="product-card-12" data-cat="suits" onclick="openSideDrawer('suit')">
+        <div class="product-card-12__img-box">
+          <button type="button" class="btn-heart-12" onclick="event.stopPropagation(); alert('Добавлено в избранное!')"><iconify-icon icon="lucide:heart" width="16" height="16"></iconify-icon></button>
+          <img class="product-card-12__img-primary" src="https://images.unsplash.com/photo-1584273143981-41c073dfe8f8?q=80&w=800&auto=format&fit=crop" alt="Жакет твид">
+          <img class="product-card-12__img-hover" src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?q=80&w=800&auto=format&fit=crop" alt="Жакет деталь">
         </div>
-        <div class="card-12-tag">Жакеты & Костюмы</div>
-        <h3 class="card-12-title">Двубортные жакеты & Твид</h3>
-        <div class="card-12-price">от 890 ₽ / ед · Образец 4 дня</div>
-        <div class="card-12-action">Подробнее об отшиве →</div>
+        <div class="product-card-12__info">
+          <div class="product-card-12__tag">Итальянский Твид</div>
+          <div class="product-card-12__title">Двубортный жакет оверсайз</div>
+          <div class="product-card-12__price">от 890 ₽ / ед · Мин. 500 шт</div>
+          <div class="sizes-row-12"><span class="size-chip">XS</span><span class="size-chip">S</span><span class="size-chip">M</span><span class="size-chip">L</span></div>
+        </div>
       </div>
 
       <!-- Card 3 -->
-      <div class="card-12" onclick="openDrawer('corset')">
-        <div class="card-12-img-wrap">
-          <img src="https://images.unsplash.com/photo-1550614000-4895a10e1bfd?q=80&w=800&auto=format&fit=crop" alt="Корсетные топы">
+      <div class="product-card-12" data-cat="corsets" onclick="openSideDrawer('corset')">
+        <div class="product-card-12__img-box">
+          <button type="button" class="btn-heart-12" onclick="event.stopPropagation(); alert('Добавлено в избранное!')"><iconify-icon icon="lucide:heart" width="16" height="16"></iconify-icon></button>
+          <img class="product-card-12__img-primary" src="https://images.unsplash.com/photo-1550614000-4895a10e1bfd?q=80&w=800&auto=format&fit=crop" alt="Корсет топ">
+          <img class="product-card-12__img-hover" src="https://images.unsplash.com/photo-1584273143981-41c073dfe8f8?q=80&w=800&auto=format&fit=crop" alt="Корсет деталь">
         </div>
-        <div class="card-12-tag">Корсеты & Блузы</div>
-        <h3 class="card-12-title">Корсетные топы и блузы</h3>
-        <div class="card-12-price">от 480 ₽ / ед · Образец 3 дня</div>
-        <div class="card-12-action">Подробнее об отшиве →</div>
+        <div class="product-card-12__info">
+          <div class="product-card-12__tag">Хлопок / Спиральные кости</div>
+          <div class="product-card-12__title">Корсетный топ с чашками</div>
+          <div class="product-card-12__price">от 480 ₽ / ед · Мин. 500 шт</div>
+          <div class="sizes-row-12"><span class="size-chip">XS</span><span class="size-chip">S</span><span class="size-chip">M</span></div>
+        </div>
       </div>
 
       <!-- Card 4 -->
-      <div class="card-12" onclick="openDrawer('casual')">
-        <div class="card-12-img-wrap">
-          <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=800&auto=format&fit=crop" alt="Трикотажные костюмы">
+      <div class="product-card-12" data-cat="knitwear" onclick="openSideDrawer('casual')">
+        <div class="product-card-12__img-box">
+          <button type="button" class="btn-heart-12" onclick="event.stopPropagation(); alert('Добавлено в избранное!')"><iconify-icon icon="lucide:heart" width="16" height="16"></iconify-icon></button>
+          <img class="product-card-12__img-primary" src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=800&auto=format&fit=crop" alt="Трикотажный сет">
+          <img class="product-card-12__img-hover" src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=800&auto=format&fit=crop" alt="Трикотаж деталь">
         </div>
-        <div class="card-12-tag">Трикотаж & Casual</div>
-        <h3 class="card-12-title">Оверсайз костюмы</h3>
-        <div class="card-12-price">от 520 ₽ / ед · Образец 2 дня</div>
-        <div class="card-12-action">Подробнее об отшиве →</div>
+        <div class="product-card-12__info">
+          <div class="product-card-12__tag">Футер 3-нитка Пенье</div>
+          <div class="product-card-12__title">Оверсайз трикотажный костюм</div>
+          <div class="product-card-12__price">от 520 ₽ / ед · Мин. 500 шт</div>
+          <div class="sizes-row-12"><span class="size-chip">XS</span><span class="size-chip">S</span><span class="size-chip">M</span><span class="size-chip">L</span><span class="size-chip">XL</span></div>
+        </div>
       </div>
+
     </div>
   </div>
 </section>
 
-<!-- 5. 12 STOREEZ EDITORIAL HERITAGE SPLIT SECTION -->
-<section class="story-section" id="about">
-  <div class="wrap story-grid">
-    <div class="story-img-wrap">
-      <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1000&auto=format&fit=crop" alt="Мастерство пошива BeMode">
+<!-- 6. EDITORIAL HERITAGE SPLIT SECTION -->
+<section class="editorial-12" id="about">
+  <div class="wrap-12 editorial-grid-12">
+    <div style="aspect-ratio:4/5; overflow:hidden">
+      <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1000&auto=format&fit=crop" alt="Мануфактура BeMode">
     </div>
     <div>
-      <div style="font-family:var(--font-mono); font-size:11px; text-transform:uppercase; letter-spacing:0.18em; color:var(--text-gold); margin-bottom:12px">Философия фабрики</div>
-      <div class="story-quote">
-        «Каждое изделие — это союз утонченной эстетики, идеальной геометрии лекал и закрытых шелковых швов.»
+      <div style="font-size:11px; text-transform:uppercase; letter-spacing:0.18em; color:var(--12-gold); margin-bottom:12px">Философия качества</div>
+      <div class="editorial-quote-12">
+        «Мы создаем одежду, в которой эстетика тихой роскоши опирается на хирургически точную геометрию лекал.»
       </div>
-      <p style="font-size:15px; color:var(--text-muted); line-height:1.7; margin-bottom:28px">
-        Мы объединили точность европейских САПР-систем с заботливым контролем швейных технологов. Наша фабрика в Бишкеке создает одежду премиального уровня для брендов, которым важна безупречная посадка и 100% сортность каждой партии.
+      <p style="color:var(--12-sub); font-size:14px; line-height:1.7; margin-bottom:28px">
+        Швейная мануфактура BeMode в Бишкеке специализируется на контрактном отшиве женских коллекций для брендов России и СНГ. Мы используем европейские САПР Графис, японские автоматические линии Juki и 3-этапный контроль ОТК.
       </p>
-      <button type="button" onclick="openSampleModal()" class="btn-12">
-        Обсудить производство партии
-      </button>
+      <button type="button" onclick="openSampleModal()" class="btn-main-12">Заказать отшив образца</button>
     </div>
   </div>
 </section>
 
-<!-- 6. 12 STOREEZ CALCULATOR & B2B ESTIMATION -->
-<section class="calc-section" id="calculator">
-  <div class="wrap">
-    <div class="calc-card">
+<!-- 7. CALCULATOR & B2B ESTIMATION -->
+<section style="padding:80px 0" id="calculator">
+  <div class="wrap-12">
+    <div style="background:var(--12-surface); border:1px solid var(--12-border); padding:40px; display:grid; grid-template-columns:1fr; gap:40px">
       <div>
-        <div style="font-family:var(--font-mono); font-size:11px; text-transform:uppercase; letter-spacing:0.18em; color:var(--text-gold); margin-bottom:8px">Прозрачный расчет</div>
-        <h2 style="font-size:32px; margin-bottom:24px">Калькулятор производства</h2>
+        <div style="font-size:11px; text-transform:uppercase; letter-spacing:0.18em; color:var(--12-gold); margin-bottom:8px">Прозрачная смета</div>
+        <h2 style="font-size:32px; font-weight:400; margin-bottom:24px">Калькулятор партии</h2>
 
-        <div style="font-family:var(--font-mono); font-size:11px; text-transform:uppercase; margin-bottom:10px; color:var(--text-muted)">1. Выберите категорию</div>
-        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:28px">
-          <button type="button" onclick="setCalc('cat','dresses')" id="btn-cat-dresses" class="chip-12 is-active">Платья & Миди</button>
-          <button type="button" onclick="setCalc('cat','suits')" id="btn-cat-suits" class="chip-12">Жакеты & Костюмы</button>
-          <button type="button" onclick="setCalc('cat','blouses')" id="btn-cat-blouses" class="chip-12">Блузы & Корсеты</button>
-          <button type="button" onclick="setCalc('cat','casual')" id="btn-cat-casual" class="chip-12">Трикотаж & Casual</button>
+        <div style="font-size:11px; text-transform:uppercase; margin-bottom:10px; color:var(--12-sub)">1. Выберите категорию</div>
+        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:24px">
+          <button type="button" onclick="setCalc('cat','dresses')" id="btn-cat-dresses" class="btn-main-12" style="padding:10px 18px; font-size:10px">Платья & Миди</button>
+          <button type="button" onclick="setCalc('cat','suits')" id="btn-cat-suits" class="btn-main-12" style="padding:10px 18px; font-size:10px; background:transparent; color:#111; border:1px solid #E5E5E5">Жакеты & Костюмы</button>
+          <button type="button" onclick="setCalc('cat','corsets')" id="btn-cat-corsets" class="btn-main-12" style="padding:10px 18px; font-size:10px; background:transparent; color:#111; border:1px solid #E5E5E5">Корсеты & Блузы</button>
         </div>
 
-        <div style="font-family:var(--font-mono); font-size:11px; text-transform:uppercase; margin-bottom:10px; color:var(--text-muted)">2. Объем партии: <span id="volDisp" style="color:var(--text-gold)">500 шт</span></div>
-        <input type="range" min="500" max="10000" step="500" value="500" id="volSlider" oninput="updateVol(this.value)" style="width:100%; accent-color:var(--text-gold); cursor:pointer">
+        <div style="font-size:11px; text-transform:uppercase; margin-bottom:10px; color:var(--12-sub)">2. Объем партии: <span id="volDisp" style="color:var(--12-gold)">500 шт</span></div>
+        <input type="range" min="500" max="10000" step="500" value="500" id="volSlider" oninput="updateVol(this.value)" style="width:100%; accent-color:var(--12-gold); cursor:pointer">
       </div>
 
-      <div style="background:var(--bg-secondary); padding:32px; display:flex; flex-direction:column; justify-content:space-between">
+      <div style="background:#F7F7F7; padding:32px; display:flex; flex-direction:column; justify-between">
         <div>
-          <div style="font-family:var(--font-mono); font-size:10px; text-transform:uppercase; letter-spacing:0.16em; color:var(--text-muted)">Расчетное время</div>
-          <h3 style="font-size:38px; color:var(--text-charcoal); margin-top:4px" id="calcDays">6 – 8 дней</h3>
-          <p style="font-size:12px; color:var(--text-muted); margin-top:8px">Срок изготовления образца: <strong id="calcSample" style="color:var(--text-charcoal)">3 рабочих дня</strong></p>
-          <p style="font-size:11px; color:var(--text-muted); margin-top:16px; border-top:1px solid var(--border-subtle); padding-top:16px">
-            * Включает: раскрой, пошив, ВТО, маркировку Честный ЗНАК и упаковывание в зип-пакеты.
-          </p>
+          <div style="font-size:10px; text-transform:uppercase; letter-spacing:0.16em; color:var(--12-sub)">Срок отшива</div>
+          <h3 style="font-size:38px; color:var(--12-dark); margin-top:4px" id="calcDays">6 – 8 дней</h3>
+          <p style="font-size:12px; color:var(--12-sub); margin-top:8px">Срок изготовления образца: <strong style="color:var(--12-dark)">3 рабочих дня</strong></p>
         </div>
-        <button type="button" onclick="sendWA()" class="btn-12" style="width:100%; margin-top:24px; text-align:center">
+        <button type="button" onclick="sendWA()" class="btn-main-12" style="width:100%; margin-top:24px; text-align:center; background:#25D366; border-color:#25D366; color:#FFF">
           💬 Отправить расчет в WhatsApp
         </button>
       </div>
@@ -585,120 +507,106 @@
   </div>
 </section>
 
-<!-- 7. 12 STOREEZ MINIMALIST FOOTER -->
-<footer class="footer">
-  <div class="wrap">
-    <div class="footer-grid">
+<!-- 8. FOOTER -->
+<footer class="footer-12">
+  <div class="wrap-12">
+    <div class="footer-flex-12">
       <div>
-        <div class="brand-logo" style="color:#FFF; font-size:22px; margin-bottom:16px">B E M O D E</div>
-        <div style="color:rgba(255,255,255,0.6); max-width:240px">Контрактная швейная мануфактура женской одежды. Бишкек, Кыргызстан.</div>
+        <div class="brand-logo-12" style="color:#FFF; margin-bottom:16px">B E M O D E</div>
+        <div style="color:#999999; max-width:240px">Контрактная швейная мануфактура женской одежды. Бишкек, Кыргызстан.</div>
       </div>
       <div>
-        <div class="footer-title">Навигация</div>
-        <div class="footer-links">
+        <div class="footer-col-title">Навигация</div>
+        <div class="footer-links-12">
           <a href="#catalog">Коллекции</a>
-          <a href="#about">О фабрике</a>
-          <a href="#fabrics">Ткани & Полотна</a>
+          <a href="#about">О мануфактуре</a>
           <a href="#calculator">Калькулятор сметы</a>
         </div>
       </div>
       <div>
-        <div class="footer-title">Контакты</div>
-        <div class="footer-links">
+        <div class="footer-col-title">Контакты</div>
+        <div class="footer-links-12">
           <div>WhatsApp: +996 502 98-58-96</div>
           <div>Telegram: @bemode_kg</div>
-          <div>Доставка: Москва, Санкт-Петербург, СНГ (3-5 дней)</div>
+          <div>Доставка в РФ и СНГ (3-5 дней)</div>
         </div>
       </div>
     </div>
 
-    <div class="footer-bottom">
+    <div style="border-top:1px solid rgba(255,255,255,0.1); padding-top:24px; display:flex; justify-content:space-between; color:#666; font-size:11px">
       <div>© 2026 BEMODE GARMENT FACTORY. ALL RIGHTS RESERVED.</div>
       <div>ЕАЭС / ЧЕСТНЫЙ ЗНАК / ISO-9001</div>
     </div>
   </div>
 </footer>
 
-<!-- 8. FIX MOBILE ACTION BAR -->
-<div class="mobile-bar">
-  <button type="button" onclick="openSampleModal()" style="flex:1; background:var(--bg-secondary); border:1px solid var(--border-medium); color:var(--text-charcoal); font-family:var(--font-mono); font-size:11px; font-weight:700; text-transform:uppercase; padding:13px; text-align:center">
+<!-- MOBILE ACTION BAR -->
+<div class="mobile-bar-12">
+  <button type="button" onclick="openSampleModal()" style="flex:1; background:#F7F7F7; border:1px solid #E5E5E5; color:#111; font-size:11px; font-weight:700; text-transform:uppercase; padding:13px; text-align:center">
     Заказать образец
   </button>
-  <a href="https://wa.me/996502985896?text=Здравствуйте,%20BeMode!%20Хочу%20уточнить%20стоимость%20отшива." target="_blank" style="flex:1; background:#25D366; color:#FFFFFF; font-family:var(--font-mono); font-size:11px; font-weight:700; text-transform:uppercase; padding:13px; display:flex; align-items:center; justify-content:center; gap:6px; text-decoration:none">
+  <a href="https://wa.me/996502985896?text=Здравствуйте,%20BeMode!%20Хочу%20уточнить%20стоимость%20отшива." target="_blank" style="flex:1; background:#25D366; color:#FFFFFF; font-size:11px; font-weight:700; text-transform:uppercase; padding:13px; display:flex; align-items:center; justify-content:center; gap:6px; text-decoration:none">
     <iconify-icon icon="logos:whatsapp-icon" width="16" height="16"></iconify-icon>
     <span>WhatsApp</span>
   </a>
 </div>
 
-<!-- 9. 12 STOREEZ FULLSCREEN DRAWER MODAL -->
-<div class="drawer-modal" id="drawerModal">
-  <div style="position:sticky; top:0; z-index:50; background:rgba(250,248,245,0.96); backdrop-filter:blur(12px); border-bottom:1px solid var(--border-subtle); padding:16px 20px; display:flex; justify-content:space-between; align-items:center">
-    <div style="font-family:var(--font-mono); font-size:11px; text-transform:uppercase; letter-spacing:0.18em; color:var(--text-gold)" id="drawerTag">Спецификация</div>
-    <button type="button" onclick="closeDrawer()" class="btn-12" style="padding:8px 18px; font-size:10px">Закрыть ✕</button>
+<!-- 9. EXACT 12 STOREEZ SLIDE-IN RIGHT SIDE DRAWER -->
+<div class="side-drawer-12" id="sideDrawer">
+  <div class="drawer-head-12">
+    <div style="font-size:11px; text-transform:uppercase; letter-spacing:0.14em; font-weight:600; color:var(--12-gold)" id="dTag">Спецификация</div>
+    <button type="button" onclick="closeSideDrawer()" style="font-size:18px">✕</button>
   </div>
+  
+  <div class="drawer-body-12">
+    <div class="drawer-gallery-12">
+      <img id="dImg1" src="" alt="Photo 1">
+      <img id="dImg2" src="" alt="Photo 2">
+    </div>
 
-  <div class="wrap" style="padding-top:40px; padding-bottom:60px">
-    <div style="display:grid; grid-template-columns:1fr; gap:40px">
-      <div style="display:grid; grid-template-columns:1fr; gap:20px">
-        <img id="drawerImg1" src="" alt="Detail 1" style="aspect-ratio:3/4; object-fit:cover; width:100%">
-        <img id="drawerImg2" src="" alt="Detail 2" style="aspect-ratio:3/4; object-fit:cover; width:100%">
+    <h2 id="dTitle" style="font-size:24px; font-weight:500; margin-bottom:8px">Наименование</h2>
+    <div id="dPrice" style="font-size:16px; font-weight:600; color:var(--12-dark); margin-bottom:16px">от 450 ₽ / ед</div>
+    <p id="dDesc" style="color:var(--12-sub); font-size:13px; line-height:1.6; margin-bottom:24px">Описание</p>
+
+    <div style="background:#F7F7F7; padding:20px; margin-bottom:24px; font-size:12px">
+      <div style="display:flex; justify-content:space-between; margin-bottom:8px">
+        <span style="color:var(--12-sub)">Ткань:</span><strong id="dFabric">Шелк-Армани</strong>
       </div>
-
-      <div>
-        <h1 id="drawerTitle" style="font-size:clamp(2.2rem,4vw,3.5rem); margin-bottom:12px">Заголовок</h1>
-        <p style="font-size:15px; color:var(--text-muted); line-height:1.7; margin-bottom:32px" id="drawerDesc">Описание</p>
-
-        <div style="background:var(--bg-surface); border:1px solid var(--border-subtle); padding:32px; margin-bottom:32px">
-          <div style="font-family:var(--font-mono); font-size:11px; text-transform:uppercase; letter-spacing:0.18em; color:var(--text-gold); margin-bottom:16px">Параметры отшива</div>
-          <div style="display:grid; gap:14px; font-size:14px">
-            <div style="display:flex; justify-content:space-between; border-bottom:1px solid var(--border-subtle); padding-bottom:10px">
-              <span style="color:var(--text-muted)">Ткань:</span>
-              <strong id="drawerFabric" style="font-family:var(--font-mono)">Шелк-Армани / 100%</strong>
-            </div>
-            <div style="display:flex; justify-content:space-between; border-bottom:1px solid var(--border-subtle); padding-bottom:10px">
-              <span style="color:var(--text-muted)">Обработка:</span>
-              <strong id="drawerSeam" style="font-family:var(--font-mono)">Закрытый французский шов</strong>
-            </div>
-            <div style="display:flex; justify-content:space-between; border-bottom:1px solid var(--border-subtle); padding-bottom:10px">
-              <span style="color:var(--text-muted)">Себестоимость:</span>
-              <strong id="drawerCost" style="font-family:var(--font-mono); color:var(--text-gold)">от 450 ₽ / ед</strong>
-            </div>
-            <div style="display:flex; justify-content:space-between">
-              <span style="color:var(--text-muted)">Образец:</span>
-              <strong id="drawerTime" style="font-family:var(--font-mono)">3 рабочих дня</strong>
-            </div>
-          </div>
-        </div>
-
-        <button type="button" onclick="sendWAFromDrawer()" class="btn-12" style="width:100%; padding:20px; text-align:center; background:#25D366; border-color:#25D366">
-          💬 Заказать отшив образца в WhatsApp
-        </button>
+      <div style="display:flex; justify-content:space-between; margin-bottom:8px">
+        <span style="color:var(--12-sub)">Обработка швов:</span><strong id="dSeam">Французский закрытый шов</strong>
+      </div>
+      <div style="display:flex; justify-content:space-between">
+        <span style="color:var(--12-sub)">Срок образца:</span><strong>3 рабочих дня</strong>
       </div>
     </div>
+
+    <button type="button" onclick="sendWAFromDrawer()" class="btn-main-12" style="width:100%; padding:18px; background:#25D366; color:#FFF">
+      💬 Заказать образец в WhatsApp
+    </button>
   </div>
 </div>
 
 <!-- SAMPLE MODAL -->
-<div id="sample-modal" onclick="if(event.target.id==='sample-modal')closeSampleModal()" style="position:fixed; inset:0; z-index:9999; background:rgba(28,25,23,.75); backdrop-filter:blur(10px); display:flex; align-items:center; justify-content:center; padding:16px; opacity:0; pointer-events:none; transition:all .3s ease">
-  <div style="position:relative; width:100%; max-width:480px; background:var(--bg-surface); padding:40px; color:var(--text-charcoal); border:1px solid var(--border-subtle)">
-    <button type="button" onclick="closeSampleModal()" style="position:absolute; top:16px; right:16px; width:32px; height:32px; background:var(--bg-secondary); border:none; cursor:pointer">✕</button>
-    <div style="font-family:var(--font-mono); font-size:11px; text-transform:uppercase; letter-spacing:0.18em; color:var(--text-gold); margin-bottom:8px">Быстрый старт</div>
-    <h3 style="font-size:28px; margin-bottom:8px">Заказать образец</h3>
-    <p style="font-size:13px; color:var(--text-muted); margin-bottom:24px">Отшиваем физический эталон за 3 дня. При заказе партии стоимость вычитается.</p>
-    <form onsubmit="submitForm(event)" style="display:grid; gap:16px">
+<div id="sample-modal" onclick="if(event.target.id==='sample-modal')closeSampleModal()" style="position:fixed; inset:0; z-index:9999; background:rgba(0,0,0,0.6); backdrop-filter:blur(6px); display:flex; align-items:center; justify-content:center; padding:16px; opacity:0; pointer-events:none; transition:all .3s ease">
+  <div style="position:relative; width:100%; max-width:440px; background:#FFFFFF; padding:36px; color:#111">
+    <button type="button" onclick="closeSampleModal()" style="position:absolute; top:16px; right:16px; font-size:18px">✕</button>
+    <div style="font-size:10px; text-transform:uppercase; letter-spacing:0.18em; color:var(--12-gold); margin-bottom:6px">Быстрый старт</div>
+    <h3 style="font-size:24px; font-weight:500; margin-bottom:8px">Заказать образец</h3>
+    <p style="font-size:13px; color:#666; margin-bottom:20px">Отшиваем физический эталон за 3 дня. При заказе партии стоимость вычитается.</p>
+    <form onsubmit="submitForm(event)" style="display:grid; gap:14px">
       <div>
-        <label style="display:block; font-family:var(--font-mono); font-size:10px; text-transform:uppercase; margin-bottom:6px">Ваше имя / Бренд:</label>
-        <input type="text" id="mName" required placeholder="Например: Анна / Brand Co" style="width:100%; background:var(--bg-porcelain); border:1px solid var(--border-medium); padding:14px; color:var(--text-charcoal); font-family:inherit">
+        <label style="display:block; font-size:10px; text-transform:uppercase; margin-bottom:4px">Ваше имя / Бренд:</label>
+        <input type="text" id="mName" required placeholder="Например: Анна / Brand Co" style="width:100%; background:#F7F7F7; border:1px solid #E5E5E5; padding:12px; font-family:inherit">
       </div>
       <div>
-        <label style="display:block; font-family:var(--font-mono); font-size:10px; text-transform:uppercase; margin-bottom:6px">Изделие:</label>
-        <input type="text" id="mItem" required placeholder="Шелковое платье или жакет" style="width:100%; background:var(--bg-porcelain); border:1px solid var(--border-medium); padding:14px; color:var(--text-charcoal); font-family:inherit">
+        <label style="display:block; font-size:10px; text-transform:uppercase; margin-bottom:4px">Изделие:</label>
+        <input type="text" id="mItem" required placeholder="Шелковое платье или жакет" style="width:100%; background:#F7F7F7; border:1px solid #E5E5E5; padding:12px; font-family:inherit">
       </div>
       <div>
-        <label style="display:block; font-family:var(--font-mono); font-size:10px; text-transform:uppercase; margin-bottom:6px">Телефон / WhatsApp:</label>
-        <input type="tel" id="mPhone" required placeholder="+7 (999) 000-00-00" style="width:100%; background:var(--bg-porcelain); border:1px solid var(--border-medium); padding:14px; color:var(--text-charcoal); font-family:inherit">
+        <label style="display:block; font-size:10px; text-transform:uppercase; margin-bottom:4px">Телефон / WhatsApp:</label>
+        <input type="tel" id="mPhone" required placeholder="+7 (999) 000-00-00" style="width:100%; background:#F7F7F7; border:1px solid #E5E5E5; padding:12px; font-family:inherit">
       </div>
-      <button type="submit" class="btn-12" style="width:100%; padding:18px; margin-top:8px">Отправить в WhatsApp</button>
+      <button type="submit" class="btn-main-12" style="width:100%; padding:16px; margin-top:6px; background:#25D366; color:#FFF">Отправить в WhatsApp</button>
     </form>
   </div>
 </div>
@@ -706,89 +614,100 @@
 <script>
 const DRAWER_DATA = {
   silk: {
-    tag: 'ПЛАТЬЯ & МИДИ · СПЕЦИФИКАЦИЯ',
-    title: 'Шелковые платья-комбинации',
-    desc: 'Премиальный отшив из шелка-армани и натуральной вискозы. Конструирование кроя по косой 45° на автоматизированном лекале САПР Графис. Все внутренние швы выполняются закрытым двойным французским швом (бельевая обработка).',
-    fabric: 'Шелк-Армани / Плотность 115 г/м²',
+    tag: 'ПЛАТЬЯ & МИДИ',
+    title: 'Шелковое платье-комбинация',
+    price: 'от 450 ₽ / ед · Мин. 500 шт',
+    desc: 'Премиальный отшив из шелка-армани и вискозы. Конструирование кроя по косой 45° на САПР Графис. Все внутренние швы выполняются закрытым французским бельевым швом.',
+    fabric: 'Шелк-Армани / 115 г/м²',
     seam: 'Французский закрытый шов',
-    cost: 'от 450 ₽ / ед',
-    time: '3 рабочих дня (образец)',
-    img1: 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?q=80&w=1000&auto=format&fit=crop',
-    img2: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1000&auto=format&fit=crop'
+    img1: 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?q=80&w=800&auto=format&fit=crop',
+    img2: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=800&auto=format&fit=crop'
   },
   suit: {
-    tag: 'ЖАКЕТЫ & КОСТЮМЫ · СПЕЦИФИКАЦИЯ',
-    title: 'Двубортные жакеты & Твид',
-    desc: 'Структурированный крой с четким плечевым поясом. Дублирование клеевыми материалами Kufner (Германия) полочек, бортов и шлицы. Вточная подкладка из плотной вискозы с нагрудными прорезными карманами в рамку.',
-    fabric: 'Итальянский твид / Шерсть 70%',
+    tag: 'ЖАКЕТЫ & КОСТЮМЫ',
+    title: 'Двубортный жакет оверсайз',
+    price: 'от 890 ₽ / ед · Мин. 500 шт',
+    desc: 'Структурированный крой с четким плечевым поясом. Дублирование полочек и бортов немецкими клеевыми Kufner. Вточная подкладка из плотной вискозы.',
+    fabric: 'Итальянский Твид / Шерсть 70%',
     seam: 'Дублированный бортовой шов',
-    cost: 'от 890 ₽ / ед',
-    time: '4 рабочих дня (образец)',
-    img1: 'https://images.unsplash.com/photo-1584273143981-41c073dfe8f8?q=80&w=1000&auto=format&fit=crop',
-    img2: 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?q=80&w=1000&auto=format&fit=crop'
+    img1: 'https://images.unsplash.com/photo-1584273143981-41c073dfe8f8?q=80&w=800&auto=format&fit=crop',
+    img2: 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?q=80&w=800&auto=format&fit=crop'
   },
   corset: {
-    tag: 'КОРСЕТЫ & ТОПЫ · СПЕЦИФИКАЦИЯ',
-    title: 'Корсетные топы и блузы',
-    desc: 'Точная утяжка по 12 анатомическим точкам. Вшивание спиральных металлических и регилиновых косточек упругости. Застежка на потайную молнию YKK или корсетную шнуровку с люверсами.',
-    fabric: 'Натуральный хлопок / Косточки упругости',
+    tag: 'КОРСЕТЫ & ТОПЫ',
+    title: 'Корсетный топ с чашками',
+    price: 'от 480 ₽ / ед · Мин. 500 шт',
+    desc: 'Точная утяжка по анатомическим точкам. Вшивание спиральных металлических и регилиновых косточек упругости. Застежка на потайную молнию YKK.',
+    fabric: 'Натуральный хлопок / Кости упругости',
     seam: 'Усиленный кулисный шов',
-    cost: 'от 480 ₽ / ед',
-    time: '3 рабочих дня (образец)',
-    img1: 'https://images.unsplash.com/photo-1550614000-4895a10e1bfd?q=80&w=1000&auto=format&fit=crop',
-    img2: 'https://images.unsplash.com/photo-1584273143981-41c073dfe8f8?q=80&w=1000&auto=format&fit=crop'
+    img1: 'https://images.unsplash.com/photo-1550614000-4895a10e1bfd?q=80&w=800&auto=format&fit=crop',
+    img2: 'https://images.unsplash.com/photo-1584273143981-41c073dfe8f8?q=80&w=800&auto=format&fit=crop'
   },
   casual: {
-    tag: 'ТРИКОТАЖ & CASUAL · СПЕЦИФИКАЦИЯ',
-    title: 'Оверсайз костюмы',
-    desc: 'Пошив изделий из футера 3-нитка пенье 330–380 г/м². Четырехниточные оверлочные строчки на оборудовании Juki, плоский шов флэтлок на горловине и манжетах. Усиленная силиконовая бейка в плечевых швах.',
+    tag: 'ТРИКОТАЖ & CASUAL',
+    title: 'Оверсайз трикотажный костюм',
+    price: 'от 520 ₽ / ед · Мин. 500 шт',
+    desc: 'Пошив изделий из футера 3-нитка пенье 340 г/м². Четырехниточные оверлочные строчки Juki, плоский шов флэтлок на горловине. Усиленная бейка в плечевых швах.',
     fabric: 'Футер 3-нитка пенье 340 г/м²',
     seam: '4-ниточный оверлок Juki',
-    cost: 'от 520 ₽ / ед',
-    time: '2 рабочих дня (образец)',
-    img1: 'https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=1000&auto=format&fit=crop',
-    img2: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1000&auto=format&fit=crop'
+    img1: 'https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=800&auto=format&fit=crop',
+    img2: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=800&auto=format&fit=crop'
   }
 };
 
 let currentKey = 'silk';
 
-function openDrawer(key) {
+function openSideDrawer(key) {
   const data = DRAWER_DATA[key] || DRAWER_DATA.silk;
   currentKey = key;
 
-  document.getElementById('drawerTag').innerText = data.tag;
-  document.getElementById('drawerTitle').innerText = data.title;
-  document.getElementById('drawerDesc').innerText = data.desc;
-  document.getElementById('drawerFabric').innerText = data.fabric;
-  document.getElementById('drawerSeam').innerText = data.seam;
-  document.getElementById('drawerCost').innerText = data.cost;
-  document.getElementById('drawerTime').innerText = data.time;
-  document.getElementById('drawerImg1').src = data.img1;
-  document.getElementById('drawerImg2').src = data.img2;
+  document.getElementById('dTag').innerText = data.tag;
+  document.getElementById('dTitle').innerText = data.title;
+  document.getElementById('dPrice').innerText = data.price;
+  document.getElementById('dDesc').innerText = data.desc;
+  document.getElementById('dFabric').innerText = data.fabric;
+  document.getElementById('dSeam').innerText = data.seam;
+  document.getElementById('dImg1').src = data.img1;
+  document.getElementById('dImg2').src = data.img2;
 
-  document.getElementById('drawerModal').classList.add('is-open');
+  document.getElementById('sideDrawer').classList.add('is-open');
   document.body.style.overflow = 'hidden';
 }
 
-function closeDrawer() {
-  document.getElementById('drawerModal').classList.remove('is-open');
+function closeSideDrawer() {
+  document.getElementById('sideDrawer').classList.remove('is-open');
   document.body.style.overflow = '';
 }
 
 function sendWAFromDrawer() {
   const data = DRAWER_DATA[currentKey];
-  const text = `Здравствуйте, BeMode! Заинтересовала спецификация: ${data.title}. Хочу заказать образец.`;
+  const text = `Здравствуйте, BeMode! Заинтересовала модель: ${data.title}. Хочу заказать образец.`;
   window.open(`https://wa.me/996502985896?text=${encodeURIComponent(text)}`, '_blank');
 }
 
-/* B2B CALCULATOR */
+function filterCat(cat, el) {
+  document.querySelectorAll('.filter-item-12').forEach(i => i.classList.remove('is-active'));
+  el.classList.add('is-active');
+
+  const cards = document.querySelectorAll('.product-card-12');
+  cards.forEach(c => {
+    if (cat === 'all' || c.dataset.cat === cat) {
+      c.style.display = 'block';
+    } else {
+      c.style.display = 'none';
+    }
+  });
+}
+
 let cCat = 'dresses', cVol = 500;
 function setCalc(type, val) {
   if (type === 'cat') {
     cCat = val;
-    document.querySelectorAll('[id^="btn-cat-"]').forEach(b => b.classList.remove('is-active'));
-    document.getElementById(`btn-cat-${val}`).classList.add('is-active');
+    document.querySelectorAll('[id^="btn-cat-"]').forEach(b => {
+      b.style.background = 'transparent'; b.style.color = '#111'; b.style.borderColor = '#E5E5E5';
+    });
+    const btn = document.getElementById(`btn-cat-${val}`);
+    if (btn) { btn.style.background = '#111'; btn.style.color = '#FFF'; btn.style.borderColor = '#111'; }
   }
   recalc();
 }
@@ -801,14 +720,12 @@ function recalc() {
   let days = "6 – 8 дней";
   if (cVol >= 2000 && cVol < 5000) days = "10 – 14 дней";
   if (cVol >= 5000) days = "16 – 22 дней";
-
   document.getElementById('calcDays').innerText = days;
 }
 function sendWA() {
   const text = `Здравствуйте, BeMode! Расчет партии:%0A- Категория: ${cCat}%0A- Объем: ${cVol} шт.%0AХочу заказать образец.`;
   window.open(`https://wa.me/996502985896?text=${text}`, '_blank');
 }
-
 function openSampleModal(preset = '') {
   if (preset) {
     const el = document.getElementById('mItem');
