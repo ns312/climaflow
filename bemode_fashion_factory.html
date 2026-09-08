@@ -9,7 +9,7 @@
     <!-- Google Fonts: Cormorant Garamond, Cinzel, Montserrat & Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Bebas+Neue&family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Oswald:wght@500;600;700&family=Montserrat:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <style>
         /* 12 STOREEZ DEVTOOLS EXACT STYLES & LUXURY DESIGN SYSTEM */
@@ -2840,6 +2840,40 @@
             color: #ffffff;
         }
 
+    
+        /* USHA CAFE STYLE WAVY SILK RIBBON BANNER & CONDENSED TYPOGRAPHY */
+        :root {
+            --font-condensed: 'Oswald', 'Bebas Neue', sans-serif;
+        }
+
+        .hero-title,
+        .section-title {
+            font-family: var(--font-condensed) !important;
+            letter-spacing: 1.5px !important;
+            text-transform: uppercase !important;
+            font-weight: 700 !important;
+        }
+
+        .wavy-ribbon-wrapper {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            background: linear-gradient(135deg, #1c1816 0%, #2a221e 100%);
+            padding: 35px 0;
+            border-top: 1px solid var(--color-gold);
+            border-bottom: 1px solid var(--color-gold);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .wavy-ribbon-text {
+            font-family: var(--font-condensed);
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: 4px;
+            fill: var(--color-gold);
+            text-transform: uppercase;
+        }
+
     </style>
 </head>
 <body class="is-loading">
@@ -2900,6 +2934,20 @@
             </div>
         </div>
     </section>
+
+    
+    <!-- WAVY SILK RIBBON BANNER (INSPIRED BY USHA CAFE WAVE RIBBON REFERENCE) -->
+    <div class="wavy-ribbon-wrapper reveal-up">
+        <svg viewBox="0 0 1440 140" width="100%" height="140" preserveAspectRatio="none" style="display: block;">
+            <path id="wavePathRibbon" d="M 0,70 Q 360,15 720,70 T 1440,70" fill="none" stroke="none" />
+            <path d="M 0,85 Q 360,30 720,85 T 1440,85" fill="none" stroke="rgba(194, 79, 32, 0.35)" stroke-width="48" stroke-linecap="round" />
+            <text class="wavy-ribbon-text">
+                <textPath href="#wavePathRibbon" startOffset="0%">
+                    ШВЕЙНАЯ ФАБРИКА BEMODE • ПОШИВ КОЛЛЕКЦИЙ ДЛЯ БУТИКОВ И БРЕНДОВ • ТРК «ДОРДОЙ» • 100% БЕЛАЯ ОТГРУЗКА • ЧЕСТНЫЙ ЗНАК & ЕАЭС • ПАРТИИ ОТ 100 ШТ • БИШКЕК
+                </textPath>
+            </text>
+        </svg>
+    </div>
 
     <!-- 3.5 SPECS & DETAILED INFO BAR DIRECTLY BELOW HERO -->
     <div class="hero-specs-bar">
