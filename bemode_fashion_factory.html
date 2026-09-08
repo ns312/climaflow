@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5">
     <title>12 BEMODE · Официальный контрактный пошив женской одежды | Бишкек</title>
-    <meta name="description" content="Контрактный отшив женской одежды премиального качества под ключ. Бишкек. САПР лекала, подбор тканей, 100% ОТК, Честный ЗНАК.">
+    <meta name="description" content="Контрактное производство женской одежды премиального качества под ключ. Бишкек. САПР лекала, ткани, 100% ОТК, Честный ЗНАК.">
     
-    <!-- Google Fonts: Montserrat & Inter (Exact 12 STOREEZ font stack) -->
+    <!-- Google Fonts: Montserrat & Inter (Vogue Highline Sans alternative) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -15,18 +15,18 @@
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 
     <style>
-    /* ============================================================== 12 STOREEZ EXACT REPLICA CSS DESIGN SYSTEM */
+    /* ============================================================== 12 STOREEZ EXACT CSS FROM DEVTOOLS SCREENSHOT */
     :root {
-        --12-bg: #FFFFFF;
-        --12-surface: #FFFFFF;
+        --12-bg: #ffffff;
+        --12-surface: #ffffff;
         --12-card-bg: #F7F7F7;
-        --12-text: #111111;
-        --12-sub: #757575;
-        --12-muted: #8C8C8C;
+        --12-color: #4f3e35; /* Exact warm dark taupe charcoal from screenshot */
+        --12-sub: #756860;
+        --12-muted: #999999;
         --12-border: #EBEBEB;
         --12-gold: #B89552;
 
-        --font-main: 'Montserrat', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        --font-main: 'Montserrat', 'Inter', Arial, Helvetica, sans-serif;
         --font-mono: 'Inter', sans-serif;
 
         --ease-12: cubic-bezier(0.2, 0, 0, 1);
@@ -34,13 +34,17 @@
 
     * { box-sizing: border-box; }
     html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+    
+    /* EXACT CSS RULE COPIED FROM USER SCREENSHOT */
     body {
         margin: 0;
-        background: var(--12-bg);
-        color: var(--12-text);
+        background-color: var(--12-bg);
+        color: var(--12-color);
         font-family: var(--font-main);
         font-size: 13px;
-        line-height: 1.5;
+        font-weight: 400;
+        letter-spacing: 0.7px;
+        line-height: 1.385;
         -webkit-font-smoothing: antialiased;
         padding-bottom: 64px;
     }
@@ -50,16 +54,16 @@
     img { max-width: 100%; display: block; }
     button { font: inherit; color: inherit; cursor: pointer; border: none; background: none; }
 
-    .wrap-12 { max-width: 1440px; margin: 0 auto; padding: 0 16px; }
-    @media(min-width: 768px) { .wrap-12 { padding: 0 32px; } }
+    .site_wrapper { max-width: 1440px; margin: 0 auto; padding: 0 16px; }
+    @media(min-width: 768px) { .site_wrapper { padding: 0 32px; } }
 
-    /* 1. TOP ANNOUNCEMENT BAR */
+    /* 1. TOP ANNOUNCEMENT TICKER BAR */
     .top-bar-12 {
-        background: var(--12-text);
+        background: var(--12-color);
         color: #FFFFFF;
         font-size: 11px;
         text-transform: uppercase;
-        letter-spacing: 0.12em;
+        letter-spacing: 1px;
         text-align: center;
         padding: 10px 16px;
         font-weight: 500;
@@ -91,7 +95,7 @@
         gap: 8px;
         font-size: 11px;
         text-transform: uppercase;
-        letter-spacing: 0.12em;
+        letter-spacing: 1px;
         font-weight: 600;
     }
     .header-12__nav {
@@ -99,9 +103,9 @@
         gap: 28px;
         font-size: 12px;
         text-transform: uppercase;
-        letter-spacing: 0.1em;
+        letter-spacing: 0.8px;
         font-weight: 500;
-        color: var(--12-text);
+        color: var(--12-color);
     }
     @media(min-width: 1024px) { .header-12__nav { display: flex; } }
     .header-12__nav a:hover { color: var(--12-gold); }
@@ -109,9 +113,9 @@
     .logo-12 {
         font-size: 20px;
         font-weight: 600;
-        letter-spacing: 0.35em;
+        letter-spacing: 4px;
         text-transform: uppercase;
-        color: var(--12-text);
+        color: var(--12-color);
     }
 
     .header-12__right {
@@ -120,7 +124,7 @@
         gap: 16px;
     }
 
-    /* 3. HERO SLIDER BANNER (100% 12 STOREEZ LOOK) */
+    /* 3. HERO SLIDER BANNER */
     .hero-12 {
         position: relative;
         height: 85vh;
@@ -136,16 +140,16 @@
         color: #FFFFFF;
     }
     .hero-12__title {
-        font-size: clamp(2rem, 5vw, 4.2rem);
+        font-size: clamp(2.2rem, 5vw, 4.4rem);
         font-weight: 400;
         letter-spacing: -0.02em;
-        line-height: 1.05;
+        line-height: 1.1;
         margin-bottom: 12px;
         color: #FFFFFF;
     }
     .hero-12__sub {
         font-size: 14px;
-        color: rgba(255,255,255,0.85);
+        color: rgba(255,255,255,0.88);
         margin-bottom: 24px;
         max-width: 500px;
         font-weight: 300;
@@ -157,18 +161,18 @@
         justify-content: center;
         height: 48px;
         padding: 0 32px;
-        background: var(--12-text);
+        background: var(--12-color);
         color: #FFFFFF;
         font-size: 11px;
         text-transform: uppercase;
-        letter-spacing: 0.15em;
+        letter-spacing: 1px;
         font-weight: 600;
-        border: 1px solid var(--12-text);
+        border: 1px solid var(--12-color);
         transition: all 0.25s ease;
     }
     .btn-12-dark:hover {
         background: #FFFFFF;
-        color: var(--12-text);
+        color: var(--12-color);
     }
 
     .btn-12-white {
@@ -178,10 +182,10 @@
         height: 48px;
         padding: 0 32px;
         background: #FFFFFF;
-        color: var(--12-text);
+        color: var(--12-color);
         font-size: 11px;
         text-transform: uppercase;
-        letter-spacing: 0.15em;
+        letter-spacing: 1px;
         font-weight: 600;
         border: 1px solid #FFFFFF;
         transition: all 0.25s ease;
@@ -203,13 +207,13 @@
         overflow-x: auto;
         font-size: 12px;
         text-transform: uppercase;
-        letter-spacing: 0.1em;
+        letter-spacing: 0.8px;
         color: var(--12-sub);
         scrollbar-width: none;
     }
     .filter-flex-12::-webkit-scrollbar { display: none; }
     .filter-item-12 { cursor: pointer; white-space: nowrap; padding-bottom: 4px; border-bottom: 2px solid transparent; }
-    .filter-item-12.is-active { color: var(--12-text); font-weight: 600; border-color: var(--12-text); }
+    .filter-item-12.is-active { color: var(--12-color); font-weight: 600; border-color: var(--12-color); }
 
     /* 5. CATALOG GRID WITH HOVER PHOTO SWAP & SIZE CHIPS */
     .catalog-12 {
@@ -251,7 +255,7 @@
         position: absolute; top: 12px; right: 12px; z-index: 4;
         width: 36px; height: 36px; border-radius: 50%;
         background: rgba(255,255,255,0.9); display: grid; place-items: center;
-        color: var(--12-text); transition: all 0.2s ease;
+        color: var(--12-color); transition: all 0.2s ease;
     }
     .btn-wish-12:hover { background: #FFFFFF; color: #E53935; }
 
@@ -259,13 +263,13 @@
         padding: 0 4px;
     }
     .card-12__tag {
-        font-size: 10px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--12-sub); margin-bottom: 4px;
+        font-size: 10px; text-transform: uppercase; letter-spacing: 0.8px; color: var(--12-sub); margin-bottom: 4px;
     }
     .card-12__title {
-        font-size: 14px; font-weight: 400; color: var(--12-text); margin-bottom: 4px;
+        font-size: 13px; font-weight: 400; color: var(--12-color); margin-bottom: 4px;
     }
     .card-12__price {
-        font-size: 13px; font-weight: 600; color: var(--12-text); margin-bottom: 8px;
+        font-size: 13px; font-weight: 600; color: var(--12-color); margin-bottom: 8px;
     }
     .sizes-12 {
         display: flex; gap: 6px; font-size: 10px; color: var(--12-sub); font-weight: 500;
@@ -291,7 +295,7 @@
         font-size: clamp(1.8rem, 3vw, 2.8rem); font-weight: 400; line-height: 1.2; margin-bottom: 20px;
     }
 
-    /* 7. SLIDE-IN RIGHT SIDE DRAWER (100% 12 STOREEZ LOOK) */
+    /* 7. SLIDE-IN RIGHT SIDE DRAWER */
     .side-drawer-12 {
         position: fixed; top: 0; right: 0; bottom: 0; z-index: 10000;
         width: min(540px, 100vw); background: #FFFFFF;
@@ -319,13 +323,13 @@
 
     /* FOOTER */
     .footer-12 {
-        background: var(--12-text); color: #FFFFFF; padding: 60px 0 30px; font-size: 12px;
+        background: var(--12-color); color: #FFFFFF; padding: 60px 0 30px; font-size: 12px;
     }
     .footer-grid-12 {
         display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px;
     }
     .footer-title-12 {
-        font-size: 11px; text-transform: uppercase; letter-spacing: 0.16em; color: var(--12-sub); margin-bottom: 16px;
+        font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--12-sub); margin-bottom: 16px;
     }
     .footer-links-12 { display: grid; gap: 10px; color: #CCCCCC; }
 
@@ -347,7 +351,7 @@
 
 <!-- 2. EXACT 12 STOREEZ HEADER -->
 <header class="header-12">
-  <div class="wrap-12 header-12__inner">
+  <div class="site_wrapper header-12__inner">
     <div class="header-12__left">
       <button type="button" onclick="openSampleModal()" class="btn-burger-12">
         <iconify-icon icon="lucide:menu" width="18" height="18"></iconify-icon>
@@ -375,13 +379,13 @@
   </div>
 </header>
 
-<!-- 3. HERO BANNER (100% 12 STOREEZ STYLE) -->
+<!-- 3. HERO BANNER -->
 <section class="hero-12">
   <img class="hero-12__img" src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1600&auto=format&fit=crop" alt="BeMode High Fashion Garment Collection">
   <div class="hero-12__content">
-    <div class="wrap-12">
-      <div style="font-size:11px; text-transform:uppercase; letter-spacing:0.2em; color:#E8E2D5; margin-bottom:12px">Швейная мануфактура женской одежды · Бишкек</div>
-      <h1 class="hero-12__title">Коллекция 2026/2027 <br>Тихая роскошь</h1>
+    <div class="site_wrapper">
+      <div style="font-size:11px; text-transform:uppercase; letter-spacing:1.2px; color:#E8E2D5; margin-bottom:12px">Швейная мануфактура женской одежды · Бишкек</div>
+      <h1 class="hero-12__title">Коллекция 2026/2027 <br>Осенний день под ключ</h1>
       <div class="hero-12__sub">Контрактное производство полного цикла: от разработки САПР-выкроек за 3 дня до упаковки партии с маркировкой Честный ЗНАК.</div>
       <div style="display:flex; gap:12px; flex-wrap:wrap">
         <button type="button" onclick="openSampleModal()" class="btn-12-white">Заказать образец (3 дня)</button>
@@ -393,7 +397,7 @@
 
 <!-- 4. CATEGORY FILTER BAR -->
 <div class="filter-bar-12">
-  <div class="wrap-12 filter-flex-12">
+  <div class="site_wrapper filter-flex-12">
     <span class="filter-item-12 is-active" onclick="filterCat('all', this)">Все категории</span>
     <span class="filter-item-12" onclick="filterCat('dresses', this)">Платья & Миди</span>
     <span class="filter-item-12" onclick="filterCat('suits', this)">Жакеты & Костюмы</span>
@@ -404,7 +408,7 @@
 
 <!-- 5. PRODUCT CATALOG GRID WITH HOVER PHOTO SWAP & SIZE CHIPS -->
 <section class="catalog-12" id="catalog">
-  <div class="wrap-12">
+  <div class="site_wrapper">
     <div class="grid-12">
       
       <!-- Card 1 -->
@@ -473,12 +477,12 @@
 
 <!-- 6. EDITORIAL HERITAGE SPLIT SECTION -->
 <section class="editorial-12" id="about">
-  <div class="wrap-12 editorial-grid-12">
+  <div class="site_wrapper editorial-grid-12">
     <div style="aspect-ratio:4/5; overflow:hidden">
       <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1000&auto=format&fit=crop" alt="Мануфактура BeMode">
     </div>
     <div>
-      <div style="font-size:11px; text-transform:uppercase; letter-spacing:0.18em; color:var(--12-gold); margin-bottom:12px">Философия качества</div>
+      <div style="font-size:11px; text-transform:uppercase; letter-spacing:1px; color:var(--12-gold); margin-bottom:12px">Философия качества</div>
       <div class="editorial-quote-12">
         «Мы создаем одежду, в которой эстетика тихой роскоши опирается на хирургически точную геометрию лекал.»
       </div>
@@ -492,17 +496,17 @@
 
 <!-- 7. CALCULATOR & B2B ESTIMATION -->
 <section style="padding:80px 0" id="calculator">
-  <div class="wrap-12">
+  <div class="site_wrapper">
     <div style="background:var(--12-surface); border:1px solid var(--12-border); padding:40px; display:grid; grid-template-columns:1fr; gap:40px">
       <div>
-        <div style="font-size:11px; text-transform:uppercase; letter-spacing:0.18em; color:var(--12-gold); margin-bottom:8px">Прозрачная смета</div>
+        <div style="font-size:11px; text-transform:uppercase; letter-spacing:1px; color:var(--12-gold); margin-bottom:8px">Прозрачная смета</div>
         <h2 style="font-size:32px; font-weight:400; margin-bottom:24px">Калькулятор партии</h2>
 
         <div style="font-size:11px; text-transform:uppercase; margin-bottom:10px; color:var(--12-sub)">1. Выберите категорию</div>
         <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:24px">
           <button type="button" onclick="setCalc('cat','dresses')" id="btn-cat-dresses" class="btn-12-dark" style="height:38px; padding:0 18px; font-size:10px">Платья & Миди</button>
-          <button type="button" onclick="setCalc('cat','suits')" id="btn-cat-suits" class="btn-12-dark" style="height:38px; padding:0 18px; font-size:10px; background:transparent; color:#111; border:1px solid #EBEBEB">Жакеты & Костюмы</button>
-          <button type="button" onclick="setCalc('cat','corsets')" id="btn-cat-corsets" class="btn-12-dark" style="height:38px; padding:0 18px; font-size:10px; background:transparent; color:#111; border:1px solid #EBEBEB">Корсеты & Блузы</button>
+          <button type="button" onclick="setCalc('cat','suits')" id="btn-cat-suits" class="btn-12-dark" style="height:38px; padding:0 18px; font-size:10px; background:transparent; color:#4f3e35; border:1px solid #EBEBEB">Жакеты & Костюмы</button>
+          <button type="button" onclick="setCalc('cat','corsets')" id="btn-cat-corsets" class="btn-12-dark" style="height:38px; padding:0 18px; font-size:10px; background:transparent; color:#4f3e35; border:1px solid #EBEBEB">Корсеты & Блузы</button>
         </div>
 
         <div style="font-size:11px; text-transform:uppercase; margin-bottom:10px; color:var(--12-sub)">2. Объем партии: <span id="volDisp" style="color:var(--12-gold)">500 шт</span></div>
@@ -511,9 +515,9 @@
 
       <div style="background:#F7F7F7; padding:32px; display:flex; flex-direction:column; justify-between">
         <div>
-          <div style="font-size:10px; text-transform:uppercase; letter-spacing:0.16em; color:var(--12-sub)">Срок отшива</div>
-          <h3 style="font-size:38px; color:var(--12-text); margin-top:4px" id="calcDays">6 – 8 дней</h3>
-          <p style="font-size:12px; color:var(--12-sub); margin-top:8px">Срок изготовления образца: <strong style="color:var(--12-text)">3 рабочих дня</strong></p>
+          <div style="font-size:10px; text-transform:uppercase; letter-spacing:1px; color:var(--12-sub)">Срок отшива</div>
+          <h3 style="font-size:38px; color:var(--12-color); margin-top:4px" id="calcDays">6 – 8 дней</h3>
+          <p style="font-size:12px; color:var(--12-sub); margin-top:8px">Срок изготовления образца: <strong style="color:var(--12-color)">3 рабочих дня</strong></p>
         </div>
         <button type="button" onclick="sendWA()" class="btn-12-dark" style="width:100%; margin-top:24px; text-align:center; background:#25D366; border-color:#25D366; color:#FFF">
           💬 Отправить расчет в WhatsApp
@@ -525,7 +529,7 @@
 
 <!-- 8. FOOTER -->
 <footer class="footer-12">
-  <div class="wrap-12">
+  <div class="site_wrapper">
     <div class="footer-grid-12">
       <div>
         <div class="logo-12" style="color:#FFF; margin-bottom:16px">B E M O D E</div>
@@ -558,7 +562,7 @@
 
 <!-- MOBILE BAR -->
 <div class="mobile-bar-12">
-  <button type="button" onclick="openSampleModal()" style="flex:1; background:#F7F7F7; border:1px solid #EBEBEB; color:#111; font-size:11px; font-weight:700; text-transform:uppercase; padding:13px; text-align:center">
+  <button type="button" onclick="openSampleModal()" style="flex:1; background:#F7F7F7; border:1px solid #EBEBEB; color:#4f3e35; font-size:11px; font-weight:700; text-transform:uppercase; padding:13px; text-align:center">
     Заказать образец
   </button>
   <a href="https://wa.me/996502985896?text=Здравствуйте,%20BeMode!%20Хочу%20уточнить%20стоимость%20отшива." target="_blank" style="flex:1; background:#25D366; color:#FFFFFF; font-size:11px; font-weight:700; text-transform:uppercase; padding:13px; display:flex; align-items:center; justify-content:center; gap:6px; text-decoration:none">
@@ -567,10 +571,10 @@
   </a>
 </div>
 
-<!-- 9. EXACT 12 STOREEZ SLIDE-IN RIGHT SIDE DRAWER -->
+<!-- 9. SLIDE-IN RIGHT SIDE DRAWER -->
 <div class="side-drawer-12" id="sideDrawer">
   <div class="drawer-head-12">
-    <div style="font-size:11px; text-transform:uppercase; letter-spacing:0.14em; font-weight:600; color:var(--12-gold)" id="dTag">Спецификация</div>
+    <div style="font-size:11px; text-transform:uppercase; letter-spacing:1px; font-weight:600; color:var(--12-gold)" id="dTag">Спецификация</div>
     <button type="button" onclick="closeSideDrawer()" style="font-size:18px">✕</button>
   </div>
   
@@ -581,7 +585,7 @@
     </div>
 
     <h2 id="dTitle" style="font-size:24px; font-weight:500; margin-bottom:8px">Наименование</h2>
-    <div id="dPrice" style="font-size:16px; font-weight:600; color:var(--12-text); margin-bottom:16px">от 450 ₽ / ед</div>
+    <div id="dPrice" style="font-size:16px; font-weight:600; color:var(--12-color); margin-bottom:16px">от 450 ₽ / ед</div>
     <p id="dDesc" style="color:var(--12-sub); font-size:13px; line-height:1.6; margin-bottom:24px">Описание</p>
 
     <div style="background:#F7F7F7; padding:20px; margin-bottom:24px; font-size:12px">
@@ -604,11 +608,11 @@
 
 <!-- SAMPLE MODAL -->
 <div id="sample-modal" onclick="if(event.target.id==='sample-modal')closeSampleModal()" style="position:fixed; inset:0; z-index:9999; background:rgba(0,0,0,0.6); backdrop-filter:blur(6px); display:flex; align-items:center; justify-content:center; padding:16px; opacity:0; pointer-events:none; transition:all .3s ease">
-  <div style="position:relative; width:100%; max-width:440px; background:#FFFFFF; padding:36px; color:#111">
+  <div style="position:relative; width:100%; max-width:440px; background:#FFFFFF; padding:36px; color:#4f3e35">
     <button type="button" onclick="closeSampleModal()" style="position:absolute; top:16px; right:16px; font-size:18px">✕</button>
-    <div style="font-size:10px; text-transform:uppercase; letter-spacing:0.18em; color:var(--12-gold); margin-bottom:6px">Быстрый старт</div>
+    <div style="font-size:10px; text-transform:uppercase; letter-spacing:1px; color:var(--12-gold); margin-bottom:6px">Быстрый старт</div>
     <h3 style="font-size:24px; font-weight:500; margin-bottom:8px">Заказать образец</h3>
-    <p style="font-size:13px; color:#666; margin-bottom:20px">Отшиваем физический эталон за 3 дня. При заказе партии стоимость вычитается.</p>
+    <p style="font-size:13px; color:#756860; margin-bottom:20px">Отшиваем физический эталон за 3 дня. При заказе партии стоимость вычитается.</p>
     <form onsubmit="submitForm(event)" style="display:grid; gap:14px">
       <div>
         <label style="display:block; font-size:10px; text-transform:uppercase; margin-bottom:4px">Ваше имя / Бренд:</label>
@@ -720,10 +724,10 @@ function setCalc(type, val) {
   if (type === 'cat') {
     cCat = val;
     document.querySelectorAll('[id^="btn-cat-"]').forEach(b => {
-      b.style.background = 'transparent'; b.style.color = '#111'; b.style.borderColor = '#EBEBEB';
+      b.style.background = 'transparent'; b.style.color = '#4f3e35'; b.style.borderColor = '#EBEBEB';
     });
     const btn = document.getElementById(`btn-cat-${val}`);
-    if (btn) { btn.style.background = '#111'; btn.style.color = '#FFF'; btn.style.borderColor = '#111'; }
+    if (btn) { btn.style.background = '#4f3e35'; btn.style.color = '#FFF'; btn.style.borderColor = '#4f3e35'; }
   }
   recalc();
 }
