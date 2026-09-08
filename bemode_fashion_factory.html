@@ -1526,9 +1526,256 @@
                 padding: 10px 16px;
             }
         }
+    
+        /* KAIRO-STYLE PRELOADER STYLES */
+        .loader {
+            z-index: 99999;
+            color: #f3ede2;
+            background: #151210;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 28px;
+            display: flex;
+            position: fixed;
+            inset: 0;
+            transition: opacity 0.8s ease, visibility 0.8s ease;
+        }
+        .loader.fade-out {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .loader__word {
+            font-family: var(--font-serif);
+            letter-spacing: 0.22em;
+            font-size: clamp(40px, 8vw, 84px);
+            display: flex;
+            overflow: hidden;
+        }
+        .loader__word span {
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(40px);
+            animation: loaderLetterRise 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        .loader__word span:nth-child(1) { animation-delay: 0.1s; }
+        .loader__word span:nth-child(2) { animation-delay: 0.2s; }
+        .loader__word span:nth-child(3) { animation-delay: 0.3s; }
+        .loader__word span:nth-child(4) { animation-delay: 0.4s; }
+        .loader__word span:nth-child(5) { animation-delay: 0.5s; }
+        .loader__word span:nth-child(6) { animation-delay: 0.6s; }
+
+        @keyframes loaderLetterRise {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .loader__bar {
+            background: rgba(255, 255, 255, 0.15);
+            width: 180px;
+            height: 2px;
+            overflow: hidden;
+            border-radius: 2px;
+        }
+        .loader__bar i {
+            background: var(--color-gold);
+            width: 0%;
+            height: 100%;
+            display: block;
+            animation: loaderProgress 1.4s ease forwards;
+        }
+        @keyframes loaderProgress {
+            to { width: 100%; }
+        }
+        .loader__label {
+            font-family: var(--font-sans);
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            opacity: 0.7;
+            font-size: 10.5px;
+            color: #c29d7e;
+        }
+
+        /* KAIRO-STYLE RIPPLE & MAGNETIC BUTTONS */
+        .btn-primary, .btn-secondary, .quick-order-btn {
+            --x: 50%;
+            --y: 50%;
+            position: relative;
+            overflow: hidden;
+            isolation: isolate;
+            transition: color 0.45s ease, border-color 0.45s ease, letter-spacing 0.5s ease, transform 0.3s ease;
+        }
+        .btn-primary:before, .btn-secondary:before, .quick-order-btn:before {
+            content: "";
+            z-index: -1;
+            border-radius: inherit;
+            background: var(--color-gold);
+            clip-path: circle(0% at var(--x) var(--y));
+            transition: clip-path 0.65s cubic-bezier(0.77, 0, 0.18, 1);
+            position: absolute;
+            inset: 0;
+        }
+        .btn-primary:hover:before, .btn-secondary:hover:before, .quick-order-btn:hover:before {
+            clip-path: circle(160% at var(--x) var(--y));
+        }
+        .btn-primary:hover, .btn-secondary:hover {
+            color: #ffffff !important;
+            letter-spacing: 1.8px;
+        }
+
+        /* KAIRO-STYLE INTERACTIVE PRODUCTION PROCESS TABS */
+        .prod-process-section {
+            padding: 85px 45px;
+            background-color: var(--color-bg-alt);
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+        }
+        .prod-experience-wrapper {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .prod-tabs {
+            display: flex;
+            border-bottom: 1px solid var(--color-border);
+            gap: 12px;
+            margin-bottom: 35px;
+            overflow-x: auto;
+        }
+        .prod-tab-btn {
+            font-family: var(--font-serif);
+            font-size: 19px;
+            color: var(--color-text-muted);
+            background: none;
+            border: none;
+            border-bottom: 2px solid transparent;
+            padding: 14px 22px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .prod-tab-btn span {
+            font-family: var(--font-sans);
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--color-gold);
+            letter-spacing: 1px;
+        }
+        .prod-tab-btn:hover {
+            color: var(--color-accent);
+        }
+        .prod-tab-btn.active {
+            color: var(--color-accent);
+            border-bottom-color: var(--color-gold);
+        }
+        .prod-panes {
+            position: relative;
+        }
+        .prod-pane {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        .prod-pane.active {
+            display: block;
+            opacity: 1;
+        }
+        .prod-pane-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        .prod-pane-img {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+            aspect-ratio: 4/3;
+        }
+        .prod-pane-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .prod-pane-text h3 {
+            font-family: var(--font-serif);
+            font-size: 30px;
+            color: var(--color-accent);
+            margin-bottom: 16px;
+            line-height: 1.25;
+        }
+        .prod-pane-text p {
+            color: var(--color-text-muted);
+            font-size: 14.5px;
+            line-height: 1.7;
+        }
+
+        /* KAIRO-STYLE MARQUEE TICKER IN FOOTER */
+        .footer-marquee {
+            border-top: 1px solid rgba(255,255,255,0.12);
+            border-bottom: 1px solid rgba(255,255,255,0.12);
+            letter-spacing: 0.24em;
+            text-transform: uppercase;
+            color: #d1c5be;
+            padding: 16px 0;
+            font-size: 10.5px;
+            overflow: hidden;
+            background: #1c1614;
+        }
+        .footer-track {
+            align-items: center;
+            gap: 36px;
+            width: max-content;
+            animation: marqueeTicker 42s linear infinite;
+            display: flex;
+        }
+        .footer-marquee:hover .footer-track {
+            animation-play-state: paused;
+        }
+        .footer-track i {
+            background: var(--color-gold);
+            border-radius: 50%;
+            flex: none;
+            width: 5px;
+            height: 5px;
+        }
+        @keyframes marqueeTicker {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        @media (max-width: 640px) {
+            .prod-process-section {
+                padding: 45px 20px;
+            }
+            .prod-pane-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+            .prod-tab-btn {
+                font-size: 15px;
+                padding: 10px 14px;
+            }
+            .prod-pane-text h3 {
+                font-size: 24px;
+            }
+        }
+
     </style>
 </head>
 <body>
+
+<!-- KAIRO-STYLE LUXURY PRELOADER -->
+<div class="loader" id="loader" aria-hidden="true">
+    <div class="loader__word">
+        <span>B</span><span>E</span><span>M</span><span>O</span><span>D</span><span>E</span>
+    </div>
+    <div class="loader__bar"><i id="loaderBar"></i></div>
+    <div class="loader__label" id="loaderLabel">Швейная фабрика Bemode • Бишкек</div>
+</div>
+
 
 <div class="site_wrapper">
 
@@ -1668,6 +1915,131 @@
             
             <div class="value-image-wrap reveal-up delay-2">
                 <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1000&q=85" alt="Bemode Editorial Model">
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- 5.5 INTERACTIVE PRODUCTION PROCESS TABS (KAIRO EXPERIENCE SWITCHER) -->
+    <section class="prod-process-section" id="process">
+        <div class="prod-experience-wrapper">
+            <div style="text-align: center; margin-bottom: 36px;" class="reveal-up">
+                <h2 class="section-title">Производственный Цех Bemode</h2>
+                <p class="section-sub">4 ключевых этапа создания вашей оптовой коллекции одежды в Бишкеке</p>
+            </div>
+
+            <div class="prod-tabs" role="tablist">
+                <button class="prod-tab-btn active" role="tab" aria-selected="true" onclick="switchProdTab(0)">
+                    <span>01</span> Конструирование & CAD
+                </button>
+                <button class="prod-tab-btn" role="tab" aria-selected="false" onclick="switchProdTab(1)">
+                    <span>02</span> Ткани & Полотно
+                </button>
+                <button class="prod-tab-btn" role="tab" aria-selected="false" onclick="switchProdTab(2)">
+                    <span>03</span> Поточный Пошив
+                </button>
+                <button class="prod-tab-btn" role="tab" aria-selected="false" onclick="switchProdTab(3)">
+                    <span>04</span> Двойной ОТК & Маркировка
+                </button>
+            </div>
+
+            <div class="prod-panes">
+                <!-- Pane 1 -->
+                <div class="prod-pane active">
+                    <div class="prod-pane-grid">
+                        <div class="prod-pane-img">
+                            <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=1000&q=80" alt="CAD Конструирование">
+                        </div>
+                        <div class="prod-pane-text">
+                            <span class="card-3d-tag">ЭТАП 01 • ТОЧНЫЕ ЛЕКАЛА</span>
+                            <h3>Разработка & Градация Лекал за 24–48 часов</h3>
+                            <p>Наше САПР-бюро создает цифровые лекала с безупречной анатомической посадкой под размеры 42–48. Каждое лекало тестируется на пробном образце перед запуском раскроя партии.</p>
+                            <div class="trust-badge-box" style="margin-top: 24px;">
+                                <div class="trust-item">
+                                    <div class="trust-val">24 часа</div>
+                                    <div class="trust-lbl">Срок отшива эталонного образца</div>
+                                </div>
+                                <div class="trust-item">
+                                    <div class="trust-val">0%</div>
+                                    <div class="trust-lbl">Риска плохой посадки</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pane 2 -->
+                <div class="prod-pane">
+                    <div class="prod-pane-grid">
+                        <div class="prod-pane-img">
+                            <img src="https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=1000&q=80" alt="Ткани и Полотно">
+                        </div>
+                        <div class="prod-pane-text">
+                            <span class="card-3d-tag">ЭТАП 02 • СЫРЬЕ И ТЕКСТИЛЬ</span>
+                            <h3>Прямой Импорт Полотна из Турции и Китая</h3>
+                            <p>Работаем только со проверенными фабриками полотна (Silk Touch, костюмный поливискоз, хлопковый софт). Все ткани проходят декатировку и проверку на усадку до раскроя.</p>
+                            <div class="trust-badge-box" style="margin-top: 24px;">
+                                <div class="trust-item">
+                                    <div class="trust-val">15+</div>
+                                    <div class="trust-lbl">Видов тканей в наличии</div>
+                                </div>
+                                <div class="trust-item">
+                                    <div class="trust-val">100%</div>
+                                    <div class="trust-lbl">Контроль усадки и плотности</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pane 3 -->
+                <div class="prod-pane">
+                    <div class="prod-pane-grid">
+                        <div class="prod-pane-img">
+                            <img src="https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?auto=format&fit=crop&w=1000&q=80" alt="Поточный Пошив">
+                        </div>
+                        <div class="prod-pane-text">
+                            <span class="card-3d-tag">ЭТАП 03 • ШВЕЙНЫЙ ЦЕХ</span>
+                            <h3>Автоматизированные Линии до 3000 ед/мес</h3>
+                            <p>Современный парк японского оборудования Juki и Jack. Каждая операция закрепощена за специализированной швеей, что обеспечивает идеальную геометрию строчек.</p>
+                            <div class="trust-badge-box" style="margin-top: 24px;">
+                                <div class="trust-item">
+                                    <div class="trust-val">3 000 шт</div>
+                                    <div class="trust-lbl">Мощность пошива в месяц</div>
+                                </div>
+                                <div class="trust-item">
+                                    <div class="trust-val">Juki / Jack</div>
+                                    <div class="trust-lbl">Японское оборудование</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pane 4 -->
+                <div class="prod-pane">
+                    <div class="prod-pane-grid">
+                        <div class="prod-pane-img">
+                            <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1000&q=80" alt="ОТК и Честный ЗНАК">
+                        </div>
+                        <div class="prod-pane-text">
+                            <span class="card-3d-tag">ЭТАП 04 • БЕЛАЯ ОТГРУЗКА</span>
+                            <h3>Двухэтапный ОТК, Честный ЗНАК & ЕАЭС</h3>
+                            <p>100% чистка нитей, ВТО (влажно-тепловая обработка), индивидуальный контроль главного технолога, генерация DataMatrix кодов Честный ЗНАК для белой продажи на маркетплейсах и в бутиках.</p>
+                            <div class="trust-badge-box" style="margin-top: 24px;">
+                                <div class="trust-item">
+                                    <div class="trust-val">100%</div>
+                                    <div class="trust-lbl">Белые документы и ЕАЭС</div>
+                                </div>
+                                <div class="trust-item">
+                                    <div class="trust-val">DataMatrix</div>
+                                    <div class="trust-lbl">Маркировка Честный ЗНАК</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -1966,6 +2338,25 @@
     </section>
 
     <!-- FOOTER -->
+    
+    <!-- KAIRO-STYLE INFINITE MARQUEE TICKER IN FOOTER -->
+    <div class="footer-marquee">
+        <div class="footer-track">
+            <span>BEMODE FASHION FACTORY</span><i></i>
+            <span>БИШКЕК • ТРК ДОРДОЙ</span><i></i>
+            <span>100% БЕЛАЯ ОТГРУЗКА</span><i></i>
+            <span>КАЗАХСТАН • РОССИЯ • УЗБЕКИСТАН</span><i></i>
+            <span>ЧЕСТНЫЙ ЗНАК & ЕАЭС</span><i></i>
+            <span>ПОШИВ КОЛЛЕКЦИЙ ДЛЯ БРЕНДОВ</span><i></i>
+            <span>BEMODE FASHION FACTORY</span><i></i>
+            <span>БИШКЕК • ТРК ДОРДОЙ</span><i></i>
+            <span>100% БЕЛАЯ ОТГРУЗКА</span><i></i>
+            <span>КАЗАХСТАН • РОССИЯ • УЗБЕКИСТАН</span><i></i>
+            <span>ЧЕСТНЫЙ ЗНАК & ЕАЭС</span><i></i>
+            <span>ПОШИВ КОЛЛЕКЦИЙ ДЛЯ БРЕНДОВ</span><i></i>
+        </div>
+    </div>
+
     <footer class="site-footer">
         <div class="footer-grid">
             <div class="footer-brand">
@@ -2226,6 +2617,50 @@
     }
 
     // Initialize calc
+    
+    // KAIRO PRELOADER FADE-OUT
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            const loader = document.getElementById('loader');
+            if (loader) loader.classList.add('fade-out');
+        }, 800);
+    });
+
+    // MOUSE TRACKING FOR RIPPLE BUTTONS
+    document.querySelectorAll('.btn-primary, .btn-secondary, .quick-order-btn').forEach(btn => {
+        btn.addEventListener('mousemove', e => {
+            const rect = btn.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            btn.style.setProperty('--x', `${x}px`);
+            btn.style.setProperty('--y', `${y}px`);
+        });
+    });
+
+    // PRODUCTION PROCESS TAB SWITCHER
+    function switchProdTab(index) {
+        const buttons = document.querySelectorAll('.prod-tab-btn');
+        const panes = document.querySelectorAll('.prod-pane');
+        
+        buttons.forEach((btn, idx) => {
+            if (idx === index) {
+                btn.classList.add('active');
+                btn.setAttribute('aria-selected', 'true');
+            } else {
+                btn.classList.remove('active');
+                btn.setAttribute('aria-selected', 'false');
+            }
+        });
+
+        panes.forEach((pane, idx) => {
+            if (idx === index) {
+                pane.classList.add('active');
+            } else {
+                pane.classList.remove('active');
+            }
+        });
+    }
+
     calculatePrice();
 </script>
 
