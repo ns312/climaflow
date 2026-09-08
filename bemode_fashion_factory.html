@@ -222,7 +222,7 @@
             transform: translateY(-1px);
         }
 
-        /* 3. HERO EDITORIAL SECTION (MINIMALIST OFFER & BUTTONS ONLY) */
+        /* 3. HERO EDITORIAL SECTION */
         .hero-editorial {
             position: relative;
             height: 82vh;
@@ -748,7 +748,7 @@
             border-color: var(--color-accent);
         }
 
-        /* 7. CALCULATOR SECTION */
+        /* 7. CALCULATOR SECTION (RESPONSIVE OPTIMIZED) */
         .calculator-section {
             padding: 85px 45px;
             background: linear-gradient(135deg, #2c221e 0%, #3e3029 100%);
@@ -808,6 +808,7 @@
             font-size: 13px;
             border-radius: 2px;
             outline: none;
+            width: 100%;
         }
 
         .calc-select option {
@@ -834,7 +835,7 @@
             color: #f7ede6;
         }
 
-        /* 8. SERIOUS & ULTRA-COMPACT LOGISTICS BAR (NO PERCENTAGES, CLEAN ISO TAGS) */
+        /* 8. SERIOUS & ULTRA-COMPACT LOGISTICS BAR */
         .geography-section {
             padding: 40px 45px;
             background: var(--color-bg-alt);
@@ -1343,11 +1344,67 @@
                 display: none;
             }
             .hero-title {
-                font-size: 34px;
+                font-size: 32px;
+                line-height: 1.2;
+            }
+            .hero-subtitle {
+                font-size: 13.5px;
+                margin-bottom: 28px;
             }
             .catalog-grid {
                 grid-template-columns: 1fr;
             }
+            
+            /* CALCULATOR MOBILE RESPONSIVE OPTIMIZATION */
+            .calculator-section {
+                padding: 45px 16px;
+            }
+            .calc-wrapper {
+                padding: 26px 18px;
+                border-radius: 8px;
+            }
+            .calc-title {
+                font-size: 24px;
+                line-height: 1.25;
+            }
+            .calc-sub {
+                font-size: 12px;
+                margin-bottom: 28px;
+            }
+            .calc-form {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+            .calc-group {
+                gap: 6px;
+            }
+            .calc-select {
+                padding: 14px 12px;
+                font-size: 12.5px;
+                width: 100%;
+                border-radius: 4px;
+            }
+            .calc-result-box {
+                grid-column: span 1;
+                flex-direction: column;
+                align-items: stretch;
+                text-align: center;
+                gap: 16px;
+                padding: 20px 16px;
+                border-radius: 6px;
+            }
+            .result-amount {
+                font-size: 28px;
+                margin-top: 4px;
+            }
+            .calc-result-box .btn-primary {
+                width: 100%;
+                padding: 16px 20px;
+                font-size: 11px;
+                letter-spacing: 1.2px;
+                text-align: center;
+            }
+
             .geo-compact-bar {
                 flex-direction: column;
                 align-items: flex-start;
@@ -1625,7 +1682,7 @@
         </div>
     </section>
 
-    <!-- 7. CALCULATOR SECTION -->
+    <!-- 7. CALCULATOR SECTION (RESPONSIVE OPTIMIZED) -->
     <section class="calculator-section" id="calculator">
         <div class="calc-wrapper reveal-up">
             <h2 class="calc-title">Калькулятор Стоимости Партии</h2>
@@ -1683,7 +1740,7 @@
         </div>
     </section>
 
-    <!-- 8. SERIOUS & ULTRA-COMPACT LOGISTICS BAR (NO PERCENTAGES, CLEAN ISO TAGS) -->
+    <!-- 8. SERIOUS & ULTRA-COMPACT LOGISTICS BAR -->
     <section class="geography-section">
         <div class="geo-compact-bar reveal-up">
             <div class="geo-b2b-header">Доставка готовых коллекций:</div>
