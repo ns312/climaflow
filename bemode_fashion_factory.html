@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BeMode KG — Премиальная швейная фабрика женской одежды | Бишкек</title>
+    <title>BeMode KG — Женственная швейная фабрика модной одежды | Бишкек</title>
     <meta name="description" content="Контрактный отшив женской одежды в Бишкеке под ключ. Разработка лекал, дизайн одежды, 100% контроль качества ОТК, минимальный заказ от 500 единиц. Сбыт в РФ и СНГ.">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -21,13 +21,15 @@
             theme: {
                 extend: {
                     colors: {
-                        dark: '#0E0E0E',
-                        darkcard: '#161616',
-                        porcelain: '#F7F5F0',
-                        gold: '#C5A059',
-                        goldlight: '#E5C887',
-                        greydark: '#888888',
-                        greylight: '#E5E5E5'
+                        blush: '#FDF2F4',
+                        blushcard: '#FFFFFF',
+                        blushaccent: '#F9E5E9',
+                        blushborder: '#F2D3DC',
+                        rosewood: '#3D2228',
+                        rosewoodlight: '#5E3C44',
+                        goldrose: '#D49BA8',
+                        goldaccent: '#C5A059',
+                        goldlight: '#E8A5B8'
                     },
                     fontFamily: {
                         serif: ['Cormorant Garamond', 'Georgia', 'serif'],
@@ -40,22 +42,45 @@
     </script>
 
     <style>
-        /* Quiet Luxury Scrollbars & Animations */
+        /* Light Rose Luxury Scrollbars & Aesthetics */
         ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: #0E0E0E; }
-        ::-webkit-scrollbar-thumb { background: #C5A059; border-radius: 3px; }
+        ::-webkit-scrollbar-track { background: #FDF2F4; }
+        ::-webkit-scrollbar-thumb { background: #E8A5B8; border-radius: 3px; }
 
-        @keyframes subtlePulse {
-            0%, 100% { opacity: 0.8; transform: scale(1); }
-            50% { opacity: 1; transform: scale(1.03); }
+        /* Floating Sakura Petals Animation */
+        @keyframes floatPetal {
+            0% {
+                transform: translateY(-10vh) rotate(0deg) translateX(0px);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.8;
+            }
+            90% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(105vh) rotate(360deg) translateX(80px);
+                opacity: 0;
+            }
         }
 
-        .gold-shimmer {
-            background: linear-gradient(135deg, #C5A059 0%, #F5E5C0 50%, #C5A059 100%);
+        .sakura-petal {
+            position: absolute;
+            background: linear-gradient(135deg, #FFDDE2 0%, #FFAEB9 100%);
+            border-radius: 15px 0px 15px 0px;
+            opacity: 0.7;
+            pointer-events: none;
+            filter: drop-shadow(0 2px 4px rgba(230,150,170,0.2));
+            animation: floatPetal 14s linear infinite;
+        }
+
+        .gold-rose-shimmer {
+            background: linear-gradient(135deg, #3D2228 0%, #A85A6E 50%, #C5A059 100%);
             background-size: 200% auto;
             color: transparent;
             -webkit-background-clip: text;
-            animation: shimmer 4s linear infinite;
+            animation: shimmer 5s linear infinite;
         }
 
         @keyframes shimmer {
@@ -63,60 +88,69 @@
             100% { background-position: 200% center; }
         }
 
-        .blur-backdrop {
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
+        .blur-rose-backdrop {
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
         }
 
-        /* Hover Zoom & Elegance Effect */
         .img-zoom {
             transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .group:hover .img-zoom {
-            transform: scale(1.06);
+            transform: scale(1.05);
         }
     </style>
 </head>
-<body class="bg-dark text-porcelain font-sans antialiased selection:bg-gold selection:text-dark overflow-x-hidden">
+<body class="bg-blush text-rosewood font-sans antialiased selection:bg-goldrose selection:text-white overflow-x-hidden relative">
+
+    <!-- BACKGROUND FLOATING SAKURA PETALS CONTAINER -->
+    <div class="fixed inset-0 pointer-events-none z-10 overflow-hidden" id="sakura-container">
+        <div class="sakura-petal w-4 h-4 left-[10%]" style="animation-delay: 0s; animation-duration: 12s;"></div>
+        <div class="sakura-petal w-3 h-3 left-[25%]" style="animation-delay: 3s; animation-duration: 15s;"></div>
+        <div class="sakura-petal w-5 h-5 left-[45%]" style="animation-delay: 1s; animation-duration: 18s;"></div>
+        <div class="sakura-petal w-4 h-4 left-[65%]" style="animation-delay: 5s; animation-duration: 14s;"></div>
+        <div class="sakura-petal w-3 h-3 left-[82%]" style="animation-delay: 2s; animation-duration: 16s;"></div>
+        <div class="sakura-petal w-4 h-4 left-[92%]" style="animation-delay: 7s; animation-duration: 13s;"></div>
+    </div>
 
     <!-- TOP ANNOUNCEMENT BAR -->
-    <div class="bg-gold/10 border-b border-gold/20 text-center py-2 px-4 text-xs font-mono tracking-widest text-gold font-bold uppercase flex items-center justify-center gap-2">
+    <div class="bg-blushaccent border-b border-blushborder text-center py-2 px-4 text-xs font-mono tracking-widest text-rosewood font-bold uppercase flex items-center justify-center gap-2 z-20 relative">
         <span class="w-2 h-2 rounded-full bg-[#25D366] animate-pulse"></span>
-        <span>ПРИЕМ ЗАКАЗОВ НА НОВЫЙ СЕЗОН 2026/2027 • ПРИОРИТЕТНЫЕ СЛОТЫ НА ОТШИВ И РАЗРАБОТКУ ЛЕКАЛ</span>
+        <span>🌸 ПРИЕМ ЗАКАЗОВ НА НОВЫЙ СЕЗОН 2026/2027 • ПРИОРИТЕТНЫЕ СЛОТЫ НА ОТШИВ И РАЗРАБОТКУ ЛЕКАЛ</span>
     </div>
 
     <!-- MAIN HEADER -->
-    <header class="sticky top-0 z-50 bg-dark/85 blur-backdrop border-b border-white/10 transition-all duration-300">
+    <header class="sticky top-0 z-50 bg-blush/90 blur-rose-backdrop border-b border-blushborder transition-all duration-300">
         <div class="max-w-[1400px] mx-auto px-6 h-20 flex items-center justify-between">
             
             <!-- Brand Logo -->
             <a href="#" class="flex items-center gap-3 group">
-                <div class="w-10 h-10 rounded-full border border-gold/50 flex items-center justify-center bg-gold/10 text-gold font-serif font-bold text-xl group-hover:bg-gold group-hover:text-dark transition-all duration-300">
+                <div class="w-10 h-10 rounded-full border border-goldrose/60 flex items-center justify-center bg-white text-rosewood font-serif font-bold text-xl group-hover:bg-goldrose group-hover:text-white transition-all duration-300 shadow-sm">
                     B
                 </div>
                 <div class="flex flex-col">
-                    <span class="font-serif text-2xl tracking-[0.15em] font-semibold text-white uppercase group-hover:text-gold transition-colors">BeMode</span>
-                    <span class="text-[9px] font-mono tracking-[0.3em] text-gold uppercase font-bold">KIRGIZSTAN • GARMENT FACTORY</span>
+                    <span class="font-serif text-2xl tracking-[0.15em] font-semibold text-rosewood uppercase group-hover:text-goldrose transition-colors">BeMode</span>
+                    <span class="text-[9px] font-mono tracking-[0.25em] text-goldaccent uppercase font-bold">KIRGIZSTAN • FEMININE GARMENT FACTORY</span>
                 </div>
             </a>
 
             <!-- Navigation Links -->
-            <nav class="hidden lg:flex items-center gap-8 text-xs font-mono uppercase tracking-widest text-white/80">
-                <a href="#lookbook" class="hover:text-gold transition-colors">Коллекции</a>
-                <a href="#services" class="hover:text-gold transition-colors">Лекала & Дизайн</a>
-                <a href="#quality" class="hover:text-gold transition-colors">Качество ОТК</a>
-                <a href="#calculator" class="hover:text-gold transition-colors">Калькулятор</a>
-                <a href="#cases" class="hover:text-gold transition-colors">Кейсы</a>
+            <nav class="hidden lg:flex items-center gap-8 text-xs font-mono uppercase tracking-widest text-rosewood/80 font-medium">
+                <a href="#lookbook" class="hover:text-goldrose transition-colors">Коллекции</a>
+                <a href="#services" class="hover:text-goldrose transition-colors">Лекала & Дизайн</a>
+                <a href="#quality" class="hover:text-goldrose transition-colors">Качество ОТК</a>
+                <a href="#calculator" class="hover:text-goldrose transition-colors">Калькулятор</a>
+                <a href="#cases" class="hover:text-goldrose transition-colors">Кейсы</a>
             </nav>
 
             <!-- CTA Actions -->
             <div class="flex items-center gap-4">
-                <a href="https://t.me/bemode_kg" target="_blank" class="hidden sm:flex items-center gap-2 text-xs font-mono text-white/70 hover:text-gold transition-colors">
+                <a href="https://t.me/bemode_kg" target="_blank" class="hidden sm:flex items-center gap-2 text-xs font-mono text-rosewood/70 hover:text-goldrose transition-colors">
                     <iconify-icon icon="logos:telegram" width="16" height="16"></iconify-icon>
                     <span>@bemode_kg</span>
                 </a>
 
-                <button onclick="openSampleModal()" class="bg-gold hover:bg-white text-dark font-mono text-xs font-bold uppercase py-3 px-6 rounded-full transition-all duration-300 shadow-[0_0_20px_rgba(197,160,89,0.3)] flex items-center gap-2 cursor-pointer">
+                <button onclick="openSampleModal()" class="bg-rosewood hover:bg-rosewoodlight text-white font-mono text-xs font-bold uppercase py-3 px-6 rounded-full transition-all duration-300 shadow-[0_4px_20px_rgba(61,34,40,0.15)] flex items-center gap-2 cursor-pointer">
                     <span>Заказать образец</span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
                 </button>
@@ -125,11 +159,11 @@
         </div>
     </header>
 
-    <!-- HERO SECTION (Quiet Luxury Editorial Aesthetic) -->
-    <section class="relative min-h-[90vh] flex items-center justify-center pt-12 pb-20 overflow-hidden border-b border-white/10">
+    <!-- HERO SECTION (Light Rose Feminine Aesthetic + Sakura Touch) -->
+    <section class="relative min-h-[88vh] flex items-center justify-center pt-10 pb-20 overflow-hidden border-b border-blushborder">
         
-        <!-- Subtle Ambient Background Glow -->
-        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-gold/10 blur-[140px] rounded-full pointer-events-none"></div>
+        <!-- Ambient Warm Rose Glow Background -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[500px] bg-rose-200/40 blur-[130px] rounded-full pointer-events-none"></div>
 
         <div class="max-w-[1400px] mx-auto px-6 relative z-10 w-full">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -137,74 +171,74 @@
                 <!-- Hero Main Content -->
                 <div class="lg:col-span-7 flex flex-col justify-center">
                     
-                    <div class="inline-flex items-center gap-2 bg-white/5 border border-gold/30 px-4 py-1.5 rounded-full w-fit mb-6">
-                        <span class="w-1.5 h-1.5 rounded-full bg-gold"></span>
-                        <span class="text-[11px] font-mono text-gold uppercase tracking-[0.2em] font-bold">ЭСТЕТИКА + БЕЗУПРЕЧНОЕ КАЧЕСТВО ИЗ БИШКЕКА</span>
+                    <div class="inline-flex items-center gap-2 bg-white/80 border border-blushborder px-4 py-1.5 rounded-full w-fit mb-6 shadow-sm">
+                        <span class="text-sm">🌸</span>
+                        <span class="text-[11px] font-mono text-rosewood uppercase tracking-[0.2em] font-bold">ЖЕНСТВЕННАЯ ЭСТЕТИКА + БЕЗУПРЕЧНОЕ КАЧЕСТВО</span>
                     </div>
 
-                    <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-light tracking-tight text-white uppercase leading-[1.08] mb-6">
+                    <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-light tracking-tight text-rosewood uppercase leading-[1.08] mb-6">
                         Производство <br>
-                        <span class="italic font-normal gold-shimmer">модной женской</span> <br>
+                        <span class="italic font-normal gold-rose-shimmer">модной женской</span> <br>
                         одежды под ключ
                     </h1>
 
-                    <p class="text-sm sm:text-base font-sans text-white/75 font-light leading-relaxed max-w-xl mb-8">
-                        Швейная фабрика <strong class="text-white font-medium">BeMode (Бишкек)</strong>. Мы объединили эстетику брендов уровня <em class="text-gold font-normal">12 STOREEZ</em> со строгими стандартами B2B-качества. Разрабатываем лекала, создаем дизайн с нуля и отшиваем партии от 500 единиц с доставкой в РФ и СНГ.
+                    <p class="text-sm sm:text-base font-sans text-rosewoodlight font-normal leading-relaxed max-w-xl mb-8">
+                        Швейная фабрика <strong class="text-rosewood font-medium">BeMode (Бишкек)</strong>. Мы объединили утонченную женственность и эстетику в стиле <em class="text-goldrose font-normal font-serif text-lg">12 STOREEZ</em> со строгими стандартами B2B-качества. Разрабатываем лекала, создаем дизайн с нуля и отшиваем партии от 500 единиц с доставкой в РФ и СНГ.
                     </p>
 
                     <!-- Trust Pill Badges -->
-                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-10 border-t border-b border-white/10 py-6">
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-10 border-t border-b border-blushborder py-6">
                         <div class="flex flex-col">
-                            <span class="font-serif text-2xl font-bold text-gold">📐 САПР</span>
-                            <span class="text-[10px] font-mono text-white/60 uppercase mt-0.5">Разработка лекал</span>
+                            <span class="font-serif text-2xl font-bold text-rosewood">📐 САПР</span>
+                            <span class="text-[10px] font-mono text-rosewood/60 uppercase mt-0.5">Разработка лекал</span>
                         </div>
                         <div class="flex flex-col">
-                            <span class="font-serif text-2xl font-bold text-gold">🎨 Design</span>
-                            <span class="text-[10px] font-mono text-white/60 uppercase mt-0.5">Дизайн одежды</span>
+                            <span class="font-serif text-2xl font-bold text-rosewood">🎨 Design</span>
+                            <span class="text-[10px] font-mono text-rosewood/60 uppercase mt-0.5">Дизайн одежды</span>
                         </div>
                         <div class="flex flex-col">
-                            <span class="font-serif text-2xl font-bold text-gold">🔍 100%</span>
-                            <span class="text-[10px] font-mono text-white/60 uppercase mt-0.5">Контроль ОТК</span>
+                            <span class="font-serif text-2xl font-bold text-rosewood">🔍 100%</span>
+                            <span class="text-[10px] font-mono text-rosewood/60 uppercase mt-0.5">Контроль ОТК</span>
                         </div>
                         <div class="flex flex-col">
-                            <span class="font-serif text-2xl font-bold text-gold">от 500 шт</span>
-                            <span class="text-[10px] font-mono text-white/60 uppercase mt-0.5">Минимальная партия</span>
+                            <span class="font-serif text-2xl font-bold text-rosewood">от 500 шт</span>
+                            <span class="text-[10px] font-mono text-rosewood/60 uppercase mt-0.5">Минимальная партия</span>
                         </div>
                     </div>
 
                     <!-- CTA Actions -->
                     <div class="flex flex-col sm:flex-row items-center gap-4">
-                        <a href="https://wa.me/996502985896?text=Здравствуйте,%20BeMode!%20Хочу%20рассчитать%20стоимость%20отшива%20коллекции." 
+                        <a href="https://wa.me/996502985896?text=Здравствуйте,%20BeMode!%20Хочу%20рассчитать%20стоимость%20отшива%20женской%20коллекции." 
                            target="_blank" 
-                           class="w-full sm:w-auto bg-[#25D366] hover:bg-[#20bd5a] text-white font-mono text-xs font-bold uppercase tracking-wider py-4 px-8 rounded-full shadow-[0_0_25px_rgba(37,211,102,0.4)] transition-all duration-300 flex items-center justify-center gap-3">
+                           class="w-full sm:w-auto bg-[#25D366] hover:bg-[#20bd5a] text-white font-mono text-xs font-bold uppercase tracking-wider py-4 px-8 rounded-full shadow-[0_6px_25px_rgba(37,211,102,0.3)] transition-all duration-300 flex items-center justify-center gap-3">
                             <iconify-icon icon="logos:whatsapp-icon" width="20" height="20"></iconify-icon>
                             <span>Обсудить коллекцию в WhatsApp</span>
                         </a>
 
-                        <a href="#calculator" class="w-full sm:w-auto border border-white/20 hover:border-gold text-white font-mono text-xs font-bold uppercase py-4 px-8 rounded-full transition-all text-center">
+                        <a href="#calculator" class="w-full sm:w-auto bg-white border border-blushborder hover:border-goldrose text-rosewood font-mono text-xs font-bold uppercase py-4 px-8 rounded-full transition-all text-center shadow-sm">
                             Рассчитать смету online
                         </a>
                     </div>
 
                 </div>
 
-                <!-- Hero Visual Representation (Quiet Luxury Imagery) -->
+                <!-- Hero Visual Representation (Feminine Imagery) -->
                 <div class="lg:col-span-5 relative">
-                    <div class="relative rounded-3xl overflow-hidden border border-white/20 shadow-2xl group bg-darkcard">
+                    <div class="relative rounded-3xl overflow-hidden border-2 border-white shadow-[0_20px_50px_rgba(225,170,185,0.25)] group bg-white">
                         <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=900&auto=format&fit=crop" 
                              alt="BeMode Quiet Luxury Fashion Production" 
-                             class="w-full h-[540px] object-cover object-center img-zoom">
+                             class="w-full h-[530px] object-cover object-center img-zoom">
                         
-                        <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-rosewood/70 via-transparent to-transparent"></div>
 
                         <!-- Floating Glass Badge -->
-                        <div class="absolute bottom-6 left-6 right-6 bg-dark/85 blur-backdrop p-5 rounded-2xl border border-gold/40 shadow-xl">
+                        <div class="absolute bottom-6 left-6 right-6 bg-white/90 blur-rose-backdrop p-5 rounded-2xl border border-blushborder shadow-xl text-rosewood">
                             <div class="flex items-center justify-between mb-2">
-                                <span class="text-xs font-mono text-gold uppercase tracking-widest font-bold">ФАБРИКА BEMODE • БИШКЕК</span>
-                                <span class="text-[10px] font-mono text-white/60 bg-white/10 px-2 py-0.5 rounded">JUKI JAPAN EQUIPMENT</span>
+                                <span class="text-xs font-mono text-rosewood font-bold uppercase tracking-widest">🌸 ФАБРИКА BEMODE • БИШКЕК</span>
+                                <span class="text-[10px] font-mono text-rosewood/70 bg-blushaccent px-2.5 py-0.5 rounded-full font-bold">JUKI JAPAN</span>
                             </div>
-                            <p class="text-xs font-serif italic text-white/90 leading-relaxed">
-                                «Каждая строчка и посадка изделия тестируется на эталонных манекенах перед запуском потока.»
+                            <p class="text-xs font-serif italic text-rosewood/90 leading-relaxed">
+                                «Каждая модель тестируется на эталонных манекенах перед запуском массовой линии.»
                             </p>
                         </div>
                     </div>
@@ -214,19 +248,19 @@
         </div>
     </section>
 
-    <!-- SECTION 2: LOOKBOOK & AESTHETIC SHOWCASE (12 STOREEZ Style) -->
-    <section class="py-24 bg-dark relative border-b border-white/10" id="lookbook">
+    <!-- SECTION 2: LOOKBOOK & AESTHETIC SHOWCASE (12 STOREEZ Light Style) -->
+    <section class="py-24 bg-white relative border-b border-blushborder" id="lookbook">
         <div class="max-w-[1400px] mx-auto px-6">
             
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
                 <div>
-                    <span class="text-xs font-mono text-gold uppercase tracking-[0.25em] font-bold block mb-3">( ПРИМЕРЫ ГОТОВЫХ ИЗДЕЛИЙ )</span>
-                    <h2 class="font-serif text-3xl sm:text-5xl font-light text-white uppercase tracking-tight">
-                        Коллекции, отшитые <span class="italic text-gold">нашей фабрикой</span>
+                    <span class="text-xs font-mono text-goldrose uppercase tracking-[0.25em] font-bold block mb-3">🌸 ПРИМЕРЫ ГОТОВЫХ ИЗДЕЛИЙ</span>
+                    <h2 class="font-serif text-3xl sm:text-5xl font-light text-rosewood uppercase tracking-tight">
+                        Коллекции, отшитые <span class="italic text-goldrose">нашей фабрикой</span>
                     </h2>
                 </div>
-                <p class="text-xs font-mono text-white/60 max-w-md">
-                    Мы производим одежду для брендов верхнего среднего сегмента, шоурумов и ведомых селлеров Wildberries / Ozon.
+                <p class="text-xs font-mono text-rosewood/60 max-w-md">
+                    Мы производим модно отшитую одежду для брендов верхнего среднего сегмента, шоурумов и ведущих селлеров Wildberries / Ozon.
                 </p>
             </div>
 
@@ -234,16 +268,16 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 
                 <!-- Item 1: Dresses -->
-                <div class="group relative rounded-2xl overflow-hidden border border-white/15 bg-darkcard cursor-pointer" onclick="openSampleModal('Шелковое платье комбинация')">
-                    <div class="h-[400px] overflow-hidden relative">
+                <div class="group relative rounded-2xl overflow-hidden border border-blushborder bg-blushcard cursor-pointer shadow-[0_10px_30px_rgba(235,190,200,0.12)] hover:shadow-[0_15px_35px_rgba(235,190,200,0.25)] transition-all duration-300" onclick="openSampleModal('Шелковое платье комбинация')">
+                    <div class="h-[390px] overflow-hidden relative">
                         <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?q=80&w=700&auto=format&fit=crop" class="w-full h-full object-cover img-zoom" alt="Платья премиум качества">
-                        <div class="absolute inset-0 bg-gradient-to-t from-dark via-transparent to-transparent opacity-80"></div>
-                        <span class="absolute top-4 left-4 bg-dark/80 blur-backdrop text-gold text-[10px] font-mono font-bold px-3 py-1 rounded-full border border-gold/30 uppercase">ПЛАТЬЯ & МИДИ</span>
+                        <div class="absolute inset-0 bg-gradient-to-t from-rosewood/70 via-transparent to-transparent"></div>
+                        <span class="absolute top-4 left-4 bg-white/90 blur-rose-backdrop text-rosewood text-[10px] font-mono font-bold px-3 py-1 rounded-full border border-blushborder uppercase">ПЛАТЬЯ & МИДИ</span>
                     </div>
                     <div class="p-5 flex flex-col justify-between">
-                        <h4 class="font-serif text-xl font-medium text-white mb-1">Шелковые и вечерние платья</h4>
-                        <p class="text-xs text-white/60 font-sans mb-3">Идеальные закрытые швы, люксовая обработка горловины.</p>
-                        <div class="flex justify-between items-center text-xs font-mono text-gold font-bold border-t border-white/10 pt-3">
+                        <h4 class="font-serif text-xl font-medium text-rosewood mb-1">Шелковые и вечерние платья</h4>
+                        <p class="text-xs text-rosewood/60 font-sans mb-3">Идеальные закрытые швы, люксовая обработка горловины.</p>
+                        <div class="flex justify-between items-center text-xs font-mono text-goldrose font-bold border-t border-blushborder pt-3">
                             <span>От 500 шт</span>
                             <span class="group-hover:translate-x-1 transition-transform">Заказать образец →</span>
                         </div>
@@ -251,16 +285,16 @@
                 </div>
 
                 <!-- Item 2: Blazers & Suits -->
-                <div class="group relative rounded-2xl overflow-hidden border border-white/15 bg-darkcard cursor-pointer" onclick="openSampleModal('Жакет оверсайз / Твидовый костюм')">
-                    <div class="h-[400px] overflow-hidden relative">
+                <div class="group relative rounded-2xl overflow-hidden border border-blushborder bg-blushcard cursor-pointer shadow-[0_10px_30px_rgba(235,190,200,0.12)] hover:shadow-[0_15px_35px_rgba(235,190,200,0.25)] transition-all duration-300" onclick="openSampleModal('Жакет оверсайз / Твидовый костюм')">
+                    <div class="h-[390px] overflow-hidden relative">
                         <img src="https://images.unsplash.com/photo-1584273143981-41c073dfe8f8?q=80&w=700&auto=format&fit=crop" class="w-full h-full object-cover img-zoom" alt="Жакеты и костюмы">
-                        <div class="absolute inset-0 bg-gradient-to-t from-dark via-transparent to-transparent opacity-80"></div>
-                        <span class="absolute top-4 left-4 bg-dark/80 blur-backdrop text-gold text-[10px] font-mono font-bold px-3 py-1 rounded-full border border-gold/30 uppercase">ЖАКЕТЫ & КОСТЮМЫ</span>
+                        <div class="absolute inset-0 bg-gradient-to-t from-rosewood/70 via-transparent to-transparent"></div>
+                        <span class="absolute top-4 left-4 bg-white/90 blur-rose-backdrop text-rosewood text-[10px] font-mono font-bold px-3 py-1 rounded-full border border-blushborder uppercase">ЖАКЕТЫ & КОСТЮМЫ</span>
                     </div>
                     <div class="p-5 flex flex-col justify-between">
-                        <h4 class="font-serif text-xl font-medium text-white mb-1">Двубортные жакеты & Твид</h4>
-                        <p class="text-xs text-white/60 font-sans mb-3">Дублирование полочек, держащие форму плечевые накладки.</p>
-                        <div class="flex justify-between items-center text-xs font-mono text-gold font-bold border-t border-white/10 pt-3">
+                        <h4 class="font-serif text-xl font-medium text-rosewood mb-1">Двубортные жакеты & Твид</h4>
+                        <p class="text-xs text-rosewood/60 font-sans mb-3">Дублирование полочек, держащие форму плечевые накладки.</p>
+                        <div class="flex justify-between items-center text-xs font-mono text-goldrose font-bold border-t border-blushborder pt-3">
                             <span>От 500 шт</span>
                             <span class="group-hover:translate-x-1 transition-transform">Заказать образец →</span>
                         </div>
@@ -268,16 +302,16 @@
                 </div>
 
                 <!-- Item 3: Corsets & Tops -->
-                <div class="group relative rounded-2xl overflow-hidden border border-white/15 bg-darkcard cursor-pointer" onclick="openSampleModal('Корсетные топы и блузы')">
-                    <div class="h-[400px] overflow-hidden relative">
+                <div class="group relative rounded-2xl overflow-hidden border border-blushborder bg-blushcard cursor-pointer shadow-[0_10px_30px_rgba(235,190,200,0.12)] hover:shadow-[0_15px_35px_rgba(235,190,200,0.25)] transition-all duration-300" onclick="openSampleModal('Корсетные топы и блузы')">
+                    <div class="h-[390px] overflow-hidden relative">
                         <img src="https://images.unsplash.com/photo-1550614000-4895a10e1bfd?q=80&w=700&auto=format&fit=crop" class="w-full h-full object-cover img-zoom" alt="Корсетные изделия">
-                        <div class="absolute inset-0 bg-gradient-to-t from-dark via-transparent to-transparent opacity-80"></div>
-                        <span class="absolute top-4 left-4 bg-dark/80 blur-backdrop text-gold text-[10px] font-mono font-bold px-3 py-1 rounded-full border border-gold/30 uppercase">КОРСЕТЫ & ТОПЫ</span>
+                        <div class="absolute inset-0 bg-gradient-to-t from-rosewood/70 via-transparent to-transparent"></div>
+                        <span class="absolute top-4 left-4 bg-white/90 blur-rose-backdrop text-rosewood text-[10px] font-mono font-bold px-3 py-1 rounded-full border border-blushborder uppercase">КОРСЕТЫ & ТОПЫ</span>
                     </div>
                     <div class="p-5 flex flex-col justify-between">
-                        <h4 class="font-serif text-xl font-medium text-white mb-1">Корсетные топы и блузы</h4>
-                        <p class="text-xs text-white/60 font-sans mb-3">Косточки высокой упругости, точнейшая утяжка по лекалам.</p>
-                        <div class="flex justify-between items-center text-xs font-mono text-gold font-bold border-t border-white/10 pt-3">
+                        <h4 class="font-serif text-xl font-medium text-rosewood mb-1">Корсетные топы и блузы</h4>
+                        <p class="text-xs text-rosewood/60 font-sans mb-3">Косточки высокой упругости, точнейшая утяжка по лекалам.</p>
+                        <div class="flex justify-between items-center text-xs font-mono text-goldrose font-bold border-t border-blushborder pt-3">
                             <span>От 500 шт</span>
                             <span class="group-hover:translate-x-1 transition-transform">Заказать образец →</span>
                         </div>
@@ -285,16 +319,16 @@
                 </div>
 
                 <!-- Item 4: Knitwear & Casual -->
-                <div class="group relative rounded-2xl overflow-hidden border border-white/15 bg-darkcard cursor-pointer" onclick="openSampleModal('Трикотажные сеты / Плюс-сайз')">
-                    <div class="h-[400px] overflow-hidden relative">
+                <div class="group relative rounded-2xl overflow-hidden border border-blushborder bg-blushcard cursor-pointer shadow-[0_10px_30px_rgba(235,190,200,0.12)] hover:shadow-[0_15px_35px_rgba(235,190,200,0.25)] transition-all duration-300" onclick="openSampleModal('Трикотажные сеты / Плюс-сайз')">
+                    <div class="h-[390px] overflow-hidden relative">
                         <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=700&auto=format&fit=crop" class="w-full h-full object-cover img-zoom" alt="Трикотаж и Плюс-сайз">
-                        <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent opacity-80"></div>
-                        <span class="absolute top-4 left-4 bg-dark/80 blur-backdrop text-gold text-[10px] font-mono font-bold px-3 py-1 rounded-full border border-gold/30 uppercase">ТРИКОТАЖ & CASUAL</span>
+                        <div class="absolute inset-0 bg-gradient-to-t from-rosewood/70 via-transparent to-transparent"></div>
+                        <span class="absolute top-4 left-4 bg-white/90 blur-rose-backdrop text-rosewood text-[10px] font-mono font-bold px-3 py-1 rounded-full border border-blushborder uppercase">ТРИКОТАЖ & CASUAL</span>
                     </div>
                     <div class="p-5 flex flex-col justify-between">
-                        <h4 class="font-serif text-xl font-medium text-white mb-1">Оверсайз сеты & Плюс-сайз</h4>
-                        <p class="text-xs text-white/60 font-sans mb-3">Усиленные бейки, сочные палитры ткани, ровные строчки 4-нитки.</p>
-                        <div class="flex justify-between items-center text-xs font-mono text-gold font-bold border-t border-white/10 pt-3">
+                        <h4 class="font-serif text-xl font-medium text-rosewood mb-1">Оверсайз сеты & Плюс-сайз</h4>
+                        <p class="text-xs text-rosewood/60 font-sans mb-3">Усиленные бейки, сочные палитры ткани, ровные строчки 4-нитки.</p>
+                        <div class="flex justify-between items-center text-xs font-mono text-goldrose font-bold border-t border-blushborder pt-3">
                             <span>От 500 шт</span>
                             <span class="group-hover:translate-x-1 transition-transform">Заказать образец →</span>
                         </div>
@@ -306,15 +340,15 @@
     </section>
 
     <!-- SECTION 3: 4 PILLARS OF FLEXIBILITY & CUSTOMIZATION (Client's Core Request) -->
-    <section class="py-24 bg-darkcard relative border-b border-white/10" id="services">
+    <section class="py-24 bg-blush relative border-b border-blushborder" id="services">
         <div class="max-w-[1400px] mx-auto px-6">
             
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-xs font-mono text-gold uppercase tracking-[0.25em] font-bold block mb-3">( ВОЗМОЖНОСТИ ФАБРИКИ ПОД КЛЮЧ )</span>
-                <h2 class="font-serif text-3xl sm:text-5xl font-light text-white uppercase tracking-tight">
+                <span class="text-xs font-mono text-goldrose uppercase tracking-[0.25em] font-bold block mb-3">🌸 ВОЗМОЖНОСТИ ФАБРИКИ ПОД КЛЮЧ</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-light text-rosewood uppercase tracking-tight">
                     Мы подстраиваемся под ваш бренд
                 </h2>
-                <p class="text-xs font-mono text-white/60 mt-3 uppercase tracking-wider">
+                <p class="text-xs font-mono text-rosewood/60 mt-3 uppercase tracking-wider">
                     Вам не нужно искать 5 разных подрядчиков. Мы берем на себя весь цикл от эскиза до отгрузки на склад.
                 </p>
             </div>
@@ -323,76 +357,76 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 
                 <!-- Pillar 1: CAD Patterns -->
-                <div class="bg-dark p-8 rounded-3xl border border-white/15 hover:border-gold transition-all duration-300 flex flex-col justify-between group">
+                <div class="bg-white p-8 rounded-3xl border border-blushborder hover:border-goldrose transition-all duration-300 flex flex-col justify-between shadow-[0_8px_25px_rgba(235,190,200,0.12)] group">
                     <div>
-                        <div class="w-14 h-14 rounded-2xl bg-gold/10 text-gold flex items-center justify-center font-mono font-bold text-xl mb-6 border border-gold/30">
+                        <div class="w-14 h-14 rounded-2xl bg-blushaccent text-rosewood flex items-center justify-center font-mono font-bold text-xl mb-6 border border-blushborder">
                             01
                         </div>
-                        <h3 class="font-serif text-2xl font-normal text-white uppercase mb-3">
+                        <h3 class="font-serif text-2xl font-normal text-rosewood uppercase mb-3">
                             Разработка Лекал (САПР)
                         </h3>
-                        <p class="text-xs font-sans text-white/70 leading-relaxed mb-6">
+                        <p class="text-xs font-sans text-rosewood/70 leading-relaxed mb-6">
                             Создание лекал по фотографии, эскизу или референсу с посадкой под стандартные размерные сетки РФ/СНГ. Конструкторы САПР Графис гарантируют идеальную выкройку.
                         </p>
                     </div>
-                    <ul class="text-[11px] font-mono text-gold space-y-2 border-t border-white/10 pt-4">
+                    <ul class="text-[11px] font-mono text-goldrose space-y-2 border-t border-blushborder pt-4 font-bold">
                         <li>✓ 3D-Примерка на виртуальном аватарe</li>
                         <li>✓ Градация размеров (от XS до 5XL)</li>
                     </ul>
                 </div>
 
                 <!-- Pillar 2: Clothing Design -->
-                <div class="bg-dark p-8 rounded-3xl border border-white/15 hover:border-gold transition-all duration-300 flex flex-col justify-between group">
+                <div class="bg-white p-8 rounded-3xl border border-blushborder hover:border-goldrose transition-all duration-300 flex flex-col justify-between shadow-[0_8px_25px_rgba(235,190,200,0.12)] group">
                     <div>
-                        <div class="w-14 h-14 rounded-2xl bg-gold/10 text-gold flex items-center justify-center font-mono font-bold text-xl mb-6 border border-gold/30">
+                        <div class="w-14 h-14 rounded-2xl bg-blushaccent text-rosewood flex items-center justify-center font-mono font-bold text-xl mb-6 border border-blushborder">
                             02
                         </div>
-                        <h3 class="font-serif text-2xl font-normal text-white uppercase mb-3">
+                        <h3 class="font-serif text-2xl font-normal text-rosewood uppercase mb-3">
                             Дизайн & Подбор Тканей
                         </h3>
-                        <p class="text-xs font-sans text-white/70 leading-relaxed mb-6">
+                        <p class="text-xs font-sans text-rosewood/70 leading-relaxed mb-6">
                             Штатное дизайн-бюро поможет разработать трендовую капсулу одежды. Закупаем ткани премиум-класса у прямых импортеров (Турция, Китай) по оптовым ценам.
                         </p>
                     </div>
-                    <ul class="text-[11px] font-mono text-gold space-y-2 border-t border-white/10 pt-4">
+                    <ul class="text-[11px] font-mono text-goldrose space-y-2 border-t border-blushborder pt-4 font-bold">
                         <li>✓ Подбор твида, шелка, льна, вискозы</li>
                         <li>✓ Составление технических карт (ТЗ)</li>
                     </ul>
                 </div>
 
                 <!-- Pillar 3: Precision Mass Production -->
-                <div class="bg-dark p-8 rounded-3xl border border-white/15 hover:border-gold transition-all duration-300 flex flex-col justify-between group">
+                <div class="bg-white p-8 rounded-3xl border border-blushborder hover:border-goldrose transition-all duration-300 flex flex-col justify-between shadow-[0_8px_25px_rgba(235,190,200,0.12)] group">
                     <div>
-                        <div class="w-14 h-14 rounded-2xl bg-gold/10 text-gold flex items-center justify-center font-mono font-bold text-xl mb-6 border border-gold/30">
+                        <div class="w-14 h-14 rounded-2xl bg-blushaccent text-rosewood flex items-center justify-center font-mono font-bold text-xl mb-6 border border-blushborder">
                             03
                         </div>
-                        <h3 class="font-serif text-2xl font-normal text-white uppercase mb-3">
+                        <h3 class="font-serif text-2xl font-normal text-rosewood uppercase mb-3">
                             Потоковый Отшив от 500 шт
                         </h3>
-                        <p class="text-xs font-sans text-white/70 leading-relaxed mb-6">
+                        <p class="text-xs font-sans text-rosewood/70 leading-relaxed mb-6">
                             Производственные линии оснащены автоматическими машинами Juki и Brother. Выработка цеха — от 15 000 до 40 000 изделий в месяц со строгим контролем.
                         </p>
                     </div>
-                    <ul class="text-[11px] font-mono text-gold space-y-2 border-t border-white/10 pt-4">
+                    <ul class="text-[11px] font-mono text-goldrose space-y-2 border-t border-blushborder pt-4 font-bold">
                         <li>✓ Отшив партий от 500 шт за 6–7 дней</li>
                         <li>✓ Стабильность геометрических швов</li>
                     </ul>
                 </div>
 
                 <!-- Pillar 4: Private Label & Logistics -->
-                <div class="bg-dark p-8 rounded-3xl border border-white/15 hover:border-gold transition-all duration-300 flex flex-col justify-between group">
+                <div class="bg-white p-8 rounded-3xl border border-blushborder hover:border-goldrose transition-all duration-300 flex flex-col justify-between shadow-[0_8px_25px_rgba(235,190,200,0.12)] group">
                     <div>
-                        <div class="w-14 h-14 rounded-2xl bg-gold/10 text-gold flex items-center justify-center font-mono font-bold text-xl mb-6 border border-gold/30">
+                        <div class="w-14 h-14 rounded-2xl bg-blushaccent text-rosewood flex items-center justify-center font-mono font-bold text-xl mb-6 border border-blushborder">
                             04
                         </div>
-                        <h3 class="font-serif text-2xl font-normal text-white uppercase mb-3">
+                        <h3 class="font-serif text-2xl font-normal text-rosewood uppercase mb-3">
                             Бренд Под Ключ & Упаковка
                         </h3>
-                        <p class="text-xs font-sans text-white/70 leading-relaxed mb-6">
+                        <p class="text-xs font-sans text-rosewood/70 leading-relaxed mb-6">
                             Изготовление бирки, составников, брендированной фурнитуры. Нанесение маркировки «Честный ЗНАК» и отправка карго/авиа прямым рейсом в РФ.
                         </p>
                     </div>
-                    <ul class="text-[11px] font-mono text-gold space-y-2 border-t border-white/10 pt-4">
+                    <ul class="text-[11px] font-mono text-goldrose space-y-2 border-t border-blushborder pt-4 font-bold">
                         <li>✓ Маркировка Честный ЗНАК для РФ</li>
                         <li>✓ Упаковка в плотные Зип-пакеты</li>
                     </ul>
@@ -403,47 +437,47 @@
     </section>
 
     <!-- SECTION 4: INSTITUTIONAL B2B TRUST & QUALITY (Client's Core Request) -->
-    <section class="py-24 bg-dark relative border-b border-white/10" id="quality">
+    <section class="py-24 bg-white relative border-b border-blushborder" id="quality">
         <div class="max-w-[1400px] mx-auto px-6">
             
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 
                 <!-- Text Pillar -->
                 <div class="lg:col-span-6">
-                    <span class="text-xs font-mono text-gold uppercase tracking-[0.25em] font-bold block mb-3">( БЕЗУПРЕЧНАЯ РЕПУТАЦИЯ )</span>
-                    <h2 class="font-serif text-3xl sm:text-5xl font-light text-white uppercase tracking-tight mb-6">
+                    <span class="text-xs font-mono text-goldrose uppercase tracking-[0.25em] font-bold block mb-3">🌸 БЕЗУПРЕЧНАЯ РЕПУТАЦИЯ</span>
+                    <h2 class="font-serif text-3xl sm:text-5xl font-light text-rosewood uppercase tracking-tight mb-6">
                         Как мы гарантируем <br>
-                        <span class="italic text-gold">высокое качество</span> отшива
+                        <span class="italic text-goldrose">высокое качество</span> отшива
                     </h2>
 
-                    <p class="text-sm font-sans text-white/75 leading-relaxed mb-8">
+                    <p class="text-sm font-sans text-rosewood/80 leading-relaxed mb-8">
                         Мы понимаем главный страх заказчика: <em>«А вдруг придет брак или сорвутся сроки?»</em>. Именно поэтому BeMode выстроила 3-уровневую систему контроля качества ОТК и юридические гарантии.
                     </p>
 
                     <!-- Trust Accordion / List -->
                     <div class="space-y-4 font-sans text-xs">
                         
-                        <div class="bg-white/5 p-5 rounded-2xl border border-white/10 flex items-start gap-4">
-                            <div class="w-8 h-8 rounded-full bg-gold/20 text-gold flex items-center justify-center shrink-0 font-bold">1</div>
+                        <div class="bg-blush p-5 rounded-2xl border border-blushborder flex items-start gap-4 shadow-sm">
+                            <div class="w-8 h-8 rounded-full bg-rosewood text-white flex items-center justify-center shrink-0 font-bold">1</div>
                             <div>
-                                <h4 class="font-mono text-sm text-gold uppercase font-bold mb-1">3-Этапная Проверка ОТК</h4>
-                                <p class="text-white/70">1) Входная проверка рулонов ткани на дефекты ➔ 2) Проверка кроя на соответствие САПР ➔ 3) Финальный осмотр 100% готовых швов перед упаковкой.</p>
+                                <h4 class="font-mono text-sm text-rosewood uppercase font-bold mb-1">3-Этапная Проверка ОТК</h4>
+                                <p class="text-rosewood/70">1) Входная проверка рулонов ткани на дефекты ➔ 2) Проверка кроя на соответствие САПР ➔ 3) Финальный осмотр 100% готовых швов перед упаковкой.</p>
                             </div>
                         </div>
 
-                        <div class="bg-white/5 p-5 rounded-2xl border border-white/10 flex items-start gap-4">
-                            <div class="w-8 h-8 rounded-full bg-gold/20 text-gold flex items-center justify-center shrink-0 font-bold">2</div>
+                        <div class="bg-blush p-5 rounded-2xl border border-blushborder flex items-start gap-4 shadow-sm">
+                            <div class="w-8 h-8 rounded-full bg-rosewood text-white flex items-center justify-center shrink-0 font-bold">2</div>
                             <div>
-                                <h4 class="font-mono text-sm text-gold uppercase font-bold mb-1">Официальный Договор (КР / РФ)</h4>
-                                <p class="text-white/70">Фиксируем точные сроки отгрузки, спецификацию ткани и допустимый % отклонения (< 0.5%). В случае несоответствия ТЗ — перешив за наш счет.</p>
+                                <h4 class="font-mono text-sm text-rosewood uppercase font-bold mb-1">Официальный Договор (КР / РФ)</h4>
+                                <p class="text-rosewood/70">Фиксируем точные сроки отгрузки, спецификацию ткани и допустимый % отклонения (< 0.3%). В случае несоответствия ТЗ — перешив за наш счет.</p>
                             </div>
                         </div>
 
-                        <div class="bg-white/5 p-5 rounded-2xl border border-white/10 flex items-start gap-4">
-                            <div class="w-8 h-8 rounded-full bg-gold/20 text-gold flex items-center justify-center shrink-0 font-bold">3</div>
+                        <div class="bg-blush p-5 rounded-2xl border border-blushborder flex items-start gap-4 shadow-sm">
+                            <div class="w-8 h-8 rounded-full bg-rosewood text-white flex items-center justify-center shrink-0 font-bold">3</div>
                             <div>
-                                <h4 class="font-mono text-sm text-gold uppercase font-bold mb-1">Тестовый Образец за 3–5 Дней</h4>
-                                <p class="text-white/70">Перед стартом массового потока мы отшиваем физический эталонный образец. Запуск всей партии начинается только после вашего полного утверждения!</p>
+                                <h4 class="font-mono text-sm text-rosewood uppercase font-bold mb-1">Тестовый Образец за 3–5 Дней</h4>
+                                <p class="text-rosewood/70">Перед стартом массового потока мы отшиваем физический эталонный образец. Запуск всей партии начинается только после вашего полного утверждения!</p>
                             </div>
                         </div>
 
@@ -452,28 +486,28 @@
 
                 <!-- Visual Certificate & Factory Proof -->
                 <div class="lg:col-span-6">
-                    <div class="relative rounded-3xl overflow-hidden border border-gold/40 p-8 bg-darkcard shadow-2xl">
-                        <div class="flex justify-between items-center border-b border-white/10 pb-6 mb-6">
+                    <div class="relative rounded-3xl overflow-hidden border border-blushborder p-8 bg-blush shadow-xl">
+                        <div class="flex justify-between items-center border-b border-blushborder pb-6 mb-6">
                             <div>
-                                <span class="text-[10px] font-mono text-gold uppercase tracking-widest block font-bold">СТАНДАРТ КАЧЕСТВА</span>
-                                <h4 class="font-serif text-2xl font-normal text-white uppercase mt-1">Паспорт Швейной Линии</h4>
+                                <span class="text-[10px] font-mono text-goldrose uppercase tracking-widest block font-bold">СТАНДАРТ КАЧЕСТВА</span>
+                                <h4 class="font-serif text-2xl font-normal text-rosewood uppercase mt-1">Паспорт Швейной Линии</h4>
                             </div>
-                            <span class="w-12 h-12 rounded-full border border-gold/50 bg-gold/10 text-gold flex items-center justify-center font-bold text-lg">QC</span>
+                            <span class="w-12 h-12 rounded-full border border-goldrose/50 bg-white text-rosewood flex items-center justify-center font-bold text-lg shadow-sm">QC</span>
                         </div>
 
                         <!-- Stats Grid inside Trust Card -->
                         <div class="grid grid-cols-2 gap-4 mb-6">
-                            <div class="bg-white/5 p-4 rounded-xl border border-white/10">
-                                <span class="font-serif text-3xl font-bold text-gold block">0.3%</span>
-                                <span class="text-[10px] font-mono text-white/60 uppercase">Средний показатель брака</span>
+                            <div class="bg-white p-4 rounded-2xl border border-blushborder shadow-sm">
+                                <span class="font-serif text-3xl font-bold text-rosewood block">0.3%</span>
+                                <span class="text-[10px] font-mono text-rosewood/60 uppercase">Средний показатель брака</span>
                             </div>
-                            <div class="bg-white/5 p-4 rounded-xl border border-white/10">
-                                <span class="font-serif text-3xl font-bold text-gold block">100%</span>
-                                <span class="text-[10px] font-mono text-white/60 uppercase">Соблюдение сроков</span>
+                            <div class="bg-white p-4 rounded-2xl border border-blushborder shadow-sm">
+                                <span class="font-serif text-3xl font-bold text-rosewood block">100%</span>
+                                <span class="text-[10px] font-mono text-rosewood/60 uppercase">Соблюдение сроков</span>
                             </div>
                         </div>
 
-                        <div class="p-4 bg-gold/10 rounded-xl border border-gold/30 text-xs font-mono text-white/90">
+                        <div class="p-4 bg-white rounded-2xl border border-blushborder text-xs font-mono text-rosewood/90 shadow-sm">
                             «Каждая отгрузка сопровождается фото- и видеоотчетом инспектора ОТК в WhatsApp перед запечатыванием коробок.»
                         </div>
                     </div>
@@ -484,19 +518,19 @@
     </section>
 
     <!-- SECTION 5: INTERACTIVE B2B CALCULATOR -->
-    <section class="py-24 bg-darkcard relative border-b border-white/10" id="calculator">
+    <section class="py-24 bg-blush relative border-b border-blushborder" id="calculator">
         <div class="max-w-[1200px] mx-auto px-6">
             
             <div class="text-center max-w-2xl mx-auto mb-16">
-                <span class="text-xs font-mono text-gold uppercase tracking-[0.25em] font-bold block mb-3">( ОНЛАЙН РАСЧЕТ ПАРТИИ )</span>
-                <h2 class="font-serif text-3xl sm:text-5xl font-light text-white uppercase tracking-tight">
+                <span class="text-xs font-mono text-goldrose uppercase tracking-[0.25em] font-bold block mb-3">🌸 ОНЛАЙН РАСЧЕТ ПАРТИИ</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-light text-rosewood uppercase tracking-tight">
                     Калькулятор производства
                 </h2>
-                <p class="text-xs font-mono text-white/60 mt-3">Выберите параметры изделия для предварительной оценки сроков и бюджета.</p>
+                <p class="text-xs font-mono text-rosewood/60 mt-3">Выберите параметры изделия для предварительной оценки сроков и бюджета.</p>
             </div>
 
-            <!-- Calculator Glass Card -->
-            <div class="bg-dark p-8 md:p-12 rounded-3xl border border-gold/40 shadow-2xl">
+            <!-- Calculator Light Glass Card -->
+            <div class="bg-white p-8 md:p-12 rounded-3xl border border-blushborder shadow-xl">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
                     
                     <!-- Controls -->
@@ -504,26 +538,26 @@
                         
                         <!-- 1. Garment Category -->
                         <div>
-                            <label class="block text-xs font-mono text-gold uppercase tracking-widest mb-3 font-bold">1. Категория изделия:</label>
+                            <label class="block text-xs font-mono text-rosewood uppercase tracking-widest mb-3 font-bold">1. Категория изделия:</label>
                             <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
-                                <button type="button" onclick="setCalc('cat', 'dresses', 280)" id="btn-cat-dresses" class="calc-btn active-calc bg-gold text-dark border border-gold p-3 rounded-xl text-xs font-bold font-mono uppercase transition-all">Платья</button>
-                                <button type="button" onclick="setCalc('cat', 'suits', 450)" id="btn-cat-suits" class="calc-btn bg-white/5 text-white border border-white/20 p-3 rounded-xl text-xs font-bold font-mono uppercase transition-all hover:border-gold">Жакеты/Костюмы</button>
-                                <button type="button" onclick="setCalc('cat', 'blouses', 220)" id="btn-cat-blouses" class="calc-btn bg-white/5 text-white border border-white/20 p-3 rounded-xl text-xs font-bold font-mono uppercase transition-all hover:border-gold">Блузы/Топы</button>
-                                <button type="button" onclick="setCalc('cat', 'casual', 260)" id="btn-cat-casual" class="calc-btn bg-white/5 text-white border border-white/20 p-3 rounded-xl text-xs font-bold font-mono uppercase transition-all hover:border-gold">Трикотаж</button>
+                                <button type="button" onclick="setCalc('cat', 'dresses', 280)" id="btn-cat-dresses" class="calc-btn active-calc bg-rosewood text-white border border-rosewood p-3 rounded-xl text-xs font-bold font-mono uppercase transition-all shadow-sm">Платья</button>
+                                <button type="button" onclick="setCalc('cat', 'suits', 450)" id="btn-cat-suits" class="calc-btn bg-blush text-rosewood border border-blushborder p-3 rounded-xl text-xs font-bold font-mono uppercase transition-all hover:border-rosewood">Жакеты/Костюмы</button>
+                                <button type="button" onclick="setCalc('cat', 'blouses', 220)" id="btn-cat-blouses" class="calc-btn bg-blush text-rosewood border border-blushborder p-3 rounded-xl text-xs font-bold font-mono uppercase transition-all hover:border-rosewood">Блузы/Топы</button>
+                                <button type="button" onclick="setCalc('cat', 'casual', 260)" id="btn-cat-casual" class="calc-btn bg-blush text-rosewood border border-blushborder p-3 rounded-xl text-xs font-bold font-mono uppercase transition-all hover:border-rosewood">Трикотаж</button>
                             </div>
                         </div>
 
                         <!-- 2. Technical Needs (Patterns/Design) -->
                         <div>
-                            <label class="block text-xs font-mono text-gold uppercase tracking-widest mb-3 font-bold">2. Техническая подготовка:</label>
+                            <label class="block text-xs font-mono text-rosewood uppercase tracking-widest mb-3 font-bold">2. Техническая подготовка:</label>
                             <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
-                                <button type="button" onclick="setCalc('service', 'ready', 0)" id="btn-serv-ready" class="calc-serv-btn active-calc bg-gold text-dark border border-gold p-3 rounded-xl text-xs font-bold font-mono uppercase text-left transition-all">
+                                <button type="button" onclick="setCalc('service', 'ready', 0)" id="btn-serv-ready" class="calc-serv-btn active-calc bg-rosewood text-white border border-rosewood p-3 rounded-xl text-xs font-bold font-mono uppercase text-left transition-all shadow-sm">
                                     <span>Есть готовые лекала</span>
                                 </button>
-                                <button type="button" onclick="setCalc('service', 'patterns', 50)" id="btn-serv-patterns" class="calc-serv-btn bg-white/5 text-white border border-white/20 p-3 rounded-xl text-xs font-bold font-mono uppercase text-left transition-all hover:border-gold">
+                                <button type="button" onclick="setCalc('service', 'patterns', 50)" id="btn-serv-patterns" class="calc-serv-btn bg-blush text-rosewood border border-blushborder p-3 rounded-xl text-xs font-bold font-mono uppercase text-left transition-all hover:border-rosewood">
                                     <span>Нужна разработка лекал</span>
                                 </button>
-                                <button type="button" onclick="setCalc('service', 'full', 90)" id="btn-serv-full" class="calc-serv-btn bg-white/5 text-white border border-white/20 p-3 rounded-xl text-xs font-bold font-mono uppercase text-left transition-all hover:border-gold">
+                                <button type="button" onclick="setCalc('service', 'full', 90)" id="btn-serv-full" class="calc-serv-btn bg-blush text-rosewood border border-blushborder p-3 rounded-xl text-xs font-bold font-mono uppercase text-left transition-all hover:border-rosewood">
                                     <span>Дизайн + Лекала под ключ</span>
                                 </button>
                             </div>
@@ -532,11 +566,11 @@
                         <!-- 3. Volume Selection -->
                         <div>
                             <div class="flex justify-between items-center mb-3">
-                                <label class="text-xs font-mono text-gold uppercase tracking-widest font-bold">3. Размер партии:</label>
-                                <span class="font-mono text-sm font-bold text-white" id="volume-val-display">500 единиц</span>
+                                <label class="text-xs font-mono text-rosewood uppercase tracking-widest font-bold">3. Размер партии:</label>
+                                <span class="font-mono text-sm font-bold text-rosewood" id="volume-val-display">500 единиц</span>
                             </div>
-                            <input type="range" min="500" max="10000" step="500" value="500" id="volume-slider" oninput="updateVolume(this.value)" class="w-full h-2 bg-white/20 rounded-lg appearance-none cursor-pointer accent-gold">
-                            <div class="flex justify-between text-[10px] font-mono text-white/50 mt-1">
+                            <input type="range" min="500" max="10000" step="500" value="500" id="volume-slider" oninput="updateVolume(this.value)" class="w-full h-2 bg-blushborder rounded-lg appearance-none cursor-pointer accent-rosewood">
+                            <div class="flex justify-between text-[10px] font-mono text-rosewood/60 mt-1">
                                 <span>500 шт (MOQ)</span>
                                 <span>2 500 шт</span>
                                 <span>5 000 шт</span>
@@ -547,27 +581,27 @@
                     </div>
 
                     <!-- Result Panel -->
-                    <div class="lg:col-span-5 bg-white/5 border border-white/15 rounded-2xl p-6 flex flex-col justify-between">
+                    <div class="lg:col-span-5 bg-blush border border-blushborder rounded-2xl p-6 flex flex-col justify-between shadow-sm">
                         <div>
-                            <span class="text-xs font-mono text-gold uppercase tracking-widest font-bold block mb-4">ОРИЕНТИРОВОЧНЫЙ РАСЧЕТ:</span>
+                            <span class="text-xs font-mono text-goldrose uppercase tracking-widest font-bold block mb-4">ОРИЕНТИРОВОЧНЫЙ РАСЧЕТ:</span>
                             
                             <div class="mb-5">
-                                <span class="text-xs font-mono text-white/60 uppercase block">Ориентировочный срок отшива:</span>
-                                <div class="font-serif text-3xl font-light text-white mt-1" id="calc-days">6 – 8 рабочих дней</div>
+                                <span class="text-xs font-mono text-rosewood/60 uppercase block">Ориентировочный срок отшива:</span>
+                                <div class="font-serif text-3xl font-light text-rosewood mt-1" id="calc-days">6 – 8 рабочих дней</div>
                             </div>
 
                             <div class="mb-5">
-                                <span class="text-xs font-mono text-white/60 uppercase block">Готовность образца:</span>
-                                <div class="font-mono text-lg font-bold text-gold mt-1" id="calc-sample-time">3 рабочих дня</div>
+                                <span class="text-xs font-mono text-rosewood/60 uppercase block">Готовность образца:</span>
+                                <div class="font-mono text-lg font-bold text-rosewood mt-1" id="calc-sample-time">3 рабочих дня</div>
                             </div>
 
-                            <div class="text-[11px] font-sans text-white/70 leading-relaxed border-t border-white/10 pt-4">
+                            <div class="text-[11px] font-sans text-rosewood/70 leading-relaxed border-t border-blushborder pt-4">
                                 * Включает: раскрой, пошив, ВТО, маркировку и упаковку. Окончательная смета рассчитывается технологом после изучения ТЗ или образца.
                             </div>
                         </div>
 
                         <div class="mt-6">
-                            <button type="button" onclick="sendCalcToWA()" class="w-full bg-[#25D366] hover:bg-[#20bd5a] text-white font-mono text-xs font-bold uppercase py-4 px-6 rounded-xl transition-all duration-300 flex items-center justify-center gap-3 shadow-[0_0_20px_rgba(37,211,102,0.4)]">
+                            <button type="button" onclick="sendCalcToWA()" class="w-full bg-[#25D366] hover:bg-[#20bd5a] text-white font-mono text-xs font-bold uppercase py-4 px-6 rounded-xl transition-all duration-300 flex items-center justify-center gap-3 shadow-[0_4px_20px_rgba(37,211,102,0.3)]">
                                 <iconify-icon icon="logos:whatsapp-icon" width="20" height="20"></iconify-icon>
                                 <span>Отправить расчет технологу в WA</span>
                             </button>
@@ -582,12 +616,12 @@
     </section>
 
     <!-- SECTION 6: CASE STUDIES & B2B PROOF -->
-    <section class="py-24 bg-dark relative border-b border-white/10" id="cases">
+    <section class="py-24 bg-white relative border-b border-blushborder" id="cases">
         <div class="max-w-[1400px] mx-auto px-6">
             
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-xs font-mono text-gold uppercase tracking-[0.25em] font-bold block mb-3">( РЕАЛЬНЫЕ КЕЙСЫ ПОДОПЕЧНЫХ БРЕНДОВ )</span>
-                <h2 class="font-serif text-3xl sm:text-5xl font-light text-white uppercase tracking-tight">
+                <span class="text-xs font-mono text-goldrose uppercase tracking-[0.25em] font-bold block mb-3">🌸 РЕАЛЬНЫЕ КЕЙСЫ ПОДОПЕЧНЫХ БРЕНДОВ</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-light text-rosewood uppercase tracking-tight">
                     Истории успешного производства
                 </h2>
             </div>
@@ -595,47 +629,47 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 
                 <!-- Case 1 -->
-                <div class="bg-darkcard rounded-3xl border border-white/15 p-8 flex flex-col justify-between hover:border-gold transition-all">
+                <div class="bg-blush rounded-3xl border border-blushborder p-8 flex flex-col justify-between hover:border-goldrose transition-all shadow-sm">
                     <div>
-                        <span class="text-[10px] font-mono text-gold uppercase font-bold tracking-widest block mb-3">МОСКВА • БРЕНД ЖЕНСКОЙ ОДЕЖДЫ</span>
-                        <h4 class="font-serif text-2xl font-normal text-white uppercase mb-3">2 500 шелковых платьев за 9 дней</h4>
-                        <p class="text-xs font-sans text-white/70 leading-relaxed mb-6">
+                        <span class="text-[10px] font-mono text-goldrose uppercase font-bold tracking-widest block mb-3">МОСКВА • БРЕНД ЖЕНСКОЙ ОДЕЖДЫ</span>
+                        <h4 class="font-serif text-2xl font-normal text-rosewood uppercase mb-3">2 500 шелковых платьев за 9 дней</h4>
+                        <p class="text-xs font-sans text-rosewood/75 leading-relaxed mb-6">
                             Разработали 3D-лекала по фото референсу бренда. Закупили турецкий шелк-армани, провели отшив образца за 3 дня и всю партию отправили авиа-карго до склада в Москве.
                         </p>
                     </div>
-                    <div class="border-t border-white/10 pt-4 flex justify-between items-center text-xs font-mono">
-                        <span class="text-white/60">Экономия на ткани:</span>
-                        <span class="text-gold font-bold">32%</span>
+                    <div class="border-t border-blushborder pt-4 flex justify-between items-center text-xs font-mono">
+                        <span class="text-rosewood/60">Экономия на ткани:</span>
+                        <span class="text-rosewood font-bold">32%</span>
                     </div>
                 </div>
 
                 <!-- Case 2 -->
-                <div class="bg-darkcard rounded-3xl border border-white/15 p-8 flex flex-col justify-between hover:border-gold transition-all">
+                <div class="bg-blush rounded-3xl border border-blushborder p-8 flex flex-col justify-between hover:border-goldrose transition-all shadow-sm">
                     <div>
-                        <span class="text-[10px] font-mono text-gold uppercase font-bold tracking-widest block mb-3">ЕКАТЕРИНБУРГ • ТОП-СЕЛЛЕР WILDBERRIES</span>
-                        <h4 class="font-serif text-2xl font-normal text-white uppercase mb-3">Капсула жакетов с нуля по эскизу</h4>
-                        <p class="text-xs font-sans text-white/70 leading-relaxed mb-6">
+                        <span class="text-[10px] font-mono text-goldrose uppercase font-bold tracking-widest block mb-3">ЕКАТЕРИНБУРГ • ТОП-СЕЛЛЕР WILDBERRIES</span>
+                        <h4 class="font-serif text-2xl font-normal text-rosewood uppercase mb-3">Капсула жакетов с нуля по эскизу</h4>
+                        <p class="text-xs font-sans text-rosewood/75 leading-relaxed mb-6">
                             Наше дизайн-бюро спроектировало 4 модели оверсайз жакетов. Отшили 4 000 единиц с маркировкой «Честный ЗНАК» и индивидуальными зип-пакетами.
                         </p>
                     </div>
-                    <div class="border-t border-white/10 pt-4 flex justify-between items-center text-xs font-mono">
-                        <span class="text-white/60">Брак при приемке:</span>
-                        <span class="text-gold font-bold">0.1%</span>
+                    <div class="border-t border-blushborder pt-4 flex justify-between items-center text-xs font-mono">
+                        <span class="text-rosewood/60">Брак при приемке:</span>
+                        <span class="text-rosewood font-bold">0.1%</span>
                     </div>
                 </div>
 
                 <!-- Case 3 -->
-                <div class="bg-darkcard rounded-3xl border border-white/15 p-8 flex flex-col justify-between hover:border-gold transition-all">
+                <div class="bg-blush rounded-3xl border border-blushborder p-8 flex flex-col justify-between hover:border-goldrose transition-all shadow-sm">
                     <div>
-                        <span class="text-[10px] font-mono text-gold uppercase font-bold tracking-widest block mb-3">АЛМАТЫ • ШОУРУМ ПРЕМИУМ КЛАССА</span>
-                        <h4 class="font-serif text-2xl font-normal text-white uppercase mb-3">Льняные костюмы и корсеты</h4>
-                        <p class="text-xs font-sans text-white/70 leading-relaxed mb-6">
+                        <span class="text-[10px] font-mono text-goldrose uppercase font-bold tracking-widest block mb-3">АЛМАТЫ • ШОУРУМ ПРЕМИУМ КЛАССА</span>
+                        <h4 class="font-serif text-2xl font-normal text-rosewood uppercase mb-3">Льняные костюмы и корсеты</h4>
+                        <p class="text-xs font-sans text-rosewood/75 leading-relaxed mb-6">
                             Сложный крой корсетных изделий с китовым усом. Выполнена градация лекал на 6 размеров. Постоянное регулярное пополнение склада от 1 000 шт в месяц.
                         </p>
                     </div>
-                    <div class="border-t border-white/10 pt-4 flex justify-between items-center text-xs font-mono">
-                        <span class="text-white/60">Повторный перезаказ:</span>
-                        <span class="text-gold font-bold">Каждый месяц</span>
+                    <div class="border-t border-blushborder pt-4 flex justify-between items-center text-xs font-mono">
+                        <span class="text-rosewood/60">Повторный перезаказ:</span>
+                        <span class="text-rosewood font-bold">Каждый месяц</span>
                     </div>
                 </div>
 
@@ -644,61 +678,61 @@
     </section>
 
     <!-- FOOTER -->
-    <footer class="bg-dark border-t border-white/10 py-16">
+    <footer class="bg-blush border-t border-blushborder py-16">
         <div class="max-w-[1400px] mx-auto px-6">
             <div class="flex flex-col md:flex-row justify-between items-center gap-8 mb-12">
                 <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-full border border-gold/50 flex items-center justify-center bg-gold/10 text-gold font-serif font-bold text-xl">
+                    <div class="w-10 h-10 rounded-full border border-goldrose/50 flex items-center justify-center bg-white text-rosewood font-serif font-bold text-xl shadow-sm">
                         B
                     </div>
-                    <span class="font-serif text-2xl text-white uppercase tracking-widest">BeMode KG</span>
+                    <span class="font-serif text-2xl text-rosewood uppercase tracking-widest">BeMode KG</span>
                 </div>
 
-                <div class="flex flex-wrap items-center gap-8 text-xs font-mono text-white/70 uppercase">
+                <div class="flex flex-wrap items-center gap-8 text-xs font-mono text-rosewood/80 uppercase">
                     <span>Бишкек, Кыргызстан</span>
-                    <a href="https://t.me/bemode_kg" target="_blank" class="hover:text-gold transition-colors">Telegram: @bemode_kg</a>
-                    <a href="https://wa.me/996502985896" target="_blank" class="hover:text-gold transition-colors">WhatsApp: +996 502 98-58-96</a>
+                    <a href="https://t.me/bemode_kg" target="_blank" class="hover:text-goldrose transition-colors">Telegram: @bemode_kg</a>
+                    <a href="https://wa.me/996502985896" target="_blank" class="hover:text-goldrose transition-colors">WhatsApp: +996 502 98-58-96</a>
                 </div>
             </div>
 
-            <div class="border-t border-white/10 pt-8 flex flex-col sm:flex-row justify-between items-center text-[11px] font-mono text-white/40 gap-4">
+            <div class="border-t border-blushborder pt-8 flex flex-col sm:flex-row justify-between items-center text-[11px] font-mono text-rosewood/50 gap-4">
                 <span>© 2026 BEMODE GEN TR LLC. Все права защищены. Пошив женской одежды премиум-класса.</span>
-                <span>Designed with 12 STOREEZ Quiet Luxury Aesthetic</span>
+                <span>Designed with Feminine Light Luxury & Sakura Elegance</span>
             </div>
         </div>
     </footer>
 
     <!-- SAMPLE ORDER MODAL OVERLAY -->
-    <div id="sample-modal" onclick="closeModalOnBackdrop(event)" class="fixed inset-0 z-[9999] bg-dark/90 blur-backdrop flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-300">
-        <div class="relative w-full max-w-lg bg-darkcard border border-gold/50 rounded-3xl p-8 shadow-2xl text-white transform scale-95 transition-transform duration-300">
+    <div id="sample-modal" onclick="closeModalOnBackdrop(event)" class="fixed inset-0 z-[9999] bg-rosewood/60 blur-rose-backdrop flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-300">
+        <div class="relative w-full max-w-lg bg-white border border-blushborder rounded-3xl p-8 shadow-2xl text-rosewood transform scale-95 transition-transform duration-300">
             
-            <button onclick="closeSampleModal()" class="absolute top-5 right-5 w-9 h-9 rounded-full bg-white/10 hover:bg-gold hover:text-dark flex items-center justify-center transition-all cursor-pointer">
+            <button onclick="closeSampleModal()" class="absolute top-5 right-5 w-9 h-9 rounded-full bg-blush hover:bg-rosewood hover:text-white flex items-center justify-center transition-all cursor-pointer">
                 ✕
             </button>
 
-            <span class="text-[10px] font-mono text-gold uppercase tracking-widest font-bold block mb-2">БЫСТРЫЙ СТАРТ</span>
-            <h3 class="font-serif text-3xl font-light uppercase text-white mb-2">Заказать пошив образца</h3>
-            <p class="text-xs font-sans text-white/70 mb-6">
+            <span class="text-[10px] font-mono text-goldrose uppercase tracking-widest font-bold block mb-2">🌸 БЫСТРЫЙ СТАРТ</span>
+            <h3 class="font-serif text-3xl font-light uppercase text-rosewood mb-2">Заказать пошив образца</h3>
+            <p class="text-xs font-sans text-rosewood/70 mb-6">
                 Мы отшьем физический образец вашего изделия за 3–5 рабочих дней и отправим курьером для утверждения.
             </p>
 
             <form onsubmit="submitSampleForm(event)" class="space-y-4 text-xs font-mono">
                 <div>
-                    <label class="block text-gold uppercase font-bold mb-1">Ваше имя / Название бренда:</label>
-                    <input type="text" id="modal-name" required placeholder="Например: Анна / Brand Co" class="w-full bg-white/5 border border-white/20 rounded-xl p-3.5 text-white focus:outline-none focus:border-gold">
+                    <label class="block text-rosewood uppercase font-bold mb-1">Ваше имя / Название бренда:</label>
+                    <input type="text" id="modal-name" required placeholder="Например: Анна / Brand Co" class="w-full bg-blush border border-blushborder rounded-xl p-3.5 text-rosewood focus:outline-none focus:border-goldrose">
                 </div>
 
                 <div>
-                    <label class="block text-gold uppercase font-bold mb-1">Тип изделия:</label>
-                    <input type="text" id="modal-item" required placeholder="Например: Шелковое платье или жакет" class="w-full bg-white/5 border border-white/20 rounded-xl p-3.5 text-white focus:outline-none focus:border-gold">
+                    <label class="block text-rosewood uppercase font-bold mb-1">Тип изделия:</label>
+                    <input type="text" id="modal-item" required placeholder="Например: Шелковое платье или жакет" class="w-full bg-blush border border-blushborder rounded-xl p-3.5 text-rosewood focus:outline-none focus:border-goldrose">
                 </div>
 
                 <div>
-                    <label class="block text-gold uppercase font-bold mb-1">Телефон / WhatsApp:</label>
-                    <input type="tel" id="modal-phone" required placeholder="+7 (999) 000-00-00" class="w-full bg-white/5 border border-white/20 rounded-xl p-3.5 text-white focus:outline-none focus:border-gold">
+                    <label class="block text-rosewood uppercase font-bold mb-1">Телефон / WhatsApp:</label>
+                    <input type="tel" id="modal-phone" required placeholder="+7 (999) 000-00-00" class="w-full bg-blush border border-blushborder rounded-xl p-3.5 text-rosewood focus:outline-none focus:border-goldrose">
                 </div>
 
-                <button type="submit" class="w-full bg-[#25D366] hover:bg-[#20bd5a] text-white font-mono text-xs font-bold uppercase py-4 rounded-xl transition-all shadow-[0_0_20px_rgba(37,211,102,0.4)] flex items-center justify-center gap-2 mt-2">
+                <button type="submit" class="w-full bg-[#25D366] hover:bg-[#20bd5a] text-white font-mono text-xs font-bold uppercase py-4 rounded-xl transition-all shadow-[0_4px_20px_rgba(37,211,102,0.3)] flex items-center justify-center gap-2 mt-2">
                     <iconify-icon icon="logos:whatsapp-icon" width="18" height="18"></iconify-icon>
                     <span>Отправить заявку в WhatsApp</span>
                 </button>
@@ -718,9 +752,9 @@
         function setCalc(type, val, price) {
             if (type === 'cat') {
                 currentCatPrice = price;
-                document.querySelectorAll('.calc-btn').forEach(b => b.className = 'calc-btn bg-white/5 text-white border border-white/20 p-3 rounded-xl text-xs font-bold font-mono uppercase transition-all hover:border-gold');
+                document.querySelectorAll('.calc-btn').forEach(b => b.className = 'calc-btn bg-blush text-rosewood border border-blushborder p-3 rounded-xl text-xs font-bold font-mono uppercase transition-all hover:border-rosewood');
                 const activeBtn = document.getElementById(`btn-cat-${val}`);
-                if (activeBtn) activeBtn.className = 'calc-btn active-calc bg-gold text-dark border border-gold p-3 rounded-xl text-xs font-bold font-mono uppercase transition-all';
+                if (activeBtn) activeBtn.className = 'calc-btn active-calc bg-rosewood text-white border border-rosewood p-3 rounded-xl text-xs font-bold font-mono uppercase transition-all shadow-sm';
                 
                 if (val === 'dresses') currentCatName = "Платья";
                 if (val === 'suits') currentCatName = "Жакеты/Костюмы";
@@ -729,9 +763,9 @@
             }
             if (type === 'service') {
                 currentServPrice = price;
-                document.querySelectorAll('.calc-serv-btn').forEach(b => b.className = 'calc-serv-btn bg-white/5 text-white border border-white/20 p-3 rounded-xl text-xs font-bold font-mono uppercase text-left transition-all hover:border-gold');
+                document.querySelectorAll('.calc-serv-btn').forEach(b => b.className = 'calc-serv-btn bg-blush text-rosewood border border-blushborder p-3 rounded-xl text-xs font-bold font-mono uppercase text-left transition-all hover:border-rosewood');
                 const activeBtn = document.getElementById(`btn-serv-${val}`);
-                if (activeBtn) activeBtn.className = 'calc-serv-btn active-calc bg-gold text-dark border border-gold p-3 rounded-xl text-xs font-bold font-mono uppercase text-left transition-all';
+                if (activeBtn) activeBtn.className = 'calc-serv-btn active-calc bg-rosewood text-white border border-rosewood p-3 rounded-xl text-xs font-bold font-mono uppercase text-left transition-all shadow-sm';
                 
                 if (val === 'ready') currentServName = "Есть готовые лекала";
                 if (val === 'patterns') currentServName = "Нужна разработка лекал";
