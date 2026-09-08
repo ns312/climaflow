@@ -1527,28 +1527,45 @@
             }
         }
     
-        /* KAIRO-STYLE PRELOADER STYLES */
+        /* KAIRO-STYLE PRELOADER STYLES - 100% FULLSCREEN COVERAGE */
+        body.is-loading {
+            overflow: hidden !important;
+            touch-action: none !important;
+        }
+
         .loader {
-            z-index: 99999;
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            right: 0 !important;
+            bottom: 0 !important;
+            width: 100vw !important;
+            height: 100vh !important;
+            height: 100dvh !important;
+            min-height: -webkit-fill-available !important;
+            z-index: 999999 !important;
+            background: #110e0d !important;
             color: #f3ede2;
-            background: #151210;
+            display: flex !important;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             gap: 28px;
-            display: flex;
-            position: fixed;
-            inset: 0;
-            transition: opacity 0.8s ease, visibility 0.8s ease;
+            margin: 0 !important;
+            padding: 0 !important;
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.8s ease;
+            will-change: opacity, transform;
         }
         .loader.fade-out {
-            opacity: 0;
-            visibility: hidden;
+            opacity: 0 !important;
+            transform: translateY(-100%) !important;
+            visibility: hidden !important;
+            pointer-events: none !important;
         }
         .loader__word {
             font-family: var(--font-serif);
             letter-spacing: 0.22em;
-            font-size: clamp(40px, 8vw, 84px);
+            font-size: clamp(36px, 8vw, 84px);
             display: flex;
             overflow: hidden;
         }
@@ -1573,7 +1590,8 @@
         }
         .loader__bar {
             background: rgba(255, 255, 255, 0.15);
-            width: 180px;
+            width: 200px;
+            max-width: 80vw;
             height: 2px;
             overflow: hidden;
             border-radius: 2px;
@@ -1583,18 +1601,20 @@
             width: 0%;
             height: 100%;
             display: block;
-            animation: loaderProgress 1.4s ease forwards;
+            animation: loaderProgress 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
         @keyframes loaderProgress {
             to { width: 100%; }
         }
         .loader__label {
             font-family: var(--font-sans);
-            letter-spacing: 0.3em;
+            letter-spacing: 0.25em;
             text-transform: uppercase;
-            opacity: 0.7;
+            opacity: 0.75;
             font-size: 10.5px;
             color: #c29d7e;
+            text-align: center;
+            padding: 0 16px;
         }
 
         /* KAIRO-STYLE RIPPLE & MAGNETIC BUTTONS */
@@ -2393,7 +2413,7 @@
 
     </style>
 </head>
-<body>
+<body class="is-loading">
 
 <div class="noise" aria-hidden="true"></div>
 <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
@@ -3613,13 +3633,24 @@
 
     // Initialize calc
     
-    // KAIRO PRELOADER FADE-OUT
+    // KAIRO PRELOADER FULLSCREEN FADE-OUT
+    const hidePreloader = () => {
+        const loader = document.getElementById('loader');
+        if (loader && !loader.classList.contains('fade-out')) {
+            loader.classList.add('fade-out');
+            document.body.classList.remove('is-loading');
+            setTimeout(() => {
+                loader.style.display = 'none';
+            }, 850);
+        }
+    };
+
     window.addEventListener('load', () => {
-        setTimeout(() => {
-            const loader = document.getElementById('loader');
-            if (loader) loader.classList.add('fade-out');
-        }, 800);
+        setTimeout(hidePreloader, 1500);
     });
+
+    // Fallback trigger after 2.5s if window load takes longer
+    setTimeout(hidePreloader, 2500);
 
     // MOUSE TRACKING FOR RIPPLE BUTTONS
     document.querySelectorAll('.btn-primary, .btn-secondary, .quick-order-btn').forEach(btn => {
