@@ -1763,9 +1763,333 @@
             }
         }
 
+    
+        /* NORTH/FORM + KAIRO LUXURY VISUAL SYSTEM */
+        .noise {
+            position: fixed;
+            inset: 0;
+            z-index: 99999;
+            pointer-events: none;
+            opacity: 0.032;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
+            mix-blend-mode: multiply;
+        }
+
+        .scroll-progress {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 3px;
+            z-index: 100001;
+            transform-origin: left;
+            background: var(--color-gold);
+            transform: scaleX(0);
+            transition: transform 0.1s linear;
+        }
+
+        .site-header {
+            transition: background-color 0.4s ease, backdrop-filter 0.4s ease, -webkit-backdrop-filter 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease, transform 0.4s ease;
+        }
+        .site-header.is-scrolled {
+            background: rgba(28, 22, 20, 0.84) !important;
+            backdrop-filter: blur(18px) saturate(125%);
+            -webkit-backdrop-filter: blur(18px) saturate(125%);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+            box-shadow: 0 15px 45px rgba(0,0,0,0.25);
+        }
+
+        /* 1. CAD SLIDER STYLES */
+        .cad-slider-section {
+            padding: 85px 45px;
+            background-color: var(--color-bg);
+            border-bottom: 1px solid var(--color-border);
+        }
+        .cad-compare-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 1050px;
+            height: 480px;
+            margin: 0 auto;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 20px 45px rgba(0,0,0,0.1);
+            user-select: none;
+        }
+        .cad-before, .cad-after {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .cad-before img, .cad-after img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .cad-after {
+            width: 50%;
+            overflow: hidden;
+            border-right: 2px solid var(--color-gold);
+            z-index: 2;
+        }
+        .cad-badge {
+            position: absolute;
+            top: 20px;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            padding: 8px 14px;
+            border-radius: 30px;
+            background: rgba(20, 18, 16, 0.85);
+            color: #ffffff;
+            z-index: 4;
+        }
+        .cad-badge-left { right: 20px; }
+        .cad-badge-right { left: 20px; }
+        .cad-handle {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 4px;
+            z-index: 5;
+            cursor: ew-resize;
+            transform: translateX(-50%);
+        }
+        .cad-handle-circle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: var(--color-gold);
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        /* 2. ROI CALCULATOR STYLES */
+        .roi-section {
+            padding: 85px 45px;
+            background: linear-gradient(180deg, #1c1614 0%, #2c221e 100%);
+            color: #ffffff;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .roi-card-wrapper {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 45px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(194, 157, 126, 0.3);
+            border-radius: 12px;
+            padding: 40px;
+        }
+        .roi-metric-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .roi-metric-label {
+            font-size: 13.5px;
+            color: #d1c5be;
+        }
+        .roi-metric-value {
+            font-family: var(--font-serif);
+            font-size: 22px;
+            font-weight: 600;
+            color: #ffffff;
+        }
+        .roi-accent {
+            color: var(--color-gold) !important;
+            font-size: 26px;
+        }
+
+        /* 3. SWATCH BOX LEAD MAGNET STYLES */
+        .swatch-box-section {
+            padding: 70px 45px;
+            background-color: var(--color-bg);
+            border-bottom: 1px solid var(--color-border);
+        }
+        .swatch-box-grid {
+            max-width: 1050px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 40px;
+            align-items: center;
+            background: var(--color-bg-alt);
+            border: 1px solid var(--color-border);
+            border-radius: 10px;
+            padding: 40px;
+        }
+        .swatch-box-text h3 {
+            font-family: var(--font-serif);
+            font-size: 32px;
+            color: var(--color-accent);
+            margin: 10px 0 16px;
+            line-height: 1.25;
+        }
+        .swatch-box-img {
+            border-radius: 8px;
+            overflow: hidden;
+            height: 260px;
+        }
+        .swatch-box-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* 4. NORTH/FORM FLEX EXPAND TIER CARDS */
+        .volume-tiers-section {
+            padding: 85px 45px;
+            background-color: var(--color-bg-alt);
+            border-bottom: 1px solid var(--color-border);
+        }
+        .plans-expand-wrapper {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            gap: 20px;
+            align-items: stretch;
+        }
+        .tier-card-expand {
+            flex: 1;
+            background: #ffffff;
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            padding: 35px 28px;
+            display: flex;
+            flex-direction: column;
+            transition: flex 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.4s ease, border-color 0.4s ease;
+        }
+        .tier-card-expand:hover {
+            flex: 1.3;
+            transform: translateY(-8px);
+            border-color: var(--color-gold);
+        }
+        .tier-card-expand.dark-tier {
+            background: #1c1614;
+            color: #ffffff;
+            border-color: rgba(194, 157, 126, 0.4);
+        }
+        .tier-num {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            color: var(--color-gold);
+            margin-bottom: 14px;
+        }
+        .tier-card-expand h3 {
+            font-family: var(--font-serif);
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        .tier-price {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--color-gold);
+            margin-bottom: 24px;
+        }
+        .tier-list {
+            list-style: none;
+            margin-bottom: 30px;
+            padding: 0;
+        }
+        .tier-list li {
+            font-size: 13px;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+            color: var(--color-text-muted);
+        }
+        .dark-tier .tier-list li {
+            border-bottom-color: rgba(255,255,255,0.1);
+            color: #d1c5be;
+        }
+
+        /* 5. HONEST MARK COMPLIANCE STYLES */
+        .compliance-section {
+            padding: 85px 45px;
+            background-color: var(--color-bg);
+            border-bottom: 1px solid var(--color-border);
+        }
+        .compliance-grid {
+            max-width: 1050px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1.3fr;
+            gap: 50px;
+            align-items: center;
+        }
+        .compliance-tag-card {
+            background: #ffffff;
+            border: 2px dashed var(--color-gold);
+            border-radius: 8px;
+            padding: 28px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.06);
+        }
+        .tag-header {
+            font-family: var(--font-serif);
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            border-bottom: 1px solid var(--color-border);
+            padding-bottom: 12px;
+            margin-bottom: 16px;
+        }
+        .tag-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12.5px;
+            padding: 6px 0;
+        }
+        .tag-barcode {
+            margin-top: 20px;
+            font-family: monospace;
+            font-size: 20px;
+            letter-spacing: 4px;
+            text-align: center;
+            color: var(--color-accent);
+        }
+
+        @media (max-width: 640px) {
+            .cad-slider-section, .roi-section, .swatch-box-section, .volume-tiers-section, .compliance-section {
+                padding: 45px 16px;
+            }
+            .cad-compare-wrapper {
+                height: 320px;
+            }
+            .roi-card-wrapper, .swatch-box-grid, .compliance-grid {
+                grid-template-columns: 1fr;
+                padding: 24px 18px;
+                gap: 24px;
+            }
+            .plans-expand-wrapper {
+                flex-direction: column;
+            }
+            .tier-card-expand:hover {
+                flex: 1;
+                transform: none;
+            }
+        }
+
     </style>
 </head>
 <body>
+
+<div class="noise" aria-hidden="true"></div>
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
 
 <!-- KAIRO-STYLE LUXURY PRELOADER -->
 <div class="loader" id="loader" aria-hidden="true">
@@ -1920,6 +2244,183 @@
     </section>
 
     
+    
+    <!-- MODULE 1: CAD PATTERN VS FINISHED GARMENT COMPARISON SLIDER -->
+    <section class="cad-slider-section" id="cad-slider">
+        <div class="wrap-container">
+            <div style="text-align: center; margin-bottom: 35px;" class="reveal-up">
+                <h2 class="section-title">0% Риска Плохой Посадки</h2>
+                <p class="section-sub">Анатомическое САПР-конструирование лекал под фигуры 42-48. Сравните 3D-чертеж и отшитое платье.</p>
+            </div>
+            
+            <div class="cad-compare-wrapper reveal-up delay-1" id="cadCompare">
+                <div class="cad-before">
+                    <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=1200&q=80" alt="САПР Лекало CAD">
+                    <span class="cad-badge cad-badge-left">САПР-ЧЕРТЕЖ ЛЕКАЛА (CAD)</span>
+                </div>
+                <div class="cad-after" id="cadAfter">
+                    <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=1200&q=80" alt="Отшитое платье Bemode">
+                    <span class="cad-badge cad-badge-right">ГОТОВОЕ ПЛАТЬЕ SILK TOUCH</span>
+                </div>
+                <div class="cad-handle" id="cadHandle">
+                    <div class="cad-handle-circle">↔</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODULE 2: B2B BOUTIQUE PROFITABILITY & ROI CALCULATOR -->
+    <section class="roi-section" id="roi-calculator">
+        <div class="wrap-container">
+            <div style="text-align: center; margin-bottom: 35px;" class="reveal-up">
+                <h2 class="section-title" style="color: #ffffff;">Калькулятор Прибыли Бутика</h2>
+                <p class="section-sub" style="color: #d1c5be;">Рассчитайте чистую маржу от продажи оптовой партии одежды Bemode в вашем шоуруме</p>
+            </div>
+
+            <div class="roi-card-wrapper reveal-up delay-1">
+                <div class="roi-inputs-col">
+                    <div class="calc-group">
+                        <label class="calc-label" style="color: #ffffff;">Объем партии (шт)</label>
+                        <select class="calc-select" id="roiQty" onchange="calculateB2BProfit()">
+                            <option value="100">100 шт (Стартовая партия)</option>
+                            <option value="300" selected>300 шт (Оптимальный объем)</option>
+                            <option value="500">500 шт (Популярная серия)</option>
+                            <option value="1000">1000 шт (Крупный опт)</option>
+                        </select>
+                    </div>
+                    <div class="calc-group" style="margin-top: 18px;">
+                        <label class="calc-label" style="color: #ffffff;">Розничная цена продажи в бутике (₽/KGS)</label>
+                        <input type="number" class="calc-select" id="roiRetailPrice" value="4500" oninput="calculateB2BProfit()" placeholder="Например: 4500">
+                    </div>
+                </div>
+
+                <div class="roi-results-col">
+                    <div class="roi-metric-item">
+                        <span class="roi-metric-label">Себестоимость отшива 1 ед</span>
+                        <span class="roi-metric-value" id="roiCostPerUnit">1 350 ₽</span>
+                    </div>
+                    <div class="roi-metric-item">
+                        <span class="roi-metric-label">Чистая прибыль розницы</span>
+                        <span class="roi-metric-value roi-accent" id="roiNetProfit">+945 000 ₽</span>
+                    </div>
+                    <div class="roi-metric-item">
+                        <span class="roi-metric-label">Рентабельность вложений (ROI)</span>
+                        <span class="roi-metric-value" id="roiPercentage">+233%</span>
+                    </div>
+                    <button class="btn-primary" style="width: 100%; margin-top: 20px;" onclick="sendRoiToWhatsApp()">Зафиксировать смету в WhatsApp &rarr;</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODULE 3: PHYSICAL SWATCH BOX LEAD MAGNET -->
+    <section class="swatch-box-section" id="swatch-box">
+        <div class="wrap-container">
+            <div class="swatch-box-grid reveal-up">
+                <div class="swatch-box-text">
+                    <span class="card-3d-tag">БЕСПЛАТНЫЙ ТЕСТ КАЧЕСТВА</span>
+                    <h3>Закажите Фирменный Box Образцов Тканей (15+ Видов)</h3>
+                    <p>Получите физический образцовый набор полотен (Silk Touch, костюмный софт, шерсть, сатин) с доставкой СДЭК или Карго в ваш город перед оформлением партии.</p>
+                    <button class="btn-primary" onclick="openDrawer('swatch-box')" style="margin-top: 20px;">Заказать Box образцов СДЭК &rarr;</button>
+                </div>
+                <div class="swatch-box-img">
+                    <img src="https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=1000&q=80" alt="Box образцов тканей">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODULE 4: TIERED VOLUME DISCOUNT MATRIX -->
+    <section class="volume-tiers-section" id="volume-tiers">
+        <div class="wrap-container">
+            <div style="text-align: center; margin-bottom: 40px;" class="reveal-up">
+                <h2 class="section-title">Оптовые Тарифы & Скидки от Объема</h2>
+                <p class="section-sub">Прозрачные условия фабричного отшива коллекций для байеров и брендов</p>
+            </div>
+
+            <div class="plans-expand-wrapper reveal-up delay-1">
+                <!-- Tier 1 -->
+                <div class="tier-card-expand">
+                    <span class="tier-num">01 / СТАРТ</span>
+                    <h3>100–300 шт</h3>
+                    <div class="tier-price">Базовый оптовый прайс</div>
+                    <ul class="tier-list">
+                        <li>Минимальная партия на модель/цвет</li>
+                        <li>Готовые лекала фабрики</li>
+                        <li>Отгрузка за 7–10 дней</li>
+                        <li>Честный ЗНАК & ЕАЭС</li>
+                    </ul>
+                    <button class="quick-order-btn" onclick="openDrawer('tier-1')">Заказать партию &rarr;</button>
+                </div>
+
+                <!-- Tier 2 -->
+                <div class="tier-card-expand">
+                    <span class="tier-num">02 / СЕРИЯ</span>
+                    <h3>300–500 шт</h3>
+                    <div class="tier-price">Скидка -5% на пошив</div>
+                    <ul class="tier-list">
+                        <li>Выгодный объем для сети бутиков</li>
+                        <li>Индивидуальная вышивка/принт</li>
+                        <li>Персональный технологический контроль</li>
+                        <li>Честный ЗНАК & ЕАЭС</li>
+                    </ul>
+                    <button class="quick-order-btn" onclick="openDrawer('tier-2')">Заказать партию &rarr;</button>
+                </div>
+
+                <!-- Tier 3 -->
+                <div class="tier-card-expand dark-tier">
+                    <span class="tier-num">03 / БРЕНД</span>
+                    <h3>500–1000 шт</h3>
+                    <div class="tier-price">Скидка -10% + Лекала FREE</div>
+                    <ul class="tier-list">
+                        <li>Бесплатная разработка САПР-лекала</li>
+                        <li>Прямой выбор полотна из Турции</li>
+                        <li>Приоритет на поточной линии</li>
+                        <li>Честный ЗНАК & ЕАЭС</li>
+                    </ul>
+                    <button class="btn-primary" onclick="openDrawer('tier-3')">Заказать партию &rarr;</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODULE 5: HONEST MARK & EAEU COMPLIANCE INSPECTOR -->
+    <section class="compliance-section" id="compliance">
+        <div class="wrap-container">
+            <div style="text-align: center; margin-bottom: 35px;" class="reveal-up">
+                <h2 class="section-title">100% Белая Отгрузка & Честный ЗНАК</h2>
+                <p class="section-sub">Вся продукция фабрики Bemode поставляется с полным пакетом документов ЕАЭС</p>
+            </div>
+
+            <div class="compliance-grid reveal-up delay-1">
+                <div class="compliance-tag-card">
+                    <div class="tag-header">BEMODE GARMENT FACTORY</div>
+                    <div class="tag-body">
+                        <div class="tag-row"><span>Маркировка:</span> <strong>DataMatrix (Честный ЗНАК)</strong></div>
+                        <div class="tag-row"><span>Сертификат:</span> <strong>Декларация ТР ТС (ЕАЭС)</strong></div>
+                        <div class="tag-row"><span>Состав:</span> <strong>70% Хлопок, 25% Вискоза, 5% Эластан</strong></div>
+                        <div class="tag-row"><span>Произведено:</span> <strong>Бишкек, Кыргызстан</strong></div>
+                    </div>
+                    <div class="tag-barcode">||||| | |||| ||| ||||||| | |||</div>
+                </div>
+                <div class="compliance-text-box">
+                    <h3>Продавайте на Wildberries, Ozon и в бутиках без юридических рисков</h3>
+                    <p>Мы генерируем и наносим штрихкоды DataMatrix «Честный ЗНАК» непосредственно в цеху Бишкека. Каждая партия сопровождается договором, накладными ЕАЭС и закрывающими документами.</p>
+                    <div class="trust-badge-box" style="margin-top: 24px;">
+                        <div class="trust-item">
+                            <div class="trust-val">100%</div>
+                            <div class="trust-lbl">Белый договор и накладные</div>
+                        </div>
+                        <div class="trust-item">
+                            <div class="trust-val">DataMatrix</div>
+                            <div class="trust-lbl">Официальный Честный ЗНАК</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- 5.5 INTERACTIVE PRODUCTION PROCESS TABS (KAIRO EXPERIENCE SWITCHER) -->
     <section class="prod-process-section" id="process">
         <div class="prod-experience-wrapper">
@@ -2660,6 +3161,82 @@
             }
         });
     }
+
+    
+    // SCROLL PROGRESS BAR
+    window.addEventListener('scroll', () => {
+        const progress = document.getElementById('scrollProgress');
+        if (progress) {
+            const max = document.documentElement.scrollHeight - window.innerHeight;
+            const percentage = max > 0 ? (window.scrollY / max) : 0;
+            progress.style.transform = `scaleX(${percentage})`;
+        }
+    }, { passive: true });
+
+    // B2B PROFITABILITY ROI CALCULATOR LOGIC
+    function calculateB2BProfit() {
+        const qty = parseInt(document.getElementById('roiQty').value) || 300;
+        const retailPrice = parseInt(document.getElementById('roiRetailPrice').value) || 4500;
+        
+        let costPerUnit = 1350;
+        if (qty >= 1000) costPerUnit = 1150;
+        else if (qty >= 500) costPerUnit = 1220;
+        else if (qty >= 300) costPerUnit = 1280;
+
+        const totalCost = costPerUnit * qty;
+        const totalRevenue = retailPrice * qty;
+        const netProfit = totalRevenue - totalCost;
+        const roi = Math.round((netProfit / totalCost) * 100);
+
+        document.getElementById('roiCostPerUnit').innerText = costPerUnit.toLocaleString('ru-RU') + ' ₽';
+        document.getElementById('roiNetProfit').innerText = '+' + netProfit.toLocaleString('ru-RU') + ' ₽';
+        document.getElementById('roiPercentage').innerText = '+' + roi + '%';
+    }
+
+    function sendRoiToWhatsApp() {
+        const qty = document.getElementById('roiQty').value;
+        const retailPrice = document.getElementById('roiRetailPrice').value;
+        const profit = document.getElementById('roiNetProfit').innerText;
+        const message = `Здравствуйте! Сформирована смета в калькуляторе прибыли Bemode:
+- Партия: ${qty} шт
+- Розничная цена продажи: ${retailPrice} ₽
+- Прогнозируемая прибыль: ${profit}
+
+Хочу зафиксировать условия и забронировать скидку на отшив.`;
+        window.open(`https://wa.me/996502985896?text=${encodeURIComponent(message)}`, '_blank');
+    }
+
+    // CAD BEFORE-AFTER SLIDER LOGIC
+    const cadCompare = document.getElementById('cadCompare');
+    const cadAfter = document.getElementById('cadAfter');
+    const cadHandle = document.getElementById('cadHandle');
+
+    if (cadCompare && cadAfter && cadHandle) {
+        let isDragging = false;
+        const moveSlider = (x) => {
+            const rect = cadCompare.getBoundingClientRect();
+            let pos = ((x - rect.left) / rect.width) * 100;
+            if (pos < 0) pos = 0;
+            if (pos > 100) pos = 100;
+            cadAfter.style.width = `${pos}%`;
+            cadHandle.style.left = `${pos}%`;
+        };
+
+        cadCompare.addEventListener('mousedown', () => isDragging = true);
+        window.addEventListener('mouseup', () => isDragging = false);
+        window.addEventListener('mousemove', (e) => {
+            if (isDragging) moveSlider(e.clientX);
+        });
+
+        cadCompare.addEventListener('touchstart', () => isDragging = true);
+        window.addEventListener('touchend', () => isDragging = false);
+        window.addEventListener('touchmove', (e) => {
+            if (isDragging && e.touches[0]) moveSlider(e.touches[0].clientX);
+        });
+    }
+
+    // Init ROI Calc
+    calculateB2BProfit();
 
     calculatePrice();
 </script>
