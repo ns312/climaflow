@@ -3,62 +3,62 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>BEMODE KG · Премиальное контрактное швейное производство | Бишкек</title>
-    <meta name="description" content="Контрактный отшив женской одежды под ключ в Бишкеке. САПР лекала, дизайн, 100% контроль ОТК, партии от 500 единиц. Сбыт в РФ и СНГ.">
+    <title>BEMODE KG · Премиальная швейная фабрика женской одежды | Бишкек</title>
+    <meta name="description" content="Контрактный отшив женской одежды под ключ в Бишкеке в эстетике 12 STOREEZ. САПР лекала, дизайн, 100% контроль ОТК, партии от 500 единиц. Сбыт в РФ и СНГ.">
     
-    <!-- Google Fonts -->
+    <!-- Google Fonts: Montserrat, Manrope, Cormorant Garamond, JetBrains Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@50..150,100..900&family=Archivo:ital,wdth,wght@0,62..125,100..900&family=Martian+Mono:wdth,wght@75..112.5,100..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500;700&family=Manrope:wght@300;400;500;600;700;800&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
     
     <!-- Iconify CDN -->
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 
     <style>
-    /* ============================================================== TOKENS (KALTGRAT SYSTEM) */
+    /* ============================================================== LIGHT LUXURY TOKENS */
     :root{
     /* primitive */
-    --night-900:#0B0E12; --night-800:#11151B; --night-700:#171C24;
-    --snow-100:#EEF3F8;  --snow-300:#C2CBD6;  --snow-500:#8A94A2;
-    --acid-500:#D7FF3E;  --acid-600:#B9E01F;  --warn-500:#FF6B3D;
-    --rose-500:#F0A8B8;  --rose-600:#E5889E;
+    --sand-50:#FAF8F5;   --sand-100:#F4F0E8;  --sand-200:#E8E2D5;
+    --dark-900:#1C1917;  --dark-700:#44403C;  --dark-500:#78716C;
+    --gold-600:#C5A059;  --gold-500:#D4AF37;  --gold-light:#FAF0D9;
     
     /* semantic */
-    --ground:var(--night-900); --surface:var(--night-800); --surface-raised:var(--night-700);
-    --text-primary:var(--snow-100); --text-secondary:var(--snow-300); --text-muted:var(--snow-500);
-    --line:rgba(238,243,248,.14); --line-soft:rgba(238,243,248,.07);
-    --action:var(--acid-500); --action-quiet:var(--acid-600); --alert:var(--warn-500);
+    --ground:var(--sand-50); --surface:#FFFFFF; --surface-raised:var(--sand-100);
+    --text-primary:var(--dark-900); --text-secondary:var(--dark-700); --text-muted:var(--dark-500);
+    --line:rgba(28,25,23,.12); --line-soft:rgba(28,25,23,.06);
+    --action:var(--gold-600); --action-quiet:var(--gold-500); --alert:#D97706;
     
-    /* type · ratio 1.333, five steps */
+    /* type · ratio 1.333, fluid steps */
     --step--1:clamp(.8rem,.78rem+.1vw,.86rem);
     --step-0:clamp(1rem,.96rem+.2vw,1.125rem);
     --step-1:clamp(1.33rem,1.24rem+.45vw,1.5rem);
     --step-2:clamp(1.78rem,1.5rem+1.25vw,2.37rem);
     --step-3:clamp(2.37rem,1.75rem+3vw,4.2rem);
     
-    /* space · 4 8 16 24 32 48 64 96 */
+    /* space */
     --s-3xs:4px; --s-2xs:8px; --s-xs:16px; --s-sm:24px; --s-md:32px;
     --s-lg:48px; --s-xl:64px; --s-2xl:96px;
     --measure:66ch;
     --ease:cubic-bezier(.2,0,0,1);
     --dur:180ms;
-    --radius-pill:999px; --radius-panel:16px; --radius-data:4px;
+    --radius-pill:999px; --radius-panel:16px; --radius-data:6px;
     }
     *{box-sizing:border-box}
     html{-webkit-text-size-adjust:100%; overflow-x:clip}
     body{margin:0; background:var(--ground); color:var(--text-primary);
-    font-family:Archivo,system-ui,sans-serif; font-size:var(--step-0); line-height:1.55;
+    font-family:'Montserrat',system-ui,sans-serif; font-size:var(--step-0); line-height:1.55;
     font-variant-numeric:tabular-nums; overflow-x:clip; -webkit-font-smoothing:antialiased}
-    h1,h2,h3{margin:0; font-weight:800; letter-spacing:-.03em; line-height:.98;
-    font-family:Anybody,Archivo,system-ui,sans-serif; font-stretch:85%}
+    h1,h2,h3{margin:0; font-weight:700; letter-spacing:-.02em; line-height:1.05;
+    font-family:'Manrope','Montserrat',sans-serif}
     h2{font-size:var(--step-2)}
     p{margin:0; max-width:var(--measure)}
     img,svg{max-width:100%}
     button{font:inherit; color:inherit}
-    .mono{font-family:"Martian Mono",ui-monospace,monospace; font-variant-numeric:tabular-nums}
-    .label{font-family:"Martian Mono",ui-monospace,monospace; font-size:var(--step--1);
+    .mono{font-family:"JetBrains Mono",ui-monospace,monospace; font-variant-numeric:tabular-nums}
+    .serif{font-family:'Cormorant Garamond',Georgia,serif}
+    .label{font-family:"JetBrains Mono",ui-monospace,monospace; font-size:var(--step--1);
     letter-spacing:.2em; text-transform:uppercase; color:var(--text-muted)}
-    .lede{font-size:var(--step-1); color:var(--text-secondary); line-height:1.5; margin-top:var(--s-sm)}
+    .lede{font-size:var(--step-1); color:var(--text-secondary); line-height:1.5; margin-top:var(--s-sm); font-family:'Manrope',sans-serif}
     .wrap{max-width:1280px; margin:0 auto; padding:0 var(--s-lg)}
     .rule{height:1px; background:var(--line); border:0; margin:0}
     :where(a,button,[tabindex]):focus-visible{outline:2px solid var(--action); outline-offset:2px; border-radius:var(--radius-data)}
@@ -76,9 +76,9 @@
     *{animation-duration:.01ms !important; transition-duration:.01ms !important}
     }
 
-    /* ========================================================= 01 · COVER (KALTGRAT HERO) */
-    .cover{position:relative; min-height:100svh; overflow:hidden; isolation:isolate; padding:0}
-    .beam{position:absolute; z-index:4; left:0; top:0; height:2px; width:100%;
+    /* ========================================================= 01 · COVER (LIGHT HERO) */
+    .cover{position:relative; min-height:100svh; overflow:hidden; isolation:isolate; padding:0; background:var(--sand-100)}
+    .beam{position:absolute; z-index:4; left:0; top:0; height:3px; width:100%;
     background:linear-gradient(90deg, transparent, var(--action), transparent);
     transform:scaleX(0); transform-origin:left;
     animation:beam 1.15s var(--ease) both}
@@ -90,45 +90,45 @@
     }
     .cover__plate{position:absolute; inset:0; z-index:0;
     animation:drift 30s ease-in-out 2s infinite alternate}
-    .cover__plate img{width:100%; height:100%; object-fit:cover; object-position:50% 40%;
-    filter:saturate(.84) contrast(1.08) brightness(.65); will-change:transform; transform:translateZ(0);
+    .cover__plate img{width:100%; height:100%; object-fit:cover; object-position:50% 35%;
+    filter:saturate(.95) contrast(1.02) brightness(.92); will-change:transform; transform:translateZ(0);
     animation:plateIn 1.9s var(--ease) .15s both}
-    @keyframes plateIn{from{opacity:0; transform:scale(1.14)} to{opacity:1; transform:scale(1)}}
-    @keyframes drift{from{transform:scale(1)} to{transform:scale(1.05)}}
+    @keyframes plateIn{from{opacity:0; transform:scale(1.1)} to{opacity:1; transform:scale(1)}}
+    @keyframes drift{from{transform:scale(1)} to{transform:scale(1.04)}}
     .cover__plate::after{content:""; position:absolute; inset:0; background:
-    linear-gradient(180deg, rgba(11,14,18,.75) 0%, rgba(11,14,18,.25) 40%, rgba(11,14,18,.96) 100%),
-    linear-gradient(90deg, rgba(11,14,18,.75) 0%, rgba(11,14,18,0) 46%)}
+    linear-gradient(180deg, rgba(250,248,245,.85) 0%, rgba(250,248,245,.3) 45%, rgba(250,248,245,.95) 100%),
+    linear-gradient(90deg, rgba(250,248,245,.8) 0%, rgba(250,248,245,0) 50%)}
     
-    .cover__type{position:absolute; z-index:1; left:0; right:0; top:36%; text-align:center; pointer-events:none}
-    .cover__type h1{font-size:clamp(3.6rem,14vw,14rem); line-height:.82; letter-spacing:-.045em;
-    font-stretch:112%; color:var(--snow-100); mix-blend-mode:screen; opacity:.93; overflow:hidden;
+    .cover__type{position:absolute; z-index:1; left:0; right:0; top:32%; text-align:center; pointer-events:none}
+    .cover__type h1{font-size:clamp(3.6rem,14vw,14rem); line-height:.82; letter-spacing:-.04em;
+    font-weight:800; font-family:'Manrope',sans-serif; color:var(--dark-900); opacity:.92; overflow:hidden;
     padding-bottom:.06em}
     .cover__type h1 span{display:inline-block; transform:translateY(112%);
     animation:letterUp .78s var(--ease) both;
     animation-delay:calc(.55s + var(--i) * 55ms)}
     @keyframes letterUp{to{transform:translateY(0)}}
     
-    .cover__racer{position:absolute; z-index:2; left:70%; bottom:-4%; width:min(52vw,740px);
+    .cover__racer{position:absolute; z-index:2; left:70%; bottom:-2%; width:min(52vw,740px);
     transform:translateX(-50%); animation:racerIn 1.15s var(--ease) .95s both}
     @keyframes racerIn{
     from{opacity:0; transform:translateX(-50%) translateY(70px) scale(1.05)}
     to{opacity:1; transform:translateX(-50%) translateY(0) scale(1)}
     }
-    .cover__racer img{width:100%; height:auto; display:block; filter:drop-shadow(0 40px 60px rgba(0,0,0,.65))}
+    .cover__racer img{width:100%; height:auto; display:block; filter:drop-shadow(0 30px 40px rgba(0,0,0,.15))}
     .cover__grid{position:relative; z-index:3; min-height:100svh; display:grid;
     grid-template-rows:auto 1fr auto; padding:var(--s-md) var(--s-lg)}
     .cover__top{display:flex; justify-content:space-between; align-items:start; gap:var(--s-sm); flex-wrap:wrap}
     .cover__bottom{display:grid; grid-template-columns:1fr auto; gap:var(--s-md); align-items:end}
     .stamp{display:inline-flex; align-items:center; gap:var(--s-2xs); border:1px solid var(--line);
-    padding:var(--s-3xs) var(--s-2xs); border-radius:var(--radius-data); background:rgba(17,21,27,.6)}
-    .stamp b{color:var(--action); font-weight:500}
+    padding:var(--s-3xs) var(--s-2xs); border-radius:var(--radius-data); background:rgba(255,255,255,.8); backdrop-filter:blur(8px)}
+    .stamp b{color:var(--action); font-weight:600}
     .meta{display:grid; gap:var(--s-3xs)}
-    .meta dt{font-family:"Martian Mono",monospace; font-size:var(--step--1);
+    .meta dt{font-family:"JetBrains Mono",monospace; font-size:var(--step--1);
     letter-spacing:.2em; text-transform:uppercase; color:var(--text-muted)}
-    .meta dd{margin:0; font-size:var(--step-1); font-weight:600; letter-spacing:-.01em}
+    .meta dd{margin:0; font-size:var(--step-1); font-weight:700; letter-spacing:-.01em; font-family:'Manrope',sans-serif}
     
-    .reg{position:absolute; z-index:3; width:22px; height:22px; opacity:.5}
-    .reg::before,.reg::after{content:""; position:absolute; background:var(--snow-100)}
+    .reg{position:absolute; z-index:3; width:22px; height:22px; opacity:.6}
+    .reg::before,.reg::after{content:""; position:absolute; background:var(--dark-900)}
     .reg::before{left:0; top:50%; width:100%; height:1px; transform:scaleX(0);
     animation:tick .5s var(--ease) 1.25s both}
     .reg::after{top:0; left:50%; height:100%; width:1px; transform:scaleY(0);
@@ -145,30 +145,29 @@
     animation:ruleIn .85s var(--ease) 1.3s both}
     @keyframes ruleIn{to{transform:scaleX(1)}}
 
-    /* ========================================================== 02 · FACE (STICKY PISTE) */
-    .face{position:relative; height:480vh; padding:0}
+    /* ========================================================== 02 · STICKY 4 PILLARS INDEX */
+    .face{position:relative; height:480vh; padding:0; background:var(--ground)}
     .face__sticky{position:sticky; top:0; height:100svh; overflow:hidden; isolation:isolate}
     .face__panes{position:absolute; inset:0}
     .pane{position:absolute; inset:0; opacity:0; transition:opacity .7s var(--ease)}
     .pane.is-on{opacity:1}
     .pane img{width:100%; height:100%; object-fit:cover;
-    filter:saturate(.8) contrast(1.1) brightness(.68); transform:scale(1.06) translateZ(0); will-change:transform;
+    filter:saturate(.9) contrast(1.02) brightness(.88); transform:scale(1.06) translateZ(0); will-change:transform;
     transition:transform 1.6s var(--ease)}
     .pane.is-on img{transform:scale(1)}
     .face__scrim{position:absolute; inset:0; z-index:1; background:
-    linear-gradient(180deg, rgba(11,14,18,.9) 0%, rgba(11,14,18,.25) 42%, rgba(11,14,18,.94) 100%),
-    linear-gradient(90deg, rgba(11,14,18,.86) 0%, rgba(11,14,18,0) 58%)}
+    linear-gradient(180deg, rgba(250,248,245,.9) 0%, rgba(250,248,245,.2) 42%, rgba(250,248,245,.95) 100%),
+    linear-gradient(90deg, rgba(250,248,245,.9) 0%, rgba(250,248,245,0) 58%)}
     .face__ui{position:relative; z-index:2; height:100svh; max-width:1280px; margin:0 auto;
     padding:var(--s-xl) var(--s-lg); display:grid; grid-template-rows:auto 1fr auto}
-    .face__name{font-size:clamp(2.8rem,7vw,6.5rem); line-height:.88; letter-spacing:-.045em;
-    font-stretch:125%; margin-top:var(--s-xs)}
-    .face__sub{color:var(--text-secondary); font-size:var(--step-1); margin-top:var(--s-sm); max-width:44ch}
+    .face__name{font-size:clamp(2.8rem,7vw,6.5rem); line-height:.88; letter-spacing:-.03em; font-family:'Manrope',sans-serif; font-weight:800; margin-top:var(--s-xs)}
+    .face__sub{color:var(--text-secondary); font-size:var(--step-1); margin-top:var(--s-sm); max-width:44ch; font-family:'Montserrat',sans-serif}
     .face__mid{align-self:center}
     .face__foot{display:flex; gap:var(--s-xl); align-items:end; flex-wrap:wrap}
     .face__stat{display:grid; gap:var(--s-3xs)}
-    .face__stat dt{font-family:"Martian Mono",monospace; font-size:var(--step--1);
+    .face__stat dt{font-family:"JetBrains Mono",monospace; font-size:var(--step--1);
     letter-spacing:.2em; text-transform:uppercase; color:var(--text-muted)}
-    .face__stat dd{margin:0; font-size:var(--step-2); font-weight:700; letter-spacing:-.02em}
+    .face__stat dd{margin:0; font-size:var(--step-2); font-weight:700; letter-spacing:-.02em; font-family:'Manrope',sans-serif}
     .face__stat--hot dd{color:var(--action)}
     
     .index{position:absolute; z-index:2; right:var(--s-lg); top:50%; transform:translateY(-50%);
@@ -179,26 +178,35 @@
     .index__seg::after{content:""; position:absolute; right:-2px; top:0; width:2px; height:0;
     background:var(--action); transition:height .45s var(--ease)}
     .index__seg.is-past::after,.index__seg.is-on::after{height:100%}
-    .index__seg span{font-family:"Martian Mono",monospace; font-size:11px; letter-spacing:.14em;
+    .index__seg span{font-family:"JetBrains Mono",monospace; font-size:11px; letter-spacing:.14em;
     text-transform:uppercase; color:var(--text-muted); margin-left:auto; text-align:right;
     transition:color var(--dur) var(--ease)}
-    .index__seg.is-on span{color:var(--action)}
+    .index__seg.is-on span{color:var(--action); font-weight:700}
 
-    /* ========================================================= 03 · TRACE (PLOTTED GRAPH) */
-    .trace{position:relative; isolation:isolate; overflow:hidden;
+    /* ========================================================= 03 · 12 STOREEZ LOOKBOOK GALLERY */
+    .lookbook__grid{display:grid; grid-template-columns:repeat(4,1fr); gap:var(--s-md); margin-top:var(--s-lg)}
+    .lb-card{background:var(--surface); border:1px solid var(--line); border-radius:var(--radius-panel); overflow:hidden;
+    transition:transform .4s var(--ease), box-shadow .4s var(--ease); cursor:pointer}
+    .lb-card:hover{transform:translateY(-6px); box-shadow:0 20px 40px rgba(0,0,0,.08)}
+    .lb-card__img{height:380px; overflow:hidden; position:relative}
+    .lb-card__img img{width:100%; height:100%; object-fit:cover; transition:transform .8s var(--ease)}
+    .lb-card:hover .lb-card__img img{transform:scale(1.06)}
+    .lb-card__body{padding:var(--s-sm); display:flex; flex-direction:column; justify-content:space-between}
+    .lb-card__tag{font-family:"JetBrains Mono",monospace; font-size:10px; text-transform:uppercase; letter-spacing:.14em; color:var(--action); font-weight:700}
+    
+    /* ========================================================= 04 · PLOTTED QUALITY TRACE */
+    .trace{position:relative; isolation:isolate; overflow:hidden; background:var(--sand-100);
     border-top:1px solid var(--line); border-bottom:1px solid var(--line)}
     .trace__ice{position:absolute; inset:0; z-index:0}
     .trace__ice img{width:100%; height:100%; object-fit:cover;
-    filter:saturate(.22) brightness(.35) contrast(1.06); will-change:transform; transform:translateZ(0)}
-    .trace__ice::after{content:""; position:absolute; inset:0; background:
-    linear-gradient(180deg, rgba(11,14,18,.92) 0%, rgba(11,14,18,.74) 45%, rgba(11,14,18,.94) 100%)}
+    filter:saturate(.3) brightness(.9) contrast(1.02); opacity:.3; will-change:transform; transform:translateZ(0)}
     .trace > .wrap{position:relative; z-index:1}
     .trace__head{display:grid; grid-template-columns:auto 1fr; gap:var(--s-2xl); align-items:end}
     .trace__key{display:flex; gap:var(--s-lg); align-self:end}
     .trace__key div{display:grid; gap:var(--s-3xs)}
-    .trace__key dt{font-family:"Martian Mono",monospace; font-size:var(--step--1);
+    .trace__key dt{font-family:"JetBrains Mono",monospace; font-size:var(--step--1);
     letter-spacing:.2em; text-transform:uppercase; color:var(--text-muted)}
-    .trace__key dd{margin:0; font-family:"Martian Mono",monospace; font-size:var(--step-1); font-weight:500}
+    .trace__key dd{margin:0; font-family:"Manrope",sans-serif; font-size:var(--step-1); font-weight:700}
     .trace__key .hot{color:var(--action)}
     
     .chart{margin:var(--s-xl) 0 0; padding:0}
@@ -206,24 +214,24 @@
     .chart__line{stroke-dasharray:2600; stroke-dashoffset:2600; transition:stroke-dashoffset 1.6s var(--ease)}
     .chart.in .chart__line{stroke-dashoffset:0}
 
-    /* ========================================================= 04 · SPEC (EQUIPMENT & HOTSPOTS) */
-    .kit{position:relative; margin-top:var(--s-xl); overflow:hidden; background:var(--night-900);
+    /* ========================================================= 05 · EQUIPMENT HOTSPOTS */
+    .kit{position:relative; margin-top:var(--s-xl); overflow:hidden; background:var(--surface);
     width:100%; margin-left:0; border:1px solid var(--line); border-radius:var(--radius-panel)}
-    .kit > img{width:100%; display:block; filter:contrast(1.06) brightness(.92);
+    .kit > img{width:100%; display:block; filter:contrast(1.02) brightness(.96);
     will-change:transform; transform:translateZ(0)}
     .kit::after{content:""; position:absolute; inset:0; pointer-events:none; background:
-    linear-gradient(90deg, var(--ground) 0%, rgba(11,14,18,0) 12%, rgba(11,14,18,0) 88%, var(--ground) 100%),
-    linear-gradient(180deg, var(--ground) 0%, rgba(11,14,18,0) 14%, rgba(11,14,18,0) 86%, var(--ground) 100%)}
+    linear-gradient(90deg, var(--ground) 0%, rgba(250,248,245,0) 12%, rgba(250,248,245,0) 88%, var(--ground) 100%),
+    linear-gradient(180deg, var(--ground) 0%, rgba(250,248,245,0) 14%, rgba(250,248,245,0) 86%, var(--ground) 100%)}
     
     .hs{position:absolute; left:var(--x); top:var(--y); transform:translate(-50%,-50%);
     width:44px; height:44px; padding:0; border:0; background:none; cursor:pointer;
     display:grid; place-items:center; z-index:4}
-    .hs__ring{position:absolute; inset:0; border:1px solid rgba(215,255,62,.45);
+    .hs__ring{position:absolute; inset:0; border:1px solid rgba(197,160,89,.6);
     border-radius:var(--radius-pill); transform:scale(.62);
     transition:transform .28s var(--ease), border-color .28s var(--ease), opacity .28s var(--ease)}
-    .hs__dot{width:6px; height:6px; border-radius:var(--radius-pill); background:var(--action);
-    box-shadow:0 0 0 4px rgba(215,255,62,.14); transition:transform .28s var(--ease)}
-    .hs::after{content:""; position:absolute; inset:0; border:1px solid rgba(215,255,62,.5);
+    .hs__dot{width:8px; height:8px; border-radius:var(--radius-pill); background:var(--action);
+    box-shadow:0 0 0 4px rgba(197,160,89,.2); transition:transform .28s var(--ease)}
+    .hs::after{content:""; position:absolute; inset:0; border:1px solid rgba(197,160,89,.5);
     border-radius:var(--radius-pill); opacity:0; animation:ping 3.6s var(--ease) infinite;
     animation-delay:calc(var(--n) * .45s)}
     @keyframes ping{0%{transform:scale(.62); opacity:.7} 45%{transform:scale(1.25); opacity:0} 100%{opacity:0}}
@@ -232,9 +240,9 @@
     .hs.is-on .hs__ring{transform:scale(1); border-color:var(--action)}
 
     .kitpop{position:absolute; z-index:5; width:620px; pointer-events:none;
-    background:var(--night-800); border:1px solid var(--line);
-    border-radius:var(--radius-data); padding:var(--s-sm); opacity:0; visibility:hidden;
-    transform:translate(-50%,8px) scale(.94); clip-path:inset(0 0 100% 0)}
+    background:var(--surface); border:1px solid var(--line);
+    border-radius:var(--radius-panel); padding:var(--s-sm); opacity:0; visibility:hidden;
+    box-shadow:0 20px 40px rgba(0,0,0,.12); transform:translate(-50%,8px) scale(.94); clip-path:inset(0 0 100% 0)}
     .kitpop.is-on{visibility:visible; animation:popIn .34s var(--ease) forwards; pointer-events:auto}
     @keyframes popIn{
     0%{opacity:0; transform:translate(-50%,8px) scale(.94); clip-path:inset(0 0 100% 0)}
@@ -248,18 +256,18 @@
     .kitpop b.br:nth-of-type(2){top:-1px; right:-1px; border-left:0; border-bottom:0}
     .kitpop b.br:nth-of-type(3){bottom:-1px; left:-1px; border-right:0; border-top:0}
     .kitpop b.br:nth-of-type(4){bottom:-1px; right:-1px; border-left:0; border-top:0}
-    .kitpop__scan{position:absolute; left:0; top:0; height:1px; width:100%; background:var(--action);
+    .kitpop__scan{position:absolute; left:0; top:0; height:2px; width:100%; background:var(--action);
     transform:scaleX(0); transform-origin:left}
     .kitpop.is-on .kitpop__scan{animation:scan .5s var(--ease) .06s forwards}
     @keyframes scan{to{transform:scaleX(1)}}
     .kitpop__grid{display:grid; grid-template-columns:280px 1fr; gap:var(--s-sm); align-items:start}
     .kitpop__left{display:grid; gap:var(--s-xs)}
     .kitpop__media{margin:0; border:1px solid var(--line-soft);
-    border-radius:var(--radius-data); overflow:hidden; background:var(--night-900); aspect-ratio:16/9;
+    border-radius:var(--radius-data); overflow:hidden; background:var(--sand-100); aspect-ratio:16/9;
     position:relative}
     .kitpop__media img{width:100%; height:100%; object-fit:cover; display:block}
-    .kitpop h3{font-size:var(--step-1); letter-spacing:-.02em}
-    .kitpop__sub{font-family:"Martian Mono",monospace; font-size:var(--step--1);
+    .kitpop h3{font-size:var(--step-1); font-family:'Manrope',sans-serif; letter-spacing:-.02em}
+    .kitpop__sub{font-family:"JetBrains Mono",monospace; font-size:var(--step--1);
     letter-spacing:.16em; text-transform:uppercase; color:var(--text-muted); margin-top:var(--s-3xs)}
     .kitpop dl{margin:var(--s-xs) 0 0; display:grid; gap:var(--s-3xs);
     border-top:1px solid var(--line-soft); padding-top:var(--s-xs)}
@@ -269,64 +277,68 @@
     animation-delay:calc(.16s + var(--r) * 55ms)}
     @keyframes rowIn{to{opacity:1; transform:none}}
     .kitpop dt{color:var(--text-muted); font-size:var(--step--1)}
-    .kitpop dd{margin:0; font-family:"Martian Mono",monospace; font-size:var(--step--1); font-weight:500}
+    .kitpop dd{margin:0; font-family:"JetBrains Mono",monospace; font-size:var(--step--1); font-weight:600}
     .kitpop .hot{color:var(--action)}
     .kitpop__note{margin:0; padding-top:var(--s-xs); border-top:1px solid var(--line-soft);
     font-size:var(--step--1); line-height:1.5; color:var(--text-muted); max-width:46ch; opacity:0}
     .kitpop.is-on .kitpop__note{animation:rowIn .3s var(--ease) .42s forwards}
 
-    /* ========================================================= 05 · BATCHES & TOOLTIP CARD */
+    /* ========================================================= 06 · BATCHES SHEET */
     .sheet{margin-top:var(--s-lg); border-top:1px solid var(--line)}
-    .sheet__head,.row{display:grid; grid-template-columns:70px 1fr 140px 120px 100px; gap:var(--s-sm);
+    .sheet__head,.row{display:grid; grid-template-columns:70px 1fr 140px 140px 100px; gap:var(--s-sm);
     padding:var(--s-2xs) 0; align-items:baseline}
-    .sheet__head{font-family:"Martian Mono",monospace; font-size:var(--step--1); letter-spacing:.16em;
+    .sheet__head{font-family:"JetBrains Mono",monospace; font-size:var(--step--1); letter-spacing:.16em;
     text-transform:uppercase; color:var(--text-muted); padding:var(--s-xs) 0; border-bottom:1px solid var(--line)}
-    .row{border-bottom:1px solid var(--line-soft); transition:background var(--dur) var(--ease)}
-    .row:hover{background:var(--surface)}
-    .row b{font-family:"Martian Mono",monospace; font-weight:500; color:var(--text-muted)}
-    .row .nat,.row .st,.row .qty{font-family:"Martian Mono",monospace; color:var(--text-muted); font-size:var(--step--1)}
-    .row.is-red b,.row.is-red .name{color:var(--text-primary)}
+    .row{border-bottom:1px solid var(--line-soft); transition:background var(--dur) var(--ease); cursor:pointer}
+    .row:hover{background:var(--surface-raised)}
+    .row b{font-family:"JetBrains Mono",monospace; font-weight:600; color:var(--text-muted)}
+    .row .nat,.row .st,.row .qty{font-family:"JetBrains Mono",monospace; color:var(--text-muted); font-size:var(--step--1)}
+    .row.is-red b,.row.is-red .name{color:var(--text-primary); font-weight:600}
     
-    .card{position:fixed; z-index:20; width:280px; pointer-events:none; opacity:0;
+    .card{position:fixed; z-index:20; width:290px; pointer-events:none; opacity:0;
     transform:translateY(6px); transition:opacity .16s var(--ease), transform .16s var(--ease);
-    background:var(--surface-raised); border:1px solid var(--line);
-    border-radius:var(--radius-data); padding:var(--s-xs); box-shadow:0 18px 40px rgba(0,0,0,.75)}
+    background:var(--surface); border:1px solid var(--line);
+    border-radius:var(--radius-panel); padding:var(--s-xs); box-shadow:0 18px 40px rgba(0,0,0,.12)}
     .card.is-on{opacity:1; transform:none}
     .card__top{display:flex; align-items:center; gap:var(--s-2xs)}
-    .card__name{font-weight:600; letter-spacing:-.01em}
-    .card__nat{margin-left:auto; font-family:"Martian Mono",monospace; font-size:var(--step--1); color:var(--action)}
+    .card__name{font-weight:700; letter-spacing:-.01em; font-family:'Manrope',sans-serif}
+    .card__nat{margin-left:auto; font-family:"JetBrains Mono",monospace; font-size:var(--step--1); color:var(--action); font-weight:700}
     .card__stats{display:grid; grid-template-columns:1fr 1fr; gap:var(--s-2xs) var(--s-xs);
     margin-top:var(--s-xs); padding-top:var(--s-xs); border-top:1px solid var(--line-soft)}
     .card__stats div{display:grid; gap:var(--s-3xs)}
-    .card__stats dt{font-family:"Martian Mono",monospace; font-size:10px; letter-spacing:.16em;
+    .card__stats dt{font-family:"JetBrains Mono",monospace; font-size:10px; letter-spacing:.16em;
     text-transform:uppercase; color:var(--text-muted)}
-    .card__stats dd{margin:0; font-family:"Martian Mono",monospace; font-size:var(--step-0); font-weight:500}
+    .card__stats dd{margin:0; font-family:"JetBrains Mono",monospace; font-size:var(--step-0); font-weight:600}
     .card__stats .hot{color:var(--action)}
 
-    /* ========================================================= 06 · CALCULATOR & WAVES */
+    /* ========================================================= 07 · CALCULATOR & WAVES */
     .calc__grid{display:grid; grid-template-columns:1fr 420px; gap:var(--s-xl); margin-top:var(--s-lg)}
-    .calc__panel{background:var(--surface); border:1px solid var(--line); border-radius:var(--radius-panel); padding:var(--s-md)}
+    .calc__panel{background:var(--surface); border:1px solid var(--line); border-radius:var(--radius-panel); padding:var(--s-md); box-shadow:0 10px 30px rgba(0,0,0,.03)}
     .chip{background:transparent; border:1px solid var(--line); color:var(--text-secondary);
-    padding:var(--s-2xs) var(--s-xs); border-radius:var(--radius-pill); cursor:pointer;
-    font-size:var(--step--1); transition:background var(--dur) var(--ease), color var(--dur) var(--ease), border-color var(--dur) var(--ease)}
+    padding:var(--s-2xs) var(--s-xs); border-radius:var(--radius-pill); cursor:pointer; font-family:'Montserrat',sans-serif;
+    font-size:var(--step--1); font-weight:500; transition:background var(--dur) var(--ease), color var(--dur) var(--ease), border-color var(--dur) var(--ease)}
     .chip:hover{border-color:var(--text-muted)}
-    .chip.is-on{background:var(--action); border-color:var(--action); color:var(--night-900); font-weight:600}
+    .chip.is-on{background:var(--dark-900); border-color:var(--dark-900); color:var(--sand-50); font-weight:600}
     
     .btn{margin-top:var(--s-2xs); border:1px solid var(--line); background:transparent; color:var(--text-primary);
-    padding:var(--s-xs) var(--s-sm); border-radius:var(--radius-pill); cursor:pointer; font-family:"Martian Mono",monospace;
-    font-size:var(--step--1); text-transform:uppercase; letter-spacing:.1em;
+    padding:var(--s-xs) var(--s-sm); border-radius:var(--radius-pill); cursor:pointer; font-family:"JetBrains Mono",monospace;
+    font-size:var(--step--1); text-transform:uppercase; letter-spacing:.1em; font-weight:600;
     transition:background var(--dur) var(--ease), color var(--dur) var(--ease), border-color var(--dur) var(--ease)}
     .btn:hover:not(:disabled){border-color:var(--text-primary)}
-    .btn--go{background:var(--action); border-color:var(--action); color:var(--night-900); font-weight:700}
-    .btn--go:hover{background:var(--action-quiet); border-color:var(--action-quiet)}
+    .btn--go{background:#25D366; border-color:#25D366; color:#FFFFFF; font-weight:700; box-shadow:0 6px 20px rgba(37,211,102,.3)}
+    .btn--go:hover{background:#20bd5a; border-color:#20bd5a}
     
-    .foot{border-top:1px solid var(--line); padding:var(--s-lg) 0; margin-top:var(--s-2xl)}
+    .foot{border-top:1px solid var(--line); padding:var(--s-lg) 0; margin-top:var(--s-2xl); background:var(--sand-100)}
     .foot__grid{display:flex; justify-content:space-between; gap:var(--s-sm); flex-wrap:wrap;
     color:var(--text-muted); font-size:var(--step--1)}
     .foot strong{color:var(--text-primary)}
     
+    @media (max-width:1100px){
+    .lookbook__grid{grid-template-columns:repeat(2,1fr)}
+    }
     @media (max-width:960px){
     .calc__grid{grid-template-columns:1fr}
+    .lookbook__grid{grid-template-columns:1fr}
     .face{height:auto}
     .face__sticky{position:static; height:auto; padding:var(--s-xl) var(--s-sm)}
     .index{display:none}
@@ -337,7 +349,7 @@
 </head>
 <body>
 
-<!-- ==================================================== 01 · HERO COVER -->
+<!-- ==================================================== 01 · HERO COVER (12 STOREEZ + KALTGRAT HYBRID) -->
 <header class="cover">
   <span class="beam" aria-hidden="true"></span>
   <div class="cover__plate"><img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1600&auto=format&fit=crop" alt="BeMode Garment Production Studio in Bishkek."></div>
@@ -349,8 +361,8 @@
   
   <div class="cover__grid">
     <div class="cover__top">
-      <div class="label ci" style="--i:0">BeMode&nbsp;·&nbsp;Garment&nbsp;Factory&nbsp;·&nbsp;Bishkek</div>
-      <div class="label mono ci" style="--i:1">ISO-9001&nbsp;/&nbsp;CAD&nbsp;/&nbsp;KG-2026</div>
+      <div class="label ci" style="--i:0">BeMode&nbsp;·&nbsp;Feminine&nbsp;Garment&nbsp;Factory&nbsp;·&nbsp;Bishkek</div>
+      <div class="label mono ci" style="--i:1">ISO-9001&nbsp;/&nbsp;CAD&nbsp;/&nbsp;12-STOREEZ&nbsp;STYLE</div>
     </div>
     <div></div>
     <div class="cover__bottom">
@@ -380,7 +392,7 @@
       </div>
       <div class="face__mid">
         <h2 class="face__name" id="fName">01 · САПР Лекала</h2>
-        <p class="face__sub" id="fNote">Создание выкроек любой сложности по эскизу, фото или готовому референсу в системе Графис.</p>
+        <p class="face__sub" id="fNote">Конструирование выкроек любой сложности по эскизу, фото или готовому референсу в системе Графис.</p>
       </div>
       <div class="face__foot">
         <dl class="face__stat"><dt>3D-Примерка</dt><dd id="fLen">Да</dd></dl>
@@ -391,7 +403,84 @@
   </div>
 </section>
 
-<!-- ================================================ 03 · PLOTTED QUALITY TRACE -->
+<!-- ================================================= 03 · 12 STOREEZ LOOKBOOK SHOWCASE -->
+<section class="lookbook" id="lookbook" style="background:var(--sand-50); border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <div class="label">12 STOREEZ Aesthetic Lookbook</div>
+    <h2>Коллекции, отшитые нашей фабрикой</h2>
+    <p class="lede">От шелковых платьев миди до твидовых костюмов и оверсайз жакетов с идеальной посадкой по лекалам.</p>
+
+    <div class="lookbook__grid">
+      
+      <!-- Card 1 -->
+      <div class="lb-card" onclick="openSampleModal('Шелковое платье комбинация')">
+        <div class="lb-card__img">
+          <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?q=80&w=800&auto=format&fit=crop" alt="Шелковые платья">
+        </div>
+        <div class="lb-card__body">
+          <span class="lb-card__tag">ПЛАТЬЯ & МИДИ</span>
+          <h3 style="font-size:var(--step-0); margin-top:4px">Шелковые платья-комбинации</h3>
+          <p style="font-size:var(--step--1); color:var(--text-muted); margin-top:4px">Шелк-армани, закрытые швы, безупречная обработка горловины.</p>
+          <div style="display:flex; justify-content:space-between; margin-top:12px; font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--action)">
+            <span>От 500 шт</span>
+            <span>Заказать образец →</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="lb-card" onclick="openSampleModal('Жакет оверсайз / Твидовый костюм')">
+        <div class="lb-card__img">
+          <img src="https://images.unsplash.com/photo-1584273143981-41c073dfe8f8?q=80&w=800&auto=format&fit=crop" alt="Жакеты и костюмы">
+        </div>
+        <div class="lb-card__body">
+          <span class="lb-card__tag">ЖАКЕТЫ & КОСТЮМЫ</span>
+          <h3 style="font-size:var(--step-0); margin-top:4px">Двубортные жакеты & Твид</h3>
+          <p style="font-size:var(--step--1); color:var(--text-muted); margin-top:4px">Дублирование полочек, форма плеча, формоустойчивые ткани.</p>
+          <div style="display:flex; justify-content:space-between; margin-top:12px; font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--action)">
+            <span>От 500 шт</span>
+            <span>Заказать образец →</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="lb-card" onclick="openSampleModal('Корсетные топы и блузы')">
+        <div class="lb-card__img">
+          <img src="https://images.unsplash.com/photo-1550614000-4895a10e1bfd?q=80&w=800&auto=format&fit=crop" alt="Корсетные изделия">
+        </div>
+        <div class="lb-card__body">
+          <span class="lb-card__tag">КОРСЕТЫ & ТОПЫ</span>
+          <h3 style="font-size:var(--step-0); margin-top:4px">Корсетные топы и блузы</h3>
+          <p style="font-size:var(--step--1); color:var(--text-muted); margin-top:4px">Косточки упругости, точнейшая утяжка по лекалам САПР.</p>
+          <div style="display:flex; justify-content:space-between; margin-top:12px; font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--action)">
+            <span>От 500 шт</span>
+            <span>Заказать образец →</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="lb-card" onclick="openSampleModal('Трикотажные сеты / Плюс-сайз')">
+        <div class="lb-card__img">
+          <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=800&auto=format&fit=crop" alt="Трикотаж и Плюс-сайз">
+        </div>
+        <div class="lb-card__body">
+          <span class="lb-card__tag">ТРИКОТАЖ & CASUAL</span>
+          <h3 style="font-size:var(--step-0); margin-top:4px">Оверсайз сеты & Плюс-сайз</h3>
+          <p style="font-size:var(--step--1); color:var(--text-muted); margin-top:4px">Усиленные бейки, футер 3-нитка, ровные 4-ниточные швы.</p>
+          <div style="display:flex; justify-content:space-between; margin-top:12px; font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--action)">
+            <span>От 500 шт</span>
+            <span>Заказать образец →</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================================================ 04 · PLOTTED QUALITY TRACE -->
 <section class="trace" aria-labelledby="trace-h">
   <div class="trace__ice"><img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?q=80&w=1600&auto=format&fit=crop" alt="Quality Control Inspection." aria-hidden="true"></div>
   <div class="wrap">
@@ -410,7 +499,7 @@
     <figure class="chart io" id="chart">
       <svg viewBox="0 0 1200 460" preserveAspectRatio="none" role="img" aria-label="OTK Quality graph showing near zero defects across 40000 units.">
         <g id="chartGrid"></g><g id="chartBands"></g>
-        <path id="speedPath" class="chart__line" fill="none" stroke="#D7FF3E" stroke-width="3" vector-effect="non-scaling-stroke" d="M80 392 C 150 340, 190 262, 240 200 C 300 128, 330 158, 370 214 C 400 258, 430 206, 470 172 C 540 112, 610 126, 690 154 C 760 180, 800 154, 860 124 C 930 90, 1000 66, 1120 56"></path>
+        <path id="speedPath" class="chart__line" fill="none" stroke="#C5A059" stroke-width="3" vector-effect="non-scaling-stroke" d="M80 392 C 150 340, 190 262, 240 200 C 300 128, 330 158, 370 214 C 400 258, 430 206, 470 172 C 540 112, 610 126, 690 154 C 760 180, 800 154, 860 124 C 930 90, 1000 66, 1120 56"></path>
         <g id="chartMarks"></g>
       </svg>
     </figure>
@@ -418,7 +507,7 @@
   </div>
 </section>
 
-<!-- ================================================= 04 · INTERACTIVE EQUIPMENT HOTSPOTS -->
+<!-- ================================================= 05 · INTERACTIVE EQUIPMENT HOTSPOTS -->
 <section class="spec" aria-labelledby="spec-h">
   <div class="wrap">
     <div class="label">Technical Equipment</div>
@@ -432,7 +521,7 @@
   </div>
 </section>
 
-<!-- =========================================== 05 · REAL EXECUTED BATCHES SHEET -->
+<!-- =========================================== 06 · REAL EXECUTED BATCHES SHEET -->
 <section class="start" aria-labelledby="start-h">
   <div class="wrap">
     <div class="start__head">
@@ -450,7 +539,7 @@
   </div>
 </section>
 
-<!-- ============================================= 06 · INTERACTIVE B2B CALCULATOR -->
+<!-- ============================================= 07 · INTERACTIVE B2B CALCULATOR -->
 <section class="entry" aria-labelledby="entry-h" id="calculator">
   <div class="wrap">
     <div class="label">B2B Cost & Timeframe Calculator</div>
@@ -502,24 +591,24 @@
 </footer>
 
 <!-- SAMPLE REQUEST MODAL OVERLAY -->
-<div id="sample-modal" onclick="if(event.target.id==='sample-modal')closeSampleModal()" style="position:fixed; inset:0; z-index:9999; background:rgba(11,14,18,.92); backdrop-filter:blur(14px); display:flex; items-center; justify-content:center; padding:16px; opacity:0; pointer-events:none; transition:all .3s ease">
-  <div style="position:relative; width:100%; max-width:500px; background:var(--surface-raised); border:1px solid var(--line); border-radius:var(--radius-panel); padding:var(--s-md); color:var(--text-primary)">
-    <button type="button" onclick="closeSampleModal()" style="position:absolute; top:16px; right:16px; width:32px; height:32px; border-radius:50%; background:var(--surface); border:1px solid var(--line); color:var(--text-primary); cursor:pointer">✕</button>
+<div id="sample-modal" onclick="if(event.target.id==='sample-modal')closeSampleModal()" style="position:fixed; inset:0; z-index:9999; background:rgba(28,25,23,.75); backdrop-filter:blur(10px); display:flex; items-center; justify-content:center; padding:16px; opacity:0; pointer-events:none; transition:all .3s ease">
+  <div style="position:relative; width:100%; max-width:500px; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius-panel); padding:var(--s-md); color:var(--text-primary); box-shadow:0 20px 50px rgba(0,0,0,.15)">
+    <button type="button" onclick="closeSampleModal()" style="position:absolute; top:16px; right:16px; width:32px; height:32px; border-radius:50%; background:var(--sand-100); border:1px solid var(--line); color:var(--text-primary); cursor:pointer">✕</button>
     <div class="label" style="color:var(--action)">Fast Start</div>
-    <h3 style="font-size:var(--step-1); margin-top:4px">Заказать отшив образца</h3>
+    <h3 style="font-size:var(--step-1); margin-top:4px; font-family:'Manrope',sans-serif">Заказать отшив образца</h3>
     <p style="font-size:var(--step--1); color:var(--text-muted); margin-bottom:var(--s-sm)">Отшиваем физический эталон за 3 дня с вычетом из стоимости партии.</p>
     <form onsubmit="submitForm(event)" style="display:grid; gap:var(--s-xs)">
       <div>
         <label class="label" style="display:block; margin-bottom:4px">Ваше имя / Бренд:</label>
-        <input type="text" id="mName" required placeholder="Например: Анна / Brand Co" style="width:100%; background:var(--night-900); border:1px solid var(--line); border-radius:4px; padding:10px; color:var(--text-primary); font-family:inherit">
+        <input type="text" id="mName" required placeholder="Например: Анна / Brand Co" style="width:100%; background:var(--sand-50); border:1px solid var(--line); border-radius:4px; padding:10px; color:var(--text-primary); font-family:inherit">
       </div>
       <div>
         <label class="label" style="display:block; margin-bottom:4px">Изделие:</label>
-        <input type="text" id="mItem" required placeholder="Шелковое платье или жакет" style="width:100%; background:var(--night-900); border:1px solid var(--line); border-radius:4px; padding:10px; color:var(--text-primary); font-family:inherit">
+        <input type="text" id="mItem" required placeholder="Шелковое платье или жакет" style="width:100%; background:var(--sand-50); border:1px solid var(--line); border-radius:4px; padding:10px; color:var(--text-primary); font-family:inherit">
       </div>
       <div>
         <label class="label" style="display:block; margin-bottom:4px">Телефон / WhatsApp:</label>
-        <input type="tel" id="mPhone" required placeholder="+7 (999) 000-00-00" style="width:100%; background:var(--night-900); border:1px solid var(--line); border-radius:4px; padding:10px; color:var(--text-primary); font-family:inherit">
+        <input type="tel" id="mPhone" required placeholder="+7 (999) 000-00-00" style="width:100%; background:var(--sand-50); border:1px solid var(--line); border-radius:4px; padding:10px; color:var(--text-primary); font-family:inherit">
       </div>
       <button type="submit" class="btn btn--go" style="width:100%; margin-top:8px">Отправить в WhatsApp</button>
     </form>
@@ -628,17 +717,17 @@
   const grid = $('#chartGrid'), bands = $('#chartBands'), marks = $('#chartMarks');
   [0,10,20,30,40].forEach(v => {
     const y = 400 - (v / 40) * 360;
-    grid.appendChild(el('line', {x1:80, y1:y, x2:1160, y2:y, stroke:'rgba(238,243,248,.09)'}));
-    const t = el('text', {x:46, y:y + 4, fill:'#8A94A2', 'font-size':'13', 'font-family':'Martian Mono, monospace'});
+    grid.appendChild(el('line', {x1:80, y1:y, x2:1160, y2:y, stroke:'rgba(28,25,23,.09)'}));
+    const t = el('text', {x:46, y:y + 4, fill:'#78716C', 'font-size':'13', 'font-family':'JetBrains Mono, monospace'});
     t.textContent = (v/10) + '%'; grid.appendChild(t);
   });
   [['Batch 01',200],['Batch 02',450],['Batch 03',700],['Batch 04',950],['Batch 05',1120]].forEach(m => {
-    marks.appendChild(el('line', {x1:m[1], y1:40, x2:m[1], y2:400, stroke:'rgba(215,255,62,.28)', 'stroke-dasharray':'3 4'}));
-    const t = el('text', {x:m[1], y:30, fill:'#D7FF3E', 'font-size':'13', 'text-anchor':'middle', 'font-family':'Martian Mono, monospace'});
+    marks.appendChild(el('line', {x1:m[1], y1:40, x2:m[1], y2:400, stroke:'rgba(197,160,89,.35)', 'stroke-dasharray':'3 4'}));
+    const t = el('text', {x:m[1], y:30, fill:'#C5A059', 'font-size':'13', 'text-anchor':'middle', 'font-family':'JetBrains Mono, monospace'});
     t.textContent = m[0]; marks.appendChild(t);
   });
-  marks.appendChild(el('circle', {cx:1120, cy:56, r:5, fill:'#D7FF3E'}));
-  const pk = el('text', {x:1106, y:96, fill:'#EEF3F8', 'font-size':'15', 'text-anchor':'end', 'font-family':'Martian Mono, monospace'});
+  marks.appendChild(el('circle', {cx:1120, cy:56, r:5, fill:'#C5A059'}));
+  const pk = el('text', {x:1106, y:96, fill:'#1C1917', 'font-size':'15', 'text-anchor':'end', 'font-family':'JetBrains Mono, monospace'});
   pk.textContent = '0.3% Defect Rate'; marks.appendChild(pk);
 
   /* 04 · Equipment Hotspots */
@@ -728,7 +817,7 @@
 
     const card = $('#card');
     const place = (x, y) => {
-      const w = 280, h = card.offsetHeight || 140;
+      const w = 290, h = card.offsetHeight || 140;
       card.style.left = Math.max(16, Math.min(innerWidth - w - 16, x + 20)) + 'px';
       card.style.top  = Math.max(16, Math.min(innerHeight - h - 16, y - h / 2)) + 'px';
     };
@@ -792,7 +881,11 @@ function sendWA() {
   const text = `Здравствуйте, BeMode! Расчет партии:%0A- Категория: ${cCat}%0A- Техника: ${cServ}%0A- Объем: ${cVol} шт.%0AХочу уточнить смету и заказать образец.`;
   window.open(`https://wa.me/996502985896?text=${text}`, '_blank');
 }
-function openSampleModal() {
+function openSampleModal(preset = '') {
+  if (preset) {
+    const el = document.getElementById('mItem');
+    if (el) el.value = preset;
+  }
   const m = document.getElementById('sample-modal');
   m.style.opacity = '1'; m.style.pointerEvents = 'auto';
 }
@@ -811,7 +904,7 @@ function submitForm(e) {
 }
 </script>
 
-<!-- Lenis Smooth Scroll -->
+<!-- Lenis Smooth Scroll Engine -->
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
 <script>
 (() => {
