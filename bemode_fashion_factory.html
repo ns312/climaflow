@@ -9,7 +9,7 @@
     <!-- Google Fonts: Cormorant Garamond, Cinzel, Montserrat & Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <style>
         /* 12 STOREEZ DEVTOOLS EXACT STYLES & LUXURY DESIGN SYSTEM */
@@ -2769,6 +2769,77 @@
             }
         }
 
+    
+        /* DARIA RESORTWEAR STYLE CALLIGRAPHIC SCRIPT & MINIMAL ICON COLUMNS */
+        :root {
+            --font-script: 'Alex Brush', 'Cormorant Garamond', cursive;
+        }
+
+        .script-text {
+            font-family: var(--font-script) !important;
+            font-weight: 400 !important;
+        }
+
+        .diff-col-item {
+            position: relative;
+        }
+        @media (max-width: 768px) {
+            .diff-col-item {
+                border-right: none !important;
+                border-bottom: 1px solid rgba(0,0,0,0.06);
+                padding-bottom: 30px !important;
+                margin-bottom: 10px;
+            }
+            .diff-col-item:last-child {
+                border-bottom: none !important;
+            }
+        }
+
+        .calligraphic-luxury-btn {
+            font-family: var(--font-main);
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: #ffffff;
+            border: 1px solid var(--color-accent);
+            padding: 16px 42px;
+            border-radius: 4px;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+            transition: var(--transition-bounce);
+            position: relative;
+            overflow: hidden;
+            text-decoration: none;
+        }
+        .calligraphic-luxury-btn:hover {
+            background: var(--color-accent);
+            box-shadow: 0 15px 35px rgba(194, 79, 32, 0.35);
+            transform: translateY(-3px);
+        }
+        .calligraphic-luxury-btn .script-btn-label {
+            font-family: var(--font-script);
+            font-size: 26px;
+            color: var(--color-gold);
+            line-height: 1.1;
+            margin-bottom: 2px;
+            transition: color 0.3s ease;
+        }
+        .calligraphic-luxury-btn:hover .script-btn-label {
+            color: #f3ede2;
+        }
+        .calligraphic-luxury-btn .main-btn-label {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--color-accent);
+            transition: color 0.3s ease;
+        }
+        .calligraphic-luxury-btn:hover .main-btn-label {
+            color: #ffffff;
+        }
+
     </style>
 </head>
 <body class="is-loading">
@@ -2931,7 +3002,81 @@
 
     
     
-        <!-- SECTION: FLEXIBLE PATTERN & CAD WORK FORMATS -->
+        
+    <!-- SECTION 02: THE BEMODE DIFFERENCE (MATCHING DARIA RESORTWEAR LUXURY REFERENCE) -->
+    <section class="bemode-difference-section" id="bemode-difference" style="padding: 85px 0; background: #ffffff; border-bottom: 1px solid var(--color-border);">
+        <div class="wrap-container" style="text-align: center;">
+            <span class="section-badge">СЕКЦИЯ 02 • ПРЕИМУЩЕСТВА ПРОИЗВОДСТВА</span>
+            <h2 class="section-title" style="font-family: var(--font-serif); font-size: clamp(32px, 4.5vw, 48px); font-weight: 400; color: var(--color-accent); margin-top: 10px;">The BEMODE Difference</h2>
+            <p style="font-family: var(--font-script); font-size: 32px; color: var(--color-gold); margin-top: -6px; margin-bottom: 55px;">Изысканность швейного мастерства</p>
+
+            <!-- 4 MINIMAL THIN ICON COLUMNS -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 24px; align-items: start; margin-bottom: 50px;" class="reveal-up">
+                <!-- COL 1: FABRIC ROLL -->
+                <div style="display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0 15px; border-right: 1px solid rgba(0,0,0,0.08);" class="diff-col-item">
+                    <div style="width: 76px; height: 76px; border-radius: 50%; border: 1px solid var(--color-border); display: flex; align-items: center; justify-content: center; margin-bottom: 22px; background: #faf8f5;">
+                        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M6 3h12a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"></path>
+                            <circle cx="9" cy="9" r="2"></circle>
+                            <path d="M16 17H8"></path>
+                            <path d="M16 13H8"></path>
+                        </svg>
+                    </div>
+                    <h4 style="font-family: var(--font-main); font-size: 11.5px; font-weight: 700; letter-spacing: 1.6px; text-transform: uppercase; color: var(--color-accent); margin-bottom: 12px;">Премиальные Турецкие Ткани</h4>
+                    <p style="font-size: 13px; color: var(--color-text-muted); line-height: 1.65; margin: 0;">Шёлк-сатин Silk Touch, софт-ниагара и шерсть высшей категории с ровной плотностью нитей.</p>
+                </div>
+
+                <!-- COL 2: CONSIDERED CONSTRUCTION -->
+                <div style="display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0 15px; border-right: 1px solid rgba(0,0,0,0.08);" class="diff-col-item">
+                    <div style="width: 76px; height: 76px; border-radius: 50%; border: 1px solid var(--color-border); display: flex; align-items: center; justify-content: center; margin-bottom: 22px; background: #faf8f5;">
+                        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 12c4-4 8 4 12 0s4-4 4-4"></path>
+                            <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                            <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                            <line x1="18" y1="6" x2="18.01" y2="6"></line>
+                        </svg>
+                    </div>
+                    <h4 style="font-family: var(--font-main); font-size: 11.5px; font-weight: 700; letter-spacing: 1.6px; text-transform: uppercase; color: var(--color-accent); margin-bottom: 12px;">САПР-Конструирование и Крой</h4>
+                    <p style="font-size: 13px; color: var(--color-text-muted); line-height: 1.65; margin: 0;">Анатомические лекала, потайные швы, идеальная посадка на размеры 42–48 с 3D-проверкой.</p>
+                </div>
+
+                <!-- COL 3: SIGNATURE CRAFT -->
+                <div style="display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0 15px; border-right: 1px solid rgba(0,0,0,0.08);" class="diff-col-item">
+                    <div style="width: 76px; height: 76px; border-radius: 50%; border: 1px solid var(--color-border); display: flex; align-items: center; justify-content: center; margin-bottom: 22px; background: #faf8f5;">
+                        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="9"></circle>
+                            <path d="M12 7v10"></path>
+                            <path d="M7 12h10"></path>
+                        </svg>
+                    </div>
+                    <h4 style="font-family: var(--font-main); font-size: 11.5px; font-weight: 700; letter-spacing: 1.6px; text-transform: uppercase; color: var(--color-accent); margin-bottom: 12px;">Мастерство Поточного Пошива</h4>
+                    <p style="font-size: 13px; color: var(--color-text-muted); line-height: 1.65; margin: 0;">Японские автоматизированные линии Juki, дублирование бортов и двухэтапный контроль ОТК.</p>
+                </div>
+
+                <!-- COL 4: LIMITED BY DESIGN -->
+                <div style="display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0 15px;" class="diff-col-item">
+                    <div style="width: 76px; height: 76px; border-radius: 50%; border: 1px solid var(--color-border); display: flex; align-items: center; justify-content: center; margin-bottom: 22px; background: #faf8f5;">
+                        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </div>
+                    <h4 style="font-family: var(--font-main); font-size: 11.5px; font-weight: 700; letter-spacing: 1.6px; text-transform: uppercase; color: var(--color-accent); margin-bottom: 12px;">Партии для Бутиков от 100 шт</h4>
+                    <p style="font-size: 13px; color: var(--color-text-muted); line-height: 1.65; margin: 0;">Гибкий пошив эксклюзивных коллекций с 100% белой отгрузкой, маркировкой Честный ЗНАК и ЕАЭС.</p>
+                </div>
+            </div>
+
+            <!-- LUXURY CALLIGRAPHIC BUTTON (MATCHING THE SCREENSHOT) -->
+            <div style="margin-top: 25px;" class="reveal-up delay-2">
+                <button class="calligraphic-luxury-btn" onclick="openDrawer('sample')">
+                    <span class="script-btn-label">Discover Our Craftsmanship</span>
+                    <span class="main-btn-label">Узнать Подробности Пошива &rarr;</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: FLEXIBLE PATTERN & CAD WORK FORMATS -->
     <section class="pattern-flexibility-section" id="pattern-options" style="padding: 75px 0; background: var(--color-bg-alt); border-bottom: 1px solid var(--color-border);">
         <div class="wrap-container">
             <div style="text-align: center; margin-bottom: 45px;" class="reveal-up">
