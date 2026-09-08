@@ -1,833 +1,825 @@
 <!DOCTYPE html>
 <html lang="ru" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BeMode KG — Женственная швейная фабрика модной одежды | Бишкек</title>
-    <meta name="description" content="Контрактный отшив женской одежды в Бишкеке под ключ. Разработка лекал, дизайн одежды, 100% контроль качества ОТК, минимальный заказ от 500 единиц. Сбыт в РФ и СНГ.">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>BEMODE KG · Премиальное контрактное швейное производство | Бишкек</title>
+    <meta name="description" content="Контрактный отшив женской одежды под ключ в Бишкеке. САПР лекала, дизайн, 100% контроль ОТК, партии от 500 единиц. Сбыт в РФ и СНГ.">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@50..150,100..900&family=Archivo:ital,wdth,wght@0,62..125,100..900&family=Martian+Mono:wdth,wght@75..112.5,100..800&display=swap" rel="stylesheet">
     
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
     <!-- Iconify CDN -->
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        blush: '#FDF2F4',
-                        blushcard: '#FFFFFF',
-                        blushaccent: '#F9E5E9',
-                        blushborder: '#F2D3DC',
-                        rosewood: '#3D2228',
-                        rosewoodlight: '#5E3C44',
-                        goldrose: '#D49BA8',
-                        goldaccent: '#C5A059',
-                        goldlight: '#E8A5B8'
-                    },
-                    fontFamily: {
-                        serif: ['Cormorant Garamond', 'Georgia', 'serif'],
-                        sans: ['Outfit', 'sans-serif'],
-                        mono: ['JetBrains Mono', 'monospace']
-                    }
-                }
-            }
-        }
-    </script>
-
     <style>
-        /* Light Rose Luxury Scrollbars & Aesthetics */
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: #FDF2F4; }
-        ::-webkit-scrollbar-thumb { background: #E8A5B8; border-radius: 3px; }
+    /* ============================================================== TOKENS (KALTGRAT SYSTEM) */
+    :root{
+    /* primitive */
+    --night-900:#0B0E12; --night-800:#11151B; --night-700:#171C24;
+    --snow-100:#EEF3F8;  --snow-300:#C2CBD6;  --snow-500:#8A94A2;
+    --acid-500:#D7FF3E;  --acid-600:#B9E01F;  --warn-500:#FF6B3D;
+    --rose-500:#F0A8B8;  --rose-600:#E5889E;
+    
+    /* semantic */
+    --ground:var(--night-900); --surface:var(--night-800); --surface-raised:var(--night-700);
+    --text-primary:var(--snow-100); --text-secondary:var(--snow-300); --text-muted:var(--snow-500);
+    --line:rgba(238,243,248,.14); --line-soft:rgba(238,243,248,.07);
+    --action:var(--acid-500); --action-quiet:var(--acid-600); --alert:var(--warn-500);
+    
+    /* type · ratio 1.333, five steps */
+    --step--1:clamp(.8rem,.78rem+.1vw,.86rem);
+    --step-0:clamp(1rem,.96rem+.2vw,1.125rem);
+    --step-1:clamp(1.33rem,1.24rem+.45vw,1.5rem);
+    --step-2:clamp(1.78rem,1.5rem+1.25vw,2.37rem);
+    --step-3:clamp(2.37rem,1.75rem+3vw,4.2rem);
+    
+    /* space · 4 8 16 24 32 48 64 96 */
+    --s-3xs:4px; --s-2xs:8px; --s-xs:16px; --s-sm:24px; --s-md:32px;
+    --s-lg:48px; --s-xl:64px; --s-2xl:96px;
+    --measure:66ch;
+    --ease:cubic-bezier(.2,0,0,1);
+    --dur:180ms;
+    --radius-pill:999px; --radius-panel:16px; --radius-data:4px;
+    }
+    *{box-sizing:border-box}
+    html{-webkit-text-size-adjust:100%; overflow-x:clip}
+    body{margin:0; background:var(--ground); color:var(--text-primary);
+    font-family:Archivo,system-ui,sans-serif; font-size:var(--step-0); line-height:1.55;
+    font-variant-numeric:tabular-nums; overflow-x:clip; -webkit-font-smoothing:antialiased}
+    h1,h2,h3{margin:0; font-weight:800; letter-spacing:-.03em; line-height:.98;
+    font-family:Anybody,Archivo,system-ui,sans-serif; font-stretch:85%}
+    h2{font-size:var(--step-2)}
+    p{margin:0; max-width:var(--measure)}
+    img,svg{max-width:100%}
+    button{font:inherit; color:inherit}
+    .mono{font-family:"Martian Mono",ui-monospace,monospace; font-variant-numeric:tabular-nums}
+    .label{font-family:"Martian Mono",ui-monospace,monospace; font-size:var(--step--1);
+    letter-spacing:.2em; text-transform:uppercase; color:var(--text-muted)}
+    .lede{font-size:var(--step-1); color:var(--text-secondary); line-height:1.5; margin-top:var(--s-sm)}
+    .wrap{max-width:1280px; margin:0 auto; padding:0 var(--s-lg)}
+    .rule{height:1px; background:var(--line); border:0; margin:0}
+    :where(a,button,[tabindex]):focus-visible{outline:2px solid var(--action); outline-offset:2px; border-radius:var(--radius-data)}
+    section{padding:var(--s-2xl) 0}
+    
+    .rv{opacity:0; transform:translateY(18px); animation:rv .5s var(--ease) forwards}
+    @keyframes rv{to{opacity:1; transform:none}}
+    .d1{animation-delay:.06s}.d2{animation-delay:.12s}.d3{animation-delay:.18s}.d4{animation-delay:.24s}
+    .io{opacity:0; transform:translateY(22px); transition:opacity .5s var(--ease), transform .5s var(--ease)}
+    .io.in{opacity:1; transform:none}
+    
+    @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .rv,.io{animation:none !important; opacity:1 !important; transform:none !important; transition:none !important}
+    *{animation-duration:.01ms !important; transition-duration:.01ms !important}
+    }
 
-        /* Floating Sakura Petals Animation */
-        @keyframes floatPetal {
-            0% {
-                transform: translateY(-10vh) rotate(0deg) translateX(0px);
-                opacity: 0;
-            }
-            10% {
-                opacity: 0.8;
-            }
-            90% {
-                opacity: 0.8;
-            }
-            100% {
-                transform: translateY(105vh) rotate(360deg) translateX(80px);
-                opacity: 0;
-            }
-        }
+    /* ========================================================= 01 · COVER (KALTGRAT HERO) */
+    .cover{position:relative; min-height:100svh; overflow:hidden; isolation:isolate; padding:0}
+    .beam{position:absolute; z-index:4; left:0; top:0; height:2px; width:100%;
+    background:linear-gradient(90deg, transparent, var(--action), transparent);
+    transform:scaleX(0); transform-origin:left;
+    animation:beam 1.15s var(--ease) both}
+    @keyframes beam{
+    0%{transform:scaleX(0); opacity:1}
+    55%{transform:scaleX(1); transform-origin:left; opacity:1}
+    56%{transform:scaleX(1); transform-origin:right}
+    100%{transform:scaleX(0); transform-origin:right; opacity:0}
+    }
+    .cover__plate{position:absolute; inset:0; z-index:0;
+    animation:drift 30s ease-in-out 2s infinite alternate}
+    .cover__plate img{width:100%; height:100%; object-fit:cover; object-position:50% 40%;
+    filter:saturate(.84) contrast(1.08) brightness(.65); will-change:transform; transform:translateZ(0);
+    animation:plateIn 1.9s var(--ease) .15s both}
+    @keyframes plateIn{from{opacity:0; transform:scale(1.14)} to{opacity:1; transform:scale(1)}}
+    @keyframes drift{from{transform:scale(1)} to{transform:scale(1.05)}}
+    .cover__plate::after{content:""; position:absolute; inset:0; background:
+    linear-gradient(180deg, rgba(11,14,18,.75) 0%, rgba(11,14,18,.25) 40%, rgba(11,14,18,.96) 100%),
+    linear-gradient(90deg, rgba(11,14,18,.75) 0%, rgba(11,14,18,0) 46%)}
+    
+    .cover__type{position:absolute; z-index:1; left:0; right:0; top:36%; text-align:center; pointer-events:none}
+    .cover__type h1{font-size:clamp(3.6rem,14vw,14rem); line-height:.82; letter-spacing:-.045em;
+    font-stretch:112%; color:var(--snow-100); mix-blend-mode:screen; opacity:.93; overflow:hidden;
+    padding-bottom:.06em}
+    .cover__type h1 span{display:inline-block; transform:translateY(112%);
+    animation:letterUp .78s var(--ease) both;
+    animation-delay:calc(.55s + var(--i) * 55ms)}
+    @keyframes letterUp{to{transform:translateY(0)}}
+    
+    .cover__racer{position:absolute; z-index:2; left:70%; bottom:-4%; width:min(52vw,740px);
+    transform:translateX(-50%); animation:racerIn 1.15s var(--ease) .95s both}
+    @keyframes racerIn{
+    from{opacity:0; transform:translateX(-50%) translateY(70px) scale(1.05)}
+    to{opacity:1; transform:translateX(-50%) translateY(0) scale(1)}
+    }
+    .cover__racer img{width:100%; height:auto; display:block; filter:drop-shadow(0 40px 60px rgba(0,0,0,.65))}
+    .cover__grid{position:relative; z-index:3; min-height:100svh; display:grid;
+    grid-template-rows:auto 1fr auto; padding:var(--s-md) var(--s-lg)}
+    .cover__top{display:flex; justify-content:space-between; align-items:start; gap:var(--s-sm); flex-wrap:wrap}
+    .cover__bottom{display:grid; grid-template-columns:1fr auto; gap:var(--s-md); align-items:end}
+    .stamp{display:inline-flex; align-items:center; gap:var(--s-2xs); border:1px solid var(--line);
+    padding:var(--s-3xs) var(--s-2xs); border-radius:var(--radius-data); background:rgba(17,21,27,.6)}
+    .stamp b{color:var(--action); font-weight:500}
+    .meta{display:grid; gap:var(--s-3xs)}
+    .meta dt{font-family:"Martian Mono",monospace; font-size:var(--step--1);
+    letter-spacing:.2em; text-transform:uppercase; color:var(--text-muted)}
+    .meta dd{margin:0; font-size:var(--step-1); font-weight:600; letter-spacing:-.01em}
+    
+    .reg{position:absolute; z-index:3; width:22px; height:22px; opacity:.5}
+    .reg::before,.reg::after{content:""; position:absolute; background:var(--snow-100)}
+    .reg::before{left:0; top:50%; width:100%; height:1px; transform:scaleX(0);
+    animation:tick .5s var(--ease) 1.25s both}
+    .reg::after{top:0; left:50%; height:100%; width:1px; transform:scaleY(0);
+    animation:tickY .5s var(--ease) 1.32s both}
+    @keyframes tick{to{transform:scaleX(1)}}
+    @keyframes tickY{to{transform:scaleY(1)}}
+    .reg--tl{top:var(--s-sm); left:var(--s-sm)} .reg--tr{top:var(--s-sm); right:var(--s-sm)}
+    .reg--bl{bottom:var(--s-sm); left:var(--s-sm)} .reg--br{bottom:var(--s-sm); right:var(--s-sm)}
+    
+    .ci{opacity:0; transform:translateY(16px); animation:ci .62s var(--ease) both;
+    animation-delay:calc(1.35s + var(--i,0) * 90ms)}
+    @keyframes ci{to{opacity:1; transform:none}}
+    .cover .rule{transform:scaleX(0); transform-origin:left;
+    animation:ruleIn .85s var(--ease) 1.3s both}
+    @keyframes ruleIn{to{transform:scaleX(1)}}
 
-        .sakura-petal {
-            position: absolute;
-            background: linear-gradient(135deg, #FFDDE2 0%, #FFAEB9 100%);
-            border-radius: 15px 0px 15px 0px;
-            opacity: 0.7;
-            pointer-events: none;
-            filter: drop-shadow(0 2px 4px rgba(230,150,170,0.2));
-            animation: floatPetal 14s linear infinite;
-        }
+    /* ========================================================== 02 · FACE (STICKY PISTE) */
+    .face{position:relative; height:480vh; padding:0}
+    .face__sticky{position:sticky; top:0; height:100svh; overflow:hidden; isolation:isolate}
+    .face__panes{position:absolute; inset:0}
+    .pane{position:absolute; inset:0; opacity:0; transition:opacity .7s var(--ease)}
+    .pane.is-on{opacity:1}
+    .pane img{width:100%; height:100%; object-fit:cover;
+    filter:saturate(.8) contrast(1.1) brightness(.68); transform:scale(1.06) translateZ(0); will-change:transform;
+    transition:transform 1.6s var(--ease)}
+    .pane.is-on img{transform:scale(1)}
+    .face__scrim{position:absolute; inset:0; z-index:1; background:
+    linear-gradient(180deg, rgba(11,14,18,.9) 0%, rgba(11,14,18,.25) 42%, rgba(11,14,18,.94) 100%),
+    linear-gradient(90deg, rgba(11,14,18,.86) 0%, rgba(11,14,18,0) 58%)}
+    .face__ui{position:relative; z-index:2; height:100svh; max-width:1280px; margin:0 auto;
+    padding:var(--s-xl) var(--s-lg); display:grid; grid-template-rows:auto 1fr auto}
+    .face__name{font-size:clamp(2.8rem,7vw,6.5rem); line-height:.88; letter-spacing:-.045em;
+    font-stretch:125%; margin-top:var(--s-xs)}
+    .face__sub{color:var(--text-secondary); font-size:var(--step-1); margin-top:var(--s-sm); max-width:44ch}
+    .face__mid{align-self:center}
+    .face__foot{display:flex; gap:var(--s-xl); align-items:end; flex-wrap:wrap}
+    .face__stat{display:grid; gap:var(--s-3xs)}
+    .face__stat dt{font-family:"Martian Mono",monospace; font-size:var(--step--1);
+    letter-spacing:.2em; text-transform:uppercase; color:var(--text-muted)}
+    .face__stat dd{margin:0; font-size:var(--step-2); font-weight:700; letter-spacing:-.02em}
+    .face__stat--hot dd{color:var(--action)}
+    
+    .index{position:absolute; z-index:2; right:var(--s-lg); top:50%; transform:translateY(-50%);
+    height:min(58svh,470px); width:240px; display:flex; flex-direction:column; gap:var(--s-3xs)}
+    .index__seg{position:relative; display:flex; align-items:center; gap:var(--s-xs);
+    border-right:2px solid var(--line); padding-right:var(--s-xs);
+    transition:border-color var(--dur) var(--ease)}
+    .index__seg::after{content:""; position:absolute; right:-2px; top:0; width:2px; height:0;
+    background:var(--action); transition:height .45s var(--ease)}
+    .index__seg.is-past::after,.index__seg.is-on::after{height:100%}
+    .index__seg span{font-family:"Martian Mono",monospace; font-size:11px; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--text-muted); margin-left:auto; text-align:right;
+    transition:color var(--dur) var(--ease)}
+    .index__seg.is-on span{color:var(--action)}
 
-        .gold-rose-shimmer {
-            background: linear-gradient(135deg, #3D2228 0%, #A85A6E 50%, #C5A059 100%);
-            background-size: 200% auto;
-            color: transparent;
-            -webkit-background-clip: text;
-            animation: shimmer 5s linear infinite;
-        }
+    /* ========================================================= 03 · TRACE (PLOTTED GRAPH) */
+    .trace{position:relative; isolation:isolate; overflow:hidden;
+    border-top:1px solid var(--line); border-bottom:1px solid var(--line)}
+    .trace__ice{position:absolute; inset:0; z-index:0}
+    .trace__ice img{width:100%; height:100%; object-fit:cover;
+    filter:saturate(.22) brightness(.35) contrast(1.06); will-change:transform; transform:translateZ(0)}
+    .trace__ice::after{content:""; position:absolute; inset:0; background:
+    linear-gradient(180deg, rgba(11,14,18,.92) 0%, rgba(11,14,18,.74) 45%, rgba(11,14,18,.94) 100%)}
+    .trace > .wrap{position:relative; z-index:1}
+    .trace__head{display:grid; grid-template-columns:auto 1fr; gap:var(--s-2xl); align-items:end}
+    .trace__key{display:flex; gap:var(--s-lg); align-self:end}
+    .trace__key div{display:grid; gap:var(--s-3xs)}
+    .trace__key dt{font-family:"Martian Mono",monospace; font-size:var(--step--1);
+    letter-spacing:.2em; text-transform:uppercase; color:var(--text-muted)}
+    .trace__key dd{margin:0; font-family:"Martian Mono",monospace; font-size:var(--step-1); font-weight:500}
+    .trace__key .hot{color:var(--action)}
+    
+    .chart{margin:var(--s-xl) 0 0; padding:0}
+    .chart svg{width:100%; height:auto; display:block}
+    .chart__line{stroke-dasharray:2600; stroke-dashoffset:2600; transition:stroke-dashoffset 1.6s var(--ease)}
+    .chart.in .chart__line{stroke-dashoffset:0}
 
-        @keyframes shimmer {
-            0% { background-position: 0% center; }
-            100% { background-position: 200% center; }
-        }
+    /* ========================================================= 04 · SPEC (EQUIPMENT & HOTSPOTS) */
+    .kit{position:relative; margin-top:var(--s-xl); overflow:hidden; background:var(--night-900);
+    width:100%; margin-left:0; border:1px solid var(--line); border-radius:var(--radius-panel)}
+    .kit > img{width:100%; display:block; filter:contrast(1.06) brightness(.92);
+    will-change:transform; transform:translateZ(0)}
+    .kit::after{content:""; position:absolute; inset:0; pointer-events:none; background:
+    linear-gradient(90deg, var(--ground) 0%, rgba(11,14,18,0) 12%, rgba(11,14,18,0) 88%, var(--ground) 100%),
+    linear-gradient(180deg, var(--ground) 0%, rgba(11,14,18,0) 14%, rgba(11,14,18,0) 86%, var(--ground) 100%)}
+    
+    .hs{position:absolute; left:var(--x); top:var(--y); transform:translate(-50%,-50%);
+    width:44px; height:44px; padding:0; border:0; background:none; cursor:pointer;
+    display:grid; place-items:center; z-index:4}
+    .hs__ring{position:absolute; inset:0; border:1px solid rgba(215,255,62,.45);
+    border-radius:var(--radius-pill); transform:scale(.62);
+    transition:transform .28s var(--ease), border-color .28s var(--ease), opacity .28s var(--ease)}
+    .hs__dot{width:6px; height:6px; border-radius:var(--radius-pill); background:var(--action);
+    box-shadow:0 0 0 4px rgba(215,255,62,.14); transition:transform .28s var(--ease)}
+    .hs::after{content:""; position:absolute; inset:0; border:1px solid rgba(215,255,62,.5);
+    border-radius:var(--radius-pill); opacity:0; animation:ping 3.6s var(--ease) infinite;
+    animation-delay:calc(var(--n) * .45s)}
+    @keyframes ping{0%{transform:scale(.62); opacity:.7} 45%{transform:scale(1.25); opacity:0} 100%{opacity:0}}
+    .hs:hover .hs__ring,.hs:focus-visible .hs__ring{transform:scale(1); border-color:var(--action)}
+    .hs:hover .hs__dot,.hs:focus-visible .hs__dot{transform:scale(1.5)}
+    .hs.is-on .hs__ring{transform:scale(1); border-color:var(--action)}
 
-        .blur-rose-backdrop {
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
-        }
+    .kitpop{position:absolute; z-index:5; width:620px; pointer-events:none;
+    background:var(--night-800); border:1px solid var(--line);
+    border-radius:var(--radius-data); padding:var(--s-sm); opacity:0; visibility:hidden;
+    transform:translate(-50%,8px) scale(.94); clip-path:inset(0 0 100% 0)}
+    .kitpop.is-on{visibility:visible; animation:popIn .34s var(--ease) forwards; pointer-events:auto}
+    @keyframes popIn{
+    0%{opacity:0; transform:translate(-50%,8px) scale(.94); clip-path:inset(0 0 100% 0)}
+    60%{opacity:1}
+    100%{opacity:1; transform:translate(-50%,0) scale(1); clip-path:inset(0 0 0% 0)}}
+    
+    .kitpop b.br{position:absolute; width:12px; height:12px; border:1px solid var(--action); opacity:0}
+    .kitpop.is-on b.br{animation:brIn .3s var(--ease) .14s forwards}
+    @keyframes brIn{to{opacity:.9}}
+    .kitpop b.br:nth-of-type(1){top:-1px; left:-1px; border-right:0; border-bottom:0}
+    .kitpop b.br:nth-of-type(2){top:-1px; right:-1px; border-left:0; border-bottom:0}
+    .kitpop b.br:nth-of-type(3){bottom:-1px; left:-1px; border-right:0; border-top:0}
+    .kitpop b.br:nth-of-type(4){bottom:-1px; right:-1px; border-left:0; border-top:0}
+    .kitpop__scan{position:absolute; left:0; top:0; height:1px; width:100%; background:var(--action);
+    transform:scaleX(0); transform-origin:left}
+    .kitpop.is-on .kitpop__scan{animation:scan .5s var(--ease) .06s forwards}
+    @keyframes scan{to{transform:scaleX(1)}}
+    .kitpop__grid{display:grid; grid-template-columns:280px 1fr; gap:var(--s-sm); align-items:start}
+    .kitpop__left{display:grid; gap:var(--s-xs)}
+    .kitpop__media{margin:0; border:1px solid var(--line-soft);
+    border-radius:var(--radius-data); overflow:hidden; background:var(--night-900); aspect-ratio:16/9;
+    position:relative}
+    .kitpop__media img{width:100%; height:100%; object-fit:cover; display:block}
+    .kitpop h3{font-size:var(--step-1); letter-spacing:-.02em}
+    .kitpop__sub{font-family:"Martian Mono",monospace; font-size:var(--step--1);
+    letter-spacing:.16em; text-transform:uppercase; color:var(--text-muted); margin-top:var(--s-3xs)}
+    .kitpop dl{margin:var(--s-xs) 0 0; display:grid; gap:var(--s-3xs);
+    border-top:1px solid var(--line-soft); padding-top:var(--s-xs)}
+    .kitpop dl div{display:flex; justify-content:space-between; gap:var(--s-xs);
+    align-items:baseline; opacity:0; transform:translateY(6px)}
+    .kitpop.is-on dl div{animation:rowIn .3s var(--ease) forwards;
+    animation-delay:calc(.16s + var(--r) * 55ms)}
+    @keyframes rowIn{to{opacity:1; transform:none}}
+    .kitpop dt{color:var(--text-muted); font-size:var(--step--1)}
+    .kitpop dd{margin:0; font-family:"Martian Mono",monospace; font-size:var(--step--1); font-weight:500}
+    .kitpop .hot{color:var(--action)}
+    .kitpop__note{margin:0; padding-top:var(--s-xs); border-top:1px solid var(--line-soft);
+    font-size:var(--step--1); line-height:1.5; color:var(--text-muted); max-width:46ch; opacity:0}
+    .kitpop.is-on .kitpop__note{animation:rowIn .3s var(--ease) .42s forwards}
 
-        .img-zoom {
-            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .group:hover .img-zoom {
-            transform: scale(1.05);
-        }
+    /* ========================================================= 05 · BATCHES & TOOLTIP CARD */
+    .sheet{margin-top:var(--s-lg); border-top:1px solid var(--line)}
+    .sheet__head,.row{display:grid; grid-template-columns:70px 1fr 140px 120px 100px; gap:var(--s-sm);
+    padding:var(--s-2xs) 0; align-items:baseline}
+    .sheet__head{font-family:"Martian Mono",monospace; font-size:var(--step--1); letter-spacing:.16em;
+    text-transform:uppercase; color:var(--text-muted); padding:var(--s-xs) 0; border-bottom:1px solid var(--line)}
+    .row{border-bottom:1px solid var(--line-soft); transition:background var(--dur) var(--ease)}
+    .row:hover{background:var(--surface)}
+    .row b{font-family:"Martian Mono",monospace; font-weight:500; color:var(--text-muted)}
+    .row .nat,.row .st,.row .qty{font-family:"Martian Mono",monospace; color:var(--text-muted); font-size:var(--step--1)}
+    .row.is-red b,.row.is-red .name{color:var(--text-primary)}
+    
+    .card{position:fixed; z-index:20; width:280px; pointer-events:none; opacity:0;
+    transform:translateY(6px); transition:opacity .16s var(--ease), transform .16s var(--ease);
+    background:var(--surface-raised); border:1px solid var(--line);
+    border-radius:var(--radius-data); padding:var(--s-xs); box-shadow:0 18px 40px rgba(0,0,0,.75)}
+    .card.is-on{opacity:1; transform:none}
+    .card__top{display:flex; align-items:center; gap:var(--s-2xs)}
+    .card__name{font-weight:600; letter-spacing:-.01em}
+    .card__nat{margin-left:auto; font-family:"Martian Mono",monospace; font-size:var(--step--1); color:var(--action)}
+    .card__stats{display:grid; grid-template-columns:1fr 1fr; gap:var(--s-2xs) var(--s-xs);
+    margin-top:var(--s-xs); padding-top:var(--s-xs); border-top:1px solid var(--line-soft)}
+    .card__stats div{display:grid; gap:var(--s-3xs)}
+    .card__stats dt{font-family:"Martian Mono",monospace; font-size:10px; letter-spacing:.16em;
+    text-transform:uppercase; color:var(--text-muted)}
+    .card__stats dd{margin:0; font-family:"Martian Mono",monospace; font-size:var(--step-0); font-weight:500}
+    .card__stats .hot{color:var(--action)}
+
+    /* ========================================================= 06 · CALCULATOR & WAVES */
+    .calc__grid{display:grid; grid-template-columns:1fr 420px; gap:var(--s-xl); margin-top:var(--s-lg)}
+    .calc__panel{background:var(--surface); border:1px solid var(--line); border-radius:var(--radius-panel); padding:var(--s-md)}
+    .chip{background:transparent; border:1px solid var(--line); color:var(--text-secondary);
+    padding:var(--s-2xs) var(--s-xs); border-radius:var(--radius-pill); cursor:pointer;
+    font-size:var(--step--1); transition:background var(--dur) var(--ease), color var(--dur) var(--ease), border-color var(--dur) var(--ease)}
+    .chip:hover{border-color:var(--text-muted)}
+    .chip.is-on{background:var(--action); border-color:var(--action); color:var(--night-900); font-weight:600}
+    
+    .btn{margin-top:var(--s-2xs); border:1px solid var(--line); background:transparent; color:var(--text-primary);
+    padding:var(--s-xs) var(--s-sm); border-radius:var(--radius-pill); cursor:pointer; font-family:"Martian Mono",monospace;
+    font-size:var(--step--1); text-transform:uppercase; letter-spacing:.1em;
+    transition:background var(--dur) var(--ease), color var(--dur) var(--ease), border-color var(--dur) var(--ease)}
+    .btn:hover:not(:disabled){border-color:var(--text-primary)}
+    .btn--go{background:var(--action); border-color:var(--action); color:var(--night-900); font-weight:700}
+    .btn--go:hover{background:var(--action-quiet); border-color:var(--action-quiet)}
+    
+    .foot{border-top:1px solid var(--line); padding:var(--s-lg) 0; margin-top:var(--s-2xl)}
+    .foot__grid{display:flex; justify-content:space-between; gap:var(--s-sm); flex-wrap:wrap;
+    color:var(--text-muted); font-size:var(--step--1)}
+    .foot strong{color:var(--text-primary)}
+    
+    @media (max-width:960px){
+    .calc__grid{grid-template-columns:1fr}
+    .face{height:auto}
+    .face__sticky{position:static; height:auto; padding:var(--s-xl) var(--s-sm)}
+    .index{display:none}
+    .sheet__head,.row{grid-template-columns:44px 1fr 100px}
+    .sheet__head span:nth-child(4),.sheet__head span:nth-child(5),.row .st,.row .qty{display:none}
+    }
     </style>
 </head>
-<body class="bg-blush text-rosewood font-sans antialiased selection:bg-goldrose selection:text-white overflow-x-hidden relative">
+<body>
 
-    <!-- BACKGROUND FLOATING SAKURA PETALS CONTAINER -->
-    <div class="fixed inset-0 pointer-events-none z-10 overflow-hidden" id="sakura-container">
-        <div class="sakura-petal w-4 h-4 left-[10%]" style="animation-delay: 0s; animation-duration: 12s;"></div>
-        <div class="sakura-petal w-3 h-3 left-[25%]" style="animation-delay: 3s; animation-duration: 15s;"></div>
-        <div class="sakura-petal w-5 h-5 left-[45%]" style="animation-delay: 1s; animation-duration: 18s;"></div>
-        <div class="sakura-petal w-4 h-4 left-[65%]" style="animation-delay: 5s; animation-duration: 14s;"></div>
-        <div class="sakura-petal w-3 h-3 left-[82%]" style="animation-delay: 2s; animation-duration: 16s;"></div>
-        <div class="sakura-petal w-4 h-4 left-[92%]" style="animation-delay: 7s; animation-duration: 13s;"></div>
+<!-- ==================================================== 01 · HERO COVER -->
+<header class="cover">
+  <span class="beam" aria-hidden="true"></span>
+  <div class="cover__plate"><img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1600&auto=format&fit=crop" alt="BeMode Garment Production Studio in Bishkek."></div>
+  <div class="cover__type"><h1 id="wordmark">BEMODE</h1></div>
+  <div class="cover__racer"><img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?q=80&w=900&auto=format&fit=crop" alt="BeMode High-Fashion Apparel Model."></div>
+  
+  <span class="reg reg--tl"></span><span class="reg reg--tr"></span>
+  <span class="reg reg--bl"></span><span class="reg reg--br"></span>
+  
+  <div class="cover__grid">
+    <div class="cover__top">
+      <div class="label ci" style="--i:0">BeMode&nbsp;·&nbsp;Garment&nbsp;Factory&nbsp;·&nbsp;Bishkek</div>
+      <div class="label mono ci" style="--i:1">ISO-9001&nbsp;/&nbsp;CAD&nbsp;/&nbsp;KG-2026</div>
+    </div>
+    <div></div>
+    <div class="cover__bottom">
+      <div>
+        <hr class="rule">
+        <div style="display:flex; flex-wrap:wrap; gap:var(--s-lg); margin-top:var(--s-sm)">
+          <dl class="meta ci" style="--i:2"><dt>Min Order</dt><dd data-to="500" data-suffix=" pcs"></dd></dl>
+          <dl class="meta ci" style="--i:3"><dt>Capacity</dt><dd data-to="40000" data-suffix=" pcs/mo" data-group="1"></dd></dl>
+          <dl class="meta ci" style="--i:4"><dt>OTK Quality</dt><dd data-to="99.7" data-suffix=" %"></dd></dl>
+          <dl class="meta ci" style="--i:5"><dt>Lead Time</dt><dd data-to="6" data-suffix=" days"></dd></dl>
+        </div>
+      </div>
+      <div class="label mono ci" style="--i:6"><span class="stamp">Status <b>ACCEPTED 2026/27</b></span></div>
+    </div>
+  </div>
+</header>
+
+<!-- ================================================= 02 · STICKY 4 PILLARS INDEX -->
+<section class="face" id="face" aria-label="Четыре ключевых сервисных направления BeMode KG">
+  <div class="face__sticky">
+    <div class="face__panes" id="panes"></div>
+    <div class="face__scrim"></div>
+    <div class="index" id="index" aria-hidden="true"></div>
+    <div class="face__ui">
+      <div>
+        <div class="label">Production Pillars</div>
+      </div>
+      <div class="face__mid">
+        <h2 class="face__name" id="fName">01 · САПР Лекала</h2>
+        <p class="face__sub" id="fNote">Создание выкроек любой сложности по эскизу, фото или готовому референсу в системе Графис.</p>
+      </div>
+      <div class="face__foot">
+        <dl class="face__stat"><dt>3D-Примерка</dt><dd id="fLen">Да</dd></dl>
+        <dl class="face__stat face__stat--hot"><dt>Градация</dt><dd id="fGrad">XS – 5XL</dd></dl>
+        <dl class="face__stat"><dt>Срок выкройки</dt><dd id="fSpd">3 дня</dd></dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================ 03 · PLOTTED QUALITY TRACE -->
+<section class="trace" aria-labelledby="trace-h">
+  <div class="trace__ice"><img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?q=80&w=1600&auto=format&fit=crop" alt="Quality Control Inspection." aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="trace__head">
+      <div>
+        <div class="label">Quality Telemetry</div>
+        <h2 id="trace-h">0.3% Defect Rate, Plotted.</h2>
+      </div>
+      <dl class="trace__key">
+        <div><dt>Fabrics Passed</dt><dd>100%</dd></div>
+        <div><dt>Seam Precision</dt><dd>0.5 mm</dd></div>
+        <div><dt>Defect Rate</dt><dd class="hot">0.3%</dd></div>
+        <div><dt>OTK Inspection</dt><dd>3 Stages</dd></div>
+      </dl>
+    </div>
+    <figure class="chart io" id="chart">
+      <svg viewBox="0 0 1200 460" preserveAspectRatio="none" role="img" aria-label="OTK Quality graph showing near zero defects across 40000 units.">
+        <g id="chartGrid"></g><g id="chartBands"></g>
+        <path id="speedPath" class="chart__line" fill="none" stroke="#D7FF3E" stroke-width="3" vector-effect="non-scaling-stroke" d="M80 392 C 150 340, 190 262, 240 200 C 300 128, 330 158, 370 214 C 400 258, 430 206, 470 172 C 540 112, 610 126, 690 154 C 760 180, 800 154, 860 124 C 930 90, 1000 66, 1120 56"></path>
+        <g id="chartMarks"></g>
+      </svg>
+    </figure>
+    <p class="lede" style="margin-top:var(--s-md)">100% строгий входной контроль рулонов ткани и проверка готовых изделий перед запечатыванием в брендированные зип-пакеты.</p>
+  </div>
+</section>
+
+<!-- ================================================= 04 · INTERACTIVE EQUIPMENT HOTSPOTS -->
+<section class="spec" aria-labelledby="spec-h">
+  <div class="wrap">
+    <div class="label">Technical Equipment</div>
+    <h2 id="spec-h">Что обеспечивает качество отшива.</h2>
+    <p class="lede">Пять критических узлов фабрики BeMode. Каждое оборудование зафиксировано инспекторами ОТК перед стартом массового потока.</p>
+
+    <div class="kit io" id="kit">
+      <img src="https://images.unsplash.com/photo-1544441893-675973e31985?q=80&w=1600&auto=format&fit=crop" alt="BeMode Factory Equipment Layout.">
+      <div class="kitpop" id="kitpop" role="tooltip" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================== 05 · REAL EXECUTED BATCHES SHEET -->
+<section class="start" aria-labelledby="start-h">
+  <div class="wrap">
+    <div class="start__head">
+      <div>
+        <div class="label">Completed Batches</div>
+        <h2 id="start-h">Реальные кейсы отшива под ключ.</h2>
+      </div>
+      <div class="label mono">2026/2027 · TOP SELLERS & BRANDS</div>
+    </div>
+    <div class="sheet">
+      <div class="sheet__head"><span>Batch</span><span>Brand / Client</span><span>Category</span><span>Quantity</span><span>Defect Rate</span></div>
+      <div id="sheetBody"></div>
+    </div>
+    <div class="card" id="card" role="tooltip" aria-hidden="true"></div>
+  </div>
+</section>
+
+<!-- ============================================= 06 · INTERACTIVE B2B CALCULATOR -->
+<section class="entry" aria-labelledby="entry-h" id="calculator">
+  <div class="wrap">
+    <div class="label">B2B Cost & Timeframe Calculator</div>
+    <h2 id="entry-h">Онлайн-расчет партии производства.</h2>
+    
+    <div class="calc__grid">
+      <div class="calc__panel">
+        <div class="label mono" style="margin-bottom:var(--s-2xs)">1. Категория изделия</div>
+        <div style="display:flex; gap:var(--s-2xs); flex-wrap:wrap; margin-bottom:var(--s-md)">
+          <button type="button" onclick="setCalc('cat','dresses',280)" id="btn-cat-dresses" class="chip is-on">Платья & Миди</button>
+          <button type="button" onclick="setCalc('cat','suits',450)" id="btn-cat-suits" class="chip">Жакеты & Костюмы</button>
+          <button type="button" onclick="setCalc('cat','blouses',220)" id="btn-cat-blouses" class="chip">Блузы & Топы</button>
+          <button type="button" onclick="setCalc('cat','casual',260)" id="btn-cat-casual" class="chip">Трикотаж & Casual</button>
+        </div>
+
+        <div class="label mono" style="margin-bottom:var(--s-2xs)">2. Техническая подготовка</div>
+        <div style="display:flex; gap:var(--s-2xs); flex-wrap:wrap; margin-bottom:var(--s-md)">
+          <button type="button" onclick="setCalc('serv','ready',0)" id="btn-serv-ready" class="chip is-on">Есть готовые лекала</button>
+          <button type="button" onclick="setCalc('serv','patterns',50)" id="btn-serv-patterns" class="chip">Нужна разработка САПР</button>
+          <button type="button" onclick="setCalc('serv','full',90)" id="btn-serv-full" class="chip">Дизайн + Лекала под ключ</button>
+        </div>
+
+        <div class="label mono" style="margin-bottom:var(--s-2xs)">3. Размер партии: <span id="volDisp" style="color:var(--action)">500 шт</span></div>
+        <input type="range" min="500" max="10000" step="500" value="500" id="volSlider" oninput="updateVol(this.value)" style="width:100%; accent-color:var(--action); cursor:pointer">
+      </div>
+
+      <div class="calc__panel" style="display:flex; flex-direction:column; justify-between; background:var(--surface-raised)">
+        <div>
+          <div class="label mono">Смета производства</div>
+          <h3 style="font-size:var(--step-2); margin-top:var(--s-xs); color:var(--action)" id="calcDays">6 – 8 дней</h3>
+          <p style="font-size:var(--step--1); color:var(--text-muted); margin-top:var(--s-3xs)">Образец: <span id="calcSample" style="color:var(--text-primary); font-weight:600">3 рабочих дня</span></p>
+          <p style="font-size:var(--step--1); color:var(--text-secondary); margin-top:var(--s-sm)">* Включает: раскрой, пошив, ВТО, маркировку Честный ЗНАК и упаковку в зип-пакеты.</p>
+        </div>
+        <button type="button" onclick="sendWA()" class="btn btn--go" style="margin-top:var(--s-md); width:100%; text-align:center">
+          💬 Отправить расчет в WhatsApp
+        </button>
+      </div>
     </div>
 
-    <!-- TOP ANNOUNCEMENT BAR -->
-    <div class="bg-blushaccent border-b border-blushborder text-center py-2 px-4 text-xs font-mono tracking-widest text-rosewood font-bold uppercase flex items-center justify-center gap-2 z-20 relative">
-        <span class="w-2 h-2 rounded-full bg-[#25D366] animate-pulse"></span>
-        <span>🌸 ПРИЕМ ЗАКАЗОВ НА НОВЫЙ СЕЗОН 2026/2027 • ПРИОРИТЕТНЫЕ СЛОТЫ НА ОТШИВ И РАЗРАБОТКУ ЛЕКАЛ</span>
-    </div>
-
-    <!-- MAIN HEADER -->
-    <header class="sticky top-0 z-50 bg-blush/90 blur-rose-backdrop border-b border-blushborder transition-all duration-300">
-        <div class="max-w-[1400px] mx-auto px-6 h-20 flex items-center justify-between">
-            
-            <!-- Brand Logo -->
-            <a href="#" class="flex items-center gap-3 group">
-                <div class="w-10 h-10 rounded-full border border-goldrose/60 flex items-center justify-center bg-white text-rosewood font-serif font-bold text-xl group-hover:bg-goldrose group-hover:text-white transition-all duration-300 shadow-sm">
-                    B
-                </div>
-                <div class="flex flex-col">
-                    <span class="font-serif text-2xl tracking-[0.15em] font-semibold text-rosewood uppercase group-hover:text-goldrose transition-colors">BeMode</span>
-                    <span class="text-[9px] font-mono tracking-[0.25em] text-goldaccent uppercase font-bold">KIRGIZSTAN • FEMININE GARMENT FACTORY</span>
-                </div>
-            </a>
-
-            <!-- Navigation Links -->
-            <nav class="hidden lg:flex items-center gap-8 text-xs font-mono uppercase tracking-widest text-rosewood/80 font-medium">
-                <a href="#lookbook" class="hover:text-goldrose transition-colors">Коллекции</a>
-                <a href="#services" class="hover:text-goldrose transition-colors">Лекала & Дизайн</a>
-                <a href="#quality" class="hover:text-goldrose transition-colors">Качество ОТК</a>
-                <a href="#calculator" class="hover:text-goldrose transition-colors">Калькулятор</a>
-                <a href="#cases" class="hover:text-goldrose transition-colors">Кейсы</a>
-            </nav>
-
-            <!-- CTA Actions -->
-            <div class="flex items-center gap-4">
-                <a href="https://t.me/bemode_kg" target="_blank" class="hidden sm:flex items-center gap-2 text-xs font-mono text-rosewood/70 hover:text-goldrose transition-colors">
-                    <iconify-icon icon="logos:telegram" width="16" height="16"></iconify-icon>
-                    <span>@bemode_kg</span>
-                </a>
-
-                <button onclick="openSampleModal()" class="bg-rosewood hover:bg-rosewoodlight text-white font-mono text-xs font-bold uppercase py-3 px-6 rounded-full transition-all duration-300 shadow-[0_4px_20px_rgba(61,34,40,0.15)] flex items-center gap-2 cursor-pointer">
-                    <span>Заказать образец</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-                </button>
-            </div>
-
-        </div>
-    </header>
-
-    <!-- HERO SECTION (Light Rose Feminine Aesthetic + Sakura Touch) -->
-    <section class="relative min-h-[88vh] flex items-center justify-center pt-10 pb-20 overflow-hidden border-b border-blushborder">
-        
-        <!-- Ambient Warm Rose Glow Background -->
-        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[500px] bg-rose-200/40 blur-[130px] rounded-full pointer-events-none"></div>
-
-        <div class="max-w-[1400px] mx-auto px-6 relative z-10 w-full">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                
-                <!-- Hero Main Content -->
-                <div class="lg:col-span-7 flex flex-col justify-center">
-                    
-                    <div class="inline-flex items-center gap-2 bg-white/80 border border-blushborder px-4 py-1.5 rounded-full w-fit mb-6 shadow-sm">
-                        <span class="text-sm">🌸</span>
-                        <span class="text-[11px] font-mono text-rosewood uppercase tracking-[0.2em] font-bold">ЖЕНСТВЕННАЯ ЭСТЕТИКА + БЕЗУПРЕЧНОЕ КАЧЕСТВО</span>
-                    </div>
-
-                    <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-light tracking-tight text-rosewood uppercase leading-[1.08] mb-6">
-                        Производство <br>
-                        <span class="italic font-normal gold-rose-shimmer">модной женской</span> <br>
-                        одежды под ключ
-                    </h1>
-
-                    <p class="text-sm sm:text-base font-sans text-rosewoodlight font-normal leading-relaxed max-w-xl mb-8">
-                        Швейная фабрика <strong class="text-rosewood font-medium">BeMode (Бишкек)</strong>. Мы объединили утонченную женственность и эстетику в стиле <em class="text-goldrose font-normal font-serif text-lg">12 STOREEZ</em> со строгими стандартами B2B-качества. Разрабатываем лекала, создаем дизайн с нуля и отшиваем партии от 500 единиц с доставкой в РФ и СНГ.
-                    </p>
-
-                    <!-- Trust Pill Badges -->
-                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-10 border-t border-b border-blushborder py-6">
-                        <div class="flex flex-col">
-                            <span class="font-serif text-2xl font-bold text-rosewood">📐 САПР</span>
-                            <span class="text-[10px] font-mono text-rosewood/60 uppercase mt-0.5">Разработка лекал</span>
-                        </div>
-                        <div class="flex flex-col">
-                            <span class="font-serif text-2xl font-bold text-rosewood">🎨 Design</span>
-                            <span class="text-[10px] font-mono text-rosewood/60 uppercase mt-0.5">Дизайн одежды</span>
-                        </div>
-                        <div class="flex flex-col">
-                            <span class="font-serif text-2xl font-bold text-rosewood">🔍 100%</span>
-                            <span class="text-[10px] font-mono text-rosewood/60 uppercase mt-0.5">Контроль ОТК</span>
-                        </div>
-                        <div class="flex flex-col">
-                            <span class="font-serif text-2xl font-bold text-rosewood">от 500 шт</span>
-                            <span class="text-[10px] font-mono text-rosewood/60 uppercase mt-0.5">Минимальная партия</span>
-                        </div>
-                    </div>
-
-                    <!-- CTA Actions -->
-                    <div class="flex flex-col sm:flex-row items-center gap-4">
-                        <a href="https://wa.me/996502985896?text=Здравствуйте,%20BeMode!%20Хочу%20рассчитать%20стоимость%20отшива%20женской%20коллекции." 
-                           target="_blank" 
-                           class="w-full sm:w-auto bg-[#25D366] hover:bg-[#20bd5a] text-white font-mono text-xs font-bold uppercase tracking-wider py-4 px-8 rounded-full shadow-[0_6px_25px_rgba(37,211,102,0.3)] transition-all duration-300 flex items-center justify-center gap-3">
-                            <iconify-icon icon="logos:whatsapp-icon" width="20" height="20"></iconify-icon>
-                            <span>Обсудить коллекцию в WhatsApp</span>
-                        </a>
-
-                        <a href="#calculator" class="w-full sm:w-auto bg-white border border-blushborder hover:border-goldrose text-rosewood font-mono text-xs font-bold uppercase py-4 px-8 rounded-full transition-all text-center shadow-sm">
-                            Рассчитать смету online
-                        </a>
-                    </div>
-
-                </div>
-
-                <!-- Hero Visual Representation (Feminine Imagery) -->
-                <div class="lg:col-span-5 relative">
-                    <div class="relative rounded-3xl overflow-hidden border-2 border-white shadow-[0_20px_50px_rgba(225,170,185,0.25)] group bg-white">
-                        <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=900&auto=format&fit=crop" 
-                             alt="BeMode Quiet Luxury Fashion Production" 
-                             class="w-full h-[530px] object-cover object-center img-zoom">
-                        
-                        <div class="absolute inset-0 bg-gradient-to-t from-rosewood/70 via-transparent to-transparent"></div>
-
-                        <!-- Floating Glass Badge -->
-                        <div class="absolute bottom-6 left-6 right-6 bg-white/90 blur-rose-backdrop p-5 rounded-2xl border border-blushborder shadow-xl text-rosewood">
-                            <div class="flex items-center justify-between mb-2">
-                                <span class="text-xs font-mono text-rosewood font-bold uppercase tracking-widest">🌸 ФАБРИКА BEMODE • БИШКЕК</span>
-                                <span class="text-[10px] font-mono text-rosewood/70 bg-blushaccent px-2.5 py-0.5 rounded-full font-bold">JUKI JAPAN</span>
-                            </div>
-                            <p class="text-xs font-serif italic text-rosewood/90 leading-relaxed">
-                                «Каждая модель тестируется на эталонных манекенах перед запуском массовой линии.»
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 2: LOOKBOOK & AESTHETIC SHOWCASE (12 STOREEZ Light Style) -->
-    <section class="py-24 bg-white relative border-b border-blushborder" id="lookbook">
-        <div class="max-w-[1400px] mx-auto px-6">
-            
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-                <div>
-                    <span class="text-xs font-mono text-goldrose uppercase tracking-[0.25em] font-bold block mb-3">🌸 ПРИМЕРЫ ГОТОВЫХ ИЗДЕЛИЙ</span>
-                    <h2 class="font-serif text-3xl sm:text-5xl font-light text-rosewood uppercase tracking-tight">
-                        Коллекции, отшитые <span class="italic text-goldrose">нашей фабрикой</span>
-                    </h2>
-                </div>
-                <p class="text-xs font-mono text-rosewood/60 max-w-md">
-                    Мы производим модно отшитую одежду для брендов верхнего среднего сегмента, шоурумов и ведущих селлеров Wildberries / Ozon.
-                </p>
-            </div>
-
-            <!-- Gallery Grid -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                
-                <!-- Item 1: Dresses -->
-                <div class="group relative rounded-2xl overflow-hidden border border-blushborder bg-blushcard cursor-pointer shadow-[0_10px_30px_rgba(235,190,200,0.12)] hover:shadow-[0_15px_35px_rgba(235,190,200,0.25)] transition-all duration-300" onclick="openSampleModal('Шелковое платье комбинация')">
-                    <div class="h-[390px] overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?q=80&w=700&auto=format&fit=crop" class="w-full h-full object-cover img-zoom" alt="Платья премиум качества">
-                        <div class="absolute inset-0 bg-gradient-to-t from-rosewood/70 via-transparent to-transparent"></div>
-                        <span class="absolute top-4 left-4 bg-white/90 blur-rose-backdrop text-rosewood text-[10px] font-mono font-bold px-3 py-1 rounded-full border border-blushborder uppercase">ПЛАТЬЯ & МИДИ</span>
-                    </div>
-                    <div class="p-5 flex flex-col justify-between">
-                        <h4 class="font-serif text-xl font-medium text-rosewood mb-1">Шелковые и вечерние платья</h4>
-                        <p class="text-xs text-rosewood/60 font-sans mb-3">Идеальные закрытые швы, люксовая обработка горловины.</p>
-                        <div class="flex justify-between items-center text-xs font-mono text-goldrose font-bold border-t border-blushborder pt-3">
-                            <span>От 500 шт</span>
-                            <span class="group-hover:translate-x-1 transition-transform">Заказать образец →</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Item 2: Blazers & Suits -->
-                <div class="group relative rounded-2xl overflow-hidden border border-blushborder bg-blushcard cursor-pointer shadow-[0_10px_30px_rgba(235,190,200,0.12)] hover:shadow-[0_15px_35px_rgba(235,190,200,0.25)] transition-all duration-300" onclick="openSampleModal('Жакет оверсайз / Твидовый костюм')">
-                    <div class="h-[390px] overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1584273143981-41c073dfe8f8?q=80&w=700&auto=format&fit=crop" class="w-full h-full object-cover img-zoom" alt="Жакеты и костюмы">
-                        <div class="absolute inset-0 bg-gradient-to-t from-rosewood/70 via-transparent to-transparent"></div>
-                        <span class="absolute top-4 left-4 bg-white/90 blur-rose-backdrop text-rosewood text-[10px] font-mono font-bold px-3 py-1 rounded-full border border-blushborder uppercase">ЖАКЕТЫ & КОСТЮМЫ</span>
-                    </div>
-                    <div class="p-5 flex flex-col justify-between">
-                        <h4 class="font-serif text-xl font-medium text-rosewood mb-1">Двубортные жакеты & Твид</h4>
-                        <p class="text-xs text-rosewood/60 font-sans mb-3">Дублирование полочек, держащие форму плечевые накладки.</p>
-                        <div class="flex justify-between items-center text-xs font-mono text-goldrose font-bold border-t border-blushborder pt-3">
-                            <span>От 500 шт</span>
-                            <span class="group-hover:translate-x-1 transition-transform">Заказать образец →</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Item 3: Corsets & Tops -->
-                <div class="group relative rounded-2xl overflow-hidden border border-blushborder bg-blushcard cursor-pointer shadow-[0_10px_30px_rgba(235,190,200,0.12)] hover:shadow-[0_15px_35px_rgba(235,190,200,0.25)] transition-all duration-300" onclick="openSampleModal('Корсетные топы и блузы')">
-                    <div class="h-[390px] overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1550614000-4895a10e1bfd?q=80&w=700&auto=format&fit=crop" class="w-full h-full object-cover img-zoom" alt="Корсетные изделия">
-                        <div class="absolute inset-0 bg-gradient-to-t from-rosewood/70 via-transparent to-transparent"></div>
-                        <span class="absolute top-4 left-4 bg-white/90 blur-rose-backdrop text-rosewood text-[10px] font-mono font-bold px-3 py-1 rounded-full border border-blushborder uppercase">КОРСЕТЫ & ТОПЫ</span>
-                    </div>
-                    <div class="p-5 flex flex-col justify-between">
-                        <h4 class="font-serif text-xl font-medium text-rosewood mb-1">Корсетные топы и блузы</h4>
-                        <p class="text-xs text-rosewood/60 font-sans mb-3">Косточки высокой упругости, точнейшая утяжка по лекалам.</p>
-                        <div class="flex justify-between items-center text-xs font-mono text-goldrose font-bold border-t border-blushborder pt-3">
-                            <span>От 500 шт</span>
-                            <span class="group-hover:translate-x-1 transition-transform">Заказать образец →</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Item 4: Knitwear & Casual -->
-                <div class="group relative rounded-2xl overflow-hidden border border-blushborder bg-blushcard cursor-pointer shadow-[0_10px_30px_rgba(235,190,200,0.12)] hover:shadow-[0_15px_35px_rgba(235,190,200,0.25)] transition-all duration-300" onclick="openSampleModal('Трикотажные сеты / Плюс-сайз')">
-                    <div class="h-[390px] overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=700&auto=format&fit=crop" class="w-full h-full object-cover img-zoom" alt="Трикотаж и Плюс-сайз">
-                        <div class="absolute inset-0 bg-gradient-to-t from-rosewood/70 via-transparent to-transparent"></div>
-                        <span class="absolute top-4 left-4 bg-white/90 blur-rose-backdrop text-rosewood text-[10px] font-mono font-bold px-3 py-1 rounded-full border border-blushborder uppercase">ТРИКОТАЖ & CASUAL</span>
-                    </div>
-                    <div class="p-5 flex flex-col justify-between">
-                        <h4 class="font-serif text-xl font-medium text-rosewood mb-1">Оверсайз сеты & Плюс-сайз</h4>
-                        <p class="text-xs text-rosewood/60 font-sans mb-3">Усиленные бейки, сочные палитры ткани, ровные строчки 4-нитки.</p>
-                        <div class="flex justify-between items-center text-xs font-mono text-goldrose font-bold border-t border-blushborder pt-3">
-                            <span>От 500 шт</span>
-                            <span class="group-hover:translate-x-1 transition-transform">Заказать образец →</span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 3: 4 PILLARS OF FLEXIBILITY & CUSTOMIZATION (Client's Core Request) -->
-    <section class="py-24 bg-blush relative border-b border-blushborder" id="services">
-        <div class="max-w-[1400px] mx-auto px-6">
-            
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-xs font-mono text-goldrose uppercase tracking-[0.25em] font-bold block mb-3">🌸 ВОЗМОЖНОСТИ ФАБРИКИ ПОД КЛЮЧ</span>
-                <h2 class="font-serif text-3xl sm:text-5xl font-light text-rosewood uppercase tracking-tight">
-                    Мы подстраиваемся под ваш бренд
-                </h2>
-                <p class="text-xs font-mono text-rosewood/60 mt-3 uppercase tracking-wider">
-                    Вам не нужно искать 5 разных подрядчиков. Мы берем на себя весь цикл от эскиза до отгрузки на склад.
-                </p>
-            </div>
-
-            <!-- 4 Services Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                
-                <!-- Pillar 1: CAD Patterns -->
-                <div class="bg-white p-8 rounded-3xl border border-blushborder hover:border-goldrose transition-all duration-300 flex flex-col justify-between shadow-[0_8px_25px_rgba(235,190,200,0.12)] group">
-                    <div>
-                        <div class="w-14 h-14 rounded-2xl bg-blushaccent text-rosewood flex items-center justify-center font-mono font-bold text-xl mb-6 border border-blushborder">
-                            01
-                        </div>
-                        <h3 class="font-serif text-2xl font-normal text-rosewood uppercase mb-3">
-                            Разработка Лекал (САПР)
-                        </h3>
-                        <p class="text-xs font-sans text-rosewood/70 leading-relaxed mb-6">
-                            Создание лекал по фотографии, эскизу или референсу с посадкой под стандартные размерные сетки РФ/СНГ. Конструкторы САПР Графис гарантируют идеальную выкройку.
-                        </p>
-                    </div>
-                    <ul class="text-[11px] font-mono text-goldrose space-y-2 border-t border-blushborder pt-4 font-bold">
-                        <li>✓ 3D-Примерка на виртуальном аватарe</li>
-                        <li>✓ Градация размеров (от XS до 5XL)</li>
-                    </ul>
-                </div>
-
-                <!-- Pillar 2: Clothing Design -->
-                <div class="bg-white p-8 rounded-3xl border border-blushborder hover:border-goldrose transition-all duration-300 flex flex-col justify-between shadow-[0_8px_25px_rgba(235,190,200,0.12)] group">
-                    <div>
-                        <div class="w-14 h-14 rounded-2xl bg-blushaccent text-rosewood flex items-center justify-center font-mono font-bold text-xl mb-6 border border-blushborder">
-                            02
-                        </div>
-                        <h3 class="font-serif text-2xl font-normal text-rosewood uppercase mb-3">
-                            Дизайн & Подбор Тканей
-                        </h3>
-                        <p class="text-xs font-sans text-rosewood/70 leading-relaxed mb-6">
-                            Штатное дизайн-бюро поможет разработать трендовую капсулу одежды. Закупаем ткани премиум-класса у прямых импортеров (Турция, Китай) по оптовым ценам.
-                        </p>
-                    </div>
-                    <ul class="text-[11px] font-mono text-goldrose space-y-2 border-t border-blushborder pt-4 font-bold">
-                        <li>✓ Подбор твида, шелка, льна, вискозы</li>
-                        <li>✓ Составление технических карт (ТЗ)</li>
-                    </ul>
-                </div>
-
-                <!-- Pillar 3: Precision Mass Production -->
-                <div class="bg-white p-8 rounded-3xl border border-blushborder hover:border-goldrose transition-all duration-300 flex flex-col justify-between shadow-[0_8px_25px_rgba(235,190,200,0.12)] group">
-                    <div>
-                        <div class="w-14 h-14 rounded-2xl bg-blushaccent text-rosewood flex items-center justify-center font-mono font-bold text-xl mb-6 border border-blushborder">
-                            03
-                        </div>
-                        <h3 class="font-serif text-2xl font-normal text-rosewood uppercase mb-3">
-                            Потоковый Отшив от 500 шт
-                        </h3>
-                        <p class="text-xs font-sans text-rosewood/70 leading-relaxed mb-6">
-                            Производственные линии оснащены автоматическими машинами Juki и Brother. Выработка цеха — от 15 000 до 40 000 изделий в месяц со строгим контролем.
-                        </p>
-                    </div>
-                    <ul class="text-[11px] font-mono text-goldrose space-y-2 border-t border-blushborder pt-4 font-bold">
-                        <li>✓ Отшив партий от 500 шт за 6–7 дней</li>
-                        <li>✓ Стабильность геометрических швов</li>
-                    </ul>
-                </div>
-
-                <!-- Pillar 4: Private Label & Logistics -->
-                <div class="bg-white p-8 rounded-3xl border border-blushborder hover:border-goldrose transition-all duration-300 flex flex-col justify-between shadow-[0_8px_25px_rgba(235,190,200,0.12)] group">
-                    <div>
-                        <div class="w-14 h-14 rounded-2xl bg-blushaccent text-rosewood flex items-center justify-center font-mono font-bold text-xl mb-6 border border-blushborder">
-                            04
-                        </div>
-                        <h3 class="font-serif text-2xl font-normal text-rosewood uppercase mb-3">
-                            Бренд Под Ключ & Упаковка
-                        </h3>
-                        <p class="text-xs font-sans text-rosewood/70 leading-relaxed mb-6">
-                            Изготовление бирки, составников, брендированной фурнитуры. Нанесение маркировки «Честный ЗНАК» и отправка карго/авиа прямым рейсом в РФ.
-                        </p>
-                    </div>
-                    <ul class="text-[11px] font-mono text-goldrose space-y-2 border-t border-blushborder pt-4 font-bold">
-                        <li>✓ Маркировка Честный ЗНАК для РФ</li>
-                        <li>✓ Упаковка в плотные Зип-пакеты</li>
-                    </ul>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 4: INSTITUTIONAL B2B TRUST & QUALITY (Client's Core Request) -->
-    <section class="py-24 bg-white relative border-b border-blushborder" id="quality">
-        <div class="max-w-[1400px] mx-auto px-6">
-            
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                
-                <!-- Text Pillar -->
-                <div class="lg:col-span-6">
-                    <span class="text-xs font-mono text-goldrose uppercase tracking-[0.25em] font-bold block mb-3">🌸 БЕЗУПРЕЧНАЯ РЕПУТАЦИЯ</span>
-                    <h2 class="font-serif text-3xl sm:text-5xl font-light text-rosewood uppercase tracking-tight mb-6">
-                        Как мы гарантируем <br>
-                        <span class="italic text-goldrose">высокое качество</span> отшива
-                    </h2>
-
-                    <p class="text-sm font-sans text-rosewood/80 leading-relaxed mb-8">
-                        Мы понимаем главный страх заказчика: <em>«А вдруг придет брак или сорвутся сроки?»</em>. Именно поэтому BeMode выстроила 3-уровневую систему контроля качества ОТК и юридические гарантии.
-                    </p>
-
-                    <!-- Trust Accordion / List -->
-                    <div class="space-y-4 font-sans text-xs">
-                        
-                        <div class="bg-blush p-5 rounded-2xl border border-blushborder flex items-start gap-4 shadow-sm">
-                            <div class="w-8 h-8 rounded-full bg-rosewood text-white flex items-center justify-center shrink-0 font-bold">1</div>
-                            <div>
-                                <h4 class="font-mono text-sm text-rosewood uppercase font-bold mb-1">3-Этапная Проверка ОТК</h4>
-                                <p class="text-rosewood/70">1) Входная проверка рулонов ткани на дефекты ➔ 2) Проверка кроя на соответствие САПР ➔ 3) Финальный осмотр 100% готовых швов перед упаковкой.</p>
-                            </div>
-                        </div>
-
-                        <div class="bg-blush p-5 rounded-2xl border border-blushborder flex items-start gap-4 shadow-sm">
-                            <div class="w-8 h-8 rounded-full bg-rosewood text-white flex items-center justify-center shrink-0 font-bold">2</div>
-                            <div>
-                                <h4 class="font-mono text-sm text-rosewood uppercase font-bold mb-1">Официальный Договор (КР / РФ)</h4>
-                                <p class="text-rosewood/70">Фиксируем точные сроки отгрузки, спецификацию ткани и допустимый % отклонения (< 0.3%). В случае несоответствия ТЗ — перешив за наш счет.</p>
-                            </div>
-                        </div>
-
-                        <div class="bg-blush p-5 rounded-2xl border border-blushborder flex items-start gap-4 shadow-sm">
-                            <div class="w-8 h-8 rounded-full bg-rosewood text-white flex items-center justify-center shrink-0 font-bold">3</div>
-                            <div>
-                                <h4 class="font-mono text-sm text-rosewood uppercase font-bold mb-1">Тестовый Образец за 3–5 Дней</h4>
-                                <p class="text-rosewood/70">Перед стартом массового потока мы отшиваем физический эталонный образец. Запуск всей партии начинается только после вашего полного утверждения!</p>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <!-- Visual Certificate & Factory Proof -->
-                <div class="lg:col-span-6">
-                    <div class="relative rounded-3xl overflow-hidden border border-blushborder p-8 bg-blush shadow-xl">
-                        <div class="flex justify-between items-center border-b border-blushborder pb-6 mb-6">
-                            <div>
-                                <span class="text-[10px] font-mono text-goldrose uppercase tracking-widest block font-bold">СТАНДАРТ КАЧЕСТВА</span>
-                                <h4 class="font-serif text-2xl font-normal text-rosewood uppercase mt-1">Паспорт Швейной Линии</h4>
-                            </div>
-                            <span class="w-12 h-12 rounded-full border border-goldrose/50 bg-white text-rosewood flex items-center justify-center font-bold text-lg shadow-sm">QC</span>
-                        </div>
-
-                        <!-- Stats Grid inside Trust Card -->
-                        <div class="grid grid-cols-2 gap-4 mb-6">
-                            <div class="bg-white p-4 rounded-2xl border border-blushborder shadow-sm">
-                                <span class="font-serif text-3xl font-bold text-rosewood block">0.3%</span>
-                                <span class="text-[10px] font-mono text-rosewood/60 uppercase">Средний показатель брака</span>
-                            </div>
-                            <div class="bg-white p-4 rounded-2xl border border-blushborder shadow-sm">
-                                <span class="font-serif text-3xl font-bold text-rosewood block">100%</span>
-                                <span class="text-[10px] font-mono text-rosewood/60 uppercase">Соблюдение сроков</span>
-                            </div>
-                        </div>
-
-                        <div class="p-4 bg-white rounded-2xl border border-blushborder text-xs font-mono text-rosewood/90 shadow-sm">
-                            «Каждая отгрузка сопровождается фото- и видеоотчетом инспектора ОТК в WhatsApp перед запечатыванием коробок.»
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 5: INTERACTIVE B2B CALCULATOR -->
-    <section class="py-24 bg-blush relative border-b border-blushborder" id="calculator">
-        <div class="max-w-[1200px] mx-auto px-6">
-            
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <span class="text-xs font-mono text-goldrose uppercase tracking-[0.25em] font-bold block mb-3">🌸 ОНЛАЙН РАСЧЕТ ПАРТИИ</span>
-                <h2 class="font-serif text-3xl sm:text-5xl font-light text-rosewood uppercase tracking-tight">
-                    Калькулятор производства
-                </h2>
-                <p class="text-xs font-mono text-rosewood/60 mt-3">Выберите параметры изделия для предварительной оценки сроков и бюджета.</p>
-            </div>
-
-            <!-- Calculator Light Glass Card -->
-            <div class="bg-white p-8 md:p-12 rounded-3xl border border-blushborder shadow-xl">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
-                    
-                    <!-- Controls -->
-                    <div class="lg:col-span-7 flex flex-col gap-6 font-sans">
-                        
-                        <!-- 1. Garment Category -->
-                        <div>
-                            <label class="block text-xs font-mono text-rosewood uppercase tracking-widest mb-3 font-bold">1. Категория изделия:</label>
-                            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
-                                <button type="button" onclick="setCalc('cat', 'dresses', 280)" id="btn-cat-dresses" class="calc-btn active-calc bg-rosewood text-white border border-rosewood p-3 rounded-xl text-xs font-bold font-mono uppercase transition-all shadow-sm">Платья</button>
-                                <button type="button" onclick="setCalc('cat', 'suits', 450)" id="btn-cat-suits" class="calc-btn bg-blush text-rosewood border border-blushborder p-3 rounded-xl text-xs font-bold font-mono uppercase transition-all hover:border-rosewood">Жакеты/Костюмы</button>
-                                <button type="button" onclick="setCalc('cat', 'blouses', 220)" id="btn-cat-blouses" class="calc-btn bg-blush text-rosewood border border-blushborder p-3 rounded-xl text-xs font-bold font-mono uppercase transition-all hover:border-rosewood">Блузы/Топы</button>
-                                <button type="button" onclick="setCalc('cat', 'casual', 260)" id="btn-cat-casual" class="calc-btn bg-blush text-rosewood border border-blushborder p-3 rounded-xl text-xs font-bold font-mono uppercase transition-all hover:border-rosewood">Трикотаж</button>
-                            </div>
-                        </div>
-
-                        <!-- 2. Technical Needs (Patterns/Design) -->
-                        <div>
-                            <label class="block text-xs font-mono text-rosewood uppercase tracking-widest mb-3 font-bold">2. Техническая подготовка:</label>
-                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
-                                <button type="button" onclick="setCalc('service', 'ready', 0)" id="btn-serv-ready" class="calc-serv-btn active-calc bg-rosewood text-white border border-rosewood p-3 rounded-xl text-xs font-bold font-mono uppercase text-left transition-all shadow-sm">
-                                    <span>Есть готовые лекала</span>
-                                </button>
-                                <button type="button" onclick="setCalc('service', 'patterns', 50)" id="btn-serv-patterns" class="calc-serv-btn bg-blush text-rosewood border border-blushborder p-3 rounded-xl text-xs font-bold font-mono uppercase text-left transition-all hover:border-rosewood">
-                                    <span>Нужна разработка лекал</span>
-                                </button>
-                                <button type="button" onclick="setCalc('service', 'full', 90)" id="btn-serv-full" class="calc-serv-btn bg-blush text-rosewood border border-blushborder p-3 rounded-xl text-xs font-bold font-mono uppercase text-left transition-all hover:border-rosewood">
-                                    <span>Дизайн + Лекала под ключ</span>
-                                </button>
-                            </div>
-                        </div>
-
-                        <!-- 3. Volume Selection -->
-                        <div>
-                            <div class="flex justify-between items-center mb-3">
-                                <label class="text-xs font-mono text-rosewood uppercase tracking-widest font-bold">3. Размер партии:</label>
-                                <span class="font-mono text-sm font-bold text-rosewood" id="volume-val-display">500 единиц</span>
-                            </div>
-                            <input type="range" min="500" max="10000" step="500" value="500" id="volume-slider" oninput="updateVolume(this.value)" class="w-full h-2 bg-blushborder rounded-lg appearance-none cursor-pointer accent-rosewood">
-                            <div class="flex justify-between text-[10px] font-mono text-rosewood/60 mt-1">
-                                <span>500 шт (MOQ)</span>
-                                <span>2 500 шт</span>
-                                <span>5 000 шт</span>
-                                <span>10 000+ шт</span>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <!-- Result Panel -->
-                    <div class="lg:col-span-5 bg-blush border border-blushborder rounded-2xl p-6 flex flex-col justify-between shadow-sm">
-                        <div>
-                            <span class="text-xs font-mono text-goldrose uppercase tracking-widest font-bold block mb-4">ОРИЕНТИРОВОЧНЫЙ РАСЧЕТ:</span>
-                            
-                            <div class="mb-5">
-                                <span class="text-xs font-mono text-rosewood/60 uppercase block">Ориентировочный срок отшива:</span>
-                                <div class="font-serif text-3xl font-light text-rosewood mt-1" id="calc-days">6 – 8 рабочих дней</div>
-                            </div>
-
-                            <div class="mb-5">
-                                <span class="text-xs font-mono text-rosewood/60 uppercase block">Готовность образца:</span>
-                                <div class="font-mono text-lg font-bold text-rosewood mt-1" id="calc-sample-time">3 рабочих дня</div>
-                            </div>
-
-                            <div class="text-[11px] font-sans text-rosewood/70 leading-relaxed border-t border-blushborder pt-4">
-                                * Включает: раскрой, пошив, ВТО, маркировку и упаковку. Окончательная смета рассчитывается технологом после изучения ТЗ или образца.
-                            </div>
-                        </div>
-
-                        <div class="mt-6">
-                            <button type="button" onclick="sendCalcToWA()" class="w-full bg-[#25D366] hover:bg-[#20bd5a] text-white font-mono text-xs font-bold uppercase py-4 px-6 rounded-xl transition-all duration-300 flex items-center justify-center gap-3 shadow-[0_4px_20px_rgba(37,211,102,0.3)]">
-                                <iconify-icon icon="logos:whatsapp-icon" width="20" height="20"></iconify-icon>
-                                <span>Отправить расчет технологу в WA</span>
-                            </button>
-                        </div>
-
-                    </div>
-
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- SECTION 6: CASE STUDIES & B2B PROOF -->
-    <section class="py-24 bg-white relative border-b border-blushborder" id="cases">
-        <div class="max-w-[1400px] mx-auto px-6">
-            
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-xs font-mono text-goldrose uppercase tracking-[0.25em] font-bold block mb-3">🌸 РЕАЛЬНЫЕ КЕЙСЫ ПОДОПЕЧНЫХ БРЕНДОВ</span>
-                <h2 class="font-serif text-3xl sm:text-5xl font-light text-rosewood uppercase tracking-tight">
-                    Истории успешного производства
-                </h2>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                
-                <!-- Case 1 -->
-                <div class="bg-blush rounded-3xl border border-blushborder p-8 flex flex-col justify-between hover:border-goldrose transition-all shadow-sm">
-                    <div>
-                        <span class="text-[10px] font-mono text-goldrose uppercase font-bold tracking-widest block mb-3">МОСКВА • БРЕНД ЖЕНСКОЙ ОДЕЖДЫ</span>
-                        <h4 class="font-serif text-2xl font-normal text-rosewood uppercase mb-3">2 500 шелковых платьев за 9 дней</h4>
-                        <p class="text-xs font-sans text-rosewood/75 leading-relaxed mb-6">
-                            Разработали 3D-лекала по фото референсу бренда. Закупили турецкий шелк-армани, провели отшив образца за 3 дня и всю партию отправили авиа-карго до склада в Москве.
-                        </p>
-                    </div>
-                    <div class="border-t border-blushborder pt-4 flex justify-between items-center text-xs font-mono">
-                        <span class="text-rosewood/60">Экономия на ткани:</span>
-                        <span class="text-rosewood font-bold">32%</span>
-                    </div>
-                </div>
-
-                <!-- Case 2 -->
-                <div class="bg-blush rounded-3xl border border-blushborder p-8 flex flex-col justify-between hover:border-goldrose transition-all shadow-sm">
-                    <div>
-                        <span class="text-[10px] font-mono text-goldrose uppercase font-bold tracking-widest block mb-3">ЕКАТЕРИНБУРГ • ТОП-СЕЛЛЕР WILDBERRIES</span>
-                        <h4 class="font-serif text-2xl font-normal text-rosewood uppercase mb-3">Капсула жакетов с нуля по эскизу</h4>
-                        <p class="text-xs font-sans text-rosewood/75 leading-relaxed mb-6">
-                            Наше дизайн-бюро спроектировало 4 модели оверсайз жакетов. Отшили 4 000 единиц с маркировкой «Честный ЗНАК» и индивидуальными зип-пакетами.
-                        </p>
-                    </div>
-                    <div class="border-t border-blushborder pt-4 flex justify-between items-center text-xs font-mono">
-                        <span class="text-rosewood/60">Брак при приемке:</span>
-                        <span class="text-rosewood font-bold">0.1%</span>
-                    </div>
-                </div>
-
-                <!-- Case 3 -->
-                <div class="bg-blush rounded-3xl border border-blushborder p-8 flex flex-col justify-between hover:border-goldrose transition-all shadow-sm">
-                    <div>
-                        <span class="text-[10px] font-mono text-goldrose uppercase font-bold tracking-widest block mb-3">АЛМАТЫ • ШОУРУМ ПРЕМИУМ КЛАССА</span>
-                        <h4 class="font-serif text-2xl font-normal text-rosewood uppercase mb-3">Льняные костюмы и корсеты</h4>
-                        <p class="text-xs font-sans text-rosewood/75 leading-relaxed mb-6">
-                            Сложный крой корсетных изделий с китовым усом. Выполнена градация лекал на 6 размеров. Постоянное регулярное пополнение склада от 1 000 шт в месяц.
-                        </p>
-                    </div>
-                    <div class="border-t border-blushborder pt-4 flex justify-between items-center text-xs font-mono">
-                        <span class="text-rosewood/60">Повторный перезаказ:</span>
-                        <span class="text-rosewood font-bold">Каждый месяц</span>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="bg-blush border-t border-blushborder py-16">
-        <div class="max-w-[1400px] mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-center gap-8 mb-12">
-                <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-full border border-goldrose/50 flex items-center justify-center bg-white text-rosewood font-serif font-bold text-xl shadow-sm">
-                        B
-                    </div>
-                    <span class="font-serif text-2xl text-rosewood uppercase tracking-widest">BeMode KG</span>
-                </div>
-
-                <div class="flex flex-wrap items-center gap-8 text-xs font-mono text-rosewood/80 uppercase">
-                    <span>Бишкек, Кыргызстан</span>
-                    <a href="https://t.me/bemode_kg" target="_blank" class="hover:text-goldrose transition-colors">Telegram: @bemode_kg</a>
-                    <a href="https://wa.me/996502985896" target="_blank" class="hover:text-goldrose transition-colors">WhatsApp: +996 502 98-58-96</a>
-                </div>
-            </div>
-
-            <div class="border-t border-blushborder pt-8 flex flex-col sm:flex-row justify-between items-center text-[11px] font-mono text-rosewood/50 gap-4">
-                <span>© 2026 BEMODE GEN TR LLC. Все права защищены. Пошив женской одежды премиум-класса.</span>
-                <span>Designed with Feminine Light Luxury & Sakura Elegance</span>
-            </div>
-        </div>
-    </footer>
-
-    <!-- SAMPLE ORDER MODAL OVERLAY -->
-    <div id="sample-modal" onclick="closeModalOnBackdrop(event)" class="fixed inset-0 z-[9999] bg-rosewood/60 blur-rose-backdrop flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-300">
-        <div class="relative w-full max-w-lg bg-white border border-blushborder rounded-3xl p-8 shadow-2xl text-rosewood transform scale-95 transition-transform duration-300">
-            
-            <button onclick="closeSampleModal()" class="absolute top-5 right-5 w-9 h-9 rounded-full bg-blush hover:bg-rosewood hover:text-white flex items-center justify-center transition-all cursor-pointer">
-                ✕
-            </button>
-
-            <span class="text-[10px] font-mono text-goldrose uppercase tracking-widest font-bold block mb-2">🌸 БЫСТРЫЙ СТАРТ</span>
-            <h3 class="font-serif text-3xl font-light uppercase text-rosewood mb-2">Заказать пошив образца</h3>
-            <p class="text-xs font-sans text-rosewood/70 mb-6">
-                Мы отшьем физический образец вашего изделия за 3–5 рабочих дней и отправим курьером для утверждения.
-            </p>
-
-            <form onsubmit="submitSampleForm(event)" class="space-y-4 text-xs font-mono">
-                <div>
-                    <label class="block text-rosewood uppercase font-bold mb-1">Ваше имя / Название бренда:</label>
-                    <input type="text" id="modal-name" required placeholder="Например: Анна / Brand Co" class="w-full bg-blush border border-blushborder rounded-xl p-3.5 text-rosewood focus:outline-none focus:border-goldrose">
-                </div>
-
-                <div>
-                    <label class="block text-rosewood uppercase font-bold mb-1">Тип изделия:</label>
-                    <input type="text" id="modal-item" required placeholder="Например: Шелковое платье или жакет" class="w-full bg-blush border border-blushborder rounded-xl p-3.5 text-rosewood focus:outline-none focus:border-goldrose">
-                </div>
-
-                <div>
-                    <label class="block text-rosewood uppercase font-bold mb-1">Телефон / WhatsApp:</label>
-                    <input type="tel" id="modal-phone" required placeholder="+7 (999) 000-00-00" class="w-full bg-blush border border-blushborder rounded-xl p-3.5 text-rosewood focus:outline-none focus:border-goldrose">
-                </div>
-
-                <button type="submit" class="w-full bg-[#25D366] hover:bg-[#20bd5a] text-white font-mono text-xs font-bold uppercase py-4 rounded-xl transition-all shadow-[0_4px_20px_rgba(37,211,102,0.3)] flex items-center justify-center gap-2 mt-2">
-                    <iconify-icon icon="logos:whatsapp-icon" width="18" height="18"></iconify-icon>
-                    <span>Отправить заявку в WhatsApp</span>
-                </button>
-            </form>
-
-        </div>
-    </div>
-
-    <!-- JARSCRIPT CALCULATOR AND MODAL ENGINE -->
-    <script>
-        let currentCatPrice = 280;
-        let currentServPrice = 0;
-        let currentCatName = "Платья";
-        let currentServName = "Есть готовые лекала";
-        let currentVolume = 500;
-
-        function setCalc(type, val, price) {
-            if (type === 'cat') {
-                currentCatPrice = price;
-                document.querySelectorAll('.calc-btn').forEach(b => b.className = 'calc-btn bg-blush text-rosewood border border-blushborder p-3 rounded-xl text-xs font-bold font-mono uppercase transition-all hover:border-rosewood');
-                const activeBtn = document.getElementById(`btn-cat-${val}`);
-                if (activeBtn) activeBtn.className = 'calc-btn active-calc bg-rosewood text-white border border-rosewood p-3 rounded-xl text-xs font-bold font-mono uppercase transition-all shadow-sm';
-                
-                if (val === 'dresses') currentCatName = "Платья";
-                if (val === 'suits') currentCatName = "Жакеты/Костюмы";
-                if (val === 'blouses') currentCatName = "Блузы/Топы";
-                if (val === 'casual') currentCatName = "Трикотаж";
-            }
-            if (type === 'service') {
-                currentServPrice = price;
-                document.querySelectorAll('.calc-serv-btn').forEach(b => b.className = 'calc-serv-btn bg-blush text-rosewood border border-blushborder p-3 rounded-xl text-xs font-bold font-mono uppercase text-left transition-all hover:border-rosewood');
-                const activeBtn = document.getElementById(`btn-serv-${val}`);
-                if (activeBtn) activeBtn.className = 'calc-serv-btn active-calc bg-rosewood text-white border border-rosewood p-3 rounded-xl text-xs font-bold font-mono uppercase text-left transition-all shadow-sm';
-                
-                if (val === 'ready') currentServName = "Есть готовые лекала";
-                if (val === 'patterns') currentServName = "Нужна разработка лекал";
-                if (val === 'full') currentServName = "Дизайн + Лекала под ключ";
-            }
-            recalculate();
-        }
-
-        function updateVolume(val) {
-            currentVolume = parseInt(val);
-            document.getElementById('volume-val-display').innerText = `${currentVolume.toLocaleString()} единиц`;
-            recalculate();
-        }
-
-        function recalculate() {
-            let days = "6 – 8 рабочих дней";
-            if (currentVolume >= 2000 && currentVolume < 5000) days = "10 – 14 рабочих дней";
-            if (currentVolume >= 5000) days = "16 – 22 рабочих дней";
-
-            let sampleTime = "3 рабочих дня";
-            if (currentServName !== "Есть готовые лекала") sampleTime = "4 – 5 рабочих дней (с разработкой САПР)";
-
-            document.getElementById('calc-days').innerText = days;
-            document.getElementById('calc-sample-time').innerText = sampleTime;
-        }
-
-        function sendCalcToWA() {
-            const text = `Здравствуйте, BeMode! Заинтересовал пошив одежды:%0A- Категория: ${currentCatName}%0A- Тех. подготовка: ${currentServName}%0A- Партия: ${currentVolume} шт.%0AХочу уточнить точную смету и заказать образец.`;
-            window.open(`https://wa.me/996502985896?text=${text}`, '_blank');
-        }
-
-        function openSampleModal(presetItem = '') {
-            if (presetItem) {
-                document.getElementById('modal-item').value = presetItem;
-            }
-            const modal = document.getElementById('sample-modal');
-            modal.classList.remove('opacity-0', 'pointer-events-none');
-            modal.classList.add('opacity-100', 'pointer-events-auto');
-        }
-
-        function closeSampleModal() {
-            const modal = document.getElementById('sample-modal');
-            modal.classList.remove('opacity-100', 'pointer-events-auto');
-            modal.classList.add('opacity-0', 'pointer-events-none');
-        }
-
-        function closeModalOnBackdrop(e) {
-            if (e.target.id === 'sample-modal') {
-                closeSampleModal();
-            }
-        }
-
-        function submitSampleForm(e) {
-            e.preventDefault();
-            const name = document.getElementById('modal-name').value;
-            const item = document.getElementById('modal-item').value;
-            const phone = document.getElementById('modal-phone').value;
-            
-            const text = `Здравствуйте! Меня зовут ${name}. Хочу заказать отшив образца: ${item}. Мой телефон/WA: ${phone}.`;
-            window.open(`https://wa.me/996502985896?text=${encodeURIComponent(text)}`, '_blank');
-            closeSampleModal();
-        }
-    </script>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="foot">
+  <div class="wrap foot__grid">
+    <div><strong>BEMODE GARMENT FACTORY</strong> · <span class="mono">Bishkek, Kyrgyzstan · 2026/2027</span></div>
+    <div class="mono">WhatsApp: +996 502 98-58-96 · Telegram: @bemode_kg</div>
+  </div>
+</footer>
+
+<!-- SAMPLE REQUEST MODAL OVERLAY -->
+<div id="sample-modal" onclick="if(event.target.id==='sample-modal')closeSampleModal()" style="position:fixed; inset:0; z-index:9999; background:rgba(11,14,18,.92); backdrop-filter:blur(14px); display:flex; items-center; justify-content:center; padding:16px; opacity:0; pointer-events:none; transition:all .3s ease">
+  <div style="position:relative; width:100%; max-width:500px; background:var(--surface-raised); border:1px solid var(--line); border-radius:var(--radius-panel); padding:var(--s-md); color:var(--text-primary)">
+    <button type="button" onclick="closeSampleModal()" style="position:absolute; top:16px; right:16px; width:32px; height:32px; border-radius:50%; background:var(--surface); border:1px solid var(--line); color:var(--text-primary); cursor:pointer">✕</button>
+    <div class="label" style="color:var(--action)">Fast Start</div>
+    <h3 style="font-size:var(--step-1); margin-top:4px">Заказать отшив образца</h3>
+    <p style="font-size:var(--step--1); color:var(--text-muted); margin-bottom:var(--s-sm)">Отшиваем физический эталон за 3 дня с вычетом из стоимости партии.</p>
+    <form onsubmit="submitForm(event)" style="display:grid; gap:var(--s-xs)">
+      <div>
+        <label class="label" style="display:block; margin-bottom:4px">Ваше имя / Бренд:</label>
+        <input type="text" id="mName" required placeholder="Например: Анна / Brand Co" style="width:100%; background:var(--night-900); border:1px solid var(--line); border-radius:4px; padding:10px; color:var(--text-primary); font-family:inherit">
+      </div>
+      <div>
+        <label class="label" style="display:block; margin-bottom:4px">Изделие:</label>
+        <input type="text" id="mItem" required placeholder="Шелковое платье или жакет" style="width:100%; background:var(--night-900); border:1px solid var(--line); border-radius:4px; padding:10px; color:var(--text-primary); font-family:inherit">
+      </div>
+      <div>
+        <label class="label" style="display:block; margin-bottom:4px">Телефон / WhatsApp:</label>
+        <input type="tel" id="mPhone" required placeholder="+7 (999) 000-00-00" style="width:100%; background:var(--night-900); border:1px solid var(--line); border-radius:4px; padding:10px; color:var(--text-primary); font-family:inherit">
+      </div>
+      <button type="submit" class="btn btn--go" style="width:100%; margin-top:8px">Отправить в WhatsApp</button>
+    </form>
+  </div>
+</div>
+
+<!-- ==================================================== JARSCRIPT ENGINE -->
+<script>
+(() => {
+  const $ = (s, r = document) => r.querySelector(s);
+  const NS = 'http://www.w3.org/2000/svg';
+  const el = (n, a = {}) => { const e = document.createElementNS(NS, n);
+    for (const k in a) e.setAttribute(k, a[k]); return e; };
+  const pad = n => String(n).padStart(2, '0');
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* 01 · Hero Wordmark Letter Masking */
+  const wm = $('#wordmark');
+  if (wm) {
+    const txt = wm.textContent.trim();
+    wm.setAttribute('aria-label', txt);
+    wm.textContent = '';
+    [...txt].forEach((ch, i) => {
+      const sp = document.createElement('span');
+      sp.textContent = ch; sp.style.setProperty('--i', i);
+      sp.setAttribute('aria-hidden', 'true');
+      wm.appendChild(sp);
+    });
+  }
+
+  /* Telemetry Counters */
+  const group = (n) => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, '\u2009');
+  document.querySelectorAll('.cover [data-to]').forEach((node) => {
+    const to = +node.dataset.to, suf = node.dataset.suffix || '', grp = node.dataset.group === '1';
+    if (reduce) { node.textContent = (grp ? group(to) : to) + suf; return; }
+    node.textContent = '0' + suf;
+    const dur = 900, delay = 1500 + (+((node.closest('.ci') || {}).style?.getPropertyValue('--i') || 0)) * 90;
+    setTimeout(() => {
+      const t0 = performance.now();
+      const step = (now) => {
+        const t = Math.min(1, (now - t0) / dur);
+        const e = 1 - Math.pow(1 - t, 3);
+        const v = Math.round(to * e);
+        node.textContent = (grp ? group(v) : v) + suf;
+        if (t < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    }, delay);
+  });
+
+  /* 02 · Sticky 4 Production Pillars */
+  const SEC = [
+    {n:'01 · САПР Лекала', img:'s1', len:'Да', grad:'XS – 5XL', spd:'3 дня', note:'Конструирование выкроек в САПР Графис по фото, эскизу или ТЗ с идеальной посадкой.'},
+    {n:'02 · Дизайн & Ткани', img:'s2', len:'Турция/Китай', grad:'Silk, Tweed, Linen', spd:'5 дней', note:'Дизайн-бюро подбирает премиальные полотна у прямых импортеров под капсулу.'},
+    {n:'03 · Потоковый Отшив', img:'s3', len:'Juki Japan', grad:'40 000 ед/мес', spd:'6 дней', note:'Швейные автоматизированные линии с 3-этапным контролем геометрии и строчки.'},
+    {n:'04 · Private Label', img:'s4', len:'Честный ЗНАК', grad:'Упаковка под ключ', spd:'1 день', note:'Маркировка для РФ, вшивные бирки, составники и брендированные зип-пакеты.'}
+  ];
+  const ASSET_PHOTOS = [
+    'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1200&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?q=80&w=1200&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1584273143981-41c073dfe8f8?q=80&w=1200&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1550614000-4895a10e1bfd?q=80&w=1200&auto=format&fit=crop'
+  ];
+  const LENS = [10000, 15000, 40000, 10000];
+  const panes = $('#panes'), index = $('#index');
+  SEC.forEach((sc, i) => {
+    const d = document.createElement('div');
+    d.className = 'pane' + (i === 0 ? ' is-on' : '');
+    d.innerHTML = '<img src="' + ASSET_PHOTOS[i] + '" alt="' + sc.n + '" />';
+    panes.appendChild(d);
+    
+    const seg = document.createElement('div');
+    seg.className = 'index__seg' + (i === 0 ? ' is-on' : '');
+    seg.style.flex = LENS[i] + ' 0 0';
+    seg.innerHTML = '<span>' + sc.n + '</span>';
+    index.appendChild(seg);
+  });
+  const paneEls = Array.from(panes.children), segEls = Array.from(index.children);
+  const F = {n:$('#fName'), note:$('#fNote'), len:$('#fLen'), grad:$('#fGrad'), spd:$('#fSpd')};
+  const face = $('#face');
+  let cur = -1;
+  const paint = (i) => {
+    if (i === cur) return; cur = i; const sc = SEC[i];
+    paneEls.forEach((e, k) => e.classList.toggle('is-on', k === i));
+    segEls.forEach((e, k) => {
+      e.classList.toggle('is-on', k === i);
+      e.classList.toggle('is-past', k < i);
+    });
+    F.n.textContent = sc.n; F.note.textContent = sc.note;
+    F.len.textContent = sc.len; F.grad.textContent = sc.grad; F.spd.textContent = sc.spd;
+  };
+  {
+    const onScroll = () => {
+      const r = face.getBoundingClientRect();
+      const total = r.height - innerHeight;
+      if (total <= 0) { paint(0); return; }
+      const t = Math.min(1, Math.max(0, -r.top / total));
+      paint(Math.min(SEC.length - 1, Math.floor(t * SEC.length)));
+    };
+    addEventListener('scroll', onScroll, {passive:true});
+    addEventListener('resize', onScroll);
+    onScroll();
+  }
+
+  /* 03 · Quality Trace Chart */
+  const grid = $('#chartGrid'), bands = $('#chartBands'), marks = $('#chartMarks');
+  [0,10,20,30,40].forEach(v => {
+    const y = 400 - (v / 40) * 360;
+    grid.appendChild(el('line', {x1:80, y1:y, x2:1160, y2:y, stroke:'rgba(238,243,248,.09)'}));
+    const t = el('text', {x:46, y:y + 4, fill:'#8A94A2', 'font-size':'13', 'font-family':'Martian Mono, monospace'});
+    t.textContent = (v/10) + '%'; grid.appendChild(t);
+  });
+  [['Batch 01',200],['Batch 02',450],['Batch 03',700],['Batch 04',950],['Batch 05',1120]].forEach(m => {
+    marks.appendChild(el('line', {x1:m[1], y1:40, x2:m[1], y2:400, stroke:'rgba(215,255,62,.28)', 'stroke-dasharray':'3 4'}));
+    const t = el('text', {x:m[1], y:30, fill:'#D7FF3E', 'font-size':'13', 'text-anchor':'middle', 'font-family':'Martian Mono, monospace'});
+    t.textContent = m[0]; marks.appendChild(t);
+  });
+  marks.appendChild(el('circle', {cx:1120, cy:56, r:5, fill:'#D7FF3E'}));
+  const pk = el('text', {x:1106, y:96, fill:'#EEF3F8', 'font-size':'15', 'text-anchor':'end', 'font-family':'Martian Mono, monospace'});
+  pk.textContent = '0.3% Defect Rate'; marks.appendChild(pk);
+
+  /* 04 · Equipment Hotspots */
+  const KIT = [
+    {x:'25%', y:'35%', n:'Juki Automatic Lines', s:'Japan Precision', cap:'1-needle & 4-needle overlock',
+     media:'https://images.unsplash.com/photo-1544441893-675973e31985?q=80&w=800&auto=format&fit=crop',
+     r:[['Speed','5,000 stitches/min',1],['Precision','0.5 mm seam',0],['Thread tension','auto-regulated',0]],
+     note:'Японские автоматические линии обеспечивают хирургически ровную строчку.'},
+    {x:'50%', y:'45%', n:'Grafis CAD 3D Digitizer', s:'Pattern Software', cap:'3D Avatar Fitting',
+     media:'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=800&auto=format&fit=crop',
+     r:[['Standard','ISO-9001',0],['Gradation','XS to 5XL',1],['Fit Accuracy','99.8%',0]],
+     note:'Конструирование выкроек в САПР с виртуальной посадочной инспекцией.'},
+    {x:'75%', y:'30%', n:'Fabric Shrinkage Tester', s:'Steam Inspection', cap:'100% Roll Scan',
+     media:'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?q=80&w=800&auto=format&fit=crop',
+     r:[['Test','Steam & Wash',0],['Defect Gate','0% pass rate for damaged rolls',1]],
+     note:'Проверка всех рулонов на усадку до передачи на автоматический раскрой.'},
+    {x:'65%', y:'70%', n:'OTK Inspection Table', s:'Quality Gate', cap:'Final 100% check',
+     media:'https://images.unsplash.com/photo-1584273143981-41c073dfe8f8?q=80&w=800&auto=format&fit=crop',
+     r:[['Stage 1','Fabric roll scan',0],['Stage 2','Cut alignment',0],['Stage 3','Final 100% seam check',1]],
+     note:'Ни одна коробка не запечатывается без физической подписи инспектора ОТК.'}
+  ];
+  const kit = $('#kit'), pop = $('#kitpop');
+  if (kit && pop) {
+    const showKit = (i, hs) => {
+      const k = KIT[i];
+      pop.innerHTML = '<span class="kitpop__scan"></span>' +
+        '<b class="br"></b><b class="br"></b><b class="br"></b><b class="br"></b>' +
+        '<div class="kitpop__grid"><div class="kitpop__left">' +
+        '<figure class="kitpop__media"><img src="' + k.media + '" alt="" /></figure>' +
+        (k.note ? '<p class="kitpop__note">' + k.note + '</p>' : '') +
+        '</div><div class="kitpop__body"><h3>' + k.n + '</h3><div class="kitpop__sub">' + k.s + '</div><dl>' +
+        k.r.map((row, j) => '<div style="--r:' + j + '"><dt>' + row[0] + '</dt><dd' +
+          (row[2] ? ' class="hot"' : '') + '>' + row[1] + '</dd></div>').join('') + '</dl>' +
+        '</div>';
+      
+      const box = kit.getBoundingClientRect(), m = hs.getBoundingClientRect();
+      let left = m.left - box.left + m.width / 2;
+      const w = 620, pad = 12;
+      left = Math.max(w / 2 + pad, Math.min(box.width - w / 2 - pad, left));
+      pop.style.left = left + 'px';
+      pop.style.visibility = 'hidden'; pop.style.top = '0px';
+      const ph = pop.offsetHeight;
+      const markerY = m.top - box.top;
+      const above = markerY - ph - 18, below = markerY + 30;
+      const vh = window.innerHeight, vpad = 10;
+      const lo = Math.max(vpad, vpad - box.top);
+      const hi = Math.min(box.height - ph - vpad, vh - vpad - ph - box.top);
+      const fits = (t) => t >= lo && t <= hi;
+      let top = fits(above) ? above : fits(below) ? below : (above < lo ? lo : below);
+      pop.style.top = (hi < lo ? lo : Math.min(Math.max(top, lo), hi)) + 'px';
+      pop.style.visibility = '';
+      void pop.offsetWidth; pop.classList.add('is-on');
+      hsEls.forEach((e, k2) => e.classList.toggle('is-on', k2 === i));
+    };
+    const hideKit = () => { pop.classList.remove('is-on'); hsEls.forEach(e => e.classList.remove('is-on')); };
+    const hsEls = KIT.map((k, i) => {
+      const b = document.createElement('button');
+      b.className = 'hs'; b.type = 'button';
+      b.style.setProperty('--x', k.x); b.style.setProperty('--y', k.y); b.style.setProperty('--n', i);
+      b.setAttribute('aria-label', k.n);
+      b.innerHTML = '<span class="hs__ring"></span><span class="hs__dot"></span>';
+      b.addEventListener('mouseenter', () => showKit(i, b));
+      b.addEventListener('click', (e) => { e.preventDefault(); showKit(i, b); });
+      kit.appendChild(b);
+      return b;
+    });
+    kit.addEventListener('mouseleave', hideKit);
+  }
+
+  /* 05 · Completed Batches Sheet */
+  const BATCHES = [
+    {bib:1, name:'Шелковые платья миди', nat:'MSK', cat:'Шелк-Армани', qty:'2 500 шт', def:'0.1%'},
+    {bib:2, name:'Оверсайз жакеты & Твид', nat:'EKB', cat:'Твид / Шерсть', qty:'4 000 шт', def:'0.2%'},
+    {bib:3, name:'Корсетные топы и блузы', nat:'ALA', cat:'Китовый ус / Хлопок', qty:'1 500 шт', def:'0.3%'},
+    {bib:4, name:'Трикотажные сеты & Плюс-сайз', nat:'NSK', cat:'Футер 3-нитка', qty:'6 000 шт', def:'0.1%'},
+  ];
+  const body = $('#sheetBody');
+  if (body) {
+    BATCHES.forEach(r => {
+      const d = document.createElement('div');
+      d.className = 'row is-red';
+      d._row = r;
+      d.innerHTML = '<b>' + pad(r.bib) + '</b><span class="name">' + r.name +
+        '</span><span class="nat">' + r.nat + '</span><span class="st">' + r.cat + '</span><span class="qty">' + r.qty + '</span>';
+      body.appendChild(d);
+    });
+
+    const card = $('#card');
+    const place = (x, y) => {
+      const w = 280, h = card.offsetHeight || 140;
+      card.style.left = Math.max(16, Math.min(innerWidth - w - 16, x + 20)) + 'px';
+      card.style.top  = Math.max(16, Math.min(innerHeight - h - 16, y - h / 2)) + 'px';
+    };
+    body.addEventListener('mouseover', (e) => {
+      const row = e.target.closest('.row'); if (!row) return;
+      const r = row._row; if (!r) return;
+      card.innerHTML =
+        '<div class="card__top"><span class="card__name">' + r.name + '</span>' +
+        '<span class="card__nat">' + r.nat + '</span></div>' +
+        '<dl class="card__stats">' +
+        '<div><dt>Партия</dt><dd>' + r.qty + '</dd></div>' +
+        '<div><dt>Брак ОТК</dt><dd class="hot">' + r.def + '</dd></div></dl>';
+      card.classList.add('is-on');
+      place(e.clientX, e.clientY);
+    });
+    body.addEventListener('mousemove', (e) => { if (card.classList.contains('is-on')) place(e.clientX, e.clientY); });
+    body.addEventListener('mouseleave', () => card.classList.remove('is-on'));
+  }
+
+  /* Reveals */
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+  }), {threshold:.18});
+  document.querySelectorAll('.io').forEach(n => io.observe(n));
+})();
+
+/* B2B Calculator Engine */
+let cCat = 'dresses', cServ = 'ready', cVol = 500;
+function setCalc(type, val, price) {
+  if (type === 'cat') {
+    cCat = val;
+    document.querySelectorAll('[id^="btn-cat-"]').forEach(b => b.classList.remove('is-on'));
+    const btn = document.getElementById(`btn-cat-${val}`);
+    if (btn) btn.classList.add('is-on');
+  }
+  if (type === 'serv') {
+    cServ = val;
+    document.querySelectorAll('[id^="btn-serv-"]').forEach(b => b.classList.remove('is-on'));
+    const btn = document.getElementById(`btn-serv-${val}`);
+    if (btn) btn.classList.add('is-on');
+  }
+  recalc();
+}
+function updateVol(val) {
+  cVol = parseInt(val);
+  document.getElementById('volDisp').innerText = `${cVol.toLocaleString()} шт`;
+  recalc();
+}
+function recalc() {
+  let days = "6 – 8 дней";
+  if (cVol >= 2000 && cVol < 5000) days = "10 – 14 дней";
+  if (cVol >= 5000) days = "16 – 22 дней";
+
+  let sample = "3 рабочих дня";
+  if (cServ !== 'ready') sample = "4 – 5 дней (с САПР)";
+
+  document.getElementById('calcDays').innerText = days;
+  document.getElementById('calcSample').innerText = sample;
+}
+function sendWA() {
+  const text = `Здравствуйте, BeMode! Расчет партии:%0A- Категория: ${cCat}%0A- Техника: ${cServ}%0A- Объем: ${cVol} шт.%0AХочу уточнить смету и заказать образец.`;
+  window.open(`https://wa.me/996502985896?text=${text}`, '_blank');
+}
+function openSampleModal() {
+  const m = document.getElementById('sample-modal');
+  m.style.opacity = '1'; m.style.pointerEvents = 'auto';
+}
+function closeSampleModal() {
+  const m = document.getElementById('sample-modal');
+  m.style.opacity = '0'; m.style.pointerEvents = 'none';
+}
+function submitForm(e) {
+  e.preventDefault();
+  const n = document.getElementById('mName').value;
+  const i = document.getElementById('mItem').value;
+  const p = document.getElementById('mPhone').value;
+  const text = `Здравствуйте! Я ${n}. Заявка на образец: ${i}. WA: ${p}.`;
+  window.open(`https://wa.me/996502985896?text=${encodeURIComponent(text)}`, '_blank');
+  closeSampleModal();
+}
+</script>
+
+<!-- Lenis Smooth Scroll -->
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+<script>
+(() => {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches || typeof Lenis === 'undefined') return;
+  const lenis = new Lenis({ lerp: 0.085, smoothWheel: true });
+  const raf = (t) => { lenis.raf(t); requestAnimationFrame(raf); };
+  requestAnimationFrame(raf);
+})();
+</script>
 </body>
 </html>
