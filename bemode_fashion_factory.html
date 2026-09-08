@@ -2447,6 +2447,197 @@
             opacity: 0.6;
         }
 
+    
+        /* YANDEX MAPS REVIEWS MARQUEE & EXPANDABLE CARD STYLES */
+        .yandex-rating-banner {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: #ffffff;
+            border: 1px solid var(--color-border);
+            padding: 10px 22px;
+            border-radius: 40px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.04);
+        }
+        .yandex-badge-logo {
+            background: #fc3f1d;
+            color: #ffffff;
+            font-weight: 900;
+            font-size: 11px;
+            padding: 4px 8px;
+            border-radius: 4px;
+            letter-spacing: 0.5px;
+        }
+        .yandex-stars {
+            color: #ffb400;
+            font-size: 15px;
+            letter-spacing: 2px;
+        }
+        .yandex-score {
+            font-weight: 800;
+            color: var(--color-accent);
+            font-size: 15px;
+        }
+        .yandex-reviews-marquee-wrapper {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            padding: 20px 0;
+        }
+        .yandex-reviews-marquee-wrapper::before,
+        .yandex-reviews-marquee-wrapper::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 140px;
+            z-index: 15;
+            pointer-events: none;
+        }
+        .yandex-reviews-marquee-wrapper::before {
+            left: 0;
+            background: linear-gradient(to right, var(--color-bg), rgba(248, 246, 243, 0));
+        }
+        .yandex-reviews-marquee-wrapper::after {
+            right: 0;
+            background: linear-gradient(to left, var(--color-bg), rgba(248, 246, 243, 0));
+        }
+        .yandex-reviews-track {
+            display: flex;
+            gap: 24px;
+            width: max-content;
+            animation: yandexMarquee 42s linear infinite;
+        }
+        .yandex-reviews-marquee-wrapper:hover .yandex-reviews-track {
+            animation-play-state: paused;
+        }
+        @keyframes yandexMarquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .yandex-review-card {
+            width: 380px;
+            flex-shrink: 0;
+            background: #ffffff;
+            border: 1px solid var(--color-border);
+            border-radius: 10px;
+            padding: 26px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.03);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        .yandex-review-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 35px rgba(0,0,0,0.08);
+            border-color: rgba(194, 79, 32, 0.4);
+        }
+        .yandex-user-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 14px;
+        }
+        .yandex-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--color-accent);
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .yandex-user-info {
+            flex-grow: 1;
+        }
+        .yandex-user-name {
+            font-weight: 700;
+            font-size: 14px;
+            color: var(--color-accent);
+        }
+        .yandex-user-city {
+            font-size: 11.5px;
+            color: var(--color-text-muted);
+        }
+        .yandex-card-text {
+            font-size: 13.5px;
+            color: var(--color-text);
+            line-height: 1.6;
+            margin-bottom: 18px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .yandex-read-more-btn {
+            font-size: 12px;
+            font-weight: 800;
+            color: var(--color-accent);
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            align-self: flex-start;
+            background: none;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            transition: opacity 0.2s ease;
+        }
+        .yandex-read-more-btn:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+
+        /* YANDEX REVIEW FULL DETAIL MODAL */
+        .review-modal-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            z-index: 100000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.35s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .review-modal-backdrop.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .review-modal-card {
+            width: 100%;
+            max-width: 560px;
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 36px 30px;
+            position: relative;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.3);
+            transform: scale(0.92);
+            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .review-modal-backdrop.active .review-modal-card {
+            transform: scale(1);
+        }
+        .review-modal-close {
+            position: absolute;
+            top: 20px;
+            right: 22px;
+            font-size: 26px;
+            cursor: pointer;
+            color: var(--color-accent);
+            line-height: 1;
+        }
+
     </style>
 </head>
 <body class="is-loading">
@@ -3443,6 +3634,179 @@
         </div>
     </section>
 
+    
+    <!-- SECTION 16: YANDEX MAPS REVIEWS MARQUEE WITH EDGE FADING -->
+    <section class="yandex-reviews-section" id="yandex-reviews" style="padding: 85px 0; background: var(--color-bg); border-bottom: 1px solid var(--color-border);">
+        <div class="wrap-container" style="text-align: center; margin-bottom: 35px;" class="reveal-up">
+            <span class="section-badge">СЕКЦИЯ 16 • ОТЗЫВЫ И РЕЙТИНГ ЯНДЕКС.КАРТЫ</span>
+            <h2 class="section-title" style="margin-top: 8px;">Отзывы Заказчиков на Яндекс Картах</h2>
+            <p class="section-sub">Реальные отзывы владельцев бутиков, байеров и селлеров маркетплейсов</p>
+
+            <div class="yandex-rating-banner" style="margin-top: 20px;">
+                <span class="yandex-badge-logo">Яндекс Карты</span>
+                <span class="yandex-score">5.0</span>
+                <span class="yandex-stars">★★★★★</span>
+                <span style="font-size: 12px; color: var(--color-text-muted); font-weight: 500;">• 120+ Подтвержденных оценок</span>
+            </div>
+        </div>
+
+        <div class="yandex-reviews-marquee-wrapper reveal-up delay-1">
+            <div class="yandex-reviews-track">
+                <!-- CARD 1 -->
+                <div class="yandex-review-card" onclick="openReviewModal(0)">
+                    <div>
+                        <div class="yandex-user-header">
+                            <div class="yandex-avatar">АВ</div>
+                            <div class="yandex-user-info">
+                                <div class="yandex-user-name">Алина Воронова</div>
+                                <div class="yandex-user-city">Шоурум «Silk & Minimal» • г. Москва</div>
+                            </div>
+                            <span class="yandex-stars" style="font-size: 13px;">★★★★★</span>
+                        </div>
+                        <p class="yandex-card-text">Работаем с Bemode уже третий сезон. Отшивали партию платьев Silk Touch 500 шт для бутиков Москвы. Качество швов идеальное, посадка на размеры 42-48 села без единой переделки!</p>
+                    </div>
+                    <button class="yandex-read-more-btn">Читать отзыв полностью &rarr;</button>
+                </div>
+
+                <!-- CARD 2 -->
+                <div class="yandex-review-card" onclick="openReviewModal(1)">
+                    <div>
+                        <div class="yandex-user-header">
+                            <div class="yandex-avatar">ДС</div>
+                            <div class="yandex-user-info">
+                                <div class="yandex-user-name">Данияр Сериков</div>
+                                <div class="yandex-user-city">Сеть бутиков «Aru Fashion» • г. Алматы</div>
+                            </div>
+                            <span class="yandex-stars" style="font-size: 13px;">★★★★★</span>
+                        </div>
+                        <p class="yandex-card-text">Заказывали костюмы-двойки и жакеты по своим лекалам (PLT файлы). Оцифровали в САПР быстро, отшили тестовый образец за 3 дня. Качество тканей турецкого производства супер!</p>
+                    </div>
+                    <button class="yandex-read-more-btn">Читать отзыв полностью &rarr;</button>
+                </div>
+
+                <!-- CARD 3 -->
+                <div class="yandex-review-card" onclick="openReviewModal(2)">
+                    <div>
+                        <div class="yandex-user-header">
+                            <div class="yandex-avatar">ЕЛ</div>
+                            <div class="yandex-user-info">
+                                <div class="yandex-user-name">Екатерина Лазарева</div>
+                                <div class="yandex-user-city">Селлер Wildberries / Ozon • г. Екатеринбург</div>
+                            </div>
+                            <span class="yandex-stars" style="font-size: 13px;">★★★★★</span>
+                        </div>
+                        <p class="yandex-card-text">Шили партию пальто оверсайз Wool Blend 400 шт. Опасалась за белую отгрузку, но документы ЕАЭС и Честный ЗНАК оформили безупречно! Маржинальность получилась выше 220%.</p>
+                    </div>
+                    <button class="yandex-read-more-btn">Читать отзыв полностью &rarr;</button>
+                </div>
+
+                <!-- CARD 4 -->
+                <div class="yandex-review-card" onclick="openReviewModal(3)">
+                    <div>
+                        <div class="yandex-user-header">
+                            <div class="yandex-avatar">МС</div>
+                            <div class="yandex-user-info">
+                                <div class="yandex-user-name">Мадина Садыкова</div>
+                                <div class="yandex-user-city">Бренд одежды «M-Line» • г. Ташкент</div>
+                            </div>
+                            <span class="yandex-stars" style="font-size: 13px;">★★★★★</span>
+                        </div>
+                        <p class="yandex-card-text">Воспользовались готовой базой лекал Bemode. Взяли 4 модели ярусных платьев для магазинов в Ташкенте. Посадка идеальная! Фабрика отгрузила 600 изделий за 8 дней.</p>
+                    </div>
+                    <button class="yandex-read-more-btn">Читать отзыв полностью &rarr;</button>
+                </div>
+
+                <!-- CARD 5 -->
+                <div class="yandex-review-card" onclick="openReviewModal(4)">
+                    <div>
+                        <div class="yandex-user-header">
+                            <div class="yandex-avatar">ОГ</div>
+                            <div class="yandex-user-info">
+                                <div class="yandex-user-name">Ольга Громова</div>
+                                <div class="yandex-user-city">Шоурум «Luxe Look» • г. Пятигорск</div>
+                            </div>
+                            <span class="yandex-stars" style="font-size: 13px;">★★★★★</span>
+                        </div>
+                        <p class="yandex-card-text">Отшивали твидовые комплекты. Конструкторы Bemode доработали наши эскизы и создали 3D-модель посадки. Отдельное спасибо главному технологу за помощь с выбором фурнитуры.</p>
+                    </div>
+                    <button class="yandex-read-more-btn">Читать отзыв полностью &rarr;</button>
+                </div>
+
+                <!-- DUPLICATES FOR INFINITE SMOOTH SCROLL -->
+                <div class="yandex-review-card" onclick="openReviewModal(0)">
+                    <div>
+                        <div class="yandex-user-header">
+                            <div class="yandex-avatar">АВ</div>
+                            <div class="yandex-user-info">
+                                <div class="yandex-user-name">Алина Воронова</div>
+                                <div class="yandex-user-city">Шоурум «Silk & Minimal» • г. Москва</div>
+                            </div>
+                            <span class="yandex-stars" style="font-size: 13px;">★★★★★</span>
+                        </div>
+                        <p class="yandex-card-text">Работаем с Bemode уже третий сезон. Отшивали партию платьев Silk Touch 500 шт для бутиков Москвы. Качество швов идеальное, посадка на размеры 42-48 села без единой переделки!</p>
+                    </div>
+                    <button class="yandex-read-more-btn">Читать отзыв полностью &rarr;</button>
+                </div>
+
+                <div class="yandex-review-card" onclick="openReviewModal(1)">
+                    <div>
+                        <div class="yandex-user-header">
+                            <div class="yandex-avatar">ДС</div>
+                            <div class="yandex-user-info">
+                                <div class="yandex-user-name">Данияр Сериков</div>
+                                <div class="yandex-user-city">Сеть бутиков «Aru Fashion» • г. Алматы</div>
+                            </div>
+                            <span class="yandex-stars" style="font-size: 13px;">★★★★★</span>
+                        </div>
+                        <p class="yandex-card-text">Заказывали костюмы-двойки и жакеты по своим лекалам (PLT файлы). Оцифровали в САПР быстро, отшили тестовый образец за 3 дня. Качество тканей турецкого производства супер!</p>
+                    </div>
+                    <button class="yandex-read-more-btn">Читать отзыв полностью &rarr;</button>
+                </div>
+
+                <div class="yandex-review-card" onclick="openReviewModal(2)">
+                    <div>
+                        <div class="yandex-user-header">
+                            <div class="yandex-avatar">ЕЛ</div>
+                            <div class="yandex-user-info">
+                                <div class="yandex-user-name">Екатерина Лазарева</div>
+                                <div class="yandex-user-city">Селлер Wildberries / Ozon • г. Екатеринбург</div>
+                            </div>
+                            <span class="yandex-stars" style="font-size: 13px;">★★★★★</span>
+                        </div>
+                        <p class="yandex-card-text">Шили партию пальто оверсайз Wool Blend 400 шт. Опасалась за белую отгрузку, но документы ЕАЭС и Честный ЗНАК оформили безупречно! Маржинальность получилась выше 220%.</p>
+                    </div>
+                    <button class="yandex-read-more-btn">Читать отзыв полностью &rarr;</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- YANDEX REVIEW DETAIL POPUP MODAL -->
+    <div class="review-modal-backdrop" id="reviewModalBackdrop" onclick="closeReviewModal()">
+        <div class="review-modal-card" onclick="event.stopPropagation()">
+            <span class="review-modal-close" onclick="closeReviewModal()">&times;</span>
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 16px;">
+                <span class="yandex-badge-logo">Яндекс.Карты</span>
+                <span class="yandex-stars">★★★★★ 5.0</span>
+                <span style="font-size: 11.5px; color: var(--color-gold); font-weight: 700; letter-spacing: 1px;">ПОДТВЕРЖДЕННЫЙ ЗАКАЗЧИК</span>
+            </div>
+
+            <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 18px;">
+                <div class="yandex-avatar" id="revModalAvatar" style="width: 52px; height: 52px; font-size: 18px;">АВ</div>
+                <div>
+                    <h3 id="revModalName" style="font-family: var(--font-serif); font-size: 22px; color: var(--color-accent); margin-bottom: 2px;">Алина Воронова</h3>
+                    <p id="revModalCity" style="font-size: 12.5px; color: var(--color-text-muted);">Шоурум «Silk & Minimal» • г. Москва</p>
+                </div>
+            </div>
+
+            <div style="background: var(--color-bg-alt); padding: 18px 20px; border-radius: 8px; border: 1px solid var(--color-border); margin-bottom: 20px;">
+                <p id="revModalFullText" style="font-size: 14px; color: var(--color-text); line-height: 1.7; margin: 0;">Полный текст отзыва...</p>
+            </div>
+
+            <button class="btn-primary" style="width: 100%;" onclick="openDrawer('sample'); closeReviewModal();">Заказать такой же образец в WhatsApp &rarr;</button>
+        </div>
+    </div>
+
     <!-- FOOTER -->
     
     <!-- KAIRO-STYLE INFINITE MARQUEE TICKER IN FOOTER -->
@@ -3928,6 +4292,54 @@
 - Город: `;
         window.open(`https://wa.me/996502985896?text=${encodeURIComponent(message)}`, '_blank');
         closeCatModal();
+    }
+
+    
+    // YANDEX MAPS REVIEWS MODAL DATA & LOGIC
+    const yandexReviewsData = [
+        {
+            avatar: 'АВ',
+            name: 'Алина Воронова',
+            city: 'Шоурум «Silk & Minimal» • г. Москва (Заказ: 500 шт платьев)',
+            fullText: 'Работаем с швейной фабрикой Bemode уже третий сезон подряд. Отшивали партию платьев Silk Touch 500 шт для нашей сети бутиков в Москве. Качество строчек идеальное, геометрия швов ровная, посадка на размеры 42-48 села без единой переделки! Отгрузили точно в согласованный срок с полным пакетом документов и маркировкой Честный ЗНАК. Однозначно рекомендуем фабрику!'
+        },
+        {
+            avatar: 'ДС',
+            name: 'Данияр Сериков',
+            city: 'Сеть бутиков «Aru Fashion» • г. Алматы (Заказ: 300 шт костюмов)',
+            fullText: 'Заказывали костюмы-двойки и жакеты по своим лекалам в формате PLT. Конструкторы Bemode оцифровали файлы в САПР буквально за день, отшили эталонный образец за 3 дня. Качество турецкого полотна супер, швы ровные. Наши клиенты в Алматы раскупили всю партию из 300 шт за две недели!'
+        },
+        {
+            avatar: 'ЕЛ',
+            name: 'Екатерина Лазарева',
+            city: 'Селлер Wildberries / Ozon • г. Екатеринбург (Заказ: 400 шт пальто)',
+            fullText: 'Отшивали партию шерстяных пальто оверсайз Wool Blend 400 шт для маркетплейсов. Сначала опасалась за белую отгрузку через границу, но Сертификаты ЕАЭС и Честный ЗНАК оформили безупречно! Маржинальность получилась выше 220%. Менеджер был 24/7 на связи в WhatsApp и присылал видео с поточного цеха.'
+        },
+        {
+            avatar: 'МС',
+            name: 'Мадина Садыкова',
+            city: 'Бренд одежды «M-Line» • г. Ташкент (Заказ: 600 шт платьев)',
+            fullText: 'Воспользовались готовой базой лекал Bemode. Взяли 4 модели ярусных платьев для наших магазинов в Ташкенте. Посадка идеальная, анатомическая! Фабрика отгрузила 600 изделий ровно за 8 рабочих дней. Каждое платье с индивидуальной маркировкой. Будем расширять следующий заказ до 1500 шт.'
+        },
+        {
+            avatar: 'ОГ',
+            name: 'Ольга Громова',
+            city: 'Шоурум «Luxe Look» • г. Пятигорск (Заказ: 350 шт сетов)',
+            fullText: 'Отшивали твидовые комплекты. Конструкторское бюро Bemode доработало наши эскизы и создало 3D-модель посадки перед раскроем. Отдельное спасибо главному технологу за помощь в подборе качественной фурнитуры. Ткань софт-ниагара плотная, ровные японские строчки Juki. Пятигорск рекомендует!'
+        }
+    ];
+
+    function openReviewModal(index) {
+        const item = yandexReviewsData[index] || yandexReviewsData[0];
+        document.getElementById('revModalAvatar').innerText = item.avatar;
+        document.getElementById('revModalName').innerText = item.name;
+        document.getElementById('revModalCity').innerText = item.city;
+        document.getElementById('revModalFullText').innerText = item.fullText;
+        document.getElementById('reviewModalBackdrop').classList.add('active');
+    }
+
+    function closeReviewModal() {
+        document.getElementById('reviewModalBackdrop').classList.remove('active');
     }
 
     calculatePrice();
