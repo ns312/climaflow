@@ -2411,6 +2411,42 @@
             }
         }
 
+    
+        /* CLEAR VISUAL SECTION BOUNDARIES & SECTION NUMBERING BADGES */
+        section {
+            position: relative;
+            padding: 85px 0;
+            border-bottom: 1px solid var(--color-border);
+        }
+        .section-badge {
+            display: inline-block;
+            padding: 6px 14px;
+            background: rgba(194, 79, 32, 0.08);
+            color: var(--color-accent);
+            font-family: var(--font-main);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.8px;
+            text-transform: uppercase;
+            border-radius: 4px;
+            border: 1px solid rgba(194, 79, 32, 0.22);
+            margin-bottom: 14px;
+        }
+        .section-header-block {
+            text-align: center;
+            margin-bottom: 45px;
+            position: relative;
+        }
+        .section-header-block::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 2px;
+            background: var(--color-accent);
+            margin: 18px auto 0;
+            opacity: 0.6;
+        }
+
     </style>
 </head>
 <body class="is-loading">
@@ -2632,7 +2668,7 @@
     <section class="cad-slider-section" id="cad-slider">
         <div class="wrap-container">
             <div style="text-align: center; margin-bottom: 35px;" class="reveal-up">
-                <h2 class="section-title">0% Риска Плохой Посадки</h2>
+                <span class="section-badge">СЕКЦИЯ 04 • 3D-МОДЕЛИРОВАНИЕ И ПОСАДКА</span><h2 class="section-title">0% Риска Плохой Посадки</h2>
                 <p class="section-sub">Анатомическое САПР-конструирование лекал под фигуры 42-48. Сравните 3D-чертеж и отшитое платье.</p>
             </div>
             
@@ -2656,7 +2692,7 @@
     <section class="roi-section" id="roi-calculator">
         <div class="wrap-container">
             <div style="text-align: center; margin-bottom: 35px;" class="reveal-up">
-                <h2 class="section-title" style="color: #ffffff;">Калькулятор Прибыли Бутика</h2>
+                <span class="section-badge" style="background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.3); color: var(--color-gold);">СЕКЦИЯ 05 • РАСЧЕТ ПРИБЫЛИ БУТИКА</span><h2 class="section-title" style="color: #ffffff;">Калькулятор Прибыли Бутика</h2>
                 <p class="section-sub" style="color: #d1c5be;">Рассчитайте чистую маржу от продажи оптовой партии одежды Bemode в вашем шоуруме</p>
             </div>
 
@@ -2672,7 +2708,7 @@
                         </select>
                     </div>
                     <div class="calc-group" style="margin-top: 18px;">
-                        <label class="calc-label" style="color: #ffffff;">Розничная цена продажи в бутике (₽/KGS)</label>
+                        <label class="calc-label" style="color: #ffffff;">Розничная цена продажи в бутике (₽)</label>
                         <input type="number" class="calc-select" id="roiRetailPrice" value="4500" oninput="calculateB2BProfit()" placeholder="Например: 4500">
                     </div>
                 </div>
@@ -2932,7 +2968,7 @@
     <!-- 12 STOREEZ FULL-SCREEN EDITORIAL LOOKBOOK CAROUSELS SECTION -->
     <section class="editorial-stories-section" id="editorial-lookbook">
         <div style="text-align: center; margin-bottom: 45px;" class="reveal-up">
-            <h2 class="section-title">Лукбук Коллекций 2026</h2>
+            <span class="section-badge">СЕКЦИЯ 11 • ПОЛНОЭКРАННЫЕ ЭДИТОРИАЛ-ЛУКБУКИ</span><h2 class="section-title">Лукбук Коллекций 2026</h2>
             <p class="section-sub">Полноэкранные галереи готовых моделей для заказов бутиков и брендов</p>
         </div>
 
@@ -3260,8 +3296,8 @@
                     <label class="calc-label">Дополнительные услуги</label>
                     <select class="calc-select" id="calcServices" onchange="calculatePrice()">
                         <option value="0">Адаптация лекал под ваш бренд</option>
-                        <option value="50">Маркировка Честный ЗНАК (+50 сом/шт)</option>
-                        <option value="80">Сертификация ЕАЭС + Полная упаковка (+80 сом/шт)</option>
+                        <option value="50">Маркировка Честный ЗНАК (+50 ₽/шт)</option>
+                        <option value="80">Сертификация ЕАЭС + Полная упаковка (+80 ₽/шт)</option>
                     </select>
                 </div>
 
@@ -3278,7 +3314,7 @@
                 <div class="calc-result-box">
                     <div>
                         <div style="font-size: 11px; text-transform: uppercase; color: #a89a91;">Ориентировочная сумма партии:</div>
-                        <div class="result-amount" id="resultTotal">65 000 сом</div>
+                        <div class="result-amount" id="resultTotal">65 000 ₽</div>
                     </div>
                     <button class="btn-primary" onclick="sendCalcToWA()">Отправить смету в WhatsApp &rarr;</button>
                 </div>
@@ -3289,7 +3325,7 @@
     <!-- 8. SERIOUS & ULTRA-COMPACT LOGISTICS BAR -->
     <section class="geography-section">
         <div class="geo-compact-bar reveal-up">
-            <div class="geo-b2b-header">Доставка готовых коллекций:</div>
+            <span class="section-badge" style="margin-bottom: 10px;">СЕКЦИЯ 13 • ГЕОГРАФИЯ И ЛОГИСТИКА</span><div class="geo-b2b-header">Доставка готовых коллекций:</div>
             
             <div class="geo-pill-list">
                 <div class="geo-pill-item">
@@ -3461,7 +3497,7 @@
         
         <div class="footer-bottom">
             <div>© 2026 ОсОО «Бемод» (Bemode Garment Factory). Все права защищены.</div>
-            <div>Quiet Luxury Aesthetics • Inspired by 12 STOREEZ</div>
+            <div>Премиальное швейное производство коллекций женской одежды • Бишкек</div>
         </div>
     </footer>
 
@@ -3568,10 +3604,10 @@
         let timer = setInterval(() => {
             count++;
             start += step;
-            el.innerText = Math.round(start).toLocaleString() + ' сом';
+            el.innerText = Math.round(start).toLocaleString() + ' ₽';
             if (count >= 15) {
                 clearInterval(timer);
-                el.innerText = targetTotal.toLocaleString() + ' сом';
+                el.innerText = targetTotal.toLocaleString() + ' ₽';
                 currentTotal = targetTotal;
             }
         }, 20);
